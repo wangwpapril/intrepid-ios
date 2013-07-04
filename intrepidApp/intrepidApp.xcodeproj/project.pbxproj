@@ -23,6 +23,8 @@
 		688F9E5F17861BE500CF850C /* Symptom.m in Sources */ = {isa = PBXBuildFile; fileRef = 688F9E5E17861BE500CF850C /* Symptom.m */; };
 		688F9E631786262800CF850C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 688F9E621786262800CF850C /* QuartzCore.framework */; };
 		688F9E661786295100CF850C /* HealthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 688F9E651786295100CF850C /* HealthCell.m */; };
+		688F9E6A17862EDA00CF850C /* common@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 688F9E6817862EDA00CF850C /* common@2x.png */; };
+		688F9E6B17862EDA00CF850C /* uncommon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 688F9E6917862EDA00CF850C /* uncommon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		688F9E621786262800CF850C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		688F9E641786295100CF850C /* HealthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthCell.h; path = classes/HealthCell.h; sourceTree = "<group>"; };
 		688F9E651786295100CF850C /* HealthCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthCell.m; path = classes/HealthCell.m; sourceTree = "<group>"; };
+		688F9E6817862EDA00CF850C /* common@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "common@2x.png"; path = "images/common@2x.png"; sourceTree = "<group>"; };
+		688F9E6917862EDA00CF850C /* uncommon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "uncommon@2x.png"; path = "images/uncommon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,7 @@
 		6851221B17861138008DB6B6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				688F9E6717862DFD00CF850C /* images */,
 				6851221C17861138008DB6B6 /* intrepidApp-Info.plist */,
 				6851221D17861138008DB6B6 /* InfoPlist.strings */,
 				6851222017861138008DB6B6 /* main.m */,
@@ -136,6 +141,15 @@
 				688F9E5E17861BE500CF850C /* Symptom.m */,
 			);
 			name = health;
+			sourceTree = "<group>";
+		};
+		688F9E6717862DFD00CF850C /* images */ = {
+			isa = PBXGroup;
+			children = (
+				688F9E6817862EDA00CF850C /* common@2x.png */,
+				688F9E6917862EDA00CF850C /* uncommon@2x.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +208,8 @@
 				6851222917861138008DB6B6 /* Default@2x.png in Resources */,
 				6851222B17861138008DB6B6 /* Default-568h@2x.png in Resources */,
 				6851222E17861138008DB6B6 /* MainStoryboard.storyboard in Resources */,
+				688F9E6A17862EDA00CF850C /* common@2x.png in Resources */,
+				688F9E6B17862EDA00CF850C /* uncommon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

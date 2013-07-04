@@ -9,6 +9,7 @@
 #import "HealthViewController.h"
 #import "Constants.h"
 #import "QuartzCore/QuartzCore.h"
+#import "HealthCell.h"
 
 @implementation HealthViewController
 
@@ -117,6 +118,7 @@
 - (void) addTableView {
     table = [[UITableView alloc] initWithFrame:CGRectMake(0, 60, 320, self.view.frame.size.height - 60) style:UITableViewStylePlain];
     table.alpha = 0;
+    table.rowHeight = 45;
     [self.view addSubview: table];
 }
 
@@ -141,15 +143,15 @@
 {
     
     NSString *CellIdentifier = [NSString stringWithFormat:@"Cell"];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    HealthCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if(cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[HealthCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     
     cell.textLabel.text = [[contentArray objectAtIndex:currentTab] objectAtIndex:indexPath.row];
-    
+    [cell setupWithName:@"blah" withStatus:TRUE withImageURL:@"bleh"];
     return cell;
 }
 

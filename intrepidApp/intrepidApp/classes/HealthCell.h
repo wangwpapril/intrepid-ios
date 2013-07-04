@@ -10,4 +10,6 @@
 
 @interface HealthCell : UITableViewCell
 
+
+-(void)setupWithName:(NSString *)name withStatus:(BOOL)common withImageURL:(NSString *)url;
 @end
