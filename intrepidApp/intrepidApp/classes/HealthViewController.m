@@ -16,13 +16,8 @@
 @synthesize tabArray;
 @synthesize contentArray;
 @synthesize tableArray;
-//@synthesize table;
 @synthesize currentTab;
 @synthesize previousTab;
-//@synthesize conditionsTable;
-//@synthesize symptomsTable;
-//@synthesize medicationsTable;
-
 
 - (void)viewDidLoad
 {
@@ -30,8 +25,6 @@
     [self addTabs];
     [self addTableViews];
     [self populateContentArray];
-    
-     [self.view setBackgroundColor:APP_BG_COLOR];
     self.navigationItem.title = @"Health";
 }
 
@@ -89,6 +82,8 @@
         table.rowHeight = 45;
         table.tag = i;
         table.dataSource = self;
+        table.backgroundColor = [UIColor whiteColor];
+        table.alpha = 0.8;
         [tableArray addObject:table];
         i++;
     }
@@ -116,10 +111,10 @@
 }
 
 - (void)tabSelected:(id)sender {
+    NSLog(@"tab selected");
     UIButton *clickedTab = (UIButton *)sender;
     previousTab = currentTab;
     for (UIButton *tab in tabArray) {
-        
         // select that tab
         if (tab.tag == clickedTab.tag) {
             [tab setTitleColor:NAVIGATION_BG_COLOR forState:UIControlStateNormal];
@@ -133,6 +128,7 @@
         }
     }
     if (currentTab !=clickedTab.tag) {
+        clickedTab.userInteractionEnabled = NO;
         currentTab = clickedTab.tag;
         [UIView animateWithDuration:0.3 animations:^{
             NSInteger offset;
@@ -160,6 +156,10 @@
         }
         completion:^(BOOL finished){
             [[tableArray objectAtIndex:previousTab] removeFromSuperview];
+            clickedTab.userInteractionEnabled = YES;
+//            for (UIButton * tab in tabArray) {
+//                tab.userInteractionEnabled = YES;
+//            }
         }];
     }
 }
@@ -170,14 +170,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//    return [[contentArray objectAtIndex:currentTab] count];
-    NSLog(@"tableview #ofrows tag: %i", tableView.tag);
     return [[contentArray objectAtIndex:tableView.tag] count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"makin CELL HO");
     NSString *CellIdentifier = [NSString stringWithFormat:@"Cell"];
     HealthCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     

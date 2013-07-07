@@ -13,13 +13,9 @@
 @property (nonatomic, strong) NSMutableArray *contentArray;
 @property (nonatomic, strong) NSMutableArray *tabArray;
 @property (nonatomic, strong) NSMutableArray *tableArray;
-//@property (nonatomic, strong) UITableView *table;
 @property (nonatomic) NSInteger currentTab;
 @property (nonatomic) NSInteger previousTab;
-//
-//@property (nonatomic, strong) UITableView *conditionsTable;
-//@property (nonatomic, strong) UITableView *symptomsTable;
-//@property (nonatomic, strong) UITableView *medicationsTable;
+
 
 
 @end
