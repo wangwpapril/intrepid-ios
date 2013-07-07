@@ -11,6 +11,8 @@
 @interface MenuController : NSObject
 
 @property (nonatomic, strong) UIViewController *parentController;
+@property (nonatomic, strong) UIImageView *menu;
+
 -(void)displayMenuWithParent:(UIViewController *)controller;
 
 @end

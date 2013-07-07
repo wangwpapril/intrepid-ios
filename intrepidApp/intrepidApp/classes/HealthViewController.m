@@ -19,6 +19,7 @@
 @synthesize tableArray;
 @synthesize currentTab;
 @synthesize previousTab;
+@synthesize mController;
 
 - (void)viewDidLoad
 {
@@ -27,8 +28,8 @@
     [self addTableViews];
     [self populateContentArray];
     self.navigationItem.title = @"Health";
-    MenuController *menu = [[MenuController alloc] init];
-    [menu displayMenuWithParent:self];
+    mController = [[MenuController alloc] init];
+    [mController displayMenuWithParent:self];
     
 }
 
@@ -191,8 +192,5 @@
     [cell setupWithName:@"blah" withStatus:TRUE withImageURL:@"bleh"];
     return cell;
 }
-
-
-
 
 @end

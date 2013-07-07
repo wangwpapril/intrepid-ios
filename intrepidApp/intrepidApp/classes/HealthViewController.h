@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MenuController.h"
 
 @interface HealthViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
@@ -15,7 +16,6 @@
 @property (nonatomic, strong) NSMutableArray *tableArray;
 @property (nonatomic) NSInteger currentTab;
 @property (nonatomic) NSInteger previousTab;
-
-
+@property (nonatomic, strong) MenuController *mController;
 
 @end
