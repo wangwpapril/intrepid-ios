@@ -27,16 +27,78 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.view setBackgroundColor:APP_BG_COLOR];
     [self addTabs];
     [self addTableViews];
     [self populateContentArray];
+    
+     [self.view setBackgroundColor:APP_BG_COLOR];
+    self.navigationItem.title = @"Health";
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+# pragma mark - UI Setup
+
+- (void)addTabs {
+    int i = 0;
+    tabArray = [NSMutableArray new];
+    
+    while (i < 3) {
+        
+        // create the tab
+        UIButton *tab = [UIButton buttonWithType:UIButtonTypeCustom];
+        tab.frame = CGRectMake(107*i, 0, 107, 35);
+        NSString *title;
+        switch (i) {
+            case 0:
+                title = @"Conditions";
+                break;
+            case 1:
+                title = @"Symptoms";
+                break;
+            case 2:
+                title = @"Medications";
+                break;
+                
+            default:
+                break;
+        }
+        [tab setTitle:title forState:UIControlStateNormal];
+        [tab setTitleColor:NAVIGATION_TEXT_COLOR forState:UIControlStateNormal];
+        tab.titleLabel.font = [UIFont fontWithName:APP_FONT size:15];
+        [tab setBackgroundColor:NAVIGATION_BG_COLOR];
+        tab.tag = i; // for tracking which one is clicked
+        [tab addTarget:self action:@selector(tabSelected:) forControlEvents:UIControlEventTouchUpInside];
+        [tabArray addObject:tab];
+        [self.view addSubview:tab];
+        i++;
+    }
+    currentTab = 1;
+    [self tabSelected:[tabArray objectAtIndex:1]];
+}
+
+- (void) addTableViews {
+    tableArray = [NSMutableArray new];
+    int i = 0;
+    while (i < 3) {
+        UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake((i-1)*320, 60, 320, self.view.frame.size.height - 60) style:UITableViewStylePlain];
+        table.rowHeight = 45;
+        table.tag = i;
+        table.dataSource = self;
+        [tableArray addObject:table];
+        i++;
+    }
+    [self.view addSubview:[tableArray objectAtIndex:1]];
+
+}
+
+// handle animations
+- (void)viewDidAppear:(BOOL)animated {
+    
 }
 
 #pragma mark - Content Handling
@@ -55,111 +117,53 @@
 
 - (void)tabSelected:(id)sender {
     UIButton *clickedTab = (UIButton *)sender;
-     NSLog(@"dat tag: %i", clickedTab.tag);
+    previousTab = currentTab;
     for (UIButton *tab in tabArray) {
         
         // select that tab
         if (tab.tag == clickedTab.tag) {
-            [tab setTitleColor:APP_BG_COLOR forState:UIControlStateNormal];
-            [tab setBackgroundColor:APP_TEXT_COLOR];
+            [tab setTitleColor:NAVIGATION_BG_COLOR forState:UIControlStateNormal];
+            [tab setBackgroundColor:NAVIGATION_TEXT_COLOR];
         }
         
         // make sure tab is inactive
         else {
-            [tab setTitleColor:APP_TEXT_COLOR forState:UIControlStateNormal];
-            [tab setBackgroundColor:APP_BG_COLOR];
+            [tab setTitleColor:NAVIGATION_TEXT_COLOR forState:UIControlStateNormal];
+            [tab setBackgroundColor:NAVIGATION_BG_COLOR];
         }
     }
     if (currentTab !=clickedTab.tag) {
-        previousTab = currentTab;
         currentTab = clickedTab.tag;
-            [UIView animateWithDuration:0.3 animations:^{
-                NSInteger offset;
-                if (currentTab == 0) {
-                    offset = 320 * previousTab;
+        [UIView animateWithDuration:0.3 animations:^{
+            NSInteger offset;
+            if (currentTab == 0) {
+                offset = 320 * previousTab;
+            }
+            
+            if (currentTab == 1) {
+                if (previousTab == 0) {
+                    offset = -320;
                 }
-                
-                if (currentTab == 1) {
-                    if (previousTab == 0) {
-                        offset = -320;
-                    }
-                    else {
-                        offset = 320;
-                    }
+                else {
+                    offset = 320;
                 }
-                
-                if (currentTab == 2) {
-                    offset = -320 * (2- previousTab);
-                }
-                for (UITableView *tableView in tableArray) {
-                    [tableView setFrame:CGRectMake(tableView.frame.origin.x + offset, 60, 320, self.view.frame.size.height - 60)];
-                }
-            }];
+            }
+            
+            if (currentTab == 2) {
+                offset = -320 * (2- previousTab);
+            }
+            
+            [self.view addSubview:[tableArray objectAtIndex:currentTab]];
+            for (UITableView *tableView in tableArray) {
+                [tableView setFrame:CGRectMake(tableView.frame.origin.x + offset, 60, 320, self.view.frame.size.height - 60)];
+            }
         }
-}
-
-# pragma mark - UI Setup
-
-- (void)addTabs {
-    int i = 0;
-    tabArray = [NSMutableArray new];
-    
-    while (i < 3) {
-        
-        // create the tab
-        UIButton *tab = [UIButton buttonWithType:UIButtonTypeCustom];
-        tab.frame = CGRectMake(28 + 88*i, 10, 90, 35);
-        NSString *title;
-        switch (i) {
-            case 0:
-                title = @"Conditions";
-                break;
-            case 1:
-                title = @"Symptoms";
-                break;
-            case 2:
-                title = @"Medications";
-                break;
-                
-            default:
-                break;
-        }
-        [tab setTitle:title forState:UIControlStateNormal];
-        [tab setTitleColor:APP_TEXT_COLOR forState:UIControlStateNormal];
-        tab.titleLabel.font = [UIFont fontWithName:APP_FONT size:15];
-        [tab setBackgroundColor:APP_BG_COLOR];
-        tab.layer.borderColor = APP_TEXT_COLOR.CGColor;
-        tab.layer.borderWidth = 2;
-        tab.tag = i; // for tracking which one is clicked
-        [tab addTarget:self action:@selector(tabSelected:) forControlEvents:UIControlEventTouchUpInside];
-        [tabArray addObject:tab];
-        [self.view addSubview:tab];
-        i++;
+        completion:^(BOOL finished){
+            [[tableArray objectAtIndex:previousTab] removeFromSuperview];
+        }];
     }
-    currentTab = 1;
-    [self tabSelected:[tabArray objectAtIndex:1]];
 }
 
-- (void) addTableViews {
-    tableArray = [NSMutableArray new];
-    int i = 0;
-    while (i < 3) {
-        UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake((i-1)*320, 60, 320, self.view.frame.size.height - 60) style:UITableViewStylePlain];
-        table.rowHeight = 45;
-        table.tag = i;
-        [self.view addSubview: table];
-        table.dataSource = self;
-        [tableArray addObject:table];
-        i++;
-    }
-
-
-}
-
-// handle animations
-- (void)viewDidAppear:(BOOL)animated {
-    
-}
 
 
 # pragma mark - TableView Methods

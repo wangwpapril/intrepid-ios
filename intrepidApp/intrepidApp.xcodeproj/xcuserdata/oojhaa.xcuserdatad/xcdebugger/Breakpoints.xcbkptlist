@@ -8,24 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "intrepidApp/classes/HealthViewController.m"
-         timestampString = "394762203.028641"
+         timestampString = "394854188.98267"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "51"
-         endingLineNumber = "51"
-         landmarkName = "-populateContentArray"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "intrepidApp/classes/HealthViewController.m"
-         timestampString = "394762203.028641"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "82"
-         endingLineNumber = "82"
+         startingLineNumber = "161"
+         endingLineNumber = "161"
          landmarkName = "-tabSelected:"
          landmarkType = "5">
       </FileBreakpoint>
