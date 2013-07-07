@@ -27,7 +27,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Cck-lV-cDN">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Cck-lV-cDN" customClass="healthItemSearchBar">
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="cs1-Co-eKy" id="zJZ-nv-cuI"/>
@@ -36,9 +36,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Cck-lV-cDN" firstAttribute="top" secondItem="J8w-Zz-s6y" secondAttribute="top" constant="33" id="13f-Gx-LfO"/>
                             <constraint firstItem="Cck-lV-cDN" firstAttribute="trailing" secondItem="J8w-Zz-s6y" secondAttribute="trailing" type="default" id="NhI-Q1-jVa"/>
                             <constraint firstItem="Cck-lV-cDN" firstAttribute="leading" secondItem="J8w-Zz-s6y" secondAttribute="leading" type="default" id="aDi-rx-xfC"/>
-                            <constraint firstItem="Cck-lV-cDN" firstAttribute="top" secondItem="J8w-Zz-s6y" secondAttribute="top" constant="46" id="e0g-fz-o2s"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SFK-sd-UDp"/>
@@ -61,17 +61,6 @@
             <point key="canvasLocation" x="452" y="70"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="HealthViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HealthViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="healthItemSearchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

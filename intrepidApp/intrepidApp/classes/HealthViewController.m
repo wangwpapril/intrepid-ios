@@ -17,9 +17,9 @@
 @synthesize tabArray;
 @synthesize contentArray;
 @synthesize tableArray;
-//@synthesize table;
 @synthesize currentTab;
 @synthesize previousTab;
+
 
 @synthesize healthItemArray;
 @synthesize filteredHealthItemArray;
@@ -32,85 +32,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.view setBackgroundColor:APP_BG_COLOR];
     [self addTabs];
     [self addTableViews];
     [self populateContentArray];
     
-    healthItemArray = [NSArray arrayWithObjects:
-                       [HealthItem healthItemOfCategory:@"conditions" name:@"dang-it fever" common: TRUE],
-                       [HealthItem healthItemOfCategory:@"conditions" name:@"dieaggoriea" common: FALSE],
-                       [HealthItem healthItemOfCategory:@"conditions" name:@"death" common: TRUE],
-                       [HealthItem healthItemOfCategory:@"symptoms" name:@"constipation" common: FALSE],
-                       [HealthItem healthItemOfCategory:@"symptoms" name:@"heartburn" common: TRUE],
-                       [HealthItem healthItemOfCategory:@"conditions" name:@"stomach ache" common: FALSE], nil];
+    [healthItemSearchBar setBackgroundImage:[UIImage new]];
+    [healthItemSearchBar setTranslucent:YES];
+    [healthItemSearchBar setPlaceholder:@"Tap to Search"];
     
+//    healthItemArray = [NSArray arrayWithObjects:
+//                       [HealthItem healthItemOfCategory:@"conditions" name:@"dang-it fever" common: TRUE],
+//                       [HealthItem healthItemOfCategory:@"conditions" name:@"dieaggoriea" common: FALSE],
+//                       [HealthItem healthItemOfCategory:@"conditions" name:@"death" common: TRUE],
+//                       [HealthItem healthItemOfCategory:@"symptoms" name:@"constipation" common: FALSE],
+//                       [HealthItem healthItemOfCategory:@"symptoms" name:@"heartburn" common: TRUE],
+//                       [HealthItem healthItemOfCategory:@"conditions" name:@"stomach ache" common: FALSE], nil];
+    
+    self.filteredHealthItemArray = [NSMutableArray new];
+//    self.filteredHealthItemArray = [NSMutableArray arrayWithCapacity:[healthItemArray count]];
     // Reload the table
+    self.navigationItem.title = @"Health";
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Content Handling
-
-- (void)populateContentArray {
-    // done in the background to speed up user response
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
-                                             (unsigned long)NULL), ^(void) {
-        NSArray *conditions = [[NSArray alloc] initWithObjects:@"dang-it fever", @"dieaggoriea", @"death", nil];
-        NSArray *symptoms = [[NSArray alloc] initWithObjects:@"constipation", @"heartburn", @"stomach ache", nil];
-        NSArray *medication = [[NSArray alloc] initWithObjects:@"placebo", @"aspirin", @"milk of the poppy", nil];
-        contentArray = [[NSMutableArray alloc] initWithObjects:conditions, symptoms, medication, nil];
-        
-    });
-}
-
-- (void)tabSelected:(id)sender {
-    UIButton *clickedTab = (UIButton *)sender;
-     NSLog(@"dat tag: %i", clickedTab.tag);
-    for (UIButton *tab in tabArray) {
-        
-        // select that tab
-        if (tab.tag == clickedTab.tag) {
-            [tab setTitleColor:APP_BG_COLOR forState:UIControlStateNormal];
-            [tab setBackgroundColor:APP_TEXT_COLOR];
-        }
-        
-        // make sure tab is inactive
-        else {
-            [tab setTitleColor:APP_TEXT_COLOR forState:UIControlStateNormal];
-            [tab setBackgroundColor:APP_BG_COLOR];
-        }
-    }
-    if (currentTab !=clickedTab.tag) {
-        previousTab = currentTab;
-        currentTab = clickedTab.tag;
-            [UIView animateWithDuration:0.3 animations:^{
-                NSInteger offset;
-                if (currentTab == 0) {
-                    offset = 320 * previousTab;
-                }
-                
-                if (currentTab == 1) {
-                    if (previousTab == 0) {
-                        offset = -320;
-                    }
-                    else {
-                        offset = 320;
-                    }
-                }
-                
-                if (currentTab == 2) {
-                    offset = -320 * (2- previousTab);
-                }
-                for (UITableView *tableView in tableArray) {
-                    [tableView setFrame:CGRectMake(tableView.frame.origin.x + offset, 60, 320, self.view.frame.size.height - 60)];
-                }
-            }];
-        }
 }
 
 # pragma mark - UI Setup
@@ -123,7 +70,7 @@
         
         // create the tab
         UIButton *tab = [UIButton buttonWithType:UIButtonTypeCustom];
-        tab.frame = CGRectMake(28 + 88*i, 10, 90, 35);
+        tab.frame = CGRectMake(107*i, 0, 107, 35);
         NSString *title;
         switch (i) {
             case 0:
@@ -140,11 +87,9 @@
                 break;
         }
         [tab setTitle:title forState:UIControlStateNormal];
-        [tab setTitleColor:APP_TEXT_COLOR forState:UIControlStateNormal];
+        [tab setTitleColor:NAVIGATION_TEXT_COLOR forState:UIControlStateNormal];
         tab.titleLabel.font = [UIFont fontWithName:APP_FONT size:15];
-        [tab setBackgroundColor:APP_BG_COLOR];
-        tab.layer.borderColor = APP_TEXT_COLOR.CGColor;
-        tab.layer.borderWidth = 2;
+        [tab setBackgroundColor:NAVIGATION_BG_COLOR];
         tab.tag = i; // for tracking which one is clicked
         [tab addTarget:self action:@selector(tabSelected:) forControlEvents:UIControlEventTouchUpInside];
         [tabArray addObject:tab];
@@ -159,15 +104,16 @@
     tableArray = [NSMutableArray new];
     int i = 0;
     while (i < 3) {
-        UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake((i-1)*320, 60, 320, self.view.frame.size.height - 60) style:UITableViewStylePlain];
+        UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake((i-1)*320, 70, 320, self.view.frame.size.height - 70) style:UITableViewStylePlain];
         table.rowHeight = 45;
         table.tag = i;
-        [self.view addSubview: table];
         table.dataSource = self;
+        table.backgroundColor = [UIColor whiteColor];
+        table.alpha = 0.8;
         [tableArray addObject:table];
         i++;
     }
-
+    [self.view addSubview:[tableArray objectAtIndex:1]];
 
 }
 
@@ -176,12 +122,99 @@
     
 }
 
+#pragma mark - Content Handling
+
+- (void)populateContentArray {
+    // done in the background to speed up user response
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                             (unsigned long)NULL), ^(void) {        
+        
+       NSArray *conditions = [NSArray arrayWithObjects:
+                           [HealthItem healthItemOfCategory:@"conditions" name:@"dang-it fever" common: TRUE],
+                           [HealthItem healthItemOfCategory:@"conditions" name:@"dieaggoriea" common: FALSE],
+                              [HealthItem healthItemOfCategory:@"conditions" name:@"death" common: TRUE], nil];
+                              
+                        
+        NSArray *symptoms  = [NSArray arrayWithObjects:
+                            [HealthItem healthItemOfCategory:@"symptoms" name:@"constipation" common: FALSE],
+                           [HealthItem healthItemOfCategory:@"symptoms" name:@"heartburn" common: TRUE],
+                           [HealthItem healthItemOfCategory:@"conditions" name:@"stomach ache" common: FALSE], nil];
+     
+        
+        NSArray *medication  = [NSArray arrayWithObjects:
+                              [HealthItem healthItemOfCategory:@"symptoms" name:@"placebo" common: FALSE],
+                              [HealthItem healthItemOfCategory:@"symptoms" name:@"aspirin" common: TRUE],
+                              [HealthItem healthItemOfCategory:@"conditions" name:@"milk of the poppy" common: FALSE], nil];
+        contentArray = [[NSMutableArray alloc] initWithObjects:conditions, symptoms, medication, nil];
+        
+    });
+}
+
+- (void)tabSelected:(id)sender {
+    NSLog(@"tab selected");
+    UIButton *clickedTab = (UIButton *)sender;
+    previousTab = currentTab;
+    for (UIButton *tab in tabArray) {
+        // select that tab
+        if (tab.tag == clickedTab.tag) {
+            [tab setTitleColor:NAVIGATION_BG_COLOR forState:UIControlStateNormal];
+            [tab setBackgroundColor:NAVIGATION_TEXT_COLOR];
+        }
+        
+        // make sure tab is inactive
+        else {
+            [tab setTitleColor:NAVIGATION_TEXT_COLOR forState:UIControlStateNormal];
+            [tab setBackgroundColor:NAVIGATION_BG_COLOR];
+        }
+    }
+    if (currentTab !=clickedTab.tag) {
+        clickedTab.userInteractionEnabled = NO;
+        currentTab = clickedTab.tag;
+        [UIView animateWithDuration:0.3 animations:^{
+            NSInteger offset;
+            if (currentTab == 0) {
+                offset = 320 * previousTab;
+            }
+            
+            if (currentTab == 1) {
+                if (previousTab == 0) {
+                    offset = -320;
+                }
+                else {
+                    offset = 320;
+                }
+            }
+            
+            if (currentTab == 2) {
+                offset = -320 * (2- previousTab);
+            }
+            
+            [self.view addSubview:[tableArray objectAtIndex:currentTab]];
+            for (UITableView *tableView in tableArray) {
+                [tableView setFrame:CGRectMake(tableView.frame.origin.x + offset, 70, 320, self.view.frame.size.height - 70)];
+            }
+        }
+        completion:^(BOOL finished){
+            [[tableArray objectAtIndex:previousTab] removeFromSuperview];
+            clickedTab.userInteractionEnabled = YES;
+//            for (UIButton * tab in tabArray) {
+//                tab.userInteractionEnabled = YES;
+//            }
+        }];
+    }
+}
+
+
 
 # pragma mark - TableView Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [healthItemArray count];
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [filteredHealthItemArray count];
+    } else {
+        return [[contentArray objectAtIndex:currentTab] count];
+    }
     
 //    return [[contentArray objectAtIndex:currentTab] count];
 //    NSLog(@"tableview #ofrows tag: %i", tableView.tag);
@@ -203,19 +236,55 @@
 //    [cell setupWithName:@"blah" withStatus:TRUE withImageURL:@"bleh"];
 //    return cell;
 //}
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if ( cell == nil ) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell"];
+    HealthCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if(cell == nil) {
+        cell = [[HealthCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     // Create a new Candy Object
     HealthItem *healthItem = nil;
-    healthItem = [healthItemArray objectAtIndex:indexPath.row];
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        healthItem = [filteredHealthItemArray objectAtIndex:indexPath.row];
+    } else {
+        healthItem = [[contentArray objectAtIndex:currentTab] objectAtIndex:indexPath.row];
+    }
     // Configure the cell
     cell.textLabel.text = healthItem.name;
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     return cell;
+    
+}
+
+#pragma mark Content Filtering
+-(void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
+    // Update the filtered array based on the search text and scope.
+    // Remove all objects from the filtered search array
+    [self.filteredHealthItemArray removeAllObjects];
+    // Filter the array using NSPredicate
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.name contains[c] %@",searchText];
+    filteredHealthItemArray = [NSMutableArray arrayWithArray:[[contentArray objectAtIndex:currentTab] filteredArrayUsingPredicate:predicate]];
+}
+
+#pragma mark - UISearchDisplayController Delegate Methods
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    // Tells the table data source to reload when text changes
+    [self filterContentForSearchText:searchString scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
+    // Tells the table data source to reload when scope bar selection changes
+    [self filterContentForSearchText:self.searchDisplayController.searchBar.text scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
 }
 
 
