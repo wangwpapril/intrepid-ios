@@ -10,6 +10,7 @@
 #import "Constants.h"
 #import "QuartzCore/QuartzCore.h"
 #import "HealthCell.h"
+#import "MenuController.h"
 
 @implementation HealthViewController
 
@@ -26,6 +27,9 @@
     [self addTableViews];
     [self populateContentArray];
     self.navigationItem.title = @"Health";
+    MenuController *menu = [[MenuController alloc] init];
+    [menu displayMenuWithParent:self];
+    
 }
 
 - (void)didReceiveMemoryWarning
