@@ -20,11 +20,11 @@
 		6851222E17861138008DB6B6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6851222C17861138008DB6B6 /* MainStoryboard.storyboard */; };
 		6851223117861138008DB6B6 /* intrepidApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6851222F17861138008DB6B6 /* intrepidApp.xcdatamodeld */; };
 		6851223F17861152008DB6B6 /* HealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6851223E17861152008DB6B6 /* HealthViewController.m */; };
-		688F9E5F17861BE500CF850C /* Symptom.m in Sources */ = {isa = PBXBuildFile; fileRef = 688F9E5E17861BE500CF850C /* Symptom.m */; };
 		688F9E631786262800CF850C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 688F9E621786262800CF850C /* QuartzCore.framework */; };
 		688F9E661786295100CF850C /* HealthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 688F9E651786295100CF850C /* HealthCell.m */; };
 		688F9E6A17862EDA00CF850C /* common@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 688F9E6817862EDA00CF850C /* common@2x.png */; };
 		688F9E6B17862EDA00CF850C /* uncommon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 688F9E6917862EDA00CF850C /* uncommon@2x.png */; };
+		7E44F8D21788FA4B00AAA32B /* HealthItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E44F8D11788FA4B00AAA32B /* HealthItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,14 +46,14 @@
 		6851223017861138008DB6B6 /* intrepidApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = intrepidApp.xcdatamodel; sourceTree = "<group>"; };
 		6851223D17861152008DB6B6 /* HealthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthViewController.h; path = classes/HealthViewController.h; sourceTree = "<group>"; };
 		6851223E17861152008DB6B6 /* HealthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthViewController.m; path = classes/HealthViewController.m; sourceTree = "<group>"; };
-		688F9E5D17861BE400CF850C /* Symptom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Symptom.h; sourceTree = "<group>"; };
-		688F9E5E17861BE500CF850C /* Symptom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Symptom.m; sourceTree = "<group>"; };
 		688F9E611786207F00CF850C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = classes/Constants.h; sourceTree = "<group>"; };
 		688F9E621786262800CF850C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		688F9E641786295100CF850C /* HealthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthCell.h; path = classes/HealthCell.h; sourceTree = "<group>"; };
 		688F9E651786295100CF850C /* HealthCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthCell.m; path = classes/HealthCell.m; sourceTree = "<group>"; };
 		688F9E6817862EDA00CF850C /* common@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "common@2x.png"; path = "images/common@2x.png"; sourceTree = "<group>"; };
 		688F9E6917862EDA00CF850C /* uncommon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "uncommon@2x.png"; path = "images/uncommon@2x.png"; sourceTree = "<group>"; };
+		7E44F8D01788FA4B00AAA32B /* HealthItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthItem.h; path = classes/HealthItem.h; sourceTree = "<group>"; };
+		7E44F8D11788FA4B00AAA32B /* HealthItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthItem.m; path = classes/HealthItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +137,8 @@
 				6851223E17861152008DB6B6 /* HealthViewController.m */,
 				688F9E641786295100CF850C /* HealthCell.h */,
 				688F9E651786295100CF850C /* HealthCell.m */,
-				688F9E5D17861BE400CF850C /* Symptom.h */,
-				688F9E5E17861BE500CF850C /* Symptom.m */,
+				7E44F8D01788FA4B00AAA32B /* HealthItem.h */,
+				7E44F8D11788FA4B00AAA32B /* HealthItem.m */,
 			);
 			name = health;
 			sourceTree = "<group>";
@@ -224,8 +224,8 @@
 				6851222517861138008DB6B6 /* AppDelegate.m in Sources */,
 				6851223117861138008DB6B6 /* intrepidApp.xcdatamodeld in Sources */,
 				6851223F17861152008DB6B6 /* HealthViewController.m in Sources */,
-				688F9E5F17861BE500CF850C /* Symptom.m in Sources */,
 				688F9E661786295100CF850C /* HealthCell.m in Sources */,
+				7E44F8D21788FA4B00AAA32B /* HealthItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@
 #import "Constants.h"
 #import "QuartzCore/QuartzCore.h"
 #import "HealthCell.h"
+ #import "HealthItem.h"
 
 @implementation HealthViewController
 
@@ -19,6 +20,10 @@
 //@synthesize table;
 @synthesize currentTab;
 @synthesize previousTab;
+
+@synthesize healthItemArray;
+@synthesize filteredHealthItemArray;
+@synthesize healthItemSearchBar;
 //@synthesize conditionsTable;
 //@synthesize symptomsTable;
 //@synthesize medicationsTable;
@@ -31,6 +36,16 @@
     [self addTabs];
     [self addTableViews];
     [self populateContentArray];
+    
+    healthItemArray = [NSArray arrayWithObjects:
+                       [HealthItem healthItemOfCategory:@"conditions" name:@"dang-it fever" common: TRUE],
+                       [HealthItem healthItemOfCategory:@"conditions" name:@"dieaggoriea" common: FALSE],
+                       [HealthItem healthItemOfCategory:@"conditions" name:@"death" common: TRUE],
+                       [HealthItem healthItemOfCategory:@"symptoms" name:@"constipation" common: FALSE],
+                       [HealthItem healthItemOfCategory:@"symptoms" name:@"heartburn" common: TRUE],
+                       [HealthItem healthItemOfCategory:@"conditions" name:@"stomach ache" common: FALSE], nil];
+    
+    // Reload the table
 }
 
 - (void)didReceiveMemoryWarning
@@ -166,27 +181,42 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    return [healthItemArray count];
+    
 //    return [[contentArray objectAtIndex:currentTab] count];
-    NSLog(@"tableview #ofrows tag: %i", tableView.tag);
-    return [[contentArray objectAtIndex:tableView.tag] count];
+//    NSLog(@"tableview #ofrows tag: %i", tableView.tag);
+//    return [[contentArray objectAtIndex:tableView.tag] count];
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"makin CELL HO");
-    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell"];
-    HealthCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if(cell == nil) {
-        cell = [[HealthCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    NSLog(@"makin CELL HO");
+//    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell"];
+//    HealthCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    
+//    if(cell == nil) {
+//        cell = [[HealthCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+//        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+//    }
+//    
+//    cell.textLabel.text = [[contentArray objectAtIndex:tableView.tag] objectAtIndex:indexPath.row];
+//    [cell setupWithName:@"blah" withStatus:TRUE withImageURL:@"bleh"];
+//    return cell;
+//}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if ( cell == nil ) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
-    cell.textLabel.text = [[contentArray objectAtIndex:tableView.tag] objectAtIndex:indexPath.row];
-    [cell setupWithName:@"blah" withStatus:TRUE withImageURL:@"bleh"];
+    // Create a new Candy Object
+    HealthItem *healthItem = nil;
+    healthItem = [healthItemArray objectAtIndex:indexPath.row];
+    // Configure the cell
+    cell.textLabel.text = healthItem.name;
+    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     return cell;
 }
-
 
 
 

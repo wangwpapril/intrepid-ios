@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HealthViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface HealthViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
 
 @property (nonatomic, strong) NSMutableArray *contentArray;
 @property (nonatomic, strong) NSMutableArray *tabArray;
@@ -16,6 +16,10 @@
 //@property (nonatomic, strong) UITableView *table;
 @property (nonatomic) NSInteger currentTab;
 @property (nonatomic) NSInteger previousTab;
+
+@property (strong,nonatomic) NSArray *healthItemArray;
+@property (strong,nonatomic) NSMutableArray *filteredHealthItemArray;
+@property IBOutlet UISearchBar *healthItemSearchBar;
 //
 //@property (nonatomic, strong) UITableView *conditionsTable;
 //@property (nonatomic, strong) UITableView *symptomsTable;
