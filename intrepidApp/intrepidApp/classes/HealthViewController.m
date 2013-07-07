@@ -15,15 +15,21 @@
 
 @synthesize tabArray;
 @synthesize contentArray;
-@synthesize table;
+@synthesize tableArray;
+//@synthesize table;
 @synthesize currentTab;
+@synthesize previousTab;
+//@synthesize conditionsTable;
+//@synthesize symptomsTable;
+//@synthesize medicationsTable;
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self.view setBackgroundColor:APP_BG_COLOR];
     [self addTabs];
-    [self addTableView];
+    [self addTableViews];
     [self populateContentArray];
 }
 
@@ -43,9 +49,6 @@
         NSArray *symptoms = [[NSArray alloc] initWithObjects:@"constipation", @"heartburn", @"stomach ache", nil];
         NSArray *medication = [[NSArray alloc] initWithObjects:@"placebo", @"aspirin", @"milk of the poppy", nil];
         contentArray = [[NSMutableArray alloc] initWithObjects:conditions, symptoms, medication, nil];
-        
-        table.dataSource = self;
-        table.delegate = self;
         
     });
 }
@@ -68,9 +71,31 @@
         }
     }
     if (currentTab !=clickedTab.tag) {
+        previousTab = currentTab;
         currentTab = clickedTab.tag;
-        [table reloadData];
-    }
+            [UIView animateWithDuration:0.3 animations:^{
+                NSInteger offset;
+                if (currentTab == 0) {
+                    offset = 320 * previousTab;
+                }
+                
+                if (currentTab == 1) {
+                    if (previousTab == 0) {
+                        offset = -320;
+                    }
+                    else {
+                        offset = 320;
+                    }
+                }
+                
+                if (currentTab == 2) {
+                    offset = -320 * (2- previousTab);
+                }
+                for (UITableView *tableView in tableArray) {
+                    [tableView setFrame:CGRectMake(tableView.frame.origin.x + offset, 60, 320, self.view.frame.size.height - 60)];
+                }
+            }];
+        }
 }
 
 # pragma mark - UI Setup
@@ -115,18 +140,24 @@
     [self tabSelected:[tabArray objectAtIndex:1]];
 }
 
-- (void) addTableView {
-    table = [[UITableView alloc] initWithFrame:CGRectMake(0, 60, 320, self.view.frame.size.height - 60) style:UITableViewStylePlain];
-    table.alpha = 0;
-    table.rowHeight = 45;
-    [self.view addSubview: table];
+- (void) addTableViews {
+    tableArray = [NSMutableArray new];
+    int i = 0;
+    while (i < 3) {
+        UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake((i-1)*320, 60, 320, self.view.frame.size.height - 60) style:UITableViewStylePlain];
+        table.rowHeight = 45;
+        table.tag = i;
+        [self.view addSubview: table];
+        table.dataSource = self;
+        [tableArray addObject:table];
+        i++;
+    }
+
+
 }
 
 // handle animations
 - (void)viewDidAppear:(BOOL)animated {
-    [UIView animateWithDuration:0.3 animations:^{
-        table.alpha = 1;
-    }];
     
 }
 
@@ -135,13 +166,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"track each time this is called");
-    return [[contentArray objectAtIndex:currentTab] count];
+//    return [[contentArray objectAtIndex:currentTab] count];
+    NSLog(@"tableview #ofrows tag: %i", tableView.tag);
+    return [[contentArray objectAtIndex:tableView.tag] count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    NSLog(@"makin CELL HO");
     NSString *CellIdentifier = [NSString stringWithFormat:@"Cell"];
     HealthCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
@@ -150,7 +182,7 @@
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     
-    cell.textLabel.text = [[contentArray objectAtIndex:currentTab] objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[contentArray objectAtIndex:tableView.tag] objectAtIndex:indexPath.row];
     [cell setupWithName:@"blah" withStatus:TRUE withImageURL:@"bleh"];
     return cell;
 }
