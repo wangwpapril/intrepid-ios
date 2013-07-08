@@ -10,13 +10,21 @@
 
 @implementation MenuView
 
-- (id)initWithFrame:(CGRect)frame
+@synthesize parentController;
+
+- (id)initWithParent:(UIViewController *)parent
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithFrame:CGRectMake(0, 0, 320, 400)];
     if (self) {
-        // Initialization code
     }
     return self;
+}
+
+- (void)displayMenu {
+    self.backgroundColor = [UIColor orangeColor];
+    [parentController.view addSubview:self];
+    [parentController.view bringSubviewToFront:self];
+    NSLog(@"all added brah");
 }
 
 /*

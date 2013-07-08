@@ -11,6 +11,7 @@
 #import "QuartzCore/QuartzCore.h"
 #import "HealthCell.h"
 #import "HealthItem.h"
+#import "MenuController.h"
 
 @implementation HealthViewController
 
@@ -19,6 +20,7 @@
 @synthesize tableArray;
 @synthesize currentTab;
 @synthesize previousTab;
+@synthesize mController;
 
 
 @synthesize healthItemArray;
@@ -44,6 +46,9 @@
     self.filteredHealthItemArray = [NSMutableArray new];
     // Reload the table
     self.navigationItem.title = @"Health";
+    mController = [[MenuController alloc] init];
+    [mController displayMenuWithParent:self];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -290,7 +295,5 @@
     // Return YES to cause the search result table view to be reloaded.
     return YES;
 }
-
-
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MenuController.h"
 
 @interface HealthViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
 
@@ -26,5 +27,6 @@
 //@property (nonatomic, strong) UITableView *medicationsTable;
 
 
+@property (nonatomic, strong) MenuController *mController;
 
 @end

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6835EC1317893E5E00A57F86 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835EC1217893E5E00A57F86 /* MenuView.m */; };
+		6835EC161789439600A57F86 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835EC151789439600A57F86 /* MenuController.m */; };
 		6851221317861138008DB6B6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6851221217861138008DB6B6 /* UIKit.framework */; };
 		6851221517861138008DB6B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6851221417861138008DB6B6 /* Foundation.framework */; };
 		6851221717861138008DB6B6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6851221617861138008DB6B6 /* CoreGraphics.framework */; };
@@ -27,11 +27,12 @@
 		688F9E6B17862EDA00CF850C /* uncommon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 688F9E6917862EDA00CF850C /* uncommon@2x.png */; };
 		7E44F8D21788FA4B00AAA32B /* HealthItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E44F8D11788FA4B00AAA32B /* HealthItem.m */; };
 		7E44F8D7178A0D8B00AAA32B /* sun1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E44F8D6178A0D8B00AAA32B /* sun1.jpg */; };
+		68EDE3A5178A071600085A84 /* menuBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68EDE3A4178A071600085A84 /* menuBack@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6835EC1117893E5E00A57F86 /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuView.h; path = classes/MenuView.h; sourceTree = "<group>"; };
-		6835EC1217893E5E00A57F86 /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuView.m; path = classes/MenuView.m; sourceTree = "<group>"; };
+		6835EC141789439600A57F86 /* MenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuController.h; path = classes/MenuController.h; sourceTree = "<group>"; };
+		6835EC151789439600A57F86 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuController.m; path = classes/MenuController.m; sourceTree = "<group>"; };
 		6851220F17861138008DB6B6 /* intrepidApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = intrepidApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6851221217861138008DB6B6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6851221417861138008DB6B6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -59,6 +60,7 @@
 		7E44F8D01788FA4B00AAA32B /* HealthItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthItem.h; path = classes/HealthItem.h; sourceTree = "<group>"; };
 		7E44F8D11788FA4B00AAA32B /* HealthItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthItem.m; path = classes/HealthItem.m; sourceTree = "<group>"; };
 		7E44F8D6178A0D8B00AAA32B /* sun1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sun1.jpg; sourceTree = "<group>"; };
+		68EDE3A4178A071600085A84 /* menuBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menuBack@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +114,8 @@
 				688F9E611786207F00CF850C /* Constants.h */,
 				6851222317861138008DB6B6 /* AppDelegate.h */,
 				6851222417861138008DB6B6 /* AppDelegate.m */,
-				6835EC1117893E5E00A57F86 /* MenuView.h */,
-				6835EC1217893E5E00A57F86 /* MenuView.m */,
+				6835EC141789439600A57F86 /* MenuController.h */,
+				6835EC151789439600A57F86 /* MenuController.m */,
 				688F9E5B178611C000CF850C /* health */,
 				6851222C17861138008DB6B6 /* MainStoryboard.storyboard */,
 				6851222F17861138008DB6B6 /* intrepidApp.xcdatamodeld */,
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				7E44F8D6178A0D8B00AAA32B /* sun1.jpg */,
+				68EDE3A4178A071600085A84 /* menuBack@2x.png */,
 				688F9E6817862EDA00CF850C /* common@2x.png */,
 				688F9E6917862EDA00CF850C /* uncommon@2x.png */,
 			);
@@ -219,6 +222,7 @@
 				688F9E6A17862EDA00CF850C /* common@2x.png in Resources */,
 				688F9E6B17862EDA00CF850C /* uncommon@2x.png in Resources */,
 				7E44F8D7178A0D8B00AAA32B /* sun1.jpg in Resources */,
+				68EDE3A5178A071600085A84 /* menuBack@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +240,7 @@
 				688F9E661786295100CF850C /* HealthCell.m in Sources */,
 				7E44F8D21788FA4B00AAA32B /* HealthItem.m in Sources */,
 				6835EC1317893E5E00A57F86 /* MenuView.m in Sources */,
+				6835EC161789439600A57F86 /* MenuController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
