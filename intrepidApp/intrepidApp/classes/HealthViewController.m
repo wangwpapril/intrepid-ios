@@ -10,7 +10,7 @@
 #import "Constants.h"
 #import "QuartzCore/QuartzCore.h"
 #import "HealthCell.h"
- #import "HealthItem.h"
+#import "HealthItem.h"
 
 @implementation HealthViewController
 
@@ -40,16 +40,8 @@
     [healthItemSearchBar setTranslucent:YES];
     [healthItemSearchBar setPlaceholder:@"Tap to Search"];
     
-//    healthItemArray = [NSArray arrayWithObjects:
-//                       [HealthItem healthItemOfCategory:@"conditions" name:@"dang-it fever" common: TRUE],
-//                       [HealthItem healthItemOfCategory:@"conditions" name:@"dieaggoriea" common: FALSE],
-//                       [HealthItem healthItemOfCategory:@"conditions" name:@"death" common: TRUE],
-//                       [HealthItem healthItemOfCategory:@"symptoms" name:@"constipation" common: FALSE],
-//                       [HealthItem healthItemOfCategory:@"symptoms" name:@"heartburn" common: TRUE],
-//                       [HealthItem healthItemOfCategory:@"conditions" name:@"stomach ache" common: FALSE], nil];
     
     self.filteredHealthItemArray = [NSMutableArray new];
-//    self.filteredHealthItemArray = [NSMutableArray arrayWithCapacity:[healthItemArray count]];
     // Reload the table
     self.navigationItem.title = @"Health";
 }
@@ -130,21 +122,21 @@
                                              (unsigned long)NULL), ^(void) {        
         
        NSArray *conditions = [NSArray arrayWithObjects:
-                           [HealthItem healthItemOfCategory:@"conditions" name:@"dang-it fever" common: TRUE],
-                           [HealthItem healthItemOfCategory:@"conditions" name:@"dieaggoriea" common: FALSE],
-                              [HealthItem healthItemOfCategory:@"conditions" name:@"death" common: TRUE], nil];
+                              [HealthItem healthItemOfCategory:@"conditions" image:@"common.png" name:@"dang-it fever" common: TRUE],
+                           [HealthItem healthItemOfCategory:@"conditions" image:@"common.png" name:@"dieaggoriea" common: FALSE],
+                              [HealthItem healthItemOfCategory:@"conditions" image:@"common.png" name:@"death" common: TRUE], nil];
                               
                         
         NSArray *symptoms  = [NSArray arrayWithObjects:
-                            [HealthItem healthItemOfCategory:@"symptoms" name:@"constipation" common: FALSE],
-                           [HealthItem healthItemOfCategory:@"symptoms" name:@"heartburn" common: TRUE],
-                           [HealthItem healthItemOfCategory:@"conditions" name:@"stomach ache" common: FALSE], nil];
+                            [HealthItem healthItemOfCategory:@"symptoms" image:@"common.png" name:@"constipation" common: FALSE],
+                           [HealthItem healthItemOfCategory:@"symptoms" image:@"common.png" name:@"heartburn" common: TRUE],
+                           [HealthItem healthItemOfCategory:@"conditions" image:@"common.png" name:@"stomach ache" common: FALSE], nil];
      
         
         NSArray *medication  = [NSArray arrayWithObjects:
-                              [HealthItem healthItemOfCategory:@"symptoms" name:@"placebo" common: FALSE],
-                              [HealthItem healthItemOfCategory:@"symptoms" name:@"aspirin" common: TRUE],
-                              [HealthItem healthItemOfCategory:@"conditions" name:@"milk of the poppy" common: FALSE], nil];
+                              [HealthItem healthItemOfCategory:@"symptoms" image:@"common.png" name:@"placebo" common: FALSE],
+                              [HealthItem healthItemOfCategory:@"symptoms" image:@"common.png" name:@"aspirin" common: TRUE],
+                              [HealthItem healthItemOfCategory:@"conditions" image:@"common.png" name:@"milk of the poppy" common: FALSE], nil];
         contentArray = [[NSMutableArray alloc] initWithObjects:conditions, symptoms, medication, nil];
         
     });
@@ -246,6 +238,7 @@
         cell = [[HealthCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
+    
     // Create a new Candy Object
     HealthItem *healthItem = nil;
     if (tableView == self.searchDisplayController.searchResultsTableView) {
@@ -253,9 +246,20 @@
     } else {
         healthItem = [[contentArray objectAtIndex:currentTab] objectAtIndex:indexPath.row];
     }
+    
+    [cell setupWithHealthItem:healthItem];
     // Configure the cell
-    cell.textLabel.text = healthItem.name;
-    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    
+//    cell.textLabel.text = healthItem.name;
+//    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+//    
+//    if (healthItem.common == TRUE) {
+//        [cell setupWithName:@"blah" withStatus:TRUE withImageURL:@"common@2x.png"];
+//    }
+//    else {
+//        [cell setupWithName:@"blah" withStatus:FALSE withImageURL:@"uncommon@2x.png"];
+//    }
+    
     return cell;
     
 }
