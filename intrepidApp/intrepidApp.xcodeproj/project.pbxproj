@@ -29,6 +29,7 @@
 		7E44F8D21788FA4B00AAA32B /* HealthItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E44F8D11788FA4B00AAA32B /* HealthItem.m */; };
 		7E44F8D7178A0D8B00AAA32B /* sun1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E44F8D6178A0D8B00AAA32B /* sun1.jpg */; };
 		7ECD0427178BD7C500D6C34B /* HealthViewDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECD0426178BD7C500D6C34B /* HealthViewDetailController.m */; };
+		7ECD0429178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD0428178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		7E44F8D6178A0D8B00AAA32B /* sun1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sun1.jpg; sourceTree = "<group>"; };
 		7ECD0425178BD7C500D6C34B /* HealthViewDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthViewDetailController.h; path = classes/HealthViewDetailController.h; sourceTree = "<group>"; };
 		7ECD0426178BD7C500D6C34B /* HealthViewDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthViewDetailController.m; path = classes/HealthViewDetailController.m; sourceTree = "<group>"; };
+		7ECD0428178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "descriptionAndSideEffectLogo@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 		688F9E6717862DFD00CF850C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				7ECD0428178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png */,
 				7E44F8D6178A0D8B00AAA32B /* sun1.jpg */,
 				68EDE3A4178A071600085A84 /* menuBack@2x.png */,
 				688F9E6817862EDA00CF850C /* common@2x.png */,
@@ -228,6 +231,7 @@
 				688F9E6B17862EDA00CF850C /* uncommon@2x.png in Resources */,
 				7E44F8D7178A0D8B00AAA32B /* sun1.jpg in Resources */,
 				68EDE3A5178A071600085A84 /* menuBack@2x.png in Resources */,
+				7ECD0429178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

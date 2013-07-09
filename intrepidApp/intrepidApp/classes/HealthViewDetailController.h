@@ -14,6 +14,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *healthItemNameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, strong) IBOutlet UILabel *descriptionDesignationLabel;
+
 @property (nonatomic, strong) NSString *healthItemName;
 @property (nonatomic, strong) NSString *healthItemCategory;
 
@@ -22,5 +23,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *descriptionText;
 @property (weak, nonatomic) IBOutlet UITextView *sideEffectsText;
+
+@property (nonatomic, strong) IBOutlet UILabel *descriptionImageLabel;
+@property (nonatomic, strong) IBOutlet UILabel *sideEffectsImageLabel;
 
 @end
