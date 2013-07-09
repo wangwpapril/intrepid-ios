@@ -38,12 +38,11 @@
     [self addTableViews];
     [self populateContentArray];
     
-    [healthItemSearchBar setBackgroundImage:[UIImage new]];
-    [healthItemSearchBar setTranslucent:YES];
+ 
+    [[UISearchBar appearance] setSearchFieldBackgroundImage:[UIImage imageNamed:@"searchBar.png"]forState:UIControlStateNormal];
+    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setFont:[UIFont fontWithName:APP_FONT size:15]];
     [healthItemSearchBar setPlaceholder:@"Tap to Search"];
     
-    
-    self.filteredHealthItemArray = [NSMutableArray new];
     // Reload the table
     self.navigationItem.title = @"Health";
     mController = [[MenuController alloc] init];
@@ -145,6 +144,7 @@
         contentArray = [[NSMutableArray alloc] initWithObjects:conditions, symptoms, medication, nil];
         
     });
+    self.filteredHealthItemArray = [NSMutableArray new];
 }
 
 - (void)tabSelected:(id)sender {

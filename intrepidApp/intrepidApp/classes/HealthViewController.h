@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MenuController.h"
+#import "HealthSearchBar.h"
 
 @interface HealthViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
 
@@ -19,7 +20,7 @@
 
 @property (strong,nonatomic) NSArray *healthItemArray;
 @property (strong,nonatomic) NSMutableArray *filteredHealthItemArray;
-@property IBOutlet UISearchBar *healthItemSearchBar;
+@property IBOutlet HealthSearchBar *healthItemSearchBar;
 
 //
 //@property (nonatomic, strong) UITableView *conditionsTable;
