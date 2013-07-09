@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HealthItem.h"
 
 @interface HealthCell : UITableViewCell
 
 
--(void)setupWithName:(NSString *)name withStatus:(BOOL)common withImageURL:(NSString *)url;
+-(void)setupWithHealthItem:(HealthItem *)healthItem;
+
 @end

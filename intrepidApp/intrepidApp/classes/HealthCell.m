@@ -7,6 +7,8 @@
 //
 
 #import "HealthCell.h"
+#import "HealthItem.h"
+#import "Constants.h"
 
 @implementation HealthCell
 
@@ -19,15 +21,38 @@
     return self;
 }
 
--(void)setupWithName:(NSString *)name withStatus:(BOOL)common withImageURL:(NSString *)url {
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(200, 0, 107, 42)];
-    NSString *imageName;
-    if (common)
-        imageName = @"common.png";
-    else
-        imageName = @"uncommon.png";
-    imageView.image = [UIImage imageNamed:imageName];
-    [self addSubview:imageView];
+-(void)setupWithHealthItem:(HealthItem *)healthItem {
+    
+    // healthItem image    
+//    UIImageView *healthImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 42, 42)];
+//    NSString *healthImageName;
+//    healthImageName = healthImage.image;
+//    
+//    healthImage.image = [UIImage imageNamed:healthImageName];
+    
+    
+    // common image
+    UIImageView *commonImage = [[UIImageView alloc] initWithFrame:CGRectMake(200, 0, 107, 42)];
+    NSString *commonImageName;
+    
+    if (healthItem.common == TRUE) {
+        commonImageName = @"common.png";
+    }
+    
+    else {
+        commonImageName = @"uncommon.png";
+    }
+    commonImage.image = [UIImage imageNamed:commonImageName];
+    
+    UIImage *image = [UIImage imageNamed:@"sun1.jpg"];
+    self.imageView.image = image;
+    
+    self.textLabel.text = healthItem.name;
+    self.textLabel.font = [UIFont fontWithName:APP_FONT size:15.0];
+    self.textLabel.textColor = APP_TEXT_COLOR;
+    
+    [self addSubview:commonImage];
+//    [self addSubview:healthImage];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
