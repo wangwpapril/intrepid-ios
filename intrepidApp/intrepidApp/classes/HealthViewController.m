@@ -186,7 +186,8 @@
                 offset = -320 * (2- previousTab);
             }
             
-            [self.view addSubview:[tableArray objectAtIndex:currentTab]];
+            //[self.view addSubview:[tableArray objectAtIndex:currentTab]];
+            [self.view insertSubview:[tableArray objectAtIndex:currentTab] belowSubview:mController.menu];
             for (UITableView *tableView in tableArray) {
                 [tableView setFrame:CGRectMake(tableView.frame.origin.x + offset, 70, 320, self.view.frame.size.height - 70)];
             }
