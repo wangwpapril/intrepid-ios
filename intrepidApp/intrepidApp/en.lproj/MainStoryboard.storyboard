@@ -45,6 +45,7 @@
                     <connections>
                         <outlet property="healthItemSearchBar" destination="Cck-lV-cDN" id="8tS-I6-82G"/>
                         <outlet property="searchDisplayController" destination="bgG-Gt-M5h" id="42U-ad-UGl"/>
+                        <segue destination="8Jz-x1-9iz" kind="push" identifier="details" id="Aj3-tf-I3d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfx-gA-B8D" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -60,7 +61,138 @@
             </objects>
             <point key="canvasLocation" x="452" y="70"/>
         </scene>
+        <!--Health View Detail Controller-->
+        <scene sceneID="pvv-Xq-Sdt">
+            <objects>
+                <viewController id="8Jz-x1-9iz" customClass="HealthViewDetailController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eB9-bk-f4t" customClass="UIScrollView">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="header" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hv5-W8-UoJ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="aJs-SE-CVC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMs-GC-8dW">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="DbJ-1g-OGZ"/>
+                                    <constraint firstAttribute="width" constant="155" id="Uf5-vY-lB3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="health type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8L-ta-i9Z">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="PUg-5q-8zK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oTT-aY-eHT" customClass="descriptionText">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="cje-MT-pZE"/>
+                                    <constraint firstAttribute="width" constant="290" id="kEw-n7-rEF"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Side Effects" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoZ-FM-8tn">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="sa9-16-g1I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="health type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pf6-4c-Fl5">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jtY-ko-rcB">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="193" id="htd-Rh-efn"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FoZ-FM-8tn" firstAttribute="top" secondItem="pf6-4c-Fl5" secondAttribute="top" type="default" id="1L1-hp-fr7"/>
+                            <constraint firstItem="jtY-ko-rcB" firstAttribute="top" secondItem="FoZ-FM-8tn" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="2Kf-Qk-r6S"/>
+                            <constraint firstItem="FoZ-FM-8tn" firstAttribute="trailing" secondItem="eMs-GC-8dW" secondAttribute="trailing" type="default" id="4TM-tI-0rl"/>
+                            <constraint firstItem="F8L-ta-i9Z" firstAttribute="top" secondItem="Hv5-W8-UoJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="69N-aW-9bn"/>
+                            <constraint firstItem="Hv5-W8-UoJ" firstAttribute="trailing" secondItem="eB9-bk-f4t" secondAttribute="trailing" type="default" id="Ah5-uI-ZhD"/>
+                            <constraint firstAttribute="trailing" secondItem="jtY-ko-rcB" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="FPa-9h-3lM"/>
+                            <constraint firstItem="pf6-4c-Fl5" firstAttribute="leading" secondItem="F8L-ta-i9Z" secondAttribute="leading" type="default" id="Lxf-AE-tOD"/>
+                            <constraint firstItem="oTT-aY-eHT" firstAttribute="centerX" secondItem="Hv5-W8-UoJ" secondAttribute="centerX" type="default" id="VuU-ch-jaP"/>
+                            <constraint firstItem="oTT-aY-eHT" firstAttribute="top" secondItem="eMs-GC-8dW" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Yqj-cD-ooW"/>
+                            <constraint firstAttribute="trailing" secondItem="pf6-4c-Fl5" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ZHc-KA-g6D"/>
+                            <constraint firstItem="eMs-GC-8dW" firstAttribute="baseline" secondItem="F8L-ta-i9Z" secondAttribute="baseline" type="default" id="bl7-tf-GFI"/>
+                            <constraint firstItem="jtY-ko-rcB" firstAttribute="leading" secondItem="eB9-bk-f4t" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="goj-Ve-LH6"/>
+                            <constraint firstAttribute="bottom" secondItem="jtY-ko-rcB" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="hCa-N5-YdD"/>
+                            <constraint firstItem="Hv5-W8-UoJ" firstAttribute="top" secondItem="eB9-bk-f4t" secondAttribute="top" type="default" id="j7C-tq-Wap"/>
+                            <constraint firstItem="eMs-GC-8dW" firstAttribute="top" secondItem="Hv5-W8-UoJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="k8G-Ir-vrq"/>
+                            <constraint firstItem="FoZ-FM-8tn" firstAttribute="leading" secondItem="eMs-GC-8dW" secondAttribute="leading" type="default" id="lYI-vn-BYe"/>
+                            <constraint firstItem="eMs-GC-8dW" firstAttribute="leading" secondItem="eB9-bk-f4t" secondAttribute="leading" constant="5" id="nHK-ED-Q2W"/>
+                            <constraint firstItem="pf6-4c-Fl5" firstAttribute="baseline" secondItem="FoZ-FM-8tn" secondAttribute="baseline" type="default" id="nty-Yf-QdA"/>
+                            <constraint firstAttribute="trailing" secondItem="F8L-ta-i9Z" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="pLg-cV-MOV"/>
+                            <constraint firstItem="Hv5-W8-UoJ" firstAttribute="leading" secondItem="eB9-bk-f4t" secondAttribute="leading" type="default" id="yIf-bv-Nmd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="deZ-eK-uWZ"/>
+                    <connections>
+                        <outlet property="descriptionDesignationLabel" destination="F8L-ta-i9Z" id="pRu-f0-AkH"/>
+                        <outlet property="descriptionLabel" destination="eMs-GC-8dW" id="NKw-gy-HSi"/>
+                        <outlet property="descriptionText" destination="oTT-aY-eHT" id="A3N-Mj-gYm"/>
+                        <outlet property="healthItemNameLabel" destination="Hv5-W8-UoJ" id="NCM-MK-X9D"/>
+                        <outlet property="sideEffectsDesignationLabel" destination="pf6-4c-Fl5" id="ayb-ME-C6X"/>
+                        <outlet property="sideEffectsLabel" destination="FoZ-FM-8tn" id="Cme-tk-fcj"/>
+                        <outlet property="sideEffectsText" destination="jtY-ko-rcB" id="hFL-WW-4EB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X8J-S2-3Nq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="887" y="77"/>
+        </scene>
     </scenes>
+    <classes>
+        <class className="HealthViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HealthViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="healthItemSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="HealthViewDetailController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HealthViewDetailController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="descriptionDesignationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="descriptionText" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="healthItemNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sideEffectsDesignationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sideEffectsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sideEffectsText" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

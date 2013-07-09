@@ -15,15 +15,13 @@
 @implementation HealthItem
 
 @synthesize category;
-@synthesize image;
 @synthesize name;
 @synthesize common;
 
-+(id)healthItemOfCategory:(NSString *)category image:(UIImage *)image name:(NSString *)name common:(BOOL)common
++(id)healthItemOfCategory:(NSString *)category name:(NSString *)name common:(BOOL)common
 {
     HealthItem *newHealthItem = [[self alloc] init];
     newHealthItem.category = category;
-    newHealthItem.image = image;
     newHealthItem.name = name;
     newHealthItem.common = common;
     return newHealthItem;

@@ -12,6 +12,7 @@
 #import "HealthCell.h"
 #import "HealthItem.h"
 #import "MenuController.h"
+#import "HealthViewDetailController.h"
 
 @implementation HealthViewController
 
@@ -22,7 +23,7 @@
 @synthesize previousTab;
 @synthesize mController;
 
-
+@synthesize selectedItem;
 @synthesize healthItemArray;
 @synthesize filteredHealthItemArray;
 @synthesize healthItemSearchBar;
@@ -41,6 +42,7 @@
     [healthItemSearchBar setBackgroundImage:[UIImage new]];
     [healthItemSearchBar setTranslucent:YES];
     [healthItemSearchBar setPlaceholder:@"Tap to Search"];
+    healthItemSearchBar.tintColor = [UIColor colorWithWhite:0.8 alpha:1.0];
     
     
     self.filteredHealthItemArray = [NSMutableArray new];
@@ -101,10 +103,11 @@
     tableArray = [NSMutableArray new];
     int i = 0;
     while (i < 3) {
-        UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake((i-1)*320, 70, 320, self.view.frame.size.height - 70) style:UITableViewStylePlain];
+        UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake((i-1)*320, 80, 320, self.view.frame.size.height - 80) style:UITableViewStylePlain];
         table.rowHeight = 45;
         table.tag = i;
         table.dataSource = self;
+        table.delegate = self;
         table.backgroundColor = [UIColor whiteColor];
         table.alpha = 0.8;
         [tableArray addObject:table];
@@ -127,21 +130,22 @@
                                              (unsigned long)NULL), ^(void) {        
         
        NSArray *conditions = [NSArray arrayWithObjects:
-                              [HealthItem healthItemOfCategory:@"conditions" image:@"common.png" name:@"dang-it fever" common: TRUE],
-                           [HealthItem healthItemOfCategory:@"conditions" image:@"common.png" name:@"dieaggoriea" common: FALSE],
-                              [HealthItem healthItemOfCategory:@"conditions" image:@"common.png" name:@"death" common: TRUE], nil];
+                              [HealthItem healthItemOfCategory:@"conditions" name:@"dang-it fever" common: TRUE],
+                           [HealthItem healthItemOfCategory:@"conditions" name:@"dieaggoriea" common: FALSE],
+                              [HealthItem healthItemOfCategory:@"conditions" name:@"death" common: TRUE], nil];
                               
                         
         NSArray *symptoms  = [NSArray arrayWithObjects:
-                            [HealthItem healthItemOfCategory:@"symptoms" image:@"common.png" name:@"constipation" common: FALSE],
-                           [HealthItem healthItemOfCategory:@"symptoms" image:@"common.png" name:@"heartburn" common: TRUE],
-                           [HealthItem healthItemOfCategory:@"conditions" image:@"common.png" name:@"stomach ache" common: FALSE], nil];
+                            [HealthItem healthItemOfCategory:@"symptoms" name:@"constipation" common: FALSE],
+                           [HealthItem healthItemOfCategory:@"symptoms" name:@"heartburn" common: TRUE],
+                           [HealthItem healthItemOfCategory:@"symptoms" name:@"stomach ache" common: FALSE], nil];
      
         
         NSArray *medication  = [NSArray arrayWithObjects:
-                              [HealthItem healthItemOfCategory:@"symptoms" image:@"common.png" name:@"placebo" common: FALSE],
-                              [HealthItem healthItemOfCategory:@"symptoms" image:@"common.png" name:@"aspirin" common: TRUE],
-                              [HealthItem healthItemOfCategory:@"conditions" image:@"common.png" name:@"milk of the poppy" common: FALSE], nil];
+                              [HealthItem healthItemOfCategory:@"medications" name:@"placebo" common: FALSE],
+                              [HealthItem healthItemOfCategory:@"medications" name:@"aspirin" common: TRUE],
+                              [HealthItem healthItemOfCategory:@"medications" name:@"milk of the poppy" common: FALSE], nil];
+        
         contentArray = [[NSMutableArray alloc] initWithObjects:conditions, symptoms, medication, nil];
         
     });
@@ -188,7 +192,7 @@
             
             [self.view addSubview:[tableArray objectAtIndex:currentTab]];
             for (UITableView *tableView in tableArray) {
-                [tableView setFrame:CGRectMake(tableView.frame.origin.x + offset, 70, 320, self.view.frame.size.height - 70)];
+                [tableView setFrame:CGRectMake(tableView.frame.origin.x + offset, 80, 320, self.view.frame.size.height - 80)];
             }
         }
         completion:^(BOOL finished){
@@ -212,27 +216,7 @@
     } else {
         return [[contentArray objectAtIndex:currentTab] count];
     }
-    
-//    return [[contentArray objectAtIndex:currentTab] count];
-//    NSLog(@"tableview #ofrows tag: %i", tableView.tag);
-//    return [[contentArray objectAtIndex:tableView.tag] count];
 }
-
-//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    NSLog(@"makin CELL HO");
-//    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell"];
-//    HealthCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    
-//    if(cell == nil) {
-//        cell = [[HealthCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-//    }
-//    
-//    cell.textLabel.text = [[contentArray objectAtIndex:tableView.tag] objectAtIndex:indexPath.row];
-//    [cell setupWithName:@"blah" withStatus:TRUE withImageURL:@"bleh"];
-//    return cell;
-//}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -253,20 +237,20 @@
     }
     
     [cell setupWithHealthItem:healthItem];
-    // Configure the cell
-    
-//    cell.textLabel.text = healthItem.name;
-//    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-//    
-//    if (healthItem.common == TRUE) {
-//        [cell setupWithName:@"blah" withStatus:TRUE withImageURL:@"common@2x.png"];
-//    }
-//    else {
-//        [cell setupWithName:@"blah" withStatus:FALSE withImageURL:@"uncommon@2x.png"];
-//    }
-    
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    selectedItem = (HealthItem *)[[contentArray objectAtIndex:currentTab] objectAtIndex:indexPath.row];
+//    [self.navigationController pushViewController:controller animated:YES];
+    [self performSegueWithIdentifier:@"details" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    HealthViewDetailController *controller = segue.destinationViewController;
+    controller.healthItemName = selectedItem.name;
+    controller.healthItemCategory = selectedItem.category;
 }
 
 #pragma mark Content Filtering

@@ -23,14 +23,6 @@
 
 -(void)setupWithHealthItem:(HealthItem *)healthItem {
     
-    // healthItem image    
-//    UIImageView *healthImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 42, 42)];
-//    NSString *healthImageName;
-//    healthImageName = healthImage.image;
-//    
-//    healthImage.image = [UIImage imageNamed:healthImageName];
-    
-    
     // common image
     UIImageView *commonImage = [[UIImageView alloc] initWithFrame:CGRectMake(200, 0, 107, 42)];
     NSString *commonImageName;
