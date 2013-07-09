@@ -12,6 +12,9 @@
 
 @property (nonatomic, strong) UIViewController *parentController;
 @property (nonatomic, strong) UIImageView *menu;
+@property (nonatomic) NSInteger viewHeight;
+@property (nonatomic) CGRect botPosition;
+@property (nonatomic) BOOL hiding;
 
 -(void)displayMenuWithParent:(UIViewController *)controller;
 

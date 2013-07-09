@@ -39,13 +39,12 @@
     [self addTableViews];
     [self populateContentArray];
     
-    [healthItemSearchBar setBackgroundImage:[UIImage new]];
-    [healthItemSearchBar setTranslucent:YES];
+ 
+    [[UISearchBar appearance] setSearchFieldBackgroundImage:[UIImage imageNamed:@"searchBar.png"]forState:UIControlStateNormal];
+    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setFont:[UIFont fontWithName:APP_FONT size:15]];
     [healthItemSearchBar setPlaceholder:@"Tap to Search"];
     healthItemSearchBar.tintColor = [UIColor colorWithWhite:0.8 alpha:1.0];
     
-    
-    self.filteredHealthItemArray = [NSMutableArray new];
     // Reload the table
     self.navigationItem.title = @"Health";
     mController = [[MenuController alloc] init];
@@ -149,6 +148,7 @@
         contentArray = [[NSMutableArray alloc] initWithObjects:conditions, symptoms, medication, nil];
         
     });
+    self.filteredHealthItemArray = [NSMutableArray new];
 }
 
 - (void)tabSelected:(id)sender {
@@ -190,7 +190,8 @@
                 offset = -320 * (2- previousTab);
             }
             
-            [self.view addSubview:[tableArray objectAtIndex:currentTab]];
+            //[self.view addSubview:[tableArray objectAtIndex:currentTab]];
+            [self.view insertSubview:[tableArray objectAtIndex:currentTab] belowSubview:mController.menu];
             for (UITableView *tableView in tableArray) {
                 [tableView setFrame:CGRectMake(tableView.frame.origin.x + offset, 80, 320, self.view.frame.size.height - 80)];
             }

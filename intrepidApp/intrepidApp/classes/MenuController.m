@@ -14,13 +14,18 @@
 
 @synthesize parentController;
 @synthesize menu;
+@synthesize viewHeight;
+@synthesize botPosition;
+@synthesize hiding;
 
 -(void)displayMenuWithParent:(UIViewController *)controller {
     parentController = controller;
     NSLog(@"screen height: %f", controller.view.frame.size.height);
-    menu = [[UIImageView alloc] initWithFrame:CGRectMake(0, controller.view.frame.size.height - 70, 320, 250)];
+    viewHeight = controller.view.frame.size.height;
+    botPosition = CGRectMake(0, viewHeight - 70, 320, 250);
+    menu = [[UIImageView alloc] initWithFrame:botPosition];
+    hiding = true;
     menu.layer.zPosition = MAXFLOAT;
-//    [menu setBackgroundColor:[UIColor colorWithRed:86.0/255 green:78.0/255 blue:76.0/255 alpha:0.9]];
     menu.image = [UIImage imageNamed:@"menuBack.png"];
     [self addContentButtons];
     menu.userInteractionEnabled = YES;
@@ -31,11 +36,29 @@
 }
 
 - (IBAction)handleDrag:(UIPanGestureRecognizer *)recognizer {
-    NSLog(@"drag nikkuh");
     CGPoint translation = [recognizer translationInView:parentController.view];
-    recognizer.view.center = CGPointMake(recognizer.view.center.x,
-                                         recognizer.view.center.y + translation.y);
-    [recognizer setTranslation:CGPointMake(0, 0) inView:parentController.view];
+    float nextPos = menu.frame.origin.y + translation.y;
+    BOOL touchIsOver = (recognizer.state == UIGestureRecognizerStateEnded);
+    NSLog(@"current position: %f, viewheight: %i", nextPos, viewHeight);
+    if (nextPos > viewHeight - 195 && (!hiding || touchIsOver)) {
+        NSLog(@"pop bot");
+        [UIView animateWithDuration:0.2 animations:^ {
+            menu.frame = botPosition;
+            hiding = true;
+        }];
+    }
+    else if (nextPos < viewHeight - 195 && (hiding || touchIsOver)) {
+        [UIView animateWithDuration:0.2 animations:^ {
+            menu.frame = CGRectMake(0, viewHeight - 294, 320, 250);
+        }];
+        NSLog(@"pop up");
+        hiding = false;
+    }
+    else {
+        recognizer.view.center = CGPointMake(recognizer.view.center.x,
+                                             recognizer.view.center.y + translation.y);
+        [recognizer setTranslation:CGPointMake(0, 0) inView:parentController.view];
+    }
 }
 
 -(void)addContentButtons {
@@ -48,13 +71,15 @@
 
 }
 
--(void)goToController{
-    NSLog(@"off 2 controller");
+-(void)goToController:(id)sender{
+    UIButton *button = (UIButton *)sender;
+    NSLog(@"off 2 controller with tag: %i", button.tag);
 }
 
 -(void)makeContentButtonWithImage:(NSString *)image withOrigin:(CGPoint)origin withTag:(NSInteger)tag{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     NSInteger size = 100;
+    button.tag = tag;
     // buttons in the middle are fatter
     if (tag == 1 || tag == 4) {
         size = 120;
@@ -62,7 +87,7 @@
     button.frame = CGRectMake(origin.x, origin.y, size, 80);
     button.backgroundColor = [UIColor clearColor];
     [menu addSubview:button];
-    [button addTarget:self action:@selector(goToController) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(goToController:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 @end
