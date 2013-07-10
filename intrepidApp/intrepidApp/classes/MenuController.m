@@ -25,7 +25,7 @@
     botPosition = CGRectMake(0, viewHeight - 70, 320, 250);
     menu = [[UIImageView alloc] initWithFrame:botPosition];
     hiding = true;
-    menu.layer.zPosition = MAXFLOAT;
+//    menu.layer.zPosition = MAXFLOAT;
     menu.image = [UIImage imageNamed:@"menuBack.png"];
     [self addContentButtons];
     menu.userInteractionEnabled = YES;
@@ -39,19 +39,16 @@
     CGPoint translation = [recognizer translationInView:parentController.view];
     float nextPos = menu.frame.origin.y + translation.y;
     BOOL touchIsOver = (recognizer.state == UIGestureRecognizerStateEnded);
-    NSLog(@"current position: %f, viewheight: %i", nextPos, viewHeight);
-    if (nextPos > viewHeight - 195 && (!hiding || touchIsOver)) {
-        NSLog(@"pop bot");
+    if (nextPos > viewHeight - 195 && (!hiding || touchIsOver || nextPos > viewHeight - 70)) {
         [UIView animateWithDuration:0.2 animations:^ {
             menu.frame = botPosition;
             hiding = true;
         }];
     }
-    else if (nextPos < viewHeight - 195 && (hiding || touchIsOver)) {
+    else if (nextPos < viewHeight - 195 && (hiding || touchIsOver || nextPos < viewHeight - 294)) {
         [UIView animateWithDuration:0.2 animations:^ {
             menu.frame = CGRectMake(0, viewHeight - 294, 320, 250);
         }];
-        NSLog(@"pop up");
         hiding = false;
     }
     else {
