@@ -72,13 +72,13 @@
         NSString *title;
         switch (i) {
             case 0:
-                title = @"Conditions";
+                title = @"CONDITIONS";
                 break;
             case 1:
-                title = @"Symptoms";
+                title = @"SYMPTOMS";
                 break;
             case 2:
-                title = @"Medications";
+                title = @"MEDICATIONS";
                 break;
                 
             default:
@@ -86,8 +86,16 @@
         }
         [tab setTitle:title forState:UIControlStateNormal];
         [tab setTitleColor:NAVIGATION_TEXT_COLOR forState:UIControlStateNormal];
-        tab.titleLabel.font = [UIFont fontWithName:APP_FONT size:15];
+        tab.titleLabel.font = [UIFont fontWithName:APP_FONT size:12];
         [tab setBackgroundColor:NAVIGATION_BG_COLOR];
+        CAGradientLayer *btnGradient = [CAGradientLayer layer];
+        btnGradient.frame = tab.bounds;
+        btnGradient.colors = [NSArray arrayWithObjects:
+                              (id)[[UIColor colorWithRed:102.0f / 255.0f green:102.0f / 255.0f blue:102.0f / 255.0f alpha:1.0f] CGColor],
+                              (id)[[UIColor colorWithRed:51.0f / 255.0f green:51.0f / 255.0f blue:51.0f / 255.0f alpha:1.0f] CGColor],
+                              nil];
+        [tab.layer insertSublayer:btnGradient atIndex:0];
+        
         tab.tag = i; // for tracking which one is clicked
         [tab addTarget:self action:@selector(tabSelected:) forControlEvents:UIControlEventTouchUpInside];
         [tabArray addObject:tab];
@@ -152,19 +160,18 @@
 }
 
 - (void)tabSelected:(id)sender {
-    NSLog(@"tab selected");
     UIButton *clickedTab = (UIButton *)sender;
     previousTab = currentTab;
     for (UIButton *tab in tabArray) {
         // select that tab
         if (tab.tag == clickedTab.tag) {
-            [tab setTitleColor:NAVIGATION_BG_COLOR forState:UIControlStateNormal];
-            [tab setBackgroundColor:NAVIGATION_TEXT_COLOR];
+            [tab setTitleColor:NAVIGATION_TEXT_COLOR forState:UIControlStateNormal];
+            [tab setBackgroundColor:NAVIGATION_BG_COLOR];
         }
         
         // make sure tab is inactive
         else {
-            [tab setTitleColor:NAVIGATION_TEXT_COLOR forState:UIControlStateNormal];
+            [tab setTitleColor:NAVIGATION_TEXT_OFF_COLOR forState:UIControlStateNormal];
             [tab setBackgroundColor:NAVIGATION_BG_COLOR];
         }
     }

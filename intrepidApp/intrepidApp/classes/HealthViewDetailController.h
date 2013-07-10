@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 
-@interface HealthViewDetailController : UIViewController
+@interface HealthViewDetailController : UIViewController {    
+    IBOutlet UIScrollView *scrollView;
+}
 
 @property (nonatomic, strong) IBOutlet UILabel *healthItemNameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *descriptionLabel;
