@@ -5,12 +5,6 @@
 //  Created by Madelaine Page on 2013-07-09.
 //  Copyright (c) 2013 JonCarrHarris Consulting. All rights reserved.
 //
-
-#define UIColorFromRGB(rgbValue) [UIColor \
-colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
-green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
-blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-
 #import "HealthViewDetailController.h"
 #import "HealthViewController.h"
 #import "HealthItem.h"
@@ -20,6 +14,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @implementation HealthViewDetailController
 
 @synthesize healthItemNameLabel;
+@synthesize healthItemTitleLabel;
 @synthesize healthItemName;
 @synthesize healthItemCategory;
 
@@ -47,65 +42,98 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [self.view addSubview:scrollView];
+    [self.view addSubview:healthItemNameLabel];
     
     [self addDescription];
     [self addSideEffects];
     
-    descriptionImageLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"descriptionAndSideEffectLogo.png"]];
+    [scrollView setScrollEnabled:YES];
+    [scrollView setContentSize:CGSizeMake(320, 530)];
+    
+    //Change appearance of backbutton
+    self.navigationItem.hidesBackButton=YES;
+    UIButton *back = [[UIButton alloc] initWithFrame:CGRectMake(15, 7, 49, 29)];
+    [back setImage:[UIImage imageNamed:@"back-button.png"] forState:UIControlStateNormal];
+    [back addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *back1 = [[UIBarButtonItem alloc] initWithCustomView:back];
+    self.navigationItem.leftBarButtonItem = back1;
+
+    //Description and Side Effects images
+    descriptionImageLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"stethoscope-pic.png"]];
     descriptionImageLabel.text = NULL;
     
-    sideEffectsImageLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"descriptionAndSideEffectLogo.png"]];
+    //Check which type of sideEffect it is
+    if ([healthItemCategory isEqualToString:@"symptoms"]) {
+        sideEffectsImageLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"heart-rate-pic.png"]];
+    }
+    else if ([healthItemCategory isEqualToString:@"conditions"]) {
+        sideEffectsImageLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"conditions-pic.png"]];
+    }
+    else {
+    sideEffectsImageLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"medication-pic.png"]];
+    }
     sideEffectsImageLabel.text = NULL;
 
     
     self.view.backgroundColor = UIColorFromRGB(0xffffff);
     
+    // Set Header label    
+//    CAGradientLayer *healthItemGradient = [CAGradientLayer layer];
+//    healthItemGradient.frame = healthItemNameLabel.bounds;
+//    healthItemGradient.colors = [NSArray arrayWithObjects:
+//                          (id)[[UIColor colorWithRed:102.0f / 255.0f green:102.0f / 255.0f blue:102.0f / 255.0f alpha:1.0f] CGColor],
+//                          (id)[[UIColor colorWithRed:51.0f / 255.0f green:51.0f / 255.0f blue:51.0f / 255.0f alpha:1.0f] CGColor],
+//                          nil];
+//    [healthItemNameLabel.layer insertSublayer:healthItemGradient atIndex:0];
     
-    healthItemNameLabel.text = healthItemName;
-    healthItemNameLabel.font = [UIFont fontWithName:APP_FONT size:20];
-    healthItemNameLabel.textAlignment = NSTextAlignmentCenter;
-    
-    //change background colour of header label
-    if ([healthItemCategory isEqual: @"symptoms"]) {
-        healthItemNameLabel.backgroundColor = UIColorFromRGB(0xfbedeb);
-    }
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = self.healthItemNameLabel.bounds;
+    gradientLayer.colors = [NSArray arrayWithObjects:
+                            (id)[[UIColor colorWithRed:102.0f / 255.0f green:102.0f / 255.0f blue:102.0f / 255.0f alpha:1.0f] CGColor],
+                            (id)[[UIColor colorWithRed:51.0f / 255.0f green:51.0f / 255.0f blue:51.0f / 255.0f alpha:1.0f] CGColor],
+                            nil];
+    [self.view.layer insertSublayer:gradientLayer atIndex:0];
+    healthItemNameLabel.text = NULL;
 
-    else if (([healthItemCategory isEqual: @"conditions"])) {
-        healthItemNameLabel.backgroundColor = UIColorFromRGB(0xecebeb);
-    }
-    
-    else {
-        healthItemNameLabel.backgroundColor = UIColorFromRGB(0xecf8f9);
-    }    
+    NSString *uppercaseString = [healthItemName uppercaseString];
+    healthItemTitleLabel.text = uppercaseString;
+    healthItemTitleLabel.font = [UIFont fontWithName:APP_FONT size:16];
+    healthItemTitleLabel.textAlignment = NSTextAlignmentCenter;
+    healthItemTitleLabel.backgroundColor = [UIColor clearColor];
+    healthItemTitleLabel.textColor = UIColorFromRGB(0xeaf0e6);
+
     
 	// Do any additional setup after loading the view.
+}
+
+-(void)back {
+    // Tell the controller to go back
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)addDescription {
     
     descriptionLabel.font = [UIFont fontWithName:APP_FONT size:17];
     descriptionLabel.backgroundColor = UIColorFromRGB(0xffffff);
-    descriptionLabel.textAlignment = NSTextAlignmentRight;
-    
-    descriptionDesignationLabel.font = [UIFont fontWithName:APP_FONT size:12];
-    descriptionDesignationLabel.backgroundColor = UIColorFromRGB(0xffffff);
-    [descriptionDesignationLabel setAlpha:0.3];
-    descriptionDesignationLabel.textAlignment = NSTextAlignmentRight;
-    
-    //Set descriptionDesignationName in UILabel
-    NSString *descriptionDesignationName;    
-    descriptionDesignationName = [healthItemCategory substringToIndex:[healthItemCategory length]-1];
-    descriptionDesignationLabel.text = descriptionDesignationName;
     
     //Set descriptionText to auto-fit content
-    descriptionText.font = [UIFont fontWithName:APP_FONT size:12];
+    descriptionText.font = [UIFont fontWithName:APP_FONT size:13];
     descriptionText.backgroundColor = UIColorFromRGB(0xffffff);
-    [descriptionText setAlpha:0.4];
+    [descriptionText setAlpha:0.5];
+    descriptionText.layer.borderWidth = 1.0f;
+    descriptionText.layer.borderColor = [[UIColor grayColor] CGColor];
     
-//    CGRect frame = descriptionText.frame;
-//    UIEdgeInsets inset = descriptionText.contentInset;
-//    frame.size.height = descriptionText.contentSize.height + inset.top + inset.bottom;
-//    descriptionText.frame = frame;
+    //Inset the descriptionText content
+    descriptionText.contentInset = UIEdgeInsetsMake(0, 15.0f, 0, 0);
+    
+    CGRect frame = descriptionText.frame;
+    UIEdgeInsets inset = descriptionText.contentInset;
+    frame.size.height = descriptionText.contentSize.height + inset.top + inset.bottom;
+    descriptionText.frame = frame;
+
 }
 
 
@@ -113,23 +141,17 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     
     sideEffectsLabel.font = [UIFont fontWithName:APP_FONT size:17];
     sideEffectsLabel.backgroundColor = UIColorFromRGB(0xffffff);
-    sideEffectsLabel.textAlignment = NSTextAlignmentRight;
     
-    sideEffectsDesignationLabel.font = [UIFont fontWithName:APP_FONT size:12];
-    sideEffectsDesignationLabel.backgroundColor = UIColorFromRGB(0xffffff);
-    [sideEffectsDesignationLabel setAlpha:0.3];
-    sideEffectsDesignationLabel.textAlignment = NSTextAlignmentRight;
-    
-    sideEffectsDesignationLabel.text = descriptionDesignationLabel.text;
-    
-    sideEffectsText.font = [UIFont fontWithName:APP_FONT size:12];
+    sideEffectsText.font = [UIFont fontWithName:APP_FONT size:13];
     sideEffectsText.backgroundColor = UIColorFromRGB(0xffffff);
-    [sideEffectsText setAlpha:0.4];
+    [sideEffectsText setAlpha:0.5];
+    sideEffectsText.layer.borderWidth = 1.0f;
+    sideEffectsText.layer.borderColor = [[UIColor grayColor] CGColor];
     
-//    CGRect frame = sideEffectsText.frame;
-//    UIEdgeInsets inset = sideEffectsText.contentInset;
-//    frame.size.height = sideEffectsText.contentSize.height + inset.top + inset.bottom;
-//    sideEffectsText.frame = frame;
+    CGRect frame = sideEffectsText.frame;
+    UIEdgeInsets inset = sideEffectsText.contentInset;
+    frame.size.height = sideEffectsText.contentSize.height + inset.top + inset.bottom;
+    sideEffectsText.frame = frame;
     
     
 }

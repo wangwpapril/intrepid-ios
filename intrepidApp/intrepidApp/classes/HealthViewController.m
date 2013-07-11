@@ -17,16 +17,22 @@
 @implementation HealthViewController
 
 @synthesize tabArray;
+@synthesize largeLetterArray;
 @synthesize contentArray;
 @synthesize tableArray;
 @synthesize currentTab;
 @synthesize previousTab;
 @synthesize mController;
+@synthesize line;
 
 @synthesize selectedItem;
 @synthesize healthItemArray;
 @synthesize filteredHealthItemArray;
 @synthesize healthItemSearchBar;
+
+@synthesize navLabelC;
+@synthesize navLabelM;
+@synthesize navLabelS;
 //@synthesize conditionsTable;
 //@synthesize symptomsTable;
 //@synthesize medicationsTable;
@@ -45,11 +51,25 @@
     [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setFont:[UIFont fontWithName:APP_FONT size:15]];
     [healthItemSearchBar setPlaceholder:@"Tap to Search"];
     healthItemSearchBar.tintColor = [UIColor colorWithWhite:0.8 alpha:1.0];
+    healthItemSearchBar.frame = CGRectMake(0, 38, 330, 45);
     
     // Reload the table
     self.navigationItem.title = @"Health";
     mController = [[MenuController alloc] init];
     [mController displayMenuWithParent:self];
+    
+    //add large letters to navigation bar
+    largeLetterArray = [NSMutableArray new];
+    
+    [self capitalLabel:navLabelC withLetter:@"C"];
+    [navLabelC setTextColor:NAVIGATION_TEXT_OFF_COLOR];
+    
+    [self capitalLabel:navLabelS withLetter:@"S"];
+    [navLabelS setTextColor:NAVIGATION_TEXT_COLOR];
+    
+    [self capitalLabel:navLabelM withLetter:@"M"];
+    [navLabelM setTextColor:NAVIGATION_TEXT_OFF_COLOR];
+
     
 }
 
@@ -61,7 +81,16 @@
 
 # pragma mark - UI Setup
 
+-(void)capitalLabel:(UILabel *)label withLetter:(NSString *)letter {
+    label.text = letter;
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont fontWithName:APP_FONT size:14];
+    [self.view addSubview:label];
+    [largeLetterArray addObject:label];
+}
+
 - (void)addTabs {
+    
     int i = 0;
     tabArray = [NSMutableArray new];
     
@@ -73,13 +102,13 @@
         NSString *title;
         switch (i) {
             case 0:
-                title = @"Conditions";
+                title = @"ONDITIONS";
                 break;
             case 1:
-                title = @"Symptoms";
+                title = @"YMPTOMS";
                 break;
             case 2:
-                title = @"Medications";
+                title = @"EDICATIONS";
                 break;
                 
             default:
@@ -87,8 +116,16 @@
         }
         [tab setTitle:title forState:UIControlStateNormal];
         [tab setTitleColor:NAVIGATION_TEXT_COLOR forState:UIControlStateNormal];
-        tab.titleLabel.font = [UIFont fontWithName:APP_FONT size:15];
+        tab.titleLabel.font = [UIFont fontWithName:APP_FONT size:12];
         [tab setBackgroundColor:NAVIGATION_BG_COLOR];
+        CAGradientLayer *btnGradient = [CAGradientLayer layer];
+        btnGradient.frame = tab.bounds;
+        btnGradient.colors = [NSArray arrayWithObjects:
+                              (id)[[UIColor colorWithRed:102.0f / 255.0f green:102.0f / 255.0f blue:102.0f / 255.0f alpha:1.0f] CGColor],
+                              (id)[[UIColor colorWithRed:51.0f / 255.0f green:51.0f / 255.0f blue:51.0f / 255.0f alpha:1.0f] CGColor],
+                              nil];
+        [tab.layer insertSublayer:btnGradient atIndex:0];
+        
         tab.tag = i; // for tracking which one is clicked
         [tab addTarget:self action:@selector(tabSelected:) forControlEvents:UIControlEventTouchUpInside];
         [tabArray addObject:tab];
@@ -108,13 +145,19 @@
     swipeRight.numberOfTouchesRequired = 1;
     swipeRight.direction = (UISwipeGestureRecognizerDirectionRight);
     [self.view addGestureRecognizer:swipeRight];
+    
+    // create line
+    line = [[UILabel alloc] init];
+    line.backgroundColor = NAVIGATION_TEXT_COLOR;
+    line.frame = CGRectMake(117, 27, 80, 1);
+    [self.view addSubview:line];
 }
 
 - (void) addTableViews {
     tableArray = [NSMutableArray new];
     int i = 0;
     while (i < 3) {
-        UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake((i-1)*320, 80, 320, self.view.frame.size.height - 80) style:UITableViewStylePlain];
+        UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake((i-1)*320, 79, 320, self.view.frame.size.height - 79) style:UITableViewStylePlain];
         table.rowHeight = 45;
         table.tag = i;
         table.dataSource = self;
@@ -185,24 +228,40 @@
     
 -(void)switchTabs:(NSInteger)newTag{
     previousTab = currentTab;
+    NSInteger index = 0;
+    NSInteger lineX;
     for (UIButton *tab in tabArray) {
+        
+        // capital letter
+        UILabel *capitalLetter = ((UILabel *)[largeLetterArray objectAtIndex:index]);
         // select that tab
+
         if (tab.tag == newTag) {
-            [tab setTitleColor:NAVIGATION_BG_COLOR forState:UIControlStateNormal];
-            [tab setBackgroundColor:NAVIGATION_TEXT_COLOR];
+            [tab setTitleColor:NAVIGATION_TEXT_COLOR forState:UIControlStateNormal];
+            [capitalLetter setTextColor:NAVIGATION_TEXT_COLOR];
+            [tab setBackgroundColor:NAVIGATION_BG_COLOR];
+            lineX = 107 * index + 10;
+            
         }
         
         // make sure tab is inactive
         else {
-            [tab setTitleColor:NAVIGATION_TEXT_COLOR forState:UIControlStateNormal];
+            [tab setTitleColor:NAVIGATION_TEXT_OFF_COLOR forState:UIControlStateNormal];
+            [capitalLetter setTextColor:NAVIGATION_TEXT_OFF_COLOR];
             [tab setBackgroundColor:NAVIGATION_BG_COLOR];
         }
+        index++;
     }
     if (currentTab !=newTag) {
+        
+        NSLog(@"lineX: %i", lineX);
+        line.frame = CGRectMake(lineX, 27, 1, 1);
+        
         UIButton *chosenOne = ((UIButton *)[tabArray objectAtIndex:newTag]);
         chosenOne.userInteractionEnabled = NO;
         currentTab = newTag;
         [UIView animateWithDuration:0.3 animations:^{
+            line.frame = CGRectMake(lineX, 27, 80, 1);
             NSInteger offset;
             if (currentTab == 0) {
                 offset = 320 * previousTab;
@@ -224,7 +283,7 @@
             //[self.view addSubview:[tableArray objectAtIndex:currentTab]];
             [self.view insertSubview:[tableArray objectAtIndex:currentTab] belowSubview:mController.menu];
             for (UITableView *tableView in tableArray) {
-                [tableView setFrame:CGRectMake(tableView.frame.origin.x + offset, 80, 320, self.view.frame.size.height - 80)];
+                [tableView setFrame:CGRectMake(tableView.frame.origin.x + offset, 79, 320, self.view.frame.size.height - 79)];
             }
         }
         completion:^(BOOL finished){
@@ -260,7 +319,6 @@
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     
-    // Create a new Candy Object
     HealthItem *healthItem = nil;
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         healthItem = [filteredHealthItemArray objectAtIndex:indexPath.row];

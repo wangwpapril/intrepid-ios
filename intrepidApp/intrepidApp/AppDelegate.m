@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Constants.h"
 
 @implementation AppDelegate
 
@@ -14,8 +15,24 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
+- (void)customizeAppearance
+{
+    UIImage *image = [UIImage imageNamed:@"top-nav-bar.png"];
+    [[UINavigationBar appearance] setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor colorWithRed:66/255.0f green:58/255.0f blue:56/255.0f alpha:1.0f],
+      UITextAttributeTextColor,
+      [UIFont fontWithName:APP_FONT size:18],
+      UITextAttributeFont,
+      nil]];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self customizeAppearance];
+    
 //    // Override point for customization after application launch.
 //    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
 //    MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
