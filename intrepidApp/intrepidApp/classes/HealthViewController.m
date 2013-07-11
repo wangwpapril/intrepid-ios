@@ -96,6 +96,31 @@
     }
     currentTab = 1;
     [self tabSelected:[tabArray objectAtIndex:1]];
+    
+    // swipe to switch tabs
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedLeft:)];
+    swipeLeft.numberOfTouchesRequired = 1;
+    swipeLeft.direction = (UISwipeGestureRecognizerDirectionLeft);
+    [self.view addGestureRecognizer:swipeLeft];
+    
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedRight:)];
+    swipeRight.numberOfTouchesRequired = 1;
+    swipeRight.direction = (UISwipeGestureRecognizerDirectionRight);
+    [self.view addGestureRecognizer:swipeRight];
+}
+
+- (void) swipedLeft:(UISwipeGestureRecognizer*)swipeGesture {
+    NSInteger newTag = currentTab - 1;
+    if (newTag >= 0) {
+        [self switchTabs:newTag];
+    }
+}
+
+- (void) swipedRight:(UISwipeGestureRecognizer*)swipeGesture {
+    NSInteger newTag = currentTab + 1;
+    if (newTag <= 2) {
+        [self switchTabs:newTag];
+    }
 }
 
 - (void) addTableViews {
@@ -152,12 +177,16 @@
 }
 
 - (void)tabSelected:(id)sender {
-    NSLog(@"tab selected");
     UIButton *clickedTab = (UIButton *)sender;
+    [self switchTabs:clickedTab.tag];
+}
+
+    
+-(void)switchTabs:(NSInteger)newTag{
     previousTab = currentTab;
     for (UIButton *tab in tabArray) {
         // select that tab
-        if (tab.tag == clickedTab.tag) {
+        if (tab.tag == newTag) {
             [tab setTitleColor:NAVIGATION_BG_COLOR forState:UIControlStateNormal];
             [tab setBackgroundColor:NAVIGATION_TEXT_COLOR];
         }
@@ -168,9 +197,10 @@
             [tab setBackgroundColor:NAVIGATION_BG_COLOR];
         }
     }
-    if (currentTab !=clickedTab.tag) {
-        clickedTab.userInteractionEnabled = NO;
-        currentTab = clickedTab.tag;
+    if (currentTab !=newTag) {
+        UIButton *chosenOne = ((UIButton *)[tabArray objectAtIndex:newTag]);
+        chosenOne.userInteractionEnabled = NO;
+        currentTab = newTag;
         [UIView animateWithDuration:0.3 animations:^{
             NSInteger offset;
             if (currentTab == 0) {
@@ -198,7 +228,7 @@
         }
         completion:^(BOOL finished){
             [[tableArray objectAtIndex:previousTab] removeFromSuperview];
-            clickedTab.userInteractionEnabled = YES;
+            chosenOne.userInteractionEnabled = YES;
 //            for (UIButton * tab in tabArray) {
 //                tab.userInteractionEnabled = YES;
 //            }
