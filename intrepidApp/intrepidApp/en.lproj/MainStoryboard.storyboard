@@ -23,7 +23,7 @@
         <scene sceneID="n6k-O5-JrC">
             <objects>
                 <viewController id="cs1-Co-eKy" customClass="HealthViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="J8w-Zz-s6y">
+                    <view key="view" opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" id="J8w-Zz-s6y">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -38,7 +38,7 @@
                                 </connections>
                             </searchBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Cck-lV-cDN" firstAttribute="top" secondItem="J8w-Zz-s6y" secondAttribute="top" constant="33" id="13f-Gx-LfO"/>
                             <constraint firstItem="Cck-lV-cDN" firstAttribute="trailing" secondItem="J8w-Zz-s6y" secondAttribute="trailing" type="default" id="NhI-Q1-jVa"/>

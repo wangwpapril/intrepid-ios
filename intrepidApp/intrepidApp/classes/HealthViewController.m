@@ -38,6 +38,7 @@
     [self addTabs];
     [self addTableViews];
     [self populateContentArray];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"mexicoBack.png"]]];
     
  
     [[UISearchBar appearance] setSearchFieldBackgroundImage:[UIImage imageNamed:@"searchBar.png"]forState:UIControlStateNormal];
@@ -109,20 +110,6 @@
     [self.view addGestureRecognizer:swipeRight];
 }
 
-- (void) swipedLeft:(UISwipeGestureRecognizer*)swipeGesture {
-    NSInteger newTag = currentTab - 1;
-    if (newTag >= 0) {
-        [self switchTabs:newTag];
-    }
-}
-
-- (void) swipedRight:(UISwipeGestureRecognizer*)swipeGesture {
-    NSInteger newTag = currentTab + 1;
-    if (newTag <= 2) {
-        [self switchTabs:newTag];
-    }
-}
-
 - (void) addTableViews {
     tableArray = [NSMutableArray new];
     int i = 0;
@@ -179,6 +166,20 @@
 - (void)tabSelected:(id)sender {
     UIButton *clickedTab = (UIButton *)sender;
     [self switchTabs:clickedTab.tag];
+}
+
+- (void) swipedRight:(UISwipeGestureRecognizer*)swipeGesture {
+    NSInteger newTag = currentTab - 1;
+    if (newTag >= 0) {
+        [self switchTabs:newTag];
+    }
+}
+
+- (void) swipedLeft:(UISwipeGestureRecognizer*)swipeGesture {
+    NSInteger newTag = currentTab + 1;
+    if (newTag <= 2) {
+        [self switchTabs:newTag];
+    }
 }
 
     

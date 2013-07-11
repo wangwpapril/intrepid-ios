@@ -21,20 +21,18 @@
 		6851222E17861138008DB6B6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6851222C17861138008DB6B6 /* MainStoryboard.storyboard */; };
 		6851223117861138008DB6B6 /* intrepidApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6851222F17861138008DB6B6 /* intrepidApp.xcdatamodeld */; };
 		6851223F17861152008DB6B6 /* HealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6851223E17861152008DB6B6 /* HealthViewController.m */; };
+		6855EAB0178E4D5E000C4C57 /* mexicoBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6855EAAF178E4D5E000C4C57 /* mexicoBack@2x.png */; };
+		685EB840178E4C29008B7D9B /* samplePic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 685EB83F178E4C29008B7D9B /* samplePic@2x.png */; };
 		688F9E631786262800CF850C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 688F9E621786262800CF850C /* QuartzCore.framework */; };
 		688F9E661786295100CF850C /* HealthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 688F9E651786295100CF850C /* HealthCell.m */; };
 		688F9E6A17862EDA00CF850C /* common@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 688F9E6817862EDA00CF850C /* common@2x.png */; };
 		688F9E6B17862EDA00CF850C /* uncommon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 688F9E6917862EDA00CF850C /* uncommon@2x.png */; };
-		68EDE3A5178A071600085A84 /* menuBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68EDE3A4178A071600085A84 /* menuBack@2x.png */; };
-		7E44F8D21788FA4B00AAA32B /* HealthItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E44F8D11788FA4B00AAA32B /* HealthItem.m */; };
-		7E44F8D7178A0D8B00AAA32B /* sun1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E44F8D6178A0D8B00AAA32B /* sun1.jpg */; };
-		7ECD0427178BD7C500D6C34B /* HealthViewDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECD0426178BD7C500D6C34B /* HealthViewDetailController.m */; };
-		7ECD0429178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD0428178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png */; };
 		68A2D71A178BDBE800B3C330 /* searchBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A2D719178BDBE800B3C330 /* searchBar@2x.png */; };
 		68A2D71D178BE17B00B3C330 /* HealthSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A2D71C178BE17B00B3C330 /* HealthSearchBar.m */; };
 		68EDE3A5178A071600085A84 /* menuBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68EDE3A4178A071600085A84 /* menuBack@2x.png */; };
 		7E44F8D21788FA4B00AAA32B /* HealthItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E44F8D11788FA4B00AAA32B /* HealthItem.m */; };
-		7E44F8D7178A0D8B00AAA32B /* sun1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E44F8D6178A0D8B00AAA32B /* sun1.jpg */; };
+		7ECD0427178BD7C500D6C34B /* HealthViewDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECD0426178BD7C500D6C34B /* HealthViewDetailController.m */; };
+		7ECD0429178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD0428178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +56,8 @@
 		6851223017861138008DB6B6 /* intrepidApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = intrepidApp.xcdatamodel; sourceTree = "<group>"; };
 		6851223D17861152008DB6B6 /* HealthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthViewController.h; path = classes/HealthViewController.h; sourceTree = "<group>"; };
 		6851223E17861152008DB6B6 /* HealthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthViewController.m; path = classes/HealthViewController.m; sourceTree = "<group>"; };
+		6855EAAF178E4D5E000C4C57 /* mexicoBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mexicoBack@2x.png"; sourceTree = "<group>"; };
+		685EB83F178E4C29008B7D9B /* samplePic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "samplePic@2x.png"; sourceTree = "<group>"; };
 		688F9E611786207F00CF850C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = classes/Constants.h; sourceTree = "<group>"; };
 		688F9E621786262800CF850C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		688F9E641786295100CF850C /* HealthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthCell.h; path = classes/HealthCell.h; sourceTree = "<group>"; };
@@ -70,7 +70,6 @@
 		68EDE3A4178A071600085A84 /* menuBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menuBack@2x.png"; sourceTree = "<group>"; };
 		7E44F8D01788FA4B00AAA32B /* HealthItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthItem.h; path = classes/HealthItem.h; sourceTree = "<group>"; };
 		7E44F8D11788FA4B00AAA32B /* HealthItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthItem.m; path = classes/HealthItem.m; sourceTree = "<group>"; };
-		7E44F8D6178A0D8B00AAA32B /* sun1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sun1.jpg; sourceTree = "<group>"; };
 		7ECD0425178BD7C500D6C34B /* HealthViewDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthViewDetailController.h; path = classes/HealthViewDetailController.h; sourceTree = "<group>"; };
 		7ECD0426178BD7C500D6C34B /* HealthViewDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthViewDetailController.m; path = classes/HealthViewDetailController.m; sourceTree = "<group>"; };
 		7ECD0428178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "descriptionAndSideEffectLogo@2x.png"; sourceTree = "<group>"; };
@@ -172,9 +171,10 @@
 		688F9E6717862DFD00CF850C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6855EAAF178E4D5E000C4C57 /* mexicoBack@2x.png */,
+				685EB83F178E4C29008B7D9B /* samplePic@2x.png */,
 				7ECD0428178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png */,
 				68A2D719178BDBE800B3C330 /* searchBar@2x.png */,
-				7E44F8D6178A0D8B00AAA32B /* sun1.jpg */,
 				68EDE3A4178A071600085A84 /* menuBack@2x.png */,
 				688F9E6817862EDA00CF850C /* common@2x.png */,
 				688F9E6917862EDA00CF850C /* uncommon@2x.png */,
@@ -240,10 +240,11 @@
 				6851222E17861138008DB6B6 /* MainStoryboard.storyboard in Resources */,
 				688F9E6A17862EDA00CF850C /* common@2x.png in Resources */,
 				688F9E6B17862EDA00CF850C /* uncommon@2x.png in Resources */,
-				7E44F8D7178A0D8B00AAA32B /* sun1.jpg in Resources */,
 				68EDE3A5178A071600085A84 /* menuBack@2x.png in Resources */,
 				7ECD0429178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png in Resources */,
 				68A2D71A178BDBE800B3C330 /* searchBar@2x.png in Resources */,
+				685EB840178E4C29008B7D9B /* samplePic@2x.png in Resources */,
+				6855EAB0178E4D5E000C4C57 /* mexicoBack@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
