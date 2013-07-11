@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSMutableArray *tableArray;
 @property (nonatomic) NSInteger currentTab;
 @property (nonatomic) NSInteger previousTab;
+@property (nonatomic, strong) UILabel *line;
 
 @property (strong,nonatomic) NSArray *healthItemArray;
 @property (strong,nonatomic) NSMutableArray *filteredHealthItemArray;

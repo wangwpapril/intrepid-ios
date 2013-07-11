@@ -9,6 +9,7 @@
 #import "HealthCell.h"
 #import "HealthItem.h"
 #import "Constants.h"
+#import "QuartzCore/QuartzCore.h"
 
 @implementation HealthCell
 
@@ -36,15 +37,18 @@
     }
     commonImage.image = [UIImage imageNamed:commonImageName];
     
-    UIImage *image = [UIImage imageNamed:@"sun1.jpg"];
+    UIImage *image = [UIImage imageNamed:@"samplePic.png"];
     self.imageView.image = image;
+    self.imageView.layer.cornerRadius = 5;
+    self.imageView.layer.masksToBounds = YES;
     
     self.textLabel.text = healthItem.name;
     self.textLabel.font = [UIFont fontWithName:APP_FONT size:15.0];
     self.textLabel.textColor = APP_TEXT_COLOR;
     
     [self addSubview:commonImage];
-//    [self addSubview:healthImage];
+    self.contentView.backgroundColor = [UIColor clearColor];
+    self.textLabel.backgroundColor = [UIColor clearColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

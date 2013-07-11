@@ -22,7 +22,7 @@
     parentController = controller;
     NSLog(@"screen height: %f", controller.view.frame.size.height);
     viewHeight = controller.view.frame.size.height;
-    botPosition = CGRectMake(0, viewHeight - 70, 320, 250);
+    botPosition = CGRectMake(0, viewHeight - 70, 320, 206);
     menu = [[UIImageView alloc] initWithFrame:botPosition];
     hiding = true;
 //    menu.layer.zPosition = MAXFLOAT;
@@ -40,14 +40,19 @@
     float nextPos = menu.frame.origin.y + translation.y;
     BOOL touchIsOver = (recognizer.state == UIGestureRecognizerStateEnded);
     if (nextPos > viewHeight - 195 && (!hiding || touchIsOver || nextPos > viewHeight - 70)) {
-        [UIView animateWithDuration:0.2 animations:^ {
+        [UIView animateWithDuration:0.3
+                              delay:0
+                            options:UIViewAnimationCurveEaseInOut animations:^{
             menu.frame = botPosition;
             hiding = true;
-        }];
+        }
+         completion:^(BOOL finished){
+         }
+         ];
     }
     else if (nextPos < viewHeight - 195 && (hiding || touchIsOver || nextPos < viewHeight - 294)) {
         [UIView animateWithDuration:0.2 animations:^ {
-            menu.frame = CGRectMake(0, viewHeight - 294, 320, 250);
+            menu.frame = CGRectMake(0, viewHeight - 294, 320, 206);
         }];
         hiding = false;
     }
