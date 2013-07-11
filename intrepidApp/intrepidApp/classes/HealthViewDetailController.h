@@ -14,6 +14,7 @@
 }
 
 @property (nonatomic, strong) IBOutlet UILabel *healthItemNameLabel;
+@property (nonatomic, strong) IBOutlet UILabel *healthItemTitleLabel;
 @property (nonatomic, strong) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, strong) IBOutlet UILabel *descriptionDesignationLabel;
 

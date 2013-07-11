@@ -38,12 +38,36 @@
                                     <outlet property="delegate" destination="cs1-Co-eKy" id="zJZ-nv-cuI"/>
                                 </connections>
                             </searchBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Tg-qm-Igl">
+                                <rect key="frame" x="10" y="6" width="17" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AGO-JP-3ZW">
+                                <rect key="frame" x="121" y="6" width="17" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rjd-Dz-C4b">
+                                <rect key="frame" x="220" y="6" width="17" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="SFK-sd-UDp"/>
                     <connections>
                         <outlet property="healthItemSearchBar" destination="Cck-lV-cDN" id="8tS-I6-82G"/>
+                        <outlet property="navLabelC" destination="6Tg-qm-Igl" id="y3W-Fm-5eP"/>
+                        <outlet property="navLabelM" destination="Rjd-Dz-C4b" id="JfJ-Te-rTj"/>
+                        <outlet property="navLabelS" destination="AGO-JP-3ZW" id="ew9-h2-du4"/>
                         <outlet property="searchDisplayController" destination="bgG-Gt-M5h" id="42U-ad-UGl"/>
                         <segue destination="8Jz-x1-9iz" kind="push" identifier="details" id="Aj3-tf-I3d"/>
                     </connections>
@@ -70,13 +94,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="header" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hv5-W8-UoJ">
-                                <rect key="frame" x="0.0" y="1" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="gVH-ZX-sBE">
-                                <rect key="frame" x="0.0" y="32" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="37" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CDq-34-l8K">
@@ -107,7 +131,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="NOn-Er-fAu">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="NOn-Er-fAu">
                                         <rect key="frame" x="-2" y="40" width="325" height="212"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -134,6 +158,13 @@
                                     <outlet property="delegate" destination="8Jz-x1-9iz" id="8IK-M4-7R3"/>
                                 </connections>
                             </scrollView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T1t-Jb-QgQ">
+                                <rect key="frame" x="0.0" y="1" width="320" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -143,6 +174,7 @@
                         <outlet property="descriptionLabel" destination="W51-Tj-h0f" id="EJq-a1-5v4"/>
                         <outlet property="descriptionText" destination="NOn-Er-fAu" id="tkv-Wl-svJ"/>
                         <outlet property="healthItemNameLabel" destination="Hv5-W8-UoJ" id="0NS-Fw-55o"/>
+                        <outlet property="healthItemTitleLabel" destination="T1t-Jb-QgQ" id="Ww0-yL-00d"/>
                         <outlet property="scrollView" destination="gVH-ZX-sBE" id="RCO-b6-vpA"/>
                         <outlet property="sideEffectsImageLabel" destination="UmX-Bt-m1n" id="A2a-Bb-4Lr"/>
                         <outlet property="sideEffectsLabel" destination="SR9-YT-cr3" id="3T0-of-zpT"/>
@@ -200,6 +232,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HealthViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="healthItemSearchBar" candidateClass="HealthSearchBar"/>
+                <relationship kind="outlet" name="navLabelC" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="navLabelM" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="navLabelS" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="HealthViewDetailController" superclassName="UIViewController">
@@ -210,6 +245,7 @@
                 <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="descriptionText" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="healthItemNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="healthItemTitleLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="sideEffectsDesignationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="sideEffectsImageLabel" candidateClass="UILabel"/>

@@ -17,6 +17,7 @@
 @implementation HealthViewController
 
 @synthesize tabArray;
+@synthesize largeLetterArray;
 @synthesize contentArray;
 @synthesize tableArray;
 @synthesize currentTab;
@@ -27,6 +28,10 @@
 @synthesize healthItemArray;
 @synthesize filteredHealthItemArray;
 @synthesize healthItemSearchBar;
+
+@synthesize navLabelC;
+@synthesize navLabelM;
+@synthesize navLabelS;
 //@synthesize conditionsTable;
 //@synthesize symptomsTable;
 //@synthesize medicationsTable;
@@ -50,6 +55,19 @@
     mController = [[MenuController alloc] init];
     [mController displayMenuWithParent:self];
     
+    //add large letters to navigation bar
+    largeLetterArray = [NSMutableArray new];
+    
+    [self capitalLabel:navLabelC withLetter:@"C"];
+    [navLabelC setTextColor:NAVIGATION_TEXT_OFF_COLOR];
+    
+    [self capitalLabel:navLabelS withLetter:@"S"];
+    [navLabelS setTextColor:NAVIGATION_TEXT_COLOR];
+    
+    [self capitalLabel:navLabelM withLetter:@"M"];
+    [navLabelM setTextColor:NAVIGATION_TEXT_OFF_COLOR];
+
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,6 +77,14 @@
 }
 
 # pragma mark - UI Setup
+
+-(void)capitalLabel:(UILabel *)label withLetter:(NSString *)letter {
+    label.text = letter;
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont fontWithName:APP_FONT size:14];
+    [self.view addSubview:label];
+    [largeLetterArray addObject:label];
+}
 
 - (void)addTabs {
     int i = 0;
@@ -72,13 +98,13 @@
         NSString *title;
         switch (i) {
             case 0:
-                title = @"CONDITIONS";
+                title = @"ONDITIONS";
                 break;
             case 1:
-                title = @"SYMPTOMS";
+                title = @"YMPTOMS";
                 break;
             case 2:
-                title = @"MEDICATIONS";
+                title = @"EDICATIONS";
                 break;
                 
             default:
@@ -162,18 +188,25 @@
 - (void)tabSelected:(id)sender {
     UIButton *clickedTab = (UIButton *)sender;
     previousTab = currentTab;
+    NSInteger index = 0;
     for (UIButton *tab in tabArray) {
+        
+        // capital letter
+        UILabel *capitalLetter = ((UILabel *)[largeLetterArray objectAtIndex:index]);
         // select that tab
         if (tab.tag == clickedTab.tag) {
             [tab setTitleColor:NAVIGATION_TEXT_COLOR forState:UIControlStateNormal];
+            [capitalLetter setTextColor:NAVIGATION_TEXT_COLOR];
             [tab setBackgroundColor:NAVIGATION_BG_COLOR];
         }
         
         // make sure tab is inactive
         else {
             [tab setTitleColor:NAVIGATION_TEXT_OFF_COLOR forState:UIControlStateNormal];
+            [capitalLetter setTextColor:NAVIGATION_TEXT_OFF_COLOR];
             [tab setBackgroundColor:NAVIGATION_BG_COLOR];
         }
+        index++;
     }
     if (currentTab !=clickedTab.tag) {
         clickedTab.userInteractionEnabled = NO;

@@ -14,6 +14,7 @@
 @implementation HealthViewDetailController
 
 @synthesize healthItemNameLabel;
+@synthesize healthItemTitleLabel;
 @synthesize healthItemName;
 @synthesize healthItemCategory;
 
@@ -79,14 +80,30 @@
     
     self.view.backgroundColor = UIColorFromRGB(0xffffff);
     
-    // Set Header label
-    NSString *uppercaseString = [healthItemName uppercaseString];
-    healthItemNameLabel.text = uppercaseString;
-    healthItemNameLabel.font = [UIFont fontWithName:APP_FONT size:16];
-    healthItemNameLabel.textAlignment = NSTextAlignmentCenter;
-    healthItemNameLabel.backgroundColor = UIColorFromRGB(0x5f5957);
-    healthItemNameLabel.textColor = UIColorFromRGB(0xeaf0e6);
+    // Set Header label    
+//    CAGradientLayer *healthItemGradient = [CAGradientLayer layer];
+//    healthItemGradient.frame = healthItemNameLabel.bounds;
+//    healthItemGradient.colors = [NSArray arrayWithObjects:
+//                          (id)[[UIColor colorWithRed:102.0f / 255.0f green:102.0f / 255.0f blue:102.0f / 255.0f alpha:1.0f] CGColor],
+//                          (id)[[UIColor colorWithRed:51.0f / 255.0f green:51.0f / 255.0f blue:51.0f / 255.0f alpha:1.0f] CGColor],
+//                          nil];
+//    [healthItemNameLabel.layer insertSublayer:healthItemGradient atIndex:0];
     
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = self.healthItemNameLabel.bounds;
+    gradientLayer.colors = [NSArray arrayWithObjects:
+                            (id)[[UIColor colorWithRed:102.0f / 255.0f green:102.0f / 255.0f blue:102.0f / 255.0f alpha:1.0f] CGColor],
+                            (id)[[UIColor colorWithRed:51.0f / 255.0f green:51.0f / 255.0f blue:51.0f / 255.0f alpha:1.0f] CGColor],
+                            nil];
+    [self.view.layer insertSublayer:gradientLayer atIndex:0];
+    healthItemNameLabel.text = NULL;
+
+    NSString *uppercaseString = [healthItemName uppercaseString];
+    healthItemTitleLabel.text = uppercaseString;
+    healthItemTitleLabel.font = [UIFont fontWithName:APP_FONT size:16];
+    healthItemTitleLabel.textAlignment = NSTextAlignmentCenter;
+    healthItemTitleLabel.backgroundColor = [UIColor clearColor];
+    healthItemTitleLabel.textColor = UIColorFromRGB(0xeaf0e6);
 
     
 	// Do any additional setup after loading the view.
