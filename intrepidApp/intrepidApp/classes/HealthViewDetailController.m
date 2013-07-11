@@ -50,7 +50,15 @@
     [self addSideEffects];
     
     [scrollView setScrollEnabled:YES];
-    [scrollView setContentSize:CGSizeMake(320, 530)];
+    
+    CGFloat scrollViewHeight = 5.0f;
+    for (UIView* view in scrollView.subviews)
+    {
+        scrollViewHeight += view.frame.size.height;
+    }
+    
+    [scrollView setContentSize:(CGSizeMake(320, scrollViewHeight))];
+//    [scrollView setContentSize:CGSizeMake(320, 530)];
     
     //Change appearance of backbutton
     self.navigationItem.hidesBackButton=YES;
@@ -81,14 +89,6 @@
     self.view.backgroundColor = UIColorFromRGB(0xffffff);
     
     // Set Header label    
-//    CAGradientLayer *healthItemGradient = [CAGradientLayer layer];
-//    healthItemGradient.frame = healthItemNameLabel.bounds;
-//    healthItemGradient.colors = [NSArray arrayWithObjects:
-//                          (id)[[UIColor colorWithRed:102.0f / 255.0f green:102.0f / 255.0f blue:102.0f / 255.0f alpha:1.0f] CGColor],
-//                          (id)[[UIColor colorWithRed:51.0f / 255.0f green:51.0f / 255.0f blue:51.0f / 255.0f alpha:1.0f] CGColor],
-//                          nil];
-//    [healthItemNameLabel.layer insertSublayer:healthItemGradient atIndex:0];
-    
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     gradientLayer.frame = self.healthItemNameLabel.bounds;
     gradientLayer.colors = [NSArray arrayWithObjects:
@@ -133,6 +133,9 @@
     UIEdgeInsets inset = descriptionText.contentInset;
     frame.size.height = descriptionText.contentSize.height + inset.top + inset.bottom;
     descriptionText.frame = frame;
+    
+    [scrollView addSubview: descriptionLabel];
+    [scrollView addSubview: descriptionText];
 
 }
 
@@ -153,7 +156,9 @@
     frame.size.height = sideEffectsText.contentSize.height + inset.top + inset.bottom;
     sideEffectsText.frame = frame;
     
-    
+    [scrollView addSubview: sideEffectsLabel];
+    [scrollView addSubview: sideEffectsText];
+        
 }
 
 

@@ -66,7 +66,6 @@
     
     [self capitalLabel:navLabelM withLetter:@"M"];
     [navLabelM setTextColor:NAVIGATION_TEXT_OFF_COLOR];
-
     
 }
 
