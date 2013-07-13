@@ -44,14 +44,13 @@
     [self addTabs];
     [self addTableViews];
     [self populateContentArray];
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"mexicoBack.png"]]];
-    
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"mexicoBack.png"]]];    
  
     [[UISearchBar appearance] setSearchFieldBackgroundImage:[UIImage imageNamed:@"searchBar.png"]forState:UIControlStateNormal];
     [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setFont:[UIFont fontWithName:APP_FONT size:15]];
     [healthItemSearchBar setPlaceholder:@"Tap to Search"];
     healthItemSearchBar.tintColor = [UIColor colorWithWhite:0.8 alpha:1.0];
-    healthItemSearchBar.frame = CGRectMake(0, 38, 330, 45);
+    healthItemSearchBar.frame = CGRectMake(0, 38, 330, 35);
     
     // Reload the table
     self.navigationItem.title = @"Health";
@@ -117,13 +116,13 @@
         [tab setTitleColor:NAVIGATION_TEXT_COLOR forState:UIControlStateNormal];
         tab.titleLabel.font = [UIFont fontWithName:APP_FONT size:12];
         [tab setBackgroundColor:NAVIGATION_BG_COLOR];
-        CAGradientLayer *btnGradient = [CAGradientLayer layer];
-        btnGradient.frame = tab.bounds;
-        btnGradient.colors = [NSArray arrayWithObjects:
-                              (id)[[UIColor colorWithRed:102.0f / 255.0f green:102.0f / 255.0f blue:102.0f / 255.0f alpha:1.0f] CGColor],
-                              (id)[[UIColor colorWithRed:51.0f / 255.0f green:51.0f / 255.0f blue:51.0f / 255.0f alpha:1.0f] CGColor],
-                              nil];
-        [tab.layer insertSublayer:btnGradient atIndex:0];
+//        CAGradientLayer *btnGradient = [CAGradientLayer layer];
+//        btnGradient.frame = tab.bounds;
+//        btnGradient.colors = [NSArray arrayWithObjects:
+//                              (id)[[UIColor colorWithRed:102.0f / 255.0f green:102.0f / 255.0f blue:102.0f / 255.0f alpha:1.0f] CGColor],
+//                              (id)[[UIColor colorWithRed:51.0f / 255.0f green:51.0f / 255.0f blue:51.0f / 255.0f alpha:1.0f] CGColor],
+//                              nil];
+//        [tab.layer insertSublayer:btnGradient atIndex:0];
         
         tab.tag = i; // for tracking which one is clicked
         [tab addTarget:self action:@selector(tabSelected:) forControlEvents:UIControlEventTouchUpInside];
