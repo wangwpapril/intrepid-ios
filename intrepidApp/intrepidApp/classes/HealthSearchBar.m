@@ -22,6 +22,16 @@
 -(void)layoutSubviews{
     [super layoutSubviews];
     [self setShowsCancelButton:NO animated:NO];
+    
+//    UITextField *cancelSearchButton = [self.subviews objectAtIndex:1];
+//    UIButton *cButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    cButton.frame = CGRectMake(0, 0, 20 , 20);
+//    cButton.backgroundColor = [UIColor clearColor];
+//    [cButton setImage:[UIImage imageNamed:@"cancel-search.png"] forState:UIControlStateNormal];//your button image.
+//    cButton.contentMode = UIViewContentModeScaleToFill;
+//    [cButton addTarget:self action:@selector(xButtonPressed) forControlEvents:UIControlEventTouchUpInside];//This is the custom event
+//    [cancelSearchButton setRightView:cButton];
+//    [cancelSearchButton setRightViewMode:UITextFieldViewModeAlways];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -29,6 +29,9 @@
 		68A2D71A178BDBE800B3C330 /* searchBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A2D719178BDBE800B3C330 /* searchBar@2x.png */; };
 		68A2D71D178BE17B00B3C330 /* HealthSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A2D71C178BE17B00B3C330 /* HealthSearchBar.m */; };
 		68EDE3A5178A071600085A84 /* menuBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68EDE3A4178A071600085A84 /* menuBack@2x.png */; };
+		7E347778178F8B3A00FB86DC /* cancel-search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E347777178F8B3A00FB86DC /* cancel-search@2x.png */; };
+		7E34777C1791E79300FB86DC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34777B1791E79300FB86DC /* LoginViewController.m */; };
+		7E34777F1791E7A700FB86DC /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34777E1791E7A700FB86DC /* SignUpViewController.m */; };
 		7E44F8D21788FA4B00AAA32B /* HealthItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E44F8D11788FA4B00AAA32B /* HealthItem.m */; };
 		7ECD0427178BD7C500D6C34B /* HealthViewDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECD0426178BD7C500D6C34B /* HealthViewDetailController.m */; };
 		7ECD0429178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD0428178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png */; };
@@ -72,6 +75,11 @@
 		68A2D71B178BE17B00B3C330 /* HealthSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthSearchBar.h; path = classes/HealthSearchBar.h; sourceTree = "<group>"; };
 		68A2D71C178BE17B00B3C330 /* HealthSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthSearchBar.m; path = classes/HealthSearchBar.m; sourceTree = "<group>"; };
 		68EDE3A4178A071600085A84 /* menuBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menuBack@2x.png"; sourceTree = "<group>"; };
+		7E347777178F8B3A00FB86DC /* cancel-search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel-search@2x.png"; sourceTree = "<group>"; };
+		7E34777A1791E79300FB86DC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = classes/LoginViewController.h; sourceTree = "<group>"; };
+		7E34777B1791E79300FB86DC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = classes/LoginViewController.m; sourceTree = "<group>"; };
+		7E34777D1791E7A700FB86DC /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = classes/SignUpViewController.h; sourceTree = "<group>"; };
+		7E34777E1791E7A700FB86DC /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = classes/SignUpViewController.m; sourceTree = "<group>"; };
 		7E44F8D01788FA4B00AAA32B /* HealthItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthItem.h; path = classes/HealthItem.h; sourceTree = "<group>"; };
 		7E44F8D11788FA4B00AAA32B /* HealthItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthItem.m; path = classes/HealthItem.m; sourceTree = "<group>"; };
 		7ECD0425178BD7C500D6C34B /* HealthViewDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthViewDetailController.h; path = classes/HealthViewDetailController.h; sourceTree = "<group>"; };
@@ -149,6 +157,7 @@
 				6851222417861138008DB6B6 /* AppDelegate.m */,
 				6835EC141789439600A57F86 /* MenuController.h */,
 				6835EC151789439600A57F86 /* MenuController.m */,
+				7E3477791791E76700FB86DC /* Login/Signup */,
 				688F9E5B178611C000CF850C /* health */,
 				6851222C17861138008DB6B6 /* MainStoryboard.storyboard */,
 				6851222F17861138008DB6B6 /* intrepidApp.xcdatamodeld */,
@@ -192,6 +201,7 @@
 		688F9E6717862DFD00CF850C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				7E347777178F8B3A00FB86DC /* cancel-search@2x.png */,
 				684E364B178F85C1004E27B9 /* health */,
 				6855EAAF178E4D5E000C4C57 /* mexicoBack@2x.png */,
 				685EB83F178E4C29008B7D9B /* samplePic@2x.png */,
@@ -203,6 +213,17 @@
 				684E3649178F849F004E27B9 /* menuBack2@2x.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		7E3477791791E76700FB86DC /* Login/Signup */ = {
+			isa = PBXGroup;
+			children = (
+				7E34777A1791E79300FB86DC /* LoginViewController.h */,
+				7E34777B1791E79300FB86DC /* LoginViewController.m */,
+				7E34777D1791E7A700FB86DC /* SignUpViewController.h */,
+				7E34777E1791E7A700FB86DC /* SignUpViewController.m */,
+			);
+			name = Login/Signup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +293,7 @@
 				7ECD043B178DE24F00D6C34B /* stethoscope-pic@2x.png in Resources */,
 				7ECD043C178DE24F00D6C34B /* heart-rate-pic@2x.png in Resources */,
 				7ECD043D178DE24F00D6C34B /* conditions-pic@2x.png in Resources */,
+				7E347778178F8B3A00FB86DC /* cancel-search@2x.png in Resources */,
 				684E364A178F849F004E27B9 /* menuBack2@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +314,8 @@
 				6835EC161789439600A57F86 /* MenuController.m in Sources */,
 				7ECD0427178BD7C500D6C34B /* HealthViewDetailController.m in Sources */,
 				68A2D71D178BE17B00B3C330 /* HealthSearchBar.m in Sources */,
+				7E34777C1791E79300FB86DC /* LoginViewController.m in Sources */,
+				7E34777F1791E7A700FB86DC /* SignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

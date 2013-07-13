@@ -1,10 +1,77 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4457.9" systemVersion="13A510d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12B19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.9"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="lLI-em-AZN">
+            <objects>
+                <viewController id="lgv-mR-8mz" customClass="LoginViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Iam-wu-94V">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Iby-WA-mXa">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Nto-fy-guR">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mKp-o5-gBr">
+                                <rect key="frame" x="201" y="0.0" width="114" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="go to signup">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="G8m-le-uyD" kind="push" id="k7e-7f-IP4"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ve-Tw-7eT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="187" y="-635"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="TKR-Vi-eld">
+            <objects>
+                <viewController id="G8m-le-uyD" customClass="SignUpViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rky-fy-gNL">
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bsS-CS-HG2">
+                                <rect key="frame" x="90" y="144" width="109" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="go to health">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cs1-Co-eKy" kind="push" id="cV4-E0-4Z6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="BPq-6f-z3S"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YxC-Y6-RjD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="671" y="-635"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="11">
             <objects>
@@ -14,23 +81,23 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="cs1-Co-eKy" kind="relationship" relationship="rootViewController" id="zf7-kP-dkD"/>
+                        <segue destination="lgv-mR-8mz" kind="relationship" relationship="rootViewController" id="KwF-Zn-Pcg"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="64"/>
+            <point key="canvasLocation" x="-420" y="20"/>
         </scene>
         <!--Health View Controller-->
         <scene sceneID="n6k-O5-JrC">
             <objects>
                 <viewController id="cs1-Co-eKy" customClass="HealthViewController" sceneMemberID="viewController">
                     <view key="view" alpha="0.80000000000000004" contentMode="scaleToFill" id="J8w-Zz-s6y">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" id="Cck-lV-cDN" customClass="HealthSearchBar">
-                                <rect key="frame" x="0.0" y="35" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="31" width="320" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
@@ -91,24 +158,18 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="452" y="70"/>
+            <point key="canvasLocation" x="1122" y="-620"/>
         </scene>
         <!--Health View Detail Controller - Health-->
         <scene sceneID="pvv-Xq-Sdt">
             <objects>
                 <viewController id="8Jz-x1-9iz" customClass="HealthViewDetailController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eB9-bk-f4t">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="header" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hv5-W8-UoJ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="gVH-ZX-sBE">
-                                <rect key="frame" x="0.0" y="37" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="37" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CDq-34-l8K">
@@ -119,7 +180,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UmX-Bt-m1n">
-                                        <rect key="frame" x="14" y="256" width="25" height="25"/>
+                                        <rect key="frame" x="14" y="228" width="25" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -133,14 +194,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Side Effects" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SR9-YT-cr3">
-                                        <rect key="frame" x="53" y="257" width="159" height="23"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="53" y="229" width="159" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="NOn-Er-fAu">
-                                        <rect key="frame" x="-2" y="40" width="325" height="212"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" editable="NO" id="NOn-Er-fAu">
+                                        <rect key="frame" x="-2" y="40" width="325" height="184"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
@@ -151,7 +212,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="Bfz-Bk-rwL">
-                                        <rect key="frame" x="0.0" y="290" width="325" height="241"/>
+                                        <rect key="frame" x="0.0" y="262" width="325" height="241"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
@@ -167,7 +228,14 @@
                                 </connections>
                             </scrollView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T1t-Jb-QgQ">
-                                <rect key="frame" x="0.0" y="1" width="320" height="36"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="header" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R40-X8-ZUQ">
+                                <rect key="frame" x="20" y="7" width="275" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -182,8 +250,8 @@
                         <outlet property="descriptionImageLabel" destination="CDq-34-l8K" id="A5Z-1w-8IZ"/>
                         <outlet property="descriptionLabel" destination="W51-Tj-h0f" id="EJq-a1-5v4"/>
                         <outlet property="descriptionText" destination="NOn-Er-fAu" id="tkv-Wl-svJ"/>
-                        <outlet property="healthItemNameLabel" destination="Hv5-W8-UoJ" id="0NS-Fw-55o"/>
-                        <outlet property="healthItemTitleLabel" destination="T1t-Jb-QgQ" id="Ww0-yL-00d"/>
+                        <outlet property="healthItemNameLabel" destination="R40-X8-ZUQ" id="6XU-i2-UEG"/>
+                        <outlet property="healthItemTitleLabel" destination="T1t-Jb-QgQ" id="VRb-7Z-q4N"/>
                         <outlet property="scrollView" destination="gVH-ZX-sBE" id="RCO-b6-vpA"/>
                         <outlet property="sideEffectsImageLabel" destination="UmX-Bt-m1n" id="A2a-Bb-4Lr"/>
                         <outlet property="sideEffectsLabel" destination="SR9-YT-cr3" id="3T0-of-zpT"/>
@@ -262,8 +330,14 @@
                 <relationship kind="outlet" name="sideEffectsText" candidateClass="UITextView"/>
             </relationships>
         </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SignUpViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignUpViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

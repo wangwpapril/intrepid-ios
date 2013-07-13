@@ -37,8 +37,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "33"
          endingLineNumber = "33"
-         landmarkName = "@interface HealthViewController"
-         landmarkType = "2">
+         landmarkName = "navLabelM"
+         landmarkType = "19">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -58,25 +58,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "intrepidApp/classes/HealthViewController.m"
-         timestampString = "395204098.403441"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "170"
-         endingLineNumber = "170"
-         landmarkName = "-populateContentArray"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "intrepidApp/classes/HealthViewController.m"
-         timestampString = "395204098.403441"
+         timestampString = "395434939.225137"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "169"
          endingLineNumber = "169"
-         landmarkName = "-populateContentArray"
+         landmarkName = "-addTableViews"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -84,12 +71,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "intrepidApp/classes/HealthViewController.m"
-         timestampString = "395204098.403441"
+         timestampString = "395434939.225137"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "285"
-         endingLineNumber = "285"
-         landmarkName = "-tableView:didSelectRowAtIndexPath:"
+         startingLineNumber = "168"
+         endingLineNumber = "168"
+         landmarkName = "-addTableViews"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "intrepidApp/classes/HealthViewController.m"
+         timestampString = "395434939.225137"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "284"
+         endingLineNumber = "284"
+         landmarkName = "-switchTabs:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

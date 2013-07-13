@@ -51,7 +51,7 @@
     
     [scrollView setScrollEnabled:YES];
     
-    CGFloat scrollViewHeight = 5.0f;
+    CGFloat scrollViewHeight = 15.0f;
     for (UIView* view in scrollView.subviews)
     {
         scrollViewHeight += view.frame.size.height;
@@ -84,27 +84,20 @@
     sideEffectsImageLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"medication-pic.png"]];
     }
     sideEffectsImageLabel.text = NULL;
-
     
     self.view.backgroundColor = UIColorFromRGB(0xffffff);
     
     // Set Header label    
-    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-    gradientLayer.frame = self.healthItemNameLabel.bounds;
-    gradientLayer.colors = [NSArray arrayWithObjects:
-                            (id)[[UIColor colorWithRed:102.0f / 255.0f green:102.0f / 255.0f blue:102.0f / 255.0f alpha:1.0f] CGColor],
-                            (id)[[UIColor colorWithRed:51.0f / 255.0f green:51.0f / 255.0f blue:51.0f / 255.0f alpha:1.0f] CGColor],
-                            nil];
-    [self.view.layer insertSublayer:gradientLayer atIndex:0];
-    healthItemNameLabel.text = NULL;
-
+    healthItemTitleLabel.backgroundColor = NAVIGATION_BG_COLOR;
+    healthItemTitleLabel.text = NULL;
+    
     NSString *uppercaseString = [healthItemName uppercaseString];
-    healthItemTitleLabel.text = uppercaseString;
-    healthItemTitleLabel.font = [UIFont fontWithName:APP_FONT size:16];
-    healthItemTitleLabel.textAlignment = NSTextAlignmentCenter;
-    healthItemTitleLabel.backgroundColor = [UIColor clearColor];
-    healthItemTitleLabel.textColor = UIColorFromRGB(0xeaf0e6);
-
+    healthItemNameLabel.text = uppercaseString;
+    healthItemNameLabel.backgroundColor = [UIColor clearColor];
+    healthItemNameLabel.font = [UIFont fontWithName:APP_FONT size:16];
+    healthItemNameLabel.textColor = UIColorFromRGB(0xeaf0e6);
+    
+    [healthItemTitleLabel addSubview:healthItemNameLabel];
     
 	// Do any additional setup after loading the view.
 }
@@ -120,9 +113,9 @@
     descriptionLabel.backgroundColor = UIColorFromRGB(0xffffff);
     
     //Set descriptionText to auto-fit content
-    descriptionText.font = [UIFont fontWithName:APP_FONT size:13];
+    descriptionText.font = [UIFont fontWithName:APP_FONT size:12];
     descriptionText.backgroundColor = UIColorFromRGB(0xffffff);
-    [descriptionText setAlpha:0.5];
+    [descriptionText setAlpha:0.6];
     descriptionText.layer.borderWidth = 1.0f;
     descriptionText.layer.borderColor = [[UIColor grayColor] CGColor];
     
@@ -145,9 +138,19 @@
     sideEffectsLabel.font = [UIFont fontWithName:APP_FONT size:17];
     sideEffectsLabel.backgroundColor = UIColorFromRGB(0xffffff);
     
-    sideEffectsText.font = [UIFont fontWithName:APP_FONT size:13];
+    if ([healthItemCategory isEqualToString:@"conditions"]) {
+        sideEffectsLabel.text = @"Diagnosis";
+    }
+    else if ([healthItemCategory isEqualToString:@"symptoms"]) {
+        sideEffectsLabel.text = @"Symptoms";
+    }
+    else {
+        sideEffectsLabel.text = @"Side Effects";
+    }
+    
+    sideEffectsText.font = [UIFont fontWithName:APP_FONT size:12];
     sideEffectsText.backgroundColor = UIColorFromRGB(0xffffff);
-    [sideEffectsText setAlpha:0.5];
+    [sideEffectsText setAlpha:0.6];
     sideEffectsText.layer.borderWidth = 1.0f;
     sideEffectsText.layer.borderColor = [[UIColor grayColor] CGColor];
     
