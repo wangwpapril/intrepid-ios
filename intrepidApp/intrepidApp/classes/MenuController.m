@@ -21,12 +21,18 @@
 -(void)displayMenuWithParent:(UIViewController *)controller {
     parentController = controller;
     NSLog(@"screen height: %f", controller.view.frame.size.height);
-    viewHeight = controller.view.frame.size.height;
-    botPosition = CGRectMake(0, viewHeight - 70, 320, 206);
+    viewHeight = controller.view.frame.size.height - 44; // account for nav bar
+    
+    // this is an outrageous hack.. but xcode 4 & 5 compile diff
+    if (viewHeight >= 460) {
+        viewHeight -= 20;
+    }
+    
+    botPosition = CGRectMake(0, viewHeight - 30, 320, 206);
     menu = [[UIImageView alloc] initWithFrame:botPosition];
     hiding = true;
-//    menu.layer.zPosition = MAXFLOAT;
-    menu.image = [UIImage imageNamed:@"menuBack.png"];
+    menu.image = [UIImage imageNamed:@"menuBack2.png"];
+    menu.layer.zPosition = MAXFLOAT;
     [self addContentButtons];
     menu.userInteractionEnabled = YES;
     UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleDrag:)];
@@ -39,7 +45,7 @@
     CGPoint translation = [recognizer translationInView:parentController.view];
     float nextPos = menu.frame.origin.y + translation.y;
     BOOL touchIsOver = (recognizer.state == UIGestureRecognizerStateEnded);
-    if (nextPos > viewHeight - 195 && (!hiding || touchIsOver || nextPos > viewHeight - 70)) {
+    if (nextPos > viewHeight - 88 && (!hiding || touchIsOver || nextPos > viewHeight - 30)) {
         [UIView animateWithDuration:0.3
                               delay:0
                             options:UIViewAnimationCurveEaseInOut animations:^{
@@ -50,11 +56,8 @@
          }
          ];
     }
-    else if (nextPos < viewHeight - 195 && (hiding || touchIsOver || nextPos < viewHeight - 294)) {
-        [UIView animateWithDuration:0.2 animations:^ {
-            menu.frame = CGRectMake(0, viewHeight - 294, 320, 206);
-        }];
-        hiding = false;
+    else if (nextPos < viewHeight - 88 && (hiding || touchIsOver || nextPos < viewHeight - 206)) {
+        [self showMenu];
     }
     else {
         recognizer.view.center = CGPointMake(recognizer.view.center.x,
@@ -63,7 +66,23 @@
     }
 }
 
+-(void)showMenu {
+    if (menu.frame.origin.y > viewHeight - 206) {
+        [UIView animateWithDuration:0.2 animations:^ {
+            menu.frame = CGRectMake(0, viewHeight - 206, 320, 206);
+        }];
+        hiding = false;
+    }
+}
 -(void)addContentButtons {
+    // popup button
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, 320, 25);
+    button.backgroundColor = [UIColor clearColor];
+    [button addTarget:self action:@selector(showMenu) forControlEvents:UIControlEventTouchUpInside];
+    [menu addSubview:button];
+
+    // content buttons
     [self makeContentButtonWithImage:@"pic.png" withOrigin:CGPointMake(0, 30) withTag:0];
     [self makeContentButtonWithImage:@"pic.png" withOrigin:CGPointMake(100, 30) withTag:1];
     [self makeContentButtonWithImage:@"pic.png" withOrigin:CGPointMake(220, 30) withTag:2];
