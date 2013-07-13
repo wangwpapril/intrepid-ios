@@ -17,6 +17,7 @@
 
 - (void)customizeAppearance
 {
+    
     UIImage *image = [UIImage imageNamed:@"top-nav-bar.png"];
     [[UINavigationBar appearance] setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     
