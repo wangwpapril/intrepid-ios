@@ -47,8 +47,8 @@
     self.textLabel.textColor = APP_TEXT_COLOR;
     
     [self addSubview:commonImage];
-    self.contentView.backgroundColor = [UIColor whiteColor];
-    self.textLabel.backgroundColor = [UIColor blueColor];
+    self.contentView.backgroundColor = [UIColor clearColor];
+    self.textLabel.backgroundColor = [UIColor clearColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

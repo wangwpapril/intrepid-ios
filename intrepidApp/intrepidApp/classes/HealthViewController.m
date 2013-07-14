@@ -285,6 +285,7 @@
     
     if (currentTab !=newTag) {
         
+//        [self removeText];
         line.frame = CGRectMake(lineX, 27, 1, 1);
         
         for (UIButton * tab in tabArray) {
@@ -332,6 +333,7 @@
                              for (UIButton * tab in tabArray) {
                                  tab.userInteractionEnabled = YES;
                              }
+                             [self removeText];
                          }];
     }
 }
@@ -371,9 +373,7 @@
     }
     
     [cell setupWithHealthItem:healthItem];
-    
-    cell.contentView.backgroundColor = [UIColor clearColor];
-    cell.textLabel.backgroundColor = [UIColor clearColor];
+
     return cell;
 }
 
