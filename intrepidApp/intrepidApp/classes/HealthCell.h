@@ -11,6 +11,8 @@
 
 @interface HealthCell : UITableViewCell
 
+@property (nonatomic, strong) UIImageView *commonImage;
+
 
 -(void)setupWithHealthItem:(HealthItem *)healthItem;
 

@@ -13,11 +13,13 @@
 
 @implementation HealthCell
 
+@synthesize commonImage;
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+        commonImage = [[UIImageView alloc] initWithFrame:CGRectMake(200, 0, 107, 42)];
     }
     return self;
 }
@@ -25,7 +27,6 @@
 -(void)setupWithHealthItem:(HealthItem *)healthItem {
     
     // common image
-    UIImageView *commonImage = [[UIImageView alloc] initWithFrame:CGRectMake(200, 0, 107, 42)];
     NSString *commonImageName;
     
     if (healthItem.common == TRUE) {

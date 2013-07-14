@@ -397,7 +397,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger fCount = filteredHealthItemArray.count;
     if (![searchBar.text isEqualToString:@""]) {
         selectedItem = (HealthItem *)[filteredHealthItemArray objectAtIndex:indexPath.row];
     }
