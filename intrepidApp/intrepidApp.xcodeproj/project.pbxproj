@@ -28,6 +28,7 @@
 		688F9E661786295100CF850C /* HealthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 688F9E651786295100CF850C /* HealthCell.m */; };
 		68A2D71A178BDBE800B3C330 /* searchBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A2D719178BDBE800B3C330 /* searchBar@2x.png */; };
 		68A2D71D178BE17B00B3C330 /* HealthSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A2D71C178BE17B00B3C330 /* HealthSearchBar.m */; };
+		68E4240417926E1E00431908 /* IntreSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E4240317926E1E00431908 /* IntreSearchBar.m */; };
 		68EDE3A5178A071600085A84 /* menuBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68EDE3A4178A071600085A84 /* menuBack@2x.png */; };
 		7E347778178F8B3A00FB86DC /* cancel-search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E347777178F8B3A00FB86DC /* cancel-search@2x.png */; };
 		7E34777C1791E79300FB86DC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34777B1791E79300FB86DC /* LoginViewController.m */; };
@@ -74,6 +75,8 @@
 		68A2D719178BDBE800B3C330 /* searchBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchBar@2x.png"; sourceTree = "<group>"; };
 		68A2D71B178BE17B00B3C330 /* HealthSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthSearchBar.h; path = classes/HealthSearchBar.h; sourceTree = "<group>"; };
 		68A2D71C178BE17B00B3C330 /* HealthSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthSearchBar.m; path = classes/HealthSearchBar.m; sourceTree = "<group>"; };
+		68E4240217926E1E00431908 /* IntreSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntreSearchBar.h; path = classes/IntreSearchBar.h; sourceTree = "<group>"; };
+		68E4240317926E1E00431908 /* IntreSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntreSearchBar.m; path = classes/IntreSearchBar.m; sourceTree = "<group>"; };
 		68EDE3A4178A071600085A84 /* menuBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menuBack@2x.png"; sourceTree = "<group>"; };
 		7E347777178F8B3A00FB86DC /* cancel-search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel-search@2x.png"; sourceTree = "<group>"; };
 		7E34777A1791E79300FB86DC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = classes/LoginViewController.h; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				6851222417861138008DB6B6 /* AppDelegate.m */,
 				6835EC141789439600A57F86 /* MenuController.h */,
 				6835EC151789439600A57F86 /* MenuController.m */,
+				68E4240217926E1E00431908 /* IntreSearchBar.h */,
+				68E4240317926E1E00431908 /* IntreSearchBar.m */,
 				7E3477791791E76700FB86DC /* Login/Signup */,
 				688F9E5B178611C000CF850C /* health */,
 				6851222C17861138008DB6B6 /* MainStoryboard.storyboard */,
@@ -316,6 +321,7 @@
 				68A2D71D178BE17B00B3C330 /* HealthSearchBar.m in Sources */,
 				7E34777C1791E79300FB86DC /* LoginViewController.m in Sources */,
 				7E34777F1791E7A700FB86DC /* SignUpViewController.m in Sources */,
+				68E4240417926E1E00431908 /* IntreSearchBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
