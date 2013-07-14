@@ -38,10 +38,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // background:
+    CGRect gameArea = self.view.frame;
+    
+    UIImage *backgroundImage = [UIImage imageNamed:@"mexicoBackBigger.png"];
+    UIImageView *myImageView = [[UIImageView alloc] initWithFrame:gameArea];
+    [myImageView setImage:backgroundImage];
+    [myImageView setUserInteractionEnabled:YES];
+    [self.view addSubview:myImageView];
+    
+    
     [self addTabs];
     [self addTableViews];
     [self populateContentArray];
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"mexicoBack.png"]]];
     [self addIntreSearchBar];
     self.navigationItem.hidesBackButton = YES;
     
@@ -72,16 +82,21 @@
 # pragma mark - UI Setup
 
 -(void)addIntreSearchBar {
-    searchBar  = [[IntreSearchBar alloc] initWithFrame:CGRectMake(0, 38, 330, 45)];
+    searchBar  = [[IntreSearchBar alloc] initWithFrame:CGRectMake(0, 35, 330, 44)];
     [searchBar setBackgroundColor:APP_SEARCH_COLOR];
     [searchBar setPlaceholder:@"Tap to Search"];
     [searchBar setText:@""];
     [searchBar addTarget:self action:@selector(textFieldDidChange) forControlEvents:UIControlEventEditingChanged];
+    searchBar.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     [self.view addSubview:searchBar];
     
+    UIImageView *spyGlass = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"spyGlass.png"]];
+    spyGlass.frame = CGRectMake(5, 51, 13, 13);
+    [self.view addSubview:spyGlass];
+    
     UIButton *xButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [xButton setImage:[UIImage imageNamed:@"samplePic.png"] forState:UIControlStateNormal];
-    xButton.frame = CGRectMake(250, 38, 45, 45);
+    [xButton setImage:[UIImage imageNamed:@"cancel-search.png"] forState:UIControlStateNormal];
+    xButton.frame = CGRectMake(250, 35, 44, 44);
     xButton.userInteractionEnabled = YES;
     [self.view addSubview:xButton];
     [xButton addTarget:self action:@selector(removeText) forControlEvents:UIControlEventTouchUpInside];
@@ -89,8 +104,8 @@
 }
 
 -(void)removeText {
-    NSLog(@"remove text called lolza");
     searchBar.text = @"";
+    [[tableArray objectAtIndex:currentTab] reloadData];
 }
 
 -(void)capitalLabel:(UILabel *)label withLetter:(NSString *)letter {
@@ -175,7 +190,8 @@
         table.dataSource = self;
         table.delegate = self;
         table.backgroundColor = [UIColor whiteColor];
-        table.alpha = 1.0;
+        [table setSeparatorColor:[UIColor colorWithRed:189.0/255 green:185.0/255 blue:177.0/255 alpha:1]];
+        table.alpha = 0.8;
         [tableArray addObject:table];
         i++;
     }
