@@ -7,6 +7,7 @@
 //
 
 #import "IntreSearchBar.h"
+#import "Constants.h"
 
 @implementation IntreSearchBar
 
@@ -18,10 +19,19 @@
     return self;
 }
 
-
 - (void) drawPlaceholderInRect:(CGRect)rect {
-    [[UIColor blueColor] setFill];
-    [[self placeholder] drawInRect:rect withFont:[UIFont systemFontOfSize:16]];
+    [APP_TEXT_COLOR setFill];
+    [[self placeholder] drawInRect:rect withFont:[UIFont fontWithName:APP_FONT size:PARA_SMALL]];
+}
+
+- (CGRect)textRectForBounds:(CGRect)bounds {
+    CGRect inset = CGRectMake(bounds.origin.x + 20, bounds.origin.y, bounds.size.width - 20, bounds.size.height);
+    return inset;
+}
+
+- (CGRect)editingRectForBounds:(CGRect)bounds {
+    CGRect inset = CGRectMake(bounds.origin.x + 20, bounds.origin.y, bounds.size.width - 20, bounds.size.height);
+    return inset;
 }
 
 
