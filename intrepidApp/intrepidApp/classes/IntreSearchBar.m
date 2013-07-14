@@ -25,12 +25,12 @@
 }
 
 - (CGRect)textRectForBounds:(CGRect)bounds {
-    CGRect inset = CGRectMake(bounds.origin.x + 20, bounds.origin.y, bounds.size.width - 20, bounds.size.height);
+    CGRect inset = CGRectMake(bounds.origin.x + 25, bounds.origin.y, bounds.size.width - 25, bounds.size.height);
     return inset;
 }
 
 - (CGRect)editingRectForBounds:(CGRect)bounds {
-    CGRect inset = CGRectMake(bounds.origin.x + 20, bounds.origin.y, bounds.size.width - 20, bounds.size.height);
+    CGRect inset = CGRectMake(bounds.origin.x + 25, bounds.origin.y, bounds.size.width - 25, bounds.size.height);
     return inset;
 }
 

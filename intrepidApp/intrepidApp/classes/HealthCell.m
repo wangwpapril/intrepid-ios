@@ -19,7 +19,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        commonImage = [[UIImageView alloc] initWithFrame:CGRectMake(200, 0, 107, 42)];
+        commonImage = [[UIImageView alloc] initWithFrame:CGRectMake(205, 16, 106, 13)];
     }
     return self;
 }
@@ -30,11 +30,11 @@
     NSString *commonImageName;
     
     if (healthItem.common == TRUE) {
-        commonImageName = @"common.png";
+        commonImageName = @"Common.png";
     }
     
     else {
-        commonImageName = @"uncommon.png";
+        commonImageName = @"Uncommon.png";
     }
     commonImage.image = [UIImage imageNamed:commonImageName];
     
