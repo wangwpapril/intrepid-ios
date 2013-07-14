@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "MenuController.h"
 #import "HealthItem.h"
-#import "HealthSearchBar.h"
+#import "IntreSearchBar.h"
 
 
-@interface HealthViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
+@interface HealthViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
 @property (nonatomic, strong) NSMutableArray *contentArray;
 @property (nonatomic, strong) NSMutableArray *largeLetterArray;
@@ -21,23 +21,16 @@
 @property (nonatomic) NSInteger currentTab;
 @property (nonatomic) NSInteger previousTab;
 @property (nonatomic, strong) UILabel *line;
+@property (nonatomic, strong) MenuController *mController;
 
 @property (strong,nonatomic) NSArray *healthItemArray;
 @property (strong,nonatomic) NSMutableArray *filteredHealthItemArray;
-@property IBOutlet HealthSearchBar *healthItemSearchBar;
-
+@property (nonatomic, strong) IntreSearchBar * searchBar;
 @property (nonatomic, strong) HealthItem *selectedItem;
 
 @property (nonatomic, strong) IBOutlet UILabel *navLabelC;
 @property (nonatomic, strong) IBOutlet UILabel *navLabelS;
 @property (nonatomic, strong) IBOutlet UILabel *navLabelM;
 
-//
-//@property (nonatomic, strong) UITableView *conditionsTable;
-//@property (nonatomic, strong) UITableView *symptomsTable;
-//@property (nonatomic, strong) UITableView *medicationsTable;
-
-
-@property (nonatomic, strong) MenuController *mController;
 
 @end
