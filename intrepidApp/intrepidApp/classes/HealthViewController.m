@@ -39,15 +39,16 @@
 {
     [super viewDidLoad];
     
-    // background:
-    CGRect gameArea = self.view.frame;
-    
+    // background
     UIImage *backgroundImage = [UIImage imageNamed:@"mexicoBackBigger.png"];
-    UIImageView *myImageView = [[UIImageView alloc] initWithFrame:gameArea];
+    UIImageView *myImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
     [myImageView setImage:backgroundImage];
-    [myImageView setUserInteractionEnabled:YES];
+    myImageView.alpha = 0.2;
     [self.view addSubview:myImageView];
-    
+    UIView *whiteLayer = [[UIView alloc] initWithFrame:self.view.frame];
+    whiteLayer.backgroundColor = [UIColor whiteColor];
+    whiteLayer.alpha = 0.8;
+    [self.view addSubview:whiteLayer];
     
     [self addTabs];
     [self addTableViews];
@@ -189,9 +190,10 @@
         table.tag = i;
         table.dataSource = self;
         table.delegate = self;
-        table.backgroundColor = [UIColor whiteColor];
+        table.backgroundColor = [UIColor clearColor];
+        table.opaque = NO;
+        table.backgroundView = nil;
         [table setSeparatorColor:[UIColor colorWithRed:189.0/255 green:185.0/255 blue:177.0/255 alpha:1]];
-        table.alpha = 0.8;
         [tableArray addObject:table];
         i++;
     }
@@ -369,6 +371,9 @@
     }
     
     [cell setupWithHealthItem:healthItem];
+    
+    cell.contentView.backgroundColor = [UIColor clearColor];
+    cell.textLabel.backgroundColor = [UIColor clearColor];
     return cell;
 }
 
