@@ -175,7 +175,7 @@
         table.dataSource = self;
         table.delegate = self;
         table.backgroundColor = [UIColor whiteColor];
-        table.alpha = 0.8;
+        table.alpha = 1.0;
         [tableArray addObject:table];
         i++;
     }
@@ -353,6 +353,8 @@
     }
     
     [cell setupWithHealthItem:healthItem];
+
+    
     return cell;
 }
 

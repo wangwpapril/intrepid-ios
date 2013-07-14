@@ -23,12 +23,12 @@
     NSLog(@"screen height: %f", controller.view.frame.size.height);
     viewHeight = controller.view.frame.size.height - 44; // account for nav bar
     
-    // this is an outrageous hack.. but xcode 4 & 5 compile diff
-    if (viewHeight >= 460) {
-        viewHeight -= 20;
-    }
+//    // this is an outrageous hack.. but xcode 4 & 5 compile diff
+//    if (viewHeight >= 460) {
+////        viewHeight -= 20;
+//    }
     
-    botPosition = CGRectMake(0, viewHeight - 30, 320, 206);
+    botPosition = CGRectMake(0, viewHeight - 25, 320, 206);
     menu = [[UIImageView alloc] initWithFrame:botPosition];
     hiding = true;
     menu.image = [UIImage imageNamed:@"menuBack2.png"];
@@ -45,7 +45,7 @@
     CGPoint translation = [recognizer translationInView:parentController.view];
     float nextPos = menu.frame.origin.y + translation.y;
     BOOL touchIsOver = (recognizer.state == UIGestureRecognizerStateEnded);
-    if (nextPos > viewHeight - 88 && (!hiding || touchIsOver || nextPos > viewHeight - 30)) {
+    if (nextPos > viewHeight - 90 && (!hiding || touchIsOver || nextPos > viewHeight - 25)) {
         [UIView animateWithDuration:0.3
                               delay:0
                             options:UIViewAnimationCurveEaseInOut animations:^{
@@ -56,7 +56,7 @@
          }
          ];
     }
-    else if (nextPos < viewHeight - 88 && (hiding || touchIsOver || nextPos < viewHeight - 206)) {
+    else if (nextPos < viewHeight - 90 && (hiding || touchIsOver || nextPos < viewHeight - 206)) {
         [self showMenu];
     }
     else {
