@@ -89,6 +89,8 @@
     [searchBar addTarget:self action:@selector(textFieldDidChange) forControlEvents:UIControlEventEditingChanged];
     searchBar.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     [self.view addSubview:searchBar];
+    searchBar.delegate = self;
+    [searchBar setReturnKeyType:UIReturnKeyDone];
     
     UIImageView *spyGlass = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"spyGlass.png"]];
     spyGlass.frame = CGRectMake(5, 51, 13, 13);
@@ -212,21 +214,38 @@
     //                                             (unsigned long)NULL), ^(void) {
     
     NSArray *conditions = [NSArray arrayWithObjects:
-                           [HealthItem healthItemOfCategory:@"conditions" name:@"dang-it fever" common: TRUE],
-                           [HealthItem healthItemOfCategory:@"conditions" name:@"dieaggoriea" common: FALSE],
-                           [HealthItem healthItemOfCategory:@"conditions" name:@"death" common: TRUE], nil];
+                           [HealthItem healthItemOfCategory:@"conditions" name:@"Arm Fracture" common: TRUE],
+                           [HealthItem healthItemOfCategory:@"conditions" name:@"Heartburn" common: FALSE],
+                           [HealthItem healthItemOfCategory:@"conditions" name:@"Headache" common: TRUE],
+                           [HealthItem healthItemOfCategory:@"conditions" name:@"Stomach Ache" common: TRUE],
+                           [HealthItem healthItemOfCategory:@"conditions" name:@"Anxiety" common: FALSE],
+                           [HealthItem healthItemOfCategory:@"conditions" name:@"Vomiting" common: TRUE],
+                            [HealthItem healthItemOfCategory:@"conditions" name:@"Sleep Walking" common: FALSE],
+                            [HealthItem healthItemOfCategory:@"conditions" name:@"Asthma" common: TRUE], nil];
     
     
     NSArray *symptoms  = [NSArray arrayWithObjects:
-                          [HealthItem healthItemOfCategory:@"symptoms" name:@"constipation" common: FALSE],
-                          [HealthItem healthItemOfCategory:@"symptoms" name:@"heartburn" common: TRUE],
-                          [HealthItem healthItemOfCategory:@"symptoms" name:@"stomach ache" common: FALSE], nil];
+                          [HealthItem healthItemOfCategory:@"symptoms" name:@"Blood Pressure" common: TRUE],
+                          [HealthItem healthItemOfCategory:@"symptoms" name:@"Bleeding" common: FALSE],
+                          [HealthItem healthItemOfCategory:@"symptoms" name:@"Bone Pain" common: TRUE],
+                        [HealthItem healthItemOfCategory:@"symptoms" name:@"Arm Pain" common: TRUE],
+                        [HealthItem healthItemOfCategory:@"symptoms" name:@"Back Pain" common: FALSE],
+                        [HealthItem healthItemOfCategory:@"symptoms" name:@"Dizziness" common: TRUE],
+                          [HealthItem healthItemOfCategory:@"symptoms" name:@"Sleep Deprivation" common: FALSE],
+                          [HealthItem healthItemOfCategory:@"symptoms" name:@"Anxiety" common: TRUE],
+                          [HealthItem healthItemOfCategory:@"symptoms" name:@"Wheezing" common: TRUE], nil];
     
     
     NSArray *medication  = [NSArray arrayWithObjects:
-                            [HealthItem healthItemOfCategory:@"medications" name:@"placebo" common: FALSE],
-                            [HealthItem healthItemOfCategory:@"medications" name:@"aspirin" common: TRUE],
-                            [HealthItem healthItemOfCategory:@"medications" name:@"milk of the poppy" common: FALSE], nil];
+                            [HealthItem healthItemOfCategory:@"medications" name:@"Antacid" common: TRUE],
+                            [HealthItem healthItemOfCategory:@"medications" name:@"Neosporin" common: FALSE],
+                            [HealthItem healthItemOfCategory:@"medications" name:@"Ibuprofen" common: TRUE],
+                            [HealthItem healthItemOfCategory:@"medications" name:@"Pepto-Bismol" common: TRUE],
+                            [HealthItem healthItemOfCategory:@"medications" name:@"Hydrocorisone" common: FALSE],
+                            [HealthItem healthItemOfCategory:@"medications" name:@"Aspirin" common: TRUE],
+                            [HealthItem healthItemOfCategory:@"medications" name:@"Benadryl" common: FALSE],
+                            [HealthItem healthItemOfCategory:@"medications" name:@"Cortizone" common: TRUE],
+                            [HealthItem healthItemOfCategory:@"medications" name:@"Vicks" common: TRUE], nil];
     
     contentArray = [[NSMutableArray alloc] initWithObjects:conditions, symptoms, medication, nil];
     
@@ -415,5 +434,11 @@
     }
 }
 
+# pragma mark - Keyboard
+
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    [theTextField resignFirstResponder];
+    return YES;
+}
 
 @end
