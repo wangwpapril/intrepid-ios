@@ -99,7 +99,7 @@
     
     UIButton *xButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [xButton setImage:[UIImage imageNamed:@"cancel-search.png"] forState:UIControlStateNormal];
-    xButton.frame = CGRectMake(250, 35, 44, 44);
+    xButton.frame = CGRectMake(270, 35, 44, 44);
     xButton.userInteractionEnabled = YES;
     [self.view addSubview:xButton];
     [xButton addTarget:self action:@selector(removeText) forControlEvents:UIControlEventTouchUpInside];
@@ -397,7 +397,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger fCount = filteredHealthItemArray.count;
     if (![searchBar.text isEqualToString:@""]) {
         selectedItem = (HealthItem *)[filteredHealthItemArray objectAtIndex:indexPath.row];
     }
