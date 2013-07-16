@@ -94,7 +94,7 @@
     NSString *uppercaseString = [healthItemName uppercaseString];
     healthItemNameLabel.text = uppercaseString;
     healthItemNameLabel.backgroundColor = [UIColor clearColor];
-    healthItemNameLabel.font = [UIFont fontWithName:APP_FONT size:16];
+    healthItemNameLabel.font = [UIFont fontWithName:APP_FONT size:18];
     healthItemNameLabel.textColor = UIColorFromRGB(0xeaf0e6);
     
     [healthItemTitleLabel addSubview:healthItemNameLabel];
@@ -111,16 +111,15 @@
     
     descriptionLabel.font = [UIFont fontWithName:APP_FONT size:17];
     descriptionLabel.backgroundColor = UIColorFromRGB(0xffffff);
+    descriptionLabel.textColor = UIColorFromRGB(0x423a38);
     
     //Set descriptionText to auto-fit content
     descriptionText.font = [UIFont fontWithName:APP_FONT size:12];
     descriptionText.backgroundColor = UIColorFromRGB(0xffffff);
+    descriptionText.textColor = UIColorFromRGB(0x423a38);
     [descriptionText setAlpha:0.6];
     descriptionText.layer.borderWidth = 1.0f;
     descriptionText.layer.borderColor = [[UIColor grayColor] CGColor];
-    
-    //Inset the descriptionText content
-    descriptionText.contentInset = UIEdgeInsetsMake(0, 15.0f, 0, 0);
     
     CGRect frame = descriptionText.frame;
     UIEdgeInsets inset = descriptionText.contentInset;
@@ -137,6 +136,7 @@
     
     sideEffectsLabel.font = [UIFont fontWithName:APP_FONT size:17];
     sideEffectsLabel.backgroundColor = UIColorFromRGB(0xffffff);
+    sideEffectsLabel.textColor = UIColorFromRGB(0x423a38);
     
     if ([healthItemCategory isEqualToString:@"conditions"]) {
         sideEffectsLabel.text = @"Diagnosis";
@@ -150,6 +150,7 @@
     
     sideEffectsText.font = [UIFont fontWithName:APP_FONT size:12];
     sideEffectsText.backgroundColor = UIColorFromRGB(0xffffff);
+    sideEffectsText.textColor = UIColorFromRGB(0x423a38);
     [sideEffectsText setAlpha:0.6];
     sideEffectsText.layer.borderWidth = 1.0f;
     sideEffectsText.layer.borderColor = [[UIColor grayColor] CGColor];
