@@ -89,6 +89,7 @@
     [searchBar setPlaceholder:@"Tap to Search"];
     [searchBar setText:@""];
     [searchBar addTarget:self action:@selector(textFieldDidChange) forControlEvents:UIControlEventEditingChanged];
+    [searchBar setFont: [UIFont fontWithName:@"ProximaNova-Light" size:16]];
     searchBar.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     [self.view addSubview:searchBar];
     searchBar.delegate = self;
@@ -147,7 +148,7 @@
         }
         [tab setTitle:title forState:UIControlStateNormal];
         [tab setTitleColor:APP_TOGGLE_SELECTED forState:UIControlStateNormal];
-        tab.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+        tab.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
         [tab setBackgroundColor:APP_TEXT_COLOR];
         tab.alpha = 0.8;
         
@@ -285,7 +286,7 @@
         if (tab.tag == newTag) {
             [tab setTitleColor:APP_TOGGLE_SELECTED forState:UIControlStateNormal];
 //            [capitalLetter setTextColor:APP_TOGGLE_SELECTED];
-            lineX = 107 * index + 10;
+            lineX = 107 * index + 13;
             
         }
         

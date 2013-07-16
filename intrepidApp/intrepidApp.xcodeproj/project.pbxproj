@@ -48,6 +48,8 @@
 		7ECD043B178DE24F00D6C34B /* stethoscope-pic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD0437178DE24F00D6C34B /* stethoscope-pic@2x.png */; };
 		7ECD043C178DE24F00D6C34B /* heart-rate-pic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD0438178DE24F00D6C34B /* heart-rate-pic@2x.png */; };
 		7ECD043D178DE24F00D6C34B /* conditions-pic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD0439178DE24F00D6C34B /* conditions-pic@2x.png */; };
+		7ED645C11795A2FB000475A1 /* proximanova-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED645C01795A2E9000475A1 /* proximanova-semibold.ttf */; };
+		7ED645C51795AB83000475A1 /* proximanova-light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED645C41795AB80000475A1 /* proximanova-light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +108,8 @@
 		7ECD0437178DE24F00D6C34B /* stethoscope-pic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stethoscope-pic@2x.png"; sourceTree = "<group>"; };
 		7ECD0438178DE24F00D6C34B /* heart-rate-pic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-rate-pic@2x.png"; sourceTree = "<group>"; };
 		7ECD0439178DE24F00D6C34B /* conditions-pic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "conditions-pic@2x.png"; sourceTree = "<group>"; };
+		7ED645C01795A2E9000475A1 /* proximanova-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-semibold.ttf"; sourceTree = "<group>"; };
+		7ED645C41795AB80000475A1 /* proximanova-light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-light.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +255,8 @@
 		7E82E9B61794EE5D00027268 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				7ED645C41795AB80000475A1 /* proximanova-light.ttf */,
+				7ED645C01795A2E9000475A1 /* proximanova-semibold.ttf */,
 				7E82E9BA1794F0B900027268 /* proximanova-bold.ttf */,
 				7E82E9B81794EFB500027268 /* proximanova-regular.ttf */,
 			);
@@ -332,6 +338,8 @@
 				68E4240C1793190600431908 /* Uncommon@2x.png in Resources */,
 				7E82E9B91794F01000027268 /* proximanova-regular.ttf in Resources */,
 				7E82E9BB1794F0D400027268 /* proximanova-bold.ttf in Resources */,
+				7ED645C11795A2FB000475A1 /* proximanova-semibold.ttf in Resources */,
+				7ED645C51795AB83000475A1 /* proximanova-light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

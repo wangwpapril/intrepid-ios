@@ -42,23 +42,42 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    [self.view addSubview:scrollView];
-    [self.view addSubview:healthItemNameLabel];
     
-    [self addDescription];
-    [self addSideEffects];
+    UIImage *backgroundImage = [UIImage imageNamed:@"mexicoBackBigger.png"];
+    CGRect imageFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    CGRect whiteFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    UIImageView *myImageView = [[UIImageView alloc] initWithFrame:imageFrame];
+    [myImageView setImage:backgroundImage];
+    [self.view addSubview:myImageView];
+    UIView *whiteLayer = [[UIView alloc] initWithFrame:whiteFrame];
+    whiteLayer.backgroundColor = [UIColor whiteColor];
+    whiteLayer.alpha = 0.9;
+    [self.view addSubview:whiteLayer];
     
     [scrollView setScrollEnabled:YES];
     
-    CGFloat scrollViewHeight = 15.0f;
+    CGFloat scrollViewHeight = 125.0f;
     for (UIView* view in scrollView.subviews)
     {
         scrollViewHeight += view.frame.size.height;
     }
     
     [scrollView setContentSize:(CGSizeMake(320, scrollViewHeight))];
-//    [scrollView setContentSize:CGSizeMake(320, 530)];
+    
+    
+    [self.view addSubview:scrollView];
+    
+    [self addDescription];
+    [self addSideEffects];
+    
+//    NSArray *familyNames = [UIFont familyNames];
+//    for( NSString *familyName in familyNames ){
+//        printf( "Family: %s \n", [familyName UTF8String] );
+//        NSArray *fontNames = [UIFont fontNamesForFamilyName:familyName];
+//        for( NSString *fontName in fontNames ){
+//            printf( "\tFont: %s \n", [fontName UTF8String] );
+//        }
+//    }
     
     //Change appearance of backbutton
     self.navigationItem.hidesBackButton=YES;
@@ -85,7 +104,7 @@
     }
     sideEffectsImageLabel.text = NULL;
     
-    self.view.backgroundColor = UIColorFromRGB(0xffffff);
+//    self.view.backgroundColor = UIColorFromRGB(0xffffff);
     
     // Set Header label    
     healthItemTitleLabel.backgroundColor = NAVIGATION_BG_COLOR;
@@ -94,10 +113,11 @@
     NSString *uppercaseString = [healthItemName uppercaseString];
     healthItemNameLabel.text = uppercaseString;
     healthItemNameLabel.backgroundColor = [UIColor clearColor];
-    healthItemNameLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
+    healthItemNameLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:16];
     healthItemNameLabel.textColor = UIColorFromRGB(0xeaf0e6);
     
     [healthItemTitleLabel addSubview:healthItemNameLabel];
+    [self.view addSubview:healthItemTitleLabel];
     
 	// Do any additional setup after loading the view.
 }
@@ -109,8 +129,8 @@
 
 - (void)addDescription {
     
-    descriptionLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:17];
-    descriptionLabel.backgroundColor = UIColorFromRGB(0xffffff);
+    descriptionLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
+    descriptionLabel.backgroundColor = [UIColor clearColor];
     descriptionLabel.textColor = UIColorFromRGB(0x423a38);
     
     //Set descriptionText to auto-fit content
@@ -133,8 +153,8 @@
 
 - (void)addSideEffects {
     
-    sideEffectsLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:17];
-    sideEffectsLabel.backgroundColor = UIColorFromRGB(0xffffff);
+    sideEffectsLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
+    sideEffectsLabel.backgroundColor = [UIColor clearColor];
     sideEffectsLabel.textColor = UIColorFromRGB(0x423a38);
     
     if ([healthItemCategory isEqualToString:@"conditions"]) {
