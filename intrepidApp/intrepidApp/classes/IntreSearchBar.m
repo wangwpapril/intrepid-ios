@@ -21,7 +21,7 @@
 
 - (void) drawPlaceholderInRect:(CGRect)rect {
     [APP_TEXT_COLOR setFill];
-    [[self placeholder] drawInRect:rect withFont:[UIFont fontWithName:APP_FONT size:PARA_SMALL]];
+    [[self placeholder] drawInRect:rect withFont:[UIFont fontWithName:APP_FONT_BACKUP size:LIST_SMALL]];
 }
 
 - (CGRect)textRectForBounds:(CGRect)bounds {
