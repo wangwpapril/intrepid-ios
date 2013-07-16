@@ -13,15 +13,15 @@
 #define APP_FONT @"ProximaNova-Regular"
 
 
-#define PARA_SMALL 9
-#define PARA_MEDIUM 12
-#define PARA_LARGE 15
-#define LIST_SMALL 12
-#define LIST_MEDIUM 15
-#define LIST_LARGE 17
-#define HEADER_SMALL 15
-#define HEADER_MEDIUM 18
-#define HEADER_LARGE 24
+#define PARA_SMALL 18
+#define PARA_MEDIUM 24
+#define PARA_LARGE 30
+#define LIST_SMALL 24
+#define LIST_MEDIUM 30
+#define LIST_LARGE 34
+#define HEADER_SMALL 30
+#define HEADER_MEDIUM 36
+#define HEADER_LARGE 48
 
 #define APP_TEXT_COLOR [UIColor colorWithRed: 66.0/255 green: 58.0/255 blue: 56.0/255 alpha: 1.0]
 

@@ -44,7 +44,7 @@
     self.imageView.layer.masksToBounds = YES;
     
     self.textLabel.text = healthItem.name;
-    self.textLabel.font = [UIFont fontWithName:APP_FONT size:PARA_SMALL];
+    self.textLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
     self.textLabel.textColor = APP_TEXT_COLOR;
     
     [self addSubview:commonImage];

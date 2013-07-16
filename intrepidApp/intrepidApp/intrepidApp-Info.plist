@@ -26,6 +26,8 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>proximanova-bold.ttf</string>
+		<string>proximanova-regular.ttf</string>
 		<string>ProximaNova-LightItalic.otf</string>
 		<string>ProximaNova-RegItalic.otf</string>
 		<string>ProximaNova-SemiboldItalic.otf</string>

@@ -94,7 +94,7 @@
     NSString *uppercaseString = [healthItemName uppercaseString];
     healthItemNameLabel.text = uppercaseString;
     healthItemNameLabel.backgroundColor = [UIColor clearColor];
-    healthItemNameLabel.font = [UIFont fontWithName:APP_FONT size:18];
+    healthItemNameLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
     healthItemNameLabel.textColor = UIColorFromRGB(0xeaf0e6);
     
     [healthItemTitleLabel addSubview:healthItemNameLabel];
@@ -109,12 +109,12 @@
 
 - (void)addDescription {
     
-    descriptionLabel.font = [UIFont fontWithName:APP_FONT size:17];
+    descriptionLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:17];
     descriptionLabel.backgroundColor = UIColorFromRGB(0xffffff);
     descriptionLabel.textColor = UIColorFromRGB(0x423a38);
     
     //Set descriptionText to auto-fit content
-    descriptionText.font = [UIFont fontWithName:APP_FONT size:12];
+    descriptionText.font = [UIFont fontWithName:@"ProximaNova-Regular" size:12];
     descriptionText.backgroundColor = UIColorFromRGB(0xffffff);
     descriptionText.textColor = UIColorFromRGB(0x423a38);
     [descriptionText setAlpha:0.6];
@@ -131,10 +131,9 @@
 
 }
 
-
 - (void)addSideEffects {
     
-    sideEffectsLabel.font = [UIFont fontWithName:APP_FONT size:17];
+    sideEffectsLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:17];
     sideEffectsLabel.backgroundColor = UIColorFromRGB(0xffffff);
     sideEffectsLabel.textColor = UIColorFromRGB(0x423a38);
     
@@ -148,7 +147,7 @@
         sideEffectsLabel.text = @"Side Effects";
     }
     
-    sideEffectsText.font = [UIFont fontWithName:APP_FONT size:12];
+    sideEffectsText.font = [UIFont fontWithName:@"ProximaNova-Regular" size:12];
     sideEffectsText.backgroundColor = UIColorFromRGB(0xffffff);
     sideEffectsText.textColor = UIColorFromRGB(0x423a38);
     [sideEffectsText setAlpha:0.6];
@@ -164,7 +163,6 @@
     [scrollView addSubview: sideEffectsText];
         
 }
-
 
 - (void)didReceiveMemoryWarning
 {
