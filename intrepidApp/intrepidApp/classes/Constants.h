@@ -11,6 +11,7 @@
 
 // font and font size
 #define APP_FONT @"ProximaNova-Regular"
+#define APP_FONT_BACKUP @"Helvetica Neue"
 
 
 #define PARA_SMALL 9
@@ -26,7 +27,7 @@
 #define APP_TEXT_COLOR [UIColor colorWithRed: 66.0/255 green: 58.0/255 blue: 56.0/255 alpha: 1.0]
 
 #define APP_BG_COLOR [UIColor colorWithRed: 248.0/255 green: 248.0/255 blue: 248.0/255 alpha: 1.0]
-#define APP_SEARCH_COLOR [UIColor colorWithRed: 231.0/255 green: 238.0/255 blue: 226.0/255 alpha: 1]
+#define APP_SEARCH_COLOR [UIColor colorWithRed: 231.0/255 green: 238.0/255 blue: 226.0/255 alpha: 1.0]
 
 #define APP_TOGGLE_SELECTED [UIColor colorWithRed: 202.0/255 green: 199.0/255 blue: 194.0/255 alpha: 1.0]
 #define APP_TOGGLE_UNSELECTED [UIColor colorWithRed: 160.0/255 green: 156.0/255 blue: 155.0/255 alpha: 1.0]
