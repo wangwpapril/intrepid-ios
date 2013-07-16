@@ -147,7 +147,7 @@
         }
         [tab setTitle:title forState:UIControlStateNormal];
         [tab setTitleColor:APP_TOGGLE_SELECTED forState:UIControlStateNormal];
-        tab.titleLabel.font = [UIFont fontWithName:APP_FONT_BACKUP size:LIST_SMALL];
+        tab.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
         [tab setBackgroundColor:APP_TEXT_COLOR];
         tab.alpha = 0.8;
         

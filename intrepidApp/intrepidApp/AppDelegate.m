@@ -25,7 +25,7 @@
      [NSDictionary dictionaryWithObjectsAndKeys:
       [UIColor colorWithRed:66/255.0f green:58/255.0f blue:56/255.0f alpha:1.0f],
       UITextAttributeTextColor,
-      [UIFont fontWithName:@"ProximaNova-Regular" size:17],
+      [UIFont fontWithName:@"ProximaNova-Bold" size:20],
       UITextAttributeFont,
       nil]];
 }

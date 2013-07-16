@@ -11,7 +11,7 @@
 
 // font and font size
 #define APP_FONT @"ProximaNova-Regular"
-#define APP_FONT_BACKUP @"Helvetica Neue"
+//#define APP_FONT_BACKUP @"Helvetica Neue"
 
 
 #define PARA_SMALL 18
