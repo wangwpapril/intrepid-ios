@@ -17,7 +17,7 @@
 @implementation HealthViewController
 
 @synthesize tabArray;
-@synthesize largeLetterArray;
+//@synthesize largeLetterArray;
 @synthesize contentArray;
 @synthesize tableArray;
 @synthesize currentTab;
@@ -29,9 +29,9 @@
 @synthesize healthItemArray;
 @synthesize filteredHealthItemArray;
 
-@synthesize navLabelC;
-@synthesize navLabelM;
-@synthesize navLabelS;
+//@synthesize navLabelC;
+//@synthesize navLabelM;
+//@synthesize navLabelS;
 @synthesize searchBar;
 
 
@@ -41,16 +41,17 @@
     
     // background
     UIImage *backgroundImage = [UIImage imageNamed:@"mexicoBackBigger.png"];
-    UIImageView *myImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
+    CGRect imageFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    CGRect whiteFrame = CGRectMake(0, 79, self.view.frame.size.width, self.view.frame.size.height - 79);
+    UIImageView *myImageView = [[UIImageView alloc] initWithFrame:imageFrame];
     [myImageView setImage:backgroundImage];
-    myImageView.alpha = 0.2;
     [self.view addSubview:myImageView];
-    UIView *whiteLayer = [[UIView alloc] initWithFrame:self.view.frame];
+    UIView *whiteLayer = [[UIView alloc] initWithFrame:whiteFrame];
     whiteLayer.backgroundColor = [UIColor whiteColor];
-    whiteLayer.alpha = 0.8;
+    whiteLayer.alpha = 0.9;
     [self.view addSubview:whiteLayer];
     
-    [self addTabs];
+    [self addTabs];   
     [self addTableViews];
     [self populateContentArray];
     [self addIntreSearchBar];
@@ -60,17 +61,17 @@
     mController = [[MenuController alloc] init];
     [mController displayMenuWithParent:self];
     
-    //add large letters to navigation bar
-    largeLetterArray = [NSMutableArray new];
-    
-    [self capitalLabel:navLabelC withLetter:@"C"];
-    [navLabelC setTextColor:APP_TOGGLE_UNSELECTED];
-    
-    [self capitalLabel:navLabelS withLetter:@"S"];
-    [navLabelS setTextColor:APP_TOGGLE_UNSELECTED];
-    
-    [self capitalLabel:navLabelM withLetter:@"M"];
-    [navLabelM setTextColor:APP_TOGGLE_UNSELECTED];
+//    //add large letters to navigation bar
+//    largeLetterArray = [NSMutableArray new];
+//    
+//    [self capitalLabel:navLabelC withLetter:@"C"];
+//    [navLabelC setTextColor:APP_TOGGLE_UNSELECTED];
+//    
+//    [self capitalLabel:navLabelS withLetter:@"S"];
+//    [navLabelS setTextColor:APP_TOGGLE_UNSELECTED];
+//    
+//    [self capitalLabel:navLabelM withLetter:@"M"];
+//    [navLabelM setTextColor:APP_TOGGLE_UNSELECTED];
     
 }
 
@@ -88,11 +89,12 @@
     [searchBar setPlaceholder:@"Tap to Search"];
     [searchBar setText:@""];
     [searchBar addTarget:self action:@selector(textFieldDidChange) forControlEvents:UIControlEventEditingChanged];
+    [searchBar setFont: [UIFont fontWithName:@"ProximaNova-Light" size:16]];
     searchBar.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     [self.view addSubview:searchBar];
     searchBar.delegate = self;
     [searchBar setReturnKeyType:UIReturnKeyDone];
-    
+    searchBar.alpha = 0.9;
     UIImageView *spyGlass = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"spyGlass.png"]];
     spyGlass.frame = CGRectMake(5, 51, 13, 13);
     [self.view addSubview:spyGlass];
@@ -111,13 +113,13 @@
     [[tableArray objectAtIndex:currentTab] reloadData];
 }
 
--(void)capitalLabel:(UILabel *)label withLetter:(NSString *)letter {
-    label.text = letter;
-    label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont fontWithName:APP_FONT size:14];
-    [self.view addSubview:label];
-    [largeLetterArray addObject:label];
-}
+//-(void)capitalLabel:(UILabel *)label withLetter:(NSString *)letter {
+//    label.text = letter;
+//    label.backgroundColor = [UIColor clearColor];
+//    label.font = [UIFont fontWithName:APP_FONT size:14];
+//    [self.view addSubview:label];
+//    [largeLetterArray addObject:label];
+//}
 
 - (void)addTabs {
     
@@ -132,13 +134,13 @@
         NSString *title;
         switch (i) {
             case 0:
-                title = @"ONDITIONS";
+                title = @"CONDITIONS";
                 break;
             case 1:
-                title = @"YMPTOMS";
+                title = @"SYMPTOMS";
                 break;
             case 2:
-                title = @"EDICATIONS";
+                title = @"MEDICATIONS";
                 break;
                 
             default:
@@ -146,15 +148,9 @@
         }
         [tab setTitle:title forState:UIControlStateNormal];
         [tab setTitleColor:APP_TOGGLE_SELECTED forState:UIControlStateNormal];
-        tab.titleLabel.font = [UIFont fontWithName:APP_FONT size:12];
-        [tab setBackgroundColor:NAVIGATION_BG_COLOR];
-        CAGradientLayer *btnGradient = [CAGradientLayer layer];
-        btnGradient.frame = tab.bounds;
-        btnGradient.colors = [NSArray arrayWithObjects:
-                              (id)[[UIColor colorWithRed:102.0f / 255.0f green:102.0f / 255.0f blue:102.0f / 255.0f alpha:1.0f] CGColor],
-                              (id)[[UIColor colorWithRed:51.0f / 255.0f green:51.0f / 255.0f blue:51.0f / 255.0f alpha:1.0f] CGColor],
-                              nil];
-        [tab.layer insertSublayer:btnGradient atIndex:0];
+        tab.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
+        [tab setBackgroundColor:APP_TEXT_COLOR];
+        tab.alpha = 0.8;
         
         tab.tag = i; // for tracking which one is clicked
         [tab addTarget:self action:@selector(tabSelected:) forControlEvents:UIControlEventTouchUpInside];
@@ -284,20 +280,20 @@
     for (UIButton *tab in tabArray) {
         
         // capital letter
-        UILabel *capitalLetter = ((UILabel *)[largeLetterArray objectAtIndex:index]);
+//        UILabel *capitalLetter = ((UILabel *)[largeLetterArray objectAtIndex:index]);
         // select that tab
         
         if (tab.tag == newTag) {
             [tab setTitleColor:APP_TOGGLE_SELECTED forState:UIControlStateNormal];
-            [capitalLetter setTextColor:APP_TOGGLE_SELECTED];
-            lineX = 107 * index + 10;
+//            [capitalLetter setTextColor:APP_TOGGLE_SELECTED];
+            lineX = 107 * index + 13;
             
         }
         
         // make sure tab is inactive
         else {
             [tab setTitleColor:APP_TOGGLE_UNSELECTED forState:UIControlStateNormal];
-            [capitalLetter setTextColor:APP_TOGGLE_UNSELECTED];
+//            [capitalLetter setTextColor:APP_TOGGLE_UNSELECTED];
         }
         index++;
     }

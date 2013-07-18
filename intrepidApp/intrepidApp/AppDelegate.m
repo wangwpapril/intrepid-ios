@@ -21,13 +21,16 @@
     UIImage *image = [UIImage imageNamed:@"top-nav-bar.png"];
     [[UINavigationBar appearance] setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     
+    
     [[UINavigationBar appearance] setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
       [UIColor colorWithRed:66/255.0f green:58/255.0f blue:56/255.0f alpha:1.0f],
       UITextAttributeTextColor,
-      [UIFont fontWithName:APP_FONT size:18],
-      UITextAttributeFont,
-      nil]];
+    [UIColor whiteColor],
+      UITextAttributeTextShadowColor,
+      [UIFont fontWithName:@"ProximaNova-Bold" size:18],
+      UITextAttributeFont, nil]];    
+
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

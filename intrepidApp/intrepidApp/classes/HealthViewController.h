@@ -15,7 +15,7 @@
 @interface HealthViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
 @property (nonatomic, strong) NSMutableArray *contentArray;
-@property (nonatomic, strong) NSMutableArray *largeLetterArray;
+//@property (nonatomic, strong) NSMutableArray *largeLetterArray;
 @property (nonatomic, strong) NSMutableArray *tabArray;
 @property (nonatomic, strong) NSMutableArray *tableArray;
 @property (nonatomic) NSInteger currentTab;
@@ -28,9 +28,9 @@
 @property (nonatomic, strong) IntreSearchBar * searchBar;
 @property (nonatomic, strong) HealthItem *selectedItem;
 
-@property (nonatomic, strong) IBOutlet UILabel *navLabelC;
-@property (nonatomic, strong) IBOutlet UILabel *navLabelS;
-@property (nonatomic, strong) IBOutlet UILabel *navLabelM;
+//@property (nonatomic, strong) IBOutlet UILabel *navLabelC;
+//@property (nonatomic, strong) IBOutlet UILabel *navLabelS;
+//@property (nonatomic, strong) IBOutlet UILabel *navLabelM;
 
 
 @end
