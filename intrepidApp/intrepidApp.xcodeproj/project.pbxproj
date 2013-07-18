@@ -38,6 +38,8 @@
 		7E34777C1791E79300FB86DC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34777B1791E79300FB86DC /* LoginViewController.m */; };
 		7E34777F1791E7A700FB86DC /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34777E1791E7A700FB86DC /* SignUpViewController.m */; };
 		7E44F8D21788FA4B00AAA32B /* HealthItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E44F8D11788FA4B00AAA32B /* HealthItem.m */; };
+		7E5B30B81798813900692F80 /* login-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E5B30B71798813900692F80 /* login-background@2x.png */; };
+		7E5B30BA1798814800692F80 /* signUp-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E5B30B91798814800692F80 /* signUp-background@2x.png */; };
 		7E82E9B91794F01000027268 /* proximanova-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E82E9B81794EFB500027268 /* proximanova-regular.ttf */; };
 		7E82E9BB1794F0D400027268 /* proximanova-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E82E9BA1794F0B900027268 /* proximanova-bold.ttf */; };
 		7ECD0427178BD7C500D6C34B /* HealthViewDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECD0426178BD7C500D6C34B /* HealthViewDetailController.m */; };
@@ -97,6 +99,8 @@
 		7E34777E1791E7A700FB86DC /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = classes/SignUpViewController.m; sourceTree = "<group>"; };
 		7E44F8D01788FA4B00AAA32B /* HealthItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthItem.h; path = classes/HealthItem.h; sourceTree = "<group>"; };
 		7E44F8D11788FA4B00AAA32B /* HealthItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthItem.m; path = classes/HealthItem.m; sourceTree = "<group>"; };
+		7E5B30B71798813900692F80 /* login-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-background@2x.png"; sourceTree = "<group>"; };
+		7E5B30B91798814800692F80 /* signUp-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signUp-background@2x.png"; sourceTree = "<group>"; };
 		7E82E9B81794EFB500027268 /* proximanova-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-regular.ttf"; sourceTree = "<group>"; };
 		7E82E9BA1794F0B900027268 /* proximanova-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-bold.ttf"; sourceTree = "<group>"; };
 		7ECD0425178BD7C500D6C34B /* HealthViewDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthViewDetailController.h; path = classes/HealthViewDetailController.h; sourceTree = "<group>"; };
@@ -225,6 +229,8 @@
 		688F9E6717862DFD00CF850C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				7E5B30B91798814800692F80 /* signUp-background@2x.png */,
+				7E5B30B71798813900692F80 /* login-background@2x.png */,
 				7E347777178F8B3A00FB86DC /* cancel-search@2x.png */,
 				68E42407179277C100431908 /* spyGlass@2x.png */,
 				684E364B178F85C1004E27B9 /* health */,
@@ -340,6 +346,8 @@
 				7E82E9BB1794F0D400027268 /* proximanova-bold.ttf in Resources */,
 				7ED645C11795A2FB000475A1 /* proximanova-semibold.ttf in Resources */,
 				7ED645C51795AB83000475A1 /* proximanova-light.ttf in Resources */,
+				7E5B30B81798813900692F80 /* login-background@2x.png in Resources */,
+				7E5B30BA1798814800692F80 /* signUp-background@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

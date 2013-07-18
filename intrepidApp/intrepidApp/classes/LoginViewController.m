@@ -26,6 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //set background image
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login-background.png"]];
+    [self.view addSubview:backgroundView];
 	// Do any additional setup after loading the view.
 }
 

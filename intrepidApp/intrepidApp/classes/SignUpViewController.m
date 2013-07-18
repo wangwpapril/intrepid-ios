@@ -25,7 +25,11 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    [super viewDidLoad];    
+    
+    //set up background
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"signUp-background.png"]];
+    [self.view addSubview:backgroundView];
 	// Do any additional setup after loading the view.
 }
 
