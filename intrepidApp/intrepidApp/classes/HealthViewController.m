@@ -55,9 +55,9 @@
     [self addTableViews];
     [self populateContentArray];
     [self addIntreSearchBar];
-    self.navigationItem.hidesBackButton = YES;
     
     self.navigationItem.title = @"Health";
+    self.navigationItem.backBarButtonItem.title = @" ";
     mController = [[MenuController alloc] init];
     [mController displayMenuWithParent:self];
     

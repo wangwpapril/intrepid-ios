@@ -7,12 +7,24 @@
 //
 
 #import "LoginViewController.h"
+#import "Constants.h"
 
 @interface LoginViewController ()
 
 @end
 
 @implementation LoginViewController
+
+@synthesize loginButton;
+@synthesize signUp;
+@synthesize learnMore;
+
+@synthesize intrepidTitle;
+@synthesize tagline;
+
+@synthesize email;
+@synthesize password;
+@synthesize forgotPassword;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,7 +42,10 @@
     //set background image
     UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login-background.png"]];
     [self.view addSubview:backgroundView];
+    
+    [self.view addSubview:signUp];
 	// Do any additional setup after loading the view.
+
 }
 
 - (void)didReceiveMemoryWarning

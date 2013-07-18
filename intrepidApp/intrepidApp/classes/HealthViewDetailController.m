@@ -71,13 +71,13 @@
     [self addSideEffects];
     
     //Change appearance of backbutton
-    self.navigationItem.hidesBackButton=YES;
-    UIButton *back = [[UIButton alloc] initWithFrame:CGRectMake(15, 7, 49, 29)];
-    [back setImage:[UIImage imageNamed:@"back-button.png"] forState:UIControlStateNormal];
-    [back addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIBarButtonItem *back1 = [[UIBarButtonItem alloc] initWithCustomView:back];
-    self.navigationItem.leftBarButtonItem = back1;
+//    self.navigationItem.hidesBackButton=YES;
+//    UIButton *back = [[UIButton alloc] initWithFrame:CGRectMake(15, 7, 49, 29)];
+//    [back setImage:[UIImage imageNamed:@"back-button.png"] forState:UIControlStateNormal];
+//    [back addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    UIBarButtonItem *back1 = [[UIBarButtonItem alloc] initWithCustomView:back];
+//    self.navigationItem.leftBarButtonItem = back1;
 
     //Description and Side Effects images
     descriptionImageLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"stethoscope-pic.png"]];
@@ -111,11 +111,6 @@
     [self.view addSubview:healthItemTitleLabel];
     
 	// Do any additional setup after loading the view.
-}
-
--(void)back {
-    // Tell the controller to go back
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)addDescription {
