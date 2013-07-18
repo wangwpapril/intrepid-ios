@@ -56,7 +56,7 @@
     
     [scrollView setScrollEnabled:YES];
     
-    CGFloat scrollViewHeight = 125.0f;
+    CGFloat scrollViewHeight = 340.0f;
     for (UIView* view in scrollView.subviews)
     {
         scrollViewHeight += view.frame.size.height;
@@ -69,15 +69,6 @@
     
     [self addDescription];
     [self addSideEffects];
-    
-//    NSArray *familyNames = [UIFont familyNames];
-//    for( NSString *familyName in familyNames ){
-//        printf( "Family: %s \n", [familyName UTF8String] );
-//        NSArray *fontNames = [UIFont fontNamesForFamilyName:familyName];
-//        for( NSString *fontName in fontNames ){
-//            printf( "\tFont: %s \n", [fontName UTF8String] );
-//        }
-//    }
     
     //Change appearance of backbutton
     self.navigationItem.hidesBackButton=YES;
@@ -134,7 +125,7 @@
     descriptionLabel.textColor = UIColorFromRGB(0x423a38);
     
     //Set descriptionText to auto-fit content
-    descriptionText.font = [UIFont fontWithName:@"ProximaNova-Regular" size:12];
+    descriptionText.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
     descriptionText.backgroundColor = UIColorFromRGB(0xffffff);
     descriptionText.textColor = UIColorFromRGB(0x423a38);
     [descriptionText setAlpha:0.6];
@@ -167,7 +158,7 @@
         sideEffectsLabel.text = @"Side Effects";
     }
     
-    sideEffectsText.font = [UIFont fontWithName:@"ProximaNova-Regular" size:12];
+    sideEffectsText.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
     sideEffectsText.backgroundColor = UIColorFromRGB(0xffffff);
     sideEffectsText.textColor = UIColorFromRGB(0x423a38);
     [sideEffectsText setAlpha:0.6];
