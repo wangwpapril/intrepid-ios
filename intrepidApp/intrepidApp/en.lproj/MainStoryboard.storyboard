@@ -14,14 +14,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Intrepid 24/7" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y7V-0c-AzB">
-                                <rect key="frame" x="96" y="45" width="130" height="21"/>
+                                <rect key="frame" x="0.0" y="45" width="320" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Your Personal Travel Assistant" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Ms-XL-sg9">
-                                <rect key="frame" x="44" y="85" width="234" height="21"/>
+                                <rect key="frame" x="2" y="85" width="319" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -61,7 +61,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zhz-zF-bYZ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zhz-zF-bYZ">
                                 <rect key="frame" x="9" y="456" width="81" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -76,7 +76,7 @@
                                     <segue destination="G8m-le-uyD" kind="push" id="2sC-ni-DF3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nEI-D0-7dv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nEI-D0-7dv">
                                 <rect key="frame" x="209" y="456" width="105" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -166,10 +166,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="add-signup-photo@2x.png" id="M9V-5J-AAx">
-                                <rect key="frame" x="110" y="73" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5ei-h3-4se">
+                                <rect key="frame" x="108" y="42" width="100" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -194,6 +202,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addPhoto" destination="5ei-h3-4se" id="EyI-g2-QqL"/>
+                        <outlet property="email" destination="CCb-bP-Q5A" id="ELu-JW-8Nx"/>
+                        <outlet property="name" destination="xt5-l6-QSP" id="X4w-2A-5LG"/>
+                        <outlet property="password" destination="pL1-xH-iP7" id="9X4-K3-l9K"/>
+                        <outlet property="signUpButton" destination="FsD-yx-nrK" id="2jR-93-wcl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YxC-Y6-RjD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -219,7 +234,7 @@
             <objects>
                 <viewController id="cs1-Co-eKy" customClass="HealthViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J8w-Zz-s6y">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -246,11 +261,11 @@
             <objects>
                 <viewController id="8Jz-x1-9iz" customClass="HealthViewDetailController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eB9-bk-f4t">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="gVH-ZX-sBE">
-                                <rect key="frame" x="0.0" y="37" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="37" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CDq-34-l8K">
@@ -275,7 +290,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Side Effects" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SR9-YT-cr3">
-                                        <rect key="frame" x="53" y="269" width="159" height="46"/>
+                                        <rect key="frame" x="53" y="269" width="159" height="38"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -393,9 +408,6 @@ Sed adipiscing ornare risus. Morbi est est, blandit sit amet, sagittis vel, euis
             <point key="canvasLocation" x="887" y="77"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="add-signup-photo@2x.png" width="200" height="200"/>
-    </resources>
     <classes>
         <class className="HealthViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HealthViewController.h"/>
@@ -431,6 +443,13 @@ Sed adipiscing ornare risus. Morbi est est, blandit sit amet, sagittis vel, euis
         </class>
         <class className="SignUpViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SignUpViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addPhoto" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="email" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="signUpButton" candidateClass="UIButton"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -439,6 +458,6 @@ Sed adipiscing ornare risus. Morbi est est, blandit sit amet, sagittis vel, euis
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="3tJ-Q8-Yn3"/>
+        <segue reference="cV4-E0-4Z6"/>
     </inferredMetricsTieBreakers>
 </document>
