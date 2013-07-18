@@ -29,7 +29,12 @@
     [UIColor whiteColor],
       UITextAttributeTextShadowColor,
       [UIFont fontWithName:@"ProximaNova-Bold" size:18],
-      UITextAttributeFont, nil]];    
+      UITextAttributeFont, nil]];
+    
+    UIImage * backButtonImage = [UIImage imageNamed: @"back-button.png"];
+    backButtonImage = [backButtonImage stretchableImageWithLeftCapWidth: 15.0 topCapHeight: 30.0];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage: backButtonImage forState: UIControlStateNormal barMetrics: UIBarMetricsDefault];
+    
 
 }
 

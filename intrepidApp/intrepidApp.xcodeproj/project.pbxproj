@@ -50,7 +50,7 @@
 		7ECD043D178DE24F00D6C34B /* conditions-pic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD0439178DE24F00D6C34B /* conditions-pic@2x.png */; };
 		7ED645C11795A2FB000475A1 /* proximanova-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED645C01795A2E9000475A1 /* proximanova-semibold.ttf */; };
 		7ED645C51795AB83000475A1 /* proximanova-light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED645C41795AB80000475A1 /* proximanova-light.ttf */; };
-		E00527D91798647200E5A49B /* Add-photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E00527D81798647200E5A49B /* Add-photo@2x.png */; };
+		E0DDBA8A17986D2C006F321F /* add-signup-photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DDBA8917986D2C006F321F /* add-signup-photo@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,7 +111,7 @@
 		7ECD0439178DE24F00D6C34B /* conditions-pic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "conditions-pic@2x.png"; sourceTree = "<group>"; };
 		7ED645C01795A2E9000475A1 /* proximanova-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-semibold.ttf"; sourceTree = "<group>"; };
 		7ED645C41795AB80000475A1 /* proximanova-light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-light.ttf"; sourceTree = "<group>"; };
-		E00527D81798647200E5A49B /* Add-photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add-photo@2x.png"; sourceTree = "<group>"; };
+		E0DDBA8917986D2C006F321F /* add-signup-photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "add-signup-photo@2x.png"; path = "../../../../Desktop/add-signup-photo@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,7 +185,6 @@
 				7E3477791791E76700FB86DC /* Login/Signup */,
 				688F9E5B178611C000CF850C /* health */,
 				6851222C17861138008DB6B6 /* MainStoryboard.storyboard */,
-				E00527D81798647200E5A49B /* Add-photo@2x.png */,
 				6851222F17861138008DB6B6 /* intrepidApp.xcdatamodeld */,
 				6851221B17861138008DB6B6 /* Supporting Files */,
 			);
@@ -228,6 +227,7 @@
 		688F9E6717862DFD00CF850C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E0DDBA8917986D2C006F321F /* add-signup-photo@2x.png */,
 				7E347777178F8B3A00FB86DC /* cancel-search@2x.png */,
 				68E42407179277C100431908 /* spyGlass@2x.png */,
 				684E364B178F85C1004E27B9 /* health */,
@@ -343,7 +343,7 @@
 				7E82E9BB1794F0D400027268 /* proximanova-bold.ttf in Resources */,
 				7ED645C11795A2FB000475A1 /* proximanova-semibold.ttf in Resources */,
 				7ED645C51795AB83000475A1 /* proximanova-light.ttf in Resources */,
-				E00527D91798647200E5A49B /* Add-photo@2x.png in Resources */,
+				E0DDBA8A17986D2C006F321F /* add-signup-photo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

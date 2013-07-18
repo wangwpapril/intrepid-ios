@@ -55,9 +55,9 @@
     [self addTableViews];
     [self populateContentArray];
     [self addIntreSearchBar];
-    self.navigationItem.hidesBackButton = YES;
     
     self.navigationItem.title = @"Health";
+    self.navigationItem.backBarButtonItem.title = @" ";
     mController = [[MenuController alloc] init];
     [mController displayMenuWithParent:self];
     
@@ -103,8 +103,8 @@
     [xButton setImage:[UIImage imageNamed:@"cancel-search.png"] forState:UIControlStateNormal];
     xButton.frame = CGRectMake(270, 35, 44, 44);
     xButton.userInteractionEnabled = YES;
-    [self.view addSubview:xButton];
     [xButton addTarget:self action:@selector(removeText) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:xButton];
     
 }
 
@@ -423,6 +423,7 @@
 
 -(void)textFieldDidChange {
     NSLog(@"text changed");
+
     if (![searchBar.text isEqualToString:@""]) {
         [self filterContent];
     }

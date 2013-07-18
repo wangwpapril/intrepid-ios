@@ -7,12 +7,24 @@
 //
 
 #import "LoginViewController.h"
+#import "Constants.h"
 
 @interface LoginViewController ()
 
 @end
 
 @implementation LoginViewController
+
+@synthesize loginButton;
+@synthesize signUp;
+@synthesize learnMore;
+
+@synthesize intrepidTitle;
+@synthesize tagline;
+
+@synthesize email;
+@synthesize password;
+@synthesize forgotPassword;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +38,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
 }
 
 - (void)didReceiveMemoryWarning
