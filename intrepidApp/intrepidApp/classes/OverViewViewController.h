@@ -7,7 +7,6 @@
 //
 
 #import "SliderTabViewController.h"
-#import "SlidingTableView.h"
 
 @interface OverViewViewController : SliderTabViewController <UITableViewDelegate, UITableViewDataSource>
 
