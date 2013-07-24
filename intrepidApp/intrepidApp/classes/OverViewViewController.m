@@ -8,21 +8,12 @@
 
 #import "OverViewViewController.h"
 #import "SlidingTextView.h"
-
-@interface OverViewViewController ()
-
-@end
+#import "CurrencyCell.h"
 
 @implementation OverViewViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize tableList;
+@synthesize currencyArray;
 
 - (void)viewDidLoad
 {
@@ -30,14 +21,27 @@
     self.navigationItem.title = @"Mexico Overview";
     
     NSInteger height = self.view.bounds.size.height;
-    SlidingTextView *history = [[SlidingTextView alloc] initWithFrame:CGRectMake(0, 0, 320, height)];
-    [history setupWithImageName:@"MexicoBackBigger.png" withTitle:@"History" withIconName:@"stethoscope-pic.png"];
+    CGRect frame = CGRectMake(0, 0, 320, height);
     
-    SlidingTextView *culture = [[SlidingTextView alloc] initWithFrame:CGRectMake(0, 0, 320, height)];
+    SlidingTextView *history = [[SlidingTextView alloc] initWithFrame:frame];
+    [history setupWithImageName:@"MexicoBackBigger.png" withTitle:@"History" withIconName:@"stethoscope-pic.png"];
+    [history addTextArea];
+    
+    SlidingTextView *culture = [[SlidingTextView alloc] initWithFrame:frame];
     [culture setupWithImageName:@"MexicoBackBigger.png" withTitle:@"Culture" withIconName:@"stethoscope-pic.png"];
-    UIView *green = [[UIView alloc] initWithFrame:CGRectMake(0, 150, 320, height)];
-    green.backgroundColor = [UIColor greenColor];
-    NSMutableArray *views = [NSMutableArray arrayWithObjects:history, culture, green, nil];
+    [culture addTextArea];
+    
+    currencyArray = [NSArray arrayWithObjects:@"one", @"two", @"three", nil];
+    SlidingTextView *currency = [[SlidingTextView alloc] initWithFrame:frame];
+    [currency setupWithImageName:@"MexicoBackBigger.png" withTitle:@"Currency" withIconName:@"stethoscope-pic.png"];
+    
+    // table
+    tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 308,  320, height - 308)];
+    tableList.dataSource = self;
+    tableList.delegate = self;
+    [currency addSubview:tableList];
+    
+    NSMutableArray *views = [NSMutableArray arrayWithObjects:history, culture, currency, nil];
     [self addViews:views withVerticalOffset:0];
     NSLog(@"added views");
     
@@ -52,6 +56,28 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+# pragma mark - TableView Methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return currencyArray.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell"];
+    CurrencyCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if(cell == nil) {
+        cell = [[CurrencyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    }
+    
+    [cell setupWithImageName:@"stethoscope-pic.png" withCountry:@"USD" withValue:@"1"];
+    
+    return cell;
 }
 
 @end

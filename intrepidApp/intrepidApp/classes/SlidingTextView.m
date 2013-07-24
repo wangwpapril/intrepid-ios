@@ -44,7 +44,9 @@
     UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:icon]];
     iconView.frame = CGRectMake(14, 275, 25, 25);
     [self addSubview:iconView];
-    
+}
+
+-(void) addTextArea {
     // text
     UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 308,  320, self.bounds.size.height - 308)];
     textView.userInteractionEnabled = NO;

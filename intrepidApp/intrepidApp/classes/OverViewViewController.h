@@ -7,7 +7,11 @@
 //
 
 #import "SliderTabViewController.h"
+#import "SlidingTableView.h"
 
-@interface OverViewViewController : SliderTabViewController
+@interface OverViewViewController : SliderTabViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) UITableView *tableList;
+@property (nonatomic, strong) NSArray *currencyArray;
 
 @end

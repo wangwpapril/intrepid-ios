@@ -26,6 +26,7 @@
     [super viewDidLoad];
     mController = [[MenuController alloc] init];
     [mController displayMenuWithParent:self];
+    self.navigationItem.hidesBackButton = YES;
 }
 
 - (void)addTabs:(NSArray *)nameArray {

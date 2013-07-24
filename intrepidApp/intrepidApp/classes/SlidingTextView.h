@@ -11,4 +11,5 @@
 @interface SlidingTextView : UIView
 
 -(void)setupWithImageName:(NSString *)image withTitle:(NSString *)title withIconName:(NSString *)icon;
+-(void) addTextArea;
 @end
