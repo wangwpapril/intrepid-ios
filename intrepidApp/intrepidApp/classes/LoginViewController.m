@@ -44,9 +44,15 @@
     UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login-background.png"]];
     [self.view addSubview:backgroundView];
     
+    UIImage *buttonImage = [[UIImage imageNamed:@"rounded-rectangle-.png"] stretchableImageWithLeftCapWidth:10 topCapHeight:0];
+    [loginButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    
+    
+    [self.view addSubview:loginButton];
+
+    
     [self.view addSubview:signUp];
     [self.view addSubview:learnMore];
-    [self.view addSubview:loginButton];
     
     intrepidTitle.font = [UIFont fontWithName:@"ProximaNova-Bold" size:24];
     intrepidTitle.textColor = UIColorFromRGB(0xe7eee2);
