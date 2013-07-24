@@ -39,6 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.hidesBackButton = YES;
     
     // background
     UIImage *backgroundImage = [UIImage imageNamed:@"mexicoBackBigger.png"];
