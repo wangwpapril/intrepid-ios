@@ -33,6 +33,7 @@
 //@synthesize navLabelM;
 //@synthesize navLabelS;
 @synthesize searchBar;
+@synthesize xButton;
 
 
 - (void)viewDidLoad
@@ -88,8 +89,8 @@
 -(void)addIntreSearchBar {
     searchBar  = [[IntreSearchBar alloc] initWithFrame:CGRectMake(0, 35, 330, 44)];
     [searchBar setBackgroundColor:APP_SEARCH_COLOR];
-    [searchBar setPlaceholder:@"Tap to Search"];
-    [searchBar setText:@""];
+    [searchBar setText:@"Tap to Search"];
+//    [searchBar setText:@""];
     [searchBar addTarget:self action:@selector(textFieldDidChange) forControlEvents:UIControlEventEditingChanged];
     [searchBar setFont: [UIFont fontWithName:@"ProximaNova-Light" size:16]];
     searchBar.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
@@ -101,17 +102,26 @@
     spyGlass.frame = CGRectMake(5, 51, 13, 13);
     [self.view addSubview:spyGlass];
     
-    UIButton *xButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    xButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [xButton setImage:[UIImage imageNamed:@"cancel-search.png"] forState:UIControlStateNormal];
     xButton.frame = CGRectMake(270, 35, 44, 44);
     xButton.userInteractionEnabled = YES;
-    [xButton addTarget:self action:@selector(removeText) forControlEvents:UIControlEventTouchUpInside];
+    [xButton addTarget:self action:@selector(deleteText) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:xButton];
+    xButton.alpha = 0;
     
 }
 
--(void)removeText {
+-(void)deleteText {
     searchBar.text = @"";
+    [UIView animateWithDuration:0.1 animations:^{
+        xButton.alpha = 0;
+    }];
+    [[tableArray objectAtIndex:currentTab] reloadData];
+}
+
+-(void)removeText {
+    searchBar.text = @"Tap to Search";
     [[tableArray objectAtIndex:currentTab] reloadData];
 }
 
@@ -203,7 +213,7 @@
 
 // handle animations
 - (void)viewDidAppear:(BOOL)animated {
-    
+    [[tableArray objectAtIndex:currentTab] reloadData];
 }
 
 #pragma mark - Content Handling
@@ -301,7 +311,7 @@
     }
     
     if (currentTab !=newTag) {
-        
+        [searchBar resignFirstResponder];
 //        [self removeText];
         line.frame = CGRectMake(lineX, 27, 1, 1);
         
@@ -362,7 +372,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSInteger fCount = filteredHealthItemArray.count;
-    if (![searchBar.text isEqualToString:@""]) {
+    if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
         NSLog(@"fcount: %i, searhbartext: %@", fCount, searchBar.text);
         
         return fCount;
@@ -383,7 +393,7 @@
     }
     
     HealthItem *healthItem = nil;
-    if (![searchBar.text isEqualToString:@""]) {
+    if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
         healthItem = [filteredHealthItemArray objectAtIndex:indexPath.row];
     } else {
         healthItem = [[contentArray objectAtIndex:currentTab] objectAtIndex:indexPath.row];
@@ -395,12 +405,15 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (![searchBar.text isEqualToString:@""]) {
+    if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
+        NSLog(@"text is not deafault, instead it's :%@", searchBar.text);
         selectedItem = (HealthItem *)[filteredHealthItemArray objectAtIndex:indexPath.row];
     }
     else {
+        NSLog(@"text is default : %@", searchBar.text);
         selectedItem = (HealthItem *)[[contentArray objectAtIndex:currentTab] objectAtIndex:indexPath.row];
     }
+    [searchBar resignFirstResponder];
     [self performSegueWithIdentifier:@"details" sender:self];
 }
 
@@ -418,9 +431,9 @@
 
 #pragma mark Content Filtering
 -(void)filterContent{
-    // Update the filtered array based on the search text and scope.
-    // Remove all objects from the filtered search array
+
     [self.filteredHealthItemArray removeAllObjects];
+    
     // Filter the array using NSPredicate
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.name contains[c] %@",searchBar.text];
     filteredHealthItemArray = [NSMutableArray arrayWithArray:[[contentArray objectAtIndex:currentTab] filteredArrayUsingPredicate:predicate]];
@@ -429,10 +442,24 @@
 
 #pragma mark - TextField Delegate Methods
 
--(void)textFieldDidChange {
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    textField.text = @"";
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    textField.text = @"Tap to Search";
+    [UIView animateWithDuration:0.1 animations:^{
+        xButton.alpha = 0;
+    }];
+}
+
+- (void)textFieldDidChange {
     NSLog(@"text changed");
 
-    if (![searchBar.text isEqualToString:@""]) {
+    if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
+        [UIView animateWithDuration:0.1 animations:^{
+            xButton.alpha = 1;
+        }];
         [self filterContent];
     }
     else {

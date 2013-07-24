@@ -19,10 +19,10 @@
     return self;
 }
 
-- (void) drawPlaceholderInRect:(CGRect)rect {
-    [APP_TEXT_COLOR setFill];
-    [[self placeholder] drawInRect:rect withFont:[UIFont fontWithName:@"ProximaNova-Light" size:16]];
-}
+//- (void) drawPlaceholderInRect:(CGRect)rect {
+//    [APP_TEXT_COLOR setFill];
+//    [[self placeholder] drawInRect:rect withFont:[UIFont fontWithName:@"ProximaNova-Light" size:16]];
+//}
 
 - (CGRect)textRectForBounds:(CGRect)bounds {
     CGRect inset = CGRectMake(bounds.origin.x + 25, bounds.origin.y+2, bounds.size.width - 25, bounds.size.height-2);

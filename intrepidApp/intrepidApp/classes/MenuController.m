@@ -24,11 +24,6 @@
     NSLog(@"screen height: %f", controller.view.frame.size.height);
     viewHeight = controller.view.frame.size.height - 44; // account for nav bar
     
-//    // this is an outrageous hack.. but xcode 4 & 5 compile diff
-//    if (viewHeight >= 460) {
-////        viewHeight -= 20;
-//    }
-    
     botPosition = CGRectMake(0, viewHeight - 25, 320, 206);
     menu = [[UIImageView alloc] initWithFrame:botPosition];
     hiding = true;
@@ -47,15 +42,7 @@
     float nextPos = menu.frame.origin.y + translation.y;
     BOOL touchIsOver = (recognizer.state == UIGestureRecognizerStateEnded);
     if (nextPos > viewHeight - 90 && (!hiding || touchIsOver || nextPos > viewHeight - 25)) {
-        [UIView animateWithDuration:0.3
-                              delay:0
-                            options:UIViewAnimationCurveEaseInOut animations:^{
-            menu.frame = botPosition;
-            hiding = true;
-        }
-         completion:^(BOOL finished){
-         }
-         ];
+        [self hideMenu];
     }
     else if (nextPos < viewHeight - 90 && (hiding || touchIsOver || nextPos < viewHeight - 206)) {
         [self showMenu];
@@ -75,12 +62,21 @@
         hiding = false;
     }
 }
+
+-(void)hideMenu {
+    if (menu.frame.origin.y < viewHeight - 90) {
+        [UIView animateWithDuration:0.2 animations:^{
+                            menu.frame = botPosition;
+                        }];
+        hiding = true;
+    }
+}
 -(void)addContentButtons {
     // popup button
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, 320, 25);
     button.backgroundColor = [UIColor clearColor];
-    [button addTarget:self action:@selector(showMenu) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(toggleMenu) forControlEvents:UIControlEventTouchUpInside];
     [menu addSubview:button];
 
     // content buttons
@@ -90,7 +86,15 @@
     [self makeContentButtonWithImage:@"pic.png" withOrigin:CGPointMake(0, 110) withTag:3];
     [self makeContentButtonWithImage:@"pic.png" withOrigin:CGPointMake(100, 110) withTag:4];
     [self makeContentButtonWithImage:@"pic.png" withOrigin:CGPointMake(220, 110) withTag:5];
+}
 
+-(void)toggleMenu {
+    if (hiding) {
+        [self showMenu];
+    }
+    else {
+        [self hideMenu];
+    }
 }
 
 -(void)goToController:(id)sender{
@@ -98,6 +102,7 @@
     NSLog(@"tag: %i", button.tag);
     switch (button.tag) {
         case 0:
+            // need to change this to push later
             [parentController performSegueWithIdentifier:@"toOverview" sender:self];
             break;
             
@@ -108,6 +113,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     OverViewViewController *controller = segue.destinationViewController;
+    
 }
 
 -(void)makeContentButtonWithImage:(NSString *)image withOrigin:(CGPoint)origin withTag:(NSInteger)tag{

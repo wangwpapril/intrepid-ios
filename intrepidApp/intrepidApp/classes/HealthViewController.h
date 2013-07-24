@@ -26,6 +26,7 @@
 @property (strong,nonatomic) NSArray *healthItemArray;
 @property (strong,nonatomic) NSMutableArray *filteredHealthItemArray;
 @property (nonatomic, strong) IntreSearchBar * searchBar;
+@property (nonatomic, strong) UIButton *xButton;
 @property (nonatomic, strong) HealthItem *selectedItem;
 
 //@property (nonatomic, strong) IBOutlet UILabel *navLabelC;
