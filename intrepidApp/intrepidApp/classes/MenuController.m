@@ -8,6 +8,7 @@
 
 #import "MenuController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "OverViewViewController.h"
 
 
 @implementation MenuController
@@ -94,7 +95,36 @@
 
 -(void)goToController:(id)sender{
     UIButton *button = (UIButton *)sender;
-    NSLog(@"off 2 controller with tag: %i", button.tag);
+    NSLog(@"tag: %i", button.tag);
+    switch (button.tag) {
+        case 0:
+            [parentController performSegueWithIdentifier:@"toOverview" sender:self];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    OverViewViewController *controller = segue.destinationViewController;
+    
+//    UIView *red = [[UIView alloc] initWithFrame:CGRectMake(0, 150, 320, self.viewHeight - 150)];
+//    UIView *blue = [[UIView alloc] initWithFrame:CGRectMake(0, 150, 320, self.viewHeight - 150)];
+//    UIView *green = [[UIView alloc] initWithFrame:CGRectMake(0, 150, 320, self.viewHeight - 150)];
+//    red.backgroundColor = [UIColor redColor];
+//    blue.backgroundColor = [UIColor blueColor];
+//    green.backgroundColor = [UIColor greenColor];
+//    NSMutableArray *views = [NSMutableArray arrayWithObjects:red, blue, green, nil];
+//    [controller addViews:views withVerticalOffset:150];
+//    NSLog(@"added views");
+//    
+//    NSArray *names = [NSArray arrayWithObjects:@"hello", @"mzoorrro", @"BLOOH", nil];
+//    NSLog(@"names array made");
+//    [controller addTabs:names];
+//    NSLog(@"added tabs");
+    
+
 }
 
 -(void)makeContentButtonWithImage:(NSString *)image withOrigin:(CGPoint)origin withTag:(NSInteger)tag{

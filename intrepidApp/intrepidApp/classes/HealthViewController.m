@@ -46,6 +46,8 @@
     UIImageView *myImageView = [[UIImageView alloc] initWithFrame:imageFrame];
     [myImageView setImage:backgroundImage];
     [self.view addSubview:myImageView];
+    
+    // white layer to make the tableview 90% opaque
     UIView *whiteLayer = [[UIView alloc] initWithFrame:whiteFrame];
     whiteLayer.backgroundColor = [UIColor whiteColor];
     whiteLayer.alpha = 0.9;
@@ -179,7 +181,7 @@
     [self.view addSubview:line];
 }
 
-- (void) addTableViews {
+- (void)addTableViews {
     tableArray = [NSMutableArray new];
     int i = 0;
     while (i < 3) {
@@ -403,9 +405,15 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    HealthViewDetailController *controller = segue.destinationViewController;
-    controller.healthItemName = selectedItem.name;
-    controller.healthItemCategory = selectedItem.category;
+    if ([segue.identifier isEqualToString:@"details"]) {
+        HealthViewDetailController *controller = segue.destinationViewController;
+        controller.healthItemName = selectedItem.name;
+        controller.healthItemCategory = selectedItem.category;
+    }
+    // let the controller handle a switch from the menu
+    else {
+        [mController prepareForSegue:segue sender:sender];
+    }
 }
 
 #pragma mark Content Filtering
