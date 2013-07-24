@@ -242,6 +242,7 @@
                     <connections>
                         <outlet property="searchDisplayController" destination="bgG-Gt-M5h" id="42U-ad-UGl"/>
                         <segue destination="8Jz-x1-9iz" kind="push" identifier="details" id="Aj3-tf-I3d"/>
+                        <segue destination="ui5-wV-QPb" kind="push" identifier="toOverview" id="pSP-tE-Ek7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfx-gA-B8D" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -255,6 +256,21 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1122" y="-620"/>
+        </scene>
+        <!--Over View View Controller-->
+        <scene sceneID="irO-Nb-zWM">
+            <objects>
+                <viewController id="ui5-wV-QPb" customClass="OverViewViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zdB-xF-VuJ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hFn-LM-Glg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G36-Zg-Mnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1687" y="-650"/>
         </scene>
         <!--Health View Detail Controller - Health-->
         <scene sceneID="pvv-Xq-Sdt">
@@ -444,6 +460,9 @@ Sed adipiscing ornare risus. Morbi est est, blandit sit amet, sagittis vel, euis
                 <relationship kind="outlet" name="tagline" candidateClass="UILabel"/>
             </relationships>
         </class>
+        <class className="OverViewViewController" superclassName="SliderTabViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OverViewViewController.h"/>
+        </class>
         <class className="SignUpViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SignUpViewController.h"/>
             <relationships>
@@ -453,6 +472,9 @@ Sed adipiscing ornare risus. Morbi est est, blandit sit amet, sagittis vel, euis
                 <relationship kind="outlet" name="password" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="signUpButton" candidateClass="UIButton"/>
             </relationships>
+        </class>
+        <class className="SliderTabViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SliderTabViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

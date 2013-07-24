@@ -8,6 +8,7 @@
 
 #import "MenuController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "OverViewViewController.h"
 
 
 @implementation MenuController
@@ -94,7 +95,19 @@
 
 -(void)goToController:(id)sender{
     UIButton *button = (UIButton *)sender;
-    NSLog(@"off 2 controller with tag: %i", button.tag);
+    NSLog(@"tag: %i", button.tag);
+    switch (button.tag) {
+        case 0:
+            [parentController performSegueWithIdentifier:@"toOverview" sender:self];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    OverViewViewController *controller = segue.destinationViewController;
 }
 
 -(void)makeContentButtonWithImage:(NSString *)image withOrigin:(CGPoint)origin withTag:(NSInteger)tag{

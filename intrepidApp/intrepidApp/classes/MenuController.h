@@ -17,5 +17,5 @@
 @property (nonatomic) BOOL hiding;
 
 -(void)displayMenuWithParent:(UIViewController *)controller;
-
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
 @end
