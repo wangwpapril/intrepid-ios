@@ -83,7 +83,8 @@
         cell = [[CurrencyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
-    
+    CurrencyItem *item = [currencyArray objectAtIndex:indexPath.row];
+    [cell setupWithImageName:item.flag withCountry:item.country withValue:item.value];
 //    cell.textLabel.text = [currencyArray objectAtIndex:indexPath.row];
     
     return cell;
