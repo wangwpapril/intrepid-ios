@@ -67,6 +67,8 @@
 		7EE44DBF179F7FF5006BA2EC /* brasil-flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DBB179F7FF5006BA2EC /* brasil-flag@2x.png */; };
 		7EE44DC0179F7FF5006BA2EC /* canadian-flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DBC179F7FF5006BA2EC /* canadian-flag@2x.png */; };
 		7EE44DC1179F7FF5006BA2EC /* great-britain-flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DBD179F7FF5006BA2EC /* great-britain-flag@2x.png */; };
+		E05DA6DA17A1D83F00E5FF89 /* ClinicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05DA6D917A1D83F00E5FF89 /* ClinicViewController.m */; };
+		E05DA6DD17A1D8E500E5FF89 /* AlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05DA6DC17A1D8E500E5FF89 /* AlertsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +150,10 @@
 		7EE44DBB179F7FF5006BA2EC /* brasil-flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brasil-flag@2x.png"; sourceTree = "<group>"; };
 		7EE44DBC179F7FF5006BA2EC /* canadian-flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canadian-flag@2x.png"; sourceTree = "<group>"; };
 		7EE44DBD179F7FF5006BA2EC /* great-britain-flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "great-britain-flag@2x.png"; sourceTree = "<group>"; };
+		E05DA6D817A1D83F00E5FF89 /* ClinicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClinicViewController.h; sourceTree = "<group>"; };
+		E05DA6D917A1D83F00E5FF89 /* ClinicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClinicViewController.m; sourceTree = "<group>"; };
+		E05DA6DB17A1D8E500E5FF89 /* AlertsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertsViewController.h; sourceTree = "<group>"; };
+		E05DA6DC17A1D8E500E5FF89 /* AlertsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +190,8 @@
 			children = (
 				6835EC141789439600A57F86 /* MenuController.h */,
 				6835EC151789439600A57F86 /* MenuController.m */,
+				E05DA6DB17A1D8E500E5FF89 /* AlertsViewController.h */,
+				E05DA6DC17A1D8E500E5FF89 /* AlertsViewController.m */,
 				68E4240217926E1E00431908 /* IntreSearchBar.h */,
 				68E4240317926E1E00431908 /* IntreSearchBar.m */,
 				6855835F179CB4C90043D473 /* SliderTabViewController.h */,
@@ -256,6 +264,8 @@
 		6851221B17861138008DB6B6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E05DA6D817A1D83F00E5FF89 /* ClinicViewController.h */,
+				E05DA6D917A1D83F00E5FF89 /* ClinicViewController.m */,
 				7E82E9B61794EE5D00027268 /* fonts */,
 				688F9E6717862DFD00CF850C /* images */,
 				6851221C17861138008DB6B6 /* intrepidApp-Info.plist */,
@@ -470,6 +480,8 @@
 				684BB609179F539C004C44C9 /* SlidingTextView.m in Sources */,
 				68DBAE60179F6CC300D1DE0B /* CurrencyCell.m in Sources */,
 				7EE44DB9179F7E30006BA2EC /* CurrencyItem.m in Sources */,
+				E05DA6DA17A1D83F00E5FF89 /* ClinicViewController.m in Sources */,
+				E05DA6DD17A1D8E500E5FF89 /* AlertsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

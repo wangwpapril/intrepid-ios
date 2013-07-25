@@ -10,6 +10,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "OverViewViewController.h"
 #import "HealthViewController.h"
+#import "ClinicViewController.h"
+#import "AlertsViewController.h"
 
 
 @implementation MenuController
@@ -112,6 +114,16 @@
             break;
         default:
             break;
+            
+        case 4:
+            viewController = [[ClinicViewController alloc] init];
+            break;
+            
+        case 5:
+            viewController = [[AlertsViewController alloc] init];
+            break;
+            
+            
     }
     if (parentController.view.tag != button.tag) {
         [parentController.navigationController pushViewController:viewController animated:YES];
