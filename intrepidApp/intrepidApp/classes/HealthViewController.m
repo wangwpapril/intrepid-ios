@@ -418,20 +418,24 @@
         selectedItem = (HealthItem *)[[contentArray objectAtIndex:currentTab] objectAtIndex:indexPath.row];
     }
     [searchBar resignFirstResponder];
-    [self performSegueWithIdentifier:@"details" sender:self];
+    HealthViewDetailController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"healthDetails"];
+    viewController.healthItemName = selectedItem.name;
+    viewController.healthItemCategory = selectedItem.category;
+    [self.navigationController pushViewController:viewController animated:YES];
+//    [self performSegueWithIdentifier:@"details" sender:self];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"details"]) {
-        HealthViewDetailController *controller = segue.destinationViewController;
-        controller.healthItemName = selectedItem.name;
-        controller.healthItemCategory = selectedItem.category;
-    }
-    // let the controller handle a switch from the menu
-    else {
-        [mController prepareForSegue:segue sender:sender];
-    }
-}
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    if ([segue.identifier isEqualToString:@"details"]) {
+//        HealthViewDetailController *controller = segue.destinationViewController;
+//        controller.healthItemName = selectedItem.name;
+//        controller.healthItemCategory = selectedItem.category;
+//    }
+//    // let the controller handle a switch from the menu
+//    else {
+//        [mController prepareForSegue:segue sender:sender];
+//    }
+//}
 
 #pragma mark Content Filtering
 -(void)filterContent{
