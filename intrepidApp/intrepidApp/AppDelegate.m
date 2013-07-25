@@ -32,9 +32,8 @@
       UITextAttributeFont, nil]];
     
     UIImage * backButtonImage = [UIImage imageNamed: @"back-button.png"];
-    backButtonImage = [backButtonImage stretchableImageWithLeftCapWidth: 15.0 topCapHeight: 30.0];
+    backButtonImage = [backButtonImage stretchableImageWithLeftCapWidth: 30.0 topCapHeight: 50.0];
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage: backButtonImage forState: UIControlStateNormal barMetrics: UIBarMetricsDefault];
-    
 
 }
 

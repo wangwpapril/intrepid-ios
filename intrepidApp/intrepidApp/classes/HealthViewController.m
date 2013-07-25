@@ -42,6 +42,8 @@
     self.view.tag = 1;
     self.navigationItem.hidesBackButton = YES;
     
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
+    
     // background
     UIImage *backgroundImage = [UIImage imageNamed:@"mexicoBackBigger.png"];
     CGRect imageFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);

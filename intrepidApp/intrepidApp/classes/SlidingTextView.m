@@ -35,7 +35,7 @@
     // actual title
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(53, 0, 159, 40)];
     titleLabel.text = title;
-    titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:16];
+    titleLabel.font = [UIFont fontWithName:@"ProximaNova-SemiBold" size:17];
     titleLabel.textColor = APP_TEXT_COLOR;
     [borderLine addSubview:titleLabel];
     [self addSubview:borderLine];
@@ -49,9 +49,13 @@
 -(void) addTextArea {
     // text
     UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 308,  320, self.bounds.size.height - 308)];
-    textView.userInteractionEnabled = NO;
+    //308
+    textView.scrollEnabled = YES;
+    [textView setEditable:NO];
     textView.textColor = APP_TEXT_COLOR;
+    textView.font = [UIFont fontWithName:@"ProximaNova-Light" size:13];
     textView.text = @"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+    
     [self addSubview:textView];
 }
 
