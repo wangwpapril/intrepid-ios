@@ -10,6 +10,7 @@
 #import "SlidingTextView.h"
 #import "CurrencyCell.h"
 #import "CurrencyItem.h"
+#import "Constants.h"
 
 @implementation OverViewViewController
 
@@ -19,8 +20,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [self populateCurrencyItems];
     self.navigationItem.title = @"Mexico Overview";
+    
     
     NSInteger height = self.view.bounds.size.height;
     CGRect frame = CGRectMake(0, 0, 320, height);
@@ -81,11 +84,19 @@
     
     if(cell == nil) {
         cell = [[CurrencyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+//        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     CurrencyItem *item = [currencyArray objectAtIndex:indexPath.row];
     [cell setupWithImageName:item.flag withCountry:item.country withValue:item.value];
 //    cell.textLabel.text = [currencyArray objectAtIndex:indexPath.row];
+    
+    UIView *bgColorView = [[UIView alloc] init];
+    [bgColorView setBackgroundColor:UIColorFromRGB(0xdaf1f4)];
+    [cell setSelectedBackgroundView:bgColorView];
+    
+    if (cell.selected) {
+        cell.detailTextLabel.font = [UIFont fontWithName:@"ProximaNova-Bold" size:16];
+    }    
     
     return cell;
 }
