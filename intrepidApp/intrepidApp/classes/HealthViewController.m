@@ -13,6 +13,7 @@
 #import "HealthItem.h"
 #import "MenuController.h"
 #import "HealthViewDetailController.h"
+#import "HealthContent.h"
 
 @implementation HealthViewController
 
@@ -150,10 +151,10 @@
         NSString *title;
         switch (i) {
             case 0:
-                title = @"CONDITIONS";
+                title = @"SYMPTOMS";
                 break;
             case 1:
-                title = @"SYMPTOMS";
+                title = @"PREVENTION";
                 break;
             case 2:
                 title = @"MEDICATIONS";
@@ -223,45 +224,8 @@
 #pragma mark - Content Handling
 
 - (void)populateContentArray {
-    // done in the background to speed up user response
-    //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
-    //                                             (unsigned long)NULL), ^(void) {
-    
-    NSArray *conditions = [NSArray arrayWithObjects:
-                           [HealthItem healthItemOfCategory:@"conditions" name:@"Arm Fracture" common: TRUE],
-                           [HealthItem healthItemOfCategory:@"conditions" name:@"Heartburn" common: FALSE],
-                           [HealthItem healthItemOfCategory:@"conditions" name:@"Headache" common: TRUE],
-                           [HealthItem healthItemOfCategory:@"conditions" name:@"Stomach Ache" common: TRUE],
-                           [HealthItem healthItemOfCategory:@"conditions" name:@"Anxiety" common: FALSE],
-                           [HealthItem healthItemOfCategory:@"conditions" name:@"Vomiting" common: TRUE],
-                            [HealthItem healthItemOfCategory:@"conditions" name:@"Sleep Walking" common: FALSE],
-                            [HealthItem healthItemOfCategory:@"conditions" name:@"Asthma" common: TRUE], nil];
-    
-    
-    NSArray *symptoms  = [NSArray arrayWithObjects:
-                          [HealthItem healthItemOfCategory:@"symptoms" name:@"Blood Pressure" common: TRUE],
-                          [HealthItem healthItemOfCategory:@"symptoms" name:@"Bleeding" common: FALSE],
-                          [HealthItem healthItemOfCategory:@"symptoms" name:@"Bone Pain" common: TRUE],
-                        [HealthItem healthItemOfCategory:@"symptoms" name:@"Arm Pain" common: TRUE],
-                        [HealthItem healthItemOfCategory:@"symptoms" name:@"Back Pain" common: FALSE],
-                        [HealthItem healthItemOfCategory:@"symptoms" name:@"Dizziness" common: TRUE],
-                          [HealthItem healthItemOfCategory:@"symptoms" name:@"Sleep Deprivation" common: FALSE],
-                          [HealthItem healthItemOfCategory:@"symptoms" name:@"Anxiety" common: TRUE],
-                          [HealthItem healthItemOfCategory:@"symptoms" name:@"Wheezing" common: TRUE], nil];
-    
-    
-    NSArray *medication  = [NSArray arrayWithObjects:
-                            [HealthItem healthItemOfCategory:@"medications" name:@"Antacid" common: TRUE],
-                            [HealthItem healthItemOfCategory:@"medications" name:@"Neosporin" common: FALSE],
-                            [HealthItem healthItemOfCategory:@"medications" name:@"Ibuprofen" common: TRUE],
-                            [HealthItem healthItemOfCategory:@"medications" name:@"Pepto-Bismol" common: TRUE],
-                            [HealthItem healthItemOfCategory:@"medications" name:@"Hydrocorisone" common: FALSE],
-                            [HealthItem healthItemOfCategory:@"medications" name:@"Aspirin" common: TRUE],
-                            [HealthItem healthItemOfCategory:@"medications" name:@"Benadryl" common: FALSE],
-                            [HealthItem healthItemOfCategory:@"medications" name:@"Cortizone" common: TRUE],
-                            [HealthItem healthItemOfCategory:@"medications" name:@"Vicks" common: TRUE], nil];
-    
-    contentArray = [[NSMutableArray alloc] initWithObjects:conditions, symptoms, medication, nil];
+    HealthContent *content = [[HealthContent alloc] init];
+    contentArray = [content getContent];
     
     //    });
     self.filteredHealthItemArray = [NSMutableArray new];
@@ -410,7 +374,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
-        NSLog(@"text is not deafault, instead it's :%@", searchBar.text);
+        NSLog(@"text is not default, instead it's :%@", searchBar.text);
         selectedItem = (HealthItem *)[filteredHealthItemArray objectAtIndex:indexPath.row];
     }
     else {
@@ -419,23 +383,10 @@
     }
     [searchBar resignFirstResponder];
     HealthViewDetailController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"healthDetails"];
-    viewController.healthItemName = selectedItem.name;
-    viewController.healthItemCategory = selectedItem.category;
+    viewController.healthItem = selectedItem;
     [self.navigationController pushViewController:viewController animated:YES];
-//    [self performSegueWithIdentifier:@"details" sender:self];
 }
 
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if ([segue.identifier isEqualToString:@"details"]) {
-//        HealthViewDetailController *controller = segue.destinationViewController;
-//        controller.healthItemName = selectedItem.name;
-//        controller.healthItemCategory = selectedItem.category;
-//    }
-//    // let the controller handle a switch from the menu
-//    else {
-//        [mController prepareForSegue:segue sender:sender];
-//    }
-//}
 
 #pragma mark Content Filtering
 -(void)filterContent{

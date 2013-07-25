@@ -8,22 +8,22 @@
 
 #import "HealthItem.h"
 
-@interface HealthItem ()
-
-@end
-
 @implementation HealthItem
 
 @synthesize category;
 @synthesize name;
 @synthesize common;
+@synthesize description;
+@synthesize details;
 
-+(id)healthItemOfCategory:(NSString *)category name:(NSString *)name common:(BOOL)common
++(id)healthItemOfCategory:(NSString *)category name:(NSString *)name description:(NSString *)description details:(NSString *)details common:(BOOL)common
 {
     HealthItem *newHealthItem = [[self alloc] init];
     newHealthItem.category = category;
     newHealthItem.name = name;
     newHealthItem.common = common;
+    newHealthItem.description = description;
+    newHealthItem.details = details;
     return newHealthItem;
 }
 

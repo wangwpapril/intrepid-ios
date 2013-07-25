@@ -15,8 +15,7 @@
 
 @synthesize healthItemNameLabel;
 @synthesize healthItemTitleLabel;
-@synthesize healthItemName;
-@synthesize healthItemCategory;
+@synthesize healthItem;
 
 @synthesize descriptionLabel;
 @synthesize descriptionDesignationLabel;
@@ -84,10 +83,10 @@
     descriptionImageLabel.text = NULL;
     
     //Check which type of sideEffect it is
-    if ([healthItemCategory isEqualToString:@"symptoms"]) {
+    if ([healthItem.category isEqualToString:@"symptoms"]) {
         sideEffectsImageLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"heart-rate-pic.png"]];
     }
-    else if ([healthItemCategory isEqualToString:@"conditions"]) {
+    else if ([healthItem.category isEqualToString:@"prevention"]) {
         sideEffectsImageLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"conditions-pic.png"]];
     }
     else {
@@ -101,7 +100,7 @@
     healthItemTitleLabel.backgroundColor = NAVIGATION_BG_COLOR;
     healthItemTitleLabel.text = NULL;
     
-    NSString *uppercaseString = [healthItemName uppercaseString];
+    NSString *uppercaseString = [healthItem.name uppercaseString];
     healthItemNameLabel.text = uppercaseString;
     healthItemNameLabel.backgroundColor = [UIColor clearColor];
     healthItemNameLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:16];
@@ -123,6 +122,7 @@
     descriptionText.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
     descriptionText.backgroundColor = UIColorFromRGB(0xffffff);
     descriptionText.textColor = UIColorFromRGB(0x423a38);
+    descriptionText.text = healthItem.description;
     [descriptionText setAlpha:0.6];
     descriptionText.layer.borderWidth = 1.0f;
     descriptionText.layer.borderColor = [[UIColor grayColor] CGColor];
@@ -143,11 +143,11 @@
     sideEffectsLabel.backgroundColor = [UIColor clearColor];
     sideEffectsLabel.textColor = UIColorFromRGB(0x423a38);
     
-    if ([healthItemCategory isEqualToString:@"conditions"]) {
-        sideEffectsLabel.text = @"Diagnosis";
+    if ([healthItem.category isEqualToString:@"symptoms"]) {
+        sideEffectsLabel.text = @"Transmission";
     }
-    else if ([healthItemCategory isEqualToString:@"symptoms"]) {
-        sideEffectsLabel.text = @"Symptoms";
+    else if ([healthItem.category isEqualToString:@"prevention"]) {
+        sideEffectsLabel.text = @"Immunization";
     }
     else {
         sideEffectsLabel.text = @"Side Effects";
@@ -156,6 +156,7 @@
     sideEffectsText.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
     sideEffectsText.backgroundColor = UIColorFromRGB(0xffffff);
     sideEffectsText.textColor = UIColorFromRGB(0x423a38);
+    sideEffectsText.text = healthItem.details;
     [sideEffectsText setAlpha:0.6];
     sideEffectsText.layer.borderWidth = 1.0f;
     sideEffectsText.layer.borderColor = [[UIColor grayColor] CGColor];
