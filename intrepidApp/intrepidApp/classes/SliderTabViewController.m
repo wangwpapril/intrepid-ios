@@ -24,6 +24,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     mController = [[MenuController alloc] init];
     [mController displayMenuWithParent:self];
     self.navigationItem.hidesBackButton = YES;

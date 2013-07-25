@@ -19,6 +19,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"overview loaded");
+    self.view.tag = 0;
     [self populateCurrencyItems];
     self.navigationItem.title = @"Mexico Overview";
     
@@ -44,12 +46,12 @@
     
     NSMutableArray *views = [NSMutableArray arrayWithObjects:history, culture, currency, nil];
     [self addViews:views withVerticalOffset:0];
-    NSLog(@"added views");
     
     NSArray *names = [NSArray arrayWithObjects:@"HISTORY", @"CULTURE", @"CURRENCY", nil];
-    NSLog(@"names array made");
     [self addTabs:names];
-    NSLog(@"added tabs");
+    
+    [self.view bringSubviewToFront:self.mController.menu];
+    
 	// Do any additional setup after loading the view.
 }
 

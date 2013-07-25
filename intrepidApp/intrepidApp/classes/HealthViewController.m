@@ -39,6 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.tag = 1;
     self.navigationItem.hidesBackButton = YES;
     
     // background
