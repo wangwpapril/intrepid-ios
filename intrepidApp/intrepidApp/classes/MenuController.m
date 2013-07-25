@@ -9,6 +9,7 @@
 #import "MenuController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "OverViewViewController.h"
+#import "HealthViewController.h"
 
 
 @implementation MenuController
@@ -100,21 +101,27 @@
 -(void)goToController:(id)sender{
     UIButton *button = (UIButton *)sender;
     NSLog(@"tag: %i", button.tag);
+    UIViewController *viewController;
     switch (button.tag) {
         case 0:
-            // need to change this to push later
-            [parentController performSegueWithIdentifier:@"toOverview" sender:self];
+            viewController = [[OverViewViewController alloc] init];
             break;
             
+        case 1:
+            viewController = [[HealthViewController alloc] init];
+            break;
         default:
             break;
     }
+    if (parentController.view.tag != button.tag) {
+        [parentController.navigationController pushViewController:viewController animated:YES];
+    }
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    OverViewViewController *controller = segue.destinationViewController;
-    
-}
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    OverViewViewController *controller = segue.destinationViewController;
+//    
+//}
 
 -(void)makeContentButtonWithImage:(NSString *)image withOrigin:(CGPoint)origin withTag:(NSInteger)tag{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];

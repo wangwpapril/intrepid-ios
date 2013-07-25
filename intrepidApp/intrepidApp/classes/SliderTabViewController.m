@@ -24,13 +24,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     mController = [[MenuController alloc] init];
     [mController displayMenuWithParent:self];
     self.navigationItem.hidesBackButton = YES;
 }
 
 - (void)addTabs:(NSArray *)nameArray {
-    NSLog(@"about to add tabs");
     int i = 0;
     tabArray = [NSMutableArray new];
     
@@ -66,7 +66,6 @@
         [self.view addSubview:tab];
         i++;
     }
-    NSLog(@"and done lol");
     currentTab = 1;
     [self tabSelected:[tabArray objectAtIndex:1]];
     
