@@ -106,17 +106,17 @@
     UIViewController *viewController;
     switch (button.tag) {
         case 0:
-            viewController = [[OverViewViewController alloc] init];
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"overView"];
             break;
             
         case 1:
-            viewController = [[HealthViewController alloc] init];
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"healthView"];
             break;
         default:
             break;
             
         case 4:
-            viewController = [[ClinicViewController alloc] init];
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"clinicView"];
             break;
             
         case 5:
