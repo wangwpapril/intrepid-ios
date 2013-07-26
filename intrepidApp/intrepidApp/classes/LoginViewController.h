@@ -20,6 +20,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *intrepidTitle;
 @property (weak, nonatomic) IBOutlet UILabel *tagline;
 @property (weak, nonatomic) IBOutlet UILabel *forgotPassword;
+@property (weak, nonatomic) IBOutlet UILabel *underlinePassword;
+@property (weak, nonatomic) IBOutlet UILabel *underlineEmail;
+
+- (IBAction)typeBox:(id)sender;
+- (void)keyboardWillShow;
+- (void)keyboardWillHide;
+- (void)textFieldDidBeginEditing:(UITextField *)sender;
+- (void)setViewMovedUp:(BOOL)movedUp;
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
 
 
 @end

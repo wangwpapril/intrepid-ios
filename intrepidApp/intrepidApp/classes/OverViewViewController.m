@@ -24,7 +24,7 @@
     self.view.tag = 0;
     [self populateCurrencyItems];
     self.navigationItem.title = @"Mexico Overview";
-    
+     
     
     NSInteger height = self.view.bounds.size.height;
     CGRect frame = CGRectMake(0, 0, 320, height);

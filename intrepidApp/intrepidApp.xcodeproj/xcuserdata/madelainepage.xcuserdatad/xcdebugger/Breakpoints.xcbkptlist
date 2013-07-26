@@ -58,20 +58,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "intrepidApp/classes/HealthViewController.m"
-         timestampString = "396330872.78491"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "174"
-         endingLineNumber = "174"
-         landmarkName = "-addTabs"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "intrepidApp/classes/HealthViewController.m"
-         timestampString = "396330872.78491"
+         timestampString = "396489060.455078"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "173"
@@ -84,11 +71,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "intrepidApp/classes/HealthViewController.m"
-         timestampString = "396330872.78491"
+         timestampString = "396489060.455078"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "306"
-         endingLineNumber = "306"
+         startingLineNumber = "172"
+         endingLineNumber = "172"
+         landmarkName = "-addTabs"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "intrepidApp/classes/HealthViewController.m"
+         timestampString = "396489060.455078"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "305"
+         endingLineNumber = "305"
          landmarkName = "-switchTabs:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -110,7 +110,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "intrepidApp/classes/SignUpViewController.m"
-         timestampString = "395876445.741416"
+         timestampString = "396489060.455078"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "45"
@@ -141,6 +141,19 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "44"
          endingLineNumber = "44"
+         landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "intrepidApp/classes/LoginViewController.m"
+         timestampString = "396494954.752661"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "47"
+         endingLineNumber = "47"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
