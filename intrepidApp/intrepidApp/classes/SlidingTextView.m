@@ -50,7 +50,7 @@
     // text
     UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 308,  320, self.bounds.size.height - 308)];
     //308
-    textView.scrollEnabled = YES;
+//    textView.scrollEnabled = YES;
     [textView setEditable:NO];
     textView.textColor = APP_TEXT_COLOR;
     textView.font = [UIFont fontWithName:@"ProximaNova-Light" size:13];

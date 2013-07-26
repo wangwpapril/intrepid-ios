@@ -30,6 +30,7 @@
 		688F9E631786262800CF850C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 688F9E621786262800CF850C /* QuartzCore.framework */; };
 		688F9E661786295100CF850C /* HealthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 688F9E651786295100CF850C /* HealthCell.m */; };
 		68A2D71A178BDBE800B3C330 /* searchBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A2D719178BDBE800B3C330 /* searchBar@2x.png */; };
+		68BE3ACA17A1DCA600A87E52 /* HealthContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 68BE3AC917A1DCA600A87E52 /* HealthContent.m */; };
 		68DBAE60179F6CC300D1DE0B /* CurrencyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DBAE5F179F6CC300D1DE0B /* CurrencyCell.m */; };
 		68E4240417926E1E00431908 /* IntreSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E4240317926E1E00431908 /* IntreSearchBar.m */; };
 		68E42406179274BA00431908 /* mexicoBackBigger@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68E42405179274BA00431908 /* mexicoBackBigger@2x.png */; };
@@ -106,6 +107,8 @@
 		688F9E641786295100CF850C /* HealthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthCell.h; path = classes/HealthCell.h; sourceTree = "<group>"; };
 		688F9E651786295100CF850C /* HealthCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthCell.m; path = classes/HealthCell.m; sourceTree = "<group>"; };
 		68A2D719178BDBE800B3C330 /* searchBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchBar@2x.png"; sourceTree = "<group>"; };
+		68BE3AC817A1DCA600A87E52 /* HealthContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthContent.h; path = classes/HealthContent.h; sourceTree = "<group>"; };
+		68BE3AC917A1DCA600A87E52 /* HealthContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthContent.m; path = classes/HealthContent.m; sourceTree = "<group>"; };
 		68DBAE5E179F6CC300D1DE0B /* CurrencyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrencyCell.h; path = classes/CurrencyCell.h; sourceTree = "<group>"; };
 		68DBAE5F179F6CC300D1DE0B /* CurrencyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrencyCell.m; path = classes/CurrencyCell.m; sourceTree = "<group>"; };
 		68E4240217926E1E00431908 /* IntreSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntreSearchBar.h; path = classes/IntreSearchBar.h; sourceTree = "<group>"; };
@@ -284,6 +287,8 @@
 			children = (
 				6851223D17861152008DB6B6 /* HealthViewController.h */,
 				6851223E17861152008DB6B6 /* HealthViewController.m */,
+				68BE3AC817A1DCA600A87E52 /* HealthContent.h */,
+				68BE3AC917A1DCA600A87E52 /* HealthContent.m */,
 				7ECD0425178BD7C500D6C34B /* HealthViewDetailController.h */,
 				7ECD0426178BD7C500D6C34B /* HealthViewDetailController.m */,
 				688F9E641786295100CF850C /* HealthCell.h */,
@@ -482,6 +487,7 @@
 				7EE44DB9179F7E30006BA2EC /* CurrencyItem.m in Sources */,
 				E05DA6DA17A1D83F00E5FF89 /* ClinicViewController.m in Sources */,
 				E05DA6DD17A1D8E500E5FF89 /* AlertsViewController.m in Sources */,
+				68BE3ACA17A1DCA600A87E52 /* HealthContent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
