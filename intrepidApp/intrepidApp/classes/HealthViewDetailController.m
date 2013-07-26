@@ -46,7 +46,7 @@
     whiteLayer.alpha = 0.9;
     [self.view addSubview:whiteLayer];
     
-    CGRect rect=CGRectMake(0, 0, 320, 480);
+    CGRect rect=CGRectMake(0, 0, 320, 520);
     scrollView = [[UIScrollView alloc] initWithFrame:rect];
     scrollView.showsVerticalScrollIndicator = YES;
     scrollView.showsHorizontalScrollIndicator = NO;
