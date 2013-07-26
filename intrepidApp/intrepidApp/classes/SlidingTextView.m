@@ -12,6 +12,8 @@
 
 @implementation SlidingTextView
 
+@synthesize scroll;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

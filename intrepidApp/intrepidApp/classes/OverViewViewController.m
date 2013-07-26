@@ -38,19 +38,19 @@
     [culture addTextArea];
 
     SlidingTextView *currency = [[SlidingTextView alloc] initWithFrame:frame];
-    tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 308,  320, height - 308)];
-    tableList.dataSource = self;
-    tableList.delegate = self;
-    tableList.scrollEnabled = NO;
-    [currency addSubview:tableList];
-    [currency setupWithImageName:@"overview-currency.png" withTitle:@"Currency" withIconName:@"currency-label.png"];
-    
-    // table
 //    tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 308,  320, height - 308)];
 //    tableList.dataSource = self;
 //    tableList.delegate = self;
-//    tableList.scrollEnabled = YES;
+//    tableList.scrollEnabled = NO;
 //    [currency addSubview:tableList];
+    [currency setupWithImageName:@"overview-currency.png" withTitle:@"Currency" withIconName:@"currency-label.png"];
+    
+    // table
+    tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 308,  320, height - 308)];
+    tableList.dataSource = self;
+    tableList.delegate = self;
+    tableList.scrollEnabled = YES;
+    [currency.scroll addSubview:tableList];
     
     NSMutableArray *views = [NSMutableArray arrayWithObjects:history, culture, currency, nil];
     [self addViews:views withVerticalOffset:0];

@@ -120,7 +120,7 @@
         case 5:
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
-            [((WebViewController *)viewController) setupWithTitle:@"Clinics" withURL:@"http://m.intrepid247.com/m/ppn?region=latinamerica&country=Mexico&city=mexico"];
+            [((WebViewController *)viewController) setupWithTitle:@"Alerts" withURL:@"http://m.intrepid247.com/m/alert?region=latinamerica&country=Mexico&city=mexico%20city"];
             break;
             
             
