@@ -161,7 +161,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cs1-Co-eKy" kind="push" id="5ob-Jz-GmQ"/>
+                                    <segue destination="cs1-Co-eKy" kind="push" id="QFw-AK-99A"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="By registering, I accept the" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HsG-28-70T">
@@ -240,9 +240,9 @@
                         <outlet property="email" destination="CCb-bP-Q5A" id="ELu-JW-8Nx"/>
                         <outlet property="name" destination="xt5-l6-QSP" id="X4w-2A-5LG"/>
                         <outlet property="password" destination="pL1-xH-iP7" id="9X4-K3-l9K"/>
-                        <outlet property="privacyPolicy" destination="oOr-PD-5W9" id="t7E-t3-xB8"/>
+                        <outlet property="privacyPolicy" destination="oOr-PD-5W9" id="ChY-h1-TFp"/>
                         <outlet property="signUpButton" destination="FsD-yx-nrK" id="G7x-wo-ec1"/>
-                        <outlet property="termsOfService" destination="J1I-qY-uIo" id="VqK-Gy-2yT"/>
+                        <outlet property="termsOfService" destination="J1I-qY-uIo" id="8we-6h-nUT"/>
                         <outlet property="underlineEmail" destination="wkh-i3-VgY" id="B8h-sL-chZ"/>
                         <outlet property="underlineName" destination="H26-OT-Dwl" id="sKq-44-iGj"/>
                         <outlet property="underlinePassword" destination="Ns4-JY-YKv" id="FXL-7m-k6a"/>
@@ -469,6 +469,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="5ob-Jz-GmQ"/>
+        <segue reference="QFw-AK-99A"/>
     </inferredMetricsTieBreakers>
 </document>
