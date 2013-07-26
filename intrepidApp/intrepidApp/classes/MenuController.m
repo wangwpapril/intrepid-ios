@@ -8,8 +8,7 @@
 
 #import "MenuController.h"
 #import <QuartzCore/QuartzCore.h>
-#import "OverViewViewController.h"
-#import "HealthViewController.h"
+#import "WebViewController.h"
 
 
 @implementation MenuController
@@ -104,18 +103,32 @@
     UIViewController *viewController;
     switch (button.tag) {
         case 0:
-            viewController = [[OverViewViewController alloc] init];
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"overView"];
             break;
             
         case 1:
-            viewController = [[HealthViewController alloc] init];
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"healthView"];
             break;
         default:
             break;
+            
+        case 4:
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
+            [((WebViewController *)viewController) setupWithTitle:@"Clinics" withURL:@"http://m.intrepid247.com/m/ppn?region=latinamerica&country=Mexico&city=mexico"];
+            break;
+            
+        case 5:
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
+            [((WebViewController *)viewController) setupWithTitle:@"Clinics" withURL:@"http://m.intrepid247.com/m/ppn?region=latinamerica&country=Mexico&city=mexico"];
+            break;
+            
+            
     }
     if (parentController.view.tag != button.tag) {
         [parentController.navigationController pushViewController:viewController animated:YES];
     }
+    
 }
 
 //-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

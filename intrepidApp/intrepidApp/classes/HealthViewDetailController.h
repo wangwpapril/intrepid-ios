@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HealthItem.h"
 
 
 @interface HealthViewDetailController : UIViewController {    
@@ -18,8 +19,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, strong) IBOutlet UILabel *descriptionDesignationLabel;
 
-@property (nonatomic, strong) NSString *healthItemName;
-@property (nonatomic, strong) NSString *healthItemCategory;
+@property (nonatomic, strong) HealthItem *healthItem;
 
 @property (nonatomic, strong) IBOutlet UILabel *sideEffectsLabel;
 @property (nonatomic, strong) IBOutlet UILabel *sideEffectsDesignationLabel;

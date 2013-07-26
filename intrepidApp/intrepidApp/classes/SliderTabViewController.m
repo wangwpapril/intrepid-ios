@@ -28,6 +28,7 @@
     mController = [[MenuController alloc] init];
     [mController displayMenuWithParent:self];
     self.navigationItem.hidesBackButton = YES;
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
 - (void)addTabs:(NSArray *)nameArray {
