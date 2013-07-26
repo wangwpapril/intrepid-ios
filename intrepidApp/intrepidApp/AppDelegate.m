@@ -39,6 +39,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // start of your application:didFinishLaunchingWithOptions
+    
+    // !!!: Use the next line only during beta
+    // [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
+    
+    [TestFlight takeOff:@"c8777d06-5274-4326-9d18-4281cbdd5e5b"];
+    // The rest of your application:didFinishLaunchingWithOptions method
+    // ...
     [self customizeAppearance];
     
 //    // Override point for customization after application launch.
