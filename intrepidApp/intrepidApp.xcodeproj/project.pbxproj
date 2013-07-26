@@ -30,6 +30,7 @@
 		688F9E631786262800CF850C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 688F9E621786262800CF850C /* QuartzCore.framework */; };
 		688F9E661786295100CF850C /* HealthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 688F9E651786295100CF850C /* HealthCell.m */; };
 		68A2D71A178BDBE800B3C330 /* searchBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A2D719178BDBE800B3C330 /* searchBar@2x.png */; };
+		68B997E517A2058A00AD62ED /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B997E417A2058A00AD62ED /* WebViewController.m */; };
 		68BE3ACA17A1DCA600A87E52 /* HealthContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 68BE3AC917A1DCA600A87E52 /* HealthContent.m */; };
 		68DBAE60179F6CC300D1DE0B /* CurrencyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DBAE5F179F6CC300D1DE0B /* CurrencyCell.m */; };
 		68E4240417926E1E00431908 /* IntreSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E4240317926E1E00431908 /* IntreSearchBar.m */; };
@@ -68,8 +69,6 @@
 		7EE44DBF179F7FF5006BA2EC /* brasil-flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DBB179F7FF5006BA2EC /* brasil-flag@2x.png */; };
 		7EE44DC0179F7FF5006BA2EC /* canadian-flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DBC179F7FF5006BA2EC /* canadian-flag@2x.png */; };
 		7EE44DC1179F7FF5006BA2EC /* great-britain-flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DBD179F7FF5006BA2EC /* great-britain-flag@2x.png */; };
-		E05DA6DA17A1D83F00E5FF89 /* ClinicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05DA6D917A1D83F00E5FF89 /* ClinicViewController.m */; };
-		E05DA6DD17A1D8E500E5FF89 /* AlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05DA6DC17A1D8E500E5FF89 /* AlertsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +106,8 @@
 		688F9E641786295100CF850C /* HealthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthCell.h; path = classes/HealthCell.h; sourceTree = "<group>"; };
 		688F9E651786295100CF850C /* HealthCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthCell.m; path = classes/HealthCell.m; sourceTree = "<group>"; };
 		68A2D719178BDBE800B3C330 /* searchBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchBar@2x.png"; sourceTree = "<group>"; };
+		68B997E317A2058A00AD62ED /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = classes/WebViewController.h; sourceTree = "<group>"; };
+		68B997E417A2058A00AD62ED /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = classes/WebViewController.m; sourceTree = "<group>"; };
 		68BE3AC817A1DCA600A87E52 /* HealthContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthContent.h; path = classes/HealthContent.h; sourceTree = "<group>"; };
 		68BE3AC917A1DCA600A87E52 /* HealthContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthContent.m; path = classes/HealthContent.m; sourceTree = "<group>"; };
 		68DBAE5E179F6CC300D1DE0B /* CurrencyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrencyCell.h; path = classes/CurrencyCell.h; sourceTree = "<group>"; };
@@ -153,10 +154,6 @@
 		7EE44DBB179F7FF5006BA2EC /* brasil-flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brasil-flag@2x.png"; sourceTree = "<group>"; };
 		7EE44DBC179F7FF5006BA2EC /* canadian-flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canadian-flag@2x.png"; sourceTree = "<group>"; };
 		7EE44DBD179F7FF5006BA2EC /* great-britain-flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "great-britain-flag@2x.png"; sourceTree = "<group>"; };
-		E05DA6D817A1D83F00E5FF89 /* ClinicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClinicViewController.h; sourceTree = "<group>"; };
-		E05DA6D917A1D83F00E5FF89 /* ClinicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClinicViewController.m; sourceTree = "<group>"; };
-		E05DA6DB17A1D8E500E5FF89 /* AlertsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertsViewController.h; sourceTree = "<group>"; };
-		E05DA6DC17A1D8E500E5FF89 /* AlertsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,14 +190,14 @@
 			children = (
 				6835EC141789439600A57F86 /* MenuController.h */,
 				6835EC151789439600A57F86 /* MenuController.m */,
-				E05DA6DB17A1D8E500E5FF89 /* AlertsViewController.h */,
-				E05DA6DC17A1D8E500E5FF89 /* AlertsViewController.m */,
 				68E4240217926E1E00431908 /* IntreSearchBar.h */,
 				68E4240317926E1E00431908 /* IntreSearchBar.m */,
 				6855835F179CB4C90043D473 /* SliderTabViewController.h */,
 				68558360179CB4C90043D473 /* SliderTabViewController.m */,
 				684BB607179F539C004C44C9 /* SlidingTextView.h */,
 				684BB608179F539C004C44C9 /* SlidingTextView.m */,
+				68B997E317A2058A00AD62ED /* WebViewController.h */,
+				68B997E417A2058A00AD62ED /* WebViewController.m */,
 			);
 			name = "Support Classes";
 			sourceTree = "<group>";
@@ -267,8 +264,6 @@
 		6851221B17861138008DB6B6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E05DA6D817A1D83F00E5FF89 /* ClinicViewController.h */,
-				E05DA6D917A1D83F00E5FF89 /* ClinicViewController.m */,
 				7E82E9B61794EE5D00027268 /* fonts */,
 				688F9E6717862DFD00CF850C /* images */,
 				6851221C17861138008DB6B6 /* intrepidApp-Info.plist */,
@@ -485,9 +480,8 @@
 				684BB609179F539C004C44C9 /* SlidingTextView.m in Sources */,
 				68DBAE60179F6CC300D1DE0B /* CurrencyCell.m in Sources */,
 				7EE44DB9179F7E30006BA2EC /* CurrencyItem.m in Sources */,
-				E05DA6DA17A1D83F00E5FF89 /* ClinicViewController.m in Sources */,
-				E05DA6DD17A1D8E500E5FF89 /* AlertsViewController.m in Sources */,
 				68BE3ACA17A1DCA600A87E52 /* HealthContent.m in Sources */,
+				68B997E517A2058A00AD62ED /* WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

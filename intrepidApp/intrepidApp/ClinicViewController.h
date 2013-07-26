@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ClinicViewController : UIViewController {
-    IBOutlet UIWebView *webView;
-}
+@interface ClinicViewController : UIViewController
 
 
 @property (nonatomic, retain) IBOutlet UIWebView *webView;

@@ -8,10 +8,6 @@
 
 #import "ClinicViewController.h"
 
-@interface ClinicViewController ()
-
-@end
-
 @implementation ClinicViewController
 @synthesize webView;
 
@@ -27,8 +23,12 @@
     - (void)viewDidLoad
     {
         [super viewDidLoad];
-        [webView loadRequest:[NSURLRequest requestWithURL:
-        [NSURL URLWithString:@"http://m.intrepid247.com/m/ppn?region=latinamerica&country=Mexico&city=mexico city"]]];
+        self.navigationItem.title = @"Clinics";
+        UIWebView *trialView = [[UIWebView alloc] initWithFrame:self.view.bounds];  //Change self.view.bounds to a smaller CGRect if you don't want it to take up the whole screen
+        [trialView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://m.intrepid247.com/m/ppn?region=latinamerica&country=Mexico&city=mexico"]]];
+        [self.view addSubview:trialView];
+//        [webView loadRequest:[NSURLRequest requestWithURL:
+//        [NSURL URLWithString:@"http://m.intrepid247.com/m/ppn?region=latinamerica&country=Mexico&city=mexico city"]]];
 
 // Do any additional setup after loading the view.
 }
