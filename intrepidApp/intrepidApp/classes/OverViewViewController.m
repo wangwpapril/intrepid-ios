@@ -38,13 +38,19 @@
     [culture addTextArea];
 
     SlidingTextView *currency = [[SlidingTextView alloc] initWithFrame:frame];
-    [currency setupWithImageName:@"overview-currency.png" withTitle:@"Currency" withIconName:@"currency-label.png"];
-    
-    // table
     tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 308,  320, height - 308)];
     tableList.dataSource = self;
     tableList.delegate = self;
+    tableList.scrollEnabled = NO;
     [currency addSubview:tableList];
+    [currency setupWithImageName:@"overview-currency.png" withTitle:@"Currency" withIconName:@"currency-label.png"];
+    
+    // table
+//    tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 308,  320, height - 308)];
+//    tableList.dataSource = self;
+//    tableList.delegate = self;
+//    tableList.scrollEnabled = YES;
+//    [currency addSubview:tableList];
     
     NSMutableArray *views = [NSMutableArray arrayWithObjects:history, culture, currency, nil];
     [self addViews:views withVerticalOffset:0];
@@ -63,7 +69,9 @@
                            [CurrencyItem currencyItemOfCountry:@"USD" flag:@"american-flag.png" value:@"1"],
                             [CurrencyItem currencyItemOfCountry:@"CAD" flag:@"canadian-flag.png" value:@"0.15"],
                             [CurrencyItem currencyItemOfCountry:@"GBP" flag:@"great-britain-flag.png" value:@"1.34"],
-                            [CurrencyItem currencyItemOfCountry:@"BRA" flag:@"brasil-flag.png" value:@"0.11"], nil];
+                            [CurrencyItem currencyItemOfCountry:@"BRA" flag:@"brasil-flag.png" value:@"0.11"],
+                            [CurrencyItem currencyItemOfCountry:@"SUP" flag:@"great-britain-flag.png" value:@"1.44"],
+                            [CurrencyItem currencyItemOfCountry:@"HI" flag:@"brasil-flag.png" value:@"0.12"], nil];
 }
 
 - (void)didReceiveMemoryWarning
