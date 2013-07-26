@@ -52,7 +52,6 @@
                           [HealthItem healthItemOfCategory:@"medications" name:@"Arm Fracture" description:@"blah" details:@"bleh" common:TRUE],
                           [HealthItem healthItemOfCategory:@"medications" name:@"Heartburn" description:@"aha" details:@"woohoo" common:TRUE],
                            nil];
-    1
     NSMutableArray *contentArray = [[NSMutableArray alloc] initWithObjects:symptoms, prevention, medication, nil];
     return contentArray;
     

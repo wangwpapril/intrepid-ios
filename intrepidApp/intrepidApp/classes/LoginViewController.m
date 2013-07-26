@@ -167,6 +167,15 @@
     }
 }
 
+// added so that you can click outside of keyboard for finishing typing - JCH
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [email resignFirstResponder];
+    [password resignFirstResponder];
+
+    
+}
+
 -(void)textFieldDidBeginEditing:(UITextField *)sender
 {
     if ([sender isEqual:self])

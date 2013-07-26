@@ -129,6 +129,11 @@
     [[tableArray objectAtIndex:currentTab] reloadData];
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [searchBar resignFirstResponder];
+    
+}
 //-(void)capitalLabel:(UILabel *)label withLetter:(NSString *)letter {
 //    label.text = letter;
 //    label.backgroundColor = [UIColor clearColor];
