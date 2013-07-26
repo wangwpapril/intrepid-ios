@@ -44,13 +44,13 @@
 {
     [super viewDidLoad];
     
-    email.delegate = self;
-    password.delegate = self;
-    
     [self.navigationController setNavigationBarHidden:YES];
     self.navigationItem.hidesBackButton = YES;
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    self.email.delegate = self;
+    self.password.delegate = self;
     
     //set background image
     UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login-background.png"]];

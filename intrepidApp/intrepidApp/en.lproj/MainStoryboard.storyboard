@@ -27,24 +27,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" id="0dD-Gv-SrI">
-                                <rect key="frame" x="77" y="237" width="166" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                <connections>
-                                    <action selector="typeBox:" destination="lgv-mR-8mz" eventType="editingDidEnd" id="9wy-b3-BHA"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" id="Ueu-r5-Kuu">
-                                <rect key="frame" x="78" y="283" width="166" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="typeBox:" destination="lgv-mR-8mz" eventType="editingDidEnd" id="uGF-KL-tYt"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8tT-pp-zgM">
                                 <rect key="frame" x="77" y="341" width="166" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -108,17 +90,29 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="2ba-9J-4KN">
+                                <rect key="frame" x="77" y="284" width="166" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="quq-sM-dyc">
+                                <rect key="frame" x="78" y="224" width="166" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Iby-WA-mXa"/>
                     <connections>
-                        <outlet property="email" destination="0dD-Gv-SrI" id="Zy3-vp-NnE"/>
+                        <outlet property="email" destination="quq-sM-dyc" id="IAQ-v1-rkb"/>
                         <outlet property="forgotPassword" destination="WOV-Wh-6NT" id="xqK-Q5-Gci"/>
                         <outlet property="intrepidTitle" destination="Y7V-0c-AzB" id="TRT-Hg-hqW"/>
                         <outlet property="learnMore" destination="nEI-D0-7dv" id="x08-fu-r4b"/>
                         <outlet property="loginButton" destination="8tT-pp-zgM" id="jXP-Rz-eGJ"/>
-                        <outlet property="password" destination="Ueu-r5-Kuu" id="OH1-Pe-7qe"/>
+                        <outlet property="password" destination="2ba-9J-4KN" id="m6U-cM-Aip"/>
                         <outlet property="signUp" destination="Zhz-zF-bYZ" id="q2b-nK-e6O"/>
                         <outlet property="tagline" destination="3Ms-XL-sg9" id="lTp-to-OuO"/>
                         <outlet property="underlineEmail" destination="J25-eA-sZr" id="xJm-b5-R1c"/>
@@ -464,62 +458,6 @@ Sed adipiscing ornare risus. Morbi est est, blandit sit amet, sagittis vel, euis
     <resources>
         <image name="rounded-rectangle-@2x.png" width="368" height="66"/>
     </resources>
-    <classes>
-        <class className="HealthViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HealthViewController.h"/>
-        </class>
-        <class className="HealthViewDetailController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HealthViewDetailController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="descriptionDesignationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="descriptionImageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="descriptionText" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="healthItemNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="healthItemTitleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="sideEffectsDesignationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sideEffectsImageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sideEffectsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sideEffectsText" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="LoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="typeBox:"/>
-                <relationship kind="outlet" name="email" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="forgotPassword" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="intrepidTitle" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="learnMore" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="signUp" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="tagline" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="underlineEmail" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="underlinePassword" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="OverViewViewController" superclassName="SliderTabViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OverViewViewController.h"/>
-        </class>
-        <class className="SignUpViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignUpViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addPhoto" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="email" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="signUpButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="SliderTabViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SliderTabViewController.h"/>
-        </class>
-        <class className="WebViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
