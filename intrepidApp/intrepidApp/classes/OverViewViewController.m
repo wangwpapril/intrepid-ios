@@ -69,9 +69,7 @@
                            [CurrencyItem currencyItemOfCountry:@"USD" flag:@"american-flag.png" value:@"1"],
                             [CurrencyItem currencyItemOfCountry:@"CAD" flag:@"canadian-flag.png" value:@"0.15"],
                             [CurrencyItem currencyItemOfCountry:@"GBP" flag:@"great-britain-flag.png" value:@"1.34"],
-                            [CurrencyItem currencyItemOfCountry:@"BRA" flag:@"brasil-flag.png" value:@"0.11"],
-                            [CurrencyItem currencyItemOfCountry:@"SUP" flag:@"great-britain-flag.png" value:@"1.44"],
-                            [CurrencyItem currencyItemOfCountry:@"HI" flag:@"brasil-flag.png" value:@"0.12"], nil];
+                            [CurrencyItem currencyItemOfCountry:@"BRA" flag:@"brasil-flag.png" value:@"0.11"], nil];
 }
 
 - (void)didReceiveMemoryWarning

@@ -68,18 +68,6 @@
     mController = [[MenuController alloc] init];
     [mController displayMenuWithParent:self];
     
-//    //add large letters to navigation bar
-//    largeLetterArray = [NSMutableArray new];
-//    
-//    [self capitalLabel:navLabelC withLetter:@"C"];
-//    [navLabelC setTextColor:APP_TOGGLE_UNSELECTED];
-//    
-//    [self capitalLabel:navLabelS withLetter:@"S"];
-//    [navLabelS setTextColor:APP_TOGGLE_UNSELECTED];
-//    
-//    [self capitalLabel:navLabelM withLetter:@"M"];
-//    [navLabelM setTextColor:APP_TOGGLE_UNSELECTED];
-    
 }
 
 - (void)didReceiveMemoryWarning

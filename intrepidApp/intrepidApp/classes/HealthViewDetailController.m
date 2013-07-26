@@ -17,17 +17,10 @@
 @synthesize healthItemTitleLabel;
 @synthesize healthItem;
 
-@synthesize descriptionLabel;
 @synthesize descriptionDesignationLabel;
 
-@synthesize sideEffectsLabel;
 @synthesize sideEffectsDesignationLabel;
 
-@synthesize descriptionText;
-@synthesize sideEffectsText;
-
-@synthesize descriptionImageLabel;
-@synthesize sideEffectsImageLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,48 +46,19 @@
     whiteLayer.alpha = 0.9;
     [self.view addSubview:whiteLayer];
     
-    [scrollView setScrollEnabled:YES];
+    CGRect rect=CGRectMake(0, 0, 320, 480);
+    scrollView = [[UIScrollView alloc] initWithFrame:rect];
+    scrollView.showsVerticalScrollIndicator = YES;
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.scrollEnabled = YES;
     
-    CGFloat scrollViewHeight = 340.0f;
-    for (UIView* view in scrollView.subviews)
-    {
-        scrollViewHeight += view.frame.size.height;
-    }
-    
-    [scrollView setContentSize:(CGSizeMake(320, scrollViewHeight))];
-    
-    
-    [self.view addSubview:scrollView];
-    
-    [self addDescription];
-    [self addSideEffects];
-    
-    //Change appearance of backbutton
-//    self.navigationItem.hidesBackButton=YES;
-//    UIButton *back = [[UIButton alloc] initWithFrame:CGRectMake(15, 7, 49, 29)];
-//    [back setImage:[UIImage imageNamed:@"back-button.png"] forState:UIControlStateNormal];
-//    [back addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    UIBarButtonItem *back1 = [[UIBarButtonItem alloc] initWithCustomView:back];
-//    self.navigationItem.leftBarButtonItem = back1;
+    [self addContent];
 
     //Description and Side Effects images
-    descriptionImageLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"stethoscope-pic.png"]];
-    descriptionImageLabel.text = NULL;
-    
-    //Check which type of sideEffect it is
-    if ([healthItem.category isEqualToString:@"symptoms"]) {
-        sideEffectsImageLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"heart-rate-pic.png"]];
-    }
-    else if ([healthItem.category isEqualToString:@"prevention"]) {
-        sideEffectsImageLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"conditions-pic.png"]];
-    }
-    else {
-    sideEffectsImageLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"medication-pic.png"]];
-    }
-    sideEffectsImageLabel.text = NULL;
-    
-//    self.view.backgroundColor = UIColorFromRGB(0xffffff);
+    UIImageView  *descriptionImageLabel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"stethoscope-pic.png"]];
+    descriptionImageLabel.frame = CGRectMake(5, 40, 25, 25);
+    [scrollView addSubview:descriptionImageLabel];
+
     
     // Set Header label    
     healthItemTitleLabel.backgroundColor = NAVIGATION_BG_COLOR;
@@ -108,37 +72,52 @@
     
     [healthItemTitleLabel addSubview:healthItemNameLabel];
     [self.view addSubview:healthItemTitleLabel];
+    [self.view addSubview:scrollView];
     
 	// Do any additional setup after loading the view.
 }
 
-- (void)addDescription {
+- (void)addContent {
     
+    UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, -5, 120, 120)];
     descriptionLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
     descriptionLabel.backgroundColor = [UIColor clearColor];
     descriptionLabel.textColor = UIColorFromRGB(0x423a38);
+    descriptionLabel.text = @"Description";
     
     //Set descriptionText to auto-fit content
+    CGSize size = [healthItem.description sizeWithFont:[UIFont systemFontOfSize:15]
+                      constrainedToSize:CGSizeMake(320, self.view.bounds.size.height-100)
+                          lineBreakMode:UILineBreakModeWordWrap];
+    UITextView *descriptionText = [[UITextView alloc] initWithFrame:CGRectMake(0, 70,  320, size.height)];
     descriptionText.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
     descriptionText.backgroundColor = UIColorFromRGB(0xffffff);
     descriptionText.textColor = UIColorFromRGB(0x423a38);
     descriptionText.text = healthItem.description;
     [descriptionText setAlpha:0.6];
+    descriptionText.scrollEnabled = NO;
+    descriptionText.editable = NO;
     descriptionText.layer.borderWidth = 1.0f;
     descriptionText.layer.borderColor = [[UIColor grayColor] CGColor];
     
-    CGRect frame = descriptionText.frame;
-    UIEdgeInsets inset = descriptionText.contentInset;
-    frame.size.height = descriptionText.contentSize.height + inset.top + inset.bottom;
-    descriptionText.frame = frame;
-    
-    [scrollView addSubview: descriptionLabel];
+    [scrollView addSubview:descriptionLabel];
     [scrollView addSubview: descriptionText];
-
-}
-
-- (void)addSideEffects {
     
+    UIImageView  *sideEffectsImageLabel = [[UIImageView alloc] init];
+    
+    if ([healthItem.category isEqualToString:@"symptoms"]) {
+        [sideEffectsImageLabel setImage:[UIImage imageNamed:@"heart-rate-pic.png"]];
+    }
+    else if ([healthItem.category isEqualToString:@"prevention"]) {
+        [sideEffectsImageLabel setImage:[UIImage imageNamed:@"conditions-pic.png"]];
+    }
+    else {
+        [sideEffectsImageLabel setImage:[UIImage imageNamed:@"medication-pic.png"]];
+    }
+    sideEffectsImageLabel.frame = CGRectMake(7, size.height + 75, 25, 25);
+    [scrollView addSubview:sideEffectsImageLabel];
+    
+    UILabel *sideEffectsLabel = [[UILabel alloc] initWithFrame:CGRectMake(45, size.height + 30, 120, 120)];
     sideEffectsLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
     sideEffectsLabel.backgroundColor = [UIColor clearColor];
     sideEffectsLabel.textColor = UIColorFromRGB(0x423a38);
@@ -153,21 +132,23 @@
         sideEffectsLabel.text = @"Side Effects";
     }
     
+    CGSize sideEffectsSize = [healthItem.details sizeWithFont:[UIFont systemFontOfSize:15]
+                                     constrainedToSize:CGSizeMake(320, self.view.bounds.size.height - 100)
+                                         lineBreakMode:UILineBreakModeWordWrap];
+    UITextView *sideEffectsText = [[UITextView alloc] initWithFrame:CGRectMake(0, size.height + 105,  320, sideEffectsSize.height)];
     sideEffectsText.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
     sideEffectsText.backgroundColor = UIColorFromRGB(0xffffff);
     sideEffectsText.textColor = UIColorFromRGB(0x423a38);
     sideEffectsText.text = healthItem.details;
     [sideEffectsText setAlpha:0.6];
+    sideEffectsText.scrollEnabled = NO;
+    sideEffectsText.editable = NO;
     sideEffectsText.layer.borderWidth = 1.0f;
     sideEffectsText.layer.borderColor = [[UIColor grayColor] CGColor];
     
-    CGRect frame = sideEffectsText.frame;
-    UIEdgeInsets inset = sideEffectsText.contentInset;
-    frame.size.height = sideEffectsText.contentSize.height + inset.top + inset.bottom;
-    sideEffectsText.frame = frame;
-    
     [scrollView addSubview: sideEffectsLabel];
     [scrollView addSubview: sideEffectsText];
+    scrollView.contentSize = CGSizeMake(320, size.height + 115 + sideEffectsSize.height);
         
 }
 

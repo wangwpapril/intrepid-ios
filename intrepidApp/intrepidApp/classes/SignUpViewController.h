@@ -15,4 +15,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 
+@property (weak, nonatomic) IBOutlet UILabel *underlineName;
+@property (weak, nonatomic) IBOutlet UILabel *underlineEmail;
+@property (weak, nonatomic) IBOutlet UILabel *underlinePassword;
+@property (weak, nonatomic) IBOutlet UILabel *acceptanceLabel;
+@property (weak, nonatomic) IBOutlet UIButton *termsOfService;
+@property (weak, nonatomic) IBOutlet UIButton *privacyPolicy;
+
 @end
