@@ -80,12 +80,14 @@
     [menu addSubview:button];
 
     // content buttons
-    [self makeContentButtonWithImage:@"pic.png" withOrigin:CGPointMake(0, 30) withTag:0];
-    [self makeContentButtonWithImage:@"pic.png" withOrigin:CGPointMake(100, 30) withTag:1];
-    [self makeContentButtonWithImage:@"pic.png" withOrigin:CGPointMake(220, 30) withTag:2];
-    [self makeContentButtonWithImage:@"pic.png" withOrigin:CGPointMake(0, 110) withTag:3];
-    [self makeContentButtonWithImage:@"pic.png" withOrigin:CGPointMake(100, 110) withTag:4];
-    [self makeContentButtonWithImage:@"pic.png" withOrigin:CGPointMake(220, 110) withTag:5];
+    [self makeContentButtonWithOrigin:CGPointMake(0, 25) withTag:0];
+    [self makeContentButtonWithOrigin:CGPointMake(100, 25) withTag:1];
+    [self makeContentButtonWithOrigin:CGPointMake(220, 25) withTag:2];
+    [self makeContentButtonWithOrigin:CGPointMake(0, 90) withTag:3];
+    [self makeContentButtonWithOrigin:CGPointMake(100, 90) withTag:4];
+    [self makeContentButtonWithOrigin:CGPointMake(220, 90) withTag:5];
+    [self makeContentButtonWithOrigin:CGPointMake(0, 155) withTag:6];
+    [self makeContentButtonWithOrigin:CGPointMake(160, 155) withTag:7];
 }
 
 -(void)toggleMenu {
@@ -122,6 +124,10 @@
             [((WebViewController *)viewController) setupWithTitle:@"Alerts" withURL:@"http://m.intrepid247.com/m/alert?region=latinamerica&country=Mexico&city=mexico%20city"];
             break;
             
+        case 6:
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"trips"];
+            break;
+            
         default:
             break;
     }
@@ -136,15 +142,21 @@
 //    
 //}
 
--(void)makeContentButtonWithImage:(NSString *)image withOrigin:(CGPoint)origin withTag:(NSInteger)tag{
+-(void)makeContentButtonWithOrigin:(CGPoint)origin withTag:(NSInteger)tag{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     NSInteger size = 100;
     button.tag = tag;
+//    button.layer.borderColor = [UIColor orangeColor].CGColor;
+//    button.layer.borderWidth = 1;
     // buttons in the middle are fatter
     if (tag == 1 || tag == 4) {
         size = 120;
     }
-    button.frame = CGRectMake(origin.x, origin.y, size, 80);
+    // trips and assistance
+    else if (tag >= 6) {
+        size = 160;
+    }
+    button.frame = CGRectMake(origin.x, origin.y, size, 65);
     button.backgroundColor = [UIColor clearColor];
     [menu addSubview:button];
     [button addTarget:self action:@selector(goToController:) forControlEvents:UIControlEventTouchUpInside];
