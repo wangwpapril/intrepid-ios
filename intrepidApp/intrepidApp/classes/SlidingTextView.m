@@ -12,7 +12,7 @@
 
 @implementation SlidingTextView
 
-@synthesize scroll;
+//@synthesize scroll;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -24,16 +24,16 @@
 
 -(void)setupWithImageName:(NSString *)image withTitle:(NSString *)title withIconName:(NSString *)icon {
     
-    CGRect rect=CGRectMake(0, 0, 320, 480);
-    scroll = [[UIScrollView alloc] initWithFrame:rect];
-    scroll.showsVerticalScrollIndicator = YES;
-    scroll.showsHorizontalScrollIndicator = NO;
-    scroll.scrollEnabled = YES;
+//    CGRect rect=CGRectMake(0, 0, 320, 480);
+//    scroll = [[UIScrollView alloc] initWithFrame:rect];
+    self.showsVerticalScrollIndicator = YES;
+    self.showsHorizontalScrollIndicator = NO;
+    self.scrollEnabled = YES;
     
     // top image
     UIImageView  *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:image]];
     imageView.frame = CGRectMake(0, 0, 320, 268);
-    [scroll addSubview:imageView];
+    [self addSubview:imageView];
     
     // title background
     UIView *borderLine = [[UIView alloc] initWithFrame:CGRectMake(0, 268, 320, 40)];
@@ -46,29 +46,39 @@
     titleLabel.font = [UIFont fontWithName:@"ProximaNova-SemiBold" size:17];
     titleLabel.textColor = APP_TEXT_COLOR;
     [borderLine addSubview:titleLabel];
-    [scroll addSubview:borderLine];
+    [self addSubview:borderLine];
     
     // icon
     UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:icon]];
     iconView.frame = CGRectMake(14, 275, 25, 25);
-    [scroll addSubview:iconView];
+    [self addSubview:iconView];
     
-    [self addSubview:scroll];
-    scroll.contentSize = CGSizeMake(320,self.bounds.size.height - 40);
+//    [self addSubview:scroll];
     
 }
 
--(void) addTextArea {
+//- (void)addTableView {
+//}
+
+- (void)addTextArea {
     // text
-    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 308,  320, self.bounds.size.height - 308)];
-    //308
-//    textView.scrollEnabled = YES;
-    [textView setEditable:NO];
-    textView.textColor = APP_TEXT_COLOR;
-    textView.font = [UIFont fontWithName:@"ProximaNova-Light" size:13];
-    textView.text = @"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+    UIFont *textFont = [UIFont fontWithName:@"ProximaNova-Light" size:13];
+    NSString *text = @"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+    CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:15]
+                            constrainedToSize:CGSizeMake(320, self.bounds.size.height-100) lineBreakMode:NSLineBreakByWordWrapping];
+    self.contentSize = CGSizeMake(320, 325 + size.height);
+
     
-    [scroll addSubview:textView];
+    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 308,  320, size.height)];
+    [textView setEditable:NO];
+    textView.scrollEnabled = NO;
+    textView.textColor = APP_TEXT_COLOR;
+    textView.font = textFont;
+    textView.text = text;
+    
+    
+    [self addSubview:textView];
 }
 
 @end
