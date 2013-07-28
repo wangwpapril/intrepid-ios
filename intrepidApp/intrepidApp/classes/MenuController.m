@@ -99,7 +99,6 @@
 
 -(void)goToController:(id)sender{
     UIButton *button = (UIButton *)sender;
-    NSLog(@"tag: %i", button.tag);
     UIViewController *viewController;
     switch (button.tag) {
         case 0:
@@ -109,21 +108,22 @@
         case 1:
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"healthView"];
             break;
-        default:
+        case 2:
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"security"];
             break;
             
         case 4:
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
             [((WebViewController *)viewController) setupWithTitle:@"Clinics" withURL:@"http://m.intrepid247.com/m/ppn?region=latinamerica&country=Mexico&city=mexico"];
             break;
-            
+
         case 5:
-            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
             [((WebViewController *)viewController) setupWithTitle:@"Alerts" withURL:@"http://m.intrepid247.com/m/alert?region=latinamerica&country=Mexico&city=mexico%20city"];
             break;
             
-            
+        default:
+            break;
     }
     if (parentController.view.tag != button.tag) {
         [parentController.navigationController pushViewController:viewController animated:YES];

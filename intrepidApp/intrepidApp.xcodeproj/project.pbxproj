@@ -30,6 +30,9 @@
 		688F9E631786262800CF850C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 688F9E621786262800CF850C /* QuartzCore.framework */; };
 		688F9E661786295100CF850C /* HealthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 688F9E651786295100CF850C /* HealthCell.m */; };
 		68A2D71A178BDBE800B3C330 /* searchBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A2D719178BDBE800B3C330 /* searchBar@2x.png */; };
+		68B071E917A4D3FC0061E418 /* SecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B071E817A4D3FC0061E418 /* SecurityViewController.m */; };
+		68B071EC17A4D7290061E418 /* EmbassyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B071EB17A4D7290061E418 /* EmbassyCell.m */; };
+		68B071EF17A4D7430061E418 /* EmbassyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B071EE17A4D7430061E418 /* EmbassyItem.m */; };
 		68B997E517A2058A00AD62ED /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B997E417A2058A00AD62ED /* WebViewController.m */; };
 		68BE3ACA17A1DCA600A87E52 /* HealthContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 68BE3AC917A1DCA600A87E52 /* HealthContent.m */; };
 		68DBAE60179F6CC300D1DE0B /* CurrencyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DBAE5F179F6CC300D1DE0B /* CurrencyCell.m */; };
@@ -113,6 +116,12 @@
 		688F9E641786295100CF850C /* HealthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthCell.h; path = classes/HealthCell.h; sourceTree = "<group>"; };
 		688F9E651786295100CF850C /* HealthCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthCell.m; path = classes/HealthCell.m; sourceTree = "<group>"; };
 		68A2D719178BDBE800B3C330 /* searchBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchBar@2x.png"; sourceTree = "<group>"; };
+		68B071E717A4D3FC0061E418 /* SecurityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecurityViewController.h; path = classes/SecurityViewController.h; sourceTree = "<group>"; };
+		68B071E817A4D3FC0061E418 /* SecurityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecurityViewController.m; path = classes/SecurityViewController.m; sourceTree = "<group>"; };
+		68B071EA17A4D7290061E418 /* EmbassyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmbassyCell.h; path = classes/EmbassyCell.h; sourceTree = "<group>"; };
+		68B071EB17A4D7290061E418 /* EmbassyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmbassyCell.m; path = classes/EmbassyCell.m; sourceTree = "<group>"; };
+		68B071ED17A4D7430061E418 /* EmbassyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmbassyItem.h; path = classes/EmbassyItem.h; sourceTree = "<group>"; };
+		68B071EE17A4D7430061E418 /* EmbassyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmbassyItem.m; path = classes/EmbassyItem.m; sourceTree = "<group>"; };
 		68B997E317A2058A00AD62ED /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = classes/WebViewController.h; sourceTree = "<group>"; };
 		68B997E417A2058A00AD62ED /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = classes/WebViewController.m; sourceTree = "<group>"; };
 		68BE3AC817A1DCA600A87E52 /* HealthContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthContent.h; path = classes/HealthContent.h; sourceTree = "<group>"; };
@@ -272,6 +281,7 @@
 				6851222317861138008DB6B6 /* AppDelegate.h */,
 				6851222417861138008DB6B6 /* AppDelegate.m */,
 				684BB606179F534A004C44C9 /* Support Classes */,
+				68B071E617A4D3D30061E418 /* Security */,
 				684BB602179F5117004C44C9 /* Overview */,
 				7E3477791791E76700FB86DC /* Login/Signup */,
 				688F9E5B178611C000CF850C /* Health */,
@@ -334,6 +344,19 @@
 				684E3649178F849F004E27B9 /* menuBack2@2x.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		68B071E617A4D3D30061E418 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				68B071E717A4D3FC0061E418 /* SecurityViewController.h */,
+				68B071E817A4D3FC0061E418 /* SecurityViewController.m */,
+				68B071EA17A4D7290061E418 /* EmbassyCell.h */,
+				68B071EB17A4D7290061E418 /* EmbassyCell.m */,
+				68B071ED17A4D7430061E418 /* EmbassyItem.h */,
+				68B071EE17A4D7430061E418 /* EmbassyItem.m */,
+			);
+			name = Security;
 			sourceTree = "<group>";
 		};
 		7E3477791791E76700FB86DC /* Login/Signup */ = {
@@ -520,6 +543,9 @@
 				7EE44DB9179F7E30006BA2EC /* CurrencyItem.m in Sources */,
 				68BE3ACA17A1DCA600A87E52 /* HealthContent.m in Sources */,
 				68B997E517A2058A00AD62ED /* WebViewController.m in Sources */,
+				68B071E917A4D3FC0061E418 /* SecurityViewController.m in Sources */,
+				68B071EC17A4D7290061E418 /* EmbassyCell.m in Sources */,
+				68B071EF17A4D7430061E418 /* EmbassyItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
