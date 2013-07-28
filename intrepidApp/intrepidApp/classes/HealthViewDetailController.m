@@ -88,7 +88,7 @@
     //Set descriptionText to auto-fit content
     CGSize size = [healthItem.description sizeWithFont:[UIFont systemFontOfSize:15]
                       constrainedToSize:CGSizeMake(320, self.view.bounds.size.height-100)
-                          lineBreakMode:UILineBreakModeWordWrap];
+                          lineBreakMode:NSLineBreakByWordWrapping];
     UITextView *descriptionText = [[UITextView alloc] initWithFrame:CGRectMake(0, 70,  320, size.height)];
     descriptionText.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
     descriptionText.backgroundColor = UIColorFromRGB(0xffffff);
@@ -134,7 +134,7 @@
     
     CGSize sideEffectsSize = [healthItem.details sizeWithFont:[UIFont systemFontOfSize:15]
                                      constrainedToSize:CGSizeMake(320, self.view.bounds.size.height - 100)
-                                         lineBreakMode:UILineBreakModeWordWrap];
+                                         lineBreakMode:NSLineBreakByWordWrapping];
     UITextView *sideEffectsText = [[UITextView alloc] initWithFrame:CGRectMake(0, size.height + 105,  320, sideEffectsSize.height)];
     sideEffectsText.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
     sideEffectsText.backgroundColor = UIColorFromRGB(0xffffff);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12B19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="13A497d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
@@ -406,63 +406,35 @@
             </objects>
             <point key="canvasLocation" x="1099" y="127"/>
         </scene>
+        <!--Security View Controller-->
+        <scene sceneID="WkA-QU-sun">
+            <objects>
+                <viewController storyboardIdentifier="security" id="hoz-0A-Igb" customClass="SecurityViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zJb-yU-AUt">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nPr-z9-NBf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1559" y="142"/>
+        </scene>
+        <!--Trips View Controller-->
+        <scene sceneID="go5-5z-c6f">
+            <objects>
+                <viewController storyboardIdentifier="trips" id="Pv3-NY-mLH" customClass="TripsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VTW-0p-iF3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pVW-Qu-P0K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1959" y="146"/>
+        </scene>
     </scenes>
-    <classes>
-        <class className="HealthViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HealthViewController.h"/>
-        </class>
-        <class className="HealthViewDetailController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HealthViewDetailController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="descriptionDesignationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="healthItemNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="healthItemTitleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="sideEffectsDesignationLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="LoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="typeBox:"/>
-                <relationship kind="outlet" name="email" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="forgotPassword" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="intrepidTitle" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="learnMore" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="signUp" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="tagline" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="underlineEmail" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="underlinePassword" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="OverViewViewController" superclassName="SliderTabViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OverViewViewController.h"/>
-        </class>
-        <class className="SignUpViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignUpViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="acceptanceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="addPhoto" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="email" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="privacyPolicy" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="signUpButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="termsOfService" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="underlineEmail" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="underlineName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="underlinePassword" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SliderTabViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SliderTabViewController.h"/>
-        </class>
-        <class className="WebViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

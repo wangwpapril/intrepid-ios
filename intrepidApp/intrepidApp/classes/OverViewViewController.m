@@ -20,7 +20,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"overview loaded");
     self.view.tag = 0;
     [self populateCurrencyItems];
     self.navigationItem.title = @"Mexico Overview";
@@ -38,11 +37,6 @@
     [culture addTextArea];
 
     SlidingTextView *currency = [[SlidingTextView alloc] initWithFrame:frame];
-//    tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 308,  320, height - 308)];
-//    tableList.dataSource = self;
-//    tableList.delegate = self;
-//    tableList.scrollEnabled = NO;
-//    [currency addSubview:tableList];
     [currency setupWithImageName:@"overview-currency.png" withTitle:@"Currency" withIconName:@"currency-label.png"];
     
     // table
@@ -50,7 +44,7 @@
     tableList.dataSource = self;
     tableList.delegate = self;
     tableList.scrollEnabled = YES;
-    [currency.scroll addSubview:tableList];
+    [currency addSubview:tableList];
     
     NSMutableArray *views = [NSMutableArray arrayWithObjects:history, culture, currency, nil];
     [self addViews:views withVerticalOffset:0];
@@ -58,10 +52,6 @@
     [self.view bringSubviewToFront:self.mController.menu];
     NSArray *names = [NSArray arrayWithObjects:@"HISTORY", @"CULTURE", @"CURRENCY", nil];
     [self addTabs:names];
-    
-   // [self.view bringSubviewToFront:self.mController.menu];
-    
-	// Do any additional setup after loading the view.
 }
 
 -(void)populateCurrencyItems {
@@ -92,11 +82,10 @@
     
     if(cell == nil) {
         cell = [[CurrencyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
+    
     CurrencyItem *item = [currencyArray objectAtIndex:indexPath.row];
     [cell setupWithImageName:item.flag withCountry:item.country withValue:item.value];
-//    cell.textLabel.text = [currencyArray objectAtIndex:indexPath.row];
     
     UIView *bgColorView = [[UIView alloc] init];
     [bgColorView setBackgroundColor:UIColorFromRGB(0xdaf1f4)];

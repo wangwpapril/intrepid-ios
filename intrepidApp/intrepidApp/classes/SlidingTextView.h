@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SlidingTextView : UIView
+@interface SlidingTextView : UIScrollView
 
-@property (nonatomic, strong) UIScrollView *scroll;
+//@property (nonatomic, strong) UIScrollView *scroll;
 
 -(void)setupWithImageName:(NSString *)image withTitle:(NSString *)title withIconName:(NSString *)icon;
 -(void) addTextArea;
