@@ -21,13 +21,13 @@
 
 -(void)displayMenuWithParent:(UIViewController *)controller {
     parentController = controller;
-    NSLog(@"screen height: %f", controller.view.frame.size.height);
+//    NSLog(@"screen height: %f", controller.view.frame.size.height);
     viewHeight = controller.view.frame.size.height - 44; // account for nav bar
     
-    botPosition = CGRectMake(0, viewHeight - 25, 320, 206);
+    botPosition = CGRectMake(0, viewHeight - 25, 320, 246); // was 206
     menu = [[UIImageView alloc] initWithFrame:botPosition];
     hiding = true;
-    menu.image = [UIImage imageNamed:@"menuBack2.png"];
+    menu.image = [UIImage imageNamed:@"newMenuBack.png"];
     menu.layer.zPosition = MAXFLOAT;
     [self addContentButtons];
     menu.userInteractionEnabled = YES;
@@ -41,10 +41,10 @@
     CGPoint translation = [recognizer translationInView:parentController.view];
     float nextPos = menu.frame.origin.y + translation.y;
     BOOL touchIsOver = (recognizer.state == UIGestureRecognizerStateEnded);
-    if (nextPos > viewHeight - 90 && (!hiding || touchIsOver || nextPos > viewHeight - 25)) {
+    if (nextPos > viewHeight - 110 && (!hiding || touchIsOver || nextPos > viewHeight - 25)) {
         [self hideMenu];
     }
-    else if (nextPos < viewHeight - 90 && (hiding || touchIsOver || nextPos < viewHeight - 206)) {
+    else if (nextPos < viewHeight - 110 && (hiding || touchIsOver || nextPos < viewHeight - 246)) {
         [self showMenu];
     }
     else {
@@ -55,16 +55,16 @@
 }
 
 -(void)showMenu {
-    if (menu.frame.origin.y > viewHeight - 206) {
+    if (menu.frame.origin.y > viewHeight - 246) {
         [UIView animateWithDuration:0.2 animations:^ {
-            menu.frame = CGRectMake(0, viewHeight - 206, 320, 206);
+            menu.frame = CGRectMake(0, viewHeight - 246, 320, 246);
         }];
         hiding = false;
     }
 }
 
 -(void)hideMenu {
-    if (menu.frame.origin.y < viewHeight - 90) {
+    if (menu.frame.origin.y < viewHeight - 110) {
         [UIView animateWithDuration:0.2 animations:^{
                             menu.frame = botPosition;
                         }];
@@ -81,13 +81,14 @@
 
     // content buttons
     [self makeContentButtonWithOrigin:CGPointMake(0, 25) withTag:0];
-    [self makeContentButtonWithOrigin:CGPointMake(100, 25) withTag:1];
-    [self makeContentButtonWithOrigin:CGPointMake(220, 25) withTag:2];
+    [self makeContentButtonWithOrigin:CGPointMake(107, 25) withTag:1];
+    [self makeContentButtonWithOrigin:CGPointMake(214, 25) withTag:2];
     [self makeContentButtonWithOrigin:CGPointMake(0, 90) withTag:3];
-    [self makeContentButtonWithOrigin:CGPointMake(100, 90) withTag:4];
-    [self makeContentButtonWithOrigin:CGPointMake(220, 90) withTag:5];
+    [self makeContentButtonWithOrigin:CGPointMake(107, 90) withTag:4];
+    [self makeContentButtonWithOrigin:CGPointMake(214, 90) withTag:5];
     [self makeContentButtonWithOrigin:CGPointMake(0, 155) withTag:6];
-    [self makeContentButtonWithOrigin:CGPointMake(160, 155) withTag:7];
+    [self makeContentButtonWithOrigin:CGPointMake(107, 155) withTag:7];
+    [self makeContentButtonWithOrigin:CGPointMake(214, 155) withTag:8];
 }
 
 -(void)toggleMenu {
@@ -104,27 +105,35 @@
     UIViewController *viewController;
     switch (button.tag) {
         case 0:
-            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"overView"];
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"security"];
             break;
             
         case 1:
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"healthView"];
             break;
         case 2:
-            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"security"];
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"overView"];
             break;
             
         case 4:
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
             [((WebViewController *)viewController) setupWithTitle:@"Clinics" withURL:@"http://m.intrepid247.com/m/ppn?region=latinamerica&country=Mexico&city=mexico"];
+            viewController.view.tag = 4;
             break;
 
         case 5:
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
-            [((WebViewController *)viewController) setupWithTitle:@"Alerts" withURL:@"http://m.intrepid247.com/m/alert?region=latinamerica&country=Mexico&city=mexico%20city"];
+            [((WebViewController *)viewController) setupWithTitle:@"Weather" withURL:@"http://m.intrepid247.com/m/weather?region=latinamerica&country=Mexico&city=mexico%20city"];
+            viewController.view.tag = 5;
             break;
             
         case 6:
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
+            [((WebViewController *)viewController) setupWithTitle:@"Alerts" withURL:@"http://m.intrepid247.com/m/alert?region=latinamerica&country=Mexico&city=mexico%20city"];
+            viewController.view.tag = 6;
+            break;
+            
+        case 7:
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"trips"];
             break;
             
@@ -144,18 +153,18 @@
 
 -(void)makeContentButtonWithOrigin:(CGPoint)origin withTag:(NSInteger)tag{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    NSInteger size = 100;
+    NSInteger size = 107;
     button.tag = tag;
 //    button.layer.borderColor = [UIColor orangeColor].CGColor;
 //    button.layer.borderWidth = 1;
     // buttons in the middle are fatter
-    if (tag == 1 || tag == 4) {
-        size = 120;
-    }
-    // trips and assistance
-    else if (tag >= 6) {
-        size = 160;
-    }
+//    if (tag == 1 || tag == 4) {
+//        size = 120;
+//    }
+//    // trips and assistance
+//    else if (tag >= 6) {
+//        size = 160;
+//    }
     button.frame = CGRectMake(origin.x, origin.y, size, 65);
     button.backgroundColor = [UIColor clearColor];
     [menu addSubview:button];

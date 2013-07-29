@@ -23,7 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.tag = 6;
+    self.view.tag = 7;
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     
@@ -33,7 +33,7 @@
     self.navigationItem.title = @"Health";
     self.navigationItem.backBarButtonItem.title = @" ";
     
-    tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 79, 320, self.view.bounds.size.height - 79) style:UITableViewStylePlain];
+    tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 44, 320, self.view.bounds.size.height - 44) style:UITableViewStylePlain];
     [self.view addSubview:tableList];
     tableList.delegate = self;
     tableList.dataSource = self;
@@ -48,19 +48,19 @@
 }
 
 -(void)addIntreSearchBar {
-    searchBar  = [[IntreSearchBar alloc] initWithFrame:CGRectMake(0, 35, 330, 44)];
+    searchBar  = [[IntreSearchBar alloc] initWithFrame:CGRectMake(0, 0, 330, 44)];
     //    [searchBar setText:@""];
     [searchBar addTarget:self action:@selector(textFieldDidChange) forControlEvents:UIControlEventEditingChanged];
     [self.view addSubview:searchBar];
     searchBar.delegate = self;
     
     UIImageView *spyGlass = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"spyGlass.png"]];
-    spyGlass.frame = CGRectMake(5, 51, 13, 13);
+    spyGlass.frame = CGRectMake(5, 16, 13, 13);
     [self.view addSubview:spyGlass];
     
     xButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [xButton setImage:[UIImage imageNamed:@"cancel-search.png"] forState:UIControlStateNormal];
-    xButton.frame = CGRectMake(270, 35, 44, 44);
+    xButton.frame = CGRectMake(270, 0, 44, 44);
     xButton.userInteractionEnabled = YES;
     [xButton addTarget:self action:@selector(deleteText) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:xButton];
