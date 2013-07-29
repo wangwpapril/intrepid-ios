@@ -27,6 +27,8 @@
 		68558361179CB4C90043D473 /* SliderTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68558360179CB4C90043D473 /* SliderTabViewController.m */; };
 		6855EAB0178E4D5E000C4C57 /* mexicoBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6855EAAF178E4D5E000C4C57 /* mexicoBack@2x.png */; };
 		685B6F5C17A601DC0003B5D9 /* newMenuBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 685B6F5B17A601DC0003B5D9 /* newMenuBack@2x.png */; };
+		685B6F5F17A60B430003B5D9 /* TripCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 685B6F5E17A60B430003B5D9 /* TripCell.m */; };
+		685B6F6217A617C20003B5D9 /* TripItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 685B6F6117A617C20003B5D9 /* TripItem.m */; };
 		685EB840178E4C29008B7D9B /* samplePic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 685EB83F178E4C29008B7D9B /* samplePic@2x.png */; };
 		688F9E631786262800CF850C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 688F9E621786262800CF850C /* QuartzCore.framework */; };
 		688F9E661786295100CF850C /* HealthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 688F9E651786295100CF850C /* HealthCell.m */; };
@@ -113,6 +115,10 @@
 		68558360179CB4C90043D473 /* SliderTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SliderTabViewController.m; path = classes/SliderTabViewController.m; sourceTree = "<group>"; };
 		6855EAAF178E4D5E000C4C57 /* mexicoBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mexicoBack@2x.png"; sourceTree = "<group>"; };
 		685B6F5B17A601DC0003B5D9 /* newMenuBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newMenuBack@2x.png"; sourceTree = "<group>"; };
+		685B6F5D17A60B430003B5D9 /* TripCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripCell.h; path = classes/TripCell.h; sourceTree = "<group>"; };
+		685B6F5E17A60B430003B5D9 /* TripCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripCell.m; path = classes/TripCell.m; sourceTree = "<group>"; };
+		685B6F6017A617C20003B5D9 /* TripItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripItem.h; path = classes/TripItem.h; sourceTree = "<group>"; };
+		685B6F6117A617C20003B5D9 /* TripItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripItem.m; path = classes/TripItem.m; sourceTree = "<group>"; };
 		685EB83F178E4C29008B7D9B /* samplePic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "samplePic@2x.png"; sourceTree = "<group>"; };
 		688F9E611786207F00CF850C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = classes/Constants.h; sourceTree = "<group>"; };
 		688F9E621786262800CF850C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -371,6 +377,10 @@
 			children = (
 				68B071F117A4DB890061E418 /* TripsViewController.h */,
 				68B071F217A4DB890061E418 /* TripsViewController.m */,
+				685B6F5D17A60B430003B5D9 /* TripCell.h */,
+				685B6F5E17A60B430003B5D9 /* TripCell.m */,
+				685B6F6017A617C20003B5D9 /* TripItem.h */,
+				685B6F6117A617C20003B5D9 /* TripItem.m */,
 			);
 			name = Trips;
 			sourceTree = "<group>";
@@ -564,6 +574,8 @@
 				68B071EC17A4D7290061E418 /* EmbassyCell.m in Sources */,
 				68B071EF17A4D7430061E418 /* EmbassyItem.m in Sources */,
 				68B071F317A4DB890061E418 /* TripsViewController.m in Sources */,
+				685B6F5F17A60B430003B5D9 /* TripCell.m in Sources */,
+				685B6F6217A617C20003B5D9 /* TripItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

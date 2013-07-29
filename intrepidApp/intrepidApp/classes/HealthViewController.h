@@ -19,7 +19,7 @@
 @property (nonatomic, strong) NSMutableArray *tabArray;
 @property (nonatomic, strong) NSMutableArray *tableArray;
 @property (nonatomic) NSInteger currentTab;
-@property (nonatomic) NSInteger previousTab;
+//@property (nonatomic) NSInteger previousTab;
 @property (nonatomic, strong) UILabel *line;
 @property (nonatomic, strong) MenuController *mController;
 

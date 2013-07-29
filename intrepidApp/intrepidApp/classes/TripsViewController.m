@@ -8,6 +8,8 @@
 
 #import "TripsViewController.h"
 #import "MenuController.h"
+#import "TripItem.h"
+#import "TripCell.h"
 
 
 @implementation TripsViewController
@@ -43,7 +45,13 @@
 }
 
 - (void)populateContentArray {
-    tripsArray = [NSArray arrayWithObjects:@"hello", @"why not", nil];
+    TripItem *trip1 = [[TripItem alloc] init];
+    trip1.city = @"Athens";
+    trip1.continent = @"Europe";
+    TripItem *trip2 = [[TripItem alloc] init];
+    trip2.city = @"Barcelona";
+    trip2.continent = @"Europe";
+    tripsArray = [NSArray arrayWithObjects:trip1, trip2, nil];
     filteredArray = [NSMutableArray new];
 }
 
@@ -89,22 +97,21 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *CellIdentifier = [NSString stringWithFormat:@"Cell"];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    TripCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if(cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[TripCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     
-    NSString *item = nil;
+    TripItem *item = nil;
     if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
         item = [filteredArray objectAtIndex:indexPath.row];
     } else {
         item = [tripsArray objectAtIndex:indexPath.row];
     }
     
-    cell.textLabel.text = item;
-//    [cell setupWithHealthItem:healthItem];
+    [cell setupWithHealthItem:item];
     
     return cell;
 }
@@ -131,7 +138,7 @@
     [self.filteredArray removeAllObjects];
     
     // Filter the array using NSPredicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@",searchBar.text];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.city contains[c] %@",searchBar.text];
     filteredArray = [NSMutableArray arrayWithArray:[tripsArray filteredArrayUsingPredicate:predicate]];
     [tableList reloadData];
 }

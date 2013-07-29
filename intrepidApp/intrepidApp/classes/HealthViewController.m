@@ -22,7 +22,7 @@
 @synthesize contentArray;
 @synthesize tableArray;
 @synthesize currentTab;
-@synthesize previousTab;
+//@synthesize previousTab;
 @synthesize mController;
 @synthesize line;
 
@@ -80,16 +80,12 @@
 
 -(void)addIntreSearchBar {
     searchBar  = [[IntreSearchBar alloc] initWithFrame:CGRectMake(0, 35, 330, 44)];
-//    [searchBar setBackgroundColor:APP_SEARCH_COLOR];
-//    [searchBar setText:@"Tap to Search"];
-//    [searchBar setText:@""];
+
     [searchBar addTarget:self action:@selector(textFieldDidChange) forControlEvents:UIControlEventEditingChanged];
-//    [searchBar setFont: [UIFont fontWithName:@"ProximaNova-Light" size:16]];
-//    searchBar.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+
     [self.view addSubview:searchBar];
     searchBar.delegate = self;
-//    [searchBar setReturnKeyType:UIReturnKeyDone];
-//    searchBar.alpha = 0.9;
+
     UIImageView *spyGlass = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"spyGlass.png"]];
     spyGlass.frame = CGRectMake(5, 51, 13, 13);
     [self.view addSubview:spyGlass];
@@ -117,20 +113,17 @@
     int i = 0;
     tabArray = [NSMutableArray new];
     
-    while (i < 3) {
+    while (i < 2) {
         
         // create the tab
         UIButton *tab = [UIButton buttonWithType:UIButtonTypeCustom];
-        tab.frame = CGRectMake(107*i, 0, 107, 35);
+        tab.frame = CGRectMake(160*i, 0, 160, 35);
         NSString *title;
         switch (i) {
             case 0:
-                title = @"SYMPTOMS";
+                title = @"CONDITIONS";
                 break;
             case 1:
-                title = @"PREVENTION";
-                break;
-            case 2:
                 title = @"MEDICATIONS";
                 break;
                 
@@ -149,8 +142,8 @@
         [self.view addSubview:tab];
         i++;
     }
-    currentTab = 1;
-    [self tabSelected:[tabArray objectAtIndex:1]];
+    currentTab = 0;
+    [self tabSelected:[tabArray objectAtIndex:0]];
     
     // swipe to switch tabs
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedLeft:)];
@@ -166,15 +159,15 @@
     // create line
     line = [[UILabel alloc] init];
     line.backgroundColor = APP_TOGGLE_SELECTED;
-    line.frame = CGRectMake(117, 27, 80, 1);
+    line.frame = CGRectMake(38, 27, 80, 1);
     [self.view addSubview:line];
 }
 
 - (void)addTableViews {
     tableArray = [NSMutableArray new];
     int i = 0;
-    while (i < 3) {
-        UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake((i-1)*320, 79, 320, self.view.frame.size.height - 79) style:UITableViewStylePlain];
+    while (i < 2) {
+        UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake(i*320, 79, 320, self.view.frame.size.height - 79) style:UITableViewStylePlain];
         table.rowHeight = 45;
         table.tag = i;
         table.dataSource = self;
@@ -186,7 +179,7 @@
         [tableArray addObject:table];
         i++;
     }
-    [self.view addSubview:[tableArray objectAtIndex:1]];
+    [self.view addSubview:[tableArray objectAtIndex:0]];
     
 }
 
@@ -219,14 +212,14 @@
 
 - (void) swipedLeft:(UISwipeGestureRecognizer*)swipeGesture {
     NSInteger newTag = currentTab + 1;
-    if (newTag <= 2) {
+    if (newTag <= 1) {
         [self switchTabs:newTag];
     }
 }
 
 
 -(void)switchTabs:(NSInteger)newTag{
-    previousTab = currentTab;
+    NSInteger previousTab = currentTab;
     NSInteger index = 0;
     NSInteger lineX;
     
@@ -240,7 +233,7 @@
         if (tab.tag == newTag) {
             [tab setTitleColor:APP_TOGGLE_SELECTED forState:UIControlStateNormal];
 //            [capitalLetter setTextColor:APP_TOGGLE_SELECTED];
-            lineX = 107 * index + 13;
+            lineX = 160 * index + 38;
             
         }
         
@@ -267,29 +260,31 @@
         
         UIView *tableToBe = ((UIView *)[tableArray objectAtIndex:currentTab]);
         
-        if (currentTab == 0 || currentTab == 2) {
-            NSInteger position = (currentTab - 1) * 320;
-            if (position < 0) {
-            }
-            tableToBe.frame = CGRectMake(position, 79, 320, self.view.frame.size.height - 79);
-        }
-        else {
-            if (previousTab == 0) {
-                tableToBe.frame = CGRectMake(320, 79, 320, self.view.frame.size.height - 79);
-            }
-            else {
-                tableToBe.frame = CGRectMake(-320, 79, 320, self.view.frame.size.height - 79);
-            }
-        }
+//        tableToBe.frame = CGRectMake(0, 79, 320, self.view.frame.size.height - 79);
+        
+//        if (currentTab == 0 || currentTab == 2) {
+//            NSInteger position = (currentTab - 1) * 320;
+//            if (position < 0) {
+//            }
+//            tableToBe.frame = CGRectMake(position, 79, 320, self.view.frame.size.height - 79);
+//        }
+//        else {
+//            if (previousTab == 0) {
+//                tableToBe.frame = CGRectMake(320, 79, 320, self.view.frame.size.height - 79);
+//            }
+//            else {
+//                tableToBe.frame = CGRectMake(-320, 79, 320, self.view.frame.size.height - 79);
+//            }
+//        }
         
         [UIView animateWithDuration:0.3 animations:^{
             line.frame = CGRectMake(lineX, 27, 80, 1);
             NSInteger offset;
-            if (currentTab - previousTab > 0) {
-                offset = -320;
+            if (currentTab == 0) {
+                offset = 320;
             }
             else {
-                offset = 320;
+                offset = -320;
             }
             
             [self.view insertSubview:[tableArray objectAtIndex:currentTab] belowSubview:mController.menu];

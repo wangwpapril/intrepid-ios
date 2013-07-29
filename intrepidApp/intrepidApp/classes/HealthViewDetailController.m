@@ -17,20 +17,6 @@
 @synthesize healthItemTitleLabel;
 @synthesize healthItem;
 
-@synthesize descriptionDesignationLabel;
-
-@synthesize sideEffectsDesignationLabel;
-
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -79,7 +65,7 @@
 
 - (void)addContent {
     
-    UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, -5, 120, 120)];
+    UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, -5, 120, 120)]; // rly
     descriptionLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
     descriptionLabel.backgroundColor = [UIColor clearColor];
     descriptionLabel.textColor = UIColorFromRGB(0x423a38);
@@ -150,6 +136,10 @@
     [scrollView addSubview: sideEffectsText];
     scrollView.contentSize = CGSizeMake(320, size.height + 115 + sideEffectsSize.height);
         
+}
+
+- (void)AddTextBlockWithOffset:(NSInteger)offset withImageName:(NSString *)imageName withText:(NSString *)text {
+    
 }
 
 - (void)didReceiveMemoryWarning
