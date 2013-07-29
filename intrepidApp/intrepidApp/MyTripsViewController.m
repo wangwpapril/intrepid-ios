@@ -60,10 +60,11 @@
     
     for (int i=0; i < [imageArray count]; i++) {
         CGRect frame;
-        frame.origin.x = (scrollView.frame.size.width) * i + 25;
+        frame.origin.x = (scrollView.frame.size.width) * i + 45;
         frame.origin.y = scrollView.frame.origin.y + 10;
-        frame.size = CGSizeMake(scrollView.frame.size.width - 52.0, scrollView.frame.size.height - 182.0);
+        frame.size = CGSizeMake(234, scrollView.frame.size.height - 182.0);
         //CGSizeMake(268.0, 366.0);
+        //scrollView.frame.size.width - 52.0
         
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
@@ -84,7 +85,7 @@
         }
     }
     
-    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * [imageArray count], scrollView.frame.size.height);
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * [imageArray count], 366.0);
     
     [self.view addSubview:scrollView];
     
