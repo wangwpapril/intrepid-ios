@@ -36,10 +36,19 @@
     [super viewDidLoad];
     
     [self cityNames];
+    CGFloat contentOffset = 0.0f;
     
     //set background
     UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login-background.png"]];
     [self.view addSubview:backgroundView];
+    
+    UILabel *cityName = [[UILabel alloc] init];
+    cityName.frame = CGRectMake(contentOffset + 85, self.view.frame.size.height - 125, 150, 25);
+    cityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
+    cityName.backgroundColor = [UIColor clearColor];
+    cityName.textColor = [UIColor whiteColor];
+    [cityName setTextAlignment:NSTextAlignmentCenter];
+    [self.view addSubview:cityName];
 
     //implement scrollview
     scrollView.delegate = self;
@@ -48,22 +57,14 @@
     
     //create array for images
     NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"new-trip.png", @"mexico-city.png", @"mexico-city.png", nil];
-    UILabel *cityName = [[UILabel alloc] init];
     
     for (int i=0; i < [imageArray count]; i++) {
         CGRect frame;
         frame.origin.x = (scrollView.frame.size.width) * i + 25;
-        frame.origin.y = 0;
-        frame.size = CGSizeMake(268.0, 366.0);
+        frame.origin.y = scrollView.frame.origin.y + 10;
+        frame.size = CGSizeMake(scrollView.frame.size.width - 52.0, scrollView.frame.size.height - 182.0);
+        //CGSizeMake(268.0, 366.0);
         
-        //this doesn't change
-        cityName.frame = CGRectMake(85, self.view.frame.size.height - 125, 150, 25);
-        cityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
-        cityName.backgroundColor = [UIColor clearColor];
-        cityName.textColor = [UIColor whiteColor];
-        [cityName setTextAlignment:NSTextAlignmentCenter];
-        cityName.text = [city objectAtIndex:i];
-        [scrollView addSubview:cityName];
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
         imageView.image = [UIImage imageNamed:[imageArray objectAtIndex:i]];
@@ -72,7 +73,14 @@
             UIButton *toTrips = [UIButton buttonWithType:UIButtonTypeCustom];
             toTrips.frame = imageView.frame;
             [toTrips addTarget:self action:@selector(toTrips) forControlEvents:UIControlEventTouchUpInside];
-            [scrollView addSubview:toTrips];
+            [scrollView addSubview:toTrips];       
+        }        
+        else if (i == 1) {
+            cityName.text = @"Mexico City";
+        }
+
+        else {
+            cityName.text = @"Barcelona";
         }
     }
     

@@ -135,6 +135,8 @@
     [scrollView addSubview: sideEffectsLabel];
     [scrollView addSubview: sideEffectsText];
     scrollView.contentSize = CGSizeMake(320, size.height + 115 + sideEffectsSize.height);
+    
+    //description side effects transmission immunization
         
 }
 
