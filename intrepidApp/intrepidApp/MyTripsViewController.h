@@ -1,0 +1,15 @@
+//
+//  MyTripsViewController.h
+//  intrepidApp
+//
+//  Created by Madelaine Page on 2013-07-28.
+//  Copyright (c) 2013 JonCarrHarris Consulting. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface MyTripsViewController : UIViewController <UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+
+@end
