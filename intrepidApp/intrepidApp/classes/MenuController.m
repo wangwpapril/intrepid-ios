@@ -134,7 +134,7 @@
             break;
             
         case 7:
-            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"trips"];
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"myTrips"];
             break;
             
         default:

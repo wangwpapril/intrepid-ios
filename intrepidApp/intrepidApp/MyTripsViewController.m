@@ -9,6 +9,7 @@
 #import "MyTripsViewController.h"
 #import "Constants.h"
 
+
 @interface MyTripsViewController ()
 
 
@@ -67,6 +68,12 @@
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
         imageView.image = [UIImage imageNamed:[imageArray objectAtIndex:i]];
         [scrollView addSubview:imageView];
+        if (i == 0) {
+            UIButton *toTrips = [UIButton buttonWithType:UIButtonTypeCustom];
+            toTrips.frame = imageView.frame;
+            [toTrips addTarget:self action:@selector(toTrips) forControlEvents:UIControlEventTouchUpInside];
+            [scrollView addSubview:toTrips];
+        }
     }
     
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * [imageArray count], scrollView.frame.size.height);
@@ -80,6 +87,11 @@
     pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     [self.view addSubview:pageControl];
     
+}
+
+-(void)toTrips {
+    UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"trips"];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 -(void)cityNames {
