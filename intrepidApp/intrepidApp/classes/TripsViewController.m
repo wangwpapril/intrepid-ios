@@ -32,7 +32,7 @@
     [self populateContentArray];
     [self addIntreSearchBar];
     
-    self.navigationItem.title = @"Health";
+    self.navigationItem.title = @"Trips";
     self.navigationItem.backBarButtonItem.title = @" ";
     
     tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 44, 320, self.view.bounds.size.height - 44) style:UITableViewStylePlain];
@@ -46,11 +46,11 @@
 
 - (void)populateContentArray {
     TripItem *trip1 = [[TripItem alloc] init];
-    trip1.city = @"Athens";
-    trip1.continent = @"Europe";
+    trip1.city = @"Gudalajara";
+    trip1.continent = @"North America";
     TripItem *trip2 = [[TripItem alloc] init];
-    trip2.city = @"Barcelona";
-    trip2.continent = @"Europe";
+    trip2.city = @"Miami";
+    trip2.continent = @"North America";
     tripsArray = [NSArray arrayWithObjects:trip1, trip2, nil];
     filteredArray = [NSMutableArray new];
 }
