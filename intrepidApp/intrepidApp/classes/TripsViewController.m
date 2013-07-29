@@ -46,11 +46,11 @@
 
 - (void)populateContentArray {
     TripItem *trip1 = [[TripItem alloc] init];
-    trip1.city = @"Athens";
-    trip1.continent = @"Europe";
+    trip1.city = @"Gudalajara";
+    trip1.continent = @"North America";
     TripItem *trip2 = [[TripItem alloc] init];
-    trip2.city = @"Barcelona";
-    trip2.continent = @"Europe";
+    trip2.city = @"Miami";
+    trip2.continent = @"North America";
     tripsArray = [NSArray arrayWithObjects:trip1, trip2, nil];
     filteredArray = [NSMutableArray new];
 }
