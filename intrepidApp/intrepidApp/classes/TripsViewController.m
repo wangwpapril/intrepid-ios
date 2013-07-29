@@ -32,7 +32,7 @@
     [self populateContentArray];
     [self addIntreSearchBar];
     
-    self.navigationItem.title = @"Health";
+    self.navigationItem.title = @"Trips";
     self.navigationItem.backBarButtonItem.title = @" ";
     
     tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 44, 320, self.view.bounds.size.height - 44) style:UITableViewStylePlain];
