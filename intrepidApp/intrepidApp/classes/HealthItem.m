@@ -15,8 +15,10 @@
 @synthesize common;
 @synthesize description;
 @synthesize details;
+@synthesize symptoms;
+@synthesize immunization;
 
-+(id)healthItemOfCategory:(NSString *)category name:(NSString *)name description:(NSString *)description details:(NSString *)details common:(BOOL)common
++(id)healthItemOfCategory:(NSString *)category name:(NSString *)name description:(NSString *)description details:(NSString *)details common:(BOOL)common symptoms:(NSString *)symptoms immunization:(NSString *)immunization
 {
     HealthItem *newHealthItem = [[self alloc] init];
     newHealthItem.category = category;

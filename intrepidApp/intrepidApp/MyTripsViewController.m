@@ -60,8 +60,8 @@
     
     [self.view addSubview:scrollView];
     
-    NSArray *cityNames = [NSArray arrayWithObjects:
-                          [name:@""], [name:@"Mexico City"], [name:@"Honolulu"], [name:@"Toronto"], nil];
+//    NSArray *cityNames = [NSArray arrayWithObjects:
+//                          [name:@""], [name:@"Mexico City"], [name:@"Honolulu"], [name:@"Toronto"], nil];
     
     UILabel *cityName = [[UILabel alloc] init];
     cityName.frame = CGRectMake(85, self.view.frame.size.height - 125, 150, 25);
