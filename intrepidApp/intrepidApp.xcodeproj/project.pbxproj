@@ -89,6 +89,9 @@
 		E06FCE0D17A60963003F3FC6 /* embassy-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E06FCE0C17A60963003F3FC6 /* embassy-icon.png */; };
 		E0B5825117A31D2C00093130 /* intrepid icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5825017A31D2C00093130 /* intrepid icon.png */; };
 		E0B5825317A31D8100093130 /* app icon nonretina.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5825217A31D8100093130 /* app icon nonretina.png */; };
+		E0E9C7CC17A6B8DB009FB594 /* Guada@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E9C7C917A6B8DB009FB594 /* Guada@2x.png */; };
+		E0E9C7CD17A6B8DB009FB594 /* miami@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E9C7CA17A6B8DB009FB594 /* miami@2x.png */; };
+		E0E9C7CE17A6B8DB009FB594 /* Puerto-Plata@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E9C7CB17A6B8DB009FB594 /* Puerto-Plata@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -202,6 +205,9 @@
 		E06FCE0C17A60963003F3FC6 /* embassy-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "embassy-icon.png"; sourceTree = "<group>"; };
 		E0B5825017A31D2C00093130 /* intrepid icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intrepid icon.png"; sourceTree = "<group>"; };
 		E0B5825217A31D8100093130 /* app icon nonretina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app icon nonretina.png"; sourceTree = "<group>"; };
+		E0E9C7C917A6B8DB009FB594 /* Guada@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada@2x.png"; sourceTree = "<group>"; };
+		E0E9C7CA17A6B8DB009FB594 /* miami@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "miami@2x.png"; sourceTree = "<group>"; };
+		E0E9C7CB17A6B8DB009FB594 /* Puerto-Plata@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Plata@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,6 +359,9 @@
 		688F9E6717862DFD00CF850C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E0E9C7C917A6B8DB009FB594 /* Guada@2x.png */,
+				E0E9C7CA17A6B8DB009FB594 /* miami@2x.png */,
+				E0E9C7CB17A6B8DB009FB594 /* Puerto-Plata@2x.png */,
 				7EA293B417A61863000A56E9 /* new-trip@2x.png */,
 				7EA293B217A613C2000A56E9 /* mexico-city@2x.png */,
 				E06FCE0817A60852003F3FC6 /* security-embassy.png */,
@@ -567,6 +576,9 @@
 				E06FCE0A17A60852003F3FC6 /* security-embassy.png in Resources */,
 				E06FCE0B17A60852003F3FC6 /* security-political.png in Resources */,
 				E06FCE0D17A60963003F3FC6 /* embassy-icon.png in Resources */,
+				E0E9C7CC17A6B8DB009FB594 /* Guada@2x.png in Resources */,
+				E0E9C7CD17A6B8DB009FB594 /* miami@2x.png in Resources */,
+				E0E9C7CE17A6B8DB009FB594 /* Puerto-Plata@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

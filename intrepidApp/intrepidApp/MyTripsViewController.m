@@ -47,7 +47,7 @@
     scrollView.pagingEnabled = YES;
     
     //create array for images
-    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"new-trip.png", @"mexico-city.png", @"mexico-city.png", nil];
+    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"new-trip.png", @"mexico-city.png", @"Guada@2x.png", @"miami@2x.png", nil];
     UILabel *cityName = [[UILabel alloc] init];
     
     for (int i=0; i < [imageArray count]; i++) {
@@ -81,7 +81,7 @@
     [self.view addSubview:scrollView];
     
     pageControl.frame = CGRectMake(135, self.view.frame.size.height - 100, 50, 50);
-    pageControl.numberOfPages = 3;
+    pageControl.numberOfPages = 4;
     pageControl.currentPage = 0;
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
@@ -98,7 +98,8 @@
     city = [[NSMutableArray alloc] init];
     [city addObject:@" "];
     [city addObject:@"Mexico City"];
-    [city addObject:@"Barcelona"];
+    [city addObject:@"Guadalajara"];
+    [city addObject:@"Miami"];
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)sender {
