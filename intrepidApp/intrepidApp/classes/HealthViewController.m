@@ -80,16 +80,16 @@
 
 -(void)addIntreSearchBar {
     searchBar  = [[IntreSearchBar alloc] initWithFrame:CGRectMake(0, 35, 330, 44)];
-    [searchBar setBackgroundColor:APP_SEARCH_COLOR];
-    [searchBar setText:@"Tap to Search"];
+//    [searchBar setBackgroundColor:APP_SEARCH_COLOR];
+//    [searchBar setText:@"Tap to Search"];
 //    [searchBar setText:@""];
     [searchBar addTarget:self action:@selector(textFieldDidChange) forControlEvents:UIControlEventEditingChanged];
-    [searchBar setFont: [UIFont fontWithName:@"ProximaNova-Light" size:16]];
-    searchBar.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+//    [searchBar setFont: [UIFont fontWithName:@"ProximaNova-Light" size:16]];
+//    searchBar.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     [self.view addSubview:searchBar];
     searchBar.delegate = self;
-    [searchBar setReturnKeyType:UIReturnKeyDone];
-    searchBar.alpha = 0.9;
+//    [searchBar setReturnKeyType:UIReturnKeyDone];
+//    searchBar.alpha = 0.9;
     UIImageView *spyGlass = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"spyGlass.png"]];
     spyGlass.frame = CGRectMake(5, 51, 13, 13);
     [self.view addSubview:spyGlass];
@@ -104,24 +104,6 @@
     
 }
 
--(void)deleteText {
-    searchBar.text = @"";
-    [UIView animateWithDuration:0.1 animations:^{
-        xButton.alpha = 0;
-    }];
-    [[tableArray objectAtIndex:currentTab] reloadData];
-}
-
--(void)removeText {
-    searchBar.text = @"Tap to Search";
-    [[tableArray objectAtIndex:currentTab] reloadData];
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [searchBar resignFirstResponder];
-    
-}
 //-(void)capitalLabel:(UILabel *)label withLetter:(NSString *)letter {
 //    label.text = letter;
 //    label.backgroundColor = [UIColor clearColor];
@@ -392,6 +374,25 @@
 }
 
 #pragma mark - TextField Delegate Methods
+
+-(void)deleteText {
+    searchBar.text = @"";
+    [UIView animateWithDuration:0.1 animations:^{
+        xButton.alpha = 0;
+    }];
+    [[tableArray objectAtIndex:currentTab] reloadData];
+}
+
+-(void)removeText {
+    searchBar.text = @"Tap to Search";
+    [[tableArray objectAtIndex:currentTab] reloadData];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [searchBar resignFirstResponder];
+    
+}
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     textField.text = @"";
