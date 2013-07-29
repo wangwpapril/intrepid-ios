@@ -15,8 +15,18 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        [self setupUI];
     }
     return self;
+}
+
+- (void) setupUI {
+    [self setBackgroundColor:APP_SEARCH_COLOR];
+    [self setText:@"Tap to Search"];
+    [self setFont: [UIFont fontWithName:@"ProximaNova-Light" size:16]];
+    self.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    [self setReturnKeyType:UIReturnKeyDone];
+    self.alpha = 0.9;
 }
 
 //- (void) drawPlaceholderInRect:(CGRect)rect {
