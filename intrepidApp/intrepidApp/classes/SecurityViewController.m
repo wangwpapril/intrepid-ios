@@ -41,14 +41,14 @@
     CGRect frame = CGRectMake(0, 0, 320, height);
     
     SlidingTextView *political = [[SlidingTextView alloc] initWithFrame:frame];
-    [political setupWithImageName:@"overview-history.png" withTitle:@"Political" withIconName:@"descriptionAndSideEffectLogo.png"];
+    [political setupWithImageName:@"security-political.png" withTitle:@"Political" withIconName:@"descriptionAndSideEffectLogo.png"];
     [political addTextArea];
     
     SlidingTextView *embassy = [[SlidingTextView alloc] initWithFrame:frame];
-    [embassy setupWithImageName:@"overview-culture.png" withTitle:@"Embassy" withIconName:@"culture-icon.png"];
+    [embassy setupWithImageName:@"security-embassy.png" withTitle:@"Embassy" withIconName:@"embassy-icon.png"];
     
     SlidingTextView *local = [[SlidingTextView alloc] initWithFrame:frame];
-    [local setupWithImageName:@"overview-currency.png" withTitle:@"Local" withIconName:@"currency-label.png"];
+    [local setupWithImageName:@"mexicoBackBigger@2x.png" withTitle:@"Local" withIconName:@"currency-label.png"];
     [local addTextArea];
     
     // table

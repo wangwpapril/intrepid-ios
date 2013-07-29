@@ -79,6 +79,9 @@
 		E04C4DB917A30FE2002A23F4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E04C4DB517A30FE1002A23F4 /* README.md */; };
 		E04C4DBA17A30FE2002A23F4 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = E04C4DB617A30FE2002A23F4 /* release_notes.md */; };
 		E04C4DBC17A3103E002A23F4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E04C4DBB17A3103E002A23F4 /* libz.dylib */; };
+		E06FCE0A17A60852003F3FC6 /* security-embassy.png in Resources */ = {isa = PBXBuildFile; fileRef = E06FCE0817A60852003F3FC6 /* security-embassy.png */; };
+		E06FCE0B17A60852003F3FC6 /* security-political.png in Resources */ = {isa = PBXBuildFile; fileRef = E06FCE0917A60852003F3FC6 /* security-political.png */; };
+		E06FCE0D17A60963003F3FC6 /* embassy-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E06FCE0C17A60963003F3FC6 /* embassy-icon.png */; };
 		E0B5825117A31D2C00093130 /* intrepid icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5825017A31D2C00093130 /* intrepid icon.png */; };
 		E0B5825317A31D8100093130 /* app icon nonretina.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5825217A31D8100093130 /* app icon nonretina.png */; };
 /* End PBXBuildFile section */
@@ -181,6 +184,9 @@
 		E04C4DB617A30FE2002A23F4 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
 		E04C4DB717A30FE2002A23F4 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		E04C4DBB17A3103E002A23F4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		E06FCE0817A60852003F3FC6 /* security-embassy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "security-embassy.png"; sourceTree = "<group>"; };
+		E06FCE0917A60852003F3FC6 /* security-political.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "security-political.png"; sourceTree = "<group>"; };
+		E06FCE0C17A60963003F3FC6 /* embassy-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "embassy-icon.png"; sourceTree = "<group>"; };
 		E0B5825017A31D2C00093130 /* intrepid icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intrepid icon.png"; sourceTree = "<group>"; };
 		E0B5825217A31D8100093130 /* app icon nonretina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app icon nonretina.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -334,6 +340,8 @@
 		688F9E6717862DFD00CF850C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E06FCE0817A60852003F3FC6 /* security-embassy.png */,
+				E06FCE0917A60852003F3FC6 /* security-political.png */,
 				685B6F5B17A601DC0003B5D9 /* newMenuBack@2x.png */,
 				7EE44DAC179F79A5006BA2EC /* overview */,
 				7E5B30BF1798942E00692F80 /* login and signup */,
@@ -342,6 +350,7 @@
 				684E364B178F85C1004E27B9 /* health */,
 				6855EAAF178E4D5E000C4C57 /* mexicoBack@2x.png */,
 				68E42405179274BA00431908 /* mexicoBackBigger@2x.png */,
+				E06FCE0C17A60963003F3FC6 /* embassy-icon.png */,
 				685EB83F178E4C29008B7D9B /* samplePic@2x.png */,
 				7ECD042C178DC07600D6C34B /* top-nav-bar@2x.png */,
 				7ECD0428178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png */,
@@ -532,6 +541,9 @@
 				E0B5825117A31D2C00093130 /* intrepid icon.png in Resources */,
 				E0B5825317A31D8100093130 /* app icon nonretina.png in Resources */,
 				685B6F5C17A601DC0003B5D9 /* newMenuBack@2x.png in Resources */,
+				E06FCE0A17A60852003F3FC6 /* security-embassy.png in Resources */,
+				E06FCE0B17A60852003F3FC6 /* security-political.png in Resources */,
+				E06FCE0D17A60963003F3FC6 /* embassy-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
