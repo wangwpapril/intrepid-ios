@@ -80,6 +80,34 @@
 		7EE44DBF179F7FF5006BA2EC /* brasil-flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DBB179F7FF5006BA2EC /* brasil-flag@2x.png */; };
 		7EE44DC0179F7FF5006BA2EC /* canadian-flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DBC179F7FF5006BA2EC /* canadian-flag@2x.png */; };
 		7EE44DC1179F7FF5006BA2EC /* great-britain-flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DBD179F7FF5006BA2EC /* great-britain-flag@2x.png */; };
+		E049C42D17A6DADB00B00B35 /* Altitude-Sickness@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42417A6DADB00B00B35 /* Altitude-Sickness@2x.png */; };
+		E049C42E17A6DADB00B00B35 /* Cholera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42517A6DADB00B00B35 /* Cholera@2x.png */; };
+		E049C42F17A6DADB00B00B35 /* Dengue-Fever@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42617A6DADB00B00B35 /* Dengue-Fever@2x.png */; };
+		E049C43017A6DADB00B00B35 /* Hepatitis-A@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42717A6DADB00B00B35 /* Hepatitis-A@2x.png */; };
+		E049C43117A6DADB00B00B35 /* Hepatitis-B@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42817A6DADB00B00B35 /* Hepatitis-B@2x.png */; };
+		E049C43217A6DADB00B00B35 /* Jet-Lag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42917A6DADB00B00B35 /* Jet-Lag@2x.png */; };
+		E049C43317A6DADB00B00B35 /* Lyme@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42A17A6DADB00B00B35 /* Lyme@2x.png */; };
+		E049C43417A6DADB00B00B35 /* Malaria@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42B17A6DADB00B00B35 /* Malaria@2x.png */; };
+		E049C43517A6DADB00B00B35 /* Meningitis@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42C17A6DADB00B00B35 /* Meningitis@2x.png */; };
+		E049C43717A6DB9D00B00B35 /* Altitude-Sickness.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C43617A6DB9D00B00B35 /* Altitude-Sickness.png */; };
+		E049C44017A6DBBD00B00B35 /* Cholera.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C43817A6DBBD00B00B35 /* Cholera.png */; };
+		E049C44117A6DBBD00B00B35 /* Dengue-Fever.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C43917A6DBBD00B00B35 /* Dengue-Fever.png */; };
+		E049C44217A6DBBD00B00B35 /* Hepatitis-A.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C43A17A6DBBD00B00B35 /* Hepatitis-A.png */; };
+		E049C44317A6DBBD00B00B35 /* Hepatitis-B.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C43B17A6DBBD00B00B35 /* Hepatitis-B.png */; };
+		E049C44417A6DBBD00B00B35 /* Jet-Lag.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C43C17A6DBBD00B00B35 /* Jet-Lag.png */; };
+		E049C44517A6DBBD00B00B35 /* Lyme.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C43D17A6DBBD00B00B35 /* Lyme.png */; };
+		E049C44617A6DBBD00B00B35 /* Malaria.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C43E17A6DBBD00B00B35 /* Malaria.png */; };
+		E049C44717A6DBBD00B00B35 /* Meningitis.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C43F17A6DBBD00B00B35 /* Meningitis.png */; };
+		E049C45217A6DDB200B00B35 /* Diarrhea.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C44817A6DDB200B00B35 /* Diarrhea.png */; };
+		E049C45317A6DDB200B00B35 /* Diarrhea@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C44917A6DDB200B00B35 /* Diarrhea@2x.png */; };
+		E049C45417A6DDB200B00B35 /* Motion-Sickness.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C44A17A6DDB200B00B35 /* Motion-Sickness.png */; };
+		E049C45517A6DDB200B00B35 /* Motion-Sickness@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C44B17A6DDB200B00B35 /* Motion-Sickness@2x.png */; };
+		E049C45617A6DDB200B00B35 /* Rabies.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C44C17A6DDB200B00B35 /* Rabies.png */; };
+		E049C45717A6DDB200B00B35 /* Rabies@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C44D17A6DDB200B00B35 /* Rabies@2x.png */; };
+		E049C45817A6DDB200B00B35 /* Typhoid.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C44E17A6DDB200B00B35 /* Typhoid.png */; };
+		E049C45917A6DDB200B00B35 /* Typhoid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C44F17A6DDB200B00B35 /* Typhoid@2x.png */; };
+		E049C45A17A6DDB200B00B35 /* West-Nile.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C45017A6DDB200B00B35 /* West-Nile.png */; };
+		E049C45B17A6DDB200B00B35 /* West-Nile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C45117A6DDB200B00B35 /* West-Nile@2x.png */; };
 		E04C4DB817A30FE2002A23F4 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E04C4DB417A30FE1002A23F4 /* libTestFlight.a */; };
 		E04C4DB917A30FE2002A23F4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E04C4DB517A30FE1002A23F4 /* README.md */; };
 		E04C4DBA17A30FE2002A23F4 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = E04C4DB617A30FE2002A23F4 /* release_notes.md */; };
@@ -195,6 +223,34 @@
 		7EE44DBB179F7FF5006BA2EC /* brasil-flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brasil-flag@2x.png"; sourceTree = "<group>"; };
 		7EE44DBC179F7FF5006BA2EC /* canadian-flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canadian-flag@2x.png"; sourceTree = "<group>"; };
 		7EE44DBD179F7FF5006BA2EC /* great-britain-flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "great-britain-flag@2x.png"; sourceTree = "<group>"; };
+		E049C42417A6DADB00B00B35 /* Altitude-Sickness@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Altitude-Sickness@2x.png"; sourceTree = "<group>"; };
+		E049C42517A6DADB00B00B35 /* Cholera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cholera@2x.png"; sourceTree = "<group>"; };
+		E049C42617A6DADB00B00B35 /* Dengue-Fever@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dengue-Fever@2x.png"; sourceTree = "<group>"; };
+		E049C42717A6DADB00B00B35 /* Hepatitis-A@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hepatitis-A@2x.png"; sourceTree = "<group>"; };
+		E049C42817A6DADB00B00B35 /* Hepatitis-B@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hepatitis-B@2x.png"; sourceTree = "<group>"; };
+		E049C42917A6DADB00B00B35 /* Jet-Lag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jet-Lag@2x.png"; sourceTree = "<group>"; };
+		E049C42A17A6DADB00B00B35 /* Lyme@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lyme@2x.png"; sourceTree = "<group>"; };
+		E049C42B17A6DADB00B00B35 /* Malaria@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Malaria@2x.png"; sourceTree = "<group>"; };
+		E049C42C17A6DADB00B00B35 /* Meningitis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Meningitis@2x.png"; sourceTree = "<group>"; };
+		E049C43617A6DB9D00B00B35 /* Altitude-Sickness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Altitude-Sickness.png"; sourceTree = "<group>"; };
+		E049C43817A6DBBD00B00B35 /* Cholera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cholera.png; sourceTree = "<group>"; };
+		E049C43917A6DBBD00B00B35 /* Dengue-Fever.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dengue-Fever.png"; sourceTree = "<group>"; };
+		E049C43A17A6DBBD00B00B35 /* Hepatitis-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hepatitis-A.png"; sourceTree = "<group>"; };
+		E049C43B17A6DBBD00B00B35 /* Hepatitis-B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hepatitis-B.png"; sourceTree = "<group>"; };
+		E049C43C17A6DBBD00B00B35 /* Jet-Lag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jet-Lag.png"; sourceTree = "<group>"; };
+		E049C43D17A6DBBD00B00B35 /* Lyme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lyme.png; sourceTree = "<group>"; };
+		E049C43E17A6DBBD00B00B35 /* Malaria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Malaria.png; sourceTree = "<group>"; };
+		E049C43F17A6DBBD00B00B35 /* Meningitis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Meningitis.png; sourceTree = "<group>"; };
+		E049C44817A6DDB200B00B35 /* Diarrhea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Diarrhea.png; sourceTree = "<group>"; };
+		E049C44917A6DDB200B00B35 /* Diarrhea@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Diarrhea@2x.png"; sourceTree = "<group>"; };
+		E049C44A17A6DDB200B00B35 /* Motion-Sickness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Motion-Sickness.png"; sourceTree = "<group>"; };
+		E049C44B17A6DDB200B00B35 /* Motion-Sickness@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Motion-Sickness@2x.png"; sourceTree = "<group>"; };
+		E049C44C17A6DDB200B00B35 /* Rabies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rabies.png; sourceTree = "<group>"; };
+		E049C44D17A6DDB200B00B35 /* Rabies@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rabies@2x.png"; sourceTree = "<group>"; };
+		E049C44E17A6DDB200B00B35 /* Typhoid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Typhoid.png; sourceTree = "<group>"; };
+		E049C44F17A6DDB200B00B35 /* Typhoid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Typhoid@2x.png"; sourceTree = "<group>"; };
+		E049C45017A6DDB200B00B35 /* West-Nile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "West-Nile.png"; sourceTree = "<group>"; };
+		E049C45117A6DDB200B00B35 /* West-Nile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "West-Nile@2x.png"; sourceTree = "<group>"; };
 		E04C4DB417A30FE1002A23F4 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		E04C4DB517A30FE1002A23F4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		E04C4DB617A30FE2002A23F4 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
@@ -261,6 +317,34 @@
 		684E364B178F85C1004E27B9 /* health */ = {
 			isa = PBXGroup;
 			children = (
+				E049C43817A6DBBD00B00B35 /* Cholera.png */,
+				E049C44817A6DDB200B00B35 /* Diarrhea.png */,
+				E049C44917A6DDB200B00B35 /* Diarrhea@2x.png */,
+				E049C44A17A6DDB200B00B35 /* Motion-Sickness.png */,
+				E049C44B17A6DDB200B00B35 /* Motion-Sickness@2x.png */,
+				E049C44C17A6DDB200B00B35 /* Rabies.png */,
+				E049C44D17A6DDB200B00B35 /* Rabies@2x.png */,
+				E049C44E17A6DDB200B00B35 /* Typhoid.png */,
+				E049C44F17A6DDB200B00B35 /* Typhoid@2x.png */,
+				E049C45017A6DDB200B00B35 /* West-Nile.png */,
+				E049C45117A6DDB200B00B35 /* West-Nile@2x.png */,
+				E049C43917A6DBBD00B00B35 /* Dengue-Fever.png */,
+				E049C43A17A6DBBD00B00B35 /* Hepatitis-A.png */,
+				E049C43B17A6DBBD00B00B35 /* Hepatitis-B.png */,
+				E049C43C17A6DBBD00B00B35 /* Jet-Lag.png */,
+				E049C43D17A6DBBD00B00B35 /* Lyme.png */,
+				E049C43E17A6DBBD00B00B35 /* Malaria.png */,
+				E049C43F17A6DBBD00B00B35 /* Meningitis.png */,
+				E049C42417A6DADB00B00B35 /* Altitude-Sickness@2x.png */,
+				E049C43617A6DB9D00B00B35 /* Altitude-Sickness.png */,
+				E049C42517A6DADB00B00B35 /* Cholera@2x.png */,
+				E049C42617A6DADB00B00B35 /* Dengue-Fever@2x.png */,
+				E049C42717A6DADB00B00B35 /* Hepatitis-A@2x.png */,
+				E049C42817A6DADB00B00B35 /* Hepatitis-B@2x.png */,
+				E049C42917A6DADB00B00B35 /* Jet-Lag@2x.png */,
+				E049C42A17A6DADB00B00B35 /* Lyme@2x.png */,
+				E049C42B17A6DADB00B00B35 /* Malaria@2x.png */,
+				E049C42C17A6DADB00B00B35 /* Meningitis@2x.png */,
 				68E424091793190600431908 /* Common@2x.png */,
 				68E4240A1793190600431908 /* Uncommon@2x.png */,
 				7ECD0436178DE24F00D6C34B /* medication-pic@2x.png */,
@@ -579,6 +663,34 @@
 				E0E9C7CC17A6B8DB009FB594 /* Guada@2x.png in Resources */,
 				E0E9C7CD17A6B8DB009FB594 /* miami@2x.png in Resources */,
 				E0E9C7CE17A6B8DB009FB594 /* Puerto-Plata@2x.png in Resources */,
+				E049C42D17A6DADB00B00B35 /* Altitude-Sickness@2x.png in Resources */,
+				E049C42E17A6DADB00B00B35 /* Cholera@2x.png in Resources */,
+				E049C42F17A6DADB00B00B35 /* Dengue-Fever@2x.png in Resources */,
+				E049C43017A6DADB00B00B35 /* Hepatitis-A@2x.png in Resources */,
+				E049C43117A6DADB00B00B35 /* Hepatitis-B@2x.png in Resources */,
+				E049C43217A6DADB00B00B35 /* Jet-Lag@2x.png in Resources */,
+				E049C43317A6DADB00B00B35 /* Lyme@2x.png in Resources */,
+				E049C43417A6DADB00B00B35 /* Malaria@2x.png in Resources */,
+				E049C43517A6DADB00B00B35 /* Meningitis@2x.png in Resources */,
+				E049C43717A6DB9D00B00B35 /* Altitude-Sickness.png in Resources */,
+				E049C44017A6DBBD00B00B35 /* Cholera.png in Resources */,
+				E049C44117A6DBBD00B00B35 /* Dengue-Fever.png in Resources */,
+				E049C44217A6DBBD00B00B35 /* Hepatitis-A.png in Resources */,
+				E049C44317A6DBBD00B00B35 /* Hepatitis-B.png in Resources */,
+				E049C44417A6DBBD00B00B35 /* Jet-Lag.png in Resources */,
+				E049C44517A6DBBD00B00B35 /* Lyme.png in Resources */,
+				E049C44617A6DBBD00B00B35 /* Malaria.png in Resources */,
+				E049C44717A6DBBD00B00B35 /* Meningitis.png in Resources */,
+				E049C45217A6DDB200B00B35 /* Diarrhea.png in Resources */,
+				E049C45317A6DDB200B00B35 /* Diarrhea@2x.png in Resources */,
+				E049C45417A6DDB200B00B35 /* Motion-Sickness.png in Resources */,
+				E049C45517A6DDB200B00B35 /* Motion-Sickness@2x.png in Resources */,
+				E049C45617A6DDB200B00B35 /* Rabies.png in Resources */,
+				E049C45717A6DDB200B00B35 /* Rabies@2x.png in Resources */,
+				E049C45817A6DDB200B00B35 /* Typhoid.png in Resources */,
+				E049C45917A6DDB200B00B35 /* Typhoid@2x.png in Resources */,
+				E049C45A17A6DDB200B00B35 /* West-Nile.png in Resources */,
+				E049C45B17A6DDB200B00B35 /* West-Nile@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
