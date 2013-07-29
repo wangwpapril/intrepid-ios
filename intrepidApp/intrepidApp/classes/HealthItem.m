@@ -18,7 +18,7 @@
 @synthesize symptoms;
 @synthesize immunization;
 
-+(id)healthItemOfCategory:(NSString *)category name:(NSString *)name description:(NSString *)description details:(NSString *)details common:(BOOL)common symptoms:(NSString *)symptoms immunization:(NSString *)immunization
++(id)healthItemOfCategory:(NSString *)category name:(NSString *)name description:(NSString *)description details:(NSString *)details common:(BOOL)common symptoms:(NSString *)symptoms immunization:(NSString *)immunization image:(NSString *)image;
 {
     HealthItem *newHealthItem = [[self alloc] init];
     newHealthItem.category = category;
@@ -26,6 +26,7 @@
     newHealthItem.common = common;
     newHealthItem.description = description;
     newHealthItem.details = details;
+    newHealthItem.image = image;
     return newHealthItem;
 }
 

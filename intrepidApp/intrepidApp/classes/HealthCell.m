@@ -38,7 +38,7 @@
     }
     commonImage.image = [UIImage imageNamed:commonImageName];
     
-    UIImage *image = [UIImage imageNamed:@"samplePic.png"];
+    UIImage *image = [UIImage imageNamed:healthItem.image];
     self.imageView.image = image;
     self.imageView.layer.cornerRadius = 5;
     self.imageView.layer.masksToBounds = YES;
