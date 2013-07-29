@@ -56,24 +56,11 @@
         frame.origin.x = (scrollView.frame.size.width) * i + 45;
         frame.origin.y = scrollView.frame.origin.y + 15;
         frame.size = CGSizeMake(234, scrollView.frame.size.height - 182.0);
-
-        CGRect nameFrame;
-        nameFrame.origin.x = (scrollView.frame.size.width) * i + 45;
-        nameFrame.origin.y = scrollView.frame.size.height + 15;
-        nameFrame.size = CGSizeMake(234, scrollView.frame.size.height - 182.0);
         
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
         imageView.image = [UIImage imageNamed:[imageArray objectAtIndex:i]];
         [scrollView addSubview:imageView];
-        
-        UILabel *cityName = [[UILabel alloc] initWithFrame:nameFrame];
-        cityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
-        cityName.backgroundColor = [UIColor clearColor];
-        cityName.textColor = [UIColor whiteColor];
-        [cityName setTextAlignment:NSTextAlignmentCenter];
-        cityName.text = @"hello";
-        [scrollView addSubview:cityName];
         
         
         if (i == 0) {
@@ -82,14 +69,34 @@
             [toTrips addTarget:self action:@selector(toTrips) forControlEvents:UIControlEventTouchUpInside];
             [scrollView addSubview:toTrips];       
         }        
-        else if (i == 1) {
-            cityName.text = @"Mexico City";
-        }
-
-        else {
-            cityName.text = @"Barcelona";
-        }
     }
+    
+    UILabel *mexicoCityName = [[UILabel alloc] init];
+    mexicoCityName.frame = CGRectMake(430, self.view.frame.size.height - 200, 100.0, 100.0);
+    mexicoCityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
+    mexicoCityName.backgroundColor = [UIColor clearColor];
+    mexicoCityName.textColor = [UIColor whiteColor];
+    [mexicoCityName setTextAlignment:NSTextAlignmentCenter];
+    mexicoCityName.text = @"Mexico City";
+    [scrollView addSubview:mexicoCityName];
+    
+    UILabel *guadaCityName = [[UILabel alloc] init];
+    guadaCityName.frame = CGRectMake(750, self.view.frame.size.height - 200, 100.0, 100.0);
+    guadaCityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
+    guadaCityName.backgroundColor = [UIColor clearColor];
+    guadaCityName.textColor = [UIColor whiteColor];
+    [guadaCityName setTextAlignment:NSTextAlignmentCenter];
+    guadaCityName.text = @"Guada";
+    [scrollView addSubview:guadaCityName];
+    
+    UILabel *miamiCityName = [[UILabel alloc] init];
+    miamiCityName.frame = CGRectMake(1070, self.view.frame.size.height - 200, 100.0, 100.0);
+    miamiCityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
+    miamiCityName.backgroundColor = [UIColor clearColor];
+    miamiCityName.textColor = [UIColor whiteColor];
+    [miamiCityName setTextAlignment:NSTextAlignmentCenter];
+    miamiCityName.text = @"Miami";
+    [scrollView addSubview:miamiCityName];
     
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * [imageArray count], 366.0);
     
