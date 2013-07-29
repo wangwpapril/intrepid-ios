@@ -19,6 +19,7 @@
 
 @synthesize pageControl;
 @synthesize scrollView;
+@synthesize city;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,6 +34,8 @@
 {
     [super viewDidLoad];
     
+    [self cityNames];
+    
     //set background
     UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login-background.png"]];
     [self.view addSubview:backgroundView];
@@ -44,12 +47,22 @@
     
     //create array for images
     NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"new-trip.png", @"mexico-city.png", @"mexico-city.png", nil];
+    UILabel *cityName = [[UILabel alloc] init];
     
     for (int i=0; i < [imageArray count]; i++) {
         CGRect frame;
-        frame.origin.x = scrollView.frame.size.width * i;
+        frame.origin.x = (scrollView.frame.size.width) * i + 25;
         frame.origin.y = 0;
-        frame.size = scrollView.frame.size;
+        frame.size = CGSizeMake(268.0, 366.0);
+        
+        //this doesn't change
+        cityName.frame = CGRectMake(85, self.view.frame.size.height - 125, 150, 25);
+        cityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
+        cityName.backgroundColor = [UIColor clearColor];
+        cityName.textColor = [UIColor whiteColor];
+        [cityName setTextAlignment:NSTextAlignmentCenter];
+        cityName.text = [city objectAtIndex:i];
+        [scrollView addSubview:cityName];
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
         imageView.image = [UIImage imageNamed:[imageArray objectAtIndex:i]];
@@ -60,18 +73,6 @@
     
     [self.view addSubview:scrollView];
     
-//    NSArray *cityNames = [NSArray arrayWithObjects:
-//                          [name:@""], [name:@"Mexico City"], [name:@"Honolulu"], [name:@"Toronto"], nil];
-    
-    UILabel *cityName = [[UILabel alloc] init];
-    cityName.frame = CGRectMake(85, self.view.frame.size.height - 125, 150, 25);
-    cityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
-    cityName.text = @"Hello";
-    cityName.backgroundColor = [UIColor clearColor];
-    cityName.textColor = [UIColor whiteColor];
-    [cityName setTextAlignment:NSTextAlignmentCenter];
-    [self.view addSubview:cityName];
-
     pageControl.frame = CGRectMake(135, self.view.frame.size.height - 100, 50, 50);
     pageControl.numberOfPages = 3;
     pageControl.currentPage = 0;
@@ -79,6 +80,13 @@
     pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     [self.view addSubview:pageControl];
     
+}
+
+-(void)cityNames {
+    city = [[NSMutableArray alloc] init];
+    [city addObject:@" "];
+    [city addObject:@"Mexico City"];
+    [city addObject:@"Barcelona"];
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)sender {

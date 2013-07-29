@@ -11,5 +11,8 @@
 @interface MyTripsViewController : UIViewController <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (nonatomic, retain) NSMutableArray *city;
+
+-(void)cityNames;
 
 @end
