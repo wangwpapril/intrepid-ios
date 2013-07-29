@@ -89,17 +89,19 @@
     [scrollView addSubview:descriptionLabel];
     [scrollView addSubview: descriptionText];
     
+    //begin creating sideEffects title label    
     UIImageView  *sideEffectsImageLabel = [[UIImageView alloc] init];
     
-    if ([healthItem.category isEqualToString:@"symptoms"]) {
-        [sideEffectsImageLabel setImage:[UIImage imageNamed:@"heart-rate-pic.png"]];
-    }
-    else if ([healthItem.category isEqualToString:@"prevention"]) {
-        [sideEffectsImageLabel setImage:[UIImage imageNamed:@"conditions-pic.png"]];
-    }
-    else {
-        [sideEffectsImageLabel setImage:[UIImage imageNamed:@"medication-pic.png"]];
-    }
+//    if ([healthItem.category isEqualToString:@"symptoms"]) {
+//        [sideEffectsImageLabel setImage:[UIImage imageNamed:@"heart-rate-pic.png"]];
+//    }
+//    else if ([healthItem.category isEqualToString:@"prevention"]) {
+//        [sideEffectsImageLabel setImage:[UIImage imageNamed:@"conditions-pic.png"]];
+//    }
+//    else {
+//        [sideEffectsImageLabel setImage:[UIImage imageNamed:@"medication-pic.png"]];
+//    }
+    [sideEffectsImageLabel setImage:[UIImage imageNamed:@"medication-pic.png"]];
     sideEffectsImageLabel.frame = CGRectMake(7, size.height + 75, 25, 25);
     [scrollView addSubview:sideEffectsImageLabel];
     
@@ -107,20 +109,13 @@
     sideEffectsLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
     sideEffectsLabel.backgroundColor = [UIColor clearColor];
     sideEffectsLabel.textColor = UIColorFromRGB(0x423a38);
+    sideEffectsLabel.text = @"Side Effects";
     
-    if ([healthItem.category isEqualToString:@"symptoms"]) {
-        sideEffectsLabel.text = @"Transmission";
-    }
-    else if ([healthItem.category isEqualToString:@"prevention"]) {
-        sideEffectsLabel.text = @"Immunization";
-    }
-    else {
-        sideEffectsLabel.text = @"Side Effects";
-    }
-    
+    //Begin sizing sideEffects text container
     CGSize sideEffectsSize = [healthItem.details sizeWithFont:[UIFont systemFontOfSize:15]
                                      constrainedToSize:CGSizeMake(320, self.view.bounds.size.height - 100)
                                          lineBreakMode:NSLineBreakByWordWrapping];
+    
     UITextView *sideEffectsText = [[UITextView alloc] initWithFrame:CGRectMake(0, size.height + 105,  320, sideEffectsSize.height)];
     sideEffectsText.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
     sideEffectsText.backgroundColor = UIColorFromRGB(0xffffff);
@@ -134,7 +129,67 @@
     
     [scrollView addSubview: sideEffectsLabel];
     [scrollView addSubview: sideEffectsText];
-    scrollView.contentSize = CGSizeMake(320, size.height + 115 + sideEffectsSize.height);
+    
+    //begin creating transmission description box and text box containers
+    UILabel *transmissionTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, sideEffectsText.frame.origin.y + sideEffectsSize.height - 42, 120, 120)];
+    transmissionTitleLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
+    transmissionTitleLabel.backgroundColor = [UIColor clearColor];
+    transmissionTitleLabel.textColor = UIColorFromRGB(0x423a38);
+    transmissionTitleLabel.text = @"Transmission";
+    [scrollView addSubview:transmissionTitleLabel];
+    
+    UIImageView  *transmissionImageLabel = [[UIImageView alloc] init];
+    [transmissionImageLabel setImage:[UIImage imageNamed:@"heart-rate-pic.png"]];
+    transmissionImageLabel.frame = CGRectMake(7, sideEffectsText.frame.origin.y + sideEffectsSize.height + 5, 20, 20);
+    [scrollView addSubview:transmissionImageLabel];
+    
+    CGSize transmissionSize = [healthItem.details sizeWithFont:[UIFont systemFontOfSize:15]
+                                            constrainedToSize:CGSizeMake(320, self.view.bounds.size.height - 100)
+                                                lineBreakMode:NSLineBreakByWordWrapping];
+    
+    UITextView *transmissionTextContainer = [[UITextView alloc] initWithFrame:CGRectMake(0, sideEffectsText.frame.origin.y + transmissionSize.height + 35,  320, sideEffectsSize.height)];
+    transmissionTextContainer.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+    transmissionTextContainer.backgroundColor = UIColorFromRGB(0xffffff);
+    transmissionTextContainer.textColor = UIColorFromRGB(0x423a38);
+    transmissionTextContainer.text = healthItem.details;
+    [transmissionTextContainer setAlpha:0.6];
+    transmissionTextContainer.scrollEnabled = NO;
+    transmissionTextContainer.editable = NO;
+    transmissionTextContainer.layer.borderWidth = 1.0f;
+    transmissionTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];    
+    [scrollView addSubview:transmissionTextContainer];
+    
+    //begin creating immunization text header and text container
+    
+    UILabel *immunizationTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, transmissionTextContainer.frame.origin.y + transmissionSize.height - 42, 120, 120)];
+    immunizationTitleLabel .font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
+    immunizationTitleLabel.backgroundColor = [UIColor clearColor];
+    immunizationTitleLabel.textColor = UIColorFromRGB(0x423a38);
+    immunizationTitleLabel.text = @"Immunization";
+    [scrollView addSubview:immunizationTitleLabel];
+    
+    UIImageView  *immunizationImageLabel = [[UIImageView alloc] init];
+    [immunizationImageLabel setImage:[UIImage imageNamed:@"conditions-pic.png"]];
+    immunizationImageLabel.frame = CGRectMake(7, transmissionTextContainer.frame.origin.y + transmissionSize.height + 5, 20, 20);
+    [scrollView addSubview:immunizationImageLabel];
+    
+    CGSize immunizationSize = [healthItem.details sizeWithFont:[UIFont systemFontOfSize:15]
+                                             constrainedToSize:CGSizeMake(320, self.view.bounds.size.height - 100)
+                                                 lineBreakMode:NSLineBreakByWordWrapping];
+    
+    UITextView *immunizationTextContainer = [[UITextView alloc] initWithFrame:CGRectMake(0, transmissionTextContainer.frame.origin.y + immunizationSize.height + 35,  320, immunizationSize.height)];
+    immunizationTextContainer.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+    immunizationTextContainer.backgroundColor = UIColorFromRGB(0xffffff);
+    immunizationTextContainer.textColor = UIColorFromRGB(0x423a38);
+    immunizationTextContainer.text = healthItem.details;
+    [immunizationTextContainer setAlpha:0.6];
+    immunizationTextContainer.scrollEnabled = NO;
+    immunizationTextContainer.editable = NO;
+    immunizationTextContainer.layer.borderWidth = 1.0f;
+    immunizationTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
+    [scrollView addSubview:immunizationTextContainer];
+    
+    scrollView.contentSize = CGSizeMake(320, immunizationTextContainer.frame.origin.y + immunizationSize.height + 100);
     
     //description side effects transmission immunization
         

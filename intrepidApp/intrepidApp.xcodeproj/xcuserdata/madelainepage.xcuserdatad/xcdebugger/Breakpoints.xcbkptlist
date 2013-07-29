@@ -135,19 +135,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "intrepidApp/classes/HealthViewDetailController.m"
-         timestampString = "396547620.953505"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "117"
-         endingLineNumber = "117"
-         landmarkName = "-addContent"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "intrepidApp/MyTripsViewController.m"
          timestampString = "396803082.645967"
          startingColumnNumber = "9223372036854775807"
