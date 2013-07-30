@@ -69,10 +69,19 @@
 
 -(void)populateEmbassyItems {
     embassyArray = [NSArray arrayWithObjects:
-                     [EmbassyItem currencyItemOfCountry:@"American Embassy" flag:@"american-flag.png"],
-                     [EmbassyItem currencyItemOfCountry:@"Canadian Embassy" flag:@"canadian-flag.png"],
-                     [EmbassyItem currencyItemOfCountry:@"UK Embassy" flag:@"great-britain-flag.png"],
-                     [EmbassyItem currencyItemOfCountry:@"Brazilian Embassy" flag:@"brasil-flag.png"], nil];
+                     [EmbassyItem currencyItemOfCountry:@"United States" flag:@"USD.png"],
+                     [EmbassyItem currencyItemOfCountry:@"Canadian" flag:@"CAD.png"],
+                     [EmbassyItem currencyItemOfCountry:@"United Kingdom" flag:@"GBP.png"],
+                     [EmbassyItem currencyItemOfCountry:@"Brazil" flag:@"BRL.png"],
+                    [EmbassyItem currencyItemOfCountry:@"European Union" flag:@"EUR.png"],
+                    [EmbassyItem currencyItemOfCountry:@"Switzerland" flag:@"CHF.png"],
+                    [EmbassyItem currencyItemOfCountry:@"China" flag:@"CNY.png"],
+                    [EmbassyItem currencyItemOfCountry:@"India" flag:@"INR.png"],
+                    [EmbassyItem currencyItemOfCountry:@"Thailand" flag:@"THB.png"],
+                    [EmbassyItem currencyItemOfCountry:@"Australia" flag:@"AUS.png"],
+                    [EmbassyItem currencyItemOfCountry:@"Malaysia" flag:@"MYR.png"],
+                    [EmbassyItem currencyItemOfCountry:@"Dominican Republic" flag:@"DOP.png"],
+                    [EmbassyItem currencyItemOfCountry:@"Mexico" flag:@"MXN.png"], nil];
 }
 
 # pragma mark - tableView methods

@@ -30,6 +30,7 @@
     [super viewDidLoad];
     
     [self cityNames];
+    CGFloat contentOffset = 150.0f;
     
     //set background
     UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login-background.png"]];
@@ -41,43 +42,73 @@
     scrollView.pagingEnabled = YES;
     
     //create array for images
-    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"new-trip.png", @"mexico-city.png", @"mexico-city.png", nil];
-    UILabel *cityName = [[UILabel alloc] init];
+    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"new-trip.png", @"NMexico@2x.png", @"Guada@2x.png", @"miami@2x.png", @"Puerto-Plata@2x.png", nil];
+    NSArray *nameArray = [[NSMutableArray alloc] initWithObjects:@" ", @"Mexico City", @"Guadalajara", @"Miami", @"Puerto Plata", nil];
     
     for (int i=0; i < [imageArray count]; i++) {
         CGRect frame;
-        frame.origin.x = (scrollView.frame.size.width) * i + 25;
-        frame.origin.y = 0;
-        frame.size = CGSizeMake(268.0, 366.0);
+        frame.origin.x = (scrollView.frame.size.width) * i + 45;
+        frame.origin.y = scrollView.frame.origin.y + 15;
+        frame.size = CGSizeMake(234, scrollView.frame.size.height - 182.0);
         
-        //this doesn't change
-        cityName.frame = CGRectMake(85, self.view.frame.size.height - 125, 150, 25);
-        cityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
-        cityName.backgroundColor = [UIColor clearColor];
-        cityName.textColor = [UIColor whiteColor];
-        [cityName setTextAlignment:NSTextAlignmentCenter];
-        cityName.text = [city objectAtIndex:i];
-        [scrollView addSubview:cityName];
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
         imageView.image = [UIImage imageNamed:[imageArray objectAtIndex:i]];
         [scrollView addSubview:imageView];
+        
+        
         if (i == 0) {
             UIButton *toTrips = [UIButton buttonWithType:UIButtonTypeCustom];
             toTrips.frame = imageView.frame;
             [toTrips addTarget:self action:@selector(toTrips) forControlEvents:UIControlEventTouchUpInside];
-            [scrollView addSubview:toTrips];
-        }
+            [scrollView addSubview:toTrips];       
+        }        
     }
     
-    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * [imageArray count], scrollView.frame.size.height);
+    UILabel *mexicoCityName = [[UILabel alloc] init];
+    mexicoCityName.frame = CGRectMake(430, self.view.frame.size.height - 200, 100.0, 100.0);
+    mexicoCityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
+    mexicoCityName.backgroundColor = [UIColor clearColor];
+    mexicoCityName.textColor = [UIColor whiteColor];
+    [mexicoCityName setTextAlignment:NSTextAlignmentCenter];
+    mexicoCityName.text = @"Mexico City";
+    [scrollView addSubview:mexicoCityName];
+    
+    UILabel *guadaCityName = [[UILabel alloc] init];
+    guadaCityName.frame = CGRectMake(750, self.view.frame.size.height - 200, 100.0, 100.0);
+    guadaCityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
+    guadaCityName.backgroundColor = [UIColor clearColor];
+    guadaCityName.textColor = [UIColor whiteColor];
+    [guadaCityName setTextAlignment:NSTextAlignmentCenter];
+    guadaCityName.text = @"Guadalajara";
+    [scrollView addSubview:guadaCityName];
+    
+    UILabel *miamiCityName = [[UILabel alloc] init];
+    miamiCityName.frame = CGRectMake(1070, self.view.frame.size.height - 200, 100.0, 100.0);
+    miamiCityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
+    miamiCityName.backgroundColor = [UIColor clearColor];
+    miamiCityName.textColor = [UIColor whiteColor];
+    [miamiCityName setTextAlignment:NSTextAlignmentCenter];
+    miamiCityName.text = @"Miami";
+    [scrollView addSubview:miamiCityName];
+    
+    UILabel *puertoplataCityName = [[UILabel alloc] init];
+    puertoplataCityName.frame = CGRectMake(1390, self.view.frame.size.height - 200, 100.0, 100.0);
+    puertoplataCityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
+    puertoplataCityName.backgroundColor = [UIColor clearColor];
+    puertoplataCityName.textColor = [UIColor whiteColor];
+    [puertoplataCityName setTextAlignment:NSTextAlignmentCenter];
+    puertoplataCityName.text = @"Puerto Plata";
+    [scrollView addSubview:puertoplataCityName];
+    
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * [imageArray count], 366.0);
     
     [self.view addSubview:scrollView];
     
     pageControl.frame = CGRectMake(135, self.view.frame.size.height - 100, 50, 50);
-    pageControl.numberOfPages = 3;
+    pageControl.numberOfPages = 5;
     pageControl.currentPage = 0;
-    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    pageControl.pageIndicatorTintColor = [UIColor darkGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     [self.view addSubview:pageControl];
     
@@ -92,7 +123,9 @@
     city = [[NSMutableArray alloc] init];
     [city addObject:@" "];
     [city addObject:@"Mexico City"];
-    [city addObject:@"Barcelona"];
+    [city addObject:@"Guadalajara"];
+    [city addObject:@"Miami"];
+    [city addObject:@"Puerto Plata"];
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)sender {

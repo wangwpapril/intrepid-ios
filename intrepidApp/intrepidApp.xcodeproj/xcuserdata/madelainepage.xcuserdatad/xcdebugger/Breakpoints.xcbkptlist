@@ -13,7 +13,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "23"
          endingLineNumber = "23"
-         landmarkName = "+healthItemOfCategory:name:description:details:common:"
+         landmarkName = "+healthItemOfCategory:name:description:details:common:symptoms:immunization:image:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -45,13 +45,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "intrepidApp/classes/HealthItem.h"
-         timestampString = "395010422.514157"
+         timestampString = "396810449.202038"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "22"
-         endingLineNumber = "22"
-         landmarkName = "@interface HealthItem"
-         landmarkType = "2">
+         startingLineNumber = "23"
+         endingLineNumber = "23"
+         landmarkName = "+healthItemOfCategory:name:description:details:common:symptoms:immunization:image:"
+         landmarkType = "4">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -135,13 +135,13 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "intrepidApp/classes/HealthViewDetailController.m"
-         timestampString = "396547620.953505"
+         filePath = "intrepidApp/MyTripsViewController.m"
+         timestampString = "396811716.58776"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "117"
-         endingLineNumber = "117"
-         landmarkName = "-addContent"
+         startingLineNumber = "104"
+         endingLineNumber = "104"
+         landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

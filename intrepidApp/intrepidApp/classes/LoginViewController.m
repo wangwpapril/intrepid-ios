@@ -74,7 +74,8 @@
     // using text on button
     [signUp setAttributedTitle: signUpString forState:UIControlStateNormal];
     [signUpString addAttribute:NSForegroundColorAttributeName value:UIColorFromRGB(0xe7eee2) range:NSMakeRange(0,[signUpString length])];
-//    [signUp setTitleColor:UIColorFromRGB(0xe7eee2) forState:UIControlStateNormal];
+    signUp.frame = CGRectMake(9, self.view.frame.size.height - 50, 81, 44);
+    
     signUp.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
     [self.view addSubview:signUp];
     
@@ -88,6 +89,7 @@
     [learnMore setAttributedTitle: learnMoreString forState:UIControlStateNormal];
     [learnMoreString addAttribute:NSForegroundColorAttributeName value:UIColorFromRGB(0xe7eee2) range:NSMakeRange(0,[learnMoreString length])];
     learnMore.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+    learnMore.frame = CGRectMake(215, self.view.frame.size.height - 50, 81, 44);
     [self.view addSubview:learnMore];
     
     intrepidTitle.font = [UIFont fontWithName:@"ProximaNova-Bold" size:24];
