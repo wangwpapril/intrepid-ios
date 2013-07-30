@@ -46,17 +46,21 @@
 
 - (void)populateContentArray {
     TripItem *trip1 = [[TripItem alloc] init];
-    trip1.city = @"Gudalajara";
+    trip1.city = @"Guadalajara";
     trip1.continent = @"North America";
+    trip1.image = @"Guada-icon.png";
     TripItem *trip2 = [[TripItem alloc] init];
     trip2.city = @"Miami";
     trip2.continent = @"North America";
+    trip2.image = @"Miami-icon.png";
     TripItem *trip3 = [[TripItem alloc] init];
     trip3.city = @"Mexico City";
     trip3.continent = @"North America";
+    trip3.image = @"Mexico-icon.png";
     TripItem *trip4 = [[TripItem alloc] init];
     trip4.city = @"Puerto Plata";
     trip4.continent = @"North America";
+    trip4.image = @"Puerto-Plata-icon.png";
     tripsArray = [NSArray arrayWithObjects:trip1, trip2, trip3, trip4, nil];
     filteredArray = [NSMutableArray new];
 }

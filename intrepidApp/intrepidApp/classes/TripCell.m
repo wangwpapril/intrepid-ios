@@ -14,7 +14,7 @@
 @implementation TripCell
 
 @synthesize continentLabel;
-//@synthesize tripImage;
+@synthesize tripImage;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -37,7 +37,7 @@
 -(void)setupWithHealthItem:(TripItem *)tripItem {
 
     
-    UIImage *image = [UIImage imageNamed:@"samplePic.png"];
+    UIImage *image = [UIImage imageNamed:tripItem.image];
     self.imageView.image = image;
     self.imageView.layer.cornerRadius = 5;
     self.imageView.layer.masksToBounds = YES;
