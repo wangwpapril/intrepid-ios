@@ -56,10 +56,17 @@
 
 -(void)populateCurrencyItems {
     currencyArray = [NSArray arrayWithObjects:
-                           [CurrencyItem currencyItemOfCountry:@"USD" flag:@"american-flag.png" value:@"1"],
-                            [CurrencyItem currencyItemOfCountry:@"CAD" flag:@"canadian-flag.png" value:@"0.15"],
-                            [CurrencyItem currencyItemOfCountry:@"GBP" flag:@"great-britain-flag.png" value:@"1.34"],
-                            [CurrencyItem currencyItemOfCountry:@"BRA" flag:@"brasil-flag.png" value:@"0.11"], nil];
+                           [CurrencyItem currencyItemOfCountry:@"Mexican Peso" flag:@"MXN.png" value:@"1"],
+                            [CurrencyItem currencyItemOfCountry:@"Canadian Dollar" flag:@"CAD.png" value:@"0.15"],
+                            [CurrencyItem currencyItemOfCountry:@"UK Pound" flag:@"GBP.png" value:@"1.34"],
+                     [CurrencyItem currencyItemOfCountry:@"Brazilian Real" flag:@"BRL.png" value:@"0.11"],
+                     [CurrencyItem currencyItemOfCountry:@"US Dollar" flag:@"USD.png" value:@"1"],
+                     [CurrencyItem currencyItemOfCountry:@"Euro" flag:@"EUR.png" value:@"0.15"],
+                     [CurrencyItem currencyItemOfCountry:@"Chinese Yen" flag:@"CNY.png" value:@"1.34"],
+                     [CurrencyItem currencyItemOfCountry:@"Swiss Franc" flag:@"CHF.png" value:@"0.11"],
+                     [CurrencyItem currencyItemOfCountry:@"Thai Bhat" flag:@"THB.png" value:@"0.15"],
+                     [CurrencyItem currencyItemOfCountry:@"Indian Rupee" flag:@"INR.png" value:@"1.34"],
+                     [CurrencyItem currencyItemOfCountry:@"Dominican Peso" flag:@"DOP.png" value:@"1.34"],nil];
 }
 
 - (void)didReceiveMemoryWarning
