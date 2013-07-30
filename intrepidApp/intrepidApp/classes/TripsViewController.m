@@ -26,7 +26,6 @@
 {
     [super viewDidLoad];
 //    self.view.tag = 7;
-    self.navigationItem.hidesBackButton = YES;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     
     [self populateContentArray];
@@ -40,8 +39,8 @@
     tableList.delegate = self;
     tableList.dataSource = self;
     
-    mController = [[MenuController alloc] init];
-    [mController displayMenuWithParent:self];
+//    mController = [[MenuController alloc] init];
+//    [mController displayMenuWithParent:self];
 }
 
 - (void)populateContentArray {

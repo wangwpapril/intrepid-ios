@@ -226,6 +226,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Ewm-sp-n3V" kind="push" id="4oc-ba-cq0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oOr-PD-5W9">
                                 <rect key="frame" x="163" y="437" width="102" height="19"/>
@@ -238,6 +241,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Ewm-sp-n3V" kind="push" id="DKo-ce-RMl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -283,7 +289,7 @@
             <objects>
                 <viewController storyboardIdentifier="healthView" id="cs1-Co-eKy" customClass="HealthViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J8w-Zz-s6y">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -320,7 +326,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JCK-Ci-qAv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="413" y="100"/>
+            <point key="canvasLocation" x="77" y="112"/>
         </scene>
         <!--Health View Detail Controller - Health-->
         <scene sceneID="pvv-Xq-Sdt">
@@ -432,7 +438,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftA-Ti-Na6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="671" y="-1333"/>
+            <point key="canvasLocation" x="619" y="119"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="o0I-bh-Mst">
@@ -482,7 +488,45 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3MN-r2-BsT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="143" y="-1345"/>
+            <point key="canvasLocation" x="231" y="-1385"/>
+        </scene>
+        <!--Terms Service Privacy Policy-->
+        <scene sceneID="vc6-Os-m5Y">
+            <objects>
+                <viewController id="Ewm-sp-n3V" customClass="TermsServicePrivacyPolicy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sc5-ud-WIM">
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="aKX-98-Yve">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ugr-Oz-AF8">
+                                        <rect key="frame" x="105" y="397" width="111" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="done button">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="Ewm-sp-n3V" id="tFE-JO-ltV"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bIR-aF-379"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hl7-RX-B4P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="871" y="-1300"/>
         </scene>
         <!--Over View View Controller-->
         <scene sceneID="FHa-h8-KXy">
@@ -618,6 +662,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="3tJ-Q8-Yn3"/>
+        <segue reference="QFw-AK-99A"/>
+        <segue reference="DKo-ce-RMl"/>
     </inferredMetricsTieBreakers>
 </document>

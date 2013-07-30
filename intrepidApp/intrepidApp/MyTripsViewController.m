@@ -7,11 +7,12 @@
 //
 
 #import "MyTripsViewController.h"
+#import "MenuController.h"
 #import "Constants.h"
 
 @implementation MyTripsViewController
 
-
+@synthesize mController;
 @synthesize pageControl;
 @synthesize scrollView;
 @synthesize city;
@@ -29,7 +30,10 @@
 {
     [super viewDidLoad];
     
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
+    
     [self cityNames];
+    
     CGFloat contentOffset = 150.0f;
     
     //set background
@@ -138,6 +142,20 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [super viewWillDisappear:animated];
 }
 
 @end

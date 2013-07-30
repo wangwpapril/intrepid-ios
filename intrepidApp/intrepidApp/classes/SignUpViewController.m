@@ -46,6 +46,8 @@
     UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"signUp-background.png"]];
     [self.view addSubview:backgroundView];
     
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
+    
     self.name.delegate = self;
     self.email.delegate = self;
     self.password.delegate = self;
