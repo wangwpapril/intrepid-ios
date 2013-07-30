@@ -13,5 +13,5 @@
 //@property (nonatomic, strong) UIScrollView *scroll;
 
 -(void)setupWithImageName:(NSString *)image withTitle:(NSString *)title withIconName:(NSString *)icon;
--(void) addTextArea;
+- (void)addTextAreaWithText:(NSString *)text;
 @end

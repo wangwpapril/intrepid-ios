@@ -30,7 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.tag = 2;
+    self.view.tag = 0;
     
     
     [self populateEmbassyItems];
@@ -42,14 +42,14 @@
     
     SlidingTextView *political = [[SlidingTextView alloc] initWithFrame:frame];
     [political setupWithImageName:@"security-political.png" withTitle:@"Political" withIconName:@"descriptionAndSideEffectLogo.png"];
-    [political addTextArea];
+    [political addTextAreaWithText:@"blah"];
     
     SlidingTextView *embassy = [[SlidingTextView alloc] initWithFrame:frame];
     [embassy setupWithImageName:@"security-embassy.png" withTitle:@"Embassy" withIconName:@"embassy-icon.png"];
     
     SlidingTextView *local = [[SlidingTextView alloc] initWithFrame:frame];
     [local setupWithImageName:@"mexicoBackBigger@2x.png" withTitle:@"Local" withIconName:@"currency-label.png"];
-    [local addTextArea];
+    [local addTextAreaWithText:@"bleh"];
     
     // table
     tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 308,  320, height - 308)];

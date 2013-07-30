@@ -20,7 +20,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.tag = 0;
+    self.view.tag = 2;
     [self populateCurrencyItems];
     self.navigationItem.title = @"Mexico Overview";
      
@@ -30,11 +30,11 @@
     
     SlidingTextView *history = [[SlidingTextView alloc] initWithFrame:frame];
     [history setupWithImageName:@"overview-history.png" withTitle:@"History" withIconName:@"descriptionAndSideEffectLogo.png"];
-    [history addTextArea];
+    [history addTextAreaWithText:@"hehe"];
     
     SlidingTextView *culture = [[SlidingTextView alloc] initWithFrame:frame];
     [culture setupWithImageName:@"overview-culture.png" withTitle:@"Culture" withIconName:@"culture-icon.png"];
-    [culture addTextArea];
+    [culture addTextAreaWithText:@"aahaaaha"];
 
     SlidingTextView *currency = [[SlidingTextView alloc] initWithFrame:frame];
     [currency setupWithImageName:@"overview-currency.png" withTitle:@"Currency" withIconName:@"currency-Icon.png"];
