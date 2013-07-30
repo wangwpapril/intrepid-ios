@@ -122,7 +122,7 @@
     assistanceScreenDescription.backgroundColor = [UIColor clearColor];
     assistanceScreenDescription.textColor = [UIColor whiteColor];
     [assistanceScreenDescription setTextAlignment:NSTextAlignmentCenter];
-    assistanceScreenDescription.text = @"PLACEHOLDER FOR LAST SCREEN";
+    assistanceScreenDescription.text = @"Placeholder for Assistance Screen";
     assistanceScreenDescription.numberOfLines = 0;
     assistanceScreenDescription.lineBreakMode = NSLineBreakByWordWrapping;
     [scrollView addSubview:assistanceScreenDescription];
@@ -132,8 +132,8 @@
     CGFloat pageWidth = self.scrollView.frame.size.width;
     int page = floor((scrollView.contentOffset.x - pageWidth / 2)/pageWidth) +1;
     pageControl.currentPage = page;
-}
 
+}
 - (void)viewWillAppear:(BOOL)animated
 {
     

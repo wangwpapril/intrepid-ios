@@ -25,6 +25,7 @@
 
 
 - (IBAction)typeBox:(id)sender;
+- (IBAction)button;
 - (void)keyboardWillShow;
 - (void)keyboardWillHide;
 - (void)textFieldDidBeginEditing:(UITextField *)sender;

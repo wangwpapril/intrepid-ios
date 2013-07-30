@@ -128,6 +128,7 @@
 		E06FCE0A17A60852003F3FC6 /* security-embassy.png in Resources */ = {isa = PBXBuildFile; fileRef = E06FCE0817A60852003F3FC6 /* security-embassy.png */; };
 		E06FCE0B17A60852003F3FC6 /* security-political.png in Resources */ = {isa = PBXBuildFile; fileRef = E06FCE0917A60852003F3FC6 /* security-political.png */; };
 		E06FCE0D17A60963003F3FC6 /* embassy-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E06FCE0C17A60963003F3FC6 /* embassy-icon.png */; };
+		E08615F117A8224D00DE240B /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E08615F017A8224D00DE240B /* ForgotPasswordViewController.m */; };
 		E0B5825117A31D2C00093130 /* intrepid icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5825017A31D2C00093130 /* intrepid icon.png */; };
 		E0B5825317A31D8100093130 /* app icon nonretina.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5825217A31D8100093130 /* app icon nonretina.png */; };
 		E0BF3BF817A7399D00241A52 /* AUS.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BDE17A7399D00241A52 /* AUS.png */; };
@@ -312,6 +313,8 @@
 		E06FCE0817A60852003F3FC6 /* security-embassy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "security-embassy.png"; sourceTree = "<group>"; };
 		E06FCE0917A60852003F3FC6 /* security-political.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "security-political.png"; sourceTree = "<group>"; };
 		E06FCE0C17A60963003F3FC6 /* embassy-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "embassy-icon.png"; sourceTree = "<group>"; };
+		E08615EF17A8224D00DE240B /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
+		E08615F017A8224D00DE240B /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		E0B5825017A31D2C00093130 /* intrepid icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intrepid icon.png"; sourceTree = "<group>"; };
 		E0B5825217A31D8100093130 /* app icon nonretina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app icon nonretina.png"; sourceTree = "<group>"; };
 		E0BF3BDE17A7399D00241A52 /* AUS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUS.png; sourceTree = "<group>"; };
@@ -590,6 +593,8 @@
 				7E34777E1791E7A700FB86DC /* SignUpViewController.m */,
 				7EA293B617A77161000A56E9 /* LearnMoreViewController.h */,
 				7EA293B717A77161000A56E9 /* LearnMoreViewController.m */,
+				E08615EF17A8224D00DE240B /* ForgotPasswordViewController.h */,
+				E08615F017A8224D00DE240B /* ForgotPasswordViewController.m */,
 			);
 			name = Login/Signup;
 			sourceTree = "<group>";
@@ -900,6 +905,7 @@
 				685B6F5F17A60B430003B5D9 /* TripCell.m in Sources */,
 				685B6F6217A617C20003B5D9 /* TripItem.m in Sources */,
 				7EA293B817A77161000A56E9 /* LearnMoreViewController.m in Sources */,
+				E08615F117A8224D00DE240B /* ForgotPasswordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
