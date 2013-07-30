@@ -10,8 +10,10 @@
 
 @interface LearnMoreViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet UIPageControl *pageControl;
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 
 
 @end
