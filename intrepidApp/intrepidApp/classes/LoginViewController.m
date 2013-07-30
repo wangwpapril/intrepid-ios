@@ -114,6 +114,7 @@
     
     underlinePassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline.png"]];
     [self.view addSubview:underlinePassword];
+
     
     password.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
     password.textColor = UIColorFromRGB(0xe7eee2);
@@ -122,11 +123,21 @@
     password.secureTextEntry = YES;
     [self.view addSubview:password];
     
-    forgotPassword.font = [UIFont fontWithName:@"ProximaNova-Regular" size:12];
-    forgotPassword.textColor = UIColorFromRGB(0xd7503e);
-    forgotPassword.text = @"Forgot Password?";
     
-    forgotPassword.textAlignment = NSTextAlignmentCenter;
+    
+    NSMutableAttributedString *forgotPasswordString = [[NSMutableAttributedString alloc] initWithString:@"Forgot Password?"];
+    
+    // making text property to underline text-
+    [forgotPasswordString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [forgotPasswordString length])];
+    
+    // using text on button
+    [forgotPassword setAttributedTitle: forgotPasswordString forState:UIControlStateNormal];
+    [forgotPasswordString addAttribute:NSForegroundColorAttributeName value:UIColorFromRGB(0xd7503e) range:NSMakeRange(0,[forgotPasswordString length])];
+    forgotPassword.frame = CGRectMake(77, self.view.frame.size.height - 75, 166, 25);
+    forgotPassword.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:12];
+    forgotPassword.backgroundColor = [UIColor clearColor];
+    
+    forgotPassword.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:forgotPassword];    
     
 	// Do any additional setup after loading the view.
