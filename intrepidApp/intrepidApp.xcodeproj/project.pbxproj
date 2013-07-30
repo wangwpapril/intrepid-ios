@@ -60,7 +60,6 @@
 		7EA293B317A613C2000A56E9 /* mexico-city@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EA293B217A613C2000A56E9 /* mexico-city@2x.png */; };
 		7EA293B517A61863000A56E9 /* new-trip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EA293B417A61863000A56E9 /* new-trip@2x.png */; };
 		7EA293B817A77161000A56E9 /* LearnMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA293B717A77161000A56E9 /* LearnMoreViewController.m */; };
-		7EA293BA17A77B32000A56E9 /* health-screen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EA293B917A77B32000A56E9 /* health-screen@2x.png */; };
 		7ECD0427178BD7C500D6C34B /* HealthViewDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECD0426178BD7C500D6C34B /* HealthViewDetailController.m */; };
 		7ECD0429178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD0428178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png */; };
 		7ECD042B178DAF2000D6C34B /* back-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD042A178DAF2000D6C34B /* back-button@2x.png */; };
@@ -125,6 +124,8 @@
 		E04C4DB917A30FE2002A23F4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E04C4DB517A30FE1002A23F4 /* README.md */; };
 		E04C4DBA17A30FE2002A23F4 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = E04C4DB617A30FE2002A23F4 /* release_notes.md */; };
 		E04C4DBC17A3103E002A23F4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E04C4DBB17A3103E002A23F4 /* libz.dylib */; };
+		E05C97F117A86DE5007DF1C9 /* HealthScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = E05C97EF17A86DE5007DF1C9 /* HealthScreen.png */; };
+		E05C97F217A86DE5007DF1C9 /* HealthScreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E05C97F017A86DE5007DF1C9 /* HealthScreen@2x.png */; };
 		E06FCE0A17A60852003F3FC6 /* security-embassy.png in Resources */ = {isa = PBXBuildFile; fileRef = E06FCE0817A60852003F3FC6 /* security-embassy.png */; };
 		E06FCE0B17A60852003F3FC6 /* security-political.png in Resources */ = {isa = PBXBuildFile; fileRef = E06FCE0917A60852003F3FC6 /* security-political.png */; };
 		E06FCE0D17A60963003F3FC6 /* embassy-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E06FCE0C17A60963003F3FC6 /* embassy-icon.png */; };
@@ -242,7 +243,6 @@
 		7EA293B417A61863000A56E9 /* new-trip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new-trip@2x.png"; sourceTree = "<group>"; };
 		7EA293B617A77161000A56E9 /* LearnMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnMoreViewController.h; sourceTree = "<group>"; };
 		7EA293B717A77161000A56E9 /* LearnMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearnMoreViewController.m; sourceTree = "<group>"; };
-		7EA293B917A77B32000A56E9 /* health-screen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "health-screen@2x.png"; sourceTree = "<group>"; };
 		7ECD0425178BD7C500D6C34B /* HealthViewDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthViewDetailController.h; path = classes/HealthViewDetailController.h; sourceTree = "<group>"; };
 		7ECD0426178BD7C500D6C34B /* HealthViewDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthViewDetailController.m; path = classes/HealthViewDetailController.m; sourceTree = "<group>"; };
 		7ECD0428178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "descriptionAndSideEffectLogo@2x.png"; sourceTree = "<group>"; };
@@ -310,6 +310,8 @@
 		E04C4DB617A30FE2002A23F4 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
 		E04C4DB717A30FE2002A23F4 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		E04C4DBB17A3103E002A23F4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		E05C97EF17A86DE5007DF1C9 /* HealthScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HealthScreen.png; sourceTree = "<group>"; };
+		E05C97F017A86DE5007DF1C9 /* HealthScreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HealthScreen@2x.png"; sourceTree = "<group>"; };
 		E06FCE0817A60852003F3FC6 /* security-embassy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "security-embassy.png"; sourceTree = "<group>"; };
 		E06FCE0917A60852003F3FC6 /* security-political.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "security-political.png"; sourceTree = "<group>"; };
 		E06FCE0C17A60963003F3FC6 /* embassy-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "embassy-icon.png"; sourceTree = "<group>"; };
@@ -679,7 +681,8 @@
 		E03E0B6D17A74E1E00E344B8 /* Learn More */ = {
 			isa = PBXGroup;
 			children = (
-				7EA293B917A77B32000A56E9 /* health-screen@2x.png */,
+				E05C97EF17A86DE5007DF1C9 /* HealthScreen.png */,
+				E05C97F017A86DE5007DF1C9 /* HealthScreen@2x.png */,
 				E03E0B6E17A74E2B00E344B8 /* mexico-culture.png */,
 				E03E0B6F17A74E2B00E344B8 /* mexico-culture@2x.png */,
 				E03E0B7017A74E2B00E344B8 /* mexico-embassy.png */,
@@ -868,7 +871,8 @@
 				E03E0B7317A74E2B00E344B8 /* mexico-culture@2x.png in Resources */,
 				E03E0B7417A74E2B00E344B8 /* mexico-embassy.png in Resources */,
 				E03E0B7517A74E2B00E344B8 /* mexico-embassy@2x.png in Resources */,
-				7EA293BA17A77B32000A56E9 /* health-screen@2x.png in Resources */,
+				E05C97F117A86DE5007DF1C9 /* HealthScreen.png in Resources */,
+				E05C97F217A86DE5007DF1C9 /* HealthScreen@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
