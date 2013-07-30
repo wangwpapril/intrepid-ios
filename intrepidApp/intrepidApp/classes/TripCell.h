@@ -11,7 +11,7 @@
 
 @interface TripCell : UITableViewCell
 
-//@property (nonatomic, strong) UIImageView *tripImage;
+@property (nonatomic, strong) UIImageView *tripImage;
 @property (nonatomic, strong) UILabel *continentLabel;
 
 

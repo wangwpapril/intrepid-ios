@@ -258,7 +258,7 @@
         
         // handle views sliding
         
-        UIView *tableToBe = ((UIView *)[tableArray objectAtIndex:currentTab]);
+ //       UIView *tableToBe = ((UIView *)[tableArray objectAtIndex:currentTab]);
         
 //        tableToBe.frame = CGRectMake(0, 79, 320, self.view.frame.size.height - 79);
         
