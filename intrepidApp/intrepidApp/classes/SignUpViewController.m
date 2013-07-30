@@ -89,7 +89,7 @@
     underlinePassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline.png"]];
     [self.view addSubview:underlinePassword];
     
-    [addPhoto setBackgroundImage:[UIImage imageNamed:@"add-signup-photo.png"]
+    [addPhoto setBackgroundImage:[UIImage imageNamed:@"Add@2x.png"]
                         forState:UIControlStateNormal];
     [self.view addSubview:addPhoto];
     
