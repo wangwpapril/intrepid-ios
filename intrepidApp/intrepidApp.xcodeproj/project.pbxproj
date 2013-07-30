@@ -77,9 +77,6 @@
 		7EE44DB2179F79BA006BA2EC /* overview-history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DAF179F79BA006BA2EC /* overview-history@2x.png */; };
 		7EE44DB5179F7B24006BA2EC /* culture-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DB3179F7B24006BA2EC /* culture-icon@2x.png */; };
 		7EE44DB9179F7E30006BA2EC /* CurrencyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE44DB8179F7E30006BA2EC /* CurrencyItem.m */; };
-		E03D1E2C17A8306C00A15075 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E03D1E2817A8306C00A15075 /* .gitignore */; };
-		E03D1E2D17A8306C00A15075 /* DGTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E03D1E2A17A8306C00A15075 /* DGTextField.m */; };
-		E03D1E2E17A8306C00A15075 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E03D1E2B17A8306C00A15075 /* README.md */; };
 		E03E0B5617A7429400E344B8 /* Currency-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5417A7429400E344B8 /* Currency-Icon.png */; };
 		E03E0B5717A7429400E344B8 /* Currency-Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5517A7429400E344B8 /* Currency-Icon@2x.png */; };
 		E03E0B6117A7480600E344B8 /* Guada-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5917A7480600E344B8 /* Guada-icon.png */; };
@@ -264,10 +261,6 @@
 		7EE44DB3179F7B24006BA2EC /* culture-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "culture-icon@2x.png"; sourceTree = "<group>"; };
 		7EE44DB7179F7E30006BA2EC /* CurrencyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrencyItem.h; path = classes/CurrencyItem.h; sourceTree = "<group>"; };
 		7EE44DB8179F7E30006BA2EC /* CurrencyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrencyItem.m; path = classes/CurrencyItem.m; sourceTree = "<group>"; };
-		E03D1E2817A8306C00A15075 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		E03D1E2917A8306C00A15075 /* DGTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGTextField.h; sourceTree = "<group>"; };
-		E03D1E2A17A8306C00A15075 /* DGTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGTextField.m; sourceTree = "<group>"; };
-		E03D1E2B17A8306C00A15075 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		E03E0B5417A7429400E344B8 /* Currency-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Currency-Icon.png"; sourceTree = "<group>"; };
 		E03E0B5517A7429400E344B8 /* Currency-Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Currency-Icon@2x.png"; sourceTree = "<group>"; };
 		E03E0B5917A7480600E344B8 /* Guada-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada-icon.png"; sourceTree = "<group>"; };
@@ -450,7 +443,6 @@
 				E0B5825217A31D8100093130 /* app icon nonretina.png */,
 				E0B5825017A31D2C00093130 /* intrepid icon.png */,
 				E04C4DBB17A3103E002A23F4 /* libz.dylib */,
-				E03D1E2717A8306C00A15075 /* DGTextField */,
 				E04C4DB317A30FE1002A23F4 /* TestFlightSDK1.2.6 */,
 				688F9E621786262800CF850C /* QuartzCore.framework */,
 				6851221A17861138008DB6B6 /* intrepidApp */,
@@ -669,17 +661,6 @@
 			name = overview;
 			sourceTree = "<group>";
 		};
-		E03D1E2717A8306C00A15075 /* DGTextField */ = {
-			isa = PBXGroup;
-			children = (
-				E03D1E2817A8306C00A15075 /* .gitignore */,
-				E03D1E2917A8306C00A15075 /* DGTextField.h */,
-				E03D1E2A17A8306C00A15075 /* DGTextField.m */,
-				E03D1E2B17A8306C00A15075 /* README.md */,
-			);
-			path = DGTextField;
-			sourceTree = "<group>";
-		};
 		E03E0B5817A747AF00E344B8 /* Trips */ = {
 			isa = PBXGroup;
 			children = (
@@ -888,8 +869,6 @@
 				E03E0B7417A74E2B00E344B8 /* mexico-embassy.png in Resources */,
 				E03E0B7517A74E2B00E344B8 /* mexico-embassy@2x.png in Resources */,
 				7EA293BA17A77B32000A56E9 /* health-screen@2x.png in Resources */,
-				E03D1E2C17A8306C00A15075 /* .gitignore in Resources */,
-				E03D1E2E17A8306C00A15075 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -927,7 +906,6 @@
 				685B6F6217A617C20003B5D9 /* TripItem.m in Sources */,
 				7EA293B817A77161000A56E9 /* LearnMoreViewController.m in Sources */,
 				E08615F117A8224D00DE240B /* ForgotPasswordViewController.m in Sources */,
-				E03D1E2D17A8306C00A15075 /* DGTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
