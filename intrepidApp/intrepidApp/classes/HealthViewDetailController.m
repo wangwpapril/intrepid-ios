@@ -76,11 +76,10 @@
                       constrainedToSize:CGSizeMake(320, self.view.bounds.size.height-100)
                           lineBreakMode:NSLineBreakByWordWrapping];
     UITextView *descriptionText = [[UITextView alloc] initWithFrame:CGRectMake(0, 70,  320, size.height)];
-    descriptionText.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+    descriptionText.font = [UIFont fontWithName:@"ProximaNova-Light" size:14];
     descriptionText.backgroundColor = UIColorFromRGB(0xffffff);
-    descriptionText.textColor = UIColorFromRGB(0x423a38);
+    descriptionText.textColor = APP_TEXT_COLOR;//UIColorFromRGB(0x423a38);
     descriptionText.text = healthItem.description;
-    [descriptionText setAlpha:0.6];
     descriptionText.scrollEnabled = NO;
     descriptionText.editable = NO;
     descriptionText.layer.borderWidth = 1.0f;
@@ -108,11 +107,10 @@
                                          lineBreakMode:NSLineBreakByWordWrapping];
     
     UITextView *sideEffectsText = [[UITextView alloc] initWithFrame:CGRectMake(0, size.height + 105,  320, sideEffectsSize.height)];
-    sideEffectsText.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+    sideEffectsText.font = [UIFont fontWithName:@"ProximaNova-Light" size:14];
     sideEffectsText.backgroundColor = UIColorFromRGB(0xffffff);
-    sideEffectsText.textColor = UIColorFromRGB(0x423a38);
+    sideEffectsText.textColor = APP_TEXT_COLOR; //UIColorFromRGB(0x423a38);
     sideEffectsText.text = healthItem.details;
-    [sideEffectsText setAlpha:0.6];
     sideEffectsText.scrollEnabled = NO;
     sideEffectsText.editable = NO;
     sideEffectsText.layer.borderWidth = 1.0f;
@@ -141,11 +139,11 @@
                                                     lineBreakMode:NSLineBreakByWordWrapping];
 
         UITextView *transmissionTextContainer = [[UITextView alloc] initWithFrame:CGRectMake(0, sideEffectsText.frame.origin.y + transmissionSize.height + 35,  320, sideEffectsSize.height)];
-        transmissionTextContainer.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+        transmissionTextContainer.font = [UIFont fontWithName:@"ProximaNova-Light" size:14];
         transmissionTextContainer.backgroundColor = UIColorFromRGB(0xffffff);
-        transmissionTextContainer.textColor = UIColorFromRGB(0x423a38);
+        sideEffectsText.textColor = APP_TEXT_COLOR; //UIColorFromRGB(0x423a38);
         transmissionTextContainer.text = healthItem.details;
-        [transmissionTextContainer setAlpha:0.6];
+        //[transmissionTextContainer setAlpha:0.6];
         transmissionTextContainer.scrollEnabled = NO;
         transmissionTextContainer.editable = NO;
         transmissionTextContainer.layer.borderWidth = 1.0f;
@@ -171,11 +169,11 @@
                                                      lineBreakMode:NSLineBreakByWordWrapping];
 
         UITextView *immunizationTextContainer = [[UITextView alloc] initWithFrame:CGRectMake(0, transmissionTextContainer.frame.origin.y + immunizationSize.height + 35,  320, immunizationSize.height)];
-        immunizationTextContainer.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+        immunizationTextContainer.font = [UIFont fontWithName:@"ProximaNova-Light" size:14];
         immunizationTextContainer.backgroundColor = UIColorFromRGB(0xffffff);
-        immunizationTextContainer.textColor = UIColorFromRGB(0x423a38);
+        sideEffectsText.textColor = APP_TEXT_COLOR; //UIColorFromRGB(0x423a38);
         immunizationTextContainer.text = healthItem.details;
-        [immunizationTextContainer setAlpha:0.6];
+       // [immunizationTextContainer setAlpha:0.6];
         immunizationTextContainer.scrollEnabled = NO;
         immunizationTextContainer.editable = NO;
         immunizationTextContainer.layer.borderWidth = 1.0f;
