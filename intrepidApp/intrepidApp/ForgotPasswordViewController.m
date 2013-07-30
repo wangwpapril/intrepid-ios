@@ -35,13 +35,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-    //set up background
     UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"signUp-background.png"]];
     [self.view addSubview:backgroundView];
     
@@ -65,7 +58,14 @@
     
     underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline.png"]];
     [self.view addSubview:underlineEmail];
-        
+
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+    //set up background
 }
 
 # pragma mark - keyboard stuff

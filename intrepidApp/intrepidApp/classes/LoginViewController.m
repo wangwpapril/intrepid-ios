@@ -133,7 +133,7 @@
     // using text on button
     [forgotPassword setAttributedTitle: forgotPasswordString forState:UIControlStateNormal];
     [forgotPasswordString addAttribute:NSForegroundColorAttributeName value:UIColorFromRGB(0xd7503e) range:NSMakeRange(0,[forgotPasswordString length])];
-    forgotPassword.frame = CGRectMake(77, self.view.frame.size.height - 75, 166, 25);
+    forgotPassword.frame = CGRectMake(77, loginButton.frame.origin.y + 50, 166, 25);
     forgotPassword.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:12];
     forgotPassword.backgroundColor = [UIColor clearColor];
     
