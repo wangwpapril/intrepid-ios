@@ -137,6 +137,10 @@
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"myTrips"];
             break;
             
+        case 8:
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"settings"];
+            break;
+            
         default:
             break;
     }
