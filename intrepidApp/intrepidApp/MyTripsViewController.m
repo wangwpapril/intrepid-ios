@@ -9,12 +9,6 @@
 #import "MyTripsViewController.h"
 #import "Constants.h"
 
-
-@interface MyTripsViewController ()
-
-
-@end
-
 @implementation MyTripsViewController
 
 
