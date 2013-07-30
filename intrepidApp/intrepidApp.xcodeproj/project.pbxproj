@@ -85,6 +85,12 @@
 		E03E0B6617A7480600E344B8 /* Miami@2x-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5E17A7480600E344B8 /* Miami@2x-icon.png */; };
 		E03E0B6717A7480600E344B8 /* Puerto-Plata-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5F17A7480600E344B8 /* Puerto-Plata-icon.png */; };
 		E03E0B6817A7480600E344B8 /* Puerto-Plata-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B6017A7480600E344B8 /* Puerto-Plata-icon@2x.png */; };
+		E03E0B6B17A74D4F00E344B8 /* NMexico.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B6917A74D4F00E344B8 /* NMexico.png */; };
+		E03E0B6C17A74D4F00E344B8 /* NMexico@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B6A17A74D4F00E344B8 /* NMexico@2x.png */; };
+		E03E0B7217A74E2B00E344B8 /* mexico-culture.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B6E17A74E2B00E344B8 /* mexico-culture.png */; };
+		E03E0B7317A74E2B00E344B8 /* mexico-culture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B6F17A74E2B00E344B8 /* mexico-culture@2x.png */; };
+		E03E0B7417A74E2B00E344B8 /* mexico-embassy.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B7017A74E2B00E344B8 /* mexico-embassy.png */; };
+		E03E0B7517A74E2B00E344B8 /* mexico-embassy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B7117A74E2B00E344B8 /* mexico-embassy@2x.png */; };
 		E049C42D17A6DADB00B00B35 /* Altitude-Sickness@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42417A6DADB00B00B35 /* Altitude-Sickness@2x.png */; };
 		E049C42E17A6DADB00B00B35 /* Cholera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42517A6DADB00B00B35 /* Cholera@2x.png */; };
 		E049C42F17A6DADB00B00B35 /* Dengue-Fever@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42617A6DADB00B00B35 /* Dengue-Fever@2x.png */; };
@@ -259,6 +265,12 @@
 		E03E0B5E17A7480600E344B8 /* Miami@2x-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami@2x-icon.png"; sourceTree = "<group>"; };
 		E03E0B5F17A7480600E344B8 /* Puerto-Plata-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Plata-icon.png"; sourceTree = "<group>"; };
 		E03E0B6017A7480600E344B8 /* Puerto-Plata-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Plata-icon@2x.png"; sourceTree = "<group>"; };
+		E03E0B6917A74D4F00E344B8 /* NMexico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NMexico.png; sourceTree = "<group>"; };
+		E03E0B6A17A74D4F00E344B8 /* NMexico@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NMexico@2x.png"; sourceTree = "<group>"; };
+		E03E0B6E17A74E2B00E344B8 /* mexico-culture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mexico-culture.png"; sourceTree = "<group>"; };
+		E03E0B6F17A74E2B00E344B8 /* mexico-culture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mexico-culture@2x.png"; sourceTree = "<group>"; };
+		E03E0B7017A74E2B00E344B8 /* mexico-embassy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mexico-embassy.png"; sourceTree = "<group>"; };
+		E03E0B7117A74E2B00E344B8 /* mexico-embassy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mexico-embassy@2x.png"; sourceTree = "<group>"; };
 		E049C42417A6DADB00B00B35 /* Altitude-Sickness@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Altitude-Sickness@2x.png"; sourceTree = "<group>"; };
 		E049C42517A6DADB00B00B35 /* Cholera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cholera@2x.png"; sourceTree = "<group>"; };
 		E049C42617A6DADB00B00B35 /* Dengue-Fever@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dengue-Fever@2x.png"; sourceTree = "<group>"; };
@@ -505,8 +517,11 @@
 		688F9E6717862DFD00CF850C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E03E0B6D17A74E1E00E344B8 /* Learn More */,
 				E03E0B5817A747AF00E344B8 /* Trips */,
 				E0E9C7C917A6B8DB009FB594 /* Guada@2x.png */,
+				E03E0B6917A74D4F00E344B8 /* NMexico.png */,
+				E03E0B6A17A74D4F00E344B8 /* NMexico@2x.png */,
 				E0E9C7CA17A6B8DB009FB594 /* miami@2x.png */,
 				E0E9C7CB17A6B8DB009FB594 /* Puerto-Plata@2x.png */,
 				7EA293B417A61863000A56E9 /* new-trip@2x.png */,
@@ -647,6 +662,17 @@
 				E03E0B6017A7480600E344B8 /* Puerto-Plata-icon@2x.png */,
 			);
 			name = Trips;
+			sourceTree = "<group>";
+		};
+		E03E0B6D17A74E1E00E344B8 /* Learn More */ = {
+			isa = PBXGroup;
+			children = (
+				E03E0B6E17A74E2B00E344B8 /* mexico-culture.png */,
+				E03E0B6F17A74E2B00E344B8 /* mexico-culture@2x.png */,
+				E03E0B7017A74E2B00E344B8 /* mexico-embassy.png */,
+				E03E0B7117A74E2B00E344B8 /* mexico-embassy@2x.png */,
+			);
+			name = "Learn More";
 			sourceTree = "<group>";
 		};
 		E04C4DB317A30FE1002A23F4 /* TestFlightSDK1.2.6 */ = {
@@ -823,6 +849,12 @@
 				E03E0B6617A7480600E344B8 /* Miami@2x-icon.png in Resources */,
 				E03E0B6717A7480600E344B8 /* Puerto-Plata-icon.png in Resources */,
 				E03E0B6817A7480600E344B8 /* Puerto-Plata-icon@2x.png in Resources */,
+				E03E0B6B17A74D4F00E344B8 /* NMexico.png in Resources */,
+				E03E0B6C17A74D4F00E344B8 /* NMexico@2x.png in Resources */,
+				E03E0B7217A74E2B00E344B8 /* mexico-culture.png in Resources */,
+				E03E0B7317A74E2B00E344B8 /* mexico-culture@2x.png in Resources */,
+				E03E0B7417A74E2B00E344B8 /* mexico-embassy.png in Resources */,
+				E03E0B7517A74E2B00E344B8 /* mexico-embassy@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

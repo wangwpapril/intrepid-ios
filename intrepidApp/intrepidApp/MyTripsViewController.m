@@ -48,8 +48,8 @@
     scrollView.pagingEnabled = YES;
     
     //create array for images
-    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"new-trip.png", @"mexico-city@2x.png", @"Guada@2x.png", @"miami@2x.png", nil];
-    NSArray *nameArray = [[NSMutableArray alloc] initWithObjects:@" ", @"Mexico City", @"Guadalajara", @"Miami", nil];
+    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"new-trip.png", @"NMexico@2x.png", @"Guada@2x.png", @"miami@2x.png", @"Puerto-Plata@2x.png", nil];
+    NSArray *nameArray = [[NSMutableArray alloc] initWithObjects:@" ", @"Mexico City", @"Guadalajara", @"Miami", @"Puerto Plata", nil];
     
     for (int i=0; i < [imageArray count]; i++) {
         CGRect frame;
@@ -98,14 +98,23 @@
     miamiCityName.text = @"Miami";
     [scrollView addSubview:miamiCityName];
     
+    UILabel *puertoplataCityName = [[UILabel alloc] init];
+    puertoplataCityName.frame = CGRectMake(1390, self.view.frame.size.height - 200, 100.0, 100.0);
+    puertoplataCityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
+    puertoplataCityName.backgroundColor = [UIColor clearColor];
+    puertoplataCityName.textColor = [UIColor whiteColor];
+    [puertoplataCityName setTextAlignment:NSTextAlignmentCenter];
+    puertoplataCityName.text = @"Puerto Plata";
+    [scrollView addSubview:puertoplataCityName];
+    
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * [imageArray count], 366.0);
     
     [self.view addSubview:scrollView];
     
     pageControl.frame = CGRectMake(135, self.view.frame.size.height - 100, 50, 50);
-    pageControl.numberOfPages = 4;
+    pageControl.numberOfPages = 5;
     pageControl.currentPage = 0;
-    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    pageControl.pageIndicatorTintColor = [UIColor darkGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     [self.view addSubview:pageControl];
     
@@ -122,6 +131,7 @@
     [city addObject:@"Mexico City"];
     [city addObject:@"Guadalajara"];
     [city addObject:@"Miami"];
+    [city addObject:@"Puerto Plata"];
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)sender {
