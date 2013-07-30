@@ -66,7 +66,13 @@
             toTrips.frame = imageView.frame;
             [toTrips addTarget:self action:@selector(toTrips) forControlEvents:UIControlEventTouchUpInside];
             [scrollView addSubview:toTrips];       
-        }        
+        }
+        else {
+            UIButton *toSecurity = [UIButton buttonWithType:UIButtonTypeCustom];
+            toSecurity.frame = imageView.frame;
+            [toSecurity addTarget:self action:@selector(toSecurity) forControlEvents:UIControlEventTouchUpInside];
+            [scrollView addSubview:toSecurity];
+        }
     }
     
     UILabel *mexicoCityName = [[UILabel alloc] init];
@@ -120,6 +126,11 @@
 
 -(void)toTrips {
     UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"trips"];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+-(void)toSecurity {
+    UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"security"];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
