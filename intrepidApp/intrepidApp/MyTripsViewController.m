@@ -48,8 +48,8 @@
     scrollView.pagingEnabled = YES;
     
     //create array for images
-    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"new-trip.png", @"mexico-city.png", @"Guada@2x.png", @"miami@2x.png", nil];
-    NSArray *nameArray = [[NSMutableArray alloc] initWithObjects:@" ", @"Mexico City", @"Guada", @"miami", nil];
+    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"new-trip.png", @"mexico-city@2x.png", @"Guada@2x.png", @"miami@2x.png", nil];
+    NSArray *nameArray = [[NSMutableArray alloc] initWithObjects:@" ", @"Mexico City", @"Guadalajara", @"Miami", nil];
     
     for (int i=0; i < [imageArray count]; i++) {
         CGRect frame;
@@ -86,7 +86,7 @@
     guadaCityName.backgroundColor = [UIColor clearColor];
     guadaCityName.textColor = [UIColor whiteColor];
     [guadaCityName setTextAlignment:NSTextAlignmentCenter];
-    guadaCityName.text = @"Guada";
+    guadaCityName.text = @"Guadalajara";
     [scrollView addSubview:guadaCityName];
     
     UILabel *miamiCityName = [[UILabel alloc] init];

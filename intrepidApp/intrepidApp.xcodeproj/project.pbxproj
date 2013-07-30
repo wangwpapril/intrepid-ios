@@ -74,12 +74,7 @@
 		7EE44DB1179F79BA006BA2EC /* overview-currency@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DAE179F79BA006BA2EC /* overview-currency@2x.png */; };
 		7EE44DB2179F79BA006BA2EC /* overview-history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DAF179F79BA006BA2EC /* overview-history@2x.png */; };
 		7EE44DB5179F7B24006BA2EC /* culture-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DB3179F7B24006BA2EC /* culture-icon@2x.png */; };
-		7EE44DB6179F7B24006BA2EC /* currency-label@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DB4179F7B24006BA2EC /* currency-label@2x.png */; };
 		7EE44DB9179F7E30006BA2EC /* CurrencyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE44DB8179F7E30006BA2EC /* CurrencyItem.m */; };
-		7EE44DBE179F7FF5006BA2EC /* american-flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DBA179F7FF5006BA2EC /* american-flag@2x.png */; };
-		7EE44DBF179F7FF5006BA2EC /* brasil-flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DBB179F7FF5006BA2EC /* brasil-flag@2x.png */; };
-		7EE44DC0179F7FF5006BA2EC /* canadian-flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DBC179F7FF5006BA2EC /* canadian-flag@2x.png */; };
-		7EE44DC1179F7FF5006BA2EC /* great-britain-flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DBD179F7FF5006BA2EC /* great-britain-flag@2x.png */; };
 		E049C42D17A6DADB00B00B35 /* Altitude-Sickness@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42417A6DADB00B00B35 /* Altitude-Sickness@2x.png */; };
 		E049C42E17A6DADB00B00B35 /* Cholera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42517A6DADB00B00B35 /* Cholera@2x.png */; };
 		E049C42F17A6DADB00B00B35 /* Dengue-Fever@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42617A6DADB00B00B35 /* Dengue-Fever@2x.png */; };
@@ -242,13 +237,8 @@
 		7EE44DAE179F79BA006BA2EC /* overview-currency@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overview-currency@2x.png"; sourceTree = "<group>"; };
 		7EE44DAF179F79BA006BA2EC /* overview-history@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overview-history@2x.png"; sourceTree = "<group>"; };
 		7EE44DB3179F7B24006BA2EC /* culture-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "culture-icon@2x.png"; sourceTree = "<group>"; };
-		7EE44DB4179F7B24006BA2EC /* currency-label@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "currency-label@2x.png"; sourceTree = "<group>"; };
 		7EE44DB7179F7E30006BA2EC /* CurrencyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrencyItem.h; path = classes/CurrencyItem.h; sourceTree = "<group>"; };
 		7EE44DB8179F7E30006BA2EC /* CurrencyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrencyItem.m; path = classes/CurrencyItem.m; sourceTree = "<group>"; };
-		7EE44DBA179F7FF5006BA2EC /* american-flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "american-flag@2x.png"; sourceTree = "<group>"; };
-		7EE44DBB179F7FF5006BA2EC /* brasil-flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brasil-flag@2x.png"; sourceTree = "<group>"; };
-		7EE44DBC179F7FF5006BA2EC /* canadian-flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canadian-flag@2x.png"; sourceTree = "<group>"; };
-		7EE44DBD179F7FF5006BA2EC /* great-britain-flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "great-britain-flag@2x.png"; sourceTree = "<group>"; };
 		E049C42417A6DADB00B00B35 /* Altitude-Sickness@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Altitude-Sickness@2x.png"; sourceTree = "<group>"; };
 		E049C42517A6DADB00B00B35 /* Cholera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cholera@2x.png"; sourceTree = "<group>"; };
 		E049C42617A6DADB00B00B35 /* Dengue-Fever@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dengue-Fever@2x.png"; sourceTree = "<group>"; };
@@ -613,12 +603,7 @@
 				E0BF3BF517A7399D00241A52 /* THB@2x.png */,
 				E0BF3BF617A7399D00241A52 /* USD.png */,
 				E0BF3BF717A7399D00241A52 /* USD@2x.png */,
-				7EE44DBA179F7FF5006BA2EC /* american-flag@2x.png */,
-				7EE44DBB179F7FF5006BA2EC /* brasil-flag@2x.png */,
-				7EE44DBC179F7FF5006BA2EC /* canadian-flag@2x.png */,
-				7EE44DBD179F7FF5006BA2EC /* great-britain-flag@2x.png */,
 				7EE44DB3179F7B24006BA2EC /* culture-icon@2x.png */,
-				7EE44DB4179F7B24006BA2EC /* currency-label@2x.png */,
 				7EE44DAD179F79BA006BA2EC /* overview-culture@2x.png */,
 				7EE44DAE179F79BA006BA2EC /* overview-currency@2x.png */,
 				7EE44DAF179F79BA006BA2EC /* overview-history@2x.png */,
@@ -722,11 +707,6 @@
 				7EE44DB1179F79BA006BA2EC /* overview-currency@2x.png in Resources */,
 				7EE44DB2179F79BA006BA2EC /* overview-history@2x.png in Resources */,
 				7EE44DB5179F7B24006BA2EC /* culture-icon@2x.png in Resources */,
-				7EE44DB6179F7B24006BA2EC /* currency-label@2x.png in Resources */,
-				7EE44DBE179F7FF5006BA2EC /* american-flag@2x.png in Resources */,
-				7EE44DBF179F7FF5006BA2EC /* brasil-flag@2x.png in Resources */,
-				7EE44DC0179F7FF5006BA2EC /* canadian-flag@2x.png in Resources */,
-				7EE44DC1179F7FF5006BA2EC /* great-britain-flag@2x.png in Resources */,
 				7E1C92CB17A1F56B00878249 /* underline@2x.png in Resources */,
 				E04C4DB917A30FE2002A23F4 /* README.md in Resources */,
 				E04C4DBA17A30FE2002A23F4 /* release_notes.md in Resources */,
