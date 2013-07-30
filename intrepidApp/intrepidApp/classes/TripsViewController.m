@@ -51,7 +51,13 @@
     TripItem *trip2 = [[TripItem alloc] init];
     trip2.city = @"Miami";
     trip2.continent = @"North America";
-    tripsArray = [NSArray arrayWithObjects:trip1, trip2, nil];
+    TripItem *trip3 = [[TripItem alloc] init];
+    trip3.city = @"Mexico City";
+    trip3.continent = @"North America";
+    TripItem *trip4 = [[TripItem alloc] init];
+    trip4.city = @"Puerto Plata";
+    trip4.continent = @"North America";
+    tripsArray = [NSArray arrayWithObjects:trip1, trip2, trip3, trip4, nil];
     filteredArray = [NSMutableArray new];
 }
 
