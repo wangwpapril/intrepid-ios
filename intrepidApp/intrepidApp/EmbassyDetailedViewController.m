@@ -47,7 +47,7 @@
     [self addContent];
     
     //Description and Side Effects images
-    UIImageView  *descriptionImageLabel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"stethoscope-pic.png"]];
+    UIImageView  *descriptionImageLabel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"embassy-icon.png"]];
     descriptionImageLabel.frame = CGRectMake(5, 40, 25, 25);
     [scrollView addSubview:descriptionImageLabel];
     
