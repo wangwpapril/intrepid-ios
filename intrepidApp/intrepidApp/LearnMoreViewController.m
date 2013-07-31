@@ -57,10 +57,11 @@
     
     for (int i=0; i < [imageArray count]; i++) {
         CGRect frame;
-        frame.origin.x = (scrollView.frame.size.width) * i + 49;
-        frame.origin.y = scrollView.frame.origin.y + 50;
         NSInteger height = scrollView.frame.size.height - 150.0;
-        NSInteger width = height * 0.7322;
+        NSInteger width = height * 0.6525;
+        frame.origin.x = 320 * i + (320 - width)/2;
+        frame.origin.y = scrollView.frame.origin.y + 50;
+        //0.7322;
         frame.size = CGSizeMake(width, height);
                 
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
@@ -79,7 +80,8 @@
     pageControl.currentPage = 0;
     pageControl.pageIndicatorTintColor = [UIColor darkGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
-    [self.view addSubview:pageControl];    
+    [self.view addSubview:pageControl];
+    
     
 }
 
