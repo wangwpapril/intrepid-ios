@@ -45,7 +45,7 @@
     
     //Initalize the Labels
     UILabel *nameLabel = [[UILabel alloc] init];
-    nameLabel.frame = CGRectMake(25, 50, 150, 20);
+    nameLabel.frame = CGRectMake(25, 150, 150, 20);
     nameLabel.backgroundColor = [UIColor clearColor];
     nameLabel.font = [UIFont fontWithName:@"ProximaNova-Bold" size:18];
     nameLabel.textColor = [UIColor whiteColor];
@@ -54,7 +54,7 @@
     [self.view addSubview:nameLabel];
     
     UILabel *emailLabel = [[UILabel alloc] init];
-    emailLabel.frame = CGRectMake(25, 50, 150, 20);
+    emailLabel.frame = CGRectMake(25, 200, 150, 20);
     emailLabel.backgroundColor = [UIColor clearColor];
     emailLabel.font = [UIFont fontWithName:@"ProximaNova-Bold" size:18];
     emailLabel.textColor = [UIColor whiteColor];
@@ -63,7 +63,7 @@
     [self.view addSubview:emailLabel];
     
     UILabel *passwordLabel = [[UILabel alloc] init];
-    passwordLabel.frame = CGRectMake(25, 50, 150, 20);
+    passwordLabel.frame = CGRectMake(25, 250, 150, 20);
     passwordLabel.backgroundColor = [UIColor clearColor];
     passwordLabel.font = [UIFont fontWithName:@"ProximaNova-Bold" size:18];
     passwordLabel.textColor = [UIColor whiteColor];
@@ -84,7 +84,7 @@
     
     UILabel *underlineName = [[UILabel alloc] init];
     underlineName.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1.png"]];
-    underlineName.frame = CGRectMake(25, 60, 300, 1);
+    underlineName.frame = CGRectMake(25, 175, 300, 1);
     [self.view addSubview:underlineName];
     
     UITextField *email = [[UITextField alloc] init];
@@ -98,7 +98,7 @@
     
     UILabel *underlineEmail = [[UILabel alloc] init];
     underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1.png"]];
-    underlineEmail.frame = CGRectMake(25, 150, 300, 1);
+    underlineEmail.frame = CGRectMake(25, 225, 300, 1);
     [self.view addSubview:underlineEmail];
     
     UITextField *password = [[UITextField alloc] init];
@@ -112,7 +112,7 @@
     
     UILabel *underlinePassword = [[UILabel alloc] init];
     underlinePassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1.png"]];
-    underlinePassword.frame = CGRectMake(25, 250, 300, 1);
+    underlinePassword.frame = CGRectMake(25, 275, 300, 1);
     [self.view addSubview:underlinePassword];
     
     //Initalize the Sign Out button
