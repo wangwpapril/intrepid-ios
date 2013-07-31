@@ -77,6 +77,8 @@
 		7EE44DB2179F79BA006BA2EC /* overview-history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DAF179F79BA006BA2EC /* overview-history@2x.png */; };
 		7EE44DB5179F7B24006BA2EC /* culture-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DB3179F7B24006BA2EC /* culture-icon@2x.png */; };
 		7EE44DB9179F7E30006BA2EC /* CurrencyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE44DB8179F7E30006BA2EC /* CurrencyItem.m */; };
+		E02BBA0817A880CA00215CEA /* EmbassyDetailedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E02BBA0717A880CA00215CEA /* EmbassyDetailedItem.m */; };
+		E02BBA0B17A8845300215CEA /* EmbassyDetailedContent.m in Sources */ = {isa = PBXBuildFile; fileRef = E02BBA0A17A8845300215CEA /* EmbassyDetailedContent.m */; };
 		E03E0B5617A7429400E344B8 /* Currency-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5417A7429400E344B8 /* Currency-Icon.png */; };
 		E03E0B5717A7429400E344B8 /* Currency-Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5517A7429400E344B8 /* Currency-Icon@2x.png */; };
 		E03E0B6117A7480600E344B8 /* Guada-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5917A7480600E344B8 /* Guada-icon.png */; };
@@ -272,6 +274,10 @@
 		7EE44DB3179F7B24006BA2EC /* culture-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "culture-icon@2x.png"; sourceTree = "<group>"; };
 		7EE44DB7179F7E30006BA2EC /* CurrencyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrencyItem.h; path = classes/CurrencyItem.h; sourceTree = "<group>"; };
 		7EE44DB8179F7E30006BA2EC /* CurrencyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrencyItem.m; path = classes/CurrencyItem.m; sourceTree = "<group>"; };
+		E02BBA0617A880CA00215CEA /* EmbassyDetailedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbassyDetailedItem.h; sourceTree = "<group>"; };
+		E02BBA0717A880CA00215CEA /* EmbassyDetailedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbassyDetailedItem.m; sourceTree = "<group>"; };
+		E02BBA0917A8845200215CEA /* EmbassyDetailedContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbassyDetailedContent.h; sourceTree = "<group>"; };
+		E02BBA0A17A8845300215CEA /* EmbassyDetailedContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbassyDetailedContent.m; sourceTree = "<group>"; };
 		E03E0B5417A7429400E344B8 /* Currency-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Currency-Icon.png"; sourceTree = "<group>"; };
 		E03E0B5517A7429400E344B8 /* Currency-Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Currency-Icon@2x.png"; sourceTree = "<group>"; };
 		E03E0B5917A7480600E344B8 /* Guada-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada-icon.png"; sourceTree = "<group>"; };
@@ -585,10 +591,14 @@
 				68B071E817A4D3FC0061E418 /* SecurityViewController.m */,
 				68B071EA17A4D7290061E418 /* EmbassyCell.h */,
 				68B071EB17A4D7290061E418 /* EmbassyCell.m */,
-				E058778217A8768500E42A78 /* EmbassyDetailedViewController.h */,
-				E058778317A8768500E42A78 /* EmbassyDetailedViewController.m */,
 				68B071ED17A4D7430061E418 /* EmbassyItem.h */,
 				68B071EE17A4D7430061E418 /* EmbassyItem.m */,
+				E02BBA0617A880CA00215CEA /* EmbassyDetailedItem.h */,
+				E02BBA0717A880CA00215CEA /* EmbassyDetailedItem.m */,
+				E02BBA0917A8845200215CEA /* EmbassyDetailedContent.h */,
+				E02BBA0A17A8845300215CEA /* EmbassyDetailedContent.m */,
+				E058778217A8768500E42A78 /* EmbassyDetailedViewController.h */,
+				E058778317A8768500E42A78 /* EmbassyDetailedViewController.m */,
 			);
 			name = Security;
 			sourceTree = "<group>";
@@ -956,6 +966,8 @@
 				7E9A130917A86D0C0082003C /* TermsServicePrivacyPolicyViewController.m in Sources */,
 				7E9A130C17A876FF0082003C /* SettingsViewController.m in Sources */,
 				E058778417A8768500E42A78 /* EmbassyDetailedViewController.m in Sources */,
+				E02BBA0817A880CA00215CEA /* EmbassyDetailedItem.m in Sources */,
+				E02BBA0B17A8845300215CEA /* EmbassyDetailedContent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
