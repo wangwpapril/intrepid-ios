@@ -57,11 +57,12 @@
     
     for (int i=0; i < [imageArray count]; i++) {
         CGRect frame;
-        frame.origin.x = (scrollView.frame.size.width) * i + 45;
-        frame.origin.y = scrollView.frame.origin.y + 55;
-        frame.size = CGSizeMake(234, scrollView.frame.size.height - 182.0);
-        
-        
+        frame.origin.x = (scrollView.frame.size.width) * i + 49;
+        frame.origin.y = scrollView.frame.origin.y + 50;
+        NSInteger height = scrollView.frame.size.height - 150.0;
+        NSInteger width = height * 0.7322;
+        frame.size = CGSizeMake(width, height);
+                
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
         imageView.image = [UIImage imageNamed:[imageArray objectAtIndex:i]];
         [scrollView addSubview:imageView];
@@ -73,7 +74,7 @@
     
     [self.view addSubview:scrollView];
     
-    pageControl.frame = CGRectMake(135, self.view.frame.size.height - 75, 50, 50);
+    pageControl.frame = CGRectMake(135, self.view.frame.size.height - 40, 50, 50);
     pageControl.numberOfPages = 4;
     pageControl.currentPage = 0;
     pageControl.pageIndicatorTintColor = [UIColor darkGrayColor];
@@ -85,7 +86,7 @@
 
 -(void)populateDescriptions {
     UILabel *mexicoEmbassyDescription = [[UILabel alloc] init];
-    mexicoEmbassyDescription.frame = CGRectMake(37, self.view.frame.size.height - 220, 250.0, 250.0);
+    mexicoEmbassyDescription.frame = CGRectMake(37, self.view.frame.size.height - 200, 250.0, 250.0);
     mexicoEmbassyDescription.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
     mexicoEmbassyDescription.backgroundColor = [UIColor clearColor];
     mexicoEmbassyDescription.textColor = [UIColor whiteColor];
@@ -96,7 +97,7 @@
     [scrollView addSubview:mexicoEmbassyDescription];
     
     UILabel *healthOverviewDescription = [[UILabel alloc] init];
-    healthOverviewDescription.frame = CGRectMake(345, self.view.frame.size.height - 225, 275.0, 275.0);
+    healthOverviewDescription.frame = CGRectMake(345, self.view.frame.size.height - 200, 275.0, 275.0);
     healthOverviewDescription.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
     healthOverviewDescription.backgroundColor = [UIColor clearColor];
     healthOverviewDescription.textColor = [UIColor whiteColor];
@@ -107,7 +108,7 @@
     [scrollView addSubview:healthOverviewDescription];
     
     UILabel *mexicoCultureDescription = [[UILabel alloc] init];
-    mexicoCultureDescription.frame = CGRectMake(677, self.view.frame.size.height - 220, 250.0, 250.0);
+    mexicoCultureDescription.frame = CGRectMake(677, self.view.frame.size.height - 200, 250.0, 250.0);
     mexicoCultureDescription.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
     mexicoCultureDescription.backgroundColor = [UIColor clearColor];
     mexicoCultureDescription.textColor = [UIColor whiteColor];
@@ -118,7 +119,7 @@
     [scrollView addSubview:mexicoCultureDescription];
     
     UILabel *assistanceScreenDescription = [[UILabel alloc] init];
-    assistanceScreenDescription.frame = CGRectMake(980, self.view.frame.size.height - 220, 250.0, 250.0);
+    assistanceScreenDescription.frame = CGRectMake(980, self.view.frame.size.height - 200, 250.0, 250.0);
     assistanceScreenDescription.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
     assistanceScreenDescription.backgroundColor = [UIColor clearColor];
     assistanceScreenDescription.textColor = [UIColor whiteColor];
