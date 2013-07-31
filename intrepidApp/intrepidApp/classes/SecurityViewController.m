@@ -11,12 +11,14 @@
 #import "EmbassyCell.h"
 #import "EmbassyItem.h"
 #import "Constants.h"
+#import "EmbassyDetailedViewController.h"
 
 
 @implementation SecurityViewController
 
 @synthesize tableList;
 @synthesize embassyArray;
+@synthesize selectedItem;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -112,6 +114,12 @@
     }
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    EmbassyDetailedViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"embassyDetailed"];
+    viewController.embassyDetailedItem = selectedItem;
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 

@@ -7,10 +7,12 @@
 //
 
 #import "SliderTabViewController.h"
+#import "EmbassyDetailedViewController.h"
 
 @interface SecurityViewController : SliderTabViewController <UITableViewDataSource, UITableViewDelegate>
 
 
 @property (nonatomic, strong) UITableView *tableList;
 @property (nonatomic, strong) NSArray *embassyArray;
+@property (nonatomic, strong) EmbassyDetailedItem *selectedItem;
 @end

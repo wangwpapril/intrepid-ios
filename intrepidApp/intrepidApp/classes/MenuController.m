@@ -18,6 +18,9 @@
 @synthesize viewHeight;
 @synthesize botPosition;
 @synthesize hiding;
+@synthesize arrow;
+@synthesize upRight;
+@synthesize flipped;
 
 -(void)displayMenuWithParent:(UIViewController *)controller {
     parentController = controller;
@@ -27,13 +30,20 @@
     botPosition = CGRectMake(0, viewHeight - 25, 320, 246); // was 206
     menu = [[UIImageView alloc] initWithFrame:botPosition];
     hiding = true;
-    menu.image = [UIImage imageNamed:@"newMenuBack.png"];
+    menu.image = [UIImage imageNamed:@"newMenuBack2.png"];
     menu.layer.zPosition = MAXFLOAT;
     [self addContentButtons];
     menu.userInteractionEnabled = YES;
     UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleDrag:)];
     [menu addGestureRecognizer:recognizer];
     [controller.view addSubview:menu];
+    
+    // add arrow
+    arrow = [[UIImageView alloc] initWithFrame:CGRectMake(156, 4, 9, 4)]; // 9 4
+    upRight = [UIImage imageNamed:@"menuArrow.png"];
+    flipped = [UIImage imageWithCGImage:upRight.CGImage scale:1.0 orientation:UIImageOrientationDown];
+    arrow.image = upRight;
+    [menu addSubview:arrow];
     
 }
 
@@ -60,6 +70,7 @@
             menu.frame = CGRectMake(0, viewHeight - 246, 320, 246);
         }];
         hiding = false;
+        arrow.image = flipped;
     }
 }
 
@@ -69,6 +80,7 @@
                             menu.frame = botPosition;
                         }];
         hiding = true;
+        arrow.image = upRight;
     }
 }
 -(void)addContentButtons {
@@ -117,7 +129,7 @@
             
         case 4:
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
-            [((WebViewController *)viewController) setupWithTitle:@"Clinics" withURL:@"http://m.intrepid247.com/m/ppn?region=latinamerica&country=Mexico&city=mexico"];
+            [((WebViewController *)viewController) setupWithTitle:@"Clinics" withURL:@"http://m.intrepid247.com/m/ppn?region=latinamerica&country=Mexico&city=mexico%20city"];
             viewController.view.tag = 4;
             break;
 

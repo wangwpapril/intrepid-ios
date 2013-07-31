@@ -14,6 +14,9 @@
 @property (nonatomic, strong) UIImageView *menu;
 @property (nonatomic) NSInteger viewHeight;
 @property (nonatomic) CGRect botPosition;
+@property (nonatomic, strong) UIImageView *arrow;
+@property (nonatomic, strong) UIImage *upRight;
+@property (nonatomic, strong) UIImage *flipped;
 @property (nonatomic) BOOL hiding;
 
 -(void)displayMenuWithParent:(UIViewController *)controller;
