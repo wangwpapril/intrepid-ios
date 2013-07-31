@@ -48,12 +48,14 @@
     //create array for images
     NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"new-trip.png", @"NMexico@2x.png", @"Guada@2x.png", @"miami@2x.png", @"Puerto-Plata@2x.png", nil];
     NSArray *nameArray = [[NSMutableArray alloc] initWithObjects:@" ", @"Mexico City", @"Guadalajara", @"Miami", @"Puerto Plata", nil];
-    
+    NSInteger height = scrollView.frame.size.height - 150.0;
+    NSInteger width = height * 0.7322;
     for (int i=0; i < [imageArray count]; i++) {
         CGRect frame;
-        frame.origin.x = (scrollView.frame.size.width) * i + 45;
+        frame.origin.x = 320 * i + (320 - width)/2;
         frame.origin.y = scrollView.frame.origin.y + 15;
-        frame.size = CGSizeMake(234, scrollView.frame.size.height - 182.0);
+        
+        frame.size = CGSizeMake(width, height);
         
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
@@ -76,7 +78,7 @@
     }
     
     UILabel *mexicoCityName = [[UILabel alloc] init];
-    mexicoCityName.frame = CGRectMake(430, self.view.frame.size.height - 200, 100.0, 100.0);
+    mexicoCityName.frame = CGRectMake(430, self.view.frame.size.height - 160, 100.0, 100.0);
     mexicoCityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
     mexicoCityName.backgroundColor = [UIColor clearColor];
     mexicoCityName.textColor = [UIColor whiteColor];
@@ -85,7 +87,7 @@
     [scrollView addSubview:mexicoCityName];
     
     UILabel *guadaCityName = [[UILabel alloc] init];
-    guadaCityName.frame = CGRectMake(750, self.view.frame.size.height - 200, 100.0, 100.0);
+    guadaCityName.frame = CGRectMake(750, self.view.frame.size.height - 160, 100.0, 100.0);
     guadaCityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
     guadaCityName.backgroundColor = [UIColor clearColor];
     guadaCityName.textColor = [UIColor whiteColor];
@@ -94,7 +96,7 @@
     [scrollView addSubview:guadaCityName];
     
     UILabel *miamiCityName = [[UILabel alloc] init];
-    miamiCityName.frame = CGRectMake(1070, self.view.frame.size.height - 200, 100.0, 100.0);
+    miamiCityName.frame = CGRectMake(1070, self.view.frame.size.height - 160, 100.0, 100.0);
     miamiCityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
     miamiCityName.backgroundColor = [UIColor clearColor];
     miamiCityName.textColor = [UIColor whiteColor];
@@ -103,7 +105,7 @@
     [scrollView addSubview:miamiCityName];
     
     UILabel *puertoplataCityName = [[UILabel alloc] init];
-    puertoplataCityName.frame = CGRectMake(1390, self.view.frame.size.height - 200, 100.0, 100.0);
+    puertoplataCityName.frame = CGRectMake(1390, self.view.frame.size.height - 160, 100.0, 100.0);
     puertoplataCityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
     puertoplataCityName.backgroundColor = [UIColor clearColor];
     puertoplataCityName.textColor = [UIColor whiteColor];
