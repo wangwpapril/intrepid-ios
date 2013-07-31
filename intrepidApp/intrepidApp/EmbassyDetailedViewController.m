@@ -23,7 +23,6 @@
 @synthesize embassyDetailedItem;
 
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -33,7 +32,7 @@
     CGRect imageFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     CGRect whiteFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     UIImageView *myImageView = [[UIImageView alloc] initWithFrame:imageFrame];
-    [self.view addSubview:myImageView];
+    [self.view addSubview: myImageView];
     UIView *whiteLayer = [[UIView alloc] initWithFrame:whiteFrame];
     whiteLayer.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:whiteLayer];

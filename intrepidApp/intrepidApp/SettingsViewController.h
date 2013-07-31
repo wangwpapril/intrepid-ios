@@ -10,4 +10,16 @@
 
 @interface SettingsViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *addPhoto;
+@property (weak, nonatomic) IBOutlet UITextField *name;
+@property (weak, nonatomic) IBOutlet UITextField *email;
+@property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UIButton *signOutButton;
+
+@property (weak, nonatomic) IBOutlet UILabel *underlineName;
+@property (weak, nonatomic) IBOutlet UILabel *underlineEmail;
+@property (weak, nonatomic) IBOutlet UILabel *underlinePassword;
+@property (weak, nonatomic) IBOutlet UILabel *acceptanceLabel;
+
+
 @end
