@@ -27,9 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
-    
+	// Do any additional setup after loading the view.        
     CGRect imageFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     CGRect whiteFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     UIImageView *myImageView = [[UIImageView alloc] initWithFrame:imageFrame];
@@ -44,13 +42,12 @@
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.scrollEnabled = YES;
     
-    [self addContent];
-    
     //Description and Side Effects images
     UIImageView  *descriptionImageLabel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"embassy-icon.png"]];
     descriptionImageLabel.frame = CGRectMake(5, 40, 25, 25);
     [scrollView addSubview:descriptionImageLabel];
     
+    [self addContent];
     
     // Set Header label
 //    embassyDetailedItemTitleLabel.backgroundColor = NAVIGATION_BG_COLOR;
@@ -65,26 +62,27 @@
     [embassyDetailedItemTitleLabel addSubview:embassyDetailedItemNameLabel];
     [self.view addSubview:embassyDetailedItemTitleLabel];
     [self.view addSubview:scrollView];
+
     
 	// Do any additional setup after loading the view.
 }
 
 - (void)addContent {
     
-    UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, -5, 120, 120)]; // rly
-    descriptionLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
+    UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, -5, 120, 120)];    descriptionLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
     descriptionLabel.backgroundColor = [UIColor clearColor];
 //    descriptionLabel.textColor = UIColorFromRGB(0x423a38);
     descriptionLabel.text = @"Description";
     
     //Set descriptionText to auto-fit content
-    CGSize size = [embassyDetailedItem.description sizeWithFont:[UIFont systemFontOfSize:15]
-                                     constrainedToSize:CGSizeMake(320, self.view.bounds.size.height-100)
-                                         lineBreakMode:NSLineBreakByWordWrapping];
-    UITextView *descriptionText = [[UITextView alloc] initWithFrame:CGRectMake(0, 70,  320, size.height)];
+//    CGSize size = [embassyDetailedItem.description sizeWithFont:[UIFont systemFontOfSize:14]
+//                                     constrainedToSize:CGSizeMake(320, 250)
+//                                         lineBreakMode:NSLineBreakByWordWrapping];
+    UITextView *descriptionText = [[UITextView alloc] initWithFrame:CGRectMake(0, 150,  320, 150)];
     descriptionText.font = [UIFont fontWithName:@"ProximaNova-Light" size:14];
 //    descriptionText.backgroundColor = UIColorFromRGB(0xffffff);
 //    descriptionText.textColor = APP_TEXT_COLOR;//UIColorFromRGB(0x423a38);
+    descriptionText.textColor = [UIColor blackColor];
     descriptionText.text = embassyDetailedItem.description;
     descriptionText.scrollEnabled = NO;
     descriptionText.editable = NO;
@@ -92,14 +90,11 @@
     descriptionText.layer.borderColor = [[UIColor grayColor] CGColor];
     
     [scrollView addSubview:descriptionLabel];
-    [scrollView addSubview: descriptionText];
-    
-    scrollView.contentSize = CGSizeMake(320, descriptionText.frame.origin.y + size.height +10);
-    
-
+    [scrollView addSubview:descriptionText];
+    scrollView.contentSize = CGSizeMake(320, descriptionText.frame.origin.y + 10);
+}
 //    if ([healthItem.category isEqualToString:@"embassy"]) {
 //            
-}
 //
 //- (void)AddTextBlockWithOffset:(NSInteger)offset withImageName:(NSString *)imageName withText:(NSString *)text {
 //    

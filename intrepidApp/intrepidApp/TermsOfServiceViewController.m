@@ -1,18 +1,18 @@
 //
-//  TermsServicePrivacyPolicyViewController.m
+//  TermsOfServiceViewController.m
 //  intrepidApp
 //
 //  Created by Madelaine Page on 2013-07-30.
 //  Copyright (c) 2013 JonCarrHarris Consulting. All rights reserved.
 //
 
-#import "TermsServicePrivacyPolicyViewController.h"
+#import "TermsOfServiceViewController.h"
 
-@interface TermsServicePrivacyPolicyViewController ()
+@interface TermsOfServiceViewController ()
 
 @end
 
-@implementation TermsServicePrivacyPolicyViewController
+@implementation TermsOfServiceViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,15 +35,8 @@
     scrollView.showsVerticalScrollIndicator = YES;
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.scrollEnabled = YES;
-    
-    [self addContent];
-}
-
--(void)addContent {
-
-}
-
--(void)termsOfService {
+    //    scrollView.contentSize = CGSizeMake(320, descriptionText.frame.origin.y + 10);
+	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning

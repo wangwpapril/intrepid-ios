@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 JonCarrHarris Consulting. All rights reserved.
 //
 
-
-
 #import "EmbassyDetailedContent.h"
 #import "EmbassyDetailedItem.h"
 

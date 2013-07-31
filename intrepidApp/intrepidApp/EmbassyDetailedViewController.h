@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "EmbassyDetailedItem.h"
+#import "EmbassyDetailedContent.h"
 
 @interface EmbassyDetailedViewController : UIViewController {
     IBOutlet UIScrollView *scrollView;

@@ -1,5 +1,5 @@
 //
-//  TermsServicePrivacyPolicyViewController.h
+//  PrivacyPolicyViewController.h
 //  intrepidApp
 //
 //  Created by Madelaine Page on 2013-07-30.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TermsServicePrivacyPolicyViewController : UIViewController {
+@interface PrivacyPolicyViewController : UIViewController {
     IBOutlet UIScrollView *scrollView;
 }
 
