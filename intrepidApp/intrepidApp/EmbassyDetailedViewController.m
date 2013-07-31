@@ -85,7 +85,7 @@
     descriptionText.font = [UIFont fontWithName:@"ProximaNova-Light" size:14];
 //    descriptionText.backgroundColor = UIColorFromRGB(0xffffff);
 //    descriptionText.textColor = APP_TEXT_COLOR;//UIColorFromRGB(0x423a38);
-//    descriptionText.text = healthItem.description;
+    descriptionText.text = embassyDetailedItem.description;
     descriptionText.scrollEnabled = NO;
     descriptionText.editable = NO;
     descriptionText.layer.borderWidth = 1.0f;
@@ -94,6 +94,7 @@
     [scrollView addSubview:descriptionLabel];
     [scrollView addSubview: descriptionText];
     
+    scrollView.contentSize = CGSizeMake(320, descriptionText.frame.origin.y + size.height +10);
     
 
 //    if ([healthItem.category isEqualToString:@"embassy"]) {
