@@ -7,12 +7,15 @@
 //
 
 #import "SettingsViewController.h"
+#import "Constants.h"
 
 @interface SettingsViewController ()
 
 @end
 
 @implementation SettingsViewController
+
+@synthesize editPhoto;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,6 +35,21 @@
     
     UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"signUp-background.png"]];
     [self.view addSubview:backgroundView];
+    
+    [editPhoto setBackgroundImage:[UIImage imageNamed:@"Add@2x.png"]
+                        forState:UIControlStateNormal];
+    [self.view addSubview:editPhoto];
+    
+    //Initalize the fields
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(25, 50, 150, 20);
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont fontWithName:@"ProximaNova-Bold" size:24];
+    label.textColor = [UIColor whiteColor];
+    [label setTextAlignment:NSTextAlignmentCenter];
+    label.text = @"hello";
+    [self.view addSubview:label];
+    
 }
 
 - (void)didReceiveMemoryWarning
