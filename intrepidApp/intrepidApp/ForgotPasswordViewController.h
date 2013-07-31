@@ -12,7 +12,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UILabel *underlineEmail;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
-@property (weak, nonatomic) IBOutlet UILabel *acceptanceLabel;
 
 - (IBAction)typeBox:(id)sender;
 - (void)keyboardWillShow;

@@ -149,13 +149,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "intrepidApp/ForgotPasswordViewController.m"
-         timestampString = "396913362.648558"
+         timestampString = "396937279.794088"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "23"
-         endingLineNumber = "23"
-         landmarkName = "@implementation ForgotPasswordViewController"
-         landmarkType = "3">
+         startingLineNumber = "21"
+         endingLineNumber = "21"
+         landmarkName = "signUpButton"
+         landmarkType = "19">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

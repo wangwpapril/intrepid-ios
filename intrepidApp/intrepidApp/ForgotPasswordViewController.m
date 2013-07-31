@@ -9,6 +9,8 @@
 #import "ForgotPasswordViewController.h"
 #import "Constants.h"
 
+#define kOFFSET_FOR_KEYBOARD 80.0
+
 @interface ForgotPasswordViewController ()
 
 @end
@@ -17,10 +19,6 @@
 @synthesize email;
 @synthesize underlineEmail;
 @synthesize signUpButton;
-@synthesize acceptanceLabel;
-
-
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,25 +36,44 @@
     UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"signUp-background.png"]];
     [self.view addSubview:backgroundView];
     
+    UILabel *forgotPasswordTitleLabel = [[UILabel alloc] init];
+    forgotPasswordTitleLabel.frame = CGRectMake(0, 15, 320, 35);
+    forgotPasswordTitleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:24];
+    forgotPasswordTitleLabel.textColor = [UIColor whiteColor];
+    forgotPasswordTitleLabel.backgroundColor = [UIColor clearColor];
+    forgotPasswordTitleLabel.text = @"Forgot Password?";
+    forgotPasswordTitleLabel.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:forgotPasswordTitleLabel];
+    
+    UILabel *enterEmailLabel = [[UILabel alloc] init];
+    enterEmailLabel.frame = CGRectMake(0, 80, 320, 35);
+    enterEmailLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
+    enterEmailLabel.textColor = [UIColor whiteColor];
+    enterEmailLabel.backgroundColor = [UIColor clearColor];
+    enterEmailLabel.text = @"Please Enter Your Email:";
+    enterEmailLabel.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:enterEmailLabel];
+    
     self.email.delegate = self;
     
     UIImage *buttonImage = [[UIImage imageNamed:@"rounded-rectangle-.png"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
     [signUpButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    
-    
-    [signUpButton setTitleColor:APP_FONT forState:UIControlStateNormal];
+    [signUpButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [signUpButton setTitle:@"SUBMIT" forState:UIControlStateNormal];
     signUpButton.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
-    signUpButton.frame = CGRectMake(68, self.view.frame.size.height - 150, 183, 36);
+    signUpButton.frame = CGRectMake(68, self.view.frame.size.height - 250, 183, 36);
     [self.view addSubview:signUpButton];
     
     
-    email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
-    email.textColor = APP_FONT;
-    email.placeholder = @"EMAIL";
+    email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+    email.textColor = [UIColor whiteColor];
+    email.frame = CGRectMake(68, 135, 183, 35);
+    email.backgroundColor = [UIColor clearColor];
     [email setReturnKeyType:UIReturnKeyDone];
     [self.view addSubview:email];
     
     underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline.png"]];
+    underlineEmail.frame = CGRectMake(68, 171, 183, 1);
     [self.view addSubview:underlineEmail];
 
 }
@@ -105,7 +122,7 @@
     
 }
 
-/*-(void)textFieldDidBeginEditing:(UITextField *)sender
+-(void)textFieldDidBeginEditing:(UITextField *)sender
 {
     if ([sender isEqual:self])
     {
@@ -141,8 +158,6 @@
     
     [UIView commitAnimations];
 }
-
-*/
 - (void)viewWillAppear:(BOOL)animated
 {
     // register for keyboard notifications

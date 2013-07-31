@@ -76,7 +76,7 @@
     
     UITextField *name = [[UITextField alloc] init];
     name.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
-    name.frame = CGRectMake(68, self.view.frame.size.height - 150, 65, 34);
+    name.frame = CGRectMake(180, 150, 150, 34);
     name.textColor = [UIColor whiteColor];
     name.placeholder = @"Your Name";
     name.delegate = self;
@@ -89,7 +89,7 @@
     
     UITextField *email = [[UITextField alloc] init];
     email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
-    email.frame = CGRectMake(68, self.view.frame.size.height - 150, 65, 34);
+    email.frame = CGRectMake(180, 200, 150, 34);
     email.textColor = [UIColor whiteColor];
     email.placeholder = @"Your Email";
     [email setReturnKeyType:UIReturnKeyDone];
@@ -103,7 +103,7 @@
     
     UITextField *password = [[UITextField alloc] init];
     password.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
-    password.frame = CGRectMake(68, self.view.frame.size.height - 150, 65, 34);
+    password.frame = CGRectMake(180, 250, 150, 34);
     password.textColor = [UIColor whiteColor];
     password.placeholder = @"Your Password";
     [password setReturnKeyType:UIReturnKeyDone];
