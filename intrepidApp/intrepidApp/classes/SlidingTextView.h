@@ -12,6 +12,7 @@
 
 //@property (nonatomic, strong) UIScrollView *scroll;
 
--(void)setupWithImageName:(NSString *)image withTitle:(NSString *)title withIconName:(NSString *)icon;
+- (void)setupWithImageName:(NSString *)image withTitle:(NSString *)title withIconName:(NSString *)icon;
+- (void)addTableViewWithRows:(NSInteger)rows withTableView:(UITableView *)tableView;
 - (void)addTextAreaWithText:(NSString *)text;
 @end

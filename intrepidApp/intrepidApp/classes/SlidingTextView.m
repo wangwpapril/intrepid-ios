@@ -57,8 +57,13 @@
     
 }
 
-//- (void)addTableView {
-//}
+- (void)addTableViewWithRows:(NSInteger)rows withTableView:(UITableView *)tableView {
+    NSInteger height = 40 * rows;
+    tableView.scrollEnabled = NO;
+    tableView.frame = CGRectMake(tableView.frame.origin.x, tableView.frame.origin.y, 320, height);
+    [self addSubview:tableView];
+     self.contentSize = CGSizeMake(320, 400 + height);
+}
 
 - (void)addTextAreaWithText:(NSString *)text {
     // text

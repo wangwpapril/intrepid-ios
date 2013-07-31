@@ -44,7 +44,7 @@
     tableList.dataSource = self;
     tableList.delegate = self;
     tableList.scrollEnabled = YES;
-    [currency addSubview:tableList];
+    [currency addTableViewWithRows:currencyArray.count withTableView:tableList];
     
     NSMutableArray *views = [NSMutableArray arrayWithObjects:history, culture, currency, nil];
     [self addViews:views withVerticalOffset:0];
