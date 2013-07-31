@@ -17,6 +17,7 @@
 
 @synthesize pageControl;
 @synthesize scrollView;
+@synthesize exitButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

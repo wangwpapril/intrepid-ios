@@ -12,6 +12,7 @@
 
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet UIPageControl *pageControl;
+@property (weak, nonatomic) IBOutlet UIButton *exitButton;
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 

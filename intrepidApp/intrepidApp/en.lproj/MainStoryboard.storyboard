@@ -517,6 +517,21 @@
                                         <rect key="frame" x="136" y="369" width="38" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </pageControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="68K-y1-JDf">
+                                        <rect key="frame" x="1250" y="12" width="15" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" backgroundImage="cancel-search@2x.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="lgv-mR-8mz" kind="push" id="byn-GS-scy"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <gestureRecognizers/>
                                 <connections>
@@ -528,13 +543,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="xLH-mN-78m"/>
                     <connections>
+                        <outlet property="exitButton" destination="68K-y1-JDf" id="VnW-al-669"/>
                         <outlet property="pageControl" destination="y1H-Q6-jxM" id="mxq-wu-xrl"/>
                         <outlet property="scrollView" destination="siU-dB-BTy" id="0CV-tJ-0QK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3MN-r2-BsT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="231" y="-1385"/>
+            <point key="canvasLocation" x="166" y="-1243"/>
         </scene>
         <!--Embassy Detailed View Controller-->
         <scene sceneID="wnh-gr-96W">
@@ -656,6 +672,9 @@
             <point key="canvasLocation" x="1959" y="146"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cancel-search@2x.png" width="23" height="22"/>
+    </resources>
     <classes>
         <class className="EmbassyDetailedViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EmbassyDetailedViewController.h"/>
@@ -688,6 +707,7 @@
         <class className="LearnMoreViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LearnMoreViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="exitButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
@@ -776,6 +796,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Qvd-hq-w6L"/>
+        <segue reference="byn-GS-scy"/>
     </inferredMetricsTieBreakers>
 </document>
