@@ -74,7 +74,7 @@ static MenuController *instance =nil;
     if (nextPos > viewHeight - 110 && (!hiding || touchIsOver || nextPos > viewHeight - 25)) {
         [self hideMenu];
     }
-    else if (nextPos < viewHeight - 110 && (hiding || touchIsOver || nextPos < viewHeight - 246)) {
+    else if (nextPos <= viewHeight - 110 && (hiding || touchIsOver || nextPos < viewHeight - 246)) {
         [self showMenu];
     }
     else {

@@ -74,8 +74,8 @@
         [self.view addSubview:tab];
         i++;
     }
-    currentTab = 1;
-    [self tabSelected:[tabArray objectAtIndex:1]];
+    currentTab = 0;
+    [self tabSelected:[tabArray objectAtIndex:currentTab]];
     
     // swipe to switch tabs
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedLeft:)];
@@ -91,14 +91,14 @@
     // create line
     line = [[UILabel alloc] init];
     line.backgroundColor = APP_TOGGLE_SELECTED;
-    line.frame = CGRectMake(117, 27, 80, 1);
+    line.frame = CGRectMake(13, 27, 80, 1);
     [self.view addSubview:line];
 }
 
 - (void) addViews:(NSMutableArray *)arrayOfViews withVerticalOffset:(NSInteger)offset {
     verticalOffset = offset;
     viewArray = arrayOfViews;
-    [self.view addSubview:[viewArray objectAtIndex:1]];
+    [self.view addSubview:[viewArray objectAtIndex:0]];
     
 }
 

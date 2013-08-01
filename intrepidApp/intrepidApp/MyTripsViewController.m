@@ -173,6 +173,7 @@
     [MenuController getInstance].city = city;
     UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"security"];
     [self.navigationController pushViewController:viewController animated:YES];
+    [[MenuController getInstance] showMenu];
 }
 
 //-(void)cityNames {
