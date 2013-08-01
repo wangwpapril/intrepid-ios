@@ -180,29 +180,51 @@
                 tableToBe.frame = CGRectMake(-320, verticalOffset, 320, self.view.frame.size.height - verticalOffset);
             }
         }
-        
-        [UIView animateWithDuration:0.3 animations:^{
-            line.frame = CGRectMake(lineX, 27, 80, 1);
-            NSInteger offset;
-            if (currentTab - previousTab > 0) {
-                offset = -320;
+        [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^ {
+                line.frame = CGRectMake(lineX, 27, 80, 1);
+                NSInteger offset;
+                if (currentTab - previousTab > 0) {
+                    offset = -320;
+                }
+                else {
+                    offset = 320;
+                }
+                
+                [self.view insertSubview:[viewArray objectAtIndex:currentTab] belowSubview:[tabArray objectAtIndex:0]];
+                for (UIView *view in viewArray) {
+                    [view setFrame:CGRectMake(view.frame.origin.x + offset, verticalOffset, 320, self.view.frame.size.height - verticalOffset)];
+                }
             }
-            else {
-                offset = 320;
-            }
-            
-            [self.view insertSubview:[viewArray objectAtIndex:currentTab] belowSubview:[tabArray objectAtIndex:0]];
-            for (UIView *view in viewArray) {
-                [view setFrame:CGRectMake(view.frame.origin.x + offset, verticalOffset, 320, self.view.frame.size.height - verticalOffset)];
-            }
-        }
-                         completion:^(BOOL finished){
-                             [[viewArray objectAtIndex:previousTab] removeFromSuperview];
-                             for (UIButton * tab in tabArray) {
-                                 tab.userInteractionEnabled = YES;
-                             }
-                             [self viewSwitched];
-                         }];
+                             completion:^(BOOL finished){
+                                 [[viewArray objectAtIndex:previousTab] removeFromSuperview];
+                                 for (UIButton * tab in tabArray) {
+                                     tab.userInteractionEnabled = YES;
+                                 }
+                                 [self viewSwitched];
+                             }];
+
+//        [UIView animateWithDuration:0.3 animations:^{
+//            line.frame = CGRectMake(lineX, 27, 80, 1);
+//            NSInteger offset;
+//            if (currentTab - previousTab > 0) {
+//                offset = -320;
+//            }
+//            else {
+//                offset = 320;
+//            }
+//            
+//            [self.view insertSubview:[viewArray objectAtIndex:currentTab] belowSubview:[tabArray objectAtIndex:0]];
+//            for (UIView *view in viewArray) {
+//                [view setFrame:CGRectMake(view.frame.origin.x + offset, verticalOffset, 320, self.view.frame.size.height - verticalOffset)];
+//            }
+//        }
+//                         completion:^(BOOL finished){
+//                             [[viewArray objectAtIndex:previousTab] removeFromSuperview];
+//                             for (UIButton * tab in tabArray) {
+//                                 tab.userInteractionEnabled = YES;
+//                             }
+//                             [self viewSwitched];
+//                         }];
     }
 }
 

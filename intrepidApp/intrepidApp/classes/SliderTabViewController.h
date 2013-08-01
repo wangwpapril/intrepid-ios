@@ -19,14 +19,8 @@
 @property (nonatomic, strong) MenuController *mController;
 @property (nonatomic) NSInteger verticalOffset;
 
-// mandatory method to be called at viewDidLoad in order to create the tabs
-// (takes 3 tab names)
-- (void)addTabs:(NSArray *)nameArray;
-
 -(CityEntity *)getCity;
-
-// mandatory method to be called at viewDidLoad in order to populate the views
-// takes 3 views; offset is vertical offset from the top
+- (void)addTabs:(NSArray *)nameArray;
 - (void) addViews:(NSMutableArray *)arrayOfViews withVerticalOffset:(NSInteger)offset;
 
 @end

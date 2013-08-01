@@ -23,6 +23,5 @@
 
 +(MenuController *)getInstance;
 -(void)displayMenuWithParent:(UIViewController *)controller;
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
 -(void)showMenu;
 @end

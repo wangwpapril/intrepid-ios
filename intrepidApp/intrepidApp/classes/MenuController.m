@@ -70,6 +70,7 @@ static MenuController *instance =nil;
 - (IBAction)handleDrag:(UIPanGestureRecognizer *)recognizer {
     CGPoint translation = [recognizer translationInView:parentController.view];
     float nextPos = menu.frame.origin.y + translation.y;
+    NSLog(@"nextPos: %f", nextPos);
     BOOL touchIsOver = (recognizer.state == UIGestureRecognizerStateEnded);
     if (nextPos > viewHeight - 110 && (!hiding || touchIsOver || nextPos > viewHeight - 25)) {
         [self hideMenu];
@@ -85,23 +86,23 @@ static MenuController *instance =nil;
 }
 
 -(void)showMenu {
-    if (menu.frame.origin.y > viewHeight - 246) {
+//    if (menu.frame.origin.y > viewHeight - 246) {
         [UIView animateWithDuration:0.2 animations:^ {
             menu.frame = CGRectMake(0, viewHeight - 246, 320, 246);
         }];
         hiding = false;
         arrow.image = flipped;
-    }
+//    }
 }
 
 -(void)hideMenu {
-    if (menu.frame.origin.y < viewHeight - 110) {
+//    if (menu.frame.origin.y < viewHeight - 110) {
         [UIView animateWithDuration:0.2 animations:^{
                             menu.frame = botPosition;
                         }];
         hiding = true;
         arrow.image = upRight;
-    }
+//    }
 }
 -(void)addContentButtons {
     // popup button
@@ -182,25 +183,10 @@ static MenuController *instance =nil;
     
 }
 
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    OverViewViewController *controller = segue.destinationViewController;
-//    
-//}
-
 -(void)makeContentButtonWithOrigin:(CGPoint)origin withTag:(NSInteger)tag{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     NSInteger size = 107;
     button.tag = tag;
-//    button.layer.borderColor = [UIColor orangeColor].CGColor;
-//    button.layer.borderWidth = 1;
-    // buttons in the middle are fatter
-//    if (tag == 1 || tag == 4) {
-//        size = 120;
-//    }
-//    // trips and assistance
-//    else if (tag >= 6) {
-//        size = 160;
-//    }
     button.frame = CGRectMake(origin.x, origin.y, size, 65);
     button.backgroundColor = [UIColor clearColor];
     [menu addSubview:button];
