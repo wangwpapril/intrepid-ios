@@ -24,5 +24,8 @@
 @dynamic politicalImage;
 @dynamic politicalText;
 @dynamic embassyItems;
+@dynamic clinicsURL;
+@dynamic alertsURL;
+@dynamic weatherURL;
 
 @end

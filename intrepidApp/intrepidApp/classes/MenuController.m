@@ -149,19 +149,19 @@ static MenuController *instance =nil;
             
         case 4:
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
-            [((WebViewController *)viewController) setupWithTitle:@"Clinics" withURL:@"http://m.intrepid247.com/m/ppn?region=latinamerica&country=Mexico&city=mexico%20city"];
+            [((WebViewController *)viewController) setupWithTitle:@"Clinics" withURL:city.clinicsURL];
             viewController.view.tag = 4;
             break;
 
         case 5:
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
-            [((WebViewController *)viewController) setupWithTitle:@"Weather" withURL:@"http://m.intrepid247.com/m/weather?region=latinamerica&country=Mexico&city=mexico%20city"];
+            [((WebViewController *)viewController) setupWithTitle:@"Weather" withURL:city.weatherURL];
             viewController.view.tag = 5;
             break;
             
         case 6:
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
-            [((WebViewController *)viewController) setupWithTitle:@"Alerts" withURL:@"http://m.intrepid247.com/m/alert?region=latinamerica&country=Mexico&city=mexico%20city"];
+            [((WebViewController *)viewController) setupWithTitle:@"Alerts" withURL:city.alertsURL];
             viewController.view.tag = 6;
             break;
             

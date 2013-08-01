@@ -12,7 +12,6 @@
 
 // Core Data
 @property ( strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-//@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 +(TripManager *)getInstance;
 -(NSArray *) getCities;

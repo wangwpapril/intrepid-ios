@@ -53,10 +53,11 @@ static TripManager *instance =nil;
     NSLog(@"POP TRIPS IS CALLED");
     
     // mexico
-    [self createTripWithCityImage:@"NMexico.png" withCityName:@"Mexico" withContinent:@"South America" withCultureText:@"culture so good" withCultureImage:@"NMexico.png" withGeneralText:@"general description" withGeneralImage:@"NMexico.png" withLocalImage:@"NMexico.png" withLocalText:@"Local Mexicooo" withPoliticalImage:@"NMexico.png" withPoliticaltext:@"politics r fun"];
+    [self createTripWithCityImage:@"NMexico.png" withCityName:@"Mexico" withContinent:@"South America" withCultureText:@"culture so good" withCultureImage:@"NMexico.png" withGeneralText:@"general description" withGeneralImage:@"NMexico.png" withLocalImage:@"NMexico.png" withLocalText:@"Local Mexicooo" withPoliticalImage:@"NMexico.png" withPoliticaltext:@"politics r fun"
+     withClinicsURL:@"http://m.intrepid247.com/m/ppn?region=latinamerica&country=Mexico&city=mexico%20city" withAlertsURL:@"http://m.intrepid247.com/m/alert?region=latinamerica&country=Mexico&city=mexico%20city" withWeatherURL:@"http://m.intrepid247.com/m/weather?region=latinamerica&country=Mexico&city=mexico%20city"];
     
     // miami
-    [self createTripWithCityImage:@"miami.png" withCityName:@"Miami" withContinent:@"North America" withCultureText:@"culture miami" withCultureImage:@"miami.png" withGeneralText:@"general description of Miami" withGeneralImage:@"miami.png" withLocalImage:@"miami.png" withLocalText:@"Local Miami" withPoliticalImage:@"miami.png" withPoliticaltext:@"politics r fun in miami"];
+    [self createTripWithCityImage:@"miami.png" withCityName:@"Miami" withContinent:@"North America" withCultureText:@"culture miami" withCultureImage:@"miami.png" withGeneralText:@"general description of Miami" withGeneralImage:@"miami.png" withLocalImage:@"miami.png" withLocalText:@"Local Miami" withPoliticalImage:@"miami.png" withPoliticaltext:@"politics r fun in miami" withClinicsURL:@"lol" withAlertsURL:@"xa" withWeatherURL:@"bl"];
     
     // other trips!
 }
@@ -72,6 +73,9 @@ withLocalImage:(NSString *)localImage
 withLocalText:(NSString *)localText
 withPoliticalImage:(NSString *)politicalImage
 withPoliticaltext:(NSString *)politicalText
+withClinicsURL:(NSString *)clinicsURL
+withAlertsURL:(NSString *)alertsURL
+withWeatherURL:(NSString *)weatherURL
 {
     CityEntity *city = [NSEntityDescription insertNewObjectForEntityForName:@"CityEntity" inManagedObjectContext:managedObjectContext];
 
@@ -86,6 +90,10 @@ withPoliticaltext:(NSString *)politicalText
     city.localText = localText;
     city.politicalImage = politicalImage;
     city.politicalText = politicalText;
+    city.clinicsURL = clinicsURL;
+    city.alertsURL = alertsURL;
+    city.weatherURL = weatherURL;
+    
 //    city.embassyItems;
 //    dispatch_async(dispatch_get_main_queue(), ^{
         NSError *error = nil;

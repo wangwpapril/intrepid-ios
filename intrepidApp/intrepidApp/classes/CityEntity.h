@@ -25,6 +25,9 @@
 @property (nonatomic, retain) NSString * politicalImage;
 @property (nonatomic, retain) NSString * politicalText;
 @property (nonatomic, retain) NSSet *embassyItems;
+@property (nonatomic, retain) NSString * clinicsURL;
+@property (nonatomic, retain) NSString * alertsURL;
+@property (nonatomic, retain) NSString * weatherURL;
 @end
 
 @interface CityEntity (CoreDataGeneratedAccessors)
