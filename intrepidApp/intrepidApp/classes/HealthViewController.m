@@ -172,7 +172,7 @@
     tableArray = [NSMutableArray new];
     int i = 0;
     while (i < 2) {
-        UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake(i*320, 79, 320, self.view.frame.size.height - 79) style:UITableViewStylePlain];
+        UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake(i*320, 79, 320, self.view.frame.size.height - 133) style:UITableViewStylePlain]; // bar and status height :/
         table.rowHeight = 45;
         table.tag = i;
         table.dataSource = self;
