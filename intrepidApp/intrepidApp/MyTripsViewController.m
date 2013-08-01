@@ -67,6 +67,7 @@
     [cityArray insertObject:newTrip atIndex:0];
 //    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"new-trip.png", @"NMexico@2x.png", @"Guada@2x.png", @"miami@2x.png", @"Puerto-Plata@2x.png", nil];
 //    NSArray *nameArray = [[NSMutableArray alloc] initWithObjects:@" ", @"Mexico City", @"Guadalajara", @"Miami", @"Puerto Plata", nil];
+
     NSInteger height = scrollView.frame.size.height - 150.0;
     NSInteger width = height * 0.7322;
     int i = 0;
