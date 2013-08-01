@@ -23,6 +23,8 @@
 // (takes 3 tab names)
 - (void)addTabs:(NSArray *)nameArray;
 
+-(CityEntity *)getCity;
+
 // mandatory method to be called at viewDidLoad in order to populate the views
 // takes 3 views; offset is vertical offset from the top
 - (void) addViews:(NSMutableArray *)arrayOfViews withVerticalOffset:(NSInteger)offset;

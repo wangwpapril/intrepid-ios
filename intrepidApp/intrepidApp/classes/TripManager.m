@@ -51,8 +51,12 @@ static TripManager *instance =nil;
 
 -(void) populateTrips {
     NSLog(@"POP TRIPS IS CALLED");
+    
     // mexico
     [self createTripWithCityImage:@"NMexico.png" withCityName:@"Mexico" withContinent:@"South America" withCultureText:@"culture so good" withCultureImage:@"NMexico.png" withGeneralText:@"general description" withGeneralImage:@"NMexico.png" withLocalImage:@"NMexico.png" withLocalText:@"Local Mexicooo" withPoliticalImage:@"NMexico.png" withPoliticaltext:@"politics r fun"];
+    
+    // miami
+    [self createTripWithCityImage:@"miami.png" withCityName:@"Miami" withContinent:@"North America" withCultureText:@"culture miami" withCultureImage:@"miami.png" withGeneralText:@"general description of Miami" withGeneralImage:@"miami.png" withLocalImage:@"miami.png" withLocalText:@"Local Miami" withPoliticalImage:@"miami.png" withPoliticaltext:@"politics r fun in miami"];
     
     // other trips!
 }
@@ -69,7 +73,6 @@ withLocalText:(NSString *)localText
 withPoliticalImage:(NSString *)politicalImage
 withPoliticaltext:(NSString *)politicalText
 {
-//    NSEntityDescription *entity = [NSEntityDescription entityForName:@"CityEntity" inManagedObjectContext:managedObjectContext];
     CityEntity *city = [NSEntityDescription insertNewObjectForEntityForName:@"CityEntity" inManagedObjectContext:managedObjectContext];
 
     city.cityImage = cityImage;

@@ -24,14 +24,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    mController = [MenuController getInstance];
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
-- (void) viewWillAppear:(BOOL)animated {
-    mController = [MenuController getInstance];
+- (void)viewWillAppear:(BOOL)animated {
     [mController displayMenuWithParent:self];
+}
+
+- (CityEntity *)getCity {
+    return mController.city;
 }
 
 - (void)addTabs:(NSArray *)nameArray {
@@ -187,7 +191,7 @@
                 offset = 320;
             }
             
-            [self.view insertSubview:[viewArray objectAtIndex:currentTab] belowSubview:mController.menu];
+            [self.view insertSubview:[viewArray objectAtIndex:currentTab] belowSubview:[tabArray objectAtIndex:0]];
             for (UIView *view in viewArray) {
                 [view setFrame:CGRectMake(view.frame.origin.x + offset, verticalOffset, 320, self.view.frame.size.height - verticalOffset)];
             }
