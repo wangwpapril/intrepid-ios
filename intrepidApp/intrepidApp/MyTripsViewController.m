@@ -100,7 +100,8 @@
         
         // add a label
         UILabel *cityName = [[UILabel alloc] init];
-        cityName.frame = CGRectMake(130 + 320 * i, self.view.frame.size.height - 160, 100.0, 100.0);
+        cityName.frame = CGRectMake(110 + 320 * i, self.view.frame.size.height - 160, 100.0, 100.0);
+        [cityName setTextAlignment:NSTextAlignmentCenter];
         cityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
         cityName.backgroundColor = [UIColor clearColor];
         cityName.textColor = [UIColor whiteColor];
