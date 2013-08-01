@@ -9,6 +9,8 @@
 #import "MyTripsViewController.h"
 #import "MenuController.h"
 #import "Constants.h"
+#import "TripManager.h"
+#import "CityEntity.h"
 
 @implementation MyTripsViewController
 
@@ -29,6 +31,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    TripManager *manager = [TripManager getInstance];
+    NSArray *cities = [manager getCities];
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     

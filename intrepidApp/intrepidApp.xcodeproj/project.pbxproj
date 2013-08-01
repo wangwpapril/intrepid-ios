@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6811614017A9D0730029134B /* EmbassyEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6811613F17A9D0730029134B /* EmbassyEntity.m */; };
+		6811614417A9D0FB0029134B /* CityEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6811614317A9D0FB0029134B /* CityEntity.m */; };
+		6811614717A9D1A20029134B /* TripManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6811614617A9D1A20029134B /* TripManager.m */; };
 		6835EC161789439600A57F86 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835EC151789439600A57F86 /* MenuController.m */; };
 		684BB605179F5143004C44C9 /* OverViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 684BB604179F5143004C44C9 /* OverViewViewController.m */; };
 		684BB609179F539C004C44C9 /* SlidingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 684BB608179F539C004C44C9 /* SlidingTextView.m */; };
@@ -175,6 +178,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6811613E17A9D0730029134B /* EmbassyEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmbassyEntity.h; path = classes/EmbassyEntity.h; sourceTree = "<group>"; };
+		6811613F17A9D0730029134B /* EmbassyEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmbassyEntity.m; path = classes/EmbassyEntity.m; sourceTree = "<group>"; };
+		6811614217A9D0FB0029134B /* CityEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityEntity.h; path = classes/CityEntity.h; sourceTree = "<group>"; };
+		6811614317A9D0FB0029134B /* CityEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityEntity.m; path = classes/CityEntity.m; sourceTree = "<group>"; };
+		6811614517A9D1A20029134B /* TripManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripManager.h; path = classes/TripManager.h; sourceTree = "<group>"; };
+		6811614617A9D1A20029134B /* TripManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripManager.m; path = classes/TripManager.m; sourceTree = "<group>"; };
 		6835EC141789439600A57F86 /* MenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuController.h; path = classes/MenuController.h; sourceTree = "<group>"; };
 		6835EC151789439600A57F86 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuController.m; path = classes/MenuController.m; sourceTree = "<group>"; };
 		684BB603179F5143004C44C9 /* OverViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverViewViewController.h; path = classes/OverViewViewController.h; sourceTree = "<group>"; };
@@ -396,6 +405,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6811614117A9D0890029134B /* Content Managing */ = {
+			isa = PBXGroup;
+			children = (
+				6811614217A9D0FB0029134B /* CityEntity.h */,
+				6811614317A9D0FB0029134B /* CityEntity.m */,
+				6811613E17A9D0730029134B /* EmbassyEntity.h */,
+				6811613F17A9D0730029134B /* EmbassyEntity.m */,
+				6811614517A9D1A20029134B /* TripManager.h */,
+				6811614617A9D1A20029134B /* TripManager.m */,
+			);
+			name = "Content Managing";
+			sourceTree = "<group>";
+		};
 		684BB602179F5117004C44C9 /* Overview */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,6 +528,7 @@
 				688F9E611786207F00CF850C /* Constants.h */,
 				6851222317861138008DB6B6 /* AppDelegate.h */,
 				6851222417861138008DB6B6 /* AppDelegate.m */,
+				6811614117A9D0890029134B /* Content Managing */,
 				684BB606179F534A004C44C9 /* Support Classes */,
 				68B071F017A4DB640061E418 /* Trips */,
 				68B071E617A4D3D30061E418 /* Security */,
@@ -974,6 +997,9 @@
 				E02BBA0B17A8845300215CEA /* EmbassyDetailedContent.m in Sources */,
 				7E9A131217A8AE5E0082003C /* TermsOfServiceViewController.m in Sources */,
 				7E9A131517A8AE6E0082003C /* PrivacyPolicyViewController.m in Sources */,
+				6811614017A9D0730029134B /* EmbassyEntity.m in Sources */,
+				6811614417A9D0FB0029134B /* CityEntity.m in Sources */,
+				6811614717A9D1A20029134B /* TripManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

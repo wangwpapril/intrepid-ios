@@ -25,10 +25,13 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    mController = [[MenuController alloc] init];
-    [mController displayMenuWithParent:self];
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    mController = [MenuController getInstance];
+    [mController displayMenuWithParent:self];
 }
 
 - (void)addTabs:(NSArray *)nameArray {

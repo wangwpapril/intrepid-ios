@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Constants.h"
+#import "TripManager.h"
 
 @implementation AppDelegate
 
@@ -48,6 +49,9 @@
     // The rest of your application:didFinishLaunchingWithOptions method
     // ...
     [self customizeAppearance];
+    
+    TripManager *manager = [TripManager getInstance];
+    manager.managedObjectContext = self.managedObjectContext;
     
 //    // Override point for customization after application launch.
 //    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;

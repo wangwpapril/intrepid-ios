@@ -49,7 +49,7 @@
     NSMutableArray *views = [NSMutableArray arrayWithObjects:history, culture, currency, nil];
     [self addViews:views withVerticalOffset:0];
     
-    [self.view bringSubviewToFront:self.mController.menu];
+//    [self.view bringSubviewToFront:self.mController.menu];
     NSArray *names = [NSArray arrayWithObjects:@"GENERAL", @"CULTURE", @"CURRENCY", nil];
     [self addTabs:names];
 }

@@ -65,9 +65,14 @@
     
     self.navigationItem.title = @"Health";
     self.navigationItem.backBarButtonItem.title = @" ";
-    mController = [[MenuController alloc] init];
-    [mController displayMenuWithParent:self];
+//    mController = [[MenuController alloc] init];
+//    [mController displayMenuWithParent:self];
     
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    mController = [MenuController getInstance];
+    [mController displayMenuWithParent:self];
 }
 
 - (void)didReceiveMemoryWarning

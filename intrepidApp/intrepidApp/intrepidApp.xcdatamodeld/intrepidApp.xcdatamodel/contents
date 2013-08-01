@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="13A497d" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+    <entity name="CityEntity" representedClassName="CityEntity" syncable="YES">
+        <attribute name="cityImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cityName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="continent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cultureImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cultureText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="generalImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="generalText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="localImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="localText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="politicalImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="politicalText" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="embassyItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EmbassyEntity" syncable="YES"/>
+    </entity>
+    <entity name="EmbassyEntity" representedClassName="EmbassyEntity" syncable="YES">
+        <attribute name="embassyDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flagName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="city" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CityEntity" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CityEntity" positionX="25" positionY="-166" width="128" height="223"/>
+        <element name="EmbassyEntity" positionX="-243" positionY="-36" width="128" height="103"/>
+    </elements>
 </model>

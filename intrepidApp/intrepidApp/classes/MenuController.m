@@ -21,29 +21,49 @@
 @synthesize arrow;
 @synthesize upRight;
 @synthesize flipped;
+@synthesize city;
+
+static MenuController *instance =nil;
++(MenuController *)getInstance
+{
+    @synchronized(self)
+    {
+        if(instance==nil)
+        {
+            // instantiate some global variables
+            instance = [[MenuController alloc] init];
+            instance.menu = [[UIImageView alloc] init];
+            instance.menu.image = [UIImage imageNamed:@"newMenuBack2.png"];
+            instance.menu.layer.zPosition = MAXFLOAT;
+            [instance addContentButtons];
+            // add arrow
+            instance.arrow = [[UIImageView alloc] initWithFrame:CGRectMake(156, 4, 9, 4)]; // 9 4
+            instance.upRight = [UIImage imageNamed:@"menuArrow.png"];
+            instance.flipped = [UIImage imageWithCGImage:instance.upRight.CGImage scale:1.0 orientation:UIImageOrientationDown];
+            [instance.menu addSubview:instance.arrow];
+        }
+    }
+    return instance;
+}
 
 -(void)displayMenuWithParent:(UIViewController *)controller {
+    
+    if (parentController) {
+        [menu removeFromSuperview];
+    }
+    UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleDrag:)];
+    [instance.menu addGestureRecognizer:recognizer];
     parentController = controller;
-//    NSLog(@"screen height: %f", controller.view.frame.size.height);
-    viewHeight = controller.view.frame.size.height - 44; // account for nav bar
+    viewHeight = controller.view.frame.size.height; // account for nav bar
     
     botPosition = CGRectMake(0, viewHeight - 25, 320, 246); // was 206
-    menu = [[UIImageView alloc] initWithFrame:botPosition];
+    menu.frame = botPosition;
     hiding = true;
-    menu.image = [UIImage imageNamed:@"newMenuBack2.png"];
-    menu.layer.zPosition = MAXFLOAT;
-    [self addContentButtons];
     menu.userInteractionEnabled = YES;
-    UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleDrag:)];
-    [menu addGestureRecognizer:recognizer];
+
     [controller.view addSubview:menu];
     
-    // add arrow
-    arrow = [[UIImageView alloc] initWithFrame:CGRectMake(156, 4, 9, 4)]; // 9 4
-    upRight = [UIImage imageNamed:@"menuArrow.png"];
-    flipped = [UIImage imageWithCGImage:upRight.CGImage scale:1.0 orientation:UIImageOrientationDown];
     arrow.image = upRight;
-    [menu addSubview:arrow];
     
 }
 

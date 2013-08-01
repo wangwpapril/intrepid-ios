@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CityEntity.h"
 
 @interface MenuController : NSObject
 
@@ -18,7 +19,9 @@
 @property (nonatomic, strong) UIImage *upRight;
 @property (nonatomic, strong) UIImage *flipped;
 @property (nonatomic) BOOL hiding;
+@property (nonatomic, strong) CityEntity *city;
 
++(MenuController *)getInstance;
 -(void)displayMenuWithParent:(UIViewController *)controller;
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
 @end

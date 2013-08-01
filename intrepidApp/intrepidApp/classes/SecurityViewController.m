@@ -64,7 +64,7 @@
     NSMutableArray *views = [NSMutableArray arrayWithObjects:political, embassy, local, nil];
     [self addViews:views withVerticalOffset:0];
     
-    [self.view bringSubviewToFront:self.mController.menu];
+//    [self.view bringSubviewToFront:self.mController.menu];
     NSArray *names = [NSArray arrayWithObjects:@"POLITICAL", @"EMBASSY", @"LOCAL", nil];
     [self addTabs:names];
 
