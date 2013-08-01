@@ -46,7 +46,7 @@
     scrollView.pagingEnabled = YES;
     
     //create array for images
-    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"new-trip.png", @"NMexico@2x.png", @"Guada@2x.png", @"miami@2x.png", @"Puerto-Plata@2x.png", nil];
+    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"ANew-trip@2x.png", @"Mexico@2x.png", @"Guadala@2x.png", @"Miami-USA@2x.png", @"Puerto@2x.png", nil];
     NSArray *nameArray = [[NSMutableArray alloc] initWithObjects:@" ", @"Mexico City", @"Guadalajara", @"Miami", @"Puerto Plata", nil];
     NSInteger height = scrollView.frame.size.height - 150.0;
     NSInteger width = height * 0.7322;
