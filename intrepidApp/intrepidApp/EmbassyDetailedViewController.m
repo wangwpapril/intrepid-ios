@@ -35,7 +35,7 @@
     whiteLayer.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:whiteLayer];
     
-    CGRect rect=CGRectMake(0, 0, 320, 520);
+    CGRect rect=CGRectMake(0, 35, 320, 520);
     scrollView = [[UIScrollView alloc] initWithFrame:rect];
     scrollView.showsVerticalScrollIndicator = YES;
     scrollView.showsHorizontalScrollIndicator = NO;
@@ -49,17 +49,17 @@
     [self addContent];
     
     // Set Header label
-//    embassyDetailedItemTitleLabel.backgroundColor = NAVIGATION_BG_COLOR;
+    embassyDetailedItemTitleLabel.frame = CGRectMake(0, 0, 320, 35);
+    embassyDetailedItemTitleLabel.backgroundColor = [UIColor darkGrayColor];
     embassyDetailedItemTitleLabel.text = NULL;
     
     NSString *uppercaseString = [embassyDetailedItem.name uppercaseString];
     embassyDetailedItemNameLabel.text = uppercaseString;
     embassyDetailedItemNameLabel.backgroundColor = [UIColor clearColor];
     embassyDetailedItemNameLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:16];
-//    embassyDetailedItemNameLabel.textColor = UIColorFromRGB(0xeaf0e6);
-    
+    embassyDetailedItemNameLabel.textColor = [UIColor blackColor];    
     [embassyDetailedItemTitleLabel addSubview:embassyDetailedItemNameLabel];
-    [self.view addSubview:embassyDetailedItemTitleLabel];
+    [scrollView addSubview:embassyDetailedItemTitleLabel];
     [self.view addSubview:scrollView];
 
     
@@ -77,27 +77,19 @@
 //    CGSize size = [embassyDetailedItem.description sizeWithFont:[UIFont systemFontOfSize:14]
 //                                     constrainedToSize:CGSizeMake(320, 250)
 //                                         lineBreakMode:NSLineBreakByWordWrapping];
-    UITextView *descriptionText = [[UITextView alloc] initWithFrame:CGRectMake(0, 150,  320, 150)];
-    descriptionText.font = [UIFont fontWithName:@"ProximaNova-Light" size:14];
+    UITextView *descriptionText = [[UITextView alloc] initWithFrame:CGRectMake(0, 70,  320, self.view.frame.size.height)];
+    descriptionText.font = [UIFont fontWithName:@"ProximaNova-Light" size:13];
 //    descriptionText.backgroundColor = UIColorFromRGB(0xffffff);
 //    descriptionText.textColor = APP_TEXT_COLOR;//UIColorFromRGB(0x423a38);
     descriptionText.textColor = [UIColor blackColor];
-    descriptionText.text = embassyDetailedItem.description;
+    descriptionText.text = @"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n\n\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium";
     descriptionText.scrollEnabled = NO;
     descriptionText.editable = NO;
-    descriptionText.layer.borderWidth = 1.0f;
-    descriptionText.layer.borderColor = [[UIColor grayColor] CGColor];
     
     [scrollView addSubview:descriptionLabel];
     [scrollView addSubview:descriptionText];
     scrollView.contentSize = CGSizeMake(320, descriptionText.frame.origin.y + 10);
 }
-//    if ([healthItem.category isEqualToString:@"embassy"]) {
-//            
-//
-//- (void)AddTextBlockWithOffset:(NSInteger)offset withImageName:(NSString *)imageName withText:(NSString *)text {
-//    
-//}
 
 - (void)didReceiveMemoryWarning
 {

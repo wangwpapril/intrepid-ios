@@ -180,8 +180,7 @@
         immunizationTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
         [scrollView addSubview:immunizationTextContainer];
 
-        
-        
+        scrollView.contentSize = CGSizeMake(320, immunizationTextContainer.frame.origin.y + immunizationSize.height + 10);
         
     }
     else {
