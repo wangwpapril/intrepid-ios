@@ -164,6 +164,30 @@
 		E09DAA4F17A97EA6006AD6E9 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E09DAA4E17A97EA6006AD6E9 /* close@2x.png */; };
 		E0B5825117A31D2C00093130 /* intrepid icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5825017A31D2C00093130 /* intrepid icon.png */; };
 		E0B5825317A31D8100093130 /* app icon nonretina.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5825217A31D8100093130 /* app icon nonretina.png */; };
+		E0B5CF9117AC0FB200F5BB66 /* Puerto-Political.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF8917AC0FB200F5BB66 /* Puerto-Political.png */; };
+		E0B5CF9217AC0FB200F5BB66 /* Puerto-Local.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF8A17AC0FB200F5BB66 /* Puerto-Local.png */; };
+		E0B5CF9317AC0FB200F5BB66 /* Puerto-Political@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF8B17AC0FB200F5BB66 /* Puerto-Political@2x.png */; };
+		E0B5CF9417AC0FB200F5BB66 /* Puerto-Culture.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF8C17AC0FB200F5BB66 /* Puerto-Culture.png */; };
+		E0B5CF9517AC0FB200F5BB66 /* Puerto-Culture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF8D17AC0FB200F5BB66 /* Puerto-Culture@2x.png */; };
+		E0B5CF9617AC0FB200F5BB66 /* Puerto-Local@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF8E17AC0FB200F5BB66 /* Puerto-Local@2x.png */; };
+		E0B5CF9717AC0FB200F5BB66 /* Puerto-Overview.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF8F17AC0FB200F5BB66 /* Puerto-Overview.png */; };
+		E0B5CF9817AC0FB200F5BB66 /* Puerto-Overview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF9017AC0FB200F5BB66 /* Puerto-Overview@2x.png */; };
+		E0B5CFA217AC0FD400F5BB66 /* Guada-Culture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF9A17AC0FD400F5BB66 /* Guada-Culture@2x.png */; };
+		E0B5CFA317AC0FD400F5BB66 /* Guada-Political.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF9B17AC0FD400F5BB66 /* Guada-Political.png */; };
+		E0B5CFA417AC0FD400F5BB66 /* Guada-Overview.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF9C17AC0FD400F5BB66 /* Guada-Overview.png */; };
+		E0B5CFA517AC0FD400F5BB66 /* Guada-Local@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF9D17AC0FD400F5BB66 /* Guada-Local@2x.png */; };
+		E0B5CFA617AC0FD400F5BB66 /* Guada-Political@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF9E17AC0FD400F5BB66 /* Guada-Political@2x.png */; };
+		E0B5CFA717AC0FD400F5BB66 /* Guada-Overview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF9F17AC0FD400F5BB66 /* Guada-Overview@2x.png */; };
+		E0B5CFA817AC0FD400F5BB66 /* Guada-Local.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CFA017AC0FD400F5BB66 /* Guada-Local.png */; };
+		E0B5CFA917AC0FD400F5BB66 /* Guada-Culture.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CFA117AC0FD400F5BB66 /* Guada-Culture.png */; };
+		E0B5CFB317AC0FF100F5BB66 /* Miami-Overview.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CFAB17AC0FF100F5BB66 /* Miami-Overview.png */; };
+		E0B5CFB417AC0FF100F5BB66 /* Miami-Political@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CFAC17AC0FF100F5BB66 /* Miami-Political@2x.png */; };
+		E0B5CFB517AC0FF100F5BB66 /* Miami-Local@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CFAD17AC0FF100F5BB66 /* Miami-Local@2x.png */; };
+		E0B5CFB617AC0FF100F5BB66 /* Miami-Local.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CFAE17AC0FF100F5BB66 /* Miami-Local.png */; };
+		E0B5CFB717AC0FF100F5BB66 /* Miami-Culture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CFAF17AC0FF100F5BB66 /* Miami-Culture@2x.png */; };
+		E0B5CFB817AC0FF100F5BB66 /* Miami-Political.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CFB017AC0FF100F5BB66 /* Miami-Political.png */; };
+		E0B5CFB917AC0FF100F5BB66 /* Miami-Culture.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CFB117AC0FF100F5BB66 /* Miami-Culture.png */; };
+		E0B5CFBA17AC0FF100F5BB66 /* Miami-Overview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CFB217AC0FF100F5BB66 /* Miami-Overview@2x.png */; };
 		E0BF3BF817A7399D00241A52 /* AUS.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BDE17A7399D00241A52 /* AUS.png */; };
 		E0BF3BF917A7399D00241A52 /* AUS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BDF17A7399D00241A52 /* AUS@2x.png */; };
 		E0BF3BFA17A7399D00241A52 /* BRL.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BE017A7399D00241A52 /* BRL.png */; };
@@ -389,6 +413,30 @@
 		E09DAA4E17A97EA6006AD6E9 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		E0B5825017A31D2C00093130 /* intrepid icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intrepid icon.png"; sourceTree = "<group>"; };
 		E0B5825217A31D8100093130 /* app icon nonretina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app icon nonretina.png"; sourceTree = "<group>"; };
+		E0B5CF8917AC0FB200F5BB66 /* Puerto-Political.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Political.png"; sourceTree = "<group>"; };
+		E0B5CF8A17AC0FB200F5BB66 /* Puerto-Local.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Local.png"; sourceTree = "<group>"; };
+		E0B5CF8B17AC0FB200F5BB66 /* Puerto-Political@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Political@2x.png"; sourceTree = "<group>"; };
+		E0B5CF8C17AC0FB200F5BB66 /* Puerto-Culture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Culture.png"; sourceTree = "<group>"; };
+		E0B5CF8D17AC0FB200F5BB66 /* Puerto-Culture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Culture@2x.png"; sourceTree = "<group>"; };
+		E0B5CF8E17AC0FB200F5BB66 /* Puerto-Local@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Local@2x.png"; sourceTree = "<group>"; };
+		E0B5CF8F17AC0FB200F5BB66 /* Puerto-Overview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Overview.png"; sourceTree = "<group>"; };
+		E0B5CF9017AC0FB200F5BB66 /* Puerto-Overview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Overview@2x.png"; sourceTree = "<group>"; };
+		E0B5CF9A17AC0FD400F5BB66 /* Guada-Culture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada-Culture@2x.png"; sourceTree = "<group>"; };
+		E0B5CF9B17AC0FD400F5BB66 /* Guada-Political.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada-Political.png"; sourceTree = "<group>"; };
+		E0B5CF9C17AC0FD400F5BB66 /* Guada-Overview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada-Overview.png"; sourceTree = "<group>"; };
+		E0B5CF9D17AC0FD400F5BB66 /* Guada-Local@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada-Local@2x.png"; sourceTree = "<group>"; };
+		E0B5CF9E17AC0FD400F5BB66 /* Guada-Political@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada-Political@2x.png"; sourceTree = "<group>"; };
+		E0B5CF9F17AC0FD400F5BB66 /* Guada-Overview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada-Overview@2x.png"; sourceTree = "<group>"; };
+		E0B5CFA017AC0FD400F5BB66 /* Guada-Local.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada-Local.png"; sourceTree = "<group>"; };
+		E0B5CFA117AC0FD400F5BB66 /* Guada-Culture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada-Culture.png"; sourceTree = "<group>"; };
+		E0B5CFAB17AC0FF100F5BB66 /* Miami-Overview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-Overview.png"; sourceTree = "<group>"; };
+		E0B5CFAC17AC0FF100F5BB66 /* Miami-Political@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-Political@2x.png"; sourceTree = "<group>"; };
+		E0B5CFAD17AC0FF100F5BB66 /* Miami-Local@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-Local@2x.png"; sourceTree = "<group>"; };
+		E0B5CFAE17AC0FF100F5BB66 /* Miami-Local.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-Local.png"; sourceTree = "<group>"; };
+		E0B5CFAF17AC0FF100F5BB66 /* Miami-Culture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-Culture@2x.png"; sourceTree = "<group>"; };
+		E0B5CFB017AC0FF100F5BB66 /* Miami-Political.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-Political.png"; sourceTree = "<group>"; };
+		E0B5CFB117AC0FF100F5BB66 /* Miami-Culture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-Culture.png"; sourceTree = "<group>"; };
+		E0B5CFB217AC0FF100F5BB66 /* Miami-Overview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-Overview@2x.png"; sourceTree = "<group>"; };
 		E0BF3BDE17A7399D00241A52 /* AUS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUS.png; sourceTree = "<group>"; };
 		E0BF3BDF17A7399D00241A52 /* AUS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AUS@2x.png"; sourceTree = "<group>"; };
 		E0BF3BE017A7399D00241A52 /* BRL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BRL.png; sourceTree = "<group>"; };
@@ -608,6 +656,9 @@
 		688F9E6717862DFD00CF850C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E0B5CFAA17AC0FDD00F5BB66 /* Miami */,
+				E0B5CF9917AC0FC400F5BB66 /* Guada */,
+				E0B5CF8817AC0F9700F5BB66 /* Puerto Plata */,
 				E0203E5017ABF927000F8AA2 /* Assistance */,
 				68F64BFD17A87863002C4793 /* menuArrow@2x.png */,
 				E058778517A877B900E42A78 /* Settings */,
@@ -831,6 +882,51 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		E0B5CF8817AC0F9700F5BB66 /* Puerto Plata */ = {
+			isa = PBXGroup;
+			children = (
+				E0B5CF8917AC0FB200F5BB66 /* Puerto-Political.png */,
+				E0B5CF8A17AC0FB200F5BB66 /* Puerto-Local.png */,
+				E0B5CF8B17AC0FB200F5BB66 /* Puerto-Political@2x.png */,
+				E0B5CF8C17AC0FB200F5BB66 /* Puerto-Culture.png */,
+				E0B5CF8D17AC0FB200F5BB66 /* Puerto-Culture@2x.png */,
+				E0B5CF8E17AC0FB200F5BB66 /* Puerto-Local@2x.png */,
+				E0B5CF8F17AC0FB200F5BB66 /* Puerto-Overview.png */,
+				E0B5CF9017AC0FB200F5BB66 /* Puerto-Overview@2x.png */,
+			);
+			name = "Puerto Plata";
+			sourceTree = "<group>";
+		};
+		E0B5CF9917AC0FC400F5BB66 /* Guada */ = {
+			isa = PBXGroup;
+			children = (
+				E0B5CF9A17AC0FD400F5BB66 /* Guada-Culture@2x.png */,
+				E0B5CF9B17AC0FD400F5BB66 /* Guada-Political.png */,
+				E0B5CF9C17AC0FD400F5BB66 /* Guada-Overview.png */,
+				E0B5CF9D17AC0FD400F5BB66 /* Guada-Local@2x.png */,
+				E0B5CF9E17AC0FD400F5BB66 /* Guada-Political@2x.png */,
+				E0B5CF9F17AC0FD400F5BB66 /* Guada-Overview@2x.png */,
+				E0B5CFA017AC0FD400F5BB66 /* Guada-Local.png */,
+				E0B5CFA117AC0FD400F5BB66 /* Guada-Culture.png */,
+			);
+			name = Guada;
+			sourceTree = "<group>";
+		};
+		E0B5CFAA17AC0FDD00F5BB66 /* Miami */ = {
+			isa = PBXGroup;
+			children = (
+				E0B5CFAB17AC0FF100F5BB66 /* Miami-Overview.png */,
+				E0B5CFAC17AC0FF100F5BB66 /* Miami-Political@2x.png */,
+				E0B5CFAD17AC0FF100F5BB66 /* Miami-Local@2x.png */,
+				E0B5CFAE17AC0FF100F5BB66 /* Miami-Local.png */,
+				E0B5CFAF17AC0FF100F5BB66 /* Miami-Culture@2x.png */,
+				E0B5CFB017AC0FF100F5BB66 /* Miami-Political.png */,
+				E0B5CFB117AC0FF100F5BB66 /* Miami-Culture.png */,
+				E0B5CFB217AC0FF100F5BB66 /* Miami-Overview@2x.png */,
+			);
+			name = Miami;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1022,6 +1118,30 @@
 				E0203E6217ABF93D000F8AA2 /* Map@2x.png in Resources */,
 				E0203E6317ABF93D000F8AA2 /* Shape-24.png in Resources */,
 				E0203E6417ABF93D000F8AA2 /* Shape-24@2x.png in Resources */,
+				E0B5CF9117AC0FB200F5BB66 /* Puerto-Political.png in Resources */,
+				E0B5CF9217AC0FB200F5BB66 /* Puerto-Local.png in Resources */,
+				E0B5CF9317AC0FB200F5BB66 /* Puerto-Political@2x.png in Resources */,
+				E0B5CF9417AC0FB200F5BB66 /* Puerto-Culture.png in Resources */,
+				E0B5CF9517AC0FB200F5BB66 /* Puerto-Culture@2x.png in Resources */,
+				E0B5CF9617AC0FB200F5BB66 /* Puerto-Local@2x.png in Resources */,
+				E0B5CF9717AC0FB200F5BB66 /* Puerto-Overview.png in Resources */,
+				E0B5CF9817AC0FB200F5BB66 /* Puerto-Overview@2x.png in Resources */,
+				E0B5CFA217AC0FD400F5BB66 /* Guada-Culture@2x.png in Resources */,
+				E0B5CFA317AC0FD400F5BB66 /* Guada-Political.png in Resources */,
+				E0B5CFA417AC0FD400F5BB66 /* Guada-Overview.png in Resources */,
+				E0B5CFA517AC0FD400F5BB66 /* Guada-Local@2x.png in Resources */,
+				E0B5CFA617AC0FD400F5BB66 /* Guada-Political@2x.png in Resources */,
+				E0B5CFA717AC0FD400F5BB66 /* Guada-Overview@2x.png in Resources */,
+				E0B5CFA817AC0FD400F5BB66 /* Guada-Local.png in Resources */,
+				E0B5CFA917AC0FD400F5BB66 /* Guada-Culture.png in Resources */,
+				E0B5CFB317AC0FF100F5BB66 /* Miami-Overview.png in Resources */,
+				E0B5CFB417AC0FF100F5BB66 /* Miami-Political@2x.png in Resources */,
+				E0B5CFB517AC0FF100F5BB66 /* Miami-Local@2x.png in Resources */,
+				E0B5CFB617AC0FF100F5BB66 /* Miami-Local.png in Resources */,
+				E0B5CFB717AC0FF100F5BB66 /* Miami-Culture@2x.png in Resources */,
+				E0B5CFB817AC0FF100F5BB66 /* Miami-Political.png in Resources */,
+				E0B5CFB917AC0FF100F5BB66 /* Miami-Culture.png in Resources */,
+				E0B5CFBA17AC0FF100F5BB66 /* Miami-Overview@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
