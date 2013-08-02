@@ -63,7 +63,7 @@
     
     TripItem *newTrip = [[TripItem alloc] init];
     newTrip.image = @"new-trip.png";
-    newTrip.city = @"new trip";
+    newTrip.city = @"New Trip";
     [cityArray insertObject:newTrip atIndex:0];
 //    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"new-trip.png", @"NMexico@2x.png", @"Guada@2x.png", @"miami@2x.png", @"Puerto-Plata@2x.png", nil];
 //    NSArray *nameArray = [[NSMutableArray alloc] initWithObjects:@" ", @"Mexico City", @"Guadalajara", @"Miami", @"Puerto Plata", nil];
