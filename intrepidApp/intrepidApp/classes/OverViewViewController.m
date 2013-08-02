@@ -22,7 +22,7 @@
     [super viewDidLoad];
     self.view.tag = 2;
     [self populateCurrencyItems];
-    self.navigationItem.title = @"Mexico Overview";
+    self.navigationItem.title = @"Overview";
      
     
     NSInteger height = self.view.bounds.size.height;

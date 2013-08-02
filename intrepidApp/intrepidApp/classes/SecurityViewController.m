@@ -36,7 +36,7 @@
     
     
     [self populateEmbassyItems];
-    self.navigationItem.title = @"Mexico Security";
+    self.navigationItem.title = @"Security";
     
     
     NSInteger height = self.view.bounds.size.height;
