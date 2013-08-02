@@ -214,6 +214,8 @@
 		E0BF3C0F17A7399D00241A52 /* THB@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BF517A7399D00241A52 /* THB@2x.png */; };
 		E0BF3C1017A7399D00241A52 /* USD.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BF617A7399D00241A52 /* USD.png */; };
 		E0BF3C1117A7399D00241A52 /* USD@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BF717A7399D00241A52 /* USD@2x.png */; };
+		E0E234DC17AC1F2A001527D8 /* Assistance@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E234DA17AC1F2A001527D8 /* Assistance@2x.png */; };
+		E0E234DD17AC1F2A001527D8 /* Assistance.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E234DB17AC1F2A001527D8 /* Assistance.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -463,6 +465,8 @@
 		E0BF3BF517A7399D00241A52 /* THB@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "THB@2x.png"; sourceTree = "<group>"; };
 		E0BF3BF617A7399D00241A52 /* USD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = USD.png; sourceTree = "<group>"; };
 		E0BF3BF717A7399D00241A52 /* USD@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "USD@2x.png"; sourceTree = "<group>"; };
+		E0E234DA17AC1F2A001527D8 /* Assistance@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Assistance@2x.png"; sourceTree = "<group>"; };
+		E0E234DB17AC1F2A001527D8 /* Assistance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Assistance.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -849,6 +853,8 @@
 		E03E0B6D17A74E1E00E344B8 /* Learn More */ = {
 			isa = PBXGroup;
 			children = (
+				E0E234DA17AC1F2A001527D8 /* Assistance@2x.png */,
+				E0E234DB17AC1F2A001527D8 /* Assistance.png */,
 				E09DAA4E17A97EA6006AD6E9 /* close@2x.png */,
 				E05C97EF17A86DE5007DF1C9 /* HealthScreen.png */,
 				E05C97F017A86DE5007DF1C9 /* HealthScreen@2x.png */,
@@ -1142,6 +1148,8 @@
 				E0B5CFB817AC0FF100F5BB66 /* Miami-Political.png in Resources */,
 				E0B5CFB917AC0FF100F5BB66 /* Miami-Culture.png in Resources */,
 				E0B5CFBA17AC0FF100F5BB66 /* Miami-Overview@2x.png in Resources */,
+				E0E234DC17AC1F2A001527D8 /* Assistance@2x.png in Resources */,
+				E0E234DD17AC1F2A001527D8 /* Assistance.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

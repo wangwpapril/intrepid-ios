@@ -53,7 +53,7 @@
     scrollView.pagingEnabled = YES;
     
     //create array for images
-    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"mexico-embassy.png", @"HealthScreen.png", @"mexico-culture.png", @"miami.png", nil];
+    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"mexico-embassy.png", @"HealthScreen.png", @"mexico-culture.png", @"Assistance.png", nil];
     
     for (int i=0; i < [imageArray count]; i++) {
         CGRect frame;
@@ -123,7 +123,7 @@
     assistanceScreenDescription.backgroundColor = [UIColor clearColor];
     assistanceScreenDescription.textColor = [UIColor whiteColor];
     [assistanceScreenDescription setTextAlignment:NSTextAlignmentCenter];
-    assistanceScreenDescription.text = @"Placeholder for Assistance Screen";
+    assistanceScreenDescription.text = @"Get emergency assistance whenever you need it";
     assistanceScreenDescription.numberOfLines = 0;
     assistanceScreenDescription.lineBreakMode = NSLineBreakByWordWrapping;
     [scrollView addSubview:assistanceScreenDescription];
