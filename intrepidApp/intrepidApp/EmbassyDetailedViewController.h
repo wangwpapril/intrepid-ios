@@ -14,8 +14,8 @@
     IBOutlet UIScrollView *scrollView;
 }
 
-@property (nonatomic, strong) IBOutlet UILabel *embassyDetailedItemNameLabel;
-@property (nonatomic, strong) IBOutlet UILabel *embassyDetailedItemTitleLabel;
+//@property (nonatomic, strong) IBOutlet UILabel *embassyDetailedItemNameLabel;
+//@property (nonatomic, strong) IBOutlet UILabel *embassyDetailedItemTitleLabel;
 @property (nonatomic, strong) EmbassyDetailedItem *embassyDetailedItem;
 
 @end

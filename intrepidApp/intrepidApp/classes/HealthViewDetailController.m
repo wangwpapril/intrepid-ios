@@ -46,7 +46,7 @@
     [scrollView addSubview:descriptionImageLabel];
 
     
-    // Set Header label    
+    // Set Header label
     healthItemTitleLabel.backgroundColor = NAVIGATION_BG_COLOR;
     healthItemTitleLabel.text = NULL;
     
