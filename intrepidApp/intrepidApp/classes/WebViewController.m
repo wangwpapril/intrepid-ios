@@ -7,20 +7,28 @@
 //
 
 #import "WebViewController.h"
+#import "MenuController.h"
 
 @implementation WebViewController
-
+@synthesize mController;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.hidesBackButton = YES;
+
+    mController = [MenuController getInstance];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [mController displayMenuWithParent:self];
 }
 
 - (void)setupWithTitle: (NSString *)title withURL:(NSString *)url {
     
     self.navigationItem.title = title;
     UIWebView *trialView = [[UIWebView alloc] initWithFrame:self.view.bounds];  //Change self.view.bounds to a smaller CGRect if you don't want it to take up the whole screen
-    [trialView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
+    [trialView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]]; // make custom (NSString string w/ format, must see URLS's first tho)
     [self.view addSubview:trialView];
     
 }

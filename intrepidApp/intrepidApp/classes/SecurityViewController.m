@@ -41,17 +41,23 @@
     
     NSInteger height = self.view.bounds.size.height;
     CGRect frame = CGRectMake(0, 0, 320, height);
-    
+    CityEntity *city = [self getCity];
     SlidingTextView *political = [[SlidingTextView alloc] initWithFrame:frame];
-    [political setupWithImageName:@"security-political.png" withTitle:@"Political" withIconName:@"descriptionAndSideEffectLogo.png"];
-    [political addTextAreaWithText:@"Short-term opportunistic kidnapping does occur, particularly in urban areas. Victims of “express kidnapping” are forced to withdraw funds from credit or debit cards at a cash point to secure their release. Street crime is a serious problem in Mexico City. Pick-pocketing is common on the Mexico City Metro. Dress in an under-stated manner and avoid wearing expensive jewellery. Limit the amount of cash or credit/debit cards you carry with you. Avoid withdrawing money from ATMs or exchanging money at bureaux de change at night. There have been several co-ordinated muggings in the Parque Nacional de las Cumbres del Ajusco in the south of Mexico City. Take extreme care in this area. Earthquakes do occur periodlically in Mexico City. An earthquake measuring 8.1 on the Richter Scale hit Mexico City in 1985 and was reasponsible for the deaths of 10,000 people.  If an earthquake occurs during your stay in Mexico City, drop to the ground; take cover by getting under a sturdy table or other piece of furniture; and hold on until the shaking stops. If there isn’t a table or desk near you, cover your face and head with your arms and crouch in an inside corner of the building. Stay inside until the shaking stops and it is safe to go outside. Do not exit a building during the shaking. While Mexico City has its own security issues, the decision to travel outside of Mexico City should not be taken lightly, as many parts of Mexico have exceptionally high rates of violent crime associated with drug activity."];
+    
+    [political setupWithImageName:city.politicalImage withTitle:@"Political" withIconName:@"descriptionAndSideEffectLogo.png"];
+    [political addTextAreaWithText:city.politicalText];
+    
+    //    [political setupWithImageName:@"security-political.png" withTitle:@"Political" withIconName:@"descriptionAndSideEffectLogo.png"];
+//    [political addTextAreaWithText:@"Short-term opportunistic kidnapping does occur, particularly in urban areas. Victims of “express kidnapping” are forced to withdraw funds from credit or debit cards at a cash point to secure their release. Street crime is a serious problem in Mexico City. Pick-pocketing is common on the Mexico City Metro. Dress in an under-stated manner and avoid wearing expensive jewellery. Limit the amount of cash or credit/debit cards you carry with you. Avoid withdrawing money from ATMs or exchanging money at bureaux de change at night. There have been several co-ordinated muggings in the Parque Nacional de las Cumbres del Ajusco in the south of Mexico City. Take extreme care in this area. Earthquakes do occur periodlically in Mexico City. An earthquake measuring 8.1 on the Richter Scale hit Mexico City in 1985 and was reasponsible for the deaths of 10,000 people.  If an earthquake occurs during your stay in Mexico City, drop to the ground; take cover by getting under a sturdy table or other piece of furniture; and hold on until the shaking stops. If there isn’t a table or desk near you, cover your face and head with your arms and crouch in an inside corner of the building. Stay inside until the shaking stops and it is safe to go outside. Do not exit a building during the shaking. While Mexico City has its own security issues, the decision to travel outside of Mexico City should not be taken lightly, as many parts of Mexico have exceptionally high rates of violent crime associated with drug activity."];
     
     SlidingTextView *embassy = [[SlidingTextView alloc] initWithFrame:frame];
     [embassy setupWithImageName:@"security-embassy.png" withTitle:@"Embassy" withIconName:@"embassy-icon.png"];
     
     SlidingTextView *local = [[SlidingTextView alloc] initWithFrame:frame];
-    [local setupWithImageName:@"mexicoBackBigger@2x.png" withTitle:@"Local" withIconName:@"currency-label.png"];
-    [local addTextAreaWithText:@"The electricity in Mexico City is the North American standard and converters are not required, with the exception of adaptors for three-prong to two-prong in some older hotels. Travellers to Mexico City may develop traveller’s diarrhea from consuming contaminated water or food. Water precautions should be observed, including avoiding drinks served with ice that may have been made with contaminated water. Communication includes: Telephone networks, including cellular networks are readily available and reliable in Mexico City."];
+    [local setupWithImageName:city.localImage withTitle:@"Local" withIconName:@"currency-label.png"];
+    [local addTextAreaWithText:city.localText];
+//    [local setupWithImageName:@"mexicoBackBigger@2x.png" withTitle:@"Local" withIconName:@"currency-label.png"];
+//    [local addTextAreaWithText:@"The electricity in Mexico City is the North American standard and converters are not required, with the exception of adaptors for three-prong to two-prong in some older hotels. Travellers to Mexico City may develop traveller’s diarrhea from consuming contaminated water or food. Water precautions should be observed, including avoiding drinks served with ice that may have been made with contaminated water. Communication includes: Telephone networks, including cellular networks are readily available and reliable in Mexico City."];
     
     // table
     tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 308,  320, height - 308)];
@@ -64,7 +70,7 @@
     NSMutableArray *views = [NSMutableArray arrayWithObjects:political, embassy, local, nil];
     [self addViews:views withVerticalOffset:0];
     
-    [self.view bringSubviewToFront:self.mController.menu];
+//    [self.view bringSubviewToFront:self.mController.menu];
     NSArray *names = [NSArray arrayWithObjects:@"POLITICAL", @"EMBASSY", @"LOCAL", nil];
     [self addTabs:names];
 

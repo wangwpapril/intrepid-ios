@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6811614017A9D0730029134B /* EmbassyEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6811613F17A9D0730029134B /* EmbassyEntity.m */; };
+		6811614417A9D0FB0029134B /* CityEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6811614317A9D0FB0029134B /* CityEntity.m */; };
+		6811614717A9D1A20029134B /* TripManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6811614617A9D1A20029134B /* TripManager.m */; };
 		6835EC161789439600A57F86 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835EC151789439600A57F86 /* MenuController.m */; };
 		684BB605179F5143004C44C9 /* OverViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 684BB604179F5143004C44C9 /* OverViewViewController.m */; };
 		684BB609179F539C004C44C9 /* SlidingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 684BB608179F539C004C44C9 /* SlidingTextView.m */; };
@@ -60,7 +63,6 @@
 		7E9A131517A8AE6E0082003C /* PrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9A131417A8AE6E0082003C /* PrivacyPolicyViewController.m */; };
 		7EA293B117A60B0A000A56E9 /* MyTripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA293B017A60B0A000A56E9 /* MyTripsViewController.m */; };
 		7EA293B317A613C2000A56E9 /* mexico-city@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EA293B217A613C2000A56E9 /* mexico-city@2x.png */; };
-		7EA293B517A61863000A56E9 /* new-trip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EA293B417A61863000A56E9 /* new-trip@2x.png */; };
 		7EA293B817A77161000A56E9 /* LearnMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA293B717A77161000A56E9 /* LearnMoreViewController.m */; };
 		7ECD0427178BD7C500D6C34B /* HealthViewDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECD0426178BD7C500D6C34B /* HealthViewDetailController.m */; };
 		7ECD0429178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD0428178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png */; };
@@ -78,6 +80,16 @@
 		7EE44DB2179F79BA006BA2EC /* overview-history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DAF179F79BA006BA2EC /* overview-history@2x.png */; };
 		7EE44DB5179F7B24006BA2EC /* culture-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DB3179F7B24006BA2EC /* culture-icon@2x.png */; };
 		7EE44DB9179F7E30006BA2EC /* CurrencyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE44DB8179F7E30006BA2EC /* CurrencyItem.m */; };
+		E0203E5B17ABF93D000F8AA2 /* Call-Intrepid.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5117ABF93D000F8AA2 /* Call-Intrepid.png */; };
+		E0203E5C17ABF93D000F8AA2 /* Call-Intrepid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5217ABF93D000F8AA2 /* Call-Intrepid@2x.png */; };
+		E0203E5D17ABF93D000F8AA2 /* Call-Local.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5317ABF93D000F8AA2 /* Call-Local.png */; };
+		E0203E5E17ABF93D000F8AA2 /* Call-Local@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5417ABF93D000F8AA2 /* Call-Local@2x.png */; };
+		E0203E5F17ABF93D000F8AA2 /* IMG.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5517ABF93D000F8AA2 /* IMG.png */; };
+		E0203E6017ABF93D000F8AA2 /* IMG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5617ABF93D000F8AA2 /* IMG@2x.png */; };
+		E0203E6117ABF93D000F8AA2 /* Map.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5717ABF93D000F8AA2 /* Map.png */; };
+		E0203E6217ABF93D000F8AA2 /* Map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5817ABF93D000F8AA2 /* Map@2x.png */; };
+		E0203E6317ABF93D000F8AA2 /* Shape-24.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5917ABF93D000F8AA2 /* Shape-24.png */; };
+		E0203E6417ABF93D000F8AA2 /* Shape-24@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5A17ABF93D000F8AA2 /* Shape-24@2x.png */; };
 		E02BBA0817A880CA00215CEA /* EmbassyDetailedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E02BBA0717A880CA00215CEA /* EmbassyDetailedItem.m */; };
 		E02BBA0B17A8845300215CEA /* EmbassyDetailedContent.m in Sources */ = {isa = PBXBuildFile; fileRef = E02BBA0A17A8845300215CEA /* EmbassyDetailedContent.m */; };
 		E03E0B5617A7429400E344B8 /* Currency-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5417A7429400E344B8 /* Currency-Icon.png */; };
@@ -90,8 +102,6 @@
 		E03E0B6617A7480600E344B8 /* Miami@2x-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5E17A7480600E344B8 /* Miami@2x-icon.png */; };
 		E03E0B6717A7480600E344B8 /* Puerto-Plata-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5F17A7480600E344B8 /* Puerto-Plata-icon.png */; };
 		E03E0B6817A7480600E344B8 /* Puerto-Plata-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B6017A7480600E344B8 /* Puerto-Plata-icon@2x.png */; };
-		E03E0B6B17A74D4F00E344B8 /* NMexico.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B6917A74D4F00E344B8 /* NMexico.png */; };
-		E03E0B6C17A74D4F00E344B8 /* NMexico@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B6A17A74D4F00E344B8 /* NMexico@2x.png */; };
 		E03E0B7217A74E2B00E344B8 /* mexico-culture.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B6E17A74E2B00E344B8 /* mexico-culture.png */; };
 		E03E0B7317A74E2B00E344B8 /* mexico-culture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B6F17A74E2B00E344B8 /* mexico-culture@2x.png */; };
 		E03E0B7417A74E2B00E344B8 /* mexico-embassy.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B7017A74E2B00E344B8 /* mexico-embassy.png */; };
@@ -140,7 +150,18 @@
 		E06FCE0A17A60852003F3FC6 /* security-embassy.png in Resources */ = {isa = PBXBuildFile; fileRef = E06FCE0817A60852003F3FC6 /* security-embassy.png */; };
 		E06FCE0B17A60852003F3FC6 /* security-political.png in Resources */ = {isa = PBXBuildFile; fileRef = E06FCE0917A60852003F3FC6 /* security-political.png */; };
 		E06FCE0D17A60963003F3FC6 /* embassy-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E06FCE0C17A60963003F3FC6 /* embassy-icon.png */; };
+		E077251D17A9E3DF00804CA9 /* ANew-trip.png in Resources */ = {isa = PBXBuildFile; fileRef = E077251317A9E3DE00804CA9 /* ANew-trip.png */; };
+		E077251E17A9E3DF00804CA9 /* ANew-trip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E077251417A9E3DF00804CA9 /* ANew-trip@2x.png */; };
+		E077251F17A9E3DF00804CA9 /* Guadala.png in Resources */ = {isa = PBXBuildFile; fileRef = E077251517A9E3DF00804CA9 /* Guadala.png */; };
+		E077252017A9E3DF00804CA9 /* Guadala@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E077251617A9E3DF00804CA9 /* Guadala@2x.png */; };
+		E077252117A9E3DF00804CA9 /* Mexico.png in Resources */ = {isa = PBXBuildFile; fileRef = E077251717A9E3DF00804CA9 /* Mexico.png */; };
+		E077252217A9E3DF00804CA9 /* Mexico@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E077251817A9E3DF00804CA9 /* Mexico@2x.png */; };
+		E077252517A9E3DF00804CA9 /* Puerto.png in Resources */ = {isa = PBXBuildFile; fileRef = E077251B17A9E3DF00804CA9 /* Puerto.png */; };
+		E077252617A9E3DF00804CA9 /* Puerto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E077251C17A9E3DF00804CA9 /* Puerto@2x.png */; };
+		E077252917A9E44B00804CA9 /* Miami-USA.png in Resources */ = {isa = PBXBuildFile; fileRef = E077252717A9E44B00804CA9 /* Miami-USA.png */; };
+		E077252A17A9E44B00804CA9 /* Miami-USA@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E077252817A9E44B00804CA9 /* Miami-USA@2x.png */; };
 		E08615F117A8224D00DE240B /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E08615F017A8224D00DE240B /* ForgotPasswordViewController.m */; };
+		E09DAA4F17A97EA6006AD6E9 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E09DAA4E17A97EA6006AD6E9 /* close@2x.png */; };
 		E0B5825117A31D2C00093130 /* intrepid icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5825017A31D2C00093130 /* intrepid icon.png */; };
 		E0B5825317A31D8100093130 /* app icon nonretina.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5825217A31D8100093130 /* app icon nonretina.png */; };
 		E0BF3BF817A7399D00241A52 /* AUS.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BDE17A7399D00241A52 /* AUS.png */; };
@@ -169,12 +190,15 @@
 		E0BF3C0F17A7399D00241A52 /* THB@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BF517A7399D00241A52 /* THB@2x.png */; };
 		E0BF3C1017A7399D00241A52 /* USD.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BF617A7399D00241A52 /* USD.png */; };
 		E0BF3C1117A7399D00241A52 /* USD@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BF717A7399D00241A52 /* USD@2x.png */; };
-		E0E9C7CC17A6B8DB009FB594 /* Guada@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E9C7C917A6B8DB009FB594 /* Guada@2x.png */; };
-		E0E9C7CD17A6B8DB009FB594 /* miami@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E9C7CA17A6B8DB009FB594 /* miami@2x.png */; };
-		E0E9C7CE17A6B8DB009FB594 /* Puerto-Plata@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E9C7CB17A6B8DB009FB594 /* Puerto-Plata@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6811613E17A9D0730029134B /* EmbassyEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmbassyEntity.h; path = classes/EmbassyEntity.h; sourceTree = "<group>"; };
+		6811613F17A9D0730029134B /* EmbassyEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmbassyEntity.m; path = classes/EmbassyEntity.m; sourceTree = "<group>"; };
+		6811614217A9D0FB0029134B /* CityEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityEntity.h; path = classes/CityEntity.h; sourceTree = "<group>"; };
+		6811614317A9D0FB0029134B /* CityEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityEntity.m; path = classes/CityEntity.m; sourceTree = "<group>"; };
+		6811614517A9D1A20029134B /* TripManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripManager.h; path = classes/TripManager.h; sourceTree = "<group>"; };
+		6811614617A9D1A20029134B /* TripManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripManager.m; path = classes/TripManager.m; sourceTree = "<group>"; };
 		6835EC141789439600A57F86 /* MenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuController.h; path = classes/MenuController.h; sourceTree = "<group>"; };
 		6835EC151789439600A57F86 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuController.m; path = classes/MenuController.m; sourceTree = "<group>"; };
 		684BB603179F5143004C44C9 /* OverViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverViewViewController.h; path = classes/OverViewViewController.h; sourceTree = "<group>"; };
@@ -256,7 +280,6 @@
 		7EA293AF17A60B0A000A56E9 /* MyTripsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTripsViewController.h; sourceTree = "<group>"; };
 		7EA293B017A60B0A000A56E9 /* MyTripsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTripsViewController.m; sourceTree = "<group>"; };
 		7EA293B217A613C2000A56E9 /* mexico-city@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mexico-city@2x.png"; sourceTree = "<group>"; };
-		7EA293B417A61863000A56E9 /* new-trip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new-trip@2x.png"; sourceTree = "<group>"; };
 		7EA293B617A77161000A56E9 /* LearnMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnMoreViewController.h; sourceTree = "<group>"; };
 		7EA293B717A77161000A56E9 /* LearnMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearnMoreViewController.m; sourceTree = "<group>"; };
 		7ECD0425178BD7C500D6C34B /* HealthViewDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthViewDetailController.h; path = classes/HealthViewDetailController.h; sourceTree = "<group>"; };
@@ -277,6 +300,16 @@
 		7EE44DB3179F7B24006BA2EC /* culture-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "culture-icon@2x.png"; sourceTree = "<group>"; };
 		7EE44DB7179F7E30006BA2EC /* CurrencyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrencyItem.h; path = classes/CurrencyItem.h; sourceTree = "<group>"; };
 		7EE44DB8179F7E30006BA2EC /* CurrencyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrencyItem.m; path = classes/CurrencyItem.m; sourceTree = "<group>"; };
+		E0203E5117ABF93D000F8AA2 /* Call-Intrepid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Call-Intrepid.png"; sourceTree = "<group>"; };
+		E0203E5217ABF93D000F8AA2 /* Call-Intrepid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Call-Intrepid@2x.png"; sourceTree = "<group>"; };
+		E0203E5317ABF93D000F8AA2 /* Call-Local.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Call-Local.png"; sourceTree = "<group>"; };
+		E0203E5417ABF93D000F8AA2 /* Call-Local@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Call-Local@2x.png"; sourceTree = "<group>"; };
+		E0203E5517ABF93D000F8AA2 /* IMG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG.png; sourceTree = "<group>"; };
+		E0203E5617ABF93D000F8AA2 /* IMG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IMG@2x.png"; sourceTree = "<group>"; };
+		E0203E5717ABF93D000F8AA2 /* Map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Map.png; sourceTree = "<group>"; };
+		E0203E5817ABF93D000F8AA2 /* Map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Map@2x.png"; sourceTree = "<group>"; };
+		E0203E5917ABF93D000F8AA2 /* Shape-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shape-24.png"; sourceTree = "<group>"; };
+		E0203E5A17ABF93D000F8AA2 /* Shape-24@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shape-24@2x.png"; sourceTree = "<group>"; };
 		E02BBA0617A880CA00215CEA /* EmbassyDetailedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbassyDetailedItem.h; sourceTree = "<group>"; };
 		E02BBA0717A880CA00215CEA /* EmbassyDetailedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbassyDetailedItem.m; sourceTree = "<group>"; };
 		E02BBA0917A8845200215CEA /* EmbassyDetailedContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbassyDetailedContent.h; sourceTree = "<group>"; };
@@ -291,8 +324,6 @@
 		E03E0B5E17A7480600E344B8 /* Miami@2x-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami@2x-icon.png"; sourceTree = "<group>"; };
 		E03E0B5F17A7480600E344B8 /* Puerto-Plata-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Plata-icon.png"; sourceTree = "<group>"; };
 		E03E0B6017A7480600E344B8 /* Puerto-Plata-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Plata-icon@2x.png"; sourceTree = "<group>"; };
-		E03E0B6917A74D4F00E344B8 /* NMexico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NMexico.png; sourceTree = "<group>"; };
-		E03E0B6A17A74D4F00E344B8 /* NMexico@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NMexico@2x.png"; sourceTree = "<group>"; };
 		E03E0B6E17A74E2B00E344B8 /* mexico-culture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mexico-culture.png"; sourceTree = "<group>"; };
 		E03E0B6F17A74E2B00E344B8 /* mexico-culture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mexico-culture@2x.png"; sourceTree = "<group>"; };
 		E03E0B7017A74E2B00E344B8 /* mexico-embassy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mexico-embassy.png"; sourceTree = "<group>"; };
@@ -343,8 +374,19 @@
 		E06FCE0817A60852003F3FC6 /* security-embassy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "security-embassy.png"; sourceTree = "<group>"; };
 		E06FCE0917A60852003F3FC6 /* security-political.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "security-political.png"; sourceTree = "<group>"; };
 		E06FCE0C17A60963003F3FC6 /* embassy-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "embassy-icon.png"; sourceTree = "<group>"; };
+		E077251317A9E3DE00804CA9 /* ANew-trip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ANew-trip.png"; sourceTree = "<group>"; };
+		E077251417A9E3DF00804CA9 /* ANew-trip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ANew-trip@2x.png"; sourceTree = "<group>"; };
+		E077251517A9E3DF00804CA9 /* Guadala.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guadala.png; sourceTree = "<group>"; };
+		E077251617A9E3DF00804CA9 /* Guadala@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guadala@2x.png"; sourceTree = "<group>"; };
+		E077251717A9E3DF00804CA9 /* Mexico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mexico.png; sourceTree = "<group>"; };
+		E077251817A9E3DF00804CA9 /* Mexico@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mexico@2x.png"; sourceTree = "<group>"; };
+		E077251B17A9E3DF00804CA9 /* Puerto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Puerto.png; sourceTree = "<group>"; };
+		E077251C17A9E3DF00804CA9 /* Puerto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto@2x.png"; sourceTree = "<group>"; };
+		E077252717A9E44B00804CA9 /* Miami-USA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-USA.png"; sourceTree = "<group>"; };
+		E077252817A9E44B00804CA9 /* Miami-USA@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-USA@2x.png"; sourceTree = "<group>"; };
 		E08615EF17A8224D00DE240B /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		E08615F017A8224D00DE240B /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
+		E09DAA4E17A97EA6006AD6E9 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		E0B5825017A31D2C00093130 /* intrepid icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intrepid icon.png"; sourceTree = "<group>"; };
 		E0B5825217A31D8100093130 /* app icon nonretina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app icon nonretina.png"; sourceTree = "<group>"; };
 		E0BF3BDE17A7399D00241A52 /* AUS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUS.png; sourceTree = "<group>"; };
@@ -373,9 +415,6 @@
 		E0BF3BF517A7399D00241A52 /* THB@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "THB@2x.png"; sourceTree = "<group>"; };
 		E0BF3BF617A7399D00241A52 /* USD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = USD.png; sourceTree = "<group>"; };
 		E0BF3BF717A7399D00241A52 /* USD@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "USD@2x.png"; sourceTree = "<group>"; };
-		E0E9C7C917A6B8DB009FB594 /* Guada@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada@2x.png"; sourceTree = "<group>"; };
-		E0E9C7CA17A6B8DB009FB594 /* miami@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "miami@2x.png"; sourceTree = "<group>"; };
-		E0E9C7CB17A6B8DB009FB594 /* Puerto-Plata@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Plata@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -396,6 +435,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6811614117A9D0890029134B /* Content Managing */ = {
+			isa = PBXGroup;
+			children = (
+				6811614217A9D0FB0029134B /* CityEntity.h */,
+				6811614317A9D0FB0029134B /* CityEntity.m */,
+				6811613E17A9D0730029134B /* EmbassyEntity.h */,
+				6811613F17A9D0730029134B /* EmbassyEntity.m */,
+				6811614517A9D1A20029134B /* TripManager.h */,
+				6811614617A9D1A20029134B /* TripManager.m */,
+			);
+			name = "Content Managing";
+			sourceTree = "<group>";
+		};
 		684BB602179F5117004C44C9 /* Overview */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,6 +558,7 @@
 				688F9E611786207F00CF850C /* Constants.h */,
 				6851222317861138008DB6B6 /* AppDelegate.h */,
 				6851222417861138008DB6B6 /* AppDelegate.m */,
+				6811614117A9D0890029134B /* Content Managing */,
 				684BB606179F534A004C44C9 /* Support Classes */,
 				68B071F017A4DB640061E418 /* Trips */,
 				68B071E617A4D3D30061E418 /* Security */,
@@ -555,16 +608,11 @@
 		688F9E6717862DFD00CF850C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E0203E5017ABF927000F8AA2 /* Assistance */,
 				68F64BFD17A87863002C4793 /* menuArrow@2x.png */,
 				E058778517A877B900E42A78 /* Settings */,
 				E03E0B6D17A74E1E00E344B8 /* Learn More */,
 				E03E0B5817A747AF00E344B8 /* Trips */,
-				E0E9C7C917A6B8DB009FB594 /* Guada@2x.png */,
-				E03E0B6917A74D4F00E344B8 /* NMexico.png */,
-				E03E0B6A17A74D4F00E344B8 /* NMexico@2x.png */,
-				E0E9C7CA17A6B8DB009FB594 /* miami@2x.png */,
-				E0E9C7CB17A6B8DB009FB594 /* Puerto-Plata@2x.png */,
-				7EA293B417A61863000A56E9 /* new-trip@2x.png */,
 				7EA293B217A613C2000A56E9 /* mexico-city@2x.png */,
 				E06FCE0817A60852003F3FC6 /* security-embassy.png */,
 				E06FCE0917A60852003F3FC6 /* security-political.png */,
@@ -705,10 +753,37 @@
 			name = overview;
 			sourceTree = "<group>";
 		};
+		E0203E5017ABF927000F8AA2 /* Assistance */ = {
+			isa = PBXGroup;
+			children = (
+				E0203E5117ABF93D000F8AA2 /* Call-Intrepid.png */,
+				E0203E5217ABF93D000F8AA2 /* Call-Intrepid@2x.png */,
+				E0203E5317ABF93D000F8AA2 /* Call-Local.png */,
+				E0203E5417ABF93D000F8AA2 /* Call-Local@2x.png */,
+				E0203E5517ABF93D000F8AA2 /* IMG.png */,
+				E0203E5617ABF93D000F8AA2 /* IMG@2x.png */,
+				E0203E5717ABF93D000F8AA2 /* Map.png */,
+				E0203E5817ABF93D000F8AA2 /* Map@2x.png */,
+				E0203E5917ABF93D000F8AA2 /* Shape-24.png */,
+				E0203E5A17ABF93D000F8AA2 /* Shape-24@2x.png */,
+			);
+			name = Assistance;
+			sourceTree = "<group>";
+		};
 		E03E0B5817A747AF00E344B8 /* Trips */ = {
 			isa = PBXGroup;
 			children = (
 				E03E0B5917A7480600E344B8 /* Guada-icon.png */,
+				E077251317A9E3DE00804CA9 /* ANew-trip.png */,
+				E077251417A9E3DF00804CA9 /* ANew-trip@2x.png */,
+				E077251517A9E3DF00804CA9 /* Guadala.png */,
+				E077252717A9E44B00804CA9 /* Miami-USA.png */,
+				E077252817A9E44B00804CA9 /* Miami-USA@2x.png */,
+				E077251617A9E3DF00804CA9 /* Guadala@2x.png */,
+				E077251717A9E3DF00804CA9 /* Mexico.png */,
+				E077251817A9E3DF00804CA9 /* Mexico@2x.png */,
+				E077251B17A9E3DF00804CA9 /* Puerto.png */,
+				E077251C17A9E3DF00804CA9 /* Puerto@2x.png */,
 				E03E0B5A17A7480600E344B8 /* Guada-icon@2x.png */,
 				E03E0B5B17A7480600E344B8 /* Mexico-icon.png */,
 				E03E0B5C17A7480600E344B8 /* Mexico-icon@2x.png */,
@@ -723,6 +798,7 @@
 		E03E0B6D17A74E1E00E344B8 /* Learn More */ = {
 			isa = PBXGroup;
 			children = (
+				E09DAA4E17A97EA6006AD6E9 /* close@2x.png */,
 				E05C97EF17A86DE5007DF1C9 /* HealthScreen.png */,
 				E05C97F017A86DE5007DF1C9 /* HealthScreen@2x.png */,
 				E03E0B6E17A74E2B00E344B8 /* mexico-culture.png */,
@@ -844,13 +920,9 @@
 				E0B5825317A31D8100093130 /* app icon nonretina.png in Resources */,
 				685B6F5C17A601DC0003B5D9 /* newMenuBack@2x.png in Resources */,
 				7EA293B317A613C2000A56E9 /* mexico-city@2x.png in Resources */,
-				7EA293B517A61863000A56E9 /* new-trip@2x.png in Resources */,
 				E06FCE0A17A60852003F3FC6 /* security-embassy.png in Resources */,
 				E06FCE0B17A60852003F3FC6 /* security-political.png in Resources */,
 				E06FCE0D17A60963003F3FC6 /* embassy-icon.png in Resources */,
-				E0E9C7CC17A6B8DB009FB594 /* Guada@2x.png in Resources */,
-				E0E9C7CD17A6B8DB009FB594 /* miami@2x.png in Resources */,
-				E0E9C7CE17A6B8DB009FB594 /* Puerto-Plata@2x.png in Resources */,
 				E049C42D17A6DADB00B00B35 /* Altitude-Sickness@2x.png in Resources */,
 				E049C42E17A6DADB00B00B35 /* Cholera@2x.png in Resources */,
 				E049C42F17A6DADB00B00B35 /* Dengue-Fever@2x.png in Resources */,
@@ -915,8 +987,6 @@
 				E03E0B6617A7480600E344B8 /* Miami@2x-icon.png in Resources */,
 				E03E0B6717A7480600E344B8 /* Puerto-Plata-icon.png in Resources */,
 				E03E0B6817A7480600E344B8 /* Puerto-Plata-icon@2x.png in Resources */,
-				E03E0B6B17A74D4F00E344B8 /* NMexico.png in Resources */,
-				E03E0B6C17A74D4F00E344B8 /* NMexico@2x.png in Resources */,
 				E03E0B7217A74E2B00E344B8 /* mexico-culture.png in Resources */,
 				E03E0B7317A74E2B00E344B8 /* mexico-culture@2x.png in Resources */,
 				E03E0B7417A74E2B00E344B8 /* mexico-embassy.png in Resources */,
@@ -931,6 +1001,27 @@
 				E058778B17A877C200E42A78 /* divider-mid-1@2x.png in Resources */,
 				E058778C17A877C200E42A78 /* Signout.png in Resources */,
 				E058778D17A877C200E42A78 /* Signout@2x.png in Resources */,
+				E09DAA4F17A97EA6006AD6E9 /* close@2x.png in Resources */,
+				E077251D17A9E3DF00804CA9 /* ANew-trip.png in Resources */,
+				E077251E17A9E3DF00804CA9 /* ANew-trip@2x.png in Resources */,
+				E077251F17A9E3DF00804CA9 /* Guadala.png in Resources */,
+				E077252017A9E3DF00804CA9 /* Guadala@2x.png in Resources */,
+				E077252117A9E3DF00804CA9 /* Mexico.png in Resources */,
+				E077252217A9E3DF00804CA9 /* Mexico@2x.png in Resources */,
+				E077252517A9E3DF00804CA9 /* Puerto.png in Resources */,
+				E077252617A9E3DF00804CA9 /* Puerto@2x.png in Resources */,
+				E077252917A9E44B00804CA9 /* Miami-USA.png in Resources */,
+				E077252A17A9E44B00804CA9 /* Miami-USA@2x.png in Resources */,
+				E0203E5B17ABF93D000F8AA2 /* Call-Intrepid.png in Resources */,
+				E0203E5C17ABF93D000F8AA2 /* Call-Intrepid@2x.png in Resources */,
+				E0203E5D17ABF93D000F8AA2 /* Call-Local.png in Resources */,
+				E0203E5E17ABF93D000F8AA2 /* Call-Local@2x.png in Resources */,
+				E0203E5F17ABF93D000F8AA2 /* IMG.png in Resources */,
+				E0203E6017ABF93D000F8AA2 /* IMG@2x.png in Resources */,
+				E0203E6117ABF93D000F8AA2 /* Map.png in Resources */,
+				E0203E6217ABF93D000F8AA2 /* Map@2x.png in Resources */,
+				E0203E6317ABF93D000F8AA2 /* Shape-24.png in Resources */,
+				E0203E6417ABF93D000F8AA2 /* Shape-24@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -974,6 +1065,9 @@
 				E02BBA0B17A8845300215CEA /* EmbassyDetailedContent.m in Sources */,
 				7E9A131217A8AE5E0082003C /* TermsOfServiceViewController.m in Sources */,
 				7E9A131517A8AE6E0082003C /* PrivacyPolicyViewController.m in Sources */,
+				6811614017A9D0730029134B /* EmbassyEntity.m in Sources */,
+				6811614417A9D0FB0029134B /* CityEntity.m in Sources */,
+				6811614717A9D1A20029134B /* TripManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

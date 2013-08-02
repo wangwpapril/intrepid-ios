@@ -24,11 +24,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    mController = [MenuController getInstance];
     self.view.backgroundColor = [UIColor whiteColor];
-    mController = [[MenuController alloc] init];
-    [mController displayMenuWithParent:self];
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [mController displayMenuWithParent:self];
+}
+
+- (CityEntity *)getCity {
+    return mController.city;
 }
 
 - (void)addTabs:(NSArray *)nameArray {
@@ -67,8 +74,8 @@
         [self.view addSubview:tab];
         i++;
     }
-    currentTab = 1;
-    [self tabSelected:[tabArray objectAtIndex:1]];
+    currentTab = 0;
+    [self tabSelected:[tabArray objectAtIndex:currentTab]];
     
     // swipe to switch tabs
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedLeft:)];
@@ -84,14 +91,14 @@
     // create line
     line = [[UILabel alloc] init];
     line.backgroundColor = APP_TOGGLE_SELECTED;
-    line.frame = CGRectMake(117, 27, 80, 1);
+    line.frame = CGRectMake(13, 27, 80, 1);
     [self.view addSubview:line];
 }
 
 - (void) addViews:(NSMutableArray *)arrayOfViews withVerticalOffset:(NSInteger)offset {
     verticalOffset = offset;
     viewArray = arrayOfViews;
-    [self.view addSubview:[viewArray objectAtIndex:1]];
+    [self.view addSubview:[viewArray objectAtIndex:0]];
     
 }
 
@@ -173,29 +180,51 @@
                 tableToBe.frame = CGRectMake(-320, verticalOffset, 320, self.view.frame.size.height - verticalOffset);
             }
         }
-        
-        [UIView animateWithDuration:0.3 animations:^{
-            line.frame = CGRectMake(lineX, 27, 80, 1);
-            NSInteger offset;
-            if (currentTab - previousTab > 0) {
-                offset = -320;
+        [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^ {
+                line.frame = CGRectMake(lineX, 27, 80, 1);
+                NSInteger offset;
+                if (currentTab - previousTab > 0) {
+                    offset = -320;
+                }
+                else {
+                    offset = 320;
+                }
+                
+                [self.view insertSubview:[viewArray objectAtIndex:currentTab] belowSubview:[tabArray objectAtIndex:0]];
+                for (UIView *view in viewArray) {
+                    [view setFrame:CGRectMake(view.frame.origin.x + offset, verticalOffset, 320, self.view.frame.size.height - verticalOffset)];
+                }
             }
-            else {
-                offset = 320;
-            }
-            
-            [self.view insertSubview:[viewArray objectAtIndex:currentTab] belowSubview:mController.menu];
-            for (UIView *view in viewArray) {
-                [view setFrame:CGRectMake(view.frame.origin.x + offset, verticalOffset, 320, self.view.frame.size.height - verticalOffset)];
-            }
-        }
-                         completion:^(BOOL finished){
-                             [[viewArray objectAtIndex:previousTab] removeFromSuperview];
-                             for (UIButton * tab in tabArray) {
-                                 tab.userInteractionEnabled = YES;
-                             }
-                             [self viewSwitched];
-                         }];
+                             completion:^(BOOL finished){
+                                 [[viewArray objectAtIndex:previousTab] removeFromSuperview];
+                                 for (UIButton * tab in tabArray) {
+                                     tab.userInteractionEnabled = YES;
+                                 }
+                                 [self viewSwitched];
+                             }];
+
+//        [UIView animateWithDuration:0.3 animations:^{
+//            line.frame = CGRectMake(lineX, 27, 80, 1);
+//            NSInteger offset;
+//            if (currentTab - previousTab > 0) {
+//                offset = -320;
+//            }
+//            else {
+//                offset = 320;
+//            }
+//            
+//            [self.view insertSubview:[viewArray objectAtIndex:currentTab] belowSubview:[tabArray objectAtIndex:0]];
+//            for (UIView *view in viewArray) {
+//                [view setFrame:CGRectMake(view.frame.origin.x + offset, verticalOffset, 320, self.view.frame.size.height - verticalOffset)];
+//            }
+//        }
+//                         completion:^(BOOL finished){
+//                             [[viewArray objectAtIndex:previousTab] removeFromSuperview];
+//                             for (UIButton * tab in tabArray) {
+//                                 tab.userInteractionEnabled = YES;
+//                             }
+//                             [self viewSwitched];
+//                         }];
     }
 }
 

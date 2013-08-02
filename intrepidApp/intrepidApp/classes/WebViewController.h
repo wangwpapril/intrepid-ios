@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MenuController.h"
 
 @interface WebViewController : UIViewController
 
+@property (nonatomic, strong) MenuController *mController;
 - (void)setupWithTitle: (NSString *)title withURL:(NSString *)url;
 @end

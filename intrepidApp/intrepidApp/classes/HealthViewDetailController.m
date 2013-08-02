@@ -179,12 +179,14 @@
         immunizationTextContainer.layer.borderWidth = 1.0f;
         immunizationTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
         [scrollView addSubview:immunizationTextContainer];
+        
+        scrollView.contentSize = CGSizeMake(320, immunizationTextContainer.frame.origin.y + immunizationSize.height + 25);
 
         scrollView.contentSize = CGSizeMake(320, immunizationTextContainer.frame.origin.y + immunizationSize.height + 10);
         
     }
     else {
-        scrollView.contentSize = CGSizeMake(320, sideEffectsText.frame.origin.y + sideEffectsSize.height + 10);
+        scrollView.contentSize = CGSizeMake(320, sideEffectsText.frame.origin.y + sideEffectsSize.height + 25);
     }
     
     //description side effects transmission immunization
