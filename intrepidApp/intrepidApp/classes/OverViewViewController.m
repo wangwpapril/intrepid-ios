@@ -28,7 +28,7 @@
     NSInteger height = self.view.bounds.size.height;
     CGRect frame = CGRectMake(0, 0, 320, height);
     
-     CityEntity *city = [self getCity];
+    CityEntity *city = [self getCity];
     
     SlidingTextView *history = [[SlidingTextView alloc] initWithFrame:frame];
     [history setupWithImageName:city.generalImage withTitle:@"General" withIconName:@"descriptionAndSideEffectLogo.png"];
@@ -63,20 +63,35 @@
 }
 
 -(void)populateCurrencyItems {
+    float dollarRatio = [[self getCity].dollarRatio floatValue];
+    NSString* USD = [NSString stringWithFormat:@"%.02f", dollarRatio];
+    NSString* MXN = [NSString stringWithFormat:@"%.02f", dollarRatio * 12.82];
+    NSString* CAD = [NSString stringWithFormat:@"%.02f", dollarRatio * 1.04];
+    NSString* GBP = [NSString stringWithFormat:@"%.02f", dollarRatio * 0.65];
+    NSString* BRL = [NSString stringWithFormat:@"%.02f", dollarRatio * 2.28];
+    NSString* AUS = [NSString stringWithFormat:@"%.02f", dollarRatio * 1.12];
+    NSString* EUR = [NSString stringWithFormat:@"%.02f", dollarRatio * 0.75];
+    NSString* CNY = [NSString stringWithFormat:@"%.02f", dollarRatio * 6.13];
+    NSString* CHF = [NSString stringWithFormat:@"%.02f", dollarRatio * 0.93];
+    NSString* MYR = [NSString stringWithFormat:@"%.02f", dollarRatio * 3.26];
+    NSString* THB = [NSString stringWithFormat:@"%.02f", dollarRatio * 31.27];
+    NSString* INR = [NSString stringWithFormat:@"%.02f", dollarRatio * 61.10];
+    NSString* DOP = [NSString stringWithFormat:@"%.02f", dollarRatio * 41.93];
+    
     currencyArray = [NSArray arrayWithObjects:
-                           [CurrencyItem currencyItemOfCountry:@"Mexican Peso" flag:@"MXN.png" value:@"1"],
-                            [CurrencyItem currencyItemOfCountry:@"Canadian Dollar" flag:@"CAD.png" value:@"0.081"],
-                            [CurrencyItem currencyItemOfCountry:@"UK Pound" flag:@"GBP.png" value:@"0.051"],
-                     [CurrencyItem currencyItemOfCountry:@"Brazilian Real" flag:@"BRL.png" value:@"0.177"],
-                     [CurrencyItem currencyItemOfCountry:@"Australian Dollar" flag:@"AUS.png" value:@"0.085"],
-                     [CurrencyItem currencyItemOfCountry:@"US Dollar" flag:@"USD.png" value:@"0.078"],
-                     [CurrencyItem currencyItemOfCountry:@"Euro" flag:@"EUR.png" value:@"0.059"],
-                     [CurrencyItem currencyItemOfCountry:@"Chinese Yen" flag:@"CNY.png" value:@"0.483"],
-                     [CurrencyItem currencyItemOfCountry:@"Swiss Franc" flag:@"CHF.png" value:@"0.073"],
-                     [CurrencyItem currencyItemOfCountry:@"Malaysian Ringgit" flag:@"MYR.png" value:@"0.252"],
-                     [CurrencyItem currencyItemOfCountry:@"Thai Bhat" flag:@"THB.png" value:@"2.456"],
-                     [CurrencyItem currencyItemOfCountry:@"Indian Rupee" flag:@"INR.png" value:@"4.66"],
-                     [CurrencyItem currencyItemOfCountry:@"Dominican Peso" flag:@"DOP.png" value:@"3.29"],nil];
+                           [CurrencyItem currencyItemOfCountry:@"Mexican Peso" flag:@"MXN.png" value:MXN],
+                            [CurrencyItem currencyItemOfCountry:@"Canadian Dollar" flag:@"CAD.png" value:CAD],
+                            [CurrencyItem currencyItemOfCountry:@"UK Pound" flag:@"GBP.png" value:GBP],
+                     [CurrencyItem currencyItemOfCountry:@"Brazilian Real" flag:@"BRL.png" value:BRL],
+                     [CurrencyItem currencyItemOfCountry:@"Australian Dollar" flag:@"AUS.png" value:AUS],
+                     [CurrencyItem currencyItemOfCountry:@"US Dollar" flag:@"USD.png" value:USD],
+                     [CurrencyItem currencyItemOfCountry:@"Euro" flag:@"EUR.png" value:EUR],
+                     [CurrencyItem currencyItemOfCountry:@"Chinese Yen" flag:@"CNY.png" value:CNY],
+                     [CurrencyItem currencyItemOfCountry:@"Swiss Franc" flag:@"CHF.png" value:CHF],
+                     [CurrencyItem currencyItemOfCountry:@"Malaysian Ringgit" flag:@"MYR.png" value:MYR],
+                     [CurrencyItem currencyItemOfCountry:@"Thai Bhat" flag:@"THB.png" value:THB],
+                     [CurrencyItem currencyItemOfCountry:@"Indian Rupee" flag:@"INR.png" value:INR],
+                     [CurrencyItem currencyItemOfCountry:@"Dominican Peso" flag:@"DOP.png" value:DOP],nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -89,6 +104,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    NSLog(@"there are %i items", currencyArray.count);
     return currencyArray.count;
 }
 

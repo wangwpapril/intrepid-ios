@@ -2,18 +2,19 @@
 //  CityEntity.m
 //  intrepidApp
 //
-//  Created by Philip Ojha on 7/31/2013.
+//  Created by Philip Ojha on 8/3/2013.
 //  Copyright (c) 2013 JonCarrHarris Consulting. All rights reserved.
 //
 
 #import "CityEntity.h"
-#import "EmbassyEntity.h"
 
 
 @implementation CityEntity
 
+@dynamic alertsURL;
 @dynamic cityImage;
 @dynamic cityName;
+@dynamic clinicsURL;
 @dynamic continent;
 @dynamic cultureImage;
 @dynamic cultureText;
@@ -23,9 +24,7 @@
 @dynamic localText;
 @dynamic politicalImage;
 @dynamic politicalText;
-@dynamic embassyItems;
-@dynamic clinicsURL;
-@dynamic alertsURL;
 @dynamic weatherURL;
+@dynamic dollarRatio;
 
 @end
