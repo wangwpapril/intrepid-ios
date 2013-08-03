@@ -30,7 +30,7 @@ static TripManager *instance =nil;
 
 -(NSArray *) getCities {
     NSArray *cityArray = [self fetchCityArray];
-    if (cityArray.count == 2) {
+    if (cityArray.count == 0) {
         [self populateTrips];
         cityArray = [self fetchCityArray];
     }
