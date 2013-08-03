@@ -25,7 +25,7 @@ static TripManager *instance =nil;
             instance = [[TripManager alloc] init];
         }
     }
-    return instance;
+    return instance;    
 }
 
 -(NSArray *) getCities {

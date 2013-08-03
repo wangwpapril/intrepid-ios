@@ -16,6 +16,7 @@
 {
     [super viewDidLoad];
     self.navigationItem.hidesBackButton = YES;
+     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
 
     mController = [MenuController getInstance];
 }
