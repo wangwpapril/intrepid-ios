@@ -26,6 +26,8 @@
     newHealthItem.common = common;
     newHealthItem.description = description;
     newHealthItem.details = details;
+    newHealthItem.symptoms = symptoms;
+    newHealthItem.immunization = immunization;
     newHealthItem.image = image;
     return newHealthItem;
 }
