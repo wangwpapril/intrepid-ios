@@ -26,6 +26,6 @@
 @property (nonatomic, retain) NSString * politicalImage;
 @property (nonatomic, retain) NSString * politicalText;
 @property (nonatomic, retain) NSString * weatherURL;
-@property (nonatomic, retain) NSNumber * dollarRatio;
+@property (nonatomic, retain) NSNumber * cadToNative;
 @end
 

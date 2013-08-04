@@ -8,10 +8,6 @@
 
 #import "CurrencyItem.h"
 
-@interface CurrencyItem ()
-
-@end
-
 @implementation CurrencyItem
 
 @synthesize flag;

@@ -17,7 +17,7 @@
 @property (nonatomic) NSString *flag;
 @property (nonatomic, copy) NSString *country;
 
-@property (nonatomic) NSString *value;
+@property (nonatomic, strong) NSString *value;
 
 +(id)currencyItemOfCountry:(NSString*)country flag:(NSString*)flag value:(NSString*)value;
 

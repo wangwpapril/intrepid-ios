@@ -2,13 +2,13 @@
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="13A497d" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="CityEntity" representedClassName="CityEntity" syncable="YES">
         <attribute name="alertsURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cadToNative" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="cityImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cityName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="clinicsURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="continent" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cultureImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cultureText" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="dollarRatio" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="generalImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="generalText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="localImage" optional="YES" attributeType="String" syncable="YES"/>

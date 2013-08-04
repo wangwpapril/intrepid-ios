@@ -25,6 +25,6 @@
 @dynamic politicalImage;
 @dynamic politicalText;
 @dynamic weatherURL;
-@dynamic dollarRatio;
+@dynamic cadToNative;
 
 @end

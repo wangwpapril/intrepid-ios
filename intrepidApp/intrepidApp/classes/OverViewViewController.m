@@ -34,20 +34,16 @@
     [history setupWithImageName:city.generalImage withTitle:@"General" withIconName:@"descriptionAndSideEffectLogo.png"];
     [history addTextAreaWithText:city.generalText];
     
-//    [history setupWithImageName:@"overview-history.png" withTitle:@"General" withIconName:@"descriptionAndSideEffectLogo.png"];
-//    [history addTextAreaWithText:@"Mexico is bordered to the north by the states of California, Arizona, New Mexico, and Texas, to the west and south by the Pacific Ocean, to the east by the Gulf of Mexico, and to the southeast by Belize, Guatemala, and the Caribbean Sea. Mexico City is located at 7,349 feet (2,240 meters) ASL, Mexico City is temperate and relatively cool but heavily affected by smog due to its limited air circulation. It is surrounded on three sides by mountains and thus the cold fronts from the north make southward intrusions only during the Northern Hemisphere winter and spring. The difference between summer and winter mean temperatures is approximately 6 to 8 °C. The current population of Mexico is 19.5 million. A visa is not required to visit Mexico as a tourist, but you do need a tourist card, which you can obtain on arrival by completing an immigration form, available at border crossings or on-board flights to Mexico. You need a tourist card to leave Mexico. If lost, a tourist card can be replaced at the immigration office at any international airport in Mexico. The cost of a replacement is 295 Mexican Pesos."];
     
     SlidingTextView *culture = [[SlidingTextView alloc] initWithFrame:frame];
     [culture setupWithImageName:city.cultureImage withTitle:@"Culture" withIconName:@"culture-icon.png"];
     [culture addTextAreaWithText:city.cultureText];
     
-//    [culture setupWithImageName:@"overview-culture.png" withTitle:@"Culture" withIconName:@"culture-icon.png"];
-//    [culture addTextAreaWithText:@"The ethnic makeup of Mexico is Mestizos (people of mixed European and Native American background): 60-80% - Amerindian (Totonac, Maya, Zapotec, Mixtec, Otomi and Nahuatl): 10% to 30% - European: 9 to 17%. Religions in Mexico include: Roman Catholic 83%, Protestant 9%, Other 8%. The official language of Mexico is Spanish. Although as many as 100 native languages are spoken, 80% of those Mexicans who speak an indigenous language also speak Spanish.The local currency is the Mexican Peso. US dollar travellers’ cheques and notes are readily converted into local currency. International debit and credit cards are widely accepted for payment and in ATMs. It is not possible to exchange cash at hotel receptions - this can only be done at banks and bureaux de change or Cambios. In Mexio, personal space is usually closer than it is for some other cultures: about an arm distance. It is expected for females to shake hands and kiss on one cheek, particularly in a social setting."];
 
     SlidingTextView *currency = [[SlidingTextView alloc] initWithFrame:frame];
     [currency setupWithImageName:@"overview-currency.png" withTitle:@"Currency" withIconName:@"currency-Icon.png"];
     
-    // table
+    // currency table
     tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 308,  320, height - 308)];
     tableList.dataSource = self;
     tableList.delegate = self;
@@ -62,26 +58,33 @@
     [self addTabs:names];
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    NSIndexPath *indexPath=[NSIndexPath indexPathForRow:1 inSection:0];
+    [tableList selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+}
+
 -(void)populateCurrencyItems {
-    float dollarRatio = [[self getCity].dollarRatio floatValue];
-    NSString* USD = [NSString stringWithFormat:@"%.02f", dollarRatio];
-    NSString* MXN = [NSString stringWithFormat:@"%.02f", dollarRatio * 12.82];
-    NSString* CAD = [NSString stringWithFormat:@"%.02f", dollarRatio * 1.04];
-    NSString* GBP = [NSString stringWithFormat:@"%.02f", dollarRatio * 0.65];
-    NSString* BRL = [NSString stringWithFormat:@"%.02f", dollarRatio * 2.28];
-    NSString* AUS = [NSString stringWithFormat:@"%.02f", dollarRatio * 1.12];
-    NSString* EUR = [NSString stringWithFormat:@"%.02f", dollarRatio * 0.75];
-    NSString* CNY = [NSString stringWithFormat:@"%.02f", dollarRatio * 6.13];
-    NSString* CHF = [NSString stringWithFormat:@"%.02f", dollarRatio * 0.93];
-    NSString* MYR = [NSString stringWithFormat:@"%.02f", dollarRatio * 3.26];
-    NSString* THB = [NSString stringWithFormat:@"%.02f", dollarRatio * 31.27];
-    NSString* INR = [NSString stringWithFormat:@"%.02f", dollarRatio * 61.10];
-    NSString* DOP = [NSString stringWithFormat:@"%.02f", dollarRatio * 41.93];
+    CityEntity *city = [self getCity];
+    float CADtoNative = [city.cadToNative floatValue];
+
+    NSString *CAD = [NSString stringWithFormat:@"%.02f", 1.0];    
+    NSString* USD = [NSString stringWithFormat:@"%.02f", 0.96];
+    NSString* MXN = [NSString stringWithFormat:@"%.02f", 12.19];
+    NSString* GBP = [NSString stringWithFormat:@"%.02f", 0.63];
+    NSString* BRL = [NSString stringWithFormat:@"%.02f", 2.20];
+    NSString* AUS = [NSString stringWithFormat:@"%.02f", 1.08];
+    NSString* EUR = [NSString stringWithFormat:@"%.02f", 0.72];
+    NSString* CNY = [NSString stringWithFormat:@"%.02f", 5.90];
+    NSString* CHF = [NSString stringWithFormat:@"%.02f", 0.89];
+    NSString* MYR = [NSString stringWithFormat:@"%.02f", 3.14];
+    NSString* THB = [NSString stringWithFormat:@"%.02f", 30.09];
+    NSString* INR = [NSString stringWithFormat:@"%.02f", 58.81];
+    NSString* DOP = [NSString stringWithFormat:@"%.02f", 40.38];
     
-    currencyArray = [NSArray arrayWithObjects:
-                           [CurrencyItem currencyItemOfCountry:@"Mexican Peso" flag:@"MXN.png" value:MXN],
-                            [CurrencyItem currencyItemOfCountry:@"Canadian Dollar" flag:@"CAD.png" value:CAD],
-                            [CurrencyItem currencyItemOfCountry:@"UK Pound" flag:@"GBP.png" value:GBP],
+    currencyArray = [NSMutableArray arrayWithObjects:
+                     [CurrencyItem currencyItemOfCountry:@"Canadian Dollar" flag:@"CAD.png" value:CAD],
+                     [CurrencyItem currencyItemOfCountry:@"Mexican Peso" flag:@"MXN.png" value:MXN],
+                     [CurrencyItem currencyItemOfCountry:@"UK Pound" flag:@"GBP.png" value:GBP],
                      [CurrencyItem currencyItemOfCountry:@"Brazilian Real" flag:@"BRL.png" value:BRL],
                      [CurrencyItem currencyItemOfCountry:@"Australian Dollar" flag:@"AUS.png" value:AUS],
                      [CurrencyItem currencyItemOfCountry:@"US Dollar" flag:@"USD.png" value:USD],
@@ -92,6 +95,22 @@
                      [CurrencyItem currencyItemOfCountry:@"Thai Bhat" flag:@"THB.png" value:THB],
                      [CurrencyItem currencyItemOfCountry:@"Indian Rupee" flag:@"INR.png" value:INR],
                      [CurrencyItem currencyItemOfCountry:@"Dominican Peso" flag:@"DOP.png" value:DOP],nil];
+
+    NSString* native = [NSString stringWithFormat:@"%.02f", CADtoNative];
+
+    BOOL foundNative = false;
+    int i = 0;
+    int limit = currencyArray.count;
+    while (i < limit && !foundNative) {
+        CurrencyItem *item = [currencyArray objectAtIndex:i];
+        if ([item.value isEqualToString:native]){
+            CurrencyItem *toAdd = item;
+            [currencyArray removeObject:item];
+            [currencyArray insertObject:toAdd atIndex:1];
+            foundNative = true;
+        }
+        i++;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -104,7 +123,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"there are %i items", currencyArray.count);
     return currencyArray.count;
 }
 
