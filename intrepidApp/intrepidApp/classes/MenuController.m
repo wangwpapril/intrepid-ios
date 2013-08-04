@@ -33,7 +33,7 @@ static MenuController *instance =nil;
             // instantiate some global variables
             instance = [[MenuController alloc] init];
             instance.menu = [[UIImageView alloc] init];
-            instance.menu.image = [UIImage imageNamed:@"newMenuBack2.png"];
+            instance.menu.image = [UIImage imageNamed:@"Menu-new.png"];
             instance.menu.layer.zPosition = MAXFLOAT;
             [instance addContentButtons];
             // add arrow
@@ -147,6 +147,12 @@ static MenuController *instance =nil;
         case 2:
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"overView"];
             break;
+        
+        case 3:
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
+            [((WebViewController *)viewController) setupWithTitle:@"Alerts" withURL:city.alertsURL];
+            viewController.view.tag = 3;
+            break;
             
         case 4:
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
@@ -158,12 +164,6 @@ static MenuController *instance =nil;
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
             [((WebViewController *)viewController) setupWithTitle:@"Weather" withURL:city.weatherURL];
             viewController.view.tag = 5;
-            break;
-            
-        case 6:
-            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
-            [((WebViewController *)viewController) setupWithTitle:@"Alerts" withURL:city.alertsURL];
-            viewController.view.tag = 6;
             break;
             
         case 7:
