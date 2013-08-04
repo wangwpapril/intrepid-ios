@@ -8,11 +8,8 @@
 //  Copyright (c) 2013 JonCarrHarris Consulting. All rights reserved.
 //
 
-
-
 #import "EmbassyDetailedViewController.h"
 #import "EmbassyDetailedItem.h"
-#import "EmbassyDetailedContent.h"
 #import "Constants.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -52,7 +49,8 @@
     embassyDetailedItemTitleLabel.backgroundColor = [UIColor colorWithRed:66/255.0f green:58/255.0f blue:56/255.0f alpha:1];
     embassyDetailedItemTitleLabel.text = NULL;
     
-    NSString *uppercaseString = [@"hello" uppercaseString];
+    //Why does this not work???
+    NSString *uppercaseString = [embassyDetailedItem.name uppercaseString];
     
     UILabel *embassyDetailedItemNameLabel = [[UILabel alloc] init];
     embassyDetailedItemNameLabel.frame = CGRectMake(20, 7, 275, 21);
