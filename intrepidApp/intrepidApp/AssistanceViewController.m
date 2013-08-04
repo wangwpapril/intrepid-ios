@@ -79,8 +79,7 @@
     mapImage.frame = CGRectMake(0, currentLocationLabel.frame.origin.y + 45, 320, mapImage.frame.size.height*0.5);
     [scrollView addSubview:mapImage];
     
-    //Provide Location
-    
+    //Provide Location    
     UILabel *provideLocationLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, mapImage.frame.origin.y + mapImage.frame.size.height + 25, 250, 20)];
     provideLocationLabel.text = @"Provide my Location:";
     provideLocationLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:21];
@@ -102,8 +101,7 @@
               forControlEvents:UIControlEventTouchUpInside];
     [scrollView addSubview:callAssistance];
     
-    scrollView.contentSize = CGSizeMake(320, callAssistance.frame.origin.y + callAssistance.frame.size.height + 50);
-    
+    scrollView.contentSize = CGSizeMake(320, callAssistance.frame.origin.y + callAssistance.frame.size.height + 50);    
 }
 
 -(IBAction)callAssistance:(id) sender
