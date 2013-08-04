@@ -23,8 +23,7 @@
     self.view.tag = 2;
     [self populateCurrencyItems];
     self.navigationItem.title = @"Overview";
-     
-    
+         
     NSInteger height = self.view.bounds.size.height;
     CGRect frame = CGRectMake(0, 0, 320, height);
     

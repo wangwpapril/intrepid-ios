@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SlidingTextView : UIScrollView
+@interface SlidingTextView : UIScrollView {
+    UIScrollView *scroll;
+}
 
 //@property (nonatomic, strong) UIScrollView *scroll;
 

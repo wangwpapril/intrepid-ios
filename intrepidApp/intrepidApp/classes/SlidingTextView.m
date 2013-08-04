@@ -24,16 +24,16 @@
 
 -(void)setupWithImageName:(NSString *)image withTitle:(NSString *)title withIconName:(NSString *)icon {
     
-//    CGRect rect=CGRectMake(0, 0, 320, 480);
-//    scroll = [[UIScrollView alloc] initWithFrame:rect];
-    self.showsVerticalScrollIndicator = YES;
-    self.showsHorizontalScrollIndicator = NO;
-    self.scrollEnabled = YES;
+    CGRect rect=CGRectMake(0, 0, 320, 480);
+    scroll = [[UIScrollView alloc] initWithFrame:rect];
+    scroll.showsVerticalScrollIndicator = YES;
+    scroll.showsHorizontalScrollIndicator = NO;
+    scroll.scrollEnabled = YES;
     
     // top image
     UIImageView  *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:image]];
     imageView.frame = CGRectMake(0, 0, 320, 268);
-    [self addSubview:imageView];
+    [scroll addSubview:imageView];
     
     // title background
     UIView *borderLine = [[UIView alloc] initWithFrame:CGRectMake(0, 268, 320, 40)];
@@ -46,14 +46,14 @@
     titleLabel.font = [UIFont fontWithName:@"ProximaNova-SemiBold" size:17];
     titleLabel.textColor = APP_TEXT_COLOR;
     [borderLine addSubview:titleLabel];
-    [self addSubview:borderLine];
+    [scroll addSubview:borderLine];
     
     // icon
     UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:icon]];
     iconView.frame = CGRectMake(14, 275, 25, 25);
-    [self addSubview:iconView];
+    [scroll addSubview:iconView];
     
-//    [self addSubview:scroll];
+    [self addSubview:scroll];
     
 }
 
@@ -62,28 +62,31 @@
     tableView.scrollEnabled = NO;
     tableView.frame = CGRectMake(tableView.frame.origin.x, tableView.frame.origin.y, 320, height);
     [self addSubview:tableView];
-     self.contentSize = CGSizeMake(320, 400 + height);
+    self.contentSize = CGSizeMake(320, 308 + height);
 }
 
 - (void)addTextAreaWithText:(NSString *)text {
-    // text
+    
     UIFont *textFont = [UIFont fontWithName:@"ProximaNova-Light" size:13];
-//    NSString *text = @"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
 
-    CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:15]
-                            constrainedToSize:CGSizeMake(320, self.bounds.size.height-100) lineBreakMode:NSLineBreakByWordWrapping];
-    self.contentSize = CGSizeMake(320, 325 + size.height);
+    CGSize size = [text sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:13]
+                                      constrainedToSize:CGSizeMake(280, 15000)
+                       lineBreakMode:NSLineBreakByWordWrapping];
 
     
-    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 308,  320, size.height)];
-    [textView setEditable:NO];
-    textView.scrollEnabled = NO;
+    UILabel *textView = [[UILabel alloc] initWithFrame:CGRectMake(20, 0,  280, size.height + 5)];
     textView.textColor = APP_TEXT_COLOR;
     textView.font = textFont;
     textView.text = text;
+    textView.lineBreakMode = NSLineBreakByWordWrapping;
+    textView.numberOfLines = 0;
     
+    UILabel *textViewContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, 308,  320, size.height + 5)];
+
+    [textViewContainer addSubview: textView];
+    [scroll addSubview:textViewContainer];
+    scroll.contentSize = CGSizeMake(320, 308 + textViewContainer.frame.size.height + 5);
     
-    [self addSubview:textView];
 }
 
 @end

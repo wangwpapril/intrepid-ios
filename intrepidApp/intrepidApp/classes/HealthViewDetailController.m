@@ -42,7 +42,7 @@
 
     //Description and Side Effects images
     UIImageView  *descriptionImageLabel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"stethoscope-pic.png"]];
-    descriptionImageLabel.frame = CGRectMake(5, 12, 25, 25);
+    descriptionImageLabel.frame = CGRectMake(5, 10, 25, 25);
     [scrollView addSubview:descriptionImageLabel];
     
     // Set Header label
