@@ -34,7 +34,14 @@
     self.navigationItem.hidesBackButton = YES;    
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     
+    CGRect rect=CGRectMake(0, 0, 320, self.view.frame.size.height);
+    scrollView = [[UIScrollView alloc] initWithFrame:rect];
+    scrollView.showsVerticalScrollIndicator = YES;
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.scrollEnabled = YES;
+    
     [self addContent];
+    [self.view addSubview:scrollView];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -49,28 +56,28 @@
     UIImageView *ambulanceImage = [[UIImageView alloc] initWithImage:ambulance];
     ambulanceImage.frame = CGRectMake(0, 0, 320, ambulanceImage.frame.size.height*0.5);
     
-    [self.view addSubview:ambulanceImage];
+    [scrollView addSubview:ambulanceImage];
     
     //Current Location and Image
     UIImage *currentLocation;
     currentLocation = [UIImage imageNamed:@"Shape-24@2x.png"];
     UIImageView *currentLocationImage = [[UIImageView alloc] initWithImage:currentLocation];
     currentLocationImage.frame = CGRectMake(15, ambulanceImage.frame.size.height + 25, 21, 20);
-    [self.view addSubview:currentLocationImage];
+    [scrollView addSubview:currentLocationImage];
     
     UILabel *currentLocationLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, ambulanceImage.frame.size.height + 25, 250, 20)];
     currentLocationLabel.text = @"Current Location";
     currentLocationLabel.font = [UIFont fontWithName:@"ProximaNova-Bold" size:20];
     currentLocationLabel.backgroundColor = [UIColor clearColor];
     currentLocationLabel.textColor = [UIColor colorWithRed: 66.0/255 green: 58.0/255 blue: 56.0/255 alpha: 1.0];
-    [self.view addSubview:currentLocationLabel];
+    [scrollView addSubview:currentLocationLabel];
     
     //Map Image
     UIImage *map;
     map = [UIImage imageNamed:@"Map@2x.png"];
     UIImageView *mapImage = [[UIImageView alloc] initWithImage:map];
     mapImage.frame = CGRectMake(0, currentLocationLabel.frame.origin.y + 45, 320, mapImage.frame.size.height*0.5);
-    [self.view addSubview:mapImage];
+    [scrollView addSubview:mapImage];
     
     //Provide Location
     
@@ -79,10 +86,11 @@
     provideLocationLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:21];
     provideLocationLabel.backgroundColor = [UIColor clearColor];
     provideLocationLabel.textColor = [UIColor colorWithRed: 66.0/255 green: 58.0/255 blue: 56.0/255 alpha: 1.0];
-    [self.view addSubview:provideLocationLabel];
+    [scrollView addSubview:provideLocationLabel];
     
     onOff.frame = CGRectMake(230, mapImage.frame.origin.y + mapImage.frame.size.height + 22, 63, 23);
     [onOff setOnTintColor: [UIColor colorWithRed:84/255.0f green:213/255.0f blue:105/255.0f alpha:1.0f]];
+    [scrollView addSubview:onOff];
     
     //Call Assistance Button
     UIImage *callAssistanceImage = [UIImage imageNamed:@"Call-Intrepid@2x.png"];
@@ -92,7 +100,9 @@
     [callAssistance addTarget:self
                         action:@selector(callAssistance:)
               forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:callAssistance];
+    [scrollView addSubview:callAssistance];
+    
+    scrollView.contentSize = CGSizeMake(320, callAssistance.frame.origin.y + callAssistance.frame.size.height + 50);
     
 }
 

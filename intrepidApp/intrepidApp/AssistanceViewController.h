@@ -11,6 +11,7 @@
 
 @interface AssistanceViewController : UIViewController {
     UISwitch *onOff;
+    UIScrollView *scrollView;
 }
 
 @property (nonatomic, strong) MenuController *mController;
