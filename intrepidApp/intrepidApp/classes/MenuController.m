@@ -168,7 +168,6 @@ static MenuController *instance =nil;
             
         case 6:
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"assistance"];
-//            viewController.view.tag = 5;
             break;
             
         case 7:
