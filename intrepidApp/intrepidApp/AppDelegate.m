@@ -45,7 +45,7 @@
     // !!!: Use the next line only during beta
     // [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
     
-    [TestFlight takeOff:@"c8777d06-5274-4326-9d18-4281cbdd5e5b"];
+    [TestFlight takeOff:@"166880bf-a375-4646-8525-eca0e480081b"];
     // The rest of your application:didFinishLaunchingWithOptions method
     // ...
     [self customizeAppearance];
