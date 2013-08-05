@@ -10,7 +10,7 @@
 
 @interface EmbassyDetailedContent : NSObject
 
-- (NSMutableArray *)getContent;
+- (NSArray *)getContent;
 
 @end
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="13A497d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -53,7 +53,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="G8m-le-uyD" kind="push" id="2sC-ni-DF3"/>
+                                    <segue destination="G8m-le-uyD" kind="push" id="XXT-vu-w2c"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nEI-D0-7dv">
@@ -131,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ve-Tw-7eT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="199" y="-579"/>
+            <point key="canvasLocation" x="299" y="-527"/>
         </scene>
         <!--Terms Of Service View Controller - Terms of Service-->
         <scene sceneID="GYy-QV-KqX">
@@ -146,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbp-g8-CEx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="693" y="-1319"/>
+            <point key="canvasLocation" x="625" y="-1471"/>
         </scene>
         <!--Sign Up View Controller - Sign Up-->
         <scene sceneID="TKR-Vi-eld">
@@ -186,7 +186,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gil-vz-SGD" kind="push" id="UIZ-fG-elV"/>
+                                    <segue destination="gil-vz-SGD" kind="push" id="nmV-1s-krn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="By registering, I accept the" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HsG-28-70T">
@@ -340,7 +340,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JCK-Ci-qAv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="77" y="112"/>
+            <point key="canvasLocation" x="157" y="308"/>
         </scene>
         <!--Assistance View Controller - Emergency Assistance-->
         <scene sceneID="Sf5-HI-jvy">
@@ -351,7 +351,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="pYx-Zq-lhu">
-                                <rect key="frame" x="223" y="294" width="79" height="27"/>
+                                <rect key="frame" x="222" y="291" width="80" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                         </subviews>
@@ -477,7 +477,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftA-Ti-Na6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="566" y="-149"/>
+            <point key="canvasLocation" x="710" y="183"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="o0I-bh-Mst">
@@ -524,7 +524,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ObX-I1-NTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-205" y="-1102"/>
+            <point key="canvasLocation" x="-497" y="-1226"/>
         </scene>
         <!--Learn More View Controller-->
         <scene sceneID="Min-IP-w73">
@@ -575,7 +575,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3MN-r2-BsT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="166" y="-1243"/>
+            <point key="canvasLocation" x="86" y="-1375"/>
         </scene>
         <!--Embassy Detailed View Controller-->
         <scene sceneID="wnh-gr-96W">
@@ -604,7 +604,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LTn-vQ-lm8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1122" y="-1319"/>
+            <point key="canvasLocation" x="1094" y="-1503"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="eAl-Xd-eX9">
@@ -704,7 +704,6 @@
         <class className="AssistanceViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AssistanceViewController.h"/>
             <relationships>
-                <relationship kind="action" name="callAssistance:"/>
                 <relationship kind="outlet" name="onOff" candidateClass="UISwitch"/>
             </relationships>
         </class>
@@ -826,7 +825,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="byn-GS-scy"/>
-        <segue reference="UIZ-fG-elV"/>
+        <segue reference="Qvd-hq-w6L"/>
+        <segue reference="nmV-1s-krn"/>
     </inferredMetricsTieBreakers>
 </document>

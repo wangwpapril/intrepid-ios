@@ -101,7 +101,12 @@
     sideEffectsLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
     sideEffectsLabel.backgroundColor = [UIColor clearColor];
     sideEffectsLabel.textColor = UIColorFromRGB(0x423a38);
-    sideEffectsLabel.text = @"Side Effects";
+    
+    NSString *secondTitle = @"Side Effects";
+    if ([healthItem.category isEqualToString:@"conditions"]) {
+        secondTitle = @"Symptoms";
+    }
+    sideEffectsLabel.text = secondTitle;
     
     //Begin sizing sideEffects text container
     CGSize sideEffectsSize = [healthItem.details sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:14]
