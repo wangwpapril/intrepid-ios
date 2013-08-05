@@ -76,20 +76,22 @@
     descriptionLabel.text = @"Description";
     
     //Set descriptionText to auto-fit content
-//    CGSize size = [embassyDetailedItem.description sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(320, 250) lineBreakMode:NSLineBreakByWordWrapping];
-    UITextView *descriptionText = [[UITextView alloc] initWithFrame:CGRectMake(0, 35,  320, 500)];
-    descriptionText.font = [UIFont fontWithName:@"ProximaNova-Light" size:13];
+    CGSize size = [embassyItem.description sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:14] constrainedToSize:CGSizeMake(280, 15000) lineBreakMode:NSLineBreakByWordWrapping];
+    UILabel *descriptionText = [[UILabel alloc] initWithFrame:CGRectMake(20, 0,  280, size.height)];
+    descriptionText.font = [UIFont fontWithName:@"ProximaNova-Light" size:14];
     descriptionText.backgroundColor = [UIColor clearColor];
-//    descriptionText.backgroundColor = UIColorFromRGB(0xffffff);
-//    descriptionText.textColor = APP_TEXT_COLOR;//UIColorFromRGB(0x423a38);
     descriptionText.textColor = [UIColor blackColor];
-    descriptionText.text = @"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n\n\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium";
-    descriptionText.scrollEnabled = NO;
-    descriptionText.editable = NO;
+    descriptionText.text = embassyItem.description;
+    descriptionText.lineBreakMode = NSLineBreakByWordWrapping;
+    descriptionText.numberOfLines = 0;
+    
+    UILabel *descriptionTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, 40,  320, size.height + 5)];
     
     [scrollView addSubview:descriptionLabel];
-    [scrollView addSubview:descriptionText];
-    scrollView.contentSize = CGSizeMake(320, descriptionText.frame.origin.y + 10);
+    [descriptionTextContainer addSubview: descriptionText];
+    [scrollView addSubview:descriptionTextContainer];
+    
+    scrollView.contentSize = CGSizeMake(320, descriptionTextContainer.frame.origin.y + 1000);
 }
 
 - (void)didReceiveMemoryWarning

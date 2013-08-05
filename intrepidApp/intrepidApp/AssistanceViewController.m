@@ -59,44 +59,31 @@
     
     [scrollView addSubview:ambulanceImage];
     
-    //Current Location and Image
-    UIImage *currentLocation;
-    currentLocation = [UIImage imageNamed:@"Shape-24@2x.png"];
-    UIImageView *currentLocationImage = [[UIImageView alloc] initWithImage:currentLocation];
-    currentLocationImage.frame = CGRectMake(15, ambulanceImage.frame.size.height + 25, 21, 20);
-    [scrollView addSubview:currentLocationImage];
-    
-    UILabel *currentLocationLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, ambulanceImage.frame.size.height + 25, 250, 20)];
-    currentLocationLabel.text = @"Current Location";
-    currentLocationLabel.font = [UIFont fontWithName:@"ProximaNova-Bold" size:20];
-    currentLocationLabel.backgroundColor = [UIColor clearColor];
-    currentLocationLabel.textColor = [UIColor colorWithRed: 66.0/255 green: 58.0/255 blue: 56.0/255 alpha: 1.0];
-    [scrollView addSubview:currentLocationLabel];
-    
-    //Map Image
-    UIImage *map;
-    map = [UIImage imageNamed:@"Map@2x.png"];
-    UIImageView *mapImage = [[UIImageView alloc] initWithImage:map];
-    mapImage.frame = CGRectMake(0, currentLocationLabel.frame.origin.y + 45, 320, mapImage.frame.size.height*0.5);
-    [scrollView addSubview:mapImage];
-    
-    //Provide Location    
-    UILabel *provideLocationLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, mapImage.frame.origin.y + mapImage.frame.size.height + 25, 250, 20)];
+    //Provide Location
+    UILabel *provideLocationLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, ambulanceImage.frame.origin.y + ambulanceImage.frame.size.height + 25, 250, 20)];
     provideLocationLabel.text = @"Provide my Location:";
     provideLocationLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:21];
     provideLocationLabel.backgroundColor = [UIColor clearColor];
     provideLocationLabel.textColor = [UIColor colorWithRed: 66.0/255 green: 58.0/255 blue: 56.0/255 alpha: 1.0];
     [scrollView addSubview:provideLocationLabel];
     
-    onOff.frame = CGRectMake(230, mapImage.frame.origin.y + mapImage.frame.size.height + 22, 63, 23);
+    onOff.frame = CGRectMake(230, ambulanceImage.frame.origin.y + ambulanceImage.frame.size.height + 22, 63, 23);
     [onOff setOnTintColor: [UIColor colorWithRed:84/255.0f green:213/255.0f blue:105/255.0f alpha:1.0f]];
     [scrollView addSubview:onOff];
+    
+    //Map Image
+    UIImage *map;
+    map = [UIImage imageNamed:@"Map@2x.png"];
+    UIImageView *mapImage = [[UIImageView alloc] initWithImage:map];
+    mapImage.frame = CGRectMake(0, provideLocationLabel.frame.origin.y + 45, 320, mapImage.frame.size.height*0.5);
+    [scrollView addSubview:mapImage];
+    
     
     //Call Assistance Button
     UIImage *callAssistanceImage = [UIImage imageNamed:@"Call-Intrepid@2x.png"];
     UIButton *callAssistance = [[UIButton alloc] init];
     [callAssistance setImage:callAssistanceImage forState:UIControlStateNormal];
-    callAssistance.frame = CGRectMake(0, provideLocationLabel.frame.origin.y + 45, 320, callAssistance.imageView.image.size.height*0.5);
+    callAssistance.frame = CGRectMake(0, mapImage.frame.origin.y + mapImage.frame.size.height, 320, 128*0.5);
     [callAssistance addTarget:self
                         action:@selector(callAssistance:)
               forControlEvents:UIControlEventTouchUpInside];
