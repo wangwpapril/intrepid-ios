@@ -9,15 +9,15 @@
 //
 
 #import "EmbassyDetailedViewController.h"
-#import "EmbassyDetailedItem.h"
 #import "Constants.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation EmbassyDetailedViewController
 
+@synthesize embassyItem;
 //@synthesize embassyDetailedItemNameLabel;
 //@synthesize embassyDetailedItemTitleLabel;
-@synthesize embassyDetailedItem;
+//@synthesize embassyDetailedItem;
 
 
 - (void)viewDidLoad
@@ -47,11 +47,9 @@
     UILabel *embassyDetailedItemTitleLabel = [[UILabel alloc] init];
     embassyDetailedItemTitleLabel.frame = CGRectMake(0, 0, 320, 36);
     embassyDetailedItemTitleLabel.backgroundColor = [UIColor colorWithRed:66/255.0f green:58/255.0f blue:56/255.0f alpha:1];
-    embassyDetailedItemTitleLabel.text = NULL;
+
     
-    //Why does this not work???
-    NSString *uppercaseString = [embassyDetailedItem.name uppercaseString];
-    
+    NSString *uppercaseString = [embassyItem.name uppercaseString];
     UILabel *embassyDetailedItemNameLabel = [[UILabel alloc] init];
     embassyDetailedItemNameLabel.frame = CGRectMake(20, 7, 275, 21);
     embassyDetailedItemNameLabel.text = uppercaseString;

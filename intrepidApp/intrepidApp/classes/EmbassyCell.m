@@ -36,12 +36,6 @@
     countryLabel.textColor = APP_TEXT_COLOR;
     [self addSubview:countryLabel];
     
-    // value
-//    valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(250, 0, 70, 40)];
-//    valueLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:16];
-//    valueLabel.textColor = APP_TEXT_COLOR;
-//    valueLabel.textAlignment = NSTextAlignmentCenter;
-//    [self addSubview:valueLabel];
 }
 
 - (void)setupWithImageName:(NSString *)image withCountry:(NSString *)country{

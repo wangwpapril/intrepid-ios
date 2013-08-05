@@ -90,7 +90,6 @@
 		E0203E6217ABF93D000F8AA2 /* Map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5817ABF93D000F8AA2 /* Map@2x.png */; };
 		E0203E6317ABF93D000F8AA2 /* Shape-24.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5917ABF93D000F8AA2 /* Shape-24.png */; };
 		E0203E6417ABF93D000F8AA2 /* Shape-24@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5A17ABF93D000F8AA2 /* Shape-24@2x.png */; };
-		E02BBA0817A880CA00215CEA /* EmbassyDetailedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E02BBA0717A880CA00215CEA /* EmbassyDetailedItem.m */; };
 		E02BBA0B17A8845300215CEA /* EmbassyDetailedContent.m in Sources */ = {isa = PBXBuildFile; fileRef = E02BBA0A17A8845300215CEA /* EmbassyDetailedContent.m */; };
 		E03E0B5617A7429400E344B8 /* Currency-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5417A7429400E344B8 /* Currency-Icon.png */; };
 		E03E0B5717A7429400E344B8 /* Currency-Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5517A7429400E344B8 /* Currency-Icon@2x.png */; };
@@ -338,8 +337,6 @@
 		E0203E5817ABF93D000F8AA2 /* Map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Map@2x.png"; sourceTree = "<group>"; };
 		E0203E5917ABF93D000F8AA2 /* Shape-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shape-24.png"; sourceTree = "<group>"; };
 		E0203E5A17ABF93D000F8AA2 /* Shape-24@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shape-24@2x.png"; sourceTree = "<group>"; };
-		E02BBA0617A880CA00215CEA /* EmbassyDetailedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbassyDetailedItem.h; sourceTree = "<group>"; };
-		E02BBA0717A880CA00215CEA /* EmbassyDetailedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbassyDetailedItem.m; sourceTree = "<group>"; };
 		E02BBA0917A8845200215CEA /* EmbassyDetailedContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbassyDetailedContent.h; sourceTree = "<group>"; };
 		E02BBA0A17A8845300215CEA /* EmbassyDetailedContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbassyDetailedContent.m; sourceTree = "<group>"; };
 		E03E0B5417A7429400E344B8 /* Currency-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Currency-Icon.png"; sourceTree = "<group>"; };
@@ -617,7 +614,7 @@
 				68B071F017A4DB640061E418 /* Trips */,
 				68B071E617A4D3D30061E418 /* Security */,
 				684BB602179F5117004C44C9 /* Overview */,
-				7E3477791791E76700FB86DC /* Login/Signup */,
+				7E3477791791E76700FB86DC /* Login / Signup / Settings */,
 				688F9E5B178611C000CF850C /* Health */,
 				6851222C17861138008DB6B6 /* MainStoryboard.storyboard */,
 				6851222F17861138008DB6B6 /* intrepidApp.xcdatamodeld */,
@@ -703,8 +700,6 @@
 				68B071EB17A4D7290061E418 /* EmbassyCell.m */,
 				68B071ED17A4D7430061E418 /* EmbassyItem.h */,
 				68B071EE17A4D7430061E418 /* EmbassyItem.m */,
-				E02BBA0617A880CA00215CEA /* EmbassyDetailedItem.h */,
-				E02BBA0717A880CA00215CEA /* EmbassyDetailedItem.m */,
 				E02BBA0917A8845200215CEA /* EmbassyDetailedContent.h */,
 				E02BBA0A17A8845300215CEA /* EmbassyDetailedContent.m */,
 				E058778217A8768500E42A78 /* EmbassyDetailedViewController.h */,
@@ -730,7 +725,7 @@
 			name = Trips;
 			sourceTree = "<group>";
 		};
-		7E3477791791E76700FB86DC /* Login/Signup */ = {
+		7E3477791791E76700FB86DC /* Login / Signup / Settings */ = {
 			isa = PBXGroup;
 			children = (
 				7E34777A1791E79300FB86DC /* LoginViewController.h */,
@@ -748,7 +743,7 @@
 				7E9A130A17A876FF0082003C /* SettingsViewController.h */,
 				7E9A130B17A876FF0082003C /* SettingsViewController.m */,
 			);
-			name = Login/Signup;
+			name = "Login / Signup / Settings";
 			sourceTree = "<group>";
 		};
 		7E5B30BF1798942E00692F80 /* login and signup */ = {
@@ -1197,7 +1192,6 @@
 				E08615F117A8224D00DE240B /* ForgotPasswordViewController.m in Sources */,
 				7E9A130C17A876FF0082003C /* SettingsViewController.m in Sources */,
 				E058778417A8768500E42A78 /* EmbassyDetailedViewController.m in Sources */,
-				E02BBA0817A880CA00215CEA /* EmbassyDetailedItem.m in Sources */,
 				E02BBA0B17A8845300215CEA /* EmbassyDetailedContent.m in Sources */,
 				7E9A131217A8AE5E0082003C /* TermsOfServiceViewController.m in Sources */,
 				7E9A131517A8AE6E0082003C /* PrivacyPolicyViewController.m in Sources */,

@@ -11,15 +11,7 @@
 @implementation EmbassyItem
 
 @synthesize flag;
-@synthesize country;
-
-
-+(id)currencyItemOfCountry:(NSString *)country flag:(NSString*)flag
-{
-    EmbassyItem *item = [[self alloc] init];
-    item.country = country;
-    item.flag = flag;
-    return item;
-}
+@synthesize name;
+@synthesize description;
 
 @end
