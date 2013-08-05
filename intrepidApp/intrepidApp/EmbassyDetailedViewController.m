@@ -15,8 +15,6 @@
 
 @implementation EmbassyDetailedViewController
 
-//@synthesize embassyDetailedItemNameLabel;
-//@synthesize embassyDetailedItemTitleLabel;
 @synthesize embassyDetailedItem;
 
 

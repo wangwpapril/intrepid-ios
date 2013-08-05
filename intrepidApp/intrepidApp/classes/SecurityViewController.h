@@ -14,5 +14,6 @@
 
 @property (nonatomic, strong) UITableView *tableList;
 @property (nonatomic, strong) NSArray *embassyArray;
+@property (nonatomic, strong) NSMutableArray *contentArray;
 @property (nonatomic, strong) EmbassyDetailedItem *selectedItem;
 @end
