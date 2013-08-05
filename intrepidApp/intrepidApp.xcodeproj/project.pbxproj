@@ -1288,6 +1288,7 @@
 		6851223B17861138008DB6B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "intrepidApp/intrepidApp-Prefix.pch";
 				INFOPLIST_FILE = "intrepidApp/intrepidApp-Info.plist";
@@ -1296,6 +1297,7 @@
 					"\"$(SRCROOT)/TestFlightSDK1.2.6\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1303,6 +1305,7 @@
 		6851223C17861138008DB6B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "intrepidApp/intrepidApp-Prefix.pch";
 				INFOPLIST_FILE = "intrepidApp/intrepidApp-Info.plist";
@@ -1311,6 +1314,7 @@
 					"\"$(SRCROOT)/TestFlightSDK1.2.6\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
