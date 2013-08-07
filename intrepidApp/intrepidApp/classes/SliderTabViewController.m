@@ -31,8 +31,13 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
     [mController displayMenuWithParent:self];
 }
+
 
 - (CityEntity *)getCity {
     return mController.city;
@@ -65,8 +70,9 @@
         [tab setTitle:title forState:UIControlStateNormal];
         [tab setTitleColor:APP_TOGGLE_SELECTED forState:UIControlStateNormal];
         tab.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
-        [tab setBackgroundColor:APP_TEXT_COLOR];
+        [tab setBackgroundColor:NAVIGATION_BG_COLOR];
         tab.alpha = 0.8;
+        [tab.titleLabel setTextAlignment:NSTextAlignmentCenter];
         
         tab.tag = i; // for tracking which one is clicked
         [tab addTarget:self action:@selector(tabSelected:) forControlEvents:UIControlEventTouchUpInside];
@@ -91,7 +97,7 @@
     // create line
     line = [[UILabel alloc] init];
     line.backgroundColor = APP_TOGGLE_SELECTED;
-    line.frame = CGRectMake(13, 27, 80, 1);
+    [self addLineToTab];
     [self.view addSubview:line];
 }
 
@@ -123,11 +129,20 @@
     }
 }
 
+-(void)addLineToTab {
+    UIButton *tab = ((UIButton *)[tabArray objectAtIndex:currentTab]);
+    CGSize size = [tab.titleLabel.text sizeWithFont:[UIFont fontWithName:@"ProximaNova-Regular" size:13]
+                   constrainedToSize:CGSizeMake(280, 15000)
+                       lineBreakMode:NSLineBreakByWordWrapping];
+    float length = size.width + 2;
+    float xPos = tab.center.x - length / 2;
+    line.frame = CGRectMake(xPos, 27, length, 1);
+}
+
 
 -(void)switchTabs:(NSInteger)newTag{
     previousTab = currentTab;
     NSInteger index = 0;
-    NSInteger lineX;
     
     // handle tabs
     for (UIButton *tab in tabArray) {
@@ -139,7 +154,7 @@
         if (tab.tag == newTag) {
             [tab setTitleColor:APP_TOGGLE_SELECTED forState:UIControlStateNormal];
             //            [capitalLetter setTextColor:APP_TOGGLE_SELECTED];
-            lineX = 107 * index + 13;
+//            lineX = 107 * index + 13;
             
         }
         
@@ -154,7 +169,7 @@
     if (currentTab !=newTag) {
         
         //        [self removeText];
-        line.frame = CGRectMake(lineX, 27, 1, 1);
+        [self addLineToTab];
         
         for (UIButton * tab in tabArray) {
             tab.userInteractionEnabled = NO;
@@ -181,7 +196,8 @@
             }
         }
         [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^ {
-                line.frame = CGRectMake(lineX, 27, 80, 1);
+                //line.frame = CGRectMake(lineX, 27, 80, 1);
+                [self addLineToTab];
                 NSInteger offset;
                 if (currentTab - previousTab > 0) {
                     offset = -320;
@@ -202,29 +218,6 @@
                                  }
                                  [self viewSwitched];
                              }];
-
-//        [UIView animateWithDuration:0.3 animations:^{
-//            line.frame = CGRectMake(lineX, 27, 80, 1);
-//            NSInteger offset;
-//            if (currentTab - previousTab > 0) {
-//                offset = -320;
-//            }
-//            else {
-//                offset = 320;
-//            }
-//            
-//            [self.view insertSubview:[viewArray objectAtIndex:currentTab] belowSubview:[tabArray objectAtIndex:0]];
-//            for (UIView *view in viewArray) {
-//                [view setFrame:CGRectMake(view.frame.origin.x + offset, verticalOffset, 320, self.view.frame.size.height - verticalOffset)];
-//            }
-//        }
-//                         completion:^(BOOL finished){
-//                             [[viewArray objectAtIndex:previousTab] removeFromSuperview];
-//                             for (UIButton * tab in tabArray) {
-//                                 tab.userInteractionEnabled = YES;
-//                             }
-//                             [self viewSwitched];
-//                         }];
     }
 }
 
