@@ -38,9 +38,11 @@
     [self.view addSubview:tableList];
     tableList.delegate = self;
     tableList.dataSource = self;
-    
-//    mController = [[MenuController alloc] init];
-//    [mController displayMenuWithParent:self];
+
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 - (void)populateContentArray {
@@ -124,22 +126,6 @@
     
     return cell;
 }
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
-//        NSLog(@"text is not default, instead it's :%@", searchBar.text);
-//        selectedItem = (HealthItem *)[filteredHealthItemArray objectAtIndex:indexPath.row];
-//    }
-//    else {
-//        NSLog(@"text is default : %@", searchBar.text);
-//        selectedItem = (HealthItem *)[[contentArray objectAtIndex:currentTab] objectAtIndex:indexPath.row];
-//    }
-//    [searchBar resignFirstResponder];
-//    HealthViewDetailController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"healthDetails"];
-//    viewController.healthItem = selectedItem;
-//    [self.navigationController pushViewController:viewController animated:YES];
-//}
-
 
 #pragma mark Content Filtering
 -(void)filterContent{
