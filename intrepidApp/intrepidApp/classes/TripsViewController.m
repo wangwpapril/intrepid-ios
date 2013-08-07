@@ -171,7 +171,6 @@
 }
 
 - (void)textFieldDidChange {
-    NSLog(@"text changed");
     
     if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
         [UIView animateWithDuration:0.1 animations:^{

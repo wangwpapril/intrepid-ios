@@ -64,7 +64,7 @@
         NSLog(@"city name: %@ city img: %@", city.city, city.image);
         CGRect frame;
         frame.origin.x = 320 * i + (320 - width)/2;
-        frame.origin.y = scrollView.frame.origin.y + 15;
+        frame.origin.y = scrollView.frame.origin.y + 37; // was 15
         
         frame.size = CGSizeMake(width, height);
         
@@ -90,7 +90,7 @@
         
         // add a label
         UILabel *cityName = [[UILabel alloc] init];
-        cityName.frame = CGRectMake(110 + 320 * i, self.view.frame.size.height - 160, 100.0, 100.0);
+        cityName.frame = CGRectMake(110 + 320 * i, self.view.frame.size.height - 138, 100.0, 100.0);
         [cityName setTextAlignment:NSTextAlignmentCenter];
         cityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
         cityName.backgroundColor = [UIColor clearColor];
@@ -107,7 +107,7 @@
     
     [self.view addSubview:scrollView];
     
-    pageControl.frame = CGRectMake(135, self.view.frame.size.height - 100, 50, 50);
+    pageControl.frame = CGRectMake(135, self.view.frame.size.height - 78, 50, 50);
     pageControl.numberOfPages = entries;
     pageControl.currentPage = 0;
     pageControl.pageIndicatorTintColor = [UIColor darkGrayColor];
@@ -147,12 +147,7 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
-//
-//- (void)viewWillDisappear:(BOOL)animated
-//{
-//    [super viewWillDisappear:animated];
-//    [self.navigationController setNavigationBarHidden:NO animated:animated];
-//}
+
 
 
 @end
