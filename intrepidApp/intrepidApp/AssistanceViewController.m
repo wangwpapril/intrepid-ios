@@ -64,7 +64,7 @@
     provideLocationLabel.text = @"Provide my Location:";
     provideLocationLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:21];
     provideLocationLabel.backgroundColor = [UIColor clearColor];
-    provideLocationLabel.textColor = [UIColor colorWithRed: 66.0/255 green: 58.0/255 blue: 56.0/255 alpha: 1.0];
+    provideLocationLabel.textColor = [UIColor colorWithRed: 66.0/255 green: 58.0/255 blue: 56.0/255 alpha: 0.9];
     [scrollView addSubview:provideLocationLabel];
     
     onOff.frame = CGRectMake(230, ambulanceImage.frame.origin.y + ambulanceImage.frame.size.height + 22, 63, 23);
