@@ -33,7 +33,7 @@ static MenuController *instance =nil;
             // instantiate some global variables
             instance = [[MenuController alloc] init];
             instance.menu = [[UIImageView alloc] init];
-            instance.menu.image = [UIImage imageNamed:@"Menu-new.png"];
+            instance.menu.image = [UIImage imageNamed:@"Maximized-edit@2x.png"];
             instance.menu.layer.zPosition = MAXFLOAT;
             [instance addContentButtons];
             // add arrow
@@ -138,14 +138,15 @@ static MenuController *instance =nil;
     UIViewController *viewController;
     switch (button.tag) {
         case 0:
-            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"security"];
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"overView"];
             break;
-            
+
         case 1:
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"healthView"];
             break;
+       
         case 2:
-            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"overView"];
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"security"];
             break;
         
         case 3:
