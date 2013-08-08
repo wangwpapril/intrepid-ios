@@ -118,7 +118,7 @@
     [scrollView addSubview:mexicoCultureDescription];
     
     UILabel *assistanceScreenDescription = [[UILabel alloc] init];
-    assistanceScreenDescription.frame = CGRectMake(980, self.view.frame.size.height - 200, 250.0, 250.0);
+    assistanceScreenDescription.frame = CGRectMake(995, self.view.frame.size.height - 200, 250.0, 250.0);
     assistanceScreenDescription.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
     assistanceScreenDescription.backgroundColor = [UIColor clearColor];
     assistanceScreenDescription.textColor = [UIColor whiteColor];
