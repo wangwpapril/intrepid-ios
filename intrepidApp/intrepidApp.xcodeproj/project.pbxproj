@@ -165,6 +165,10 @@
 		E077252A17A9E44B00804CA9 /* Miami-USA@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E077252817A9E44B00804CA9 /* Miami-USA@2x.png */; };
 		E08615F117A8224D00DE240B /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E08615F017A8224D00DE240B /* ForgotPasswordViewController.m */; };
 		E09DAA4F17A97EA6006AD6E9 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E09DAA4E17A97EA6006AD6E9 /* close@2x.png */; };
+		E0A0896017B43ADC007B5C65 /* Maximized-edit.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A0895E17B43ADC007B5C65 /* Maximized-edit.png */; };
+		E0A0896117B43ADC007B5C65 /* Maximized-edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A0895F17B43ADC007B5C65 /* Maximized-edit@2x.png */; };
+		E0B4268817B43E6700DA407E /* Call-Intrepid247.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B4268617B43E6700DA407E /* Call-Intrepid247.png */; };
+		E0B4268917B43E6700DA407E /* Call-Intrepid247@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B4268717B43E6700DA407E /* Call-Intrepid247@2x.png */; };
 		E0B5825117A31D2C00093130 /* intrepid icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5825017A31D2C00093130 /* intrepid icon.png */; };
 		E0B5825317A31D8100093130 /* app icon nonretina.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5825217A31D8100093130 /* app icon nonretina.png */; };
 		E0B5CF9117AC0FB200F5BB66 /* Puerto-Political.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF8917AC0FB200F5BB66 /* Puerto-Political.png */; };
@@ -420,6 +424,10 @@
 		E08615EF17A8224D00DE240B /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		E08615F017A8224D00DE240B /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		E09DAA4E17A97EA6006AD6E9 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
+		E0A0895E17B43ADC007B5C65 /* Maximized-edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Maximized-edit.png"; sourceTree = "<group>"; };
+		E0A0895F17B43ADC007B5C65 /* Maximized-edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Maximized-edit@2x.png"; sourceTree = "<group>"; };
+		E0B4268617B43E6700DA407E /* Call-Intrepid247.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Call-Intrepid247.png"; sourceTree = "<group>"; };
+		E0B4268717B43E6700DA407E /* Call-Intrepid247@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Call-Intrepid247@2x.png"; sourceTree = "<group>"; };
 		E0B5825017A31D2C00093130 /* intrepid icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intrepid icon.png"; sourceTree = "<group>"; };
 		E0B5825217A31D8100093130 /* app icon nonretina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app icon nonretina.png"; sourceTree = "<group>"; };
 		E0B5CF8917AC0FB200F5BB66 /* Puerto-Political.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Political.png"; sourceTree = "<group>"; };
@@ -679,6 +687,8 @@
 				7EA293B217A613C2000A56E9 /* mexico-city@2x.png */,
 				685B6F5B17A601DC0003B5D9 /* newMenuBack@2x.png */,
 				E0D7ECA417AD575D006E4424 /* Menu-new.png */,
+				E0A0895E17B43ADC007B5C65 /* Maximized-edit.png */,
+				E0A0895F17B43ADC007B5C65 /* Maximized-edit@2x.png */,
 				E0D7ECA517AD575D006E4424 /* Menu-new@2x.png */,
 				68F64BFB17A87788002C4793 /* newMenuBack2@2x.png */,
 				7EE44DAC179F79A5006BA2EC /* overview */,
@@ -819,6 +829,8 @@
 		E0203E5017ABF927000F8AA2 /* Assistance */ = {
 			isa = PBXGroup;
 			children = (
+				E0B4268617B43E6700DA407E /* Call-Intrepid247.png */,
+				E0B4268717B43E6700DA407E /* Call-Intrepid247@2x.png */,
 				E0203E5117ABF93D000F8AA2 /* Call-Intrepid.png */,
 				E0203E5217ABF93D000F8AA2 /* Call-Intrepid@2x.png */,
 				E0203E5317ABF93D000F8AA2 /* Call-Local.png */,
@@ -1177,6 +1189,10 @@
 				E0263D6017B124980087FAC7 /* Political-icon@2x.png in Resources */,
 				E0263D6B17B129390087FAC7 /* Tourist-icon1.png in Resources */,
 				E0263D6C17B129390087FAC7 /* Tourist-icon1@2x.png in Resources */,
+				E0A0896017B43ADC007B5C65 /* Maximized-edit.png in Resources */,
+				E0A0896117B43ADC007B5C65 /* Maximized-edit@2x.png in Resources */,
+				E0B4268817B43E6700DA407E /* Call-Intrepid247.png in Resources */,
+				E0B4268917B43E6700DA407E /* Call-Intrepid247@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

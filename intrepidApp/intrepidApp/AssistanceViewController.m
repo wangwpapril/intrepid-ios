@@ -80,7 +80,7 @@
     
     
     //Call Assistance Button
-    UIImage *callAssistanceImage = [UIImage imageNamed:@"Call-Intrepid@2x.png"];
+    UIImage *callAssistanceImage = [UIImage imageNamed:@"Call-Intrepid247@2x.png"];
     UIButton *callAssistance = [[UIButton alloc] init];
     [callAssistance setImage:callAssistanceImage forState:UIControlStateNormal];
     callAssistance.frame = CGRectMake(0, mapImage.frame.origin.y + mapImage.frame.size.height, 320, 128*0.5);
