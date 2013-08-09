@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MenuController.h"
 
 @interface SettingsViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *editPhoto;
@@ -14,5 +15,6 @@
 @property(weak, nonatomic) IBOutlet UITextField *name;
 @property(weak, nonatomic) IBOutlet UITextField *email;
 @property(weak, nonatomic) IBOutlet UITextField *password;
+@property (nonatomic, strong) MenuController *mController;
 
 @end
