@@ -20,6 +20,7 @@
 @property (nonatomic, strong) UIImage *flipped;
 @property (nonatomic) BOOL hiding;
 @property (nonatomic, strong) CityEntity *city;
+@property (nonatomic, strong) NSMutableArray *buttonArray;
 
 +(MenuController *)getInstance;
 -(void)displayMenuWithParent:(UIViewController *)controller;

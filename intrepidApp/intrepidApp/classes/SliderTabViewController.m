@@ -28,10 +28,12 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [mController displayMenuWithParent:self];
+//    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 -(void)viewDidAppear:(BOOL)animated {

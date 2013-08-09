@@ -12,6 +12,7 @@
 #import "TripManager.h"
 #import "CityEntity.h"
 #import "TripItem.h"
+#import "SecurityViewController.h"
 
 @implementation MyTripsViewController
 
@@ -125,9 +126,10 @@
     NSInteger index = ((UIButton *)sender).tag - 1; // to account for new trip
     CityEntity *city = [cities objectAtIndex:index];
     [MenuController getInstance].city = city;
-    UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"security"];
+    SecurityViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"security"];
+    viewController.firstLoad = true;
     [self.navigationController pushViewController:viewController animated:YES];
-    [[MenuController getInstance] showMenu];
+//    [[MenuController getInstance] showMenu];
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)sender {

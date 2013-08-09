@@ -22,6 +22,7 @@
 @synthesize upRight;
 @synthesize flipped;
 @synthesize city;
+@synthesize buttonArray;
 
 static MenuController *instance =nil;
 +(MenuController *)getInstance
@@ -107,21 +108,23 @@ static MenuController *instance =nil;
 -(void)addContentButtons {
     // popup button
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(0, 0, 320, 25);
+    button.frame = CGRectMake(0, 0, 320, 28);
     button.backgroundColor = [UIColor clearColor];
     [button addTarget:self action:@selector(toggleMenu) forControlEvents:UIControlEventTouchUpInside];
     [menu addSubview:button];
+    
+    buttonArray = [NSMutableArray new];
 
     // content buttons
     [self makeContentButtonWithOrigin:CGPointMake(0, 25) withTag:0];
     [self makeContentButtonWithOrigin:CGPointMake(107, 25) withTag:1];
-    [self makeContentButtonWithOrigin:CGPointMake(214, 25) withTag:2];
-    [self makeContentButtonWithOrigin:CGPointMake(0, 90) withTag:3];
-    [self makeContentButtonWithOrigin:CGPointMake(107, 90) withTag:4];
-    [self makeContentButtonWithOrigin:CGPointMake(214, 90) withTag:5];
-    [self makeContentButtonWithOrigin:CGPointMake(0, 155) withTag:6];
-    [self makeContentButtonWithOrigin:CGPointMake(107, 155) withTag:7];
-    [self makeContentButtonWithOrigin:CGPointMake(214, 155) withTag:8];
+    [self makeContentButtonWithOrigin:CGPointMake(213, 25) withTag:2];
+    [self makeContentButtonWithOrigin:CGPointMake(0, 89) withTag:3];
+    [self makeContentButtonWithOrigin:CGPointMake(107, 89) withTag:4];
+    [self makeContentButtonWithOrigin:CGPointMake(213, 89) withTag:5];
+    [self makeContentButtonWithOrigin:CGPointMake(0, 153) withTag:6];
+    [self makeContentButtonWithOrigin:CGPointMake(107, 153) withTag:7];
+    [self makeContentButtonWithOrigin:CGPointMake(213, 153) withTag:8];
 }
 
 -(void)toggleMenu {
@@ -136,6 +139,19 @@ static MenuController *instance =nil;
 -(void)goToController:(id)sender{
     UIButton *button = (UIButton *)sender;
     UIViewController *viewController;
+    
+    for (UIButton *option in buttonArray) {
+        if (option == button) {
+            option.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.2];
+            option.layer.borderColor = [UIColor whiteColor].CGColor;
+            option.layer.borderWidth = 1;
+        }
+        else {
+            option.backgroundColor = [UIColor clearColor];
+            option.layer.borderColor = [UIColor clearColor].CGColor;
+            option.layer.borderWidth = 0;
+        }
+    }
     switch (button.tag) {
         case 0:
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"overView"];
@@ -196,6 +212,7 @@ static MenuController *instance =nil;
     button.backgroundColor = [UIColor clearColor];
     [menu addSubview:button];
     [button addTarget:self action:@selector(goToController:) forControlEvents:UIControlEventTouchUpInside];
+    [buttonArray addObject:button];
 }
 
 @end
