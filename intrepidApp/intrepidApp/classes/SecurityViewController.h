@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) UITableView *tableList;
 @property (nonatomic, strong) NSArray *embassyArray;
+@property (nonatomic) BOOL firstLoad;
 
 
 //@property (nonatomic, strong) EmbassyItem *selectedItem;

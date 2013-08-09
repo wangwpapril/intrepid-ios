@@ -20,7 +20,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.tag = 2;
+    self.view.tag = 0;
     [self populateCurrencyItems];
     self.navigationItem.title = @"Overview";
          
@@ -58,6 +58,7 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     NSIndexPath *indexPath=[NSIndexPath indexPathForRow:1 inSection:0];
     [tableList selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 }

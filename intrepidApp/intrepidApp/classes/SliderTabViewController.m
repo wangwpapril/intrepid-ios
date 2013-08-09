@@ -18,6 +18,7 @@
 @synthesize mController;
 @synthesize line;
 @synthesize verticalOffset;
+@synthesize cancelsTouchesInView;
 
 # pragma  mark - visual interface setup
 
@@ -28,10 +29,12 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [mController displayMenuWithParent:self];
+//    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -94,6 +97,7 @@
     swipeRight.direction = (UISwipeGestureRecognizerDirectionRight);
     [self.view addGestureRecognizer:swipeRight];
     
+    
     // create line
     line = [[UILabel alloc] init];
     line.backgroundColor = APP_TOGGLE_SELECTED;
@@ -116,6 +120,7 @@
 }
 
 - (void) swipedRight:(UISwipeGestureRecognizer*)swipeGesture {
+    self.cancelsTouchesInView = NO;
     NSInteger newTag = currentTab - 1;
     if (newTag >= 0) {
         [self switchTabs:newTag];
@@ -123,6 +128,7 @@
 }
 
 - (void) swipedLeft:(UISwipeGestureRecognizer*)swipeGesture {
+    self.cancelsTouchesInView = NO;
     NSInteger newTag = currentTab + 1;
     if (newTag <= 2) {
         [self switchTabs:newTag];
@@ -178,6 +184,7 @@
         currentTab = newTag;
         
         // handle views sliding
+        //THIS IS WHERE I WORK
         
         UIView *tableToBe = ((UIView *)[viewArray objectAtIndex:currentTab]);
         
@@ -185,7 +192,9 @@
             NSInteger position = (currentTab - 1) * 320;
             if (position < 0) {
             }
+
             tableToBe.frame = CGRectMake(position, verticalOffset, 320, self.view.frame.size.height - verticalOffset);
+            
         }
         else {
             if (previousTab == 0) {
@@ -195,6 +204,8 @@
                 tableToBe.frame = CGRectMake(-320, verticalOffset, 320, self.view.frame.size.height - verticalOffset);
             }
         }
+        
+        
         [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^ {
                 //line.frame = CGRectMake(lineX, 27, 80, 1);
                 [self addLineToTab];
@@ -208,6 +219,7 @@
                 
                 [self.view insertSubview:[viewArray objectAtIndex:currentTab] belowSubview:[tabArray objectAtIndex:0]];
                 for (UIView *view in viewArray) {
+                    //animation happens here
                     [view setFrame:CGRectMake(view.frame.origin.x + offset, verticalOffset, 320, self.view.frame.size.height - verticalOffset)];
                 }
             }

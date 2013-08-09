@@ -19,23 +19,12 @@
 
 @synthesize tableList;
 @synthesize embassyArray;
-
-//@synthesize selectedItem;
-
-
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
-//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    if (self) {
-//        // Custom initialization
-//    }
-//    return self;
-//}
+@synthesize firstLoad;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.tag = 0;
+    self.view.tag = 2;
     
 
     EmbassyDetailedContent *content = [[EmbassyDetailedContent alloc] init];
@@ -71,6 +60,13 @@
     NSArray *names = [NSArray arrayWithObjects:@"POLITICAL", @"EMBASSY", @"LOCAL", nil];
     [self addTabs:names];
 
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    if (firstLoad) {
+        [[MenuController getInstance] showMenu];
+        firstLoad = false;
+    }
 }
 
 # pragma mark - tableView methods

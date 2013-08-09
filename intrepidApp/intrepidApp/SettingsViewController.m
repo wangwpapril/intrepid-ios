@@ -8,6 +8,7 @@
 
 #import "SettingsViewController.h"
 #import "Constants.h"
+#import "MenuController.h"
 
 #define kOFFSET_FOR_KEYBOARD 80.0
 
@@ -19,20 +20,22 @@
 
 @synthesize editPhoto;
 @synthesize signOutButton;
+@synthesize mController;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+//{
+//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+//    if (self) {
+//        // Custom initialization
+//    }
+//    return self;
+//}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.navigationItem.hidesBackButton = YES;
+    mController = [MenuController getInstance];
     self.view.tag = 8;
     self.navigationItem.title = @"Settings";
     
@@ -241,6 +244,7 @@
                                              selector:@selector(keyboardWillHide)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
+    [mController displayMenuWithParent:self];
     
 }
 
