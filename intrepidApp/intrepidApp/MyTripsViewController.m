@@ -54,13 +54,14 @@
     TripItem *newTrip = [[TripItem alloc] init];
     newTrip.image = @"ANew-trip@2x.png";
     newTrip.city = @"A New Trip";
-    [cityArray insertObject:newTrip atIndex:0];
+    [cityArray addObject:newTrip];
 //    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"new-trip.png", @"NMexico@2x.png", @"Guada@2x.png", @"miami@2x.png", @"Puerto-Plata@2x.png", nil];
 //    NSArray *nameArray = [[NSMutableArray alloc] initWithObjects:@" ", @"Mexico City", @"Guadalajara", @"Miami", @"Puerto Plata", nil];
 
     NSInteger height = scrollView.frame.size.height - 150.0;
     NSInteger width = height * 0.7322;
     int i = 0;
+    NSInteger max = cityArray.count - 1;
     for (TripItem *city in cityArray) {
         NSLog(@"city name: %@ city img: %@", city.city, city.image);
         CGRect frame;
@@ -75,7 +76,7 @@
         [scrollView addSubview:imageView];
         
         // make imageViews clickable with invisible buttons
-        if (i == 0) {
+        if (i == max) {
             UIButton *toTrips = [UIButton buttonWithType:UIButtonTypeCustom];
             toTrips.frame = imageView.frame;
             [toTrips addTarget:self action:@selector(toTrips) forControlEvents:UIControlEventTouchUpInside];
