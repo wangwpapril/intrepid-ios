@@ -125,6 +125,8 @@ static MenuController *instance =nil;
     [self makeContentButtonWithOrigin:CGPointMake(0, 153) withTag:6];
     [self makeContentButtonWithOrigin:CGPointMake(107, 153) withTag:7];
     [self makeContentButtonWithOrigin:CGPointMake(213, 153) withTag:8];
+    
+    [self selectButtonWithTag:2];
 }
 
 -(void)toggleMenu {
@@ -136,12 +138,9 @@ static MenuController *instance =nil;
     }
 }
 
--(void)goToController:(id)sender{
-    UIButton *button = (UIButton *)sender;
-    UIViewController *viewController;
-    
+- (void)selectButtonWithTag:(NSInteger)tag {
     for (UIButton *option in buttonArray) {
-        if (option == button) {
+        if (option.tag == tag) {
             option.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.2];
             option.layer.borderColor = [UIColor whiteColor].CGColor;
             option.layer.borderWidth = 1;
@@ -152,6 +151,14 @@ static MenuController *instance =nil;
             option.layer.borderWidth = 0;
         }
     }
+}
+
+-(void)goToController:(id)sender{
+    UIButton *button = (UIButton *)sender;
+    UIViewController *viewController;
+    
+    [self selectButtonWithTag:button.tag];
+    
     switch (button.tag) {
         case 0:
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"overView"];
