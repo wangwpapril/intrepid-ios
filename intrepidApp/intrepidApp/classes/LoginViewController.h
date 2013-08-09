@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *signUp;
 @property (weak, nonatomic) IBOutlet UIButton *learnMore;
+@property (weak, nonatomic) IBOutlet UIButton *legal;
 
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *password;

@@ -26,6 +26,9 @@
     [super viewDidLoad];
     self.view.tag = 2;
     
+    scrollView.delegate = self;
+    scrollView.scrollEnabled = YES;
+    scrollView.pagingEnabled = YES;    
 
     EmbassyDetailedContent *content = [[EmbassyDetailedContent alloc] init];
     embassyArray = [content getContent];
@@ -46,6 +49,10 @@
     [local setupWithImageName:city.localImage withTitle:@"Local" withIconName:@"Tourist-icon@2x.png"];
     [local addTextAreaWithText:city.localText];
     
+    [self.view addSubview:scrollView];
+    
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * 3, 366.0);
+    
     // embassies
     tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 308,  320, height - 308)];
     tableList.dataSource = self;
@@ -55,7 +62,7 @@
     
     NSMutableArray *views = [NSMutableArray arrayWithObjects:political, embassy, local, nil];
     [self addViews:views withVerticalOffset:0];
-    
+
 //    [self.view bringSubviewToFront:self.mController.menu];
     NSArray *names = [NSArray arrayWithObjects:@"POLITICAL", @"EMBASSY", @"LOCAL", nil];
     [self addTabs:names];

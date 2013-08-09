@@ -10,7 +10,9 @@
 #import "EmbassyDetailedViewController.h"
 #import "EmbassyItem.h"
 
-@interface SecurityViewController : SliderTabViewController <UITableViewDataSource, UITableViewDelegate>
+@interface SecurityViewController : SliderTabViewController <UITableViewDataSource, UITableViewDelegate> {
+    UIScrollView *scrollView;
+}
 
 
 @property (nonatomic, strong) UITableView *tableList;
