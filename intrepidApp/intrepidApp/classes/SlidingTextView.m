@@ -74,14 +74,14 @@
                        lineBreakMode:NSLineBreakByWordWrapping];
 
     
-    UILabel *textView = [[UILabel alloc] initWithFrame:CGRectMake(20, 0,  280, size.height + 5)];
+    UILabel *textView = [[UILabel alloc] initWithFrame:CGRectMake(20, 5,  280, size.height + 5)];
     textView.textColor = APP_TEXT_COLOR;
     textView.font = textFont;
     textView.text = text;
     textView.lineBreakMode = NSLineBreakByWordWrapping;
     textView.numberOfLines = 0;
     
-    UILabel *textViewContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, 308,  320, size.height + 5)];
+    UILabel *textViewContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, 308,  320, size.height + 10)];
 
     [textViewContainer addSubview: textView];
     [scroll addSubview:textViewContainer];

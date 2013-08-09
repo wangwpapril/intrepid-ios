@@ -123,10 +123,11 @@
     assistanceScreenDescription.backgroundColor = [UIColor clearColor];
     assistanceScreenDescription.textColor = [UIColor whiteColor];
     [assistanceScreenDescription setTextAlignment:NSTextAlignmentCenter];
-    assistanceScreenDescription.text = @"Get emergency assistance whenever you need it";
+    assistanceScreenDescription.text = @"Get emergency assistance whenever you need it.";
     assistanceScreenDescription.numberOfLines = 0;
     assistanceScreenDescription.lineBreakMode = NSLineBreakByWordWrapping;
     [scrollView addSubview:assistanceScreenDescription];
+
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)sender {
