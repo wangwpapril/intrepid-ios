@@ -30,7 +30,6 @@
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
