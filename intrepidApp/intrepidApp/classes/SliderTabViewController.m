@@ -87,15 +87,15 @@
     [self tabSelected:[tabArray objectAtIndex:currentTab]];
     
     // swipe to switch tabs
-//    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedLeft:)];
-//    swipeLeft.numberOfTouchesRequired = 1;
-//    swipeLeft.direction = (UISwipeGestureRecognizerDirectionLeft);
-//    [self.view addGestureRecognizer:swipeLeft];
-//    
-//    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedRight:)];
-//    swipeRight.numberOfTouchesRequired = 1;
-//    swipeRight.direction = (UISwipeGestureRecognizerDirectionRight);
-//    [self.view addGestureRecognizer:swipeRight];
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedLeft:)];
+    swipeLeft.numberOfTouchesRequired = 1;
+    swipeLeft.direction = (UISwipeGestureRecognizerDirectionLeft);
+    [self.view addGestureRecognizer:swipeLeft];
+    
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedRight:)];
+    swipeRight.numberOfTouchesRequired = 1;
+    swipeRight.direction = (UISwipeGestureRecognizerDirectionRight);
+    [self.view addGestureRecognizer:swipeRight];
     
     
     // create line
@@ -119,21 +119,21 @@
     [self switchTabs:clickedTab.tag];
 }
 
-//- (void) swipedRight:(UISwipeGestureRecognizer*)swipeGesture {
-//    self.cancelsTouchesInView = NO;
-//    NSInteger newTag = currentTab - 1;
-//    if (newTag >= 0) {
-//        [self switchTabs:newTag];
-//    }
-//}
-//
-//- (void) swipedLeft:(UISwipeGestureRecognizer*)swipeGesture {
-//    self.cancelsTouchesInView = NO;
-//    NSInteger newTag = currentTab + 1;
-//    if (newTag <= 2) {
-//        [self switchTabs:newTag];
-//    }
-//}
+- (void) swipedRight:(UISwipeGestureRecognizer*)swipeGesture {
+    self.cancelsTouchesInView = NO;
+    NSInteger newTag = currentTab - 1;
+    if (newTag >= 0) {
+        [self switchTabs:newTag];
+    }
+}
+
+- (void) swipedLeft:(UISwipeGestureRecognizer*)swipeGesture {
+    self.cancelsTouchesInView = NO;
+    NSInteger newTag = currentTab + 1;
+    if (newTag <= 2) {
+        [self switchTabs:newTag];
+    }
+}
 
 -(void)addLineToTab {
     UIButton *tab = ((UIButton *)[tabArray objectAtIndex:currentTab]);
