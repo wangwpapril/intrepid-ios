@@ -124,7 +124,7 @@
 }
 
 -(void)toSecurity:sender {
-    NSInteger index = ((UIButton *)sender).tag - 1; // to account for new trip
+    NSInteger index = ((UIButton *)sender).tag;
     CityEntity *city = [cities objectAtIndex:index];
     [MenuController getInstance].city = city;
     SecurityViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"security"];

@@ -197,7 +197,7 @@
                 tableToBe.frame = CGRectMake(-320, verticalOffset, 320, self.view.frame.size.height - verticalOffset);
             }
         }
-        [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^ {
+        [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^ {
                 //line.frame = CGRectMake(lineX, 27, 80, 1);
                 [self addLineToTab];
                 NSInteger offset;
