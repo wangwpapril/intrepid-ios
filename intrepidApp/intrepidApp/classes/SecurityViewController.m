@@ -25,10 +25,6 @@
 {
     [super viewDidLoad];
     self.view.tag = 2;
-    
-    scrollView.delegate = self;
-    scrollView.scrollEnabled = YES;
-    scrollView.pagingEnabled = YES;    
 
     EmbassyDetailedContent *content = [[EmbassyDetailedContent alloc] init];
     embassyArray = [content getContent];
@@ -48,10 +44,6 @@
     SlidingTextView *local = [[SlidingTextView alloc] initWithFrame:frame];
     [local setupWithImageName:city.localImage withTitle:@"Local" withIconName:@"Tourist-icon@2x.png"];
     [local addTextAreaWithText:city.localText];
-    
-    [self.view addSubview:scrollView];
-    
-    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * 3, 366.0);
     
     // embassies
     tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 308,  320, height - 308)];

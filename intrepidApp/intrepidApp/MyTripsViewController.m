@@ -133,12 +133,6 @@
 //    [[MenuController getInstance] showMenu];
 }
 
--(void)scrollViewDidScroll:(UIScrollView *)sender {
-    CGFloat pageWidth = self.scrollView.frame.size.width;
-    int page = floor((scrollView.contentOffset.x - pageWidth / 2)/pageWidth) +1;
-    pageControl.currentPage = page;
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -25,6 +25,7 @@
 		6851222E17861138008DB6B6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6851222C17861138008DB6B6 /* MainStoryboard.storyboard */; };
 		6851223117861138008DB6B6 /* intrepidApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6851222F17861138008DB6B6 /* intrepidApp.xcdatamodeld */; };
 		6851223F17861152008DB6B6 /* HealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6851223E17861152008DB6B6 /* HealthViewController.m */; };
+		6854D37F17B6F2E7006CC3D2 /* ScrollerTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6854D37E17B6F2E7006CC3D2 /* ScrollerTabViewController.m */; };
 		68558361179CB4C90043D473 /* SliderTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68558360179CB4C90043D473 /* SliderTabViewController.m */; };
 		6855EAB0178E4D5E000C4C57 /* mexicoBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6855EAAF178E4D5E000C4C57 /* mexicoBack@2x.png */; };
 		685B6F5C17A601DC0003B5D9 /* newMenuBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 685B6F5B17A601DC0003B5D9 /* newMenuBack@2x.png */; };
@@ -164,7 +165,45 @@
 		E077252617A9E3DF00804CA9 /* Puerto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E077251C17A9E3DF00804CA9 /* Puerto@2x.png */; };
 		E077252917A9E44B00804CA9 /* Miami-USA.png in Resources */ = {isa = PBXBuildFile; fileRef = E077252717A9E44B00804CA9 /* Miami-USA.png */; };
 		E077252A17A9E44B00804CA9 /* Miami-USA@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E077252817A9E44B00804CA9 /* Miami-USA@2x.png */; };
+		E0856C1F17B9392900E5C04F /* Macrobid.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856BFB17B9392900E5C04F /* Macrobid.png */; };
+		E0856C2017B9392900E5C04F /* Macrobid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856BFC17B9392900E5C04F /* Macrobid@2x.png */; };
+		E0856C2117B9392900E5C04F /* Mefloquine.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856BFD17B9392900E5C04F /* Mefloquine.png */; };
+		E0856C2217B9392900E5C04F /* Mefloquine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856BFE17B9392900E5C04F /* Mefloquine@2x.png */; };
+		E0856C2317B9392900E5C04F /* Naproxen.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856BFF17B9392900E5C04F /* Naproxen.png */; };
+		E0856C2417B9392900E5C04F /* Naproxen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0017B9392900E5C04F /* Naproxen@2x.png */; };
+		E0856C2517B9392900E5C04F /* Nexium.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0117B9392900E5C04F /* Nexium.png */; };
+		E0856C2617B9392900E5C04F /* Nexium@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0217B9392900E5C04F /* Nexium@2x.png */; };
+		E0856C2717B9392900E5C04F /* Norvasc.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0317B9392900E5C04F /* Norvasc.png */; };
+		E0856C2817B9392900E5C04F /* Norvasc@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0417B9392900E5C04F /* Norvasc@2x.png */; };
+		E0856C2917B9392900E5C04F /* Otriven.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0517B9392900E5C04F /* Otriven.png */; };
+		E0856C2A17B9392900E5C04F /* Otriven@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0617B9392900E5C04F /* Otriven@2x.png */; };
+		E0856C2B17B9392900E5C04F /* Oxycodone.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0717B9392900E5C04F /* Oxycodone.png */; };
+		E0856C2C17B9392900E5C04F /* Oxycodone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0817B9392900E5C04F /* Oxycodone@2x.png */; };
+		E0856C2D17B9392900E5C04F /* Pepcid.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0917B9392900E5C04F /* Pepcid.png */; };
+		E0856C2E17B9392900E5C04F /* Pepcid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0A17B9392900E5C04F /* Pepcid@2x.png */; };
+		E0856C2F17B9392900E5C04F /* Quinine.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0B17B9392900E5C04F /* Quinine.png */; };
+		E0856C3017B9392900E5C04F /* Quinine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0C17B9392900E5C04F /* Quinine@2x.png */; };
+		E0856C3117B9392900E5C04F /* Rabeprazole.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0D17B9392900E5C04F /* Rabeprazole.png */; };
+		E0856C3217B9392900E5C04F /* Rabeprazole@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0E17B9392900E5C04F /* Rabeprazole@2x.png */; };
+		E0856C3317B9392900E5C04F /* Seroquel.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0F17B9392900E5C04F /* Seroquel.png */; };
+		E0856C3417B9392900E5C04F /* Seroquel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1017B9392900E5C04F /* Seroquel@2x.png */; };
+		E0856C3517B9392900E5C04F /* Toradole.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1117B9392900E5C04F /* Toradole.png */; };
+		E0856C3617B9392900E5C04F /* Toradole@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1217B9392900E5C04F /* Toradole@2x.png */; };
+		E0856C3717B9392900E5C04F /* Travel-Sickness.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1317B9392900E5C04F /* Travel-Sickness.png */; };
+		E0856C3817B9392900E5C04F /* Travel-Sickness@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1417B9392900E5C04F /* Travel-Sickness@2x.png */; };
+		E0856C3917B9392900E5C04F /* Tylenol.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1517B9392900E5C04F /* Tylenol.png */; };
+		E0856C3A17B9392900E5C04F /* Tylenol@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1617B9392900E5C04F /* Tylenol@2x.png */; };
+		E0856C3B17B9392900E5C04F /* Ventolin.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1717B9392900E5C04F /* Ventolin.png */; };
+		E0856C3C17B9392900E5C04F /* Ventolin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1817B9392900E5C04F /* Ventolin@2x.png */; };
+		E0856C3D17B9392900E5C04F /* Wellbutrin.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1917B9392900E5C04F /* Wellbutrin.png */; };
+		E0856C3E17B9392900E5C04F /* Wellbutrin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1A17B9392900E5C04F /* Wellbutrin@2x.png */; };
+		E0856C3F17B9392900E5C04F /* Xanax.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1B17B9392900E5C04F /* Xanax.png */; };
+		E0856C4017B9392900E5C04F /* Xanax@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1C17B9392900E5C04F /* Xanax@2x.png */; };
+		E0856C4117B9392900E5C04F /* Zoloft.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1D17B9392900E5C04F /* Zoloft.png */; };
+		E0856C4217B9392900E5C04F /* Zoloft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1E17B9392900E5C04F /* Zoloft@2x.png */; };
 		E08615F117A8224D00DE240B /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E08615F017A8224D00DE240B /* ForgotPasswordViewController.m */; };
+		E095E79F17B56EA500114024 /* Benzocaine-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E095E79D17B56EA500114024 /* Benzocaine-img.png */; };
+		E095E7A017B56EA500114024 /* Benzocaine-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E095E79E17B56EA500114024 /* Benzocaine-img@2x.png */; };
 		E09DAA4F17A97EA6006AD6E9 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E09DAA4E17A97EA6006AD6E9 /* close@2x.png */; };
 		E0A0896017B43ADC007B5C65 /* Maximized-edit.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A0895E17B43ADC007B5C65 /* Maximized-edit.png */; };
 		E0A0896117B43ADC007B5C65 /* Maximized-edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A0895F17B43ADC007B5C65 /* Maximized-edit@2x.png */; };
@@ -226,6 +265,54 @@
 		E0D7ECA717AD575D006E4424 /* Menu-new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D7ECA517AD575D006E4424 /* Menu-new@2x.png */; };
 		E0E234DC17AC1F2A001527D8 /* Assistance@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E234DA17AC1F2A001527D8 /* Assistance@2x.png */; };
 		E0E234DD17AC1F2A001527D8 /* Assistance.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E234DB17AC1F2A001527D8 /* Assistance.png */; };
+		E0E5B9F817B5651100A1EEC0 /* Advil-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9F617B5651100A1EEC0 /* Advil-img.png */; };
+		E0E5B9F917B5651100A1EEC0 /* Advil-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9F717B5651100A1EEC0 /* Advil-img@2x.png */; };
+		E0E5BA2817B565D100A1EEC0 /* Amoxillin-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9FA17B565CD00A1EEC0 /* Amoxillin-img.png */; };
+		E0E5BA2917B565D100A1EEC0 /* Amoxillin-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9FB17B565CD00A1EEC0 /* Amoxillin-img@2x.png */; };
+		E0E5BA2A17B565D100A1EEC0 /* Aspirin-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9FC17B565CD00A1EEC0 /* Aspirin-img.png */; };
+		E0E5BA2B17B565D100A1EEC0 /* Aspirin-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9FD17B565CD00A1EEC0 /* Aspirin-img@2x.png */; };
+		E0E5BA2C17B565D100A1EEC0 /* Benadryl-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9FE17B565CD00A1EEC0 /* Benadryl-img.png */; };
+		E0E5BA2D17B565D100A1EEC0 /* Benadryl-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9FF17B565CD00A1EEC0 /* Benadryl-img@2x.png */; };
+		E0E5BA2E17B565D100A1EEC0 /* Benylin-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0017B565CD00A1EEC0 /* Benylin-img.png */; };
+		E0E5BA2F17B565D100A1EEC0 /* Benylin-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0117B565CD00A1EEC0 /* Benylin-img@2x.png */; };
+		E0E5BA3017B565D100A1EEC0 /* Calcium-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0217B565CD00A1EEC0 /* Calcium-img.png */; };
+		E0E5BA3117B565D100A1EEC0 /* Calcium-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0317B565CD00A1EEC0 /* Calcium-img@2x.png */; };
+		E0E5BA3217B565D100A1EEC0 /* Claritan-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0417B565CD00A1EEC0 /* Claritan-img.png */; };
+		E0E5BA3317B565D100A1EEC0 /* Claritan-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0517B565CD00A1EEC0 /* Claritan-img@2x.png */; };
+		E0E5BA3417B565D100A1EEC0 /* Codeine-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0617B565CD00A1EEC0 /* Codeine-img.png */; };
+		E0E5BA3517B565D100A1EEC0 /* Codeine-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0717B565CD00A1EEC0 /* Codeine-img@2x.png */; };
+		E0E5BA3617B565D100A1EEC0 /* Dexedrine-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0817B565CD00A1EEC0 /* Dexedrine-img.png */; };
+		E0E5BA3717B565D100A1EEC0 /* Dexedrine-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0917B565CD00A1EEC0 /* Dexedrine-img@2x.png */; };
+		E0E5BA3817B565D100A1EEC0 /* Diarrhea-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0A17B565CD00A1EEC0 /* Diarrhea-img.png */; };
+		E0E5BA3917B565D100A1EEC0 /* Diarrhea-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0B17B565CD00A1EEC0 /* Diarrhea-img@2x.png */; };
+		E0E5BA3A17B565D100A1EEC0 /* Effexor-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0C17B565CE00A1EEC0 /* Effexor-img.png */; };
+		E0E5BA3B17B565D100A1EEC0 /* Effexor-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0D17B565CE00A1EEC0 /* Effexor-img@2x.png */; };
+		E0E5BA3C17B565D100A1EEC0 /* Erythomycin-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0E17B565CE00A1EEC0 /* Erythomycin-img.png */; };
+		E0E5BA3D17B565D100A1EEC0 /* Erythomycin-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0F17B565CE00A1EEC0 /* Erythomycin-img@2x.png */; };
+		E0E5BA3E17B565D100A1EEC0 /* Estradiol-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1017B565CE00A1EEC0 /* Estradiol-img.png */; };
+		E0E5BA3F17B565D100A1EEC0 /* Estradiol-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1117B565CE00A1EEC0 /* Estradiol-img@2x.png */; };
+		E0E5BA4017B565D100A1EEC0 /* Fentanyl-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1217B565CE00A1EEC0 /* Fentanyl-img.png */; };
+		E0E5BA4117B565D100A1EEC0 /* Fentanyl-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1317B565CE00A1EEC0 /* Fentanyl-img@2x.png */; };
+		E0E5BA4217B565D100A1EEC0 /* Flexeril-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1417B565CE00A1EEC0 /* Flexeril-img.png */; };
+		E0E5BA4317B565D100A1EEC0 /* Flexeril-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1517B565CE00A1EEC0 /* Flexeril-img@2x.png */; };
+		E0E5BA4417B565D100A1EEC0 /* Flovent-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1617B565CF00A1EEC0 /* Flovent-img.png */; };
+		E0E5BA4517B565D100A1EEC0 /* Flovent-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1717B565CF00A1EEC0 /* Flovent-img@2x.png */; };
+		E0E5BA4617B565D100A1EEC0 /* Gabapentin-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1817B565CF00A1EEC0 /* Gabapentin-img.png */; };
+		E0E5BA4717B565D100A1EEC0 /* Gabapentin-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1917B565CF00A1EEC0 /* Gabapentin-img@2x.png */; };
+		E0E5BA4817B565D100A1EEC0 /* Gravol-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1A17B565CF00A1EEC0 /* Gravol-img.png */; };
+		E0E5BA4917B565D100A1EEC0 /* Gravol-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1B17B565CF00A1EEC0 /* Gravol-img@2x.png */; };
+		E0E5BA4A17B565D100A1EEC0 /* Heparin-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1C17B565CF00A1EEC0 /* Heparin-img.png */; };
+		E0E5BA4B17B565D100A1EEC0 /* Heparin-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1D17B565CF00A1EEC0 /* Heparin-img@2x.png */; };
+		E0E5BA4C17B565D100A1EEC0 /* Humalog-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1E17B565D000A1EEC0 /* Humalog-img.png */; };
+		E0E5BA4D17B565D100A1EEC0 /* Humalog-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1F17B565D000A1EEC0 /* Humalog-img@2x.png */; };
+		E0E5BA4E17B565D100A1EEC0 /* Hydrocodone-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2017B565D000A1EEC0 /* Hydrocodone-img.png */; };
+		E0E5BA4F17B565D100A1EEC0 /* Hydrocodone-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2117B565D000A1EEC0 /* Hydrocodone-img@2x.png */; };
+		E0E5BA5017B565D100A1EEC0 /* Ibutprofen-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2217B565D000A1EEC0 /* Ibutprofen-img.png */; };
+		E0E5BA5117B565D100A1EEC0 /* Ibutprofen-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2317B565D000A1EEC0 /* Ibutprofen-img@2x.png */; };
+		E0E5BA5217B565D100A1EEC0 /* Imodium-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2417B565D000A1EEC0 /* Imodium-img.png */; };
+		E0E5BA5317B565D100A1EEC0 /* Imodium-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2517B565D100A1EEC0 /* Imodium-img@2x.png */; };
+		E0E5BA5417B565D100A1EEC0 /* Lasix-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2617B565D100A1EEC0 /* Lasix-img.png */; };
+		E0E5BA5517B565D100A1EEC0 /* Lasix-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2717B565D100A1EEC0 /* Lasix-img@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -257,6 +344,8 @@
 		6851223017861138008DB6B6 /* intrepidApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = intrepidApp.xcdatamodel; sourceTree = "<group>"; };
 		6851223D17861152008DB6B6 /* HealthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthViewController.h; path = classes/HealthViewController.h; sourceTree = "<group>"; };
 		6851223E17861152008DB6B6 /* HealthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthViewController.m; path = classes/HealthViewController.m; sourceTree = "<group>"; };
+		6854D37D17B6F2E7006CC3D2 /* ScrollerTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollerTabViewController.h; path = classes/ScrollerTabViewController.h; sourceTree = "<group>"; };
+		6854D37E17B6F2E7006CC3D2 /* ScrollerTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollerTabViewController.m; path = classes/ScrollerTabViewController.m; sourceTree = "<group>"; };
 		6855835F179CB4C90043D473 /* SliderTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SliderTabViewController.h; path = classes/SliderTabViewController.h; sourceTree = "<group>"; };
 		68558360179CB4C90043D473 /* SliderTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SliderTabViewController.m; path = classes/SliderTabViewController.m; sourceTree = "<group>"; };
 		6855EAAF178E4D5E000C4C57 /* mexicoBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mexicoBack@2x.png"; sourceTree = "<group>"; };
@@ -424,8 +513,46 @@
 		E077251C17A9E3DF00804CA9 /* Puerto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto@2x.png"; sourceTree = "<group>"; };
 		E077252717A9E44B00804CA9 /* Miami-USA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-USA.png"; sourceTree = "<group>"; };
 		E077252817A9E44B00804CA9 /* Miami-USA@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-USA@2x.png"; sourceTree = "<group>"; };
+		E0856BFB17B9392900E5C04F /* Macrobid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Macrobid.png; sourceTree = "<group>"; };
+		E0856BFC17B9392900E5C04F /* Macrobid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Macrobid@2x.png"; sourceTree = "<group>"; };
+		E0856BFD17B9392900E5C04F /* Mefloquine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mefloquine.png; sourceTree = "<group>"; };
+		E0856BFE17B9392900E5C04F /* Mefloquine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mefloquine@2x.png"; sourceTree = "<group>"; };
+		E0856BFF17B9392900E5C04F /* Naproxen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Naproxen.png; sourceTree = "<group>"; };
+		E0856C0017B9392900E5C04F /* Naproxen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Naproxen@2x.png"; sourceTree = "<group>"; };
+		E0856C0117B9392900E5C04F /* Nexium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nexium.png; sourceTree = "<group>"; };
+		E0856C0217B9392900E5C04F /* Nexium@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nexium@2x.png"; sourceTree = "<group>"; };
+		E0856C0317B9392900E5C04F /* Norvasc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Norvasc.png; sourceTree = "<group>"; };
+		E0856C0417B9392900E5C04F /* Norvasc@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Norvasc@2x.png"; sourceTree = "<group>"; };
+		E0856C0517B9392900E5C04F /* Otriven.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Otriven.png; sourceTree = "<group>"; };
+		E0856C0617B9392900E5C04F /* Otriven@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Otriven@2x.png"; sourceTree = "<group>"; };
+		E0856C0717B9392900E5C04F /* Oxycodone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Oxycodone.png; sourceTree = "<group>"; };
+		E0856C0817B9392900E5C04F /* Oxycodone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Oxycodone@2x.png"; sourceTree = "<group>"; };
+		E0856C0917B9392900E5C04F /* Pepcid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pepcid.png; sourceTree = "<group>"; };
+		E0856C0A17B9392900E5C04F /* Pepcid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pepcid@2x.png"; sourceTree = "<group>"; };
+		E0856C0B17B9392900E5C04F /* Quinine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Quinine.png; sourceTree = "<group>"; };
+		E0856C0C17B9392900E5C04F /* Quinine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Quinine@2x.png"; sourceTree = "<group>"; };
+		E0856C0D17B9392900E5C04F /* Rabeprazole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rabeprazole.png; sourceTree = "<group>"; };
+		E0856C0E17B9392900E5C04F /* Rabeprazole@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rabeprazole@2x.png"; sourceTree = "<group>"; };
+		E0856C0F17B9392900E5C04F /* Seroquel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Seroquel.png; sourceTree = "<group>"; };
+		E0856C1017B9392900E5C04F /* Seroquel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Seroquel@2x.png"; sourceTree = "<group>"; };
+		E0856C1117B9392900E5C04F /* Toradole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Toradole.png; sourceTree = "<group>"; };
+		E0856C1217B9392900E5C04F /* Toradole@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Toradole@2x.png"; sourceTree = "<group>"; };
+		E0856C1317B9392900E5C04F /* Travel-Sickness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Travel-Sickness.png"; sourceTree = "<group>"; };
+		E0856C1417B9392900E5C04F /* Travel-Sickness@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Travel-Sickness@2x.png"; sourceTree = "<group>"; };
+		E0856C1517B9392900E5C04F /* Tylenol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tylenol.png; sourceTree = "<group>"; };
+		E0856C1617B9392900E5C04F /* Tylenol@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tylenol@2x.png"; sourceTree = "<group>"; };
+		E0856C1717B9392900E5C04F /* Ventolin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ventolin.png; sourceTree = "<group>"; };
+		E0856C1817B9392900E5C04F /* Ventolin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ventolin@2x.png"; sourceTree = "<group>"; };
+		E0856C1917B9392900E5C04F /* Wellbutrin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wellbutrin.png; sourceTree = "<group>"; };
+		E0856C1A17B9392900E5C04F /* Wellbutrin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Wellbutrin@2x.png"; sourceTree = "<group>"; };
+		E0856C1B17B9392900E5C04F /* Xanax.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Xanax.png; sourceTree = "<group>"; };
+		E0856C1C17B9392900E5C04F /* Xanax@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Xanax@2x.png"; sourceTree = "<group>"; };
+		E0856C1D17B9392900E5C04F /* Zoloft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zoloft.png; sourceTree = "<group>"; };
+		E0856C1E17B9392900E5C04F /* Zoloft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zoloft@2x.png"; sourceTree = "<group>"; };
 		E08615EF17A8224D00DE240B /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		E08615F017A8224D00DE240B /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
+		E095E79D17B56EA500114024 /* Benzocaine-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Benzocaine-img.png"; sourceTree = "<group>"; };
+		E095E79E17B56EA500114024 /* Benzocaine-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Benzocaine-img@2x.png"; sourceTree = "<group>"; };
 		E09DAA4E17A97EA6006AD6E9 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		E0A0895E17B43ADC007B5C65 /* Maximized-edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Maximized-edit.png"; sourceTree = "<group>"; };
 		E0A0895F17B43ADC007B5C65 /* Maximized-edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Maximized-edit@2x.png"; sourceTree = "<group>"; };
@@ -487,6 +614,54 @@
 		E0D7ECA517AD575D006E4424 /* Menu-new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-new@2x.png"; sourceTree = "<group>"; };
 		E0E234DA17AC1F2A001527D8 /* Assistance@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Assistance@2x.png"; sourceTree = "<group>"; };
 		E0E234DB17AC1F2A001527D8 /* Assistance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Assistance.png; sourceTree = "<group>"; };
+		E0E5B9F617B5651100A1EEC0 /* Advil-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Advil-img.png"; sourceTree = "<group>"; };
+		E0E5B9F717B5651100A1EEC0 /* Advil-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Advil-img@2x.png"; sourceTree = "<group>"; };
+		E0E5B9FA17B565CD00A1EEC0 /* Amoxillin-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Amoxillin-img.png"; sourceTree = "<group>"; };
+		E0E5B9FB17B565CD00A1EEC0 /* Amoxillin-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Amoxillin-img@2x.png"; sourceTree = "<group>"; };
+		E0E5B9FC17B565CD00A1EEC0 /* Aspirin-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Aspirin-img.png"; sourceTree = "<group>"; };
+		E0E5B9FD17B565CD00A1EEC0 /* Aspirin-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Aspirin-img@2x.png"; sourceTree = "<group>"; };
+		E0E5B9FE17B565CD00A1EEC0 /* Benadryl-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Benadryl-img.png"; sourceTree = "<group>"; };
+		E0E5B9FF17B565CD00A1EEC0 /* Benadryl-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Benadryl-img@2x.png"; sourceTree = "<group>"; };
+		E0E5BA0017B565CD00A1EEC0 /* Benylin-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Benylin-img.png"; sourceTree = "<group>"; };
+		E0E5BA0117B565CD00A1EEC0 /* Benylin-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Benylin-img@2x.png"; sourceTree = "<group>"; };
+		E0E5BA0217B565CD00A1EEC0 /* Calcium-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calcium-img.png"; sourceTree = "<group>"; };
+		E0E5BA0317B565CD00A1EEC0 /* Calcium-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calcium-img@2x.png"; sourceTree = "<group>"; };
+		E0E5BA0417B565CD00A1EEC0 /* Claritan-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Claritan-img.png"; sourceTree = "<group>"; };
+		E0E5BA0517B565CD00A1EEC0 /* Claritan-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Claritan-img@2x.png"; sourceTree = "<group>"; };
+		E0E5BA0617B565CD00A1EEC0 /* Codeine-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Codeine-img.png"; sourceTree = "<group>"; };
+		E0E5BA0717B565CD00A1EEC0 /* Codeine-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Codeine-img@2x.png"; sourceTree = "<group>"; };
+		E0E5BA0817B565CD00A1EEC0 /* Dexedrine-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dexedrine-img.png"; sourceTree = "<group>"; };
+		E0E5BA0917B565CD00A1EEC0 /* Dexedrine-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dexedrine-img@2x.png"; sourceTree = "<group>"; };
+		E0E5BA0A17B565CD00A1EEC0 /* Diarrhea-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Diarrhea-img.png"; sourceTree = "<group>"; };
+		E0E5BA0B17B565CD00A1EEC0 /* Diarrhea-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Diarrhea-img@2x.png"; sourceTree = "<group>"; };
+		E0E5BA0C17B565CE00A1EEC0 /* Effexor-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Effexor-img.png"; sourceTree = "<group>"; };
+		E0E5BA0D17B565CE00A1EEC0 /* Effexor-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Effexor-img@2x.png"; sourceTree = "<group>"; };
+		E0E5BA0E17B565CE00A1EEC0 /* Erythomycin-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Erythomycin-img.png"; sourceTree = "<group>"; };
+		E0E5BA0F17B565CE00A1EEC0 /* Erythomycin-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Erythomycin-img@2x.png"; sourceTree = "<group>"; };
+		E0E5BA1017B565CE00A1EEC0 /* Estradiol-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Estradiol-img.png"; sourceTree = "<group>"; };
+		E0E5BA1117B565CE00A1EEC0 /* Estradiol-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Estradiol-img@2x.png"; sourceTree = "<group>"; };
+		E0E5BA1217B565CE00A1EEC0 /* Fentanyl-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fentanyl-img.png"; sourceTree = "<group>"; };
+		E0E5BA1317B565CE00A1EEC0 /* Fentanyl-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fentanyl-img@2x.png"; sourceTree = "<group>"; };
+		E0E5BA1417B565CE00A1EEC0 /* Flexeril-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flexeril-img.png"; sourceTree = "<group>"; };
+		E0E5BA1517B565CE00A1EEC0 /* Flexeril-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flexeril-img@2x.png"; sourceTree = "<group>"; };
+		E0E5BA1617B565CF00A1EEC0 /* Flovent-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flovent-img.png"; sourceTree = "<group>"; };
+		E0E5BA1717B565CF00A1EEC0 /* Flovent-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flovent-img@2x.png"; sourceTree = "<group>"; };
+		E0E5BA1817B565CF00A1EEC0 /* Gabapentin-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gabapentin-img.png"; sourceTree = "<group>"; };
+		E0E5BA1917B565CF00A1EEC0 /* Gabapentin-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gabapentin-img@2x.png"; sourceTree = "<group>"; };
+		E0E5BA1A17B565CF00A1EEC0 /* Gravol-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gravol-img.png"; sourceTree = "<group>"; };
+		E0E5BA1B17B565CF00A1EEC0 /* Gravol-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gravol-img@2x.png"; sourceTree = "<group>"; };
+		E0E5BA1C17B565CF00A1EEC0 /* Heparin-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Heparin-img.png"; sourceTree = "<group>"; };
+		E0E5BA1D17B565CF00A1EEC0 /* Heparin-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Heparin-img@2x.png"; sourceTree = "<group>"; };
+		E0E5BA1E17B565D000A1EEC0 /* Humalog-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Humalog-img.png"; sourceTree = "<group>"; };
+		E0E5BA1F17B565D000A1EEC0 /* Humalog-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Humalog-img@2x.png"; sourceTree = "<group>"; };
+		E0E5BA2017B565D000A1EEC0 /* Hydrocodone-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hydrocodone-img.png"; sourceTree = "<group>"; };
+		E0E5BA2117B565D000A1EEC0 /* Hydrocodone-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hydrocodone-img@2x.png"; sourceTree = "<group>"; };
+		E0E5BA2217B565D000A1EEC0 /* Ibutprofen-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ibutprofen-img.png"; sourceTree = "<group>"; };
+		E0E5BA2317B565D000A1EEC0 /* Ibutprofen-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ibutprofen-img@2x.png"; sourceTree = "<group>"; };
+		E0E5BA2417B565D000A1EEC0 /* Imodium-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Imodium-img.png"; sourceTree = "<group>"; };
+		E0E5BA2517B565D100A1EEC0 /* Imodium-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Imodium-img@2x.png"; sourceTree = "<group>"; };
+		E0E5BA2617B565D100A1EEC0 /* Lasix-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lasix-img.png"; sourceTree = "<group>"; };
+		E0E5BA2717B565D100A1EEC0 /* Lasix-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lasix-img@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -540,6 +715,8 @@
 				68E4240317926E1E00431908 /* IntreSearchBar.m */,
 				6855835F179CB4C90043D473 /* SliderTabViewController.h */,
 				68558360179CB4C90043D473 /* SliderTabViewController.m */,
+				6854D37D17B6F2E7006CC3D2 /* ScrollerTabViewController.h */,
+				6854D37E17B6F2E7006CC3D2 /* ScrollerTabViewController.m */,
 				684BB607179F539C004C44C9 /* SlidingTextView.h */,
 				684BB608179F539C004C44C9 /* SlidingTextView.m */,
 				68B997E317A2058A00AD62ED /* WebViewController.h */,
@@ -551,34 +728,94 @@
 		684E364B178F85C1004E27B9 /* health */ = {
 			isa = PBXGroup;
 			children = (
-				E049C43817A6DBBD00B00B35 /* Cholera.png */,
-				E049C44817A6DDB200B00B35 /* Diarrhea.png */,
-				E049C44917A6DDB200B00B35 /* Diarrhea@2x.png */,
-				E049C44A17A6DDB200B00B35 /* Motion-Sickness.png */,
-				E049C44B17A6DDB200B00B35 /* Motion-Sickness@2x.png */,
-				E049C44C17A6DDB200B00B35 /* Rabies.png */,
-				E049C44D17A6DDB200B00B35 /* Rabies@2x.png */,
-				E049C44E17A6DDB200B00B35 /* Typhoid.png */,
-				E049C44F17A6DDB200B00B35 /* Typhoid@2x.png */,
-				E049C45017A6DDB200B00B35 /* West-Nile.png */,
-				E049C45117A6DDB200B00B35 /* West-Nile@2x.png */,
-				E049C43917A6DBBD00B00B35 /* Dengue-Fever.png */,
-				E049C43A17A6DBBD00B00B35 /* Hepatitis-A.png */,
-				E049C43B17A6DBBD00B00B35 /* Hepatitis-B.png */,
-				E049C43C17A6DBBD00B00B35 /* Jet-Lag.png */,
-				E049C43D17A6DBBD00B00B35 /* Lyme.png */,
-				E049C43E17A6DBBD00B00B35 /* Malaria.png */,
-				E049C43F17A6DBBD00B00B35 /* Meningitis.png */,
-				E049C42417A6DADB00B00B35 /* Altitude-Sickness@2x.png */,
-				E049C43617A6DB9D00B00B35 /* Altitude-Sickness.png */,
-				E049C42517A6DADB00B00B35 /* Cholera@2x.png */,
-				E049C42617A6DADB00B00B35 /* Dengue-Fever@2x.png */,
-				E049C42717A6DADB00B00B35 /* Hepatitis-A@2x.png */,
-				E049C42817A6DADB00B00B35 /* Hepatitis-B@2x.png */,
-				E049C42917A6DADB00B00B35 /* Jet-Lag@2x.png */,
-				E049C42A17A6DADB00B00B35 /* Lyme@2x.png */,
-				E049C42B17A6DADB00B00B35 /* Malaria@2x.png */,
-				E049C42C17A6DADB00B00B35 /* Meningitis@2x.png */,
+				E0856BFB17B9392900E5C04F /* Macrobid.png */,
+				E0856BFC17B9392900E5C04F /* Macrobid@2x.png */,
+				E0856BFD17B9392900E5C04F /* Mefloquine.png */,
+				E0856BFE17B9392900E5C04F /* Mefloquine@2x.png */,
+				E0856BFF17B9392900E5C04F /* Naproxen.png */,
+				E0856C0017B9392900E5C04F /* Naproxen@2x.png */,
+				E0856C0117B9392900E5C04F /* Nexium.png */,
+				E0856C0217B9392900E5C04F /* Nexium@2x.png */,
+				E0856C0317B9392900E5C04F /* Norvasc.png */,
+				E0856C0417B9392900E5C04F /* Norvasc@2x.png */,
+				E0856C0517B9392900E5C04F /* Otriven.png */,
+				E0856C0617B9392900E5C04F /* Otriven@2x.png */,
+				E0856C0717B9392900E5C04F /* Oxycodone.png */,
+				E0856C0817B9392900E5C04F /* Oxycodone@2x.png */,
+				E0856C0917B9392900E5C04F /* Pepcid.png */,
+				E0856C0A17B9392900E5C04F /* Pepcid@2x.png */,
+				E0856C0B17B9392900E5C04F /* Quinine.png */,
+				E0856C0C17B9392900E5C04F /* Quinine@2x.png */,
+				E0856C0D17B9392900E5C04F /* Rabeprazole.png */,
+				E0856C0E17B9392900E5C04F /* Rabeprazole@2x.png */,
+				E0856C0F17B9392900E5C04F /* Seroquel.png */,
+				E0856C1017B9392900E5C04F /* Seroquel@2x.png */,
+				E0856C1117B9392900E5C04F /* Toradole.png */,
+				E0856C1217B9392900E5C04F /* Toradole@2x.png */,
+				E0856C1317B9392900E5C04F /* Travel-Sickness.png */,
+				E0856C1417B9392900E5C04F /* Travel-Sickness@2x.png */,
+				E0856C1517B9392900E5C04F /* Tylenol.png */,
+				E0856C1617B9392900E5C04F /* Tylenol@2x.png */,
+				E0856C1717B9392900E5C04F /* Ventolin.png */,
+				E0856C1817B9392900E5C04F /* Ventolin@2x.png */,
+				E0856C1917B9392900E5C04F /* Wellbutrin.png */,
+				E0856C1A17B9392900E5C04F /* Wellbutrin@2x.png */,
+				E0856C1B17B9392900E5C04F /* Xanax.png */,
+				E0856C1C17B9392900E5C04F /* Xanax@2x.png */,
+				E0856C1D17B9392900E5C04F /* Zoloft.png */,
+				E0856C1E17B9392900E5C04F /* Zoloft@2x.png */,
+				E0E5B9F617B5651100A1EEC0 /* Advil-img.png */,
+				E095E79D17B56EA500114024 /* Benzocaine-img.png */,
+				E095E79E17B56EA500114024 /* Benzocaine-img@2x.png */,
+				E0E5B9FA17B565CD00A1EEC0 /* Amoxillin-img.png */,
+				E0E5B9FB17B565CD00A1EEC0 /* Amoxillin-img@2x.png */,
+				E0E5B9FC17B565CD00A1EEC0 /* Aspirin-img.png */,
+				E0E5B9FD17B565CD00A1EEC0 /* Aspirin-img@2x.png */,
+				E0E5B9FE17B565CD00A1EEC0 /* Benadryl-img.png */,
+				E0E5B9FF17B565CD00A1EEC0 /* Benadryl-img@2x.png */,
+				E0E5BA0017B565CD00A1EEC0 /* Benylin-img.png */,
+				E0E5BA0117B565CD00A1EEC0 /* Benylin-img@2x.png */,
+				E0E5BA0217B565CD00A1EEC0 /* Calcium-img.png */,
+				E0E5BA0317B565CD00A1EEC0 /* Calcium-img@2x.png */,
+				E0E5BA0417B565CD00A1EEC0 /* Claritan-img.png */,
+				E0E5BA0517B565CD00A1EEC0 /* Claritan-img@2x.png */,
+				E0E5BA0617B565CD00A1EEC0 /* Codeine-img.png */,
+				E0E5BA0717B565CD00A1EEC0 /* Codeine-img@2x.png */,
+				E0E5BA0817B565CD00A1EEC0 /* Dexedrine-img.png */,
+				E0E5BA0917B565CD00A1EEC0 /* Dexedrine-img@2x.png */,
+				E0E5BA0A17B565CD00A1EEC0 /* Diarrhea-img.png */,
+				E0E5BA0B17B565CD00A1EEC0 /* Diarrhea-img@2x.png */,
+				E0E5BA0C17B565CE00A1EEC0 /* Effexor-img.png */,
+				E0E5BA0D17B565CE00A1EEC0 /* Effexor-img@2x.png */,
+				E0E5BA0E17B565CE00A1EEC0 /* Erythomycin-img.png */,
+				E0E5BA0F17B565CE00A1EEC0 /* Erythomycin-img@2x.png */,
+				E0E5BA1017B565CE00A1EEC0 /* Estradiol-img.png */,
+				E0E5BA1117B565CE00A1EEC0 /* Estradiol-img@2x.png */,
+				E0E5BA1217B565CE00A1EEC0 /* Fentanyl-img.png */,
+				E0E5BA1317B565CE00A1EEC0 /* Fentanyl-img@2x.png */,
+				E0E5BA1417B565CE00A1EEC0 /* Flexeril-img.png */,
+				E0E5BA1517B565CE00A1EEC0 /* Flexeril-img@2x.png */,
+				E0E5BA1617B565CF00A1EEC0 /* Flovent-img.png */,
+				E0E5BA1717B565CF00A1EEC0 /* Flovent-img@2x.png */,
+				E0E5BA1817B565CF00A1EEC0 /* Gabapentin-img.png */,
+				E0E5BA1917B565CF00A1EEC0 /* Gabapentin-img@2x.png */,
+				E0E5BA1A17B565CF00A1EEC0 /* Gravol-img.png */,
+				E0E5BA1B17B565CF00A1EEC0 /* Gravol-img@2x.png */,
+				E0E5BA1C17B565CF00A1EEC0 /* Heparin-img.png */,
+				E0E5BA1D17B565CF00A1EEC0 /* Heparin-img@2x.png */,
+				E0E5BA1E17B565D000A1EEC0 /* Humalog-img.png */,
+				E0E5BA1F17B565D000A1EEC0 /* Humalog-img@2x.png */,
+				E0E5BA2017B565D000A1EEC0 /* Hydrocodone-img.png */,
+				E0E5BA2117B565D000A1EEC0 /* Hydrocodone-img@2x.png */,
+				E0E5BA2217B565D000A1EEC0 /* Ibutprofen-img.png */,
+				E0E5BA2317B565D000A1EEC0 /* Ibutprofen-img@2x.png */,
+				E0E5BA2417B565D000A1EEC0 /* Imodium-img.png */,
+				E0E5BA2517B565D100A1EEC0 /* Imodium-img@2x.png */,
+				E0E5BA2617B565D100A1EEC0 /* Lasix-img.png */,
+				E0E5BA2717B565D100A1EEC0 /* Lasix-img@2x.png */,
+				E0E5B9F717B5651100A1EEC0 /* Advil-img@2x.png */,
+				E0E5B9F517B564A800A1EEC0 /* Conditions */,
+				E0E5B9F417B564A300A1EEC0 /* Medications */,
 				68E424091793190600431908 /* Common@2x.png */,
 				68E4240A1793190600431908 /* Uncommon@2x.png */,
 				7ECD0436178DE24F00D6C34B /* medication-pic@2x.png */,
@@ -971,6 +1208,48 @@
 			name = Miami;
 			sourceTree = "<group>";
 		};
+		E0E5B9F417B564A300A1EEC0 /* Medications */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Medications;
+			sourceTree = "<group>";
+		};
+		E0E5B9F517B564A800A1EEC0 /* Conditions */ = {
+			isa = PBXGroup;
+			children = (
+				E049C43817A6DBBD00B00B35 /* Cholera.png */,
+				E049C44817A6DDB200B00B35 /* Diarrhea.png */,
+				E049C44917A6DDB200B00B35 /* Diarrhea@2x.png */,
+				E049C44A17A6DDB200B00B35 /* Motion-Sickness.png */,
+				E049C44B17A6DDB200B00B35 /* Motion-Sickness@2x.png */,
+				E049C44C17A6DDB200B00B35 /* Rabies.png */,
+				E049C44D17A6DDB200B00B35 /* Rabies@2x.png */,
+				E049C44E17A6DDB200B00B35 /* Typhoid.png */,
+				E049C44F17A6DDB200B00B35 /* Typhoid@2x.png */,
+				E049C45017A6DDB200B00B35 /* West-Nile.png */,
+				E049C45117A6DDB200B00B35 /* West-Nile@2x.png */,
+				E049C43917A6DBBD00B00B35 /* Dengue-Fever.png */,
+				E049C43A17A6DBBD00B00B35 /* Hepatitis-A.png */,
+				E049C43B17A6DBBD00B00B35 /* Hepatitis-B.png */,
+				E049C43C17A6DBBD00B00B35 /* Jet-Lag.png */,
+				E049C43D17A6DBBD00B00B35 /* Lyme.png */,
+				E049C43E17A6DBBD00B00B35 /* Malaria.png */,
+				E049C43F17A6DBBD00B00B35 /* Meningitis.png */,
+				E049C42417A6DADB00B00B35 /* Altitude-Sickness@2x.png */,
+				E049C43617A6DB9D00B00B35 /* Altitude-Sickness.png */,
+				E049C42517A6DADB00B00B35 /* Cholera@2x.png */,
+				E049C42617A6DADB00B00B35 /* Dengue-Fever@2x.png */,
+				E049C42717A6DADB00B00B35 /* Hepatitis-A@2x.png */,
+				E049C42817A6DADB00B00B35 /* Hepatitis-B@2x.png */,
+				E049C42917A6DADB00B00B35 /* Jet-Lag@2x.png */,
+				E049C42A17A6DADB00B00B35 /* Lyme@2x.png */,
+				E049C42B17A6DADB00B00B35 /* Malaria@2x.png */,
+				E049C42C17A6DADB00B00B35 /* Meningitis@2x.png */,
+			);
+			name = Conditions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1198,6 +1477,92 @@
 				E0A0896117B43ADC007B5C65 /* Maximized-edit@2x.png in Resources */,
 				E0B4268817B43E6700DA407E /* Call-Intrepid247.png in Resources */,
 				E0B4268917B43E6700DA407E /* Call-Intrepid247@2x.png in Resources */,
+				E0E5B9F817B5651100A1EEC0 /* Advil-img.png in Resources */,
+				E0E5B9F917B5651100A1EEC0 /* Advil-img@2x.png in Resources */,
+				E0E5BA2817B565D100A1EEC0 /* Amoxillin-img.png in Resources */,
+				E0E5BA2917B565D100A1EEC0 /* Amoxillin-img@2x.png in Resources */,
+				E0E5BA2A17B565D100A1EEC0 /* Aspirin-img.png in Resources */,
+				E0E5BA2B17B565D100A1EEC0 /* Aspirin-img@2x.png in Resources */,
+				E0E5BA2C17B565D100A1EEC0 /* Benadryl-img.png in Resources */,
+				E0E5BA2D17B565D100A1EEC0 /* Benadryl-img@2x.png in Resources */,
+				E0E5BA2E17B565D100A1EEC0 /* Benylin-img.png in Resources */,
+				E0E5BA2F17B565D100A1EEC0 /* Benylin-img@2x.png in Resources */,
+				E0E5BA3017B565D100A1EEC0 /* Calcium-img.png in Resources */,
+				E0E5BA3117B565D100A1EEC0 /* Calcium-img@2x.png in Resources */,
+				E0E5BA3217B565D100A1EEC0 /* Claritan-img.png in Resources */,
+				E0E5BA3317B565D100A1EEC0 /* Claritan-img@2x.png in Resources */,
+				E0E5BA3417B565D100A1EEC0 /* Codeine-img.png in Resources */,
+				E0E5BA3517B565D100A1EEC0 /* Codeine-img@2x.png in Resources */,
+				E0E5BA3617B565D100A1EEC0 /* Dexedrine-img.png in Resources */,
+				E0E5BA3717B565D100A1EEC0 /* Dexedrine-img@2x.png in Resources */,
+				E0E5BA3817B565D100A1EEC0 /* Diarrhea-img.png in Resources */,
+				E0E5BA3917B565D100A1EEC0 /* Diarrhea-img@2x.png in Resources */,
+				E0E5BA3A17B565D100A1EEC0 /* Effexor-img.png in Resources */,
+				E0E5BA3B17B565D100A1EEC0 /* Effexor-img@2x.png in Resources */,
+				E0E5BA3C17B565D100A1EEC0 /* Erythomycin-img.png in Resources */,
+				E0E5BA3D17B565D100A1EEC0 /* Erythomycin-img@2x.png in Resources */,
+				E0E5BA3E17B565D100A1EEC0 /* Estradiol-img.png in Resources */,
+				E0E5BA3F17B565D100A1EEC0 /* Estradiol-img@2x.png in Resources */,
+				E0E5BA4017B565D100A1EEC0 /* Fentanyl-img.png in Resources */,
+				E0E5BA4117B565D100A1EEC0 /* Fentanyl-img@2x.png in Resources */,
+				E0E5BA4217B565D100A1EEC0 /* Flexeril-img.png in Resources */,
+				E0E5BA4317B565D100A1EEC0 /* Flexeril-img@2x.png in Resources */,
+				E0E5BA4417B565D100A1EEC0 /* Flovent-img.png in Resources */,
+				E0E5BA4517B565D100A1EEC0 /* Flovent-img@2x.png in Resources */,
+				E0E5BA4617B565D100A1EEC0 /* Gabapentin-img.png in Resources */,
+				E0E5BA4717B565D100A1EEC0 /* Gabapentin-img@2x.png in Resources */,
+				E0E5BA4817B565D100A1EEC0 /* Gravol-img.png in Resources */,
+				E0E5BA4917B565D100A1EEC0 /* Gravol-img@2x.png in Resources */,
+				E0E5BA4A17B565D100A1EEC0 /* Heparin-img.png in Resources */,
+				E0E5BA4B17B565D100A1EEC0 /* Heparin-img@2x.png in Resources */,
+				E0E5BA4C17B565D100A1EEC0 /* Humalog-img.png in Resources */,
+				E0E5BA4D17B565D100A1EEC0 /* Humalog-img@2x.png in Resources */,
+				E0E5BA4E17B565D100A1EEC0 /* Hydrocodone-img.png in Resources */,
+				E0E5BA4F17B565D100A1EEC0 /* Hydrocodone-img@2x.png in Resources */,
+				E0E5BA5017B565D100A1EEC0 /* Ibutprofen-img.png in Resources */,
+				E0E5BA5117B565D100A1EEC0 /* Ibutprofen-img@2x.png in Resources */,
+				E0E5BA5217B565D100A1EEC0 /* Imodium-img.png in Resources */,
+				E0E5BA5317B565D100A1EEC0 /* Imodium-img@2x.png in Resources */,
+				E0E5BA5417B565D100A1EEC0 /* Lasix-img.png in Resources */,
+				E0E5BA5517B565D100A1EEC0 /* Lasix-img@2x.png in Resources */,
+				E095E79F17B56EA500114024 /* Benzocaine-img.png in Resources */,
+				E095E7A017B56EA500114024 /* Benzocaine-img@2x.png in Resources */,
+				E0856C1F17B9392900E5C04F /* Macrobid.png in Resources */,
+				E0856C2017B9392900E5C04F /* Macrobid@2x.png in Resources */,
+				E0856C2117B9392900E5C04F /* Mefloquine.png in Resources */,
+				E0856C2217B9392900E5C04F /* Mefloquine@2x.png in Resources */,
+				E0856C2317B9392900E5C04F /* Naproxen.png in Resources */,
+				E0856C2417B9392900E5C04F /* Naproxen@2x.png in Resources */,
+				E0856C2517B9392900E5C04F /* Nexium.png in Resources */,
+				E0856C2617B9392900E5C04F /* Nexium@2x.png in Resources */,
+				E0856C2717B9392900E5C04F /* Norvasc.png in Resources */,
+				E0856C2817B9392900E5C04F /* Norvasc@2x.png in Resources */,
+				E0856C2917B9392900E5C04F /* Otriven.png in Resources */,
+				E0856C2A17B9392900E5C04F /* Otriven@2x.png in Resources */,
+				E0856C2B17B9392900E5C04F /* Oxycodone.png in Resources */,
+				E0856C2C17B9392900E5C04F /* Oxycodone@2x.png in Resources */,
+				E0856C2D17B9392900E5C04F /* Pepcid.png in Resources */,
+				E0856C2E17B9392900E5C04F /* Pepcid@2x.png in Resources */,
+				E0856C2F17B9392900E5C04F /* Quinine.png in Resources */,
+				E0856C3017B9392900E5C04F /* Quinine@2x.png in Resources */,
+				E0856C3117B9392900E5C04F /* Rabeprazole.png in Resources */,
+				E0856C3217B9392900E5C04F /* Rabeprazole@2x.png in Resources */,
+				E0856C3317B9392900E5C04F /* Seroquel.png in Resources */,
+				E0856C3417B9392900E5C04F /* Seroquel@2x.png in Resources */,
+				E0856C3517B9392900E5C04F /* Toradole.png in Resources */,
+				E0856C3617B9392900E5C04F /* Toradole@2x.png in Resources */,
+				E0856C3717B9392900E5C04F /* Travel-Sickness.png in Resources */,
+				E0856C3817B9392900E5C04F /* Travel-Sickness@2x.png in Resources */,
+				E0856C3917B9392900E5C04F /* Tylenol.png in Resources */,
+				E0856C3A17B9392900E5C04F /* Tylenol@2x.png in Resources */,
+				E0856C3B17B9392900E5C04F /* Ventolin.png in Resources */,
+				E0856C3C17B9392900E5C04F /* Ventolin@2x.png in Resources */,
+				E0856C3D17B9392900E5C04F /* Wellbutrin.png in Resources */,
+				E0856C3E17B9392900E5C04F /* Wellbutrin@2x.png in Resources */,
+				E0856C3F17B9392900E5C04F /* Xanax.png in Resources */,
+				E0856C4017B9392900E5C04F /* Xanax@2x.png in Resources */,
+				E0856C4117B9392900E5C04F /* Zoloft.png in Resources */,
+				E0856C4217B9392900E5C04F /* Zoloft@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1244,6 +1609,7 @@
 				681B0A1317AD38640057E00C /* CityEntity.m in Sources */,
 				B6DB0C4717AE2C5C001694B0 /* AssistanceViewController.m in Sources */,
 				B61550DD17B52E7400044F11 /* LegalViewController.m in Sources */,
+				6854D37F17B6F2E7006CC3D2 /* ScrollerTabViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 JonCarrHarris Consulting. All rights reserved.
 //
 
-#import "SliderTabViewController.h"
+#import "ScrollerTabViewController.h"
 
-@interface OverViewViewController : SliderTabViewController <UITableViewDelegate, UITableViewDataSource>
+@interface OverViewViewController : ScrollerTabViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableList;
 @property (nonatomic, strong) NSMutableArray *currencyArray;

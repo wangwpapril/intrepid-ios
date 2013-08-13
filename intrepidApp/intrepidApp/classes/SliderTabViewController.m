@@ -18,7 +18,7 @@
 @synthesize mController;
 @synthesize line;
 @synthesize verticalOffset;
-@synthesize cancelsTouchesInView;
+//@synthesize cancelsTouchesInView;
 
 # pragma  mark - visual interface setup
 
@@ -30,6 +30,19 @@
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
+    
+    UIImage *backgroundImage = [UIImage imageNamed:@"mexicoBackBigger.png"];
+    CGRect imageFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    CGRect whiteFrame = CGRectMake(0, 79, self.view.frame.size.width, self.view.frame.size.height - 79);
+    UIImageView *myImageView = [[UIImageView alloc] initWithFrame:imageFrame];
+    [myImageView setImage:backgroundImage];
+    [self.view addSubview:myImageView];
+    
+    UIView *whiteLayer = [[UIView alloc] initWithFrame:whiteFrame];
+    whiteLayer.backgroundColor = [UIColor whiteColor];
+    whiteLayer.alpha = 0.9;
+    [self.view addSubview:whiteLayer];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -37,9 +50,9 @@
 //    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
--(void)viewDidAppear:(BOOL)animated {
-    [mController displayMenuWithParent:self];
-}
+//-(void)viewDidAppear:(BOOL)animated {
+//    [mController displayMenuWithParent:self];
+//}
 
 
 - (CityEntity *)getCity {
@@ -48,28 +61,14 @@
 
 - (void)addTabs:(NSArray *)nameArray {
     int i = 0;
-    tabArray = [NSMutableArray new];
-    
-    while (i < 3) {
+    int limit = nameArray.count;
+    while (i < limit) {
         
         // create the tab
         UIButton *tab = [UIButton buttonWithType:UIButtonTypeCustom];
-        tab.frame = CGRectMake(107*i, 0, 107, 35);
-        NSString *title;
-        switch (i) {
-            case 0:
-                title = [nameArray objectAtIndex:0];
-                break;
-            case 1:
-                title = [nameArray objectAtIndex:1];
-                break;
-            case 2:
-                title = [nameArray objectAtIndex:2];
-                break;
-                
-            default:
-                break;
-        }
+        tab.frame = CGRectMake((320/limit)*i, 0, 320/limit, 35);
+        NSString *title = [nameArray objectAtIndex:i];
+        
         [tab setTitle:title forState:UIControlStateNormal];
         [tab setTitleColor:APP_TOGGLE_SELECTED forState:UIControlStateNormal];
         tab.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
@@ -99,7 +98,6 @@
     
     
     // create line
-    line = [[UILabel alloc] init];
     line.backgroundColor = APP_TOGGLE_SELECTED;
     [self addLineToTab];
     [self.view addSubview:line];
@@ -120,7 +118,7 @@
 }
 
 - (void) swipedRight:(UISwipeGestureRecognizer*)swipeGesture {
-    self.cancelsTouchesInView = NO;
+//    self.cancelsTouchesInView = NO;
     NSInteger newTag = currentTab - 1;
     if (newTag >= 0) {
         [self switchTabs:newTag];
@@ -128,7 +126,7 @@
 }
 
 - (void) swipedLeft:(UISwipeGestureRecognizer*)swipeGesture {
-    self.cancelsTouchesInView = NO;
+//    self.cancelsTouchesInView = NO;
     NSInteger newTag = currentTab + 1;
     if (newTag <= 2) {
         [self switchTabs:newTag];
@@ -184,7 +182,6 @@
         currentTab = newTag;
         
         // handle views sliding
-        //THIS IS WHERE I WORK
         
         UIView *tableToBe = ((UIView *)[viewArray objectAtIndex:currentTab]);
         
@@ -203,6 +200,7 @@
                 tableToBe.frame = CGRectMake(-320, verticalOffset, 320, self.view.frame.size.height - verticalOffset);
             }
         }
+        [self.view insertSubview:[viewArray objectAtIndex:currentTab] belowSubview:[tabArray objectAtIndex:0]];
         
         
         [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^ {
@@ -216,7 +214,6 @@
                     offset = 320;
                 }
                 
-                [self.view insertSubview:[viewArray objectAtIndex:currentTab] belowSubview:[tabArray objectAtIndex:0]];
                 for (UIView *view in viewArray) {
                     //animation happens here
                     [view setFrame:CGRectMake(view.frame.origin.x + offset, verticalOffset, 320, self.view.frame.size.height - verticalOffset)];
