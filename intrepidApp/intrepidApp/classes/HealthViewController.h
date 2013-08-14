@@ -24,7 +24,7 @@
 //@property (nonatomic) NSInteger previousTab;
 //@property (nonatomic, strong) UILabel *line;
 //@property (nonatomic, strong) MenuController *mController;
-@property (nonatomic, strong) UITableView *tableList;
+//@property (nonatomic, strong) UITableView *tableList;
 
 //@property (strong,nonatomic) NSArray *healthItemArray;
 @property (strong,nonatomic) NSMutableArray *filteredHealthItemArray;

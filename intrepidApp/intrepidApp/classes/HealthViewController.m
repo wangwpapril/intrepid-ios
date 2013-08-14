@@ -20,6 +20,7 @@
 //@synthesize tabArray;
 //@synthesize largeLetterArray;
 @synthesize contentArray;
+@synthesize tableArray;
 //@synthesize tableArray;
 //@synthesize currentTab;
 //@synthesize previousTab;
@@ -51,17 +52,17 @@
     CGRect whiteFrame = CGRectMake(0, 79, self.view.frame.size.width, self.view.frame.size.height - 79);
     UIImageView *myImageView = [[UIImageView alloc] initWithFrame:imageFrame];
     [myImageView setImage:backgroundImage];
-    [self.view addSubview:myImageView];
+    [self.view insertSubview:myImageView atIndex:0];
     
     // white layer to make the tableview 90% opaque
     UIView *whiteLayer = [[UIView alloc] initWithFrame:whiteFrame];
     whiteLayer.backgroundColor = [UIColor whiteColor];
     whiteLayer.alpha = 0.9;
-    [self.view addSubview:whiteLayer];
+    [self.view insertSubview:whiteLayer atIndex:1];
     
     [self populateContentArray];
     
-    NSMutableArray *tableArray = [NSMutableArray new];
+     tableArray = [NSMutableArray new];
 
     int i = 0;
     while (i < 2) {
@@ -75,6 +76,11 @@
         table.opaque = NO;
         table.backgroundView = nil;
         [table setSeparatorColor:[UIColor colorWithRed:189.0/255 green:185.0/255 blue:177.0/255 alpha:1]];
+//        UIView *view = [[UIView alloc] init];
+//        if (i == 0)
+//            view.backgroundColor = [UIColor orangeColor];
+//        else
+//            view.backgroundColor = [UIColor purpleColor];
         [tableArray addObject:table];
         i++;
     }
@@ -85,9 +91,9 @@
     
     NSArray *names = [NSArray arrayWithObjects:@"SYMPTOMS", @"MEDICATIONS", nil];
     [self addTabs:names];
-        
+    
     self.navigationItem.title = @"Health";
-    [self.view bringSubviewToFront:self.scroll];
+//    [self.view bringSubviewToFront:self.scroll];
     
     //    mController = [[MenuController alloc] init];
     //    [mController displayMenuWithParent:self];
@@ -98,6 +104,11 @@
 //    mController = [MenuController getInstance];
 //    [mController displayMenuWithParent:self];
 //}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [[tableArray objectAtIndex:0] reloadData];
+    [[tableArray objectAtIndex:1] reloadData];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -327,7 +338,16 @@
 //    }
 //}
 
+//- (void)scrollViewDidScroll:(UIScrollView *)sender
+//{
+//    [super scrollViewDidScroll:sender];
+//}
+
 # pragma mark - TableView Methods
+
+- (void)viewSwitched {
+    [[tableArray objectAtIndex:self.currentTab] reloadData];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -373,10 +393,10 @@
         NSLog(@"text is default : %@", searchBar.text);
         selectedItem = (HealthItem *)[[contentArray objectAtIndex:self.currentTab] objectAtIndex:indexPath.row];
     }
-    [searchBar resignFirstResponder];
     HealthViewDetailController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"healthDetails"];
     viewController.healthItem = selectedItem;
     [self.navigationController pushViewController:viewController animated:YES];
+    [searchBar resignFirstResponder];
 }
 
 
@@ -388,22 +408,24 @@
     // Filter the array using NSPredicate
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.name contains[c] %@",searchBar.text];
     filteredHealthItemArray = [NSMutableArray arrayWithArray:[[contentArray objectAtIndex:self.currentTab] filteredArrayUsingPredicate:predicate]];
-    //    [[tableArray objectAtIndex:currentTab] reloadData];
+    [[tableArray objectAtIndex:self.currentTab] reloadData];
 }
 
 #pragma mark - TextField Delegate Methods
 
 -(void)deleteText {
+    NSLog(@"deleting text");
     searchBar.text = @"";
     [UIView animateWithDuration:0.1 animations:^{
         xButton.alpha = 0;
     }];
-    //    [[tableArray objectAtIndex:currentTab] reloadData];
+    [[tableArray objectAtIndex:self.currentTab] reloadData];
 }
 
 -(void)removeText {
+    NSLog(@"removing text");
     searchBar.text = @"Tap to Search";
-    //    [[tableArray objectAtIndex:currentTab] reloadData];
+    [[tableArray objectAtIndex:self.currentTab] reloadData];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -417,6 +439,7 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
+    NSLog(@"text field ended editing");
     textField.text = @"Tap to Search";
     [UIView animateWithDuration:0.1 animations:^{
         xButton.alpha = 0;
@@ -434,7 +457,7 @@
     }
     else {
         [filteredHealthItemArray removeAllObjects];
-        //        [[tableArray objectAtIndex:currentTab] reloadData];
+//        [[tableArray objectAtIndex:self.currentTab] reloadData];
     }
 }
 

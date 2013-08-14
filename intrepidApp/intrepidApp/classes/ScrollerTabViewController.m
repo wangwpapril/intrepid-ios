@@ -108,6 +108,7 @@
 #pragma  mark - handle view swiping
 
 - (void)tabSelected:(id)sender {
+    NSLog(@"tab is clicked");
     UIButton *clickedTab = (UIButton *)sender;
     [self switchTabs:clickedTab.tag];
     [self.scroll scrollRectToVisible:CGRectMake(currentTab * 320, 0, 320, self.view.frame.size.height) animated:YES];
@@ -159,6 +160,7 @@
         }
         
         currentTab = newTag;
+        [self viewSwitched];
         [self.scroll scrollRectToVisible:CGRectMake(currentTab * 320, 0, 320, self.view.frame.size.height) animated:YES];
         
         
@@ -170,21 +172,16 @@
                              for (UIButton * tab in tabArray) {
                                  tab.userInteractionEnabled = YES;
                              }
-//                             [self viewSwitched];
 //                             autoScrolling = false;
                          }];
     }
 }
 
-#pragma mark - scrollView delegate methods
-
-- (void)scrollViewDidScroll:(UIScrollView *)sender
-{
-    // Update the page when more than 50% of the previous/next page is visible
-    CGFloat pageWidth = self.scroll.frame.size.width;
-    int page = floor((self.scroll.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-    pageControl.currentPage = page;
+- (void)viewSwitched {
+    // 4 child class
 }
+
+#pragma mark - scrollView delegate methods
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     CGFloat pageWidth = self.scroll.frame.size.width;
@@ -192,8 +189,11 @@
     [self switchTabs:page];
 }
 
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-}
+//- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+//    CGFloat pageWidth = self.scroll.frame.size.width;
+//    int page = floor((scroll.contentOffset.x - pageWidth / 2)/pageWidth) +1;
+//    [self switchTabs:page];
+//}
 
 
 
