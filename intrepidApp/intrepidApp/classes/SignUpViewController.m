@@ -64,7 +64,7 @@
     [self.view addSubview:signUpButton];
 
     
-    name.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
+    name.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
     name.textColor = UIColorFromRGB(0xe7eee2);
     name.placeholder = @"NAME";
     [name setReturnKeyType:UIReturnKeyDone];
@@ -73,7 +73,7 @@
     underlineName.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline.png"]];
     [self.view addSubview:underlineName];
     
-    email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
+    email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
     email.textColor = UIColorFromRGB(0xe7eee2);
     email.placeholder = @"EMAIL";
     [email setReturnKeyType:UIReturnKeyDone];
@@ -82,7 +82,7 @@
     underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline.png"]];
     [self.view addSubview:underlineEmail];
     
-    password.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
+    password.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
     password.textColor = UIColorFromRGB(0xe7eee2);
     password.placeholder = @"PASSWORD";
     [password setReturnKeyType:UIReturnKeyDone];
@@ -95,7 +95,7 @@
                         forState:UIControlStateNormal];
     [self.view addSubview:addPhoto];
     
-    acceptanceLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:13];
+    acceptanceLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:14];
     acceptanceLabel.textColor = UIColorFromRGB(0xe7eee2);
     acceptanceLabel.textAlignment = NSTextAlignmentCenter;
     acceptanceLabel.frame = CGRectMake(68, self.view.frame.size.height - 90, 183, 21);

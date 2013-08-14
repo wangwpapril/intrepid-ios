@@ -48,36 +48,36 @@
     
     //Initalize the Labels
     UILabel *nameLabel = [[UILabel alloc] init];
-    nameLabel.frame = CGRectMake(25, 150, 150, 20);
+    nameLabel.frame = CGRectMake(10, 175, 150, 20);
     nameLabel.backgroundColor = [UIColor clearColor];
-    nameLabel.font = [UIFont fontWithName:@"ProximaNova-Bold" size:16];
+    nameLabel.font = [UIFont fontWithName:@"ProximaNova-Semi-Bold" size:15];
     nameLabel.textColor = [UIColor whiteColor];
     [nameLabel setTextAlignment:NSTextAlignmentLeft];
     nameLabel.text = @"Name:";
     [self.view addSubview:nameLabel];
     
     UILabel *emailLabel = [[UILabel alloc] init];
-    emailLabel.frame = CGRectMake(25, 200, 150, 20);
+    emailLabel.frame = CGRectMake(10, 225, 150, 20);
     emailLabel.backgroundColor = [UIColor clearColor];
-    emailLabel.font = [UIFont fontWithName:@"ProximaNova-Bold" size:16];
+    emailLabel.font = [UIFont fontWithName:@"ProximaNova-Semi-Bold" size:15];
     emailLabel.textColor = [UIColor whiteColor];
     [emailLabel setTextAlignment:NSTextAlignmentLeft];
     emailLabel.text = @"Email:";
     [self.view addSubview:emailLabel];
     
     UILabel *passwordLabel = [[UILabel alloc] init];
-    passwordLabel.frame = CGRectMake(25, 250, 150, 20);
+    passwordLabel.frame = CGRectMake(10, 275, 150, 20);
     passwordLabel.backgroundColor = [UIColor clearColor];
-    passwordLabel.font = [UIFont fontWithName:@"ProximaNova-Bold" size:16];
+    passwordLabel.font = [UIFont fontWithName:@"ProximaNova-Semi-Bold" size:15];
     passwordLabel.textColor = [UIColor whiteColor];
     [passwordLabel setTextAlignment:NSTextAlignmentLeft];
     passwordLabel.text = @"Password:";
     [self.view addSubview:passwordLabel];
     
     UILabel *passwordConfirmationLabel = [[UILabel alloc] init];
-    passwordConfirmationLabel.frame = CGRectMake(25, 300, 150, 20);
+    passwordConfirmationLabel.frame = CGRectMake(10, 325, 150, 20);
     passwordConfirmationLabel.backgroundColor = [UIColor clearColor];
-    passwordConfirmationLabel.font = [UIFont fontWithName:@"ProximaNova-Bold" size:16];
+    passwordConfirmationLabel.font = [UIFont fontWithName:@"ProximaNova-Semi-Bold" size:15];
     passwordConfirmationLabel.textColor = [UIColor whiteColor];
     [passwordConfirmationLabel setTextAlignment:NSTextAlignmentLeft];
     passwordConfirmationLabel.text = @"Confirm Password:";
@@ -87,8 +87,8 @@
     //Initalize the TextFields and keyboard
     
     UITextField *name = [[UITextField alloc] init];
-    name.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
-    name.frame = CGRectMake(180, 150, 135, 34);
+    name.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+    name.frame = CGRectMake(200, 175, 135, 34);
     name.textColor = [UIColor whiteColor];
     name.placeholder = @"Your Name";
     name.delegate = self;
@@ -96,12 +96,12 @@
     
     UILabel *underlineName = [[UILabel alloc] init];
     underlineName.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1.png"]];
-    underlineName.frame = CGRectMake(25, 175, 295, 1);
+    underlineName.frame = CGRectMake(10, 200, 295, 1);
     [self.view addSubview:underlineName];
     
     UITextField *email = [[UITextField alloc] init];
-    email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
-    email.frame = CGRectMake(180, 200, 135, 34);
+    email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+    email.frame = CGRectMake(200, 225, 135, 34);
     email.textColor = [UIColor whiteColor];
     email.placeholder = @"Your Email";
     [email setReturnKeyType:UIReturnKeyDone];
@@ -110,12 +110,12 @@
     
     UILabel *underlineEmail = [[UILabel alloc] init];
     underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1.png"]];
-    underlineEmail.frame = CGRectMake(25, 225, 295, 1);
+    underlineEmail.frame = CGRectMake(10, 250, 295, 1);
     [self.view addSubview:underlineEmail];
     
     UITextField *password = [[UITextField alloc] init];
-    password.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
-    password.frame = CGRectMake(180, 250, 135, 34);
+    password.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+    password.frame = CGRectMake(200, 275, 135, 34);
     password.textColor = [UIColor whiteColor];
     password.placeholder = @"Your Password";
     [password setReturnKeyType:UIReturnKeyDone];
@@ -124,12 +124,12 @@
     
     UILabel *underlinePassword = [[UILabel alloc] init];
     underlinePassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1.png"]];
-    underlinePassword.frame = CGRectMake(25, 275, 295, 1);
+    underlinePassword.frame = CGRectMake(10, 300, 295, 1);
     [self.view addSubview:underlinePassword];
     
     UITextField *passwordConfirmation = [[UITextField alloc] init];
-    passwordConfirmation.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
-    passwordConfirmation.frame = CGRectMake(180, 300, 135, 34);
+    passwordConfirmation.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+    passwordConfirmation.frame = CGRectMake(200, 325, 135, 34);
     passwordConfirmation.textColor = [UIColor whiteColor];
     passwordConfirmation.placeholder = @"Your Password";
     [passwordConfirmation setReturnKeyType:UIReturnKeyDone];
@@ -138,7 +138,7 @@
     
     UILabel *underlinePasswordConfirmation = [[UILabel alloc] init];
     underlinePasswordConfirmation.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1.png"]];
-    underlinePasswordConfirmation.frame = CGRectMake(25, 325, 295, 1);
+    underlinePasswordConfirmation.frame = CGRectMake(10, 350, 295, 1);
     [self.view addSubview:underlinePasswordConfirmation];
     
     //Initalize the Sign Out button
@@ -146,7 +146,7 @@
     [signOutButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [signOutButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     signOutButton.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
-    signOutButton.frame = CGRectMake(68, self.view.frame.size.height - 100, 183, 36);
+    signOutButton.frame = CGRectMake(68, self.view.frame.size.height - 150, 183, 36);
     [self.view addSubview:signOutButton];
 }
 

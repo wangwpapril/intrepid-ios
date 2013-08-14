@@ -42,7 +42,7 @@
     [embassy setupWithImageName:@"security-embassy.png" withTitle:@"Embassy" withIconName:@"embassy-icon.png"];
     
     SlidingTextView *local = [[SlidingTextView alloc] initWithFrame:frame];
-    [local setupWithImageName:city.localImage withTitle:@"Local" withIconName:@"Tourist-icon@2x.png"];
+    [local setupWithImageName:city.localImage withTitle:@"Local" withIconName:@"Tourist-icon1@2x.png"];
     [local addTextAreaWithText:city.localText];
     
     // embassies

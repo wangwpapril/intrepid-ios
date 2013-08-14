@@ -97,13 +97,13 @@
     [intrepidTitle setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:intrepidTitle];
     
-    tagline.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
+    tagline.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
     tagline.textColor = UIColorFromRGB(0xe7eee2);
     [tagline setTextAlignment:NSTextAlignmentCenter];
     tagline.text = @"YOUR PERSONAL TRAVEL ASSISTANT";
     [self.view addSubview:tagline];
     
-    email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
+    email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
     email.textColor = UIColorFromRGB(0xe7eee2);
     email.placeholder = @"EMAIL";
     [email setReturnKeyType:UIReturnKeyDone];
@@ -116,7 +116,7 @@
     [self.view addSubview:underlinePassword];
 
     
-    password.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
+    password.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
     password.textColor = UIColorFromRGB(0xe7eee2);
     [password setReturnKeyType:UIReturnKeyDone];
     password.placeholder =@"PASSWORD";
@@ -134,14 +134,14 @@
     [forgotPassword setAttributedTitle: forgotPasswordString forState:UIControlStateNormal];
     [forgotPasswordString addAttribute:NSForegroundColorAttributeName value:UIColorFromRGB(0xd7503e) range:NSMakeRange(0,[forgotPasswordString length])];
     forgotPassword.frame = CGRectMake(77, loginButton.frame.origin.y + 50, 166, 15);
-    forgotPassword.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:12];
+    forgotPassword.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
     forgotPassword.backgroundColor = [UIColor clearColor];
     
     forgotPassword.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:forgotPassword];
     
     legal.frame = CGRectMake(275, 3, 50, 25);
-    legal.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:12];
+    legal.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
     legal.backgroundColor = [UIColor clearColor];
     [legal setTitleColor:[UIColor colorWithRed:189/255.0f green:185/255.0f blue:177/255.0f alpha:1.0f] forState:UIControlStateNormal];
     [self.view addSubview:legal];
