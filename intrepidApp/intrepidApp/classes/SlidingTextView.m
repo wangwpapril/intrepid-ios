@@ -62,7 +62,7 @@
     tableView.scrollEnabled = NO;
     tableView.frame = CGRectMake(tableView.frame.origin.x, tableView.frame.origin.y, 320, height);
     [self addSubview:tableView];
-    self.contentSize = CGSizeMake(320, 308 + height);
+    self.contentSize = CGSizeMake(320, 325 + height); // was 308
 }
 
 - (void)addTextAreaWithText:(NSString *)text {
