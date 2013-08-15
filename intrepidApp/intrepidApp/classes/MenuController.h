@@ -21,6 +21,7 @@
 @property (nonatomic) BOOL hiding;
 @property (nonatomic, strong) CityEntity *city;
 @property (nonatomic, strong) NSMutableArray *buttonArray;
+@property (nonatomic, strong) UIButton *outsideMenu;
 
 +(MenuController *)getInstance;
 -(void)displayMenuWithParent:(UIViewController *)controller;

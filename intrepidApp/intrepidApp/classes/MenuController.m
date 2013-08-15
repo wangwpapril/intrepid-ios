@@ -23,6 +23,7 @@
 @synthesize flipped;
 @synthesize city;
 @synthesize buttonArray;
+@synthesize outsideMenu;
 
 static MenuController *instance =nil;
 +(MenuController *)getInstance
@@ -42,6 +43,9 @@ static MenuController *instance =nil;
             instance.upRight = [UIImage imageNamed:@"menuArrow.png"];
             instance.flipped = [UIImage imageWithCGImage:instance.upRight.CGImage scale:1.0 orientation:UIImageOrientationDown];
             [instance.menu addSubview:instance.arrow];
+            
+            instance.outsideMenu = [UIButton buttonWithType:UIButtonTypeCustom];
+            instance.outsideMenu.backgroundColor = [UIColor clearColor];
         }
     }
     return instance;
@@ -66,6 +70,8 @@ static MenuController *instance =nil;
     
     arrow.image = upRight;
     
+    outsideMenu.frame = CGRectMake(0, 0, 320, viewHeight - 236); //viewHeight - 236
+    [outsideMenu addTarget:self action:@selector(hideMenu) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (IBAction)handleDrag:(UIPanGestureRecognizer *)recognizer {
@@ -87,23 +93,23 @@ static MenuController *instance =nil;
 }
 
 -(void)showMenu {
-//    if (menu.frame.origin.y > viewHeight - 246) {
-        [UIView animateWithDuration:0.2 animations:^ {
-            menu.frame = CGRectMake(0, viewHeight - 246, 320, 246);
-        }];
-        hiding = false;
-        arrow.image = flipped;
-//    }
+    NSInteger yPos = viewHeight - 246;
+    [UIView animateWithDuration:0.2 animations:^ {
+        menu.frame = CGRectMake(0, yPos, 320, 246);
+    }];
+    hiding = false;
+    arrow.image = flipped;
+    [parentController.view addSubview:outsideMenu];
+    
 }
 
 -(void)hideMenu {
-//    if (menu.frame.origin.y < viewHeight - 110) {
-        [UIView animateWithDuration:0.2 animations:^{
-                            menu.frame = botPosition;
-                        }];
-        hiding = true;
-        arrow.image = upRight;
-//    }
+    [UIView animateWithDuration:0.2 animations:^{
+                        menu.frame = botPosition;
+                    }];
+    hiding = true;
+    arrow.image = upRight;
+    [outsideMenu removeFromSuperview];
 }
 -(void)addContentButtons {
     // popup button
