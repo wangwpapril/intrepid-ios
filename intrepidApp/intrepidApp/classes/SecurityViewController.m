@@ -50,7 +50,7 @@
     tableList.dataSource = self;
     tableList.delegate = self;
     tableList.scrollEnabled = YES;
-    [embassy addTableViewWithRows:embassyArray.count withTableView:tableList];
+//    [embassy addTableViewWithRows:embassyArray.count withTableView:tableList];
     
     NSMutableArray *views = [NSMutableArray arrayWithObjects:political, embassy, local, nil];
     [self addViews:views withVerticalOffset:0];

@@ -15,6 +15,8 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *description;
 
++(id)embassyItemOfContinent:(NSString *)continent name:(NSString *)name description:(NSString *)description flag:(NSString *)flag;
+
 
 @end
 

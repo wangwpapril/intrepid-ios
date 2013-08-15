@@ -14,4 +14,13 @@
 @synthesize name;
 @synthesize description;
 
++(id)embassyItemOfContinent:(NSString *)continent name:(NSString *)name description:(NSString *)description flag:(NSString *)flag;
+{
+    EmbassyItem *newEmbassyItem = [[self alloc] init];
+    newEmbassyItem.name = name;
+    newEmbassyItem.description = description;
+    newEmbassyItem.flag = flag;
+    return newEmbassyItem;
+}
+
 @end

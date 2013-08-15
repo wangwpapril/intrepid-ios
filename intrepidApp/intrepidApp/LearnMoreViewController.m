@@ -74,6 +74,8 @@
     [self populateDescriptions];
     
     [self.view addSubview:scrollView];
+    exitButton.frame = CGRectMake(290, 12, 15, 15);
+    [self.view addSubview:exitButton];
     
     pageControl.frame = CGRectMake(135, self.view.frame.size.height - 40, 50, 50);
     pageControl.numberOfPages = 4;

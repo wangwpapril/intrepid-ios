@@ -102,7 +102,7 @@
         [scroll addSubview:[arrayOfViews objectAtIndex:i]];
         i++;
     }
-    scroll.contentSize = CGSizeMake(320 * i, self.view.frame.size.height);    
+    scroll.contentSize = CGSizeMake(320 * i, self.view.frame.size.height);
 }
 
 #pragma  mark - handle view swiping
