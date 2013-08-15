@@ -28,8 +28,10 @@
     NSArray *puerto = [NSArray arrayWithObjects:
                                               nil];
     
-    NSMutableArray *embassyArray = [[NSMutableArray alloc] initWithObjects:guadala, mexicoCity, miami, puerto, nil];
-    return embassyArray;
+    return mexicoCity;
+//    
+//    NSMutableArray *embassyArray = [[NSMutableArray alloc] initWithObjects:guadala, mexicoCity, miami, puerto, nil];
+//    return embassyArray;
     
 //    EmbassyItem *item1 = [[EmbassyItem alloc] init];
 //    item1.flag = @"USD.png";

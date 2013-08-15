@@ -16,6 +16,7 @@
         <attribute name="politicalImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="politicalText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weatherURL" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="embassies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EmbassyEntity" inverseName="city" inverseEntity="EmbassyEntity" syncable="YES"/>
     </entity>
     <entity name="EmbassyEntity" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
@@ -28,9 +29,10 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notice" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="services" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="city" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CityEntity" inverseName="embassies" inverseEntity="CityEntity" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CityEntity" positionX="25" positionY="-166" width="128" height="268"/>
-        <element name="EmbassyEntity" positionX="-227" positionY="-63" width="128" height="193"/>
+        <element name="CityEntity" positionX="25" positionY="-166" width="128" height="283"/>
+        <element name="EmbassyEntity" positionX="-227" positionY="-63" width="128" height="208"/>
     </elements>
 </model>
