@@ -143,7 +143,7 @@
     [self.view addSubview:underlinePasswordConfirmation];
     
     //Initalize the Sign Out button
-    UIImage *buttonImage = [[UIImage imageNamed:@"Signout.png"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
+    UIImage *buttonImage = [[UIImage imageNamed:@"Signout-new2@2x.png"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
     [signOutButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [signOutButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     signOutButton.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];

@@ -105,6 +105,7 @@ static MenuController *instance =nil;
         arrow.image = upRight;
 //    }
 }
+
 -(void)addContentButtons {
     // popup button
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
