@@ -147,7 +147,7 @@
     [signOutButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [signOutButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     signOutButton.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
-    signOutButton.frame = CGRectMake(68, self.view.frame.size.height - 120, 183, 36);
+    signOutButton.frame = CGRectMake(68, self.view.frame.size.height - 160, 183, 36);
     [self.view addSubview:signOutButton];
 }
 
