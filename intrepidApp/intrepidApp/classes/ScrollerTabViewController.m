@@ -64,7 +64,7 @@
 - (void)addTabs:(NSArray *)nameArray {
     int i = 0;
     int limit = nameArray.count;
-    int width = 320/limit;
+    float width = 321/limit;
     while (i < limit) {        
         // create the tab
         UIButton *tab = [UIButton buttonWithType:UIButtonTypeCustom];
