@@ -313,6 +313,8 @@
 		E0E5BA5317B565D100A1EEC0 /* Imodium-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2517B565D100A1EEC0 /* Imodium-img@2x.png */; };
 		E0E5BA5417B565D100A1EEC0 /* Lasix-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2617B565D100A1EEC0 /* Lasix-img.png */; };
 		E0E5BA5517B565D100A1EEC0 /* Lasix-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2717B565D100A1EEC0 /* Lasix-img@2x.png */; };
+		E0E91ADB17BD2247009E8607 /* Signout-new2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E91AD917BD2247009E8607 /* Signout-new2.png */; };
+		E0E91ADC17BD2247009E8607 /* Signout-new2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E91ADA17BD2247009E8607 /* Signout-new2@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -662,6 +664,8 @@
 		E0E5BA2517B565D100A1EEC0 /* Imodium-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Imodium-img@2x.png"; sourceTree = "<group>"; };
 		E0E5BA2617B565D100A1EEC0 /* Lasix-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lasix-img.png"; sourceTree = "<group>"; };
 		E0E5BA2717B565D100A1EEC0 /* Lasix-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lasix-img@2x.png"; sourceTree = "<group>"; };
+		E0E91AD917BD2247009E8607 /* Signout-new2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Signout-new2.png"; sourceTree = "<group>"; };
+		E0E91ADA17BD2247009E8607 /* Signout-new2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Signout-new2@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1157,6 +1161,8 @@
 			children = (
 				E058778617A877C200E42A78 /* divider-mid-1.png */,
 				E058778717A877C200E42A78 /* divider-mid-1@2x.png */,
+				E0E91AD917BD2247009E8607 /* Signout-new2.png */,
+				E0E91ADA17BD2247009E8607 /* Signout-new2@2x.png */,
 				E058778817A877C200E42A78 /* Signout.png */,
 				E058778917A877C200E42A78 /* Signout@2x.png */,
 			);
@@ -1563,6 +1569,8 @@
 				E0856C4017B9392900E5C04F /* Xanax@2x.png in Resources */,
 				E0856C4117B9392900E5C04F /* Zoloft.png in Resources */,
 				E0856C4217B9392900E5C04F /* Zoloft@2x.png in Resources */,
+				E0E91ADB17BD2247009E8607 /* Signout-new2.png in Resources */,
+				E0E91ADC17BD2247009E8607 /* Signout-new2@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

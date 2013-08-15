@@ -111,6 +111,7 @@ static MenuController *instance =nil;
     arrow.image = upRight;
     [outsideMenu removeFromSuperview];
 }
+
 -(void)addContentButtons {
     // popup button
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
