@@ -155,6 +155,14 @@
     
     [embassyTextContainer addSubview:addressLabel];
     [embassyTextContainer addSubview: addressText];
+    [embassyTextContainer addSubview:contactLabel];
+    [embassyTextContainer addSubview:contactText];
+    [embassyTextContainer addSubview:hoursLabel];
+    [embassyTextContainer addSubview:hoursText];
+    [embassyTextContainer addSubview:servicesLabel];
+    [embassyTextContainer addSubview:servicesText];
+    [embassyTextContainer addSubview:notesLabel];
+    [embassyTextContainer addSubview:notesText];
     [scrollView addSubview:embassyTextContainer];
     
     scrollView.contentSize = CGSizeMake(320, embassyTextContainer.frame.origin.y + 1000);

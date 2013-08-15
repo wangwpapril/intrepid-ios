@@ -14,18 +14,175 @@
 -(NSArray *)getContent {
     
     NSArray *guadala = [NSArray arrayWithObjects:
-                        
-    
-                         nil];
+                        [EmbassyItem embassyItemOfLocation:@"United States"
+                                                      name:@"United States"
+                                                      flag:@"USD.png"
+                                                   address:@"address"
+                                                       tel:@"tel"
+                                                       fax:@"fax"
+                                                     email:@"email"
+                                                     hours:@"hours"
+                                                  services:@"services"
+                                                    notice:@"notice"],
+                        [EmbassyItem embassyItemOfLocation:@"Canada"
+                                                      name:@"Canada"
+                                                      flag:@"CAD.png"
+                                                   address:@"address"
+                                                       tel:@"tel"
+                                                       fax:@"fax"
+                                                     email:@"email"
+                                                     hours:@"hours"
+                                                  services:@"services"
+                                                    notice:@"notice"],
+                        [EmbassyItem embassyItemOfLocation:@"United Kingdom"
+                                                      name:@"United Kingdom"
+                                                      flag:@"GBP.png"
+                                                   address:@"address"
+                                                       tel:@"tel"
+                                                       fax:@"fax"
+                                                     email:@"email"
+                                                     hours:@"hours"
+                                                  services:@"services"
+                                                    notice:@"notice"],
+                        [EmbassyItem embassyItemOfLocation:@"China"
+                                                      name:@"China"
+                                                      flag:@"CNY.png"
+                                                   address:@"address"
+                                                       tel:@"tel"
+                                                       fax:@"fax"
+                                                     email:@"email"
+                                                     hours:@"hours"
+                                                  services:@"services"
+                                                    notice:@"notice"], nil];
     
     NSArray *mexicoCity = [NSArray arrayWithObjects:
+                           [EmbassyItem embassyItemOfLocation:@"United States"
+                                                         name:@"United States"
+                                                         flag:@"USD.png"
+                                                      address:@"address"
+                                                          tel:@"tel"
+                                                          fax:@"fax"
+                                                        email:@"email"
+                                                        hours:@"hours"
+                                                     services:@"services"
+                                                       notice:@"notice"],
+                           [EmbassyItem embassyItemOfLocation:@"Canada"
+                                                         name:@"Canada"
+                                                         flag:@"CAD.png"
+                                                      address:@"Embassy of Canada\n Schiller 529, Col. Bosque de Chapultepec (Polanco)\n Del. Miguel Hidalgo\n 11580 Mexico City, D.F.\n Mexico"
+                                                          tel:@"From Canada dial: 011-52 + (Area Code) + Number\n From Mexico dial: 01 + (Area Code) + Number\n\n Telephone: (55) 5724-7900"
+                                                          fax:@"Administration: (55) 5724-7980\n Cultural: (55) 5724-7981\n Political Relations: (55) 5724-7985"
+                                                        email:@"mxico@international.gc.ca"
+                                                        hours:@"Monday-Friday 8:45am-5:15pm with the exception of the sections listed below."
+                                                     services:@"Assistance to Canadians (Consular Section)\n Fax (Consular): (55) 5724-7943\n Fax (Passports): (55) 5387-9305\n\n • All Consular services with the exception of Notarial services (please see below) Monday-Friday 9am-12pm.\n\n • Notarial Services (certificiation of signatures-any kind, power of attorney, authorization for minors to travel, etc.)* Monday-Friday 9am-12pm.\n\n Immigration and Visas\n\n • Reception of visitor visas, work permits, and study permits: Monday-Thursday 8am-12pm. (Applicants should use the VAC services in order to benefit from extended office hours for the submission of applications for visitor visas, work permits and study permits: www.cicmex.com.mx \n\n • Reception of travel documents applications: Monday-Friday 8am-12pm\n\n • Only persons invited for an interview will be allowed to enter the Embassy: Monday-Thursday."
+                                                       notice:@"*Mexico citizens that require a notarized letter for their child or children to be able to travel to Canada must go to a Mexican Public Notary. As of July 6, 2009, and until further notice, the consular section fo the Canadian Embassy will not be able to provide this service."],
+                           [EmbassyItem embassyItemOfLocation:@"United Kingdom"
+                                                         name:@"United Kingdom"
+                                                         flag:@"GBP.png"
+                                                      address:@"address"
+                                                          tel:@"tel"
+                                                          fax:@"fax"
+                                                        email:@"email"
+                                                        hours:@"hours"
+                                                     services:@"services"
+                                                       notice:@"notice"],
+                           [EmbassyItem embassyItemOfLocation:@"China"
+                                                         name:@"China"
+                                                         flag:@"CNY.png"
+                                                      address:@"address"
+                                                          tel:@"tel"
+                                                          fax:@"fax"
+                                                        email:@"email"
+                                                        hours:@"hours"
+                                                     services:@"services"
+                                                       notice:@"notice"],
                                                       nil];
     
     NSArray *miami = [NSArray arrayWithObjects:
-                                            
+                      [EmbassyItem embassyItemOfLocation:@"United States"
+                                                    name:@"United States"
+                                                    flag:@"USD.png"
+                                                 address:@"address"
+                                                     tel:@"tel"
+                                                     fax:@"fax"
+                                                   email:@"email"
+                                                   hours:@"hours"
+                                                services:@"services"
+                                                  notice:@"notice"],
+                      [EmbassyItem embassyItemOfLocation:@"Canada"
+                                                    name:@"Canada"
+                                                    flag:@"CAD.png"
+                                                 address:@"address"
+                                                     tel:@"tel"
+                                                     fax:@"fax"
+                                                   email:@"email"
+                                                   hours:@"hours"
+                                                services:@"services"
+                                                  notice:@"notice"],
+                      [EmbassyItem embassyItemOfLocation:@"United Kingdom"
+                                                    name:@"United Kingdom"
+                                                    flag:@"GBP.png"
+                                                 address:@"address"
+                                                     tel:@"tel"
+                                                     fax:@"fax"
+                                                   email:@"email"
+                                                   hours:@"hours"
+                                                services:@"services"
+                                                  notice:@"notice"],
+                      [EmbassyItem embassyItemOfLocation:@"China"
+                                                    name:@"China"
+                                                    flag:@"CNY.png"
+                                                 address:@"address"
+                                                     tel:@"tel"
+                                                     fax:@"fax"
+                                                   email:@"email"
+                                                   hours:@"hours"
+                                                services:@"services"
+                                                  notice:@"notice"],
+                      
                       nil];
     
     NSArray *puerto = [NSArray arrayWithObjects:
+                       [EmbassyItem embassyItemOfLocation:@"United States"
+                                                     name:@"United States"
+                                                     flag:@"USD.png"
+                                                  address:@"address"
+                                                      tel:@"tel"
+                                                      fax:@"fax"
+                                                    email:@"email"
+                                                    hours:@"hours"
+                                                 services:@"services"
+                                                   notice:@"notice"],
+                       [EmbassyItem embassyItemOfLocation:@"Canada"
+                                                     name:@"Canada"
+                                                     flag:@"CAD.png"
+                                                  address:@"address"
+                                                      tel:@"tel"
+                                                      fax:@"fax"
+                                                    email:@"email"
+                                                    hours:@"hours"
+                                                 services:@"services"
+                                                   notice:@"notice"],
+                       [EmbassyItem embassyItemOfLocation:@"United Kingdom"
+                                                     name:@"United Kingdom"
+                                                     flag:@"GBP.png"
+                                                  address:@"address"
+                                                      tel:@"tel"
+                                                      fax:@"fax"
+                                                    email:@"email"
+                                                    hours:@"hours"
+                                                 services:@"services"
+                                                   notice:@"notice"],
+                       [EmbassyItem embassyItemOfLocation:@"China"
+                                                     name:@"China"
+                                                     flag:@"CNY.png"
+                                                  address:@"address"
+                                                      tel:@"tel"
+                                                      fax:@"fax"
+                                                    email:@"email"
+                                                    hours:@"hours"
+                                                 services:@"services"
+                                                   notice:@"notice"],
                                               nil];
     
     return mexicoCity;
