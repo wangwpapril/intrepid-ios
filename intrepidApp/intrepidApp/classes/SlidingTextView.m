@@ -24,8 +24,8 @@
 
 -(void)setupWithImageName:(NSString *)image withTitle:(NSString *)title withIconName:(NSString *)icon {
     
-    CGRect rect=CGRectMake(0, 0, 320, 480);
-    scroll = [[UIScrollView alloc] initWithFrame:rect];
+//    CGRect rect=CGRectMake(0, 0, 320, 480);
+    scroll = [[UIScrollView alloc] initWithFrame:self.frame];
     scroll.showsVerticalScrollIndicator = YES;
     scroll.showsHorizontalScrollIndicator = NO;
     scroll.scrollEnabled = YES;
@@ -85,8 +85,7 @@
 
     [textViewContainer addSubview: textView];
     [scroll addSubview:textViewContainer];
-    scroll.contentSize = CGSizeMake(320, 308 + textViewContainer.frame.size.height + 5);
-    
+    scroll.contentSize = CGSizeMake(320, 308 + textViewContainer.frame.size.height + 65); // used to be 5 but impossible to read last few lines
 }
 
 @end
