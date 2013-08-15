@@ -10,7 +10,7 @@
 #import "Constants.h"
 #import "MenuController.h"
 
-#define kOFFSET_FOR_KEYBOARD 80.0
+#define kOFFSET_FOR_KEYBOARD 130.0
 
 @interface SettingsViewController ()
 
@@ -48,7 +48,7 @@
     
     //Initalize the Labels
     UILabel *nameLabel = [[UILabel alloc] init];
-    nameLabel.frame = CGRectMake(10, 175, 150, 20);
+    nameLabel.frame = CGRectMake(10, 150, 150, 20);
     nameLabel.backgroundColor = [UIColor clearColor];
     nameLabel.font = [UIFont fontWithName:@"ProximaNova-Semi-Bold" size:15];
     nameLabel.textColor = [UIColor whiteColor];
@@ -57,7 +57,7 @@
     [self.view addSubview:nameLabel];
     
     UILabel *emailLabel = [[UILabel alloc] init];
-    emailLabel.frame = CGRectMake(10, 225, 150, 20);
+    emailLabel.frame = CGRectMake(10, 200, 150, 20);
     emailLabel.backgroundColor = [UIColor clearColor];
     emailLabel.font = [UIFont fontWithName:@"ProximaNova-Semi-Bold" size:15];
     emailLabel.textColor = [UIColor whiteColor];
@@ -66,7 +66,7 @@
     [self.view addSubview:emailLabel];
     
     UILabel *passwordLabel = [[UILabel alloc] init];
-    passwordLabel.frame = CGRectMake(10, 275, 150, 20);
+    passwordLabel.frame = CGRectMake(10, 250, 150, 20);
     passwordLabel.backgroundColor = [UIColor clearColor];
     passwordLabel.font = [UIFont fontWithName:@"ProximaNova-Semi-Bold" size:15];
     passwordLabel.textColor = [UIColor whiteColor];
@@ -75,7 +75,7 @@
     [self.view addSubview:passwordLabel];
     
     UILabel *passwordConfirmationLabel = [[UILabel alloc] init];
-    passwordConfirmationLabel.frame = CGRectMake(10, 325, 150, 20);
+    passwordConfirmationLabel.frame = CGRectMake(10, 300, 150, 20);
     passwordConfirmationLabel.backgroundColor = [UIColor clearColor];
     passwordConfirmationLabel.font = [UIFont fontWithName:@"ProximaNova-Semi-Bold" size:15];
     passwordConfirmationLabel.textColor = [UIColor whiteColor];
@@ -88,20 +88,21 @@
     
     UITextField *name = [[UITextField alloc] init];
     name.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
-    name.frame = CGRectMake(200, 175, 135, 34);
+    name.frame = CGRectMake(200, 150, 135, 34);
     name.textColor = [UIColor whiteColor];
     name.placeholder = @"Your Name";
+    [name setReturnKeyType:UIReturnKeyDone];
     name.delegate = self;
     [self.view addSubview:name];
     
     UILabel *underlineName = [[UILabel alloc] init];
     underlineName.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1.png"]];
-    underlineName.frame = CGRectMake(10, 200, 295, 1);
+    underlineName.frame = CGRectMake(10, 175, 295, 1);
     [self.view addSubview:underlineName];
     
     UITextField *email = [[UITextField alloc] init];
     email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
-    email.frame = CGRectMake(200, 225, 135, 34);
+    email.frame = CGRectMake(200, 200, 135, 34);
     email.textColor = [UIColor whiteColor];
     email.placeholder = @"Your Email";
     [email setReturnKeyType:UIReturnKeyDone];
@@ -110,12 +111,12 @@
     
     UILabel *underlineEmail = [[UILabel alloc] init];
     underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1.png"]];
-    underlineEmail.frame = CGRectMake(10, 250, 295, 1);
+    underlineEmail.frame = CGRectMake(10, 225, 295, 1);
     [self.view addSubview:underlineEmail];
     
     UITextField *password = [[UITextField alloc] init];
     password.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
-    password.frame = CGRectMake(200, 275, 135, 34);
+    password.frame = CGRectMake(200, 250, 135, 34);
     password.textColor = [UIColor whiteColor];
     password.placeholder = @"Your Password";
     [password setReturnKeyType:UIReturnKeyDone];
@@ -124,12 +125,12 @@
     
     UILabel *underlinePassword = [[UILabel alloc] init];
     underlinePassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1.png"]];
-    underlinePassword.frame = CGRectMake(10, 300, 295, 1);
+    underlinePassword.frame = CGRectMake(10, 275, 295, 1);
     [self.view addSubview:underlinePassword];
     
     UITextField *passwordConfirmation = [[UITextField alloc] init];
     passwordConfirmation.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
-    passwordConfirmation.frame = CGRectMake(200, 325, 135, 34);
+    passwordConfirmation.frame = CGRectMake(200, 300, 135, 34);
     passwordConfirmation.textColor = [UIColor whiteColor];
     passwordConfirmation.placeholder = @"Your Password";
     [passwordConfirmation setReturnKeyType:UIReturnKeyDone];
@@ -138,7 +139,7 @@
     
     UILabel *underlinePasswordConfirmation = [[UILabel alloc] init];
     underlinePasswordConfirmation.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1.png"]];
-    underlinePasswordConfirmation.frame = CGRectMake(10, 350, 295, 1);
+    underlinePasswordConfirmation.frame = CGRectMake(10, 325, 295, 1);
     [self.view addSubview:underlinePasswordConfirmation];
     
     //Initalize the Sign Out button
@@ -146,7 +147,7 @@
     [signOutButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [signOutButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     signOutButton.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
-    signOutButton.frame = CGRectMake(68, self.view.frame.size.height - 150, 183, 36);
+    signOutButton.frame = CGRectMake(68, self.view.frame.size.height - 120, 183, 36);
     [self.view addSubview:signOutButton];
 }
 
@@ -155,6 +156,27 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(IBAction) getPhoto:(id) sender {
+	UIImagePickerController * picker = [[UIImagePickerController alloc] init];
+	picker.delegate = self;
+    
+	if((UIButton *) sender == editPhoto) {
+		picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+        NSLog(@"pick a photo");
+	}
+//    else {
+//		picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+//	}
+    
+	[self presentModalViewController:picker animated:YES];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+	[picker dismissModalViewControllerAnimated:YES];
+	editPhoto.imageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+}
+
 # pragma mark - keyboard stuff
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {

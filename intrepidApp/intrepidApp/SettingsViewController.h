@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "MenuController.h"
 
-@interface SettingsViewController : UIViewController <UITextFieldDelegate>
+@interface SettingsViewController : UIViewController <UIImagePickerControllerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *editPhoto;
 @property (weak, nonatomic) IBOutlet UIButton *signOutButton;
 @property(weak, nonatomic) IBOutlet UITextField *name;
 @property(weak, nonatomic) IBOutlet UITextField *email;
 @property(weak, nonatomic) IBOutlet UITextField *password;
 @property (nonatomic, strong) MenuController *mController;
+
+-(IBAction) getPhoto:(id) sender;
 
 @end

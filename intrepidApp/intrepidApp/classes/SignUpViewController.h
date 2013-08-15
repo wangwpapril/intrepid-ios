@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SignUpViewController : UIViewController
+@interface SignUpViewController : UIViewController <UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *addPhoto;
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *email;
@@ -21,5 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *acceptanceLabel;
 @property (weak, nonatomic) IBOutlet UIButton *termsOfService;
 @property (weak, nonatomic) IBOutlet UIButton *privacyPolicy;
+
+-(IBAction) getPhoto:(id) sender;
 
 @end

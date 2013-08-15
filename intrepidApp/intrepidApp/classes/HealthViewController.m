@@ -89,7 +89,7 @@
     [self addViews:tableArray withVerticalOffset:79];
     [self addIntreSearchBar];
     
-    NSArray *names = [NSArray arrayWithObjects:@"SYMPTOMS", @"MEDICATIONS", nil];
+    NSArray *names = [NSArray arrayWithObjects:@"CONDITIONS", @"MEDICATIONS", nil];
     [self addTabs:names];
     
     self.navigationItem.title = @"Health";

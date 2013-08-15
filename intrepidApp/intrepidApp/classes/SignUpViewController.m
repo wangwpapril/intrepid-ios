@@ -15,6 +15,8 @@
 
 @implementation SignUpViewController
 
+#define kOFFSET_FOR_KEYBOARD 110.0
+
 @synthesize signUpButton;
 @synthesize name;
 @synthesize email;
@@ -129,6 +131,26 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction) getPhoto:(id) sender {
+	UIImagePickerController * picker = [[UIImagePickerController alloc] init];
+	picker.delegate = self;
+    
+	if((UIButton *) sender == addPhoto) {
+		picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+        NSLog(@"pick a photo");
+	}
+    //    else {
+    //		picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    //	}
+    
+	[self presentModalViewController:picker animated:YES];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+	[picker dismissModalViewControllerAnimated:YES];
+	addPhoto.imageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
 }
 
 # pragma mark - keyboard stuff

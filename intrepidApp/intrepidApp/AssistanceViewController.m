@@ -94,7 +94,7 @@
 
 -(IBAction)callAssistance:(id) sender
 {
-    NSString *phoneNumber = @"tel:1234567890";
+    NSString *phoneNumber = @"tel:14166463107";
     
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
     

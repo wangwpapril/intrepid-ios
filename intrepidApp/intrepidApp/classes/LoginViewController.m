@@ -140,9 +140,10 @@
     forgotPassword.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:forgotPassword];
     
-    legal.frame = CGRectMake(275, 3, 50, 25);
+    legal.frame = CGRectMake(240, -8, 100, 50);
     legal.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
     legal.backgroundColor = [UIColor clearColor];
+    legal.titleLabel.textAlignment = NSTextAlignmentCenter;
     [legal setTitleColor:[UIColor colorWithRed:189/255.0f green:185/255.0f blue:177/255.0f alpha:1.0f] forState:UIControlStateNormal];
     [self.view addSubview:legal];
     
