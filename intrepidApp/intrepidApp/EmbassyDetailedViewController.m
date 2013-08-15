@@ -34,7 +34,7 @@
     whiteLayer.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:whiteLayer];
     
-    CGRect rect=CGRectMake(0, 0, 320, 520);
+    CGRect rect=CGRectMake(0, 36, 320, 520);
     scrollView = [[UIScrollView alloc] initWithFrame:rect];
     scrollView.showsVerticalScrollIndicator = YES;
     scrollView.showsHorizontalScrollIndicator = NO;
@@ -86,15 +86,15 @@
     contactLabel.backgroundColor = [UIColor clearColor];
     contactLabel.text = @"Telephone/Fax/Email";
     
-    NSString *contactLength = [NSString stringWithFormat:@"%@\n %@\n %@\n %@", embassyItem.tel,
-                               embassyItem.fax, embassyItem.email, embassyItem.email];
+    NSString *contactLength = [NSString stringWithFormat:@"%@\nFax:%@\nEmail:%@", embassyItem.tel,
+                               embassyItem.fax, embassyItem.email];
     
     CGSize contactSize = [contactLength sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:13] constrainedToSize:CGSizeMake(280, 15000) lineBreakMode:NSLineBreakByWordWrapping];
     UILabel *contactText = [[UILabel alloc] initWithFrame:CGRectMake(20, contactLabel.frame.origin.y + 35,  280, contactSize.height)];
     contactText.font = [UIFont fontWithName:@"ProximaNova-Light" size:13];
     contactText.backgroundColor = [UIColor clearColor];
     contactText.textColor = [UIColor blackColor];
-    contactText.text = [NSString stringWithFormat:@"Tel: %@\nFax: %@\nEmail: %@", embassyItem.tel, embassyItem.fax, embassyItem.email];
+    contactText.text = [NSString stringWithFormat:@"%@\nFax: %@\nEmail: %@", embassyItem.tel, embassyItem.fax, embassyItem.email];
     contactText.lineBreakMode = NSLineBreakByWordWrapping;
     contactText.numberOfLines = 0;
     
@@ -148,7 +148,7 @@
     notesText.numberOfLines = 0;
         
     //add all subviews to large container
-    UILabel *embassyTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, 40,  320, notesText.frame.origin.y + notesSize.height)];
+    UILabel *embassyTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,  320, notesText.frame.origin.y + notesSize.height)];
     
     [embassyTextContainer addSubview:addressLabel];
     [embassyTextContainer addSubview:addressText];
