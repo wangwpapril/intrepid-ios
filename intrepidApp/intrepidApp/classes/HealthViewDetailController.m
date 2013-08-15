@@ -70,9 +70,9 @@
     
     //Set descriptionText to auto-fit content
     CGSize size = [healthItem.description sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:14]
-                      constrainedToSize:CGSizeMake(260, 15000)
+                      constrainedToSize:CGSizeMake(290, 15000)
                           lineBreakMode:NSLineBreakByWordWrapping];
-    UILabel *descriptionText = [[UILabel alloc] initWithFrame:CGRectMake(15, 2,  290, size.height + 5)];
+    UILabel *descriptionText = [[UILabel alloc] initWithFrame:CGRectMake(15, 5,  290, size.height + 5)];
     descriptionText.font = [UIFont fontWithName:@"ProximaNova-Light" size:14];
     descriptionText.backgroundColor = UIColorFromRGB(0xffffff);
     descriptionText.textColor = APP_TEXT_COLOR;
@@ -80,7 +80,7 @@
     descriptionText.lineBreakMode = NSLineBreakByWordWrapping;
     descriptionText.numberOfLines = 0;
     
-    UILabel *descriptionTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, 45,  320, size.height + 5)];
+    UILabel *descriptionTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, 45,  320, size.height + 15)];
     descriptionTextContainer.layer.borderWidth = 1.0f;
     descriptionTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
     
@@ -108,9 +108,9 @@
     
     //Begin sizing sideEffects text container
     CGSize sideEffectsSize = [healthItem.details sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:14]
-                                     constrainedToSize:CGSizeMake(260, 15000)
+                                     constrainedToSize:CGSizeMake(290, 15000)
                                          lineBreakMode:NSLineBreakByWordWrapping];    
-    UILabel *sideEffectsText = [[UILabel alloc] initWithFrame:CGRectMake(15, 2,  290, sideEffectsSize.height + 5)];
+    UILabel *sideEffectsText = [[UILabel alloc] initWithFrame:CGRectMake(15, 5,  290, sideEffectsSize.height + 5)];
     sideEffectsText.font = [UIFont fontWithName:@"ProximaNova-Light" size:14];
     sideEffectsText.backgroundColor = UIColorFromRGB(0xffffff);
     sideEffectsText.textColor = APP_TEXT_COLOR;
@@ -118,7 +118,7 @@
     sideEffectsText.lineBreakMode = NSLineBreakByWordWrapping;
     sideEffectsText.numberOfLines = 0;
     
-    UILabel *sideEffectsTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, descriptionTextContainer.frame.origin.y + size.height + 55,  320, sideEffectsSize.height + 5)];
+    UILabel *sideEffectsTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, descriptionTextContainer.frame.origin.y + size.height + 55,  320, sideEffectsSize.height + 15)];
     sideEffectsTextContainer.layer.borderWidth = 1.0f;
     sideEffectsTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
     
@@ -143,10 +143,10 @@
         [scrollView addSubview:transmissionImageLabel];
 
         CGSize transmissionSize = [healthItem.symptoms sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:14]
-                                                  constrainedToSize:CGSizeMake(260, 15000)
+                                                  constrainedToSize:CGSizeMake(290, 15000)
                                                     lineBreakMode:NSLineBreakByWordWrapping];
 
-        UILabel *transmissionText = [[UILabel alloc] initWithFrame:CGRectMake(15, 2,  290, transmissionSize.height + 5)];
+        UILabel *transmissionText = [[UILabel alloc] initWithFrame:CGRectMake(15, 5,  290, transmissionSize.height + 5)];
         transmissionText.font = [UIFont fontWithName:@"ProximaNova-Light" size:14];
         transmissionText.backgroundColor = UIColorFromRGB(0xffffff);
         transmissionText.textColor = APP_TEXT_COLOR;
@@ -155,7 +155,7 @@
         transmissionText.numberOfLines = 0;
         
         
-        UILabel *transmissionTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, sideEffectsTextContainer.frame.origin.y + sideEffectsSize.height + 55,  320, transmissionSize.height + 5)];
+        UILabel *transmissionTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, sideEffectsTextContainer.frame.origin.y + sideEffectsSize.height + 55,  320, transmissionSize.height + 15)];
         transmissionTextContainer.layer.borderWidth = 1.0f;
         transmissionTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];        
         
@@ -177,9 +177,9 @@
         [scrollView addSubview:immunizationImageLabel];
 
         CGSize immunizationSize = [healthItem.immunization sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:14]
-                                                      constrainedToSize:CGSizeMake(260, 15000)
+                                                      constrainedToSize:CGSizeMake(290, 15000)
                                                      lineBreakMode:NSLineBreakByWordWrapping];
-        UILabel *immunizationText = [[UILabel alloc] initWithFrame:CGRectMake(15, 2,  290, immunizationSize.height + 5)];
+        UILabel *immunizationText = [[UILabel alloc] initWithFrame:CGRectMake(15, 5,  290, immunizationSize.height + 5)];
         immunizationText.font = [UIFont fontWithName:@"ProximaNova-Light" size:14];
         immunizationText.backgroundColor = UIColorFromRGB(0xffffff);
         immunizationText.textColor = APP_TEXT_COLOR;
@@ -187,7 +187,7 @@
         immunizationText.lineBreakMode = NSLineBreakByWordWrapping;
         immunizationText.numberOfLines = 0;
         
-        UILabel *immunizationTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, transmissionTextContainer.frame.origin.y + transmissionSize.height + 55,  320, immunizationSize.height + 5)];
+        UILabel *immunizationTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, transmissionTextContainer.frame.origin.y + transmissionSize.height + 55,  320, immunizationSize.height + 15)];
         immunizationTextContainer.layer.borderWidth = 1.0f;
         immunizationTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
         
@@ -201,11 +201,11 @@
             immunizationTitleLabel.text = @"General Information";
         }
         
-        scrollView.contentSize = CGSizeMake(320, immunizationTextContainer.frame.origin.y + immunizationSize.height + 60);
+        scrollView.contentSize = CGSizeMake(320, immunizationTextContainer.frame.origin.y + immunizationSize.height + 150);
         
     }
     else {
-        scrollView.contentSize = CGSizeMake(320, sideEffectsTextContainer.frame.origin.y + sideEffectsSize.height + 60);
+        scrollView.contentSize = CGSizeMake(320, sideEffectsTextContainer.frame.origin.y + sideEffectsSize.height + 150);
     }
         
 }
