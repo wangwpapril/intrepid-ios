@@ -64,7 +64,7 @@
 - (void)addTabs:(NSArray *)nameArray {
     int i = 0;
     int limit = nameArray.count;
-    int width = 320/limit;
+    float width = 321/limit;
     while (i < limit) {        
         // create the tab
         UIButton *tab = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -96,9 +96,11 @@
 - (void) addViews:(NSMutableArray *)arrayOfViews withVerticalOffset:(NSInteger)offset {
     int i = 0;
     int limit = arrayOfViews.count;
+    int specialOffset = self.view.frame.size.height - 44;
     while (i < limit) {
         UIView *view =[arrayOfViews objectAtIndex:i];
-        view.frame = CGRectMake(i*320, offset, 320, self.view.frame.size.height);
+        view.frame = CGRectMake(i*320, offset, 320, specialOffset);
+        NSLog(@"the view's y: %f, height: %f", view.frame.origin.y, view.frame.size.height);
         [scroll addSubview:[arrayOfViews objectAtIndex:i]];
         i++;
     }

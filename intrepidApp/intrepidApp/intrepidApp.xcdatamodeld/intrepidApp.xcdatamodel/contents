@@ -17,7 +17,20 @@
         <attribute name="politicalText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weatherURL" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="EmbassyEntity" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="assisstance" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contact" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="embassyDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hours" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="immigration" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notice" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="services" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="CityEntity" positionX="25" positionY="-166" width="128" height="268"/>
+        <element name="EmbassyEntity" positionX="-227" positionY="-63" width="128" height="193"/>
     </elements>
 </model>

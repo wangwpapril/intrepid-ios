@@ -18,5 +18,6 @@
 @property (strong, nonatomic) NSMutableArray *filteredArray;
 @property (nonatomic, strong) IntreSearchBar * searchBar;
 @property (nonatomic, strong) UIButton *xButton;
-@property (nonatomic, strong) NSString *selectedItem;
+@property (nonatomic, strong) NSArray *cities;
+//@property (nonatomic, strong) NSString *selectedItem;
 @end

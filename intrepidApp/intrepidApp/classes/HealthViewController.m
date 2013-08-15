@@ -66,26 +66,20 @@
 
     int i = 0;
     while (i < 2) {
-        UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height - 133) style:UITableViewStylePlain]; // bar and status height :/
+        UITableView *table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         table.rowHeight = 45;
         table.tag = i;
         table.dataSource = self;
         table.delegate = self;
-        
         table.backgroundColor = [UIColor clearColor];
         table.opaque = NO;
         table.backgroundView = nil;
+        table.contentInset = UIEdgeInsetsMake(0, 0, 100, 0);
         [table setSeparatorColor:[UIColor colorWithRed:189.0/255 green:185.0/255 blue:177.0/255 alpha:1]];
-//        UIView *view = [[UIView alloc] init];
-//        if (i == 0)
-//            view.backgroundColor = [UIColor orangeColor];
-//        else
-//            view.backgroundColor = [UIColor purpleColor];
         [tableArray addObject:table];
         i++;
     }
     
-    //    [self.view addSubview:[tableArray objectAtIndex:0]];
     [self addViews:tableArray withVerticalOffset:79];
     [self addIntreSearchBar];
     
@@ -93,17 +87,7 @@
     [self addTabs:names];
     
     self.navigationItem.title = @"Health";
-//    [self.view bringSubviewToFront:self.scroll];
-    
-    //    mController = [[MenuController alloc] init];
-    //    [mController displayMenuWithParent:self];
-    
 }
-
-//- (void) viewWillAppear:(BOOL)animated {
-//    mController = [MenuController getInstance];
-//    [mController displayMenuWithParent:self];
-//}
 
 - (void)viewDidAppear:(BOOL)animated {
     [[tableArray objectAtIndex:0] reloadData];
@@ -137,93 +121,8 @@
     [xButton addTarget:self action:@selector(deleteText) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:xButton];
     xButton.alpha = 0;
-    
 }
 
-//-(void)capitalLabel:(UILabel *)label withLetter:(NSString *)letter {
-//    label.text = letter;
-//    label.backgroundColor = [UIColor clearColor];
-//    label.font = [UIFont fontWithName:APP_FONT size:14];
-//    [self.view addSubview:label];
-//    [largeLetterArray addObject:label];
-//}
-
-//- (void)addTabs {
-//
-//    int i = 0;
-//    tabArray = [NSMutableArray new];
-//
-//    while (i < 2) {
-//
-//        // create the tab
-//        UIButton *tab = [UIButton buttonWithType:UIButtonTypeCustom];
-//        tab.frame = CGRectMake(160*i, 0, 160, 35);
-//        NSString *title;
-//        switch (i) {
-//            case 0:
-//                title = @"CONDITIONS";
-//                break;
-//            case 1:
-//                title = @"MEDICATIONS";
-//                break;
-//
-//            default:
-//                break;
-//        }
-//        [tab setTitle:title forState:UIControlStateNormal];
-//        [tab setTitleColor:APP_TOGGLE_SELECTED forState:UIControlStateNormal];
-//        tab.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
-//        [tab setBackgroundColor:APP_TEXT_COLOR];
-//        tab.alpha = 0.8;
-//
-//        tab.tag = i; // for tracking which one is clicked
-//        [tab addTarget:self action:@selector(tabSelected:) forControlEvents:UIControlEventTouchUpInside];
-//        [tabArray addObject:tab];
-//        [self.view addSubview:tab];
-//        i++;
-//    }
-//    currentTab = 0;
-//    [self tabSelected:[tabArray objectAtIndex:0]];
-//
-//    // swipe to switch tabs
-//    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedLeft:)];
-//    swipeLeft.numberOfTouchesRequired = 1;
-//    swipeLeft.direction = (UISwipeGestureRecognizerDirectionLeft);
-//    [self.view addGestureRecognizer:swipeLeft];
-//
-//    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedRight:)];
-//    swipeRight.numberOfTouchesRequired = 1;
-//    swipeRight.direction = (UISwipeGestureRecognizerDirectionRight);
-//    [self.view addGestureRecognizer:swipeRight];
-//
-//    // create line
-//    line = [[UILabel alloc] init];
-//    line.backgroundColor = APP_TOGGLE_SELECTED;
-//    line.frame = CGRectMake(38, 27, 80, 1);
-//    [self.view addSubview:line];
-//}
-//
-//- (void)addTableViews {
-//    tableArray = [NSMutableArray new];
-//    int i = 0;
-//    while (i < 2) {
-//        UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake(i*320, 79, 320, self.view.frame.size.height - 133) style:UITableViewStylePlain]; // bar and status height :/
-//        table.rowHeight = 45;
-//        table.tag = i;
-//        table.dataSource = self;
-//        table.delegate = self;
-//        table.backgroundColor = [UIColor clearColor];
-//        table.opaque = NO;
-//        table.backgroundView = nil;
-//        [table setSeparatorColor:[UIColor colorWithRed:189.0/255 green:185.0/255 blue:177.0/255 alpha:1]];
-//        [tableArray addObject:table];
-//        i++;
-//    }
-//    [self.view addSubview:[tableArray objectAtIndex:0]];
-//
-//}
-
-// handle animations
 
 #pragma mark - Content Handling
 
@@ -396,7 +295,7 @@
     HealthViewDetailController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"healthDetails"];
     viewController.healthItem = selectedItem;
     [self.navigationController pushViewController:viewController animated:YES];
-    [searchBar resignFirstResponder];
+//    [searchBar resignFirstResponder];
 }
 
 

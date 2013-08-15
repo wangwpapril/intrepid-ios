@@ -10,6 +10,8 @@
 #import "MenuController.h"
 #import "TripItem.h"
 #import "TripCell.h"
+#import "SecurityViewController.h"
+#import "TripManager.h"
 
 
 @implementation TripsViewController
@@ -20,7 +22,8 @@
 @synthesize filteredArray;
 @synthesize searchBar;
 @synthesize xButton;
-@synthesize selectedItem;
+@synthesize cities;
+//@synthesize selectedItem;
 
 - (void)viewDidLoad
 {
@@ -38,6 +41,9 @@
     [self.view addSubview:tableList];
     tableList.delegate = self;
     tableList.dataSource = self;
+    
+    TripManager *manager = [TripManager getInstance];
+    cities = [manager getCities];
 
 }
 
@@ -125,6 +131,29 @@
     [cell setupWithHealthItem:item];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    TripItem *trip;
+    if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
+        NSLog(@"from trips array");
+        trip = [filteredArray objectAtIndex:indexPath.row];
+    }
+    else {
+        NSLog(@"from filtered array");
+        trip = [tripsArray objectAtIndex:indexPath.row];
+    }
+    NSString *name = trip.city;
+    CityEntity *city;
+    for (CityEntity *town in cities) {
+        if ([town.cityName isEqualToString:name]) {
+            city = town;
+        }
+    }
+    [MenuController getInstance].city = city;
+    SecurityViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"security"];
+    viewController.firstLoad = true;
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 #pragma mark Content Filtering
