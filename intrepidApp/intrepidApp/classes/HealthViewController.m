@@ -74,7 +74,7 @@
         table.backgroundColor = [UIColor clearColor];
         table.opaque = NO;
         table.backgroundView = nil;
-        table.contentInset = UIEdgeInsetsMake(0, 0, 100, 0);
+        table.contentInset = UIEdgeInsetsMake(0, 0, 110, 0);
         [table setSeparatorColor:[UIColor colorWithRed:189.0/255 green:185.0/255 blue:177.0/255 alpha:1]];
         [tableArray addObject:table];
         i++;
