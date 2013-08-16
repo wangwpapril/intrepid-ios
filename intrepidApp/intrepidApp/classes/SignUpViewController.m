@@ -5,6 +5,8 @@
 //  Created by Madelaine Page on 2013-07-13.
 //  Copyright (c) 2013 JonCarrHarris Consulting. All rights reserved.
 //
+#import <UIKit/UIKit.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 
 #import "SignUpViewController.h"
 #import "Constants.h"
@@ -30,6 +32,9 @@
 @synthesize termsOfService;
 @synthesize privacyPolicy;
 @synthesize acceptanceLabel;
+
+@synthesize imageView;
+@synthesize newMedia;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -124,34 +129,109 @@
     privacyPolicy.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [self.view addSubview:privacyPolicy];
     
+    imageView.frame = CGRectMake(108, 42, 100, 100);
+    [self.view addSubview:imageView];
+    
 	// Do any additional setup after loading the view.
-}
-
-- (IBAction)takePhoto:(UIButton *)sender {
-    
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    
-    [self presentViewController:picker animated:YES completion:NULL];
-    
-}
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    
-    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
-    UIImageView *addPhotoImage = [[UIImageView alloc] initWithFrame:CGRectMake(108, 42, 100, 100)];
-    addPhotoImage.image = chosenImage;
-    
-    [picker dismissViewControllerAnimated:YES completion:NULL];
-    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)alertMessage:(id)sender {
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Add a Photo"
+                                                      message:@""
+                                                     delegate:self
+                                            cancelButtonTitle:@"Cancel"
+                                            otherButtonTitles:@"Camera", @"From Library", nil];
+    [message show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    if([title isEqualToString:@"Cancel"])
+    {
+
+    }
+    else if([title isEqualToString:@"Camera"])
+    {
+    //USE CAMERA
+    }
+    else if([title isEqualToString:@"From Library"])
+    {
+        //USE LIBRARY
+    }
+}
+- (void) useCamera:(id)sender
+{
+    if ([UIImagePickerController isSourceTypeAvailable:
+         UIImagePickerControllerSourceTypeCamera])
+    {
+        UIImagePickerController *imagePicker =
+        [[UIImagePickerController alloc] init];
+        imagePicker.delegate = self;
+        imagePicker.sourceType =
+        UIImagePickerControllerSourceTypeCamera;
+        imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
+        imagePicker.allowsEditing = NO;
+        [self presentViewController:imagePicker
+                           animated:YES completion:nil];
+        newMedia = YES;
+    }
+}
+
+- (IBAction)useCameraRoll:(id)sender
+{
+    if ([UIImagePickerController isSourceTypeAvailable:
+         UIImagePickerControllerSourceTypePhotoLibrary])
+    {
+        UIImagePickerController *imagePicker =
+        [[UIImagePickerController alloc] init];
+        imagePicker.delegate = self;
+        imagePicker.sourceType =
+        UIImagePickerControllerSourceTypePhotoLibrary;
+        imagePicker.allowsEditing = NO;
+        [self presentViewController:imagePicker
+                           animated:YES completion:nil];
+        newMedia = NO;
+    }
+}
+
+#pragma mark -
+#pragma mark UIImagePickerControllerDelegate
+
+-(void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    [addPhoto setImage:image forState:UIControlStateNormal];
+}
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)image:(UIImage *)image
+finishedSavingWithError:(NSError *)error
+ contextInfo:(void *)contextInfo
+{
+    if (error) {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Save failed"
+                              message: @"Failed to save image"
+                              delegate: nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 

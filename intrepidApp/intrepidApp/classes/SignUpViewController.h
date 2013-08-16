@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *termsOfService;
 @property (weak, nonatomic) IBOutlet UIButton *privacyPolicy;
 
--(IBAction) getPhoto:(id) sender;
+@property BOOL newMedia;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+- (IBAction)useCameraRoll:(id)sender;
 
 @end
