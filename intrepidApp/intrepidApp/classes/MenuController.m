@@ -215,6 +215,9 @@ static MenuController *instance =nil;
     if (parentController.view.tag != button.tag) {
         [parentController.navigationController pushViewController:viewController animated:YES];
     }
+    else {
+        [self hideMenu];
+    }
     
 }
 
