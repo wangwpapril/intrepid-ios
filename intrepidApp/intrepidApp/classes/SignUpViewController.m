@@ -216,11 +216,12 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    [self setRoundedView:imageView toDiameter:50.0];
+//    [self setRoundedView:imageView toDiameter:50.0];
     
     UIImage *circleImage = [[UIImage alloc] init];
     circleImage=imageView.image;
     [addPhoto setImage:circleImage forState:UIControlStateNormal];
+    addPhoto.layer.cornerRadius = 50;
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
