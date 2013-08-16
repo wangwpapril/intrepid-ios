@@ -17,6 +17,6 @@
 @property(weak, nonatomic) IBOutlet UITextField *password;
 @property (nonatomic, strong) MenuController *mController;
 
--(IBAction) getPhoto:(id) sender;
-
+@property BOOL newMedia;
+- (IBAction)useCameraRoll:(id)sender;
 @end
