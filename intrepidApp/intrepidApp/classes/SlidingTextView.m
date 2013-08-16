@@ -67,9 +67,9 @@
 
 - (void)addTextAreaWithText:(NSString *)text {
     
-    UIFont *textFont = [UIFont fontWithName:@"ProximaNova-Light" size:13];
+    UIFont *textFont = [UIFont fontWithName:@"ProximaNova-Light" size:15];
 
-    CGSize size = [text sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:13]
+    CGSize size = [text sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:15]
                                       constrainedToSize:CGSizeMake(280, 15000)
                        lineBreakMode:NSLineBreakByWordWrapping];
 
