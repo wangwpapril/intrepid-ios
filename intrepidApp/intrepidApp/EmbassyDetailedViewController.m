@@ -72,7 +72,7 @@
     
     CGSize size = [embassyItem.address sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:13] constrainedToSize:CGSizeMake(280, 15000) lineBreakMode:NSLineBreakByWordWrapping];
     UILabel *addressText = [[UILabel alloc] initWithFrame:CGRectMake(20, 35,  280, size.height)];
-    addressText.font = [UIFont fontWithName:@"ProximaNova-Light" size:13];
+    addressText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     addressText.backgroundColor = [UIColor clearColor];
     addressText.textColor = [UIColor blackColor];
     addressText.text = embassyItem.address;
@@ -91,7 +91,7 @@
     
     CGSize contactSize = [contactLength sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:13] constrainedToSize:CGSizeMake(280, 15000) lineBreakMode:NSLineBreakByWordWrapping];
     UILabel *contactText = [[UILabel alloc] initWithFrame:CGRectMake(20, contactLabel.frame.origin.y + 35,  280, contactSize.height)];
-    contactText.font = [UIFont fontWithName:@"ProximaNova-Light" size:13];
+    contactText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     contactText.backgroundColor = [UIColor clearColor];
     contactText.textColor = [UIColor blackColor];
     contactText.text = [NSString stringWithFormat:@"%@\nFax: %@\nEmail: %@", embassyItem.tel, embassyItem.fax, embassyItem.email];
@@ -107,7 +107,7 @@
     
     CGSize hoursSize = [embassyItem.hours sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:13] constrainedToSize:CGSizeMake(280, 15000) lineBreakMode:NSLineBreakByWordWrapping];
     UILabel *hoursText = [[UILabel alloc] initWithFrame:CGRectMake(20, hoursLabel.frame.origin.y + 35,  280, hoursSize.height)];
-    hoursText.font = [UIFont fontWithName:@"ProximaNova-Light" size:13];
+    hoursText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     hoursText.backgroundColor = [UIColor clearColor];
     hoursText.textColor = [UIColor blackColor];
     hoursText.text = embassyItem.hours;
@@ -124,7 +124,7 @@
     //this needs to be fixed once content is fixed
     CGSize servicesSize = [embassyItem.services sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:13] constrainedToSize:CGSizeMake(280, 15000) lineBreakMode:NSLineBreakByWordWrapping];
     UILabel *servicesText = [[UILabel alloc] initWithFrame:CGRectMake(20, servicesLabel.frame.origin.y + 35,  280, servicesSize.height)];
-    servicesText.font = [UIFont fontWithName:@"ProximaNova-Light" size:13];
+    servicesText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     servicesText.backgroundColor = [UIColor clearColor];
     servicesText.textColor = [UIColor blackColor];
     servicesText.text = embassyItem.services;
@@ -140,7 +140,7 @@
     
     CGSize notesSize = [embassyItem.notice sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:13] constrainedToSize:CGSizeMake(280, 15000) lineBreakMode:NSLineBreakByWordWrapping];
     UILabel *notesText = [[UILabel alloc] initWithFrame:CGRectMake(20, notesLabel.frame.origin.y + 35,  280, notesSize.height)];
-    notesText.font = [UIFont fontWithName:@"ProximaNova-Light" size:13];
+    notesText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     notesText.backgroundColor = [UIColor clearColor];
     notesText.textColor = [UIColor blackColor];
     notesText.text = embassyItem.notice;

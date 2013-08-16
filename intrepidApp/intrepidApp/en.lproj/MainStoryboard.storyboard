@@ -240,7 +240,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="useCameraRoll:" destination="G8m-le-uyD" eventType="touchUpInside" id="9rA-ux-d6F"/>
+                                    <action selector="useCameraRoll:" destination="G8m-le-uyD" eventType="touchUpInside" id="tuG-qQ-frx"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H26-OT-Dwl">
@@ -742,6 +742,7 @@
         <class className="AssistanceViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AssistanceViewController.h"/>
             <relationships>
+                <relationship kind="action" name="callAssistance:"/>
                 <relationship kind="outlet" name="onOff" candidateClass="UISwitch"/>
             </relationships>
         </class>

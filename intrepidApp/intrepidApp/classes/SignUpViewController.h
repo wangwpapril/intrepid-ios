@@ -23,7 +23,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *privacyPolicy;
 
 @property BOOL newMedia;
-@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 - (IBAction)useCameraRoll:(id)sender;
 
 @end

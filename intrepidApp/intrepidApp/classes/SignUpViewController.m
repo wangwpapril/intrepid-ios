@@ -7,6 +7,7 @@
 //
 #import <UIKit/UIKit.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import <QuartzCore/QuartzCore.h>
 
 #import "SignUpViewController.h"
 #import "Constants.h"
@@ -33,7 +34,6 @@
 @synthesize privacyPolicy;
 @synthesize acceptanceLabel;
 
-@synthesize imageView;
 @synthesize newMedia;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -129,8 +129,6 @@
     privacyPolicy.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [self.view addSubview:privacyPolicy];
     
-    imageView.frame = CGRectMake(108, 42, 100, 100);
-    [self.view addSubview:imageView];
     
 	// Do any additional setup after loading the view.
 }
@@ -198,6 +196,14 @@
         newMedia = NO;
     }
 }
+-(void)setRoundedView:(UIImageView *)roundedView toDiameter:(float)newSize;
+{
+    CGPoint saveCenter = roundedView.center;
+    CGRect newFrame = CGRectMake(roundedView.frame.origin.x, roundedView.frame.origin.y, newSize, newSize);
+    roundedView.frame = newFrame;
+    roundedView.layer.cornerRadius = newSize / 2.0;
+    roundedView.center = saveCenter;
+}
 
 #pragma mark -
 #pragma mark UIImagePickerControllerDelegate
@@ -209,7 +215,12 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [self dismissViewControllerAnimated:YES completion:nil];
     
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    [addPhoto setImage:image forState:UIControlStateNormal];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    [self setRoundedView:imageView toDiameter:50.0];
+    
+    UIImage *circleImage = [[UIImage alloc] init];
+    circleImage=imageView.image;
+    [addPhoto setImage:circleImage forState:UIControlStateNormal];
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
