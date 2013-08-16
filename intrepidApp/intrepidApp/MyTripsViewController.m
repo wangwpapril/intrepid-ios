@@ -114,8 +114,18 @@
     pageControl.currentPage = 0;
     pageControl.pageIndicatorTintColor = [UIColor darkGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+    [pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:pageControl];
     
+}
+
+- (IBAction)changePage:(id)sender {
+    UIPageControl *pager=sender;
+    int page = pager.currentPage;
+    CGRect frame = scrollView.frame;
+    frame.origin.x = frame.size.width * page;
+    frame.origin.y = 0;
+    [scrollView scrollRectToVisible:frame animated:YES];
 }
 
 -(void)toTrips {

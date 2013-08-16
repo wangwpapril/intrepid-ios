@@ -40,7 +40,7 @@
     
 
     SlidingTextView *currency = [[SlidingTextView alloc] initWithFrame:frame];
-    [currency setupWithImageName:@"overview-currency.png" withTitle:@"Currency" withIconName:@"currency-Icon.png"];
+    [currency setupWithImageName:@"overview-currency.png" withTitle:@"Currency (average)" withIconName:@"currency-Icon.png"];
     
     // currency table
     tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 308,  320, height - 308)];
@@ -84,16 +84,16 @@
     currencyArray = [NSMutableArray arrayWithObjects:
                      [CurrencyItem currencyItemOfCountry:@"Canadian Dollar" flag:@"CAD.png" value:CAD],
                      [CurrencyItem currencyItemOfCountry:@"Mexican Peso" flag:@"MXN.png" value:MXN],
-                     [CurrencyItem currencyItemOfCountry:@"UK Pound" flag:@"GBP.png" value:GBP],
-                     [CurrencyItem currencyItemOfCountry:@"Brazilian Real" flag:@"BRL.png" value:BRL],
-                     [CurrencyItem currencyItemOfCountry:@"Australian Dollar" flag:@"AUS.png" value:AUS],
                      [CurrencyItem currencyItemOfCountry:@"US Dollar" flag:@"USD.png" value:USD],
                      [CurrencyItem currencyItemOfCountry:@"Euro" flag:@"EUR.png" value:EUR],
+                     [CurrencyItem currencyItemOfCountry:@"UK Pound" flag:@"GBP.png" value:GBP],
                      [CurrencyItem currencyItemOfCountry:@"Chinese Yen" flag:@"CNY.png" value:CNY],
+                     [CurrencyItem currencyItemOfCountry:@"Brazilian Real" flag:@"BRL.png" value:BRL],
+                     [CurrencyItem currencyItemOfCountry:@"Australian Dollar" flag:@"AUS.png" value:AUS],
                      [CurrencyItem currencyItemOfCountry:@"Swiss Franc" flag:@"CHF.png" value:CHF],
-                     [CurrencyItem currencyItemOfCountry:@"Malaysian Ringgit" flag:@"MYR.png" value:MYR],
-                     [CurrencyItem currencyItemOfCountry:@"Thai Bhat" flag:@"THB.png" value:THB],
                      [CurrencyItem currencyItemOfCountry:@"Indian Rupee" flag:@"INR.png" value:INR],
+                     [CurrencyItem currencyItemOfCountry:@"Thai Bhat" flag:@"THB.png" value:THB],
+                     [CurrencyItem currencyItemOfCountry:@"Malaysian Ringgit" flag:@"MYR.png" value:MYR],
                      [CurrencyItem currencyItemOfCountry:@"Dominican Peso" flag:@"DOP.png" value:DOP],nil];
 
     NSString* native = [NSString stringWithFormat:@"%.02f", CADtoNative];
