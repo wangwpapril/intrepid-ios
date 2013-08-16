@@ -141,47 +141,46 @@
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction)alertMessage:(id)sender {
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Add a Photo"
-                                                      message:@""
-                                                     delegate:self
-                                            cancelButtonTitle:@"Cancel"
-                                            otherButtonTitles:@"Camera", @"From Library", nil];
-    [message show];
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-    if([title isEqualToString:@"Cancel"])
-    {
-
-    }
-    else if([title isEqualToString:@"Camera"])
-    {
-    //USE CAMERA
-    }
-    else if([title isEqualToString:@"From Library"])
-    {
-        //USE LIBRARY
-    }
-}
-- (void) useCamera:(id)sender
-{
-    if ([UIImagePickerController isSourceTypeAvailable:
-         UIImagePickerControllerSourceTypeCamera])
-    {
-        UIImagePickerController *imagePicker =
-        [[UIImagePickerController alloc] init];
-        imagePicker.delegate = self;
-        imagePicker.sourceType =
-        UIImagePickerControllerSourceTypeCamera;
-        imagePicker.allowsEditing = NO;
-        [self presentViewController:imagePicker
-                           animated:YES completion:nil];
-        newMedia = YES;
-    }
-}
+//-(IBAction)alertMessage:(id)sender {
+//    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Add a Photo"
+//                                                      message:@""
+//                                                     delegate:self
+//                                            cancelButtonTitle:@"Cancel"
+//                                            otherButtonTitles:@"Camera", @"From Library", nil];
+//    [message show];
+//}
+//
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+//{
+//    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+//    if([title isEqualToString:@"Cancel"])
+//    {
+//
+//    }
+//    else if([title isEqualToString:@"Camera"])
+//    {
+//    [title addTarget:self action:@selector(staypressed:) forControlEvents:UIControlEventTouchUpInside];
+//    }
+//    else if([title isEqualToString:@"From Library"])
+//    {
+//    }
+//}
+//- (IBAction)useCamera:(id)sender
+//{
+//    if ([UIImagePickerController isSourceTypeAvailable:
+//         UIImagePickerControllerSourceTypeCamera])
+//    {
+//        UIImagePickerController *imagePicker =
+//        [[UIImagePickerController alloc] init];
+//        imagePicker.delegate = self;
+//        imagePicker.sourceType =
+//        UIImagePickerControllerSourceTypeCamera;
+//        imagePicker.allowsEditing = NO;
+//        [self presentViewController:imagePicker
+//                           animated:YES completion:nil];
+//        newMedia = YES;
+//    }
+//}
 
 - (IBAction)useCameraRoll:(id)sender
 {
