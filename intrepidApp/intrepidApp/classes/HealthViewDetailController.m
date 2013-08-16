@@ -69,11 +69,11 @@
     descriptionLabel.text = @"Description";
     
     //Set descriptionText to auto-fit content
-    CGSize size = [healthItem.description sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:14]
+    CGSize size = [healthItem.description sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:15]
                       constrainedToSize:CGSizeMake(290, 15000)
                           lineBreakMode:NSLineBreakByWordWrapping];
     UILabel *descriptionText = [[UILabel alloc] initWithFrame:CGRectMake(15, 5,  290, size.height + 5)];
-    descriptionText.font = [UIFont fontWithName:@"ProximaNova-Light" size:14];
+    descriptionText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     descriptionText.backgroundColor = UIColorFromRGB(0xffffff);
     descriptionText.textColor = APP_TEXT_COLOR;
     descriptionText.text = healthItem.description;
@@ -107,11 +107,11 @@
     sideEffectsLabel.text = secondTitle;
     
     //Begin sizing sideEffects text container
-    CGSize sideEffectsSize = [healthItem.details sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:14]
+    CGSize sideEffectsSize = [healthItem.details sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:15]
                                      constrainedToSize:CGSizeMake(290, 15000)
                                          lineBreakMode:NSLineBreakByWordWrapping];    
     UILabel *sideEffectsText = [[UILabel alloc] initWithFrame:CGRectMake(15, 5,  290, sideEffectsSize.height + 5)];
-    sideEffectsText.font = [UIFont fontWithName:@"ProximaNova-Light" size:14];
+    sideEffectsText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     sideEffectsText.backgroundColor = UIColorFromRGB(0xffffff);
     sideEffectsText.textColor = APP_TEXT_COLOR;
     sideEffectsText.text = healthItem.details;
@@ -142,12 +142,12 @@
         transmissionImageLabel.frame = CGRectMake(7, sideEffectsTextContainer.frame.origin.y + sideEffectsSize.height + 20, 20, 25);
         [scrollView addSubview:transmissionImageLabel];
 
-        CGSize transmissionSize = [healthItem.symptoms sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:14]
+        CGSize transmissionSize = [healthItem.symptoms sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:15]
                                                   constrainedToSize:CGSizeMake(290, 15000)
                                                     lineBreakMode:NSLineBreakByWordWrapping];
 
         UILabel *transmissionText = [[UILabel alloc] initWithFrame:CGRectMake(15, 5,  290, transmissionSize.height + 5)];
-        transmissionText.font = [UIFont fontWithName:@"ProximaNova-Light" size:14];
+        transmissionText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
         transmissionText.backgroundColor = UIColorFromRGB(0xffffff);
         transmissionText.textColor = APP_TEXT_COLOR;
         transmissionText.text = healthItem.symptoms;
@@ -176,11 +176,11 @@
         immunizationImageLabel.frame = CGRectMake(7, transmissionTextContainer.frame.origin.y + transmissionSize.height + 20, 20, 25);
         [scrollView addSubview:immunizationImageLabel];
 
-        CGSize immunizationSize = [healthItem.immunization sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:14]
+        CGSize immunizationSize = [healthItem.immunization sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:15]
                                                       constrainedToSize:CGSizeMake(290, 15000)
                                                      lineBreakMode:NSLineBreakByWordWrapping];
         UILabel *immunizationText = [[UILabel alloc] initWithFrame:CGRectMake(15, 5,  290, immunizationSize.height + 5)];
-        immunizationText.font = [UIFont fontWithName:@"ProximaNova-Light" size:14];
+        immunizationText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
         immunizationText.backgroundColor = UIColorFromRGB(0xffffff);
         immunizationText.textColor = APP_TEXT_COLOR;
         immunizationText.text = healthItem.immunization;

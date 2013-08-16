@@ -90,6 +90,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    [searchBar resignFirstResponder];
     [[tableArray objectAtIndex:0] reloadData];
     [[tableArray objectAtIndex:1] reloadData];
 }
