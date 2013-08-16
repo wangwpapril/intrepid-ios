@@ -191,12 +191,4 @@
     [self switchTabs:page];
 }
 
-//- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-//    CGFloat pageWidth = self.scroll.frame.size.width;
-//    int page = floor((scroll.contentOffset.x - pageWidth / 2)/pageWidth) +1;
-//    [self switchTabs:page];
-//}
-
-
-
 @end

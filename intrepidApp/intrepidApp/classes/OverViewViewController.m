@@ -41,7 +41,7 @@
     
 
     SlidingTextView *currency = [[SlidingTextView alloc] initWithFrame:frame];
-    [currency setupWithImageName:@"overview-currency.png" withTitle:@"Currency (average)" withIconName:@"currency-Icon.png"];
+    [currency setupWithImageName:@"overview-currency.png" withTitle:@"Currency (approx.)" withIconName:@"currency-Icon.png"];
     
     // currency table
     tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 308,  320, height - 308)];

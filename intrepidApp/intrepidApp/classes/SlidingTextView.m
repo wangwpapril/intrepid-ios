@@ -62,7 +62,7 @@
     tableView.scrollEnabled = NO;
     tableView.frame = CGRectMake(tableView.frame.origin.x, tableView.frame.origin.y, 320, height);
     [self addSubview:tableView];
-    self.contentSize = CGSizeMake(320, 325 + height); // was 308
+    self.contentSize = CGSizeMake(320, 330 + height); // was 308
 }
 
 - (void)addTextAreaWithText:(NSString *)text {
@@ -85,7 +85,7 @@
 
     [textViewContainer addSubview: textView];
     [scroll addSubview:textViewContainer];
-    scroll.contentSize = CGSizeMake(320, 308 + textViewContainer.frame.size.height + 65); // used to be 5 but impossible to read last few lines
+    scroll.contentSize = CGSizeMake(320, 308 + textViewContainer.frame.size.height + 75); // used to be 5 but impossible to read last few lines
 }
 
 @end

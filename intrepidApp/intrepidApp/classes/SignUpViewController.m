@@ -176,7 +176,6 @@
         imagePicker.delegate = self;
         imagePicker.sourceType =
         UIImagePickerControllerSourceTypeCamera;
-        imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
         imagePicker.allowsEditing = NO;
         [self presentViewController:imagePicker
                            animated:YES completion:nil];

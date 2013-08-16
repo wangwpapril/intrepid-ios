@@ -19,10 +19,12 @@
 @synthesize pageControl;
 @synthesize scrollView;
 @synthesize cities;
+@synthesize pageControlBeingUsed;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    pageControlBeingUsed = NO;
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     
@@ -109,19 +111,22 @@
     
     [self.view addSubview:scrollView];
     
-    pageControl.frame = CGRectMake(135, self.view.frame.size.height - 78, 50, 50);
+    pageControl.frame = CGRectMake(0, self.view.frame.size.height - 78, 320, 50);
     pageControl.numberOfPages = entries;
     pageControl.currentPage = 0;
     pageControl.pageIndicatorTintColor = [UIColor darkGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
-    [pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventTouchUpInside];
+    [pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:pageControl];
     
 }
 
 - (IBAction)changePage:(id)sender {
+    pageControlBeingUsed = YES;
+    NSLog(@"change page called");
     UIPageControl *pager=sender;
     int page = pager.currentPage;
+    
     CGRect frame = scrollView.frame;
     frame.origin.x = frame.size.width * page;
     frame.origin.y = 0;
@@ -156,10 +161,20 @@
     [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
+    if (!pageControlBeingUsed) {
     // Update the page when more than 50% of the previous/next page is visible
-    CGFloat pageWidth = self.scrollView.frame.size.width;
-    int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-    self.pageControl.currentPage = page;
+        CGFloat pageWidth = self.scrollView.frame.size.width;
+        int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+        self.pageControl.currentPage = page;
+    }
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    pageControlBeingUsed = NO;
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    pageControlBeingUsed = NO;
 }
 
 
