@@ -12,7 +12,7 @@
 #import "TripManager.h"
 #import "CityEntity.h"
 #import "TripItem.h"
-#import "SecurityViewController.h"
+#import "OverViewViewController.h"
 
 @implementation MyTripsViewController
 
@@ -137,8 +137,9 @@
     NSInteger index = ((UIButton *)sender).tag;
     CityEntity *city = [cities objectAtIndex:index];
     [MenuController getInstance].city = city;
-    SecurityViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"security"];
+    OverViewViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"overView"];
     viewController.firstLoad = true;
+    [[MenuController getInstance] selectButtonWithTag:0];
     [self.navigationController pushViewController:viewController animated:YES];
 //    [[MenuController getInstance] showMenu];
 }

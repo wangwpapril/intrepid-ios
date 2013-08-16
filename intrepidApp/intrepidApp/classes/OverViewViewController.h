@@ -12,5 +12,6 @@
 
 @property (nonatomic, strong) UITableView *tableList;
 @property (nonatomic, strong) NSMutableArray *currencyArray;
+@property (nonatomic) BOOL firstLoad;
 
 @end

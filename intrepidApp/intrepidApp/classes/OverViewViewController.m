@@ -16,6 +16,7 @@
 
 @synthesize tableList;
 @synthesize currencyArray;
+@synthesize firstLoad;
 
 - (void)viewDidLoad
 {
@@ -57,10 +58,16 @@
     [self addTabs:names];
 }
 
+
+
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     NSIndexPath *indexPath=[NSIndexPath indexPathForRow:1 inSection:0];
     [tableList selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+        if (firstLoad) {
+            [[MenuController getInstance] showMenu];
+            firstLoad = false;
+        }
 }
 
 -(void)populateCurrencyItems {

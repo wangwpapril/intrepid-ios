@@ -10,13 +10,13 @@
 #import "MenuController.h"
 #import "TripItem.h"
 #import "TripCell.h"
-#import "SecurityViewController.h"
+#import "OverViewViewController.h"
 #import "TripManager.h"
 
 
 @implementation TripsViewController
 
-@synthesize mController;
+//@synthesize mController;
 @synthesize tableList;
 @synthesize tripsArray;
 @synthesize filteredArray;
@@ -150,9 +150,11 @@
             city = town;
         }
     }
+    
     [MenuController getInstance].city = city;
-    SecurityViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"security"];
+    OverViewViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"overView"];
     viewController.firstLoad = true;
+    [[MenuController getInstance] selectButtonWithTag:0];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
