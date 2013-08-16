@@ -133,7 +133,7 @@ static MenuController *instance =nil;
     [self makeContentButtonWithOrigin:CGPointMake(107, 153) withTag:7];
     [self makeContentButtonWithOrigin:CGPointMake(213, 153) withTag:8];
     
-    [self selectButtonWithTag:2];
+//    [self selectButtonWithTag:2];
 }
 
 -(void)toggleMenu {

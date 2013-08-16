@@ -28,7 +28,7 @@
 - (void)setupWithTitle: (NSString *)title withURL:(NSString *)url {
     
     self.navigationItem.title = title;
-    UIWebView *trialView = [[UIWebView alloc] initWithFrame:self.view.bounds];  //Change self.view.bounds to a smaller CGRect if you don't want it to take up the whole screen
+    UIWebView *trialView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height - 44)];  // status & nav
     [trialView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]]; // make custom (NSString string w/ format, must see URLS's first tho)
     [self.view addSubview:trialView];
     

@@ -129,6 +129,7 @@
     [MenuController getInstance].city = city;
     SecurityViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"security"];
     viewController.firstLoad = true;
+    [[MenuController getInstance] selectButtonWithTag:2];
     [self.navigationController pushViewController:viewController animated:YES];
 //    [[MenuController getInstance] showMenu];
 }
