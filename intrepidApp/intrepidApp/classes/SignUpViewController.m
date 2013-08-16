@@ -217,6 +217,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
 //    [self setRoundedView:imageView toDiameter:50.0];
+    imageView.layer.cornerRadius = 50;
+    imageView.layer.masksToBounds = YES;
     
     UIImage *circleImage = [[UIImage alloc] init];
     circleImage=imageView.image;
