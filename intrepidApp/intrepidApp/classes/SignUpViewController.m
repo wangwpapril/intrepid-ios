@@ -127,31 +127,33 @@
 	// Do any additional setup after loading the view.
 }
 
+- (IBAction)takePhoto:(UIButton *)sender {
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+    
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    UIImageView *addPhotoImage = [[UIImageView alloc] initWithFrame:CGRectMake(108, 42, 100, 100)];
+    addPhotoImage.image = chosenImage;
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction) getPhoto:(id) sender {
-	UIImagePickerController * picker = [[UIImagePickerController alloc] init];
-	picker.delegate = self;
-    
-	if((UIButton *) sender == addPhoto) {
-		picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-        NSLog(@"pick a photo");
-	}
-    //    else {
-    //		picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    //	}
-    
-	[self presentModalViewController:picker animated:YES];
-}
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-	[picker dismissModalViewControllerAnimated:YES];
-	addPhoto.imageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-}
 
 # pragma mark - keyboard stuff
 

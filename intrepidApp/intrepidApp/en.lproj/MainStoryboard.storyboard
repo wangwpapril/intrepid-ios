@@ -241,6 +241,8 @@
                                 </state>
                                 <connections>
                                     <action selector="getPhoto:" destination="G8m-le-uyD" eventType="touchUpInside" id="wN4-2F-X4U"/>
+                                    <action selector="takePhoto:" destination="G8m-le-uyD" eventType="touchUpInside" id="o4b-TI-Nel"/>
+                                    <action selector="takePictureButtonTapped" destination="G8m-le-uyD" eventType="touchUpInside" id="HrM-Iz-8F7"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H26-OT-Dwl">
@@ -841,6 +843,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SignUpViewController.h"/>
             <relationships>
                 <relationship kind="action" name="getPhoto:"/>
+                <relationship kind="action" name="takePhoto:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="acceptanceLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="addPhoto" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="email" candidateClass="UITextField"/>
