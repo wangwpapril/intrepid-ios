@@ -19,7 +19,7 @@
 
 @synthesize tableList;
 @synthesize embassyArray;
-@synthesize firstLoad;
+//@synthesize firstLoad;
 
 - (void)viewDidLoad
 {
@@ -61,12 +61,12 @@
 
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    if (firstLoad) {
-        [[MenuController getInstance] showMenu];
-        firstLoad = false;
-    }
-}
+//- (void)viewDidAppear:(BOOL)animated {
+//    if (firstLoad) {
+//        [[MenuController getInstance] showMenu];
+//        firstLoad = false;
+//    }
+//}
 
 # pragma mark - tableView methods
 

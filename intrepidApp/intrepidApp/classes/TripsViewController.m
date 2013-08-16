@@ -10,7 +10,7 @@
 #import "MenuController.h"
 #import "TripItem.h"
 #import "TripCell.h"
-#import "SecurityViewController.h"
+#import "OverViewViewController.h"
 #import "TripManager.h"
 
 
@@ -152,9 +152,9 @@
     }
     
     [MenuController getInstance].city = city;
-    SecurityViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"security"];
+    OverViewViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"overView"];
     viewController.firstLoad = true;
-    [[MenuController getInstance] selectButtonWithTag:2];
+    [[MenuController getInstance] selectButtonWithTag:0];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
