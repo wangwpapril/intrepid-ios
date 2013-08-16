@@ -196,14 +196,14 @@
         newMedia = NO;
     }
 }
--(void)setRoundedView:(UIImageView *)roundedView toDiameter:(float)newSize;
-{
-    CGPoint saveCenter = roundedView.center;
-    CGRect newFrame = CGRectMake(roundedView.frame.origin.x, roundedView.frame.origin.y, newSize, newSize);
-    roundedView.frame = newFrame;
-    roundedView.layer.cornerRadius = newSize / 2.0;
-    roundedView.center = saveCenter;
-}
+//-(void)setRoundedView:(UIImageView *)roundedView toDiameter:(float)newSize;
+//{
+//    CGPoint saveCenter = roundedView.center;
+//    CGRect newFrame = CGRectMake(roundedView.frame.origin.x, roundedView.frame.origin.y, newSize, newSize);
+//    roundedView.frame = newFrame;
+//    roundedView.layer.cornerRadius = newSize / 2.0;
+//    roundedView.center = saveCenter;
+//}
 
 #pragma mark -
 #pragma mark UIImagePickerControllerDelegate
@@ -215,12 +215,15 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [self dismissViewControllerAnimated:YES completion:nil];
     
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    [self setRoundedView:imageView toDiameter:50.0];
+//    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+////    [self setRoundedView:imageView toDiameter:50.0];
+//    
+//    UIImage *circleImage = [[UIImage alloc] init];
+//    circleImage=imageView.image;
+    [addPhoto setImage:image forState:UIControlStateNormal];
+    addPhoto.layer.cornerRadius = 50;
+    addPhoto.layer.masksToBounds = YES;
     
-    UIImage *circleImage = [[UIImage alloc] init];
-    circleImage=imageView.image;
-    [addPhoto setImage:circleImage forState:UIControlStateNormal];
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
