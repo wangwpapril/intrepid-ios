@@ -22,6 +22,8 @@
 @synthesize signOutButton;
 @synthesize mController;
 
+@synthesize newMedia;
+
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 //{
 //    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -147,7 +149,7 @@
     [signOutButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [signOutButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     signOutButton.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
-    signOutButton.frame = CGRectMake(68, self.view.frame.size.height - 160, 183, 36);
+    signOutButton.frame = CGRectMake(68, self.view.frame.size.height - 120, 183, 36);
     [self.view addSubview:signOutButton];
 }
 
@@ -157,24 +159,57 @@
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction) getPhoto:(id) sender {
-	UIImagePickerController * picker = [[UIImagePickerController alloc] init];
-	picker.delegate = self;
+- (IBAction)useCameraRoll:(id)sender
+{
+    if ([UIImagePickerController isSourceTypeAvailable:
+         UIImagePickerControllerSourceTypePhotoLibrary])
+    {
+        UIImagePickerController *imagePicker =
+        [[UIImagePickerController alloc] init];
+        imagePicker.delegate = self;
+        imagePicker.sourceType =
+        UIImagePickerControllerSourceTypePhotoLibrary;
+        imagePicker.allowsEditing = NO;
+        [self presentViewController:imagePicker
+                           animated:YES completion:nil];
+        newMedia = NO;
+    }
+}
+#pragma mark -
+#pragma mark UIImagePickerControllerDelegate
+
+-(void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
     
-	if((UIButton *) sender == editPhoto) {
-		picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-        NSLog(@"pick a photo");
-	}
-//    else {
-//		picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-//	}
+    [self dismissViewControllerAnimated:YES completion:nil];
     
-	[self presentModalViewController:picker animated:YES];
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    
+    UIImage *circleImage = [[UIImage alloc] init];
+    circleImage=imageView.image;
+    [editPhoto setImage:circleImage forState:UIControlStateNormal];
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-	[picker dismissModalViewControllerAnimated:YES];
-	editPhoto.imageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)image:(UIImage *)image
+finishedSavingWithError:(NSError *)error
+ contextInfo:(void *)contextInfo
+{
+    if (error) {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Save failed"
+                              message: @"Failed to save image"
+                              delegate: nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 # pragma mark - keyboard stuff

@@ -223,7 +223,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [addPhoto setImage:image forState:UIControlStateNormal];
     addPhoto.layer.cornerRadius = 50;
     addPhoto.layer.masksToBounds = YES;
-    
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
