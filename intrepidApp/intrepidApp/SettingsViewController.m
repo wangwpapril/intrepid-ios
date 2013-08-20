@@ -9,6 +9,7 @@
 #import "SettingsViewController.h"
 #import "Constants.h"
 #import "MenuController.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define kOFFSET_FOR_KEYBOARD 130.0
 
@@ -185,11 +186,10 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [self dismissViewControllerAnimated:YES completion:nil];
     
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    [editPhoto setImage:image forState:UIControlStateNormal];
     
-    UIImage *circleImage = [[UIImage alloc] init];
-    circleImage=imageView.image;
-    [editPhoto setImage:circleImage forState:UIControlStateNormal];
+    editPhoto.layer.cornerRadius = 50;
+    editPhoto.layer.masksToBounds = YES;
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
