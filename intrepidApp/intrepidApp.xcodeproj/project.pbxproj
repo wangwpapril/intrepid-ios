@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6811614717A9D1A20029134B /* TripManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6811614617A9D1A20029134B /* TripManager.m */; };
-		681B0A1317AD38640057E00C /* CityEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 681B0A1217AD38640057E00C /* CityEntity.m */; };
 		6835EC161789439600A57F86 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835EC151789439600A57F86 /* MenuController.m */; };
 		684BB605179F5143004C44C9 /* OverViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 684BB604179F5143004C44C9 /* OverViewViewController.m */; };
 		684BB609179F539C004C44C9 /* SlidingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 684BB608179F539C004C44C9 /* SlidingTextView.m */; };
@@ -37,10 +36,11 @@
 		68A2D71A178BDBE800B3C330 /* searchBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A2D719178BDBE800B3C330 /* searchBar@2x.png */; };
 		68B071E917A4D3FC0061E418 /* SecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B071E817A4D3FC0061E418 /* SecurityViewController.m */; };
 		68B071EC17A4D7290061E418 /* EmbassyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B071EB17A4D7290061E418 /* EmbassyCell.m */; };
-		68B071EF17A4D7430061E418 /* EmbassyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B071EE17A4D7430061E418 /* EmbassyItem.m */; };
 		68B071F317A4DB890061E418 /* TripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B071F217A4DB890061E418 /* TripsViewController.m */; };
 		68B997E517A2058A00AD62ED /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B997E417A2058A00AD62ED /* WebViewController.m */; };
 		68BE3ACA17A1DCA600A87E52 /* HealthContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 68BE3AC917A1DCA600A87E52 /* HealthContent.m */; };
+		68DB321417C513D90061D0F1 /* CityEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DB321317C513D90061D0F1 /* CityEntity.m */; };
+		68DB321717C513F70061D0F1 /* EmbassyEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DB321617C513F70061D0F1 /* EmbassyEntity.m */; };
 		68DBAE60179F6CC300D1DE0B /* CurrencyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DBAE5F179F6CC300D1DE0B /* CurrencyCell.m */; };
 		68E4240417926E1E00431908 /* IntreSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E4240317926E1E00431908 /* IntreSearchBar.m */; };
 		68E42406179274BA00431908 /* mexicoBackBigger@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68E42405179274BA00431908 /* mexicoBackBigger@2x.png */; };
@@ -322,8 +322,6 @@
 /* Begin PBXFileReference section */
 		6811614517A9D1A20029134B /* TripManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripManager.h; path = classes/TripManager.h; sourceTree = "<group>"; };
 		6811614617A9D1A20029134B /* TripManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripManager.m; path = classes/TripManager.m; sourceTree = "<group>"; };
-		681B0A1117AD38640057E00C /* CityEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityEntity.h; path = classes/CityEntity.h; sourceTree = "<group>"; };
-		681B0A1217AD38640057E00C /* CityEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityEntity.m; path = classes/CityEntity.m; sourceTree = "<group>"; };
 		6835EC141789439600A57F86 /* MenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuController.h; path = classes/MenuController.h; sourceTree = "<group>"; };
 		6835EC151789439600A57F86 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuController.m; path = classes/MenuController.m; sourceTree = "<group>"; };
 		684BB603179F5143004C44C9 /* OverViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverViewViewController.h; path = classes/OverViewViewController.h; sourceTree = "<group>"; };
@@ -368,14 +366,16 @@
 		68B071E817A4D3FC0061E418 /* SecurityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecurityViewController.m; path = classes/SecurityViewController.m; sourceTree = "<group>"; };
 		68B071EA17A4D7290061E418 /* EmbassyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmbassyCell.h; path = classes/EmbassyCell.h; sourceTree = "<group>"; };
 		68B071EB17A4D7290061E418 /* EmbassyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmbassyCell.m; path = classes/EmbassyCell.m; sourceTree = "<group>"; };
-		68B071ED17A4D7430061E418 /* EmbassyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmbassyItem.h; path = classes/EmbassyItem.h; sourceTree = "<group>"; };
-		68B071EE17A4D7430061E418 /* EmbassyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmbassyItem.m; path = classes/EmbassyItem.m; sourceTree = "<group>"; };
 		68B071F117A4DB890061E418 /* TripsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripsViewController.h; path = classes/TripsViewController.h; sourceTree = "<group>"; };
 		68B071F217A4DB890061E418 /* TripsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripsViewController.m; path = classes/TripsViewController.m; sourceTree = "<group>"; };
 		68B997E317A2058A00AD62ED /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = classes/WebViewController.h; sourceTree = "<group>"; };
 		68B997E417A2058A00AD62ED /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = classes/WebViewController.m; sourceTree = "<group>"; };
 		68BE3AC817A1DCA600A87E52 /* HealthContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthContent.h; path = classes/HealthContent.h; sourceTree = "<group>"; };
 		68BE3AC917A1DCA600A87E52 /* HealthContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthContent.m; path = classes/HealthContent.m; sourceTree = "<group>"; };
+		68DB321217C513D90061D0F1 /* CityEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityEntity.h; path = classes/CityEntity.h; sourceTree = "<group>"; };
+		68DB321317C513D90061D0F1 /* CityEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityEntity.m; path = classes/CityEntity.m; sourceTree = "<group>"; };
+		68DB321517C513F70061D0F1 /* EmbassyEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmbassyEntity.h; path = classes/EmbassyEntity.h; sourceTree = "<group>"; };
+		68DB321617C513F70061D0F1 /* EmbassyEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmbassyEntity.m; path = classes/EmbassyEntity.m; sourceTree = "<group>"; };
 		68DBAE5E179F6CC300D1DE0B /* CurrencyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrencyCell.h; path = classes/CurrencyCell.h; sourceTree = "<group>"; };
 		68DBAE5F179F6CC300D1DE0B /* CurrencyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrencyCell.m; path = classes/CurrencyCell.m; sourceTree = "<group>"; };
 		68E4240217926E1E00431908 /* IntreSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntreSearchBar.h; path = classes/IntreSearchBar.h; sourceTree = "<group>"; };
@@ -693,8 +693,10 @@
 		6811614117A9D0890029134B /* Content Managing */ = {
 			isa = PBXGroup;
 			children = (
-				681B0A1117AD38640057E00C /* CityEntity.h */,
-				681B0A1217AD38640057E00C /* CityEntity.m */,
+				68DB321217C513D90061D0F1 /* CityEntity.h */,
+				68DB321317C513D90061D0F1 /* CityEntity.m */,
+				68DB321517C513F70061D0F1 /* EmbassyEntity.h */,
+				68DB321617C513F70061D0F1 /* EmbassyEntity.m */,
 				6811614517A9D1A20029134B /* TripManager.h */,
 				6811614617A9D1A20029134B /* TripManager.m */,
 			);
@@ -963,8 +965,6 @@
 				68B071E817A4D3FC0061E418 /* SecurityViewController.m */,
 				68B071EA17A4D7290061E418 /* EmbassyCell.h */,
 				68B071EB17A4D7290061E418 /* EmbassyCell.m */,
-				68B071ED17A4D7430061E418 /* EmbassyItem.h */,
-				68B071EE17A4D7430061E418 /* EmbassyItem.m */,
 				E02BBA0917A8845200215CEA /* EmbassyDetailedContent.h */,
 				E02BBA0A17A8845300215CEA /* EmbassyDetailedContent.m */,
 				E058778217A8768500E42A78 /* EmbassyDetailedViewController.h */,
@@ -1609,7 +1609,6 @@
 				68B997E517A2058A00AD62ED /* WebViewController.m in Sources */,
 				68B071E917A4D3FC0061E418 /* SecurityViewController.m in Sources */,
 				68B071EC17A4D7290061E418 /* EmbassyCell.m in Sources */,
-				68B071EF17A4D7430061E418 /* EmbassyItem.m in Sources */,
 				68B071F317A4DB890061E418 /* TripsViewController.m in Sources */,
 				7EA293B117A60B0A000A56E9 /* MyTripsViewController.m in Sources */,
 				685B6F5F17A60B430003B5D9 /* TripCell.m in Sources */,
@@ -1622,10 +1621,11 @@
 				7E9A131217A8AE5E0082003C /* TermsOfServiceViewController.m in Sources */,
 				7E9A131517A8AE6E0082003C /* PrivacyPolicyViewController.m in Sources */,
 				6811614717A9D1A20029134B /* TripManager.m in Sources */,
-				681B0A1317AD38640057E00C /* CityEntity.m in Sources */,
 				B6DB0C4717AE2C5C001694B0 /* AssistanceViewController.m in Sources */,
 				B61550DD17B52E7400044F11 /* LegalViewController.m in Sources */,
 				6854D37F17B6F2E7006CC3D2 /* ScrollerTabViewController.m in Sources */,
+				68DB321417C513D90061D0F1 /* CityEntity.m in Sources */,
+				68DB321717C513F70061D0F1 /* EmbassyEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

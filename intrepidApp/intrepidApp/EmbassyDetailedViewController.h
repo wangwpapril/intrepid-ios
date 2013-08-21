@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EmbassyItem.h"
+#import "EmbassyEntity.h"
 
 @interface EmbassyDetailedViewController : UIViewController {
     IBOutlet UIScrollView *scrollView;
 }
-@property (nonatomic, strong) EmbassyItem * embassyItem;
+@property (nonatomic, strong) EmbassyEntity * embassyItem;
 
 
 @end

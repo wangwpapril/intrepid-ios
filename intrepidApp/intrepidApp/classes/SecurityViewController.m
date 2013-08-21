@@ -9,10 +9,12 @@
 #import "SecurityViewController.h"
 #import "SlidingTextView.h"
 #import "EmbassyCell.h"
-#import "EmbassyItem.h"
+//#import "EmbassyItem.h"
 #import "Constants.h"
 #import "EmbassyDetailedViewController.h"
-#import "EmbassyDetailedContent.h"
+#import "EmbassyEntity.h"
+//#import "CityEntity.h"
+//#import "EmbassyDetailedContent.h"
 
 
 @implementation SecurityViewController
@@ -26,8 +28,8 @@
     [super viewDidLoad];
     self.view.tag = 2;
 
-    EmbassyDetailedContent *content = [[EmbassyDetailedContent alloc] init];
-    embassyArray = [content getContent];
+//    EmbassyDetailedContent *content = [[EmbassyDetailedContent alloc] init];
+    embassyArray = [self.mController.city.embassies allObjects]; // makes array from set
     self.navigationItem.title = @"Security";
     
     NSInteger height = self.view.bounds.size.height;
@@ -55,18 +57,10 @@
     NSMutableArray *views = [NSMutableArray arrayWithObjects:political, embassy, local, nil];
     [self addViews:views withVerticalOffset:0];
 
-//    [self.view bringSubviewToFront:self.mController.menu];
     NSArray *names = [NSArray arrayWithObjects:@"POLITICAL", @"EMBASSY", @"LOCAL", nil];
     [self addTabs:names];
 
 }
-
-//- (void)viewDidAppear:(BOOL)animated {
-//    if (firstLoad) {
-//        [[MenuController getInstance] showMenu];
-//        firstLoad = false;
-//    }
-//}
 
 # pragma mark - tableView methods
 
@@ -84,8 +78,8 @@
         cell = [[EmbassyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    EmbassyItem *item = [embassyArray objectAtIndex:indexPath.row];
-    [cell setupWithImageName:item.flag withCountry:item.name];
+    EmbassyEntity *embassy = [embassyArray objectAtIndex:indexPath.row];
+    [cell setupWithImageName:embassy.flag withCountry:embassy.country]; // dsnt exist yet
     
     UIView *bgColorView = [[UIView alloc] init];
     [bgColorView setBackgroundColor:UIColorFromRGB(0xdaf1f4)];
@@ -99,9 +93,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    EmbassyItem *selectedItem = [embassyArray objectAtIndex:indexPath.row];
+    EmbassyEntity *selectedItem = [embassyArray objectAtIndex:indexPath.row];
     EmbassyDetailedViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"embassyDetailed"];
-    viewController.embassyItem = selectedItem;
+    viewController.embassyItem = selectedItem; // MUST CHANGE, same for detailed controller
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
@@ -109,7 +103,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
