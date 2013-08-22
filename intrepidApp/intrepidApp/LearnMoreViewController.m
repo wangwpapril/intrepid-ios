@@ -97,7 +97,7 @@
     mexicoEmbassyDescription.backgroundColor = [UIColor clearColor];
     mexicoEmbassyDescription.textColor = [UIColor whiteColor];
     [mexicoEmbassyDescription setTextAlignment:NSTextAlignmentCenter];
-    mexicoEmbassyDescription.text = @"Information about the local, political, and embassies for the country";
+    mexicoEmbassyDescription.text = @"Security information about the country including: political, and embassy details.";
     mexicoEmbassyDescription.numberOfLines = 0;
     mexicoEmbassyDescription.lineBreakMode = NSLineBreakByWordWrapping;
     [scrollView addSubview:mexicoEmbassyDescription];
@@ -108,7 +108,7 @@
     healthOverviewDescription.backgroundColor = [UIColor clearColor];
     healthOverviewDescription.textColor = [UIColor whiteColor];
     [healthOverviewDescription setTextAlignment:NSTextAlignmentCenter];
-    healthOverviewDescription.text = @"Information about health concerns for the country including symptoms and treatments available.";
+    healthOverviewDescription.text = @"Information about health concerns including prevalent conditions and medications.";
     healthOverviewDescription.numberOfLines = 0;
     healthOverviewDescription.lineBreakMode = NSLineBreakByWordWrapping;
     [scrollView addSubview:healthOverviewDescription];
