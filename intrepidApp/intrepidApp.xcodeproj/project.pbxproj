@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6811614717A9D1A20029134B /* TripManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6811614617A9D1A20029134B /* TripManager.m */; };
-		681B0A1317AD38640057E00C /* CityEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 681B0A1217AD38640057E00C /* CityEntity.m */; };
 		6835EC161789439600A57F86 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835EC151789439600A57F86 /* MenuController.m */; };
 		684BB605179F5143004C44C9 /* OverViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 684BB604179F5143004C44C9 /* OverViewViewController.m */; };
 		684BB609179F539C004C44C9 /* SlidingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 684BB608179F539C004C44C9 /* SlidingTextView.m */; };
@@ -37,10 +36,11 @@
 		68A2D71A178BDBE800B3C330 /* searchBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A2D719178BDBE800B3C330 /* searchBar@2x.png */; };
 		68B071E917A4D3FC0061E418 /* SecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B071E817A4D3FC0061E418 /* SecurityViewController.m */; };
 		68B071EC17A4D7290061E418 /* EmbassyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B071EB17A4D7290061E418 /* EmbassyCell.m */; };
-		68B071EF17A4D7430061E418 /* EmbassyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B071EE17A4D7430061E418 /* EmbassyItem.m */; };
 		68B071F317A4DB890061E418 /* TripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B071F217A4DB890061E418 /* TripsViewController.m */; };
 		68B997E517A2058A00AD62ED /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B997E417A2058A00AD62ED /* WebViewController.m */; };
 		68BE3ACA17A1DCA600A87E52 /* HealthContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 68BE3AC917A1DCA600A87E52 /* HealthContent.m */; };
+		68DB321417C513D90061D0F1 /* CityEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DB321317C513D90061D0F1 /* CityEntity.m */; };
+		68DB321717C513F70061D0F1 /* EmbassyEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DB321617C513F70061D0F1 /* EmbassyEntity.m */; };
 		68DBAE60179F6CC300D1DE0B /* CurrencyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DBAE5F179F6CC300D1DE0B /* CurrencyCell.m */; };
 		68E4240417926E1E00431908 /* IntreSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E4240317926E1E00431908 /* IntreSearchBar.m */; };
 		68E42406179274BA00431908 /* mexicoBackBigger@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68E42405179274BA00431908 /* mexicoBackBigger@2x.png */; };
@@ -81,6 +81,10 @@
 		7EE44DB5179F7B24006BA2EC /* culture-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DB3179F7B24006BA2EC /* culture-icon@2x.png */; };
 		7EE44DB9179F7E30006BA2EC /* CurrencyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE44DB8179F7E30006BA2EC /* CurrencyItem.m */; };
 		B61550DD17B52E7400044F11 /* LegalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B61550DC17B52E7400044F11 /* LegalViewController.m */; };
+		B622BB9817C6893400027D2E /* overview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B622BB9417C6893400027D2E /* overview@2x.png */; };
+		B622BB9917C6893400027D2E /* security@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B622BB9517C6893400027D2E /* security@2x.png */; };
+		B622BB9A17C6893400027D2E /* assistance@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B622BB9617C6893400027D2E /* assistance@2x.png */; };
+		B622BB9B17C6893400027D2E /* health@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B622BB9717C6893400027D2E /* health@2x.png */; };
 		B6DB0C4717AE2C5C001694B0 /* AssistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DB0C4617AE2C5C001694B0 /* AssistanceViewController.m */; };
 		E0203E5B17ABF93D000F8AA2 /* Call-Intrepid.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5117ABF93D000F8AA2 /* Call-Intrepid.png */; };
 		E0203E5C17ABF93D000F8AA2 /* Call-Intrepid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5217ABF93D000F8AA2 /* Call-Intrepid@2x.png */; };
@@ -109,10 +113,6 @@
 		E03E0B6617A7480600E344B8 /* Miami@2x-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5E17A7480600E344B8 /* Miami@2x-icon.png */; };
 		E03E0B6717A7480600E344B8 /* Puerto-Plata-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5F17A7480600E344B8 /* Puerto-Plata-icon.png */; };
 		E03E0B6817A7480600E344B8 /* Puerto-Plata-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B6017A7480600E344B8 /* Puerto-Plata-icon@2x.png */; };
-		E03E0B7217A74E2B00E344B8 /* mexico-culture.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B6E17A74E2B00E344B8 /* mexico-culture.png */; };
-		E03E0B7317A74E2B00E344B8 /* mexico-culture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B6F17A74E2B00E344B8 /* mexico-culture@2x.png */; };
-		E03E0B7417A74E2B00E344B8 /* mexico-embassy.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B7017A74E2B00E344B8 /* mexico-embassy.png */; };
-		E03E0B7517A74E2B00E344B8 /* mexico-embassy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B7117A74E2B00E344B8 /* mexico-embassy@2x.png */; };
 		E049C42D17A6DADB00B00B35 /* Altitude-Sickness@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42417A6DADB00B00B35 /* Altitude-Sickness@2x.png */; };
 		E049C42E17A6DADB00B00B35 /* Cholera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42517A6DADB00B00B35 /* Cholera@2x.png */; };
 		E049C42F17A6DADB00B00B35 /* Dengue-Fever@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42617A6DADB00B00B35 /* Dengue-Fever@2x.png */; };
@@ -152,8 +152,6 @@
 		E058778B17A877C200E42A78 /* divider-mid-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E058778717A877C200E42A78 /* divider-mid-1@2x.png */; };
 		E058778C17A877C200E42A78 /* Signout.png in Resources */ = {isa = PBXBuildFile; fileRef = E058778817A877C200E42A78 /* Signout.png */; };
 		E058778D17A877C200E42A78 /* Signout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E058778917A877C200E42A78 /* Signout@2x.png */; };
-		E05C97F117A86DE5007DF1C9 /* HealthScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = E05C97EF17A86DE5007DF1C9 /* HealthScreen.png */; };
-		E05C97F217A86DE5007DF1C9 /* HealthScreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E05C97F017A86DE5007DF1C9 /* HealthScreen@2x.png */; };
 		E06FCE0A17A60852003F3FC6 /* security-embassy.png in Resources */ = {isa = PBXBuildFile; fileRef = E06FCE0817A60852003F3FC6 /* security-embassy.png */; };
 		E06FCE0B17A60852003F3FC6 /* security-political.png in Resources */ = {isa = PBXBuildFile; fileRef = E06FCE0917A60852003F3FC6 /* security-political.png */; };
 		E06FCE0D17A60963003F3FC6 /* embassy-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E06FCE0C17A60963003F3FC6 /* embassy-icon.png */; };
@@ -265,8 +263,6 @@
 		E0BF3C1117A7399D00241A52 /* USD@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BF717A7399D00241A52 /* USD@2x.png */; };
 		E0D7ECA617AD575D006E4424 /* Menu-new.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D7ECA417AD575D006E4424 /* Menu-new.png */; };
 		E0D7ECA717AD575D006E4424 /* Menu-new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D7ECA517AD575D006E4424 /* Menu-new@2x.png */; };
-		E0E234DC17AC1F2A001527D8 /* Assistance@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E234DA17AC1F2A001527D8 /* Assistance@2x.png */; };
-		E0E234DD17AC1F2A001527D8 /* Assistance.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E234DB17AC1F2A001527D8 /* Assistance.png */; };
 		E0E5B9F817B5651100A1EEC0 /* Advil-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9F617B5651100A1EEC0 /* Advil-img.png */; };
 		E0E5B9F917B5651100A1EEC0 /* Advil-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9F717B5651100A1EEC0 /* Advil-img@2x.png */; };
 		E0E5BA2817B565D100A1EEC0 /* Amoxillin-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9FA17B565CD00A1EEC0 /* Amoxillin-img.png */; };
@@ -322,8 +318,6 @@
 /* Begin PBXFileReference section */
 		6811614517A9D1A20029134B /* TripManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripManager.h; path = classes/TripManager.h; sourceTree = "<group>"; };
 		6811614617A9D1A20029134B /* TripManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripManager.m; path = classes/TripManager.m; sourceTree = "<group>"; };
-		681B0A1117AD38640057E00C /* CityEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityEntity.h; path = classes/CityEntity.h; sourceTree = "<group>"; };
-		681B0A1217AD38640057E00C /* CityEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityEntity.m; path = classes/CityEntity.m; sourceTree = "<group>"; };
 		6835EC141789439600A57F86 /* MenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuController.h; path = classes/MenuController.h; sourceTree = "<group>"; };
 		6835EC151789439600A57F86 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuController.m; path = classes/MenuController.m; sourceTree = "<group>"; };
 		684BB603179F5143004C44C9 /* OverViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverViewViewController.h; path = classes/OverViewViewController.h; sourceTree = "<group>"; };
@@ -368,14 +362,16 @@
 		68B071E817A4D3FC0061E418 /* SecurityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecurityViewController.m; path = classes/SecurityViewController.m; sourceTree = "<group>"; };
 		68B071EA17A4D7290061E418 /* EmbassyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmbassyCell.h; path = classes/EmbassyCell.h; sourceTree = "<group>"; };
 		68B071EB17A4D7290061E418 /* EmbassyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmbassyCell.m; path = classes/EmbassyCell.m; sourceTree = "<group>"; };
-		68B071ED17A4D7430061E418 /* EmbassyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmbassyItem.h; path = classes/EmbassyItem.h; sourceTree = "<group>"; };
-		68B071EE17A4D7430061E418 /* EmbassyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmbassyItem.m; path = classes/EmbassyItem.m; sourceTree = "<group>"; };
 		68B071F117A4DB890061E418 /* TripsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripsViewController.h; path = classes/TripsViewController.h; sourceTree = "<group>"; };
 		68B071F217A4DB890061E418 /* TripsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripsViewController.m; path = classes/TripsViewController.m; sourceTree = "<group>"; };
 		68B997E317A2058A00AD62ED /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = classes/WebViewController.h; sourceTree = "<group>"; };
 		68B997E417A2058A00AD62ED /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = classes/WebViewController.m; sourceTree = "<group>"; };
 		68BE3AC817A1DCA600A87E52 /* HealthContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthContent.h; path = classes/HealthContent.h; sourceTree = "<group>"; };
 		68BE3AC917A1DCA600A87E52 /* HealthContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthContent.m; path = classes/HealthContent.m; sourceTree = "<group>"; };
+		68DB321217C513D90061D0F1 /* CityEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityEntity.h; path = classes/CityEntity.h; sourceTree = "<group>"; };
+		68DB321317C513D90061D0F1 /* CityEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityEntity.m; path = classes/CityEntity.m; sourceTree = "<group>"; };
+		68DB321517C513F70061D0F1 /* EmbassyEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmbassyEntity.h; path = classes/EmbassyEntity.h; sourceTree = "<group>"; };
+		68DB321617C513F70061D0F1 /* EmbassyEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmbassyEntity.m; path = classes/EmbassyEntity.m; sourceTree = "<group>"; };
 		68DBAE5E179F6CC300D1DE0B /* CurrencyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrencyCell.h; path = classes/CurrencyCell.h; sourceTree = "<group>"; };
 		68DBAE5F179F6CC300D1DE0B /* CurrencyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrencyCell.m; path = classes/CurrencyCell.m; sourceTree = "<group>"; };
 		68E4240217926E1E00431908 /* IntreSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntreSearchBar.h; path = classes/IntreSearchBar.h; sourceTree = "<group>"; };
@@ -429,6 +425,10 @@
 		7EE44DB8179F7E30006BA2EC /* CurrencyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrencyItem.m; path = classes/CurrencyItem.m; sourceTree = "<group>"; };
 		B61550DB17B52E7400044F11 /* LegalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegalViewController.h; sourceTree = "<group>"; };
 		B61550DC17B52E7400044F11 /* LegalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegalViewController.m; sourceTree = "<group>"; };
+		B622BB9417C6893400027D2E /* overview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overview@2x.png"; sourceTree = "<group>"; };
+		B622BB9517C6893400027D2E /* security@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "security@2x.png"; sourceTree = "<group>"; };
+		B622BB9617C6893400027D2E /* assistance@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "assistance@2x.png"; sourceTree = "<group>"; };
+		B622BB9717C6893400027D2E /* health@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "health@2x.png"; sourceTree = "<group>"; };
 		B6DB0C4517AE2C5C001694B0 /* AssistanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssistanceViewController.h; sourceTree = "<group>"; };
 		B6DB0C4617AE2C5C001694B0 /* AssistanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssistanceViewController.m; sourceTree = "<group>"; };
 		E0203E5117ABF93D000F8AA2 /* Call-Intrepid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Call-Intrepid.png"; sourceTree = "<group>"; };
@@ -459,10 +459,6 @@
 		E03E0B5E17A7480600E344B8 /* Miami@2x-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami@2x-icon.png"; sourceTree = "<group>"; };
 		E03E0B5F17A7480600E344B8 /* Puerto-Plata-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Plata-icon.png"; sourceTree = "<group>"; };
 		E03E0B6017A7480600E344B8 /* Puerto-Plata-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Plata-icon@2x.png"; sourceTree = "<group>"; };
-		E03E0B6E17A74E2B00E344B8 /* mexico-culture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mexico-culture.png"; sourceTree = "<group>"; };
-		E03E0B6F17A74E2B00E344B8 /* mexico-culture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mexico-culture@2x.png"; sourceTree = "<group>"; };
-		E03E0B7017A74E2B00E344B8 /* mexico-embassy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mexico-embassy.png"; sourceTree = "<group>"; };
-		E03E0B7117A74E2B00E344B8 /* mexico-embassy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mexico-embassy@2x.png"; sourceTree = "<group>"; };
 		E049C42417A6DADB00B00B35 /* Altitude-Sickness@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Altitude-Sickness@2x.png"; sourceTree = "<group>"; };
 		E049C42517A6DADB00B00B35 /* Cholera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cholera@2x.png"; sourceTree = "<group>"; };
 		E049C42617A6DADB00B00B35 /* Dengue-Fever@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dengue-Fever@2x.png"; sourceTree = "<group>"; };
@@ -504,8 +500,6 @@
 		E058778717A877C200E42A78 /* divider-mid-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "divider-mid-1@2x.png"; sourceTree = "<group>"; };
 		E058778817A877C200E42A78 /* Signout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Signout.png; sourceTree = "<group>"; };
 		E058778917A877C200E42A78 /* Signout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Signout@2x.png"; sourceTree = "<group>"; };
-		E05C97EF17A86DE5007DF1C9 /* HealthScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HealthScreen.png; sourceTree = "<group>"; };
-		E05C97F017A86DE5007DF1C9 /* HealthScreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HealthScreen@2x.png"; sourceTree = "<group>"; };
 		E06FCE0817A60852003F3FC6 /* security-embassy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "security-embassy.png"; sourceTree = "<group>"; };
 		E06FCE0917A60852003F3FC6 /* security-political.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "security-political.png"; sourceTree = "<group>"; };
 		E06FCE0C17A60963003F3FC6 /* embassy-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "embassy-icon.png"; sourceTree = "<group>"; };
@@ -618,8 +612,6 @@
 		E0BF3BF717A7399D00241A52 /* USD@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "USD@2x.png"; sourceTree = "<group>"; };
 		E0D7ECA417AD575D006E4424 /* Menu-new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-new.png"; sourceTree = "<group>"; };
 		E0D7ECA517AD575D006E4424 /* Menu-new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-new@2x.png"; sourceTree = "<group>"; };
-		E0E234DA17AC1F2A001527D8 /* Assistance@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Assistance@2x.png"; sourceTree = "<group>"; };
-		E0E234DB17AC1F2A001527D8 /* Assistance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Assistance.png; sourceTree = "<group>"; };
 		E0E5B9F617B5651100A1EEC0 /* Advil-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Advil-img.png"; sourceTree = "<group>"; };
 		E0E5B9F717B5651100A1EEC0 /* Advil-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Advil-img@2x.png"; sourceTree = "<group>"; };
 		E0E5B9FA17B565CD00A1EEC0 /* Amoxillin-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Amoxillin-img.png"; sourceTree = "<group>"; };
@@ -693,8 +685,10 @@
 		6811614117A9D0890029134B /* Content Managing */ = {
 			isa = PBXGroup;
 			children = (
-				681B0A1117AD38640057E00C /* CityEntity.h */,
-				681B0A1217AD38640057E00C /* CityEntity.m */,
+				68DB321217C513D90061D0F1 /* CityEntity.h */,
+				68DB321317C513D90061D0F1 /* CityEntity.m */,
+				68DB321517C513F70061D0F1 /* EmbassyEntity.h */,
+				68DB321617C513F70061D0F1 /* EmbassyEntity.m */,
 				6811614517A9D1A20029134B /* TripManager.h */,
 				6811614617A9D1A20029134B /* TripManager.m */,
 			);
@@ -963,8 +957,6 @@
 				68B071E817A4D3FC0061E418 /* SecurityViewController.m */,
 				68B071EA17A4D7290061E418 /* EmbassyCell.h */,
 				68B071EB17A4D7290061E418 /* EmbassyCell.m */,
-				68B071ED17A4D7430061E418 /* EmbassyItem.h */,
-				68B071EE17A4D7430061E418 /* EmbassyItem.m */,
 				E02BBA0917A8845200215CEA /* EmbassyDetailedContent.h */,
 				E02BBA0A17A8845300215CEA /* EmbassyDetailedContent.m */,
 				E058778217A8768500E42A78 /* EmbassyDetailedViewController.h */,
@@ -1138,15 +1130,11 @@
 		E03E0B6D17A74E1E00E344B8 /* Learn More */ = {
 			isa = PBXGroup;
 			children = (
-				E0E234DA17AC1F2A001527D8 /* Assistance@2x.png */,
-				E0E234DB17AC1F2A001527D8 /* Assistance.png */,
+				B622BB9417C6893400027D2E /* overview@2x.png */,
+				B622BB9517C6893400027D2E /* security@2x.png */,
+				B622BB9617C6893400027D2E /* assistance@2x.png */,
+				B622BB9717C6893400027D2E /* health@2x.png */,
 				E09DAA4E17A97EA6006AD6E9 /* close@2x.png */,
-				E05C97EF17A86DE5007DF1C9 /* HealthScreen.png */,
-				E05C97F017A86DE5007DF1C9 /* HealthScreen@2x.png */,
-				E03E0B6E17A74E2B00E344B8 /* mexico-culture.png */,
-				E03E0B6F17A74E2B00E344B8 /* mexico-culture@2x.png */,
-				E03E0B7017A74E2B00E344B8 /* mexico-embassy.png */,
-				E03E0B7117A74E2B00E344B8 /* mexico-embassy@2x.png */,
 			);
 			name = "Learn More";
 			sourceTree = "<group>";
@@ -1418,12 +1406,6 @@
 				E03E0B6617A7480600E344B8 /* Miami@2x-icon.png in Resources */,
 				E03E0B6717A7480600E344B8 /* Puerto-Plata-icon.png in Resources */,
 				E03E0B6817A7480600E344B8 /* Puerto-Plata-icon@2x.png in Resources */,
-				E03E0B7217A74E2B00E344B8 /* mexico-culture.png in Resources */,
-				E03E0B7317A74E2B00E344B8 /* mexico-culture@2x.png in Resources */,
-				E03E0B7417A74E2B00E344B8 /* mexico-embassy.png in Resources */,
-				E03E0B7517A74E2B00E344B8 /* mexico-embassy@2x.png in Resources */,
-				E05C97F117A86DE5007DF1C9 /* HealthScreen.png in Resources */,
-				E05C97F217A86DE5007DF1C9 /* HealthScreen@2x.png in Resources */,
 				E058778017A871CC00E42A78 /* Add.png in Resources */,
 				E058778117A871CC00E42A78 /* Add@2x.png in Resources */,
 				68F64BFC17A87788002C4793 /* newMenuBack2@2x.png in Resources */,
@@ -1477,8 +1459,6 @@
 				E0B5CFB817AC0FF100F5BB66 /* Miami-Political.png in Resources */,
 				E0B5CFB917AC0FF100F5BB66 /* Miami-Culture.png in Resources */,
 				E0B5CFBA17AC0FF100F5BB66 /* Miami-Overview@2x.png in Resources */,
-				E0E234DC17AC1F2A001527D8 /* Assistance@2x.png in Resources */,
-				E0E234DD17AC1F2A001527D8 /* Assistance.png in Resources */,
 				E0D7ECA617AD575D006E4424 /* Menu-new.png in Resources */,
 				E0D7ECA717AD575D006E4424 /* Menu-new@2x.png in Resources */,
 				E0263D5F17B124980087FAC7 /* Political-icon.png in Resources */,
@@ -1579,6 +1559,10 @@
 				E0E91ADC17BD2247009E8607 /* Signout-new2@2x.png in Resources */,
 				E02D1A8B17BD38DF00322B6A /* Add-photo.png in Resources */,
 				E02D1A8C17BD38DF00322B6A /* Add-photo@2x.png in Resources */,
+				B622BB9817C6893400027D2E /* overview@2x.png in Resources */,
+				B622BB9917C6893400027D2E /* security@2x.png in Resources */,
+				B622BB9A17C6893400027D2E /* assistance@2x.png in Resources */,
+				B622BB9B17C6893400027D2E /* health@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1609,7 +1593,6 @@
 				68B997E517A2058A00AD62ED /* WebViewController.m in Sources */,
 				68B071E917A4D3FC0061E418 /* SecurityViewController.m in Sources */,
 				68B071EC17A4D7290061E418 /* EmbassyCell.m in Sources */,
-				68B071EF17A4D7430061E418 /* EmbassyItem.m in Sources */,
 				68B071F317A4DB890061E418 /* TripsViewController.m in Sources */,
 				7EA293B117A60B0A000A56E9 /* MyTripsViewController.m in Sources */,
 				685B6F5F17A60B430003B5D9 /* TripCell.m in Sources */,
@@ -1622,10 +1605,11 @@
 				7E9A131217A8AE5E0082003C /* TermsOfServiceViewController.m in Sources */,
 				7E9A131517A8AE6E0082003C /* PrivacyPolicyViewController.m in Sources */,
 				6811614717A9D1A20029134B /* TripManager.m in Sources */,
-				681B0A1317AD38640057E00C /* CityEntity.m in Sources */,
 				B6DB0C4717AE2C5C001694B0 /* AssistanceViewController.m in Sources */,
 				B61550DD17B52E7400044F11 /* LegalViewController.m in Sources */,
 				6854D37F17B6F2E7006CC3D2 /* ScrollerTabViewController.m in Sources */,
+				68DB321417C513D90061D0F1 /* CityEntity.m in Sources */,
+				68DB321717C513F70061D0F1 /* EmbassyEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

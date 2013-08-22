@@ -94,9 +94,9 @@
 
 -(IBAction)callAssistance:(id) sender
 {
-    NSString *phoneNumber = @"tel:14166463107";
+    NSString *phoneNumber = @"telprompt://14166463107";
     
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt://14166463107"]];
     
     NSLog(@"Call");
 }

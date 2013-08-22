@@ -53,12 +53,12 @@
     scrollView.pagingEnabled = YES;
     
     //create array for images
-    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"mexico-embassy.png", @"HealthScreen.png", @"mexico-culture.png", @"Assistance.png", nil];
+    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"overview@2x.png", @"health@2x.png", @"security@2x.png", @"assistance@2x.png", nil];
     
     for (int i=0; i < [imageArray count]; i++) {
         CGRect frame;
         NSInteger height = scrollView.frame.size.height - 150.0;
-        NSInteger width = height * 0.6525;
+        NSInteger width = height * 0.5634;
         frame.origin.x = 320 * i + (320 - width)/2;
         frame.origin.y = scrollView.frame.origin.y + 50;
         //0.7322;
@@ -74,8 +74,13 @@
     [self populateDescriptions];
     
     [self.view addSubview:scrollView];
-    exitButton.frame = CGRectMake(290, 12, 15, 15);
+    exitButton.frame = CGRectMake(280, 12, 40, 40);
     [self.view addSubview:exitButton];
+    UIImage *exitImage = [UIImage imageNamed:@"close@2x.png"];
+    //create an image and put it overtop of the button?
+    UIImageView *exitImageContainer = [[UIImageView alloc] initWithFrame: CGRectMake(290, 15, 15, 15)];
+    [exitImageContainer setImage:exitImage];
+    [self.view addSubview:exitImageContainer];
     
     pageControl.frame = CGRectMake(135, self.view.frame.size.height - 40, 50, 50);
     pageControl.numberOfPages = 4;
@@ -87,7 +92,7 @@
 
 -(void)populateDescriptions {
     UILabel *mexicoEmbassyDescription = [[UILabel alloc] init];
-    mexicoEmbassyDescription.frame = CGRectMake(37, self.view.frame.size.height - 200, 250.0, 250.0);
+    mexicoEmbassyDescription.frame = CGRectMake(677, self.view.frame.size.height - 200, 250.0, 250.0);
     mexicoEmbassyDescription.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
     mexicoEmbassyDescription.backgroundColor = [UIColor clearColor];
     mexicoEmbassyDescription.textColor = [UIColor whiteColor];
@@ -109,7 +114,7 @@
     [scrollView addSubview:healthOverviewDescription];
     
     UILabel *mexicoCultureDescription = [[UILabel alloc] init];
-    mexicoCultureDescription.frame = CGRectMake(677, self.view.frame.size.height - 200, 250.0, 250.0);
+    mexicoCultureDescription.frame = CGRectMake(37, self.view.frame.size.height - 200, 250.0, 250.0);
     mexicoCultureDescription.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
     mexicoCultureDescription.backgroundColor = [UIColor clearColor];
     mexicoCultureDescription.textColor = [UIColor whiteColor];

@@ -46,7 +46,7 @@
     embassyDetailedItemTitleLabel.backgroundColor = [UIColor colorWithRed:66/255.0f green:58/255.0f blue:56/255.0f alpha:1];
 
     
-    NSString *uppercaseString = [embassyItem.name uppercaseString];
+    NSString *uppercaseString = [embassyItem.country uppercaseString];
     UILabel *embassyDetailedItemNameLabel = [[UILabel alloc] init];
     embassyDetailedItemNameLabel.frame = CGRectMake(20, 7, 275, 21);
     embassyDetailedItemNameLabel.text = uppercaseString;
@@ -86,7 +86,7 @@
     contactLabel.backgroundColor = [UIColor clearColor];
     contactLabel.text = @"Telephone/Fax/Email";
     
-    NSString *contactLength = [NSString stringWithFormat:@"%@\nFax:%@\nEmail:%@", embassyItem.tel,
+    NSString *contactLength = [NSString stringWithFormat:@"%@\nFax:%@\nEmail:%@", embassyItem.phone,
                                embassyItem.fax, embassyItem.email];
     
     CGSize contactSize = [contactLength sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:13] constrainedToSize:CGSizeMake(280, 15000) lineBreakMode:NSLineBreakByWordWrapping];
@@ -94,7 +94,7 @@
     contactText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     contactText.backgroundColor = [UIColor clearColor];
     contactText.textColor = [UIColor blackColor];
-    contactText.text = [NSString stringWithFormat:@"%@\nFax: %@\nEmail: %@", embassyItem.tel, embassyItem.fax, embassyItem.email];
+    contactText.text = [NSString stringWithFormat:@"%@\nFax: %@\nEmail: %@", embassyItem.phone, embassyItem.fax, embassyItem.email];
     contactText.lineBreakMode = NSLineBreakByWordWrapping;
     contactText.numberOfLines = 0;
     
@@ -138,12 +138,12 @@
     notesLabel.backgroundColor = [UIColor clearColor];
     notesLabel.text = @"Notes";
     
-    CGSize notesSize = [embassyItem.notice sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:13] constrainedToSize:CGSizeMake(280, 15000) lineBreakMode:NSLineBreakByWordWrapping];
+    CGSize notesSize = [embassyItem.notes sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:13] constrainedToSize:CGSizeMake(280, 15000) lineBreakMode:NSLineBreakByWordWrapping];
     UILabel *notesText = [[UILabel alloc] initWithFrame:CGRectMake(20, notesLabel.frame.origin.y + 35,  280, notesSize.height)];
     notesText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     notesText.backgroundColor = [UIColor clearColor];
     notesText.textColor = [UIColor blackColor];
-    notesText.text = embassyItem.notice;
+    notesText.text = embassyItem.notes;
     notesText.lineBreakMode = NSLineBreakByWordWrapping;
     notesText.numberOfLines = 0;
         
