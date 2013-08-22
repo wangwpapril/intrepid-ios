@@ -263,6 +263,7 @@
 		E0BF3C1117A7399D00241A52 /* USD@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BF717A7399D00241A52 /* USD@2x.png */; };
 		E0D7ECA617AD575D006E4424 /* Menu-new.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D7ECA417AD575D006E4424 /* Menu-new.png */; };
 		E0D7ECA717AD575D006E4424 /* Menu-new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D7ECA517AD575D006E4424 /* Menu-new@2x.png */; };
+		E0E3CB1617C699F300D0642A /* Signout_new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E3CB1517C699F300D0642A /* Signout_new@2x.png */; };
 		E0E5B9F817B5651100A1EEC0 /* Advil-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9F617B5651100A1EEC0 /* Advil-img.png */; };
 		E0E5B9F917B5651100A1EEC0 /* Advil-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9F717B5651100A1EEC0 /* Advil-img@2x.png */; };
 		E0E5BA2817B565D100A1EEC0 /* Amoxillin-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9FA17B565CD00A1EEC0 /* Amoxillin-img.png */; };
@@ -612,6 +613,7 @@
 		E0BF3BF717A7399D00241A52 /* USD@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "USD@2x.png"; sourceTree = "<group>"; };
 		E0D7ECA417AD575D006E4424 /* Menu-new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-new.png"; sourceTree = "<group>"; };
 		E0D7ECA517AD575D006E4424 /* Menu-new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-new@2x.png"; sourceTree = "<group>"; };
+		E0E3CB1517C699F300D0642A /* Signout_new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Signout_new@2x.png"; sourceTree = "<group>"; };
 		E0E5B9F617B5651100A1EEC0 /* Advil-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Advil-img.png"; sourceTree = "<group>"; };
 		E0E5B9F717B5651100A1EEC0 /* Advil-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Advil-img@2x.png"; sourceTree = "<group>"; };
 		E0E5B9FA17B565CD00A1EEC0 /* Amoxillin-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Amoxillin-img.png"; sourceTree = "<group>"; };
@@ -1153,6 +1155,7 @@
 		E058778517A877B900E42A78 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				E0E3CB1517C699F300D0642A /* Signout_new@2x.png */,
 				E058778617A877C200E42A78 /* divider-mid-1.png */,
 				E058778717A877C200E42A78 /* divider-mid-1@2x.png */,
 				E0E91AD917BD2247009E8607 /* Signout-new2.png */,
@@ -1563,6 +1566,7 @@
 				B622BB9917C6893400027D2E /* security@2x.png in Resources */,
 				B622BB9A17C6893400027D2E /* assistance@2x.png in Resources */,
 				B622BB9B17C6893400027D2E /* health@2x.png in Resources */,
+				E0E3CB1617C699F300D0642A /* Signout_new@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
