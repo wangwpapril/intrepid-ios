@@ -223,12 +223,15 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [addPhoto setImage:image forState:UIControlStateNormal];
     addPhoto.layer.cornerRadius = 50;
     addPhoto.layer.masksToBounds = YES;
+    
+//    [[addPhoto imageView] setContentMode: UIViewContentModeScaleAspectFit];
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 -(void)image:(UIImage *)image
 finishedSavingWithError:(NSError *)error
