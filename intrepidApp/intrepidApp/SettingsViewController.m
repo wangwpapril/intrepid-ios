@@ -190,6 +190,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     
     editPhoto.layer.cornerRadius = 50;
     editPhoto.layer.masksToBounds = YES;
+    [editPhoto.imageView setContentMode:UIViewContentModeScaleAspectFill];
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker

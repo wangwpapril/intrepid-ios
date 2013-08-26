@@ -223,6 +223,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [addPhoto setImage:image forState:UIControlStateNormal];
     addPhoto.layer.cornerRadius = 50;
     addPhoto.layer.masksToBounds = YES;
+    [addPhoto.imageView setContentMode:UIViewContentModeScaleAspectFill];
     
 //    [[addPhoto imageView] setContentMode: UIViewContentModeScaleAspectFit];
 }
