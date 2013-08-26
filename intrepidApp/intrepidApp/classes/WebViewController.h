@@ -12,5 +12,6 @@
 @interface WebViewController : UIViewController
 
 @property (nonatomic, strong) MenuController *mController;
+@property (nonatomic , strong) UIWebView *trialView;
 - (void)setupWithTitle: (NSString *)title withURL:(NSString *)url;
 @end

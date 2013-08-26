@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6811614717A9D1A20029134B /* TripManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6811614617A9D1A20029134B /* TripManager.m */; };
+		68174E2217C951D5009823CE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 68174E2117C951D5009823CE /* Reachability.m */; };
+		68174E2417C95254009823CE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68174E2317C95254009823CE /* SystemConfiguration.framework */; };
 		6835EC161789439600A57F86 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835EC151789439600A57F86 /* MenuController.m */; };
 		684BB605179F5143004C44C9 /* OverViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 684BB604179F5143004C44C9 /* OverViewViewController.m */; };
 		684BB609179F539C004C44C9 /* SlidingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 684BB608179F539C004C44C9 /* SlidingTextView.m */; };
@@ -83,9 +85,9 @@
 		B61550DD17B52E7400044F11 /* LegalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B61550DC17B52E7400044F11 /* LegalViewController.m */; };
 		B622BB9817C6893400027D2E /* overview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B622BB9417C6893400027D2E /* overview@2x.png */; };
 		B622BB9917C6893400027D2E /* security@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B622BB9517C6893400027D2E /* security@2x.png */; };
-		B622BB9A17C6893400027D2E /* assistance@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B622BB9617C6893400027D2E /* assistance@2x.png */; };
 		B622BB9B17C6893400027D2E /* health@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B622BB9717C6893400027D2E /* health@2x.png */; };
 		B6DB0C4717AE2C5C001694B0 /* AssistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DB0C4617AE2C5C001694B0 /* AssistanceViewController.m */; };
+		B6FCB79C17CADA7200E7CFB9 /* assistance-new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6FCB79B17CADA7200E7CFB9 /* assistance-new@2x.png */; };
 		E0203E5B17ABF93D000F8AA2 /* Call-Intrepid.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5117ABF93D000F8AA2 /* Call-Intrepid.png */; };
 		E0203E5C17ABF93D000F8AA2 /* Call-Intrepid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5217ABF93D000F8AA2 /* Call-Intrepid@2x.png */; };
 		E0203E5D17ABF93D000F8AA2 /* Call-Local.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5317ABF93D000F8AA2 /* Call-Local.png */; };
@@ -319,6 +321,9 @@
 /* Begin PBXFileReference section */
 		6811614517A9D1A20029134B /* TripManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripManager.h; path = classes/TripManager.h; sourceTree = "<group>"; };
 		6811614617A9D1A20029134B /* TripManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripManager.m; path = classes/TripManager.m; sourceTree = "<group>"; };
+		68174E2017C951D5009823CE /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		68174E2117C951D5009823CE /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		68174E2317C95254009823CE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6835EC141789439600A57F86 /* MenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuController.h; path = classes/MenuController.h; sourceTree = "<group>"; };
 		6835EC151789439600A57F86 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuController.m; path = classes/MenuController.m; sourceTree = "<group>"; };
 		684BB603179F5143004C44C9 /* OverViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverViewViewController.h; path = classes/OverViewViewController.h; sourceTree = "<group>"; };
@@ -428,10 +433,10 @@
 		B61550DC17B52E7400044F11 /* LegalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegalViewController.m; sourceTree = "<group>"; };
 		B622BB9417C6893400027D2E /* overview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overview@2x.png"; sourceTree = "<group>"; };
 		B622BB9517C6893400027D2E /* security@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "security@2x.png"; sourceTree = "<group>"; };
-		B622BB9617C6893400027D2E /* assistance@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "assistance@2x.png"; sourceTree = "<group>"; };
 		B622BB9717C6893400027D2E /* health@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "health@2x.png"; sourceTree = "<group>"; };
 		B6DB0C4517AE2C5C001694B0 /* AssistanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssistanceViewController.h; sourceTree = "<group>"; };
 		B6DB0C4617AE2C5C001694B0 /* AssistanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssistanceViewController.m; sourceTree = "<group>"; };
+		B6FCB79B17CADA7200E7CFB9 /* assistance-new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "assistance-new@2x.png"; sourceTree = "<group>"; };
 		E0203E5117ABF93D000F8AA2 /* Call-Intrepid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Call-Intrepid.png"; sourceTree = "<group>"; };
 		E0203E5217ABF93D000F8AA2 /* Call-Intrepid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Call-Intrepid@2x.png"; sourceTree = "<group>"; };
 		E0203E5317ABF93D000F8AA2 /* Call-Local.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Call-Local.png"; sourceTree = "<group>"; };
@@ -671,6 +676,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68174E2417C95254009823CE /* SystemConfiguration.framework in Frameworks */,
 				E04C4DBC17A3103E002A23F4 /* libz.dylib in Frameworks */,
 				688F9E631786262800CF850C /* QuartzCore.framework in Frameworks */,
 				6851221317861138008DB6B6 /* UIKit.framework in Frameworks */,
@@ -725,6 +731,8 @@
 				684BB608179F539C004C44C9 /* SlidingTextView.m */,
 				68B997E317A2058A00AD62ED /* WebViewController.h */,
 				68B997E417A2058A00AD62ED /* WebViewController.m */,
+				68174E2017C951D5009823CE /* Reachability.h */,
+				68174E2117C951D5009823CE /* Reachability.m */,
 			);
 			name = "Support Classes";
 			sourceTree = "<group>";
@@ -833,6 +841,7 @@
 		6851220617861138008DB6B6 = {
 			isa = PBXGroup;
 			children = (
+				68174E2317C95254009823CE /* SystemConfiguration.framework */,
 				E0B5825217A31D8100093130 /* app icon nonretina.png */,
 				E0B5825017A31D2C00093130 /* intrepid icon.png */,
 				E04C4DBB17A3103E002A23F4 /* libz.dylib */,
@@ -1132,9 +1141,9 @@
 		E03E0B6D17A74E1E00E344B8 /* Learn More */ = {
 			isa = PBXGroup;
 			children = (
+				B6FCB79B17CADA7200E7CFB9 /* assistance-new@2x.png */,
 				B622BB9417C6893400027D2E /* overview@2x.png */,
 				B622BB9517C6893400027D2E /* security@2x.png */,
-				B622BB9617C6893400027D2E /* assistance@2x.png */,
 				B622BB9717C6893400027D2E /* health@2x.png */,
 				E09DAA4E17A97EA6006AD6E9 /* close@2x.png */,
 			);
@@ -1564,8 +1573,8 @@
 				E02D1A8C17BD38DF00322B6A /* Add-photo@2x.png in Resources */,
 				B622BB9817C6893400027D2E /* overview@2x.png in Resources */,
 				B622BB9917C6893400027D2E /* security@2x.png in Resources */,
-				B622BB9A17C6893400027D2E /* assistance@2x.png in Resources */,
 				B622BB9B17C6893400027D2E /* health@2x.png in Resources */,
+				B6FCB79C17CADA7200E7CFB9 /* assistance-new@2x.png in Resources */,
 				E0E3CB1617C699F300D0642A /* Signout_new@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1614,6 +1623,7 @@
 				6854D37F17B6F2E7006CC3D2 /* ScrollerTabViewController.m in Sources */,
 				68DB321417C513D90061D0F1 /* CityEntity.m in Sources */,
 				68DB321717C513F70061D0F1 /* EmbassyEntity.m in Sources */,
+				68174E2217C951D5009823CE /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

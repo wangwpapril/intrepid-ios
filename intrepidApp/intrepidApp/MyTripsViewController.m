@@ -121,6 +121,28 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    NSLog(@"view did appear");
+    // init vars
+    int index, i, limit;
+    i = 0;
+    limit = cities.count;
+    
+    MenuController *mController = [MenuController getInstance];
+    if (mController.city) {
+        NSLog(@"city exists");
+        while (i < limit) {
+            if (mController.city == [cities objectAtIndex:i]) {
+                index = i;
+            }
+            i++;
+        }
+        NSLog(@"scrolling to rect");
+        CGRect target = CGRectMake(320 * index, 0, 320, self.view.frame.size.height);
+        [scrollView scrollRectToVisible:target animated:YES];
+    }
+}
+
 - (IBAction)changePage:(id)sender {
     pageControlBeingUsed = YES;
     NSLog(@"change page called");

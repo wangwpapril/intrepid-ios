@@ -53,7 +53,7 @@
     scrollView.pagingEnabled = YES;
     
     //create array for images
-    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"overview@2x.png", @"health@2x.png", @"security@2x.png", @"assistance@2x.png", nil];
+    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"overview@2x.png", @"health@2x.png", @"security@2x.png", @"assistance-new@2x.png", nil];
     
     for (int i=0; i < [imageArray count]; i++) {
         CGRect frame;
