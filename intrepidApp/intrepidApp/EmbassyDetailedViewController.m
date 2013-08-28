@@ -34,7 +34,7 @@
     whiteLayer.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:whiteLayer];
     
-    CGRect rect=CGRectMake(0, 36, 320, 520);
+    CGRect rect=CGRectMake(0, 36, 320, self.view.frame.size.height);
     scrollView = [[UIScrollView alloc] initWithFrame:rect];
     scrollView.showsVerticalScrollIndicator = YES;
     scrollView.showsHorizontalScrollIndicator = NO;
@@ -106,7 +106,7 @@
     hoursLabel.text = @"Hours of Operation";
     
     CGSize hoursSize = [embassyItem.hours sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:13] constrainedToSize:CGSizeMake(280, 15000) lineBreakMode:NSLineBreakByWordWrapping];
-    UILabel *hoursText = [[UILabel alloc] initWithFrame:CGRectMake(20, hoursLabel.frame.origin.y + 35,  280, hoursSize.height)];
+    UILabel *hoursText = [[UILabel alloc] initWithFrame:CGRectMake(20, hoursLabel.frame.origin.y +35,  280, hoursSize.height)];
     hoursText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     hoursText.backgroundColor = [UIColor clearColor];
     hoursText.textColor = [UIColor blackColor];
@@ -138,8 +138,8 @@
     notesLabel.backgroundColor = [UIColor clearColor];
     notesLabel.text = @"Notes";
     
-    CGSize notesSize = [embassyItem.notes sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:13] constrainedToSize:CGSizeMake(280, 15000) lineBreakMode:NSLineBreakByWordWrapping];
-    UILabel *notesText = [[UILabel alloc] initWithFrame:CGRectMake(20, notesLabel.frame.origin.y + 35,  280, notesSize.height)];
+    CGSize notesSize = [embassyItem.notes sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:14] constrainedToSize:CGSizeMake(280, 15000) lineBreakMode:NSLineBreakByWordWrapping];
+    UILabel *notesText = [[UILabel alloc] initWithFrame:CGRectMake(20, notesLabel.frame.origin.y + 35,  280, notesSize.height + 10)];
     notesText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     notesText.backgroundColor = [UIColor clearColor];
     notesText.textColor = [UIColor blackColor];
@@ -148,7 +148,7 @@
     notesText.numberOfLines = 0;
         
     //add all subviews to large container
-    UILabel *embassyTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,  320, notesText.frame.origin.y + notesSize.height)];
+    UILabel *embassyTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,  320, notesText.frame.origin.y + notesSize.height + 50)];
     
     [embassyTextContainer addSubview:addressLabel];
     [embassyTextContainer addSubview:addressText];
@@ -162,7 +162,7 @@
     [embassyTextContainer addSubview:notesText];
     [scrollView addSubview:embassyTextContainer];
     
-    scrollView.contentSize = CGSizeMake(320, notesText.frame.origin.y + notesSize.height + 150);
+    scrollView.contentSize = CGSizeMake(320, notesText.frame.origin.y + notesSize.height +100);
 }
 
 - (void)didReceiveMemoryWarning

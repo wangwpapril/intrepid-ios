@@ -37,14 +37,14 @@
     CityEntity *city = [self getCity];
     SlidingTextView *political = [[SlidingTextView alloc] initWithFrame:frame];
     
-    [political setupWithImageName:city.politicalImage withTitle:@"Political" withIconName:@"Political-icon@2x.png"];
+    [political setupWithImageName:city.politicalImage withTitle:@"Safety" withIconName:@"Political-icon@2x.png"];
     [political addTextAreaWithText:city.politicalText];
     
     SlidingTextView *embassy = [[SlidingTextView alloc] initWithFrame:frame];
     [embassy setupWithImageName:@"security-embassy.png" withTitle:@"Embassy" withIconName:@"embassy-icon.png"];
     
     SlidingTextView *local = [[SlidingTextView alloc] initWithFrame:frame];
-    [local setupWithImageName:city.localImage withTitle:@"Local" withIconName:@"Tourist-icon1@2x.png"];
+    [local setupWithImageName:city.localImage withTitle:@"Other" withIconName:@"Tourist-icon1@2x.png"];
     [local addTextAreaWithText:city.localText];
     
     // embassies
@@ -57,7 +57,7 @@
     NSMutableArray *views = [NSMutableArray arrayWithObjects:political, embassy, local, nil];
     [self addViews:views withVerticalOffset:0];
 
-    NSArray *names = [NSArray arrayWithObjects:@"POLITICAL", @"EMBASSY", @"LOCAL", nil];
+    NSArray *names = [NSArray arrayWithObjects:@"SAFETY", @"EMBASSY", @"OTHER", nil];
     [self addTabs:names];
 
 }
