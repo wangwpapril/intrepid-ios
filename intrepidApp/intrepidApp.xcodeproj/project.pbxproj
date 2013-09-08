@@ -143,9 +143,6 @@
 		E049C45917A6DDB200B00B35 /* Typhoid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C44F17A6DDB200B00B35 /* Typhoid@2x.png */; };
 		E049C45A17A6DDB200B00B35 /* West-Nile.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C45017A6DDB200B00B35 /* West-Nile.png */; };
 		E049C45B17A6DDB200B00B35 /* West-Nile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C45117A6DDB200B00B35 /* West-Nile@2x.png */; };
-		E04C4DB817A30FE2002A23F4 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E04C4DB417A30FE1002A23F4 /* libTestFlight.a */; };
-		E04C4DB917A30FE2002A23F4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E04C4DB517A30FE1002A23F4 /* README.md */; };
-		E04C4DBA17A30FE2002A23F4 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = E04C4DB617A30FE2002A23F4 /* release_notes.md */; };
 		E04C4DBC17A3103E002A23F4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E04C4DBB17A3103E002A23F4 /* libz.dylib */; };
 		E058778017A871CC00E42A78 /* Add.png in Resources */ = {isa = PBXBuildFile; fileRef = E058777E17A871CC00E42A78 /* Add.png */; };
 		E058778117A871CC00E42A78 /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E058777F17A871CC00E42A78 /* Add@2x.png */; };
@@ -314,6 +311,9 @@
 		E0E5BA5317B565D100A1EEC0 /* Imodium-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2517B565D100A1EEC0 /* Imodium-img@2x.png */; };
 		E0E5BA5417B565D100A1EEC0 /* Lasix-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2617B565D100A1EEC0 /* Lasix-img.png */; };
 		E0E5BA5517B565D100A1EEC0 /* Lasix-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2717B565D100A1EEC0 /* Lasix-img@2x.png */; };
+		E0E888F717DA5E7E00343454 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E888F117DA5E7E00343454 /* libTestFlight.a */; };
+		E0E888F817DA5E7E00343454 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E0E888F217DA5E7E00343454 /* README.md */; };
+		E0E888F917DA5E7E00343454 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = E0E888F317DA5E7E00343454 /* release_notes.md */; };
 		E0E91ADB17BD2247009E8607 /* Signout-new2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E91AD917BD2247009E8607 /* Signout-new2.png */; };
 		E0E91ADC17BD2247009E8607 /* Signout-new2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E91ADA17BD2247009E8607 /* Signout-new2@2x.png */; };
 /* End PBXBuildFile section */
@@ -493,10 +493,6 @@
 		E049C44F17A6DDB200B00B35 /* Typhoid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Typhoid@2x.png"; sourceTree = "<group>"; };
 		E049C45017A6DDB200B00B35 /* West-Nile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "West-Nile.png"; sourceTree = "<group>"; };
 		E049C45117A6DDB200B00B35 /* West-Nile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "West-Nile@2x.png"; sourceTree = "<group>"; };
-		E04C4DB417A30FE1002A23F4 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
-		E04C4DB517A30FE1002A23F4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		E04C4DB617A30FE2002A23F4 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
-		E04C4DB717A30FE2002A23F4 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		E04C4DBB17A3103E002A23F4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		E058777E17A871CC00E42A78 /* Add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Add.png; sourceTree = "<group>"; };
 		E058777F17A871CC00E42A78 /* Add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add@2x.png"; sourceTree = "<group>"; };
@@ -667,6 +663,12 @@
 		E0E5BA2517B565D100A1EEC0 /* Imodium-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Imodium-img@2x.png"; sourceTree = "<group>"; };
 		E0E5BA2617B565D100A1EEC0 /* Lasix-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lasix-img.png"; sourceTree = "<group>"; };
 		E0E5BA2717B565D100A1EEC0 /* Lasix-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lasix-img@2x.png"; sourceTree = "<group>"; };
+		E0E888F117DA5E7E00343454 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		E0E888F217DA5E7E00343454 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		E0E888F317DA5E7E00343454 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		E0E888F417DA5E7E00343454 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		E0E888F517DA5E7E00343454 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		E0E888F617DA5E7E00343454 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		E0E91AD917BD2247009E8607 /* Signout-new2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Signout-new2.png"; sourceTree = "<group>"; };
 		E0E91ADA17BD2247009E8607 /* Signout-new2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Signout-new2@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -683,7 +685,7 @@
 				6851221517861138008DB6B6 /* Foundation.framework in Frameworks */,
 				6851221717861138008DB6B6 /* CoreGraphics.framework in Frameworks */,
 				6851221917861138008DB6B6 /* CoreData.framework in Frameworks */,
-				E04C4DB817A30FE2002A23F4 /* libTestFlight.a in Frameworks */,
+				E0E888F717DA5E7E00343454 /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -841,11 +843,11 @@
 		6851220617861138008DB6B6 = {
 			isa = PBXGroup;
 			children = (
+				E0E888F017DA5E7E00343454 /* TestFlightSDK2.0.0 */,
 				68174E2317C95254009823CE /* SystemConfiguration.framework */,
 				E0B5825217A31D8100093130 /* app icon nonretina.png */,
 				E0B5825017A31D2C00093130 /* intrepid icon.png */,
 				E04C4DBB17A3103E002A23F4 /* libz.dylib */,
-				E04C4DB317A30FE1002A23F4 /* TestFlightSDK1.2.6 */,
 				688F9E621786262800CF850C /* QuartzCore.framework */,
 				6851221A17861138008DB6B6 /* intrepidApp */,
 				6851221117861138008DB6B6 /* Frameworks */,
@@ -1150,17 +1152,6 @@
 			name = "Learn More";
 			sourceTree = "<group>";
 		};
-		E04C4DB317A30FE1002A23F4 /* TestFlightSDK1.2.6 */ = {
-			isa = PBXGroup;
-			children = (
-				E04C4DB417A30FE1002A23F4 /* libTestFlight.a */,
-				E04C4DB517A30FE1002A23F4 /* README.md */,
-				E04C4DB617A30FE2002A23F4 /* release_notes.md */,
-				E04C4DB717A30FE2002A23F4 /* TestFlight.h */,
-			);
-			path = TestFlightSDK1.2.6;
-			sourceTree = "<group>";
-		};
 		E058778517A877B900E42A78 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -1262,6 +1253,19 @@
 			name = Conditions;
 			sourceTree = "<group>";
 		};
+		E0E888F017DA5E7E00343454 /* TestFlightSDK2.0.0 */ = {
+			isa = PBXGroup;
+			children = (
+				E0E888F117DA5E7E00343454 /* libTestFlight.a */,
+				E0E888F217DA5E7E00343454 /* README.md */,
+				E0E888F317DA5E7E00343454 /* release_notes.md */,
+				E0E888F417DA5E7E00343454 /* TestFlight+AsyncLogging.h */,
+				E0E888F517DA5E7E00343454 /* TestFlight+ManualSessions.h */,
+				E0E888F617DA5E7E00343454 /* TestFlight.h */,
+			);
+			path = TestFlightSDK2.0.0;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1345,8 +1349,6 @@
 				7EE44DB2179F79BA006BA2EC /* overview-history@2x.png in Resources */,
 				7EE44DB5179F7B24006BA2EC /* culture-icon@2x.png in Resources */,
 				7E1C92CB17A1F56B00878249 /* underline@2x.png in Resources */,
-				E04C4DB917A30FE2002A23F4 /* README.md in Resources */,
-				E04C4DBA17A30FE2002A23F4 /* release_notes.md in Resources */,
 				E0B5825117A31D2C00093130 /* intrepid icon.png in Resources */,
 				E0B5825317A31D8100093130 /* app icon nonretina.png in Resources */,
 				685B6F5C17A601DC0003B5D9 /* newMenuBack@2x.png in Resources */,
@@ -1576,6 +1578,8 @@
 				B622BB9B17C6893400027D2E /* health@2x.png in Resources */,
 				B6FCB79C17CADA7200E7CFB9 /* assistance-new@2x.png in Resources */,
 				E0E3CB1617C699F300D0642A /* Signout_new@2x.png in Resources */,
+				E0E888F817DA5E7E00343454 /* README.md in Resources */,
+				E0E888F917DA5E7E00343454 /* release_notes.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1721,6 +1725,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/TestFlightSDK1.2.6\"",
+					"\"$(SRCROOT)/TestFlightSDK2.0.0\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1738,6 +1743,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/TestFlightSDK1.2.6\"",
+					"\"$(SRCROOT)/TestFlightSDK2.0.0\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

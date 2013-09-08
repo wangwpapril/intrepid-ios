@@ -58,6 +58,7 @@
 }
 
 - (void)addContent {
+    int y = 0;
     UIImageView  *descriptionImageLabel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"stethoscope-pic.png"]];
     descriptionImageLabel.frame = CGRectMake(5, 10, 25, 25);
     [scrollView addSubview:descriptionImageLabel];
@@ -88,62 +89,75 @@
     [descriptionTextContainer addSubview: descriptionText];
     [scrollView addSubview:descriptionTextContainer];
     
-    //begin creating sideEffects title label    
-    UIImageView  *sideEffectsImageLabel = [[UIImageView alloc] init];
+    //begin creating sideEffects title label
     
-    [sideEffectsImageLabel setImage:[UIImage imageNamed:@"medication-pic.png"]];
-    sideEffectsImageLabel.frame = CGRectMake(7, descriptionTextContainer.frame.origin.y + size.height + 20, 25, 25);
-    [scrollView addSubview:sideEffectsImageLabel];
-    
-    UILabel *sideEffectsLabel = [[UILabel alloc] initWithFrame:CGRectMake(45, descriptionTextContainer.frame.origin.y + size.height + 20, 120, 25)];
-    sideEffectsLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
-    sideEffectsLabel.backgroundColor = [UIColor clearColor];
-    sideEffectsLabel.textColor = UIColorFromRGB(0x423a38);
-    
-    NSString *secondTitle = @"Side Effects";
-    if ([healthItem.category isEqualToString:@"conditions"]) {
-        secondTitle = @"Symptoms";
-    }
-    sideEffectsLabel.text = secondTitle;
-    
-    //Begin sizing sideEffects text container
-    CGSize sideEffectsSize = [healthItem.details sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:15]
-                                     constrainedToSize:CGSizeMake(290, 15000)
-                                         lineBreakMode:NSLineBreakByWordWrapping];    
-    UILabel *sideEffectsText = [[UILabel alloc] initWithFrame:CGRectMake(15, 5,  290, sideEffectsSize.height + 5)];
-    sideEffectsText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
-    sideEffectsText.backgroundColor = UIColorFromRGB(0xffffff);
-    sideEffectsText.textColor = APP_TEXT_COLOR;
-    sideEffectsText.text = healthItem.details;
-    sideEffectsText.lineBreakMode = NSLineBreakByWordWrapping;
-    sideEffectsText.numberOfLines = 0;
-    
-    UILabel *sideEffectsTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, descriptionTextContainer.frame.origin.y + size.height + 55,  320, sideEffectsSize.height + 15)];
-    sideEffectsTextContainer.layer.borderWidth = 1.0f;
-    sideEffectsTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
-    
-    [scrollView addSubview: sideEffectsLabel];
-    [sideEffectsTextContainer addSubview: sideEffectsText];
-    [scrollView  addSubview:sideEffectsTextContainer];
-    
+    if ([healthItem.category isEqualToString:@"medications"]) {
+        UIImageView  *sideEffectsImageLabel = [[UIImageView alloc] init];
+
+        [sideEffectsImageLabel setImage:[UIImage imageNamed:@"medication-pic.png"]];
+        sideEffectsImageLabel.frame = CGRectMake(7, descriptionTextContainer.frame.origin.y + size.height + 20, 25, 25);
+        [scrollView addSubview:sideEffectsImageLabel];
+
+        UILabel *sideEffectsLabel = [[UILabel alloc] initWithFrame:CGRectMake(45, descriptionTextContainer.frame.origin.y + size.height + 20, 120, 25)];
+        sideEffectsLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
+        sideEffectsLabel.backgroundColor = [UIColor clearColor];
+        sideEffectsLabel.text = @"Side Effects";
+        sideEffectsLabel.textColor = UIColorFromRGB(0x423a38);
+
+        NSString *secondTitle = @"Side Effects";
+        if ([healthItem.category isEqualToString:@"conditions"]) {
+            secondTitle = @"Symptoms";
+        }
+        sideEffectsLabel.text = secondTitle;
+
+        //Begin sizing sideEffects text container
+        CGSize sideEffectsSize = [healthItem.details sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:15]
+                                         constrainedToSize:CGSizeMake(290, 15000)
+                                             lineBreakMode:NSLineBreakByWordWrapping];    
+        UILabel *sideEffectsText = [[UILabel alloc] initWithFrame:CGRectMake(15, 5,  290, sideEffectsSize.height + 5)];
+        sideEffectsText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
+        sideEffectsText.backgroundColor = UIColorFromRGB(0xffffff);
+        sideEffectsText.textColor = APP_TEXT_COLOR;
+        sideEffectsText.text = healthItem.details;
+        sideEffectsText.lineBreakMode = NSLineBreakByWordWrapping;
+        sideEffectsText.numberOfLines = 0;
+
+        UILabel *sideEffectsTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, descriptionTextContainer.frame.origin.y + size.height + 55,  320, sideEffectsSize.height + 15)];
+        sideEffectsTextContainer.layer.borderWidth = 1.0f;
+        sideEffectsTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
+
+        [scrollView addSubview: sideEffectsLabel];
+        [sideEffectsTextContainer addSubview: sideEffectsText];
+        [scrollView  addSubview:sideEffectsTextContainer];
         
+        y = sideEffectsTextContainer.frame.origin.y + sideEffectsSize.height + 20;
+        
+    }
+    
+    if ([healthItem.category isEqualToString:@"medications"]) {
+    }
+    
+    else {
+        y = descriptionTextContainer.frame.origin.y + size.height + 20;
+    }
+    
     //begin creating transmission description box and text box containers
-    UILabel *transmissionTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, sideEffectsTextContainer.frame.origin.y + sideEffectsSize.height + 20, 120, 25)];
+    UILabel *transmissionTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, y, 120, 25)];
     transmissionTitleLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
     transmissionTitleLabel.backgroundColor = [UIColor clearColor];
     transmissionTitleLabel.textColor = UIColorFromRGB(0x423a38);
     transmissionTitleLabel.text = @"Transmission";
     [scrollView addSubview:transmissionTitleLabel];
-
+    
     UIImageView  *transmissionImageLabel = [[UIImageView alloc] init];
     [transmissionImageLabel setImage:[UIImage imageNamed:@"heart-rate-pic.png"]];
-    transmissionImageLabel.frame = CGRectMake(7, sideEffectsTextContainer.frame.origin.y + sideEffectsSize.height + 20, 20, 25);
+    transmissionImageLabel.frame = CGRectMake(7, y, 20, 25);
     [scrollView addSubview:transmissionImageLabel];
-
+    
     CGSize transmissionSize = [healthItem.symptoms sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:15]
                                               constrainedToSize:CGSizeMake(290, 15000)
-                                                lineBreakMode:NSLineBreakByWordWrapping];
-
+                                                  lineBreakMode:NSLineBreakByWordWrapping];
+    
     UILabel *transmissionText = [[UILabel alloc] initWithFrame:CGRectMake(15, 5,  290, transmissionSize.height + 5)];
     transmissionText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     transmissionText.backgroundColor = UIColorFromRGB(0xffffff);
@@ -153,9 +167,9 @@
     transmissionText.numberOfLines = 0;
     
     
-    UILabel *transmissionTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, sideEffectsTextContainer.frame.origin.y + sideEffectsSize.height + 55,  320, transmissionSize.height + 15)];
+    UILabel *transmissionTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, y + 35,  320, transmissionSize.height + 15)];
     transmissionTextContainer.layer.borderWidth = 1.0f;
-    transmissionTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];        
+    transmissionTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
     
     [transmissionTextContainer addSubview:transmissionText];
     [scrollView addSubview:transmissionTextContainer];
@@ -194,13 +208,11 @@
     [scrollView addSubview:immunizationTextContainer];
     
     if ([healthItem.category isEqualToString:@"medications"]) {
-        sideEffectsLabel.text = @"Side Effects";
         transmissionTitleLabel.text = @"Storage";
         immunizationTitleLabel.text = @"General Information";
     }
     
     if (([healthItem.category isEqualToString:@"conditions"]) || ([healthItem.category isEqualToString:@"symptoms"])) {
-        sideEffectsLabel.text = @"Details";
         transmissionTitleLabel.text = @"Symptoms";
         immunizationTitleLabel.text = @"Immunization";
         
