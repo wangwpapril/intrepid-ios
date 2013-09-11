@@ -214,7 +214,7 @@
     
     if (([healthItem.category isEqualToString:@"conditions"]) || ([healthItem.category isEqualToString:@"symptoms"])) {
         transmissionTitleLabel.text = @"Symptoms";
-        immunizationTitleLabel.text = @"Immunization";
+        immunizationTitleLabel.text = @"Prevention";
         
     }
     
