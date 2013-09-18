@@ -97,7 +97,7 @@
     mexicoEmbassyDescription.backgroundColor = [UIColor clearColor];
     mexicoEmbassyDescription.textColor = [UIColor whiteColor];
     [mexicoEmbassyDescription setTextAlignment:NSTextAlignmentCenter];
-    mexicoEmbassyDescription.text = @"Security information about the country including safety, and embassy details.";
+    mexicoEmbassyDescription.text = @"Security information about the country including33 safety, and embassy details.";
     mexicoEmbassyDescription.numberOfLines = 0;
     mexicoEmbassyDescription.lineBreakMode = NSLineBreakByWordWrapping;
     [scrollView addSubview:mexicoEmbassyDescription];
