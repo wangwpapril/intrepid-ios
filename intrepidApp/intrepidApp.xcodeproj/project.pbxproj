@@ -260,6 +260,7 @@
 		E0BF3C0F17A7399D00241A52 /* THB@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BF517A7399D00241A52 /* THB@2x.png */; };
 		E0BF3C1017A7399D00241A52 /* USD.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BF617A7399D00241A52 /* USD.png */; };
 		E0BF3C1117A7399D00241A52 /* USD@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BF717A7399D00241A52 /* USD@2x.png */; };
+		E0C7887217F0A7F40067D2D7 /* cool.png in Resources */ = {isa = PBXBuildFile; fileRef = E0C7887117F0A7F40067D2D7 /* cool.png */; };
 		E0D7ECA617AD575D006E4424 /* Menu-new.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D7ECA417AD575D006E4424 /* Menu-new.png */; };
 		E0D7ECA717AD575D006E4424 /* Menu-new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D7ECA517AD575D006E4424 /* Menu-new@2x.png */; };
 		E0E3CB1617C699F300D0642A /* Signout_new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E3CB1517C699F300D0642A /* Signout_new@2x.png */; };
@@ -612,6 +613,7 @@
 		E0BF3BF517A7399D00241A52 /* THB@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "THB@2x.png"; sourceTree = "<group>"; };
 		E0BF3BF617A7399D00241A52 /* USD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = USD.png; sourceTree = "<group>"; };
 		E0BF3BF717A7399D00241A52 /* USD@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "USD@2x.png"; sourceTree = "<group>"; };
+		E0C7887117F0A7F40067D2D7 /* cool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cool.png; sourceTree = "<group>"; };
 		E0D7ECA417AD575D006E4424 /* Menu-new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-new.png"; sourceTree = "<group>"; };
 		E0D7ECA517AD575D006E4424 /* Menu-new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-new@2x.png"; sourceTree = "<group>"; };
 		E0E3CB1517C699F300D0642A /* Signout_new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Signout_new@2x.png"; sourceTree = "<group>"; };
@@ -1146,6 +1148,7 @@
 				B6FCB79B17CADA7200E7CFB9 /* assistance-new@2x.png */,
 				B622BB9417C6893400027D2E /* overview@2x.png */,
 				B622BB9517C6893400027D2E /* security@2x.png */,
+				E0C7887117F0A7F40067D2D7 /* cool.png */,
 				B622BB9717C6893400027D2E /* health@2x.png */,
 				E09DAA4E17A97EA6006AD6E9 /* close@2x.png */,
 			);
@@ -1580,6 +1583,7 @@
 				E0E3CB1617C699F300D0642A /* Signout_new@2x.png in Resources */,
 				E0E888F817DA5E7E00343454 /* README.md in Resources */,
 				E0E888F917DA5E7E00343454 /* release_notes.md in Resources */,
+				E0C7887217F0A7F40067D2D7 /* cool.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
