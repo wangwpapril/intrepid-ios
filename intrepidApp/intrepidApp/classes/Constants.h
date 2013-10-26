@@ -13,7 +13,6 @@
 #define APP_FONT @"ProximaNova-Regular"
 //#define APP_FONT_BACKUP @"Helvetica Neue"
 
-
 #define PARA_SMALL 18
 #define PARA_MEDIUM 24
 #define PARA_LARGE 30

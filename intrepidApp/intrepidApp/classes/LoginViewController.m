@@ -10,6 +10,8 @@
 #import "LoginViewController.h"
 #import "Constants.h"
 
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
 @interface LoginViewController ()
 
 #define kOFFSET_FOR_KEYBOARD 80.0
@@ -54,8 +56,12 @@
     self.password.delegate = self;
     
     //set background image
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login-background.png"]];
-    [self.view addSubview:backgroundView];
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"login-background.png"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
     UIImage *buttonImage = [[UIImage imageNamed:@"rounded-rectangle-.png"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
     [loginButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
@@ -140,16 +146,35 @@
     forgotPassword.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:forgotPassword];
     
-    legal.frame = CGRectMake(240, -5, 100, 50);
+    legal.frame = CGRectMake(240, 5, 100, 50);
     legal.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
     legal.backgroundColor = [UIColor clearColor];
     legal.titleLabel.textAlignment = NSTextAlignmentCenter;
     [legal setTitleColor:[UIColor colorWithRed:189/255.0f green:185/255.0f blue:177/255.0f alpha:1.0f] forState:UIControlStateNormal];
     [self.view addSubview:legal];
     
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        
+    } else {
+        [self moveAllSubviewsDown];
+    }
+    
     
 	// Do any additional setup after loading the view.
 
+}
+- (void) moveAllSubviewsDown{
+    float barHeight = 45.0;
+    for (UIView *view in self.view.subviews) {
+        
+        if ([view isKindOfClass:[UIScrollView class]]) {
+            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height - barHeight);
+        } else {
+            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height);
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning

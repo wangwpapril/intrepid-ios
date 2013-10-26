@@ -50,6 +50,7 @@
     // ...
     [self customizeAppearance];
     
+    
     TripManager *manager = [TripManager getInstance];
     manager.managedObjectContext = self.managedObjectContext;
     

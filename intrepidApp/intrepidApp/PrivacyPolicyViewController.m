@@ -28,8 +28,12 @@
 {
     [super viewDidLoad];
     
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"signUp-background.png"]];
-    [self.view addSubview:backgroundView];
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"signup-background.png"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
 //    CGRect rect=CGRectMake(0, 0, 320, 520);
 //    scrollView = [[UIScrollView alloc] initWithFrame:rect];

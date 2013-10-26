@@ -33,8 +33,16 @@
 //    CGFloat contentOffset = 150.0f;
     
     //set background
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login-background.png"]];
-    [self.view addSubview:backgroundView];
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"login-background@2x.png"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
+//    [[UIImage imageNamed:@"login-image@2x.png"] drawInRect:self.view.bounds];
+//    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:];
+//    [self.view addSubview:backgroundView];
 
     //implement scrollview
     scrollView.delegate = self;

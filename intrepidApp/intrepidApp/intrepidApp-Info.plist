@@ -57,6 +57,8 @@
 	</array>
 	<key>UIStatusBarTintParameters</key>
 	<dict>
+		<key></key>
+		<string></string>
 		<key>UINavigationBar</key>
 		<dict>
 			<key>Style</key>

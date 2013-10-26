@@ -12,6 +12,8 @@
 #import "SignUpViewController.h"
 #import "Constants.h"
 
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
 @interface SignUpViewController ()
 
 @end
@@ -50,8 +52,12 @@
     [super viewDidLoad];
     
     //set up background
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"signUp-background.png"]];
-    [self.view addSubview:backgroundView];
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"signup-background.png"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     
@@ -129,8 +135,27 @@
     privacyPolicy.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [self.view addSubview:privacyPolicy];
     
+//    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+//        
+//        self.edgesForExtendedLayout = UIRectEdgeNone;
+//        
+//    } else {
+//        [self moveAllSubviewsDown];
+//    }
+    
     
 	// Do any additional setup after loading the view.
+}
+- (void) moveAllSubviewsDown{
+    float barHeight = 45.0;
+    for (UIView *view in self.view.subviews) {
+        
+        if ([view isKindOfClass:[UIScrollView class]]) {
+            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height - barHeight);
+        } else {
+            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height);
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning

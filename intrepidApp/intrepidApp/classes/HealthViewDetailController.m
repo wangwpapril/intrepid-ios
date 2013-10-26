@@ -11,6 +11,8 @@
 #import "Constants.h"
 #import <QuartzCore/QuartzCore.h>
 
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
 @implementation HealthViewDetailController
 
 @synthesize healthItemNameLabel;
@@ -54,7 +56,27 @@
     [self.view addSubview:healthItemTitleLabel];
     [self.view addSubview:scrollView];
     
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        
+    } else {
+        [self moveAllSubviewsDown];
+    }
+    
 	// Do any additional setup after loading the view.
+}
+
+- (void) moveAllSubviewsDown{
+    float barHeight = 45.0;
+    for (UIView *view in self.view.subviews) {
+        
+        if ([view isKindOfClass:[UIScrollView class]]) {
+            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height - barHeight);
+        } else {
+            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height);
+        }
+    }
 }
 
 - (void)addContent {

@@ -5,6 +5,7 @@
 //  Created by Madelaine Page on 2013-07-30.
 //  Copyright (c) 2013 JonCarrHarris Consulting. All rights reserved.
 //
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 #import "SettingsViewController.h"
 #import "Constants.h"
@@ -42,8 +43,12 @@
     self.view.tag = 8;
     self.navigationItem.title = @"Settings";
     
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"signUp-background.png"]];
-    [self.view addSubview:backgroundView];
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"signup-background.png"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
     [editPhoto setBackgroundImage:[UIImage imageNamed:@"Add@2x.png"]
                         forState:UIControlStateNormal];
@@ -146,12 +151,20 @@
     [self.view addSubview:underlinePasswordConfirmation];
     
     //Initalize the Sign Out button
-    UIImage *buttonImage = [[UIImage imageNamed:@"Signout_new@2x.png"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
+    UIImage *buttonImage = [[UIImage imageNamed:@"Signout_new.png"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
     [signOutButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [signOutButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     signOutButton.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
     signOutButton.frame = CGRectMake(68, underlinePasswordConfirmation.frame.origin.y + 25, 183, 36);
     [self.view addSubview:signOutButton];
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        
+    } else {
+        [self moveAllSubviewsDown];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -176,6 +189,19 @@
         newMedia = NO;
     }
 }
+
+- (void) moveAllSubviewsDown{
+    float barHeight = 45.0;
+    for (UIView *view in self.view.subviews) {
+        
+        if ([view isKindOfClass:[UIScrollView class]]) {
+            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height - barHeight);
+        } else {
+            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height);
+        }
+    }
+}
+
 #pragma mark -
 #pragma mark UIImagePickerControllerDelegate
 

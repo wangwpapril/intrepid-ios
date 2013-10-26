@@ -8,6 +8,8 @@
 
 #import "TermsOfServiceViewController.h"
 
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
 @interface TermsOfServiceViewController ()
 
 @end
@@ -27,8 +29,12 @@
 {
     [super viewDidLoad];
     
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"signUp-background.png"]];
-    [self.view addSubview:backgroundView];
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"signup-background.png"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
     CGRect rect=CGRectMake(0, 0, 320, self.view.frame.size.height);
     scrollView = [[UIScrollView alloc] initWithFrame:rect];
@@ -51,6 +57,25 @@
     
     [self.view addSubview:scrollView];
     scrollView.contentSize = CGSizeMake(320, termsOfService.frame.size.height);
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        
+    } else {
+        [self moveAllSubviewsDown];
+    }
+}
+- (void) moveAllSubviewsDown{
+    float barHeight = 45.0;
+    for (UIView *view in self.view.subviews) {
+        
+        if ([view isKindOfClass:[UIScrollView class]]) {
+            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height - barHeight);
+        } else {
+            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height);
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning
