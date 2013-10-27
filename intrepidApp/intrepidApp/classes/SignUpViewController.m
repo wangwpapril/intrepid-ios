@@ -80,6 +80,7 @@
     name.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
     name.textColor = UIColorFromRGB(0xe7eee2);
     name.placeholder = @"NAME";
+    [name setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [name setReturnKeyType:UIReturnKeyDone];
     [self.view addSubview:name];
     
@@ -89,6 +90,7 @@
     email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
     email.textColor = UIColorFromRGB(0xe7eee2);
     email.placeholder = @"EMAIL";
+    [email setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [email setReturnKeyType:UIReturnKeyDone];
     [self.view addSubview:email];
     
@@ -98,6 +100,7 @@
     password.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
     password.textColor = UIColorFromRGB(0xe7eee2);
     password.placeholder = @"PASSWORD";
+    [password setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [password setReturnKeyType:UIReturnKeyDone];
     [self.view addSubview:password];
     

@@ -12,6 +12,8 @@
 #import "Constants.h"
 #import <QuartzCore/QuartzCore.h>
 
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
 @implementation EmbassyDetailedViewController
 
 
@@ -58,6 +60,15 @@
     [self.view addSubview:embassyDetailedItemTitleLabel];
     [self addContent];
     [self.view addSubview:scrollView];
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        
+        
+    } else {
+        [self moveAllSubviewsDown];
+    }
  
 	// Do any additional setup after loading the view.
 }
@@ -162,7 +173,19 @@
     [embassyTextContainer addSubview:notesText];
     [scrollView addSubview:embassyTextContainer];
     
-    scrollView.contentSize = CGSizeMake(320, notesText.frame.origin.y + notesSize.height +100);
+    scrollView.contentSize = CGSizeMake(320, notesText.frame.origin.y + notesSize.height + 115);
+}
+
+- (void) moveAllSubviewsDown{
+    float barHeight = 45.0;
+    for (UIView *view in self.view.subviews) {
+        
+        if ([view isKindOfClass:[UIScrollView class]]) {
+            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height - barHeight);
+        } else {
+            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height);
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning

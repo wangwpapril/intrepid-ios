@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "intrepidApp/classes/SignUpViewController.m"
-            timestampString = "404516997.824297"
+            timestampString = "404527714.638715"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "255"
-            endingLineNumber = "255"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
             landmarkName = "@implementation SignUpViewController"
             landmarkType = "3">
          </BreakpointContent>

@@ -110,8 +110,9 @@
     [self.view addSubview:tagline];
     
     email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
-    email.textColor = UIColorFromRGB(0xe7eee2);
+    email.textColor = [UIColor colorWithRed: 66.0/255 green: 58.0/255 blue: 56.0/255 alpha: 1.0];
     email.placeholder = @"EMAIL";
+    [email setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [email setReturnKeyType:UIReturnKeyDone];
     [self.view addSubview:email];
     
@@ -126,6 +127,8 @@
     password.textColor = UIColorFromRGB(0xe7eee2);
     [password setReturnKeyType:UIReturnKeyDone];
     password.placeholder =@"PASSWORD";
+    [password setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+
     password.secureTextEntry = YES;
     [self.view addSubview:password];
     

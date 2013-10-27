@@ -97,7 +97,7 @@
                           lineBreakMode:NSLineBreakByWordWrapping];
     UILabel *descriptionText = [[UILabel alloc] initWithFrame:CGRectMake(15, 5,  290, size.height + 5)];
     descriptionText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
-    descriptionText.backgroundColor = UIColorFromRGB(0xffffff);
+    descriptionText.backgroundColor = [UIColor clearColor];
     descriptionText.textColor = APP_TEXT_COLOR;
     descriptionText.text = healthItem.description;
     descriptionText.lineBreakMode = NSLineBreakByWordWrapping;
@@ -106,6 +106,8 @@
     UILabel *descriptionTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, 45,  320, size.height + 15)];
     descriptionTextContainer.layer.borderWidth = 1.0f;
     descriptionTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
+    descriptionTextContainer.backgroundColor = [UIColor clearColor];
+
     
     [scrollView addSubview:descriptionLabel];
     [descriptionTextContainer addSubview: descriptionText];
@@ -138,7 +140,7 @@
                                              lineBreakMode:NSLineBreakByWordWrapping];    
         UILabel *sideEffectsText = [[UILabel alloc] initWithFrame:CGRectMake(15, 5,  290, sideEffectsSize.height + 5)];
         sideEffectsText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
-        sideEffectsText.backgroundColor = UIColorFromRGB(0xffffff);
+        sideEffectsText.backgroundColor = [UIColor clearColor];
         sideEffectsText.textColor = APP_TEXT_COLOR;
         sideEffectsText.text = healthItem.details;
         sideEffectsText.lineBreakMode = NSLineBreakByWordWrapping;
@@ -147,6 +149,8 @@
         UILabel *sideEffectsTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, descriptionTextContainer.frame.origin.y + size.height + 55,  320, sideEffectsSize.height + 15)];
         sideEffectsTextContainer.layer.borderWidth = 1.0f;
         sideEffectsTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
+        sideEffectsText.backgroundColor = [UIColor clearColor];
+
 
         [scrollView addSubview: sideEffectsLabel];
         [sideEffectsTextContainer addSubview: sideEffectsText];
@@ -182,7 +186,7 @@
     
     UILabel *transmissionText = [[UILabel alloc] initWithFrame:CGRectMake(15, 5,  290, transmissionSize.height + 5)];
     transmissionText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
-    transmissionText.backgroundColor = UIColorFromRGB(0xffffff);
+    transmissionText.backgroundColor = [UIColor clearColor];
     transmissionText.textColor = APP_TEXT_COLOR;
     transmissionText.text = healthItem.symptoms;
     transmissionText.lineBreakMode = NSLineBreakByWordWrapping;
@@ -191,6 +195,8 @@
     
     UILabel *transmissionTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, y + 35,  320, transmissionSize.height + 15)];
     transmissionTextContainer.layer.borderWidth = 1.0f;
+    transmissionTextContainer.backgroundColor = [UIColor clearColor];
+
     transmissionTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
     
     [transmissionTextContainer addSubview:transmissionText];
@@ -215,7 +221,7 @@
                                                  lineBreakMode:NSLineBreakByWordWrapping];
     UILabel *immunizationText = [[UILabel alloc] initWithFrame:CGRectMake(15, 5,  290, immunizationSize.height + 5)];
     immunizationText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
-    immunizationText.backgroundColor = UIColorFromRGB(0xffffff);
+    immunizationText.backgroundColor = [UIColor clearColor];
     immunizationText.textColor = APP_TEXT_COLOR;
     immunizationText.text = healthItem.immunization;
     immunizationText.lineBreakMode = NSLineBreakByWordWrapping;
@@ -224,7 +230,7 @@
     UILabel *immunizationTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, transmissionTextContainer.frame.origin.y + transmissionSize.height + 55,  320, immunizationSize.height + 15)];
     immunizationTextContainer.layer.borderWidth = 1.0f;
     immunizationTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
-    
+    immunizationTextContainer.backgroundColor = [UIColor clearColor];
     
     [immunizationTextContainer addSubview:immunizationText];
     [scrollView addSubview:immunizationTextContainer];
@@ -240,7 +246,7 @@
         
     }
     
-    scrollView.contentSize = CGSizeMake(320, immunizationTextContainer.frame.origin.y + immunizationTextContainer.frame.size.height + 36);
+    scrollView.contentSize = CGSizeMake(320, immunizationTextContainer.frame.origin.y + immunizationTextContainer.frame.size.height + 50);
     
 }
 

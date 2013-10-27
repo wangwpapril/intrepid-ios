@@ -99,6 +99,7 @@
     name.frame = CGRectMake(200, 150, 135, 34);
     name.textColor = [UIColor whiteColor];
     name.placeholder = @"Your Name";
+    [name setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [name setReturnKeyType:UIReturnKeyDone];
     name.delegate = self;
     [self.view addSubview:name];
@@ -113,6 +114,7 @@
     email.frame = CGRectMake(200, 200, 135, 34);
     email.textColor = [UIColor whiteColor];
     email.placeholder = @"Your Email";
+    [email setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [email setReturnKeyType:UIReturnKeyDone];
     email.delegate = self;
     [self.view addSubview:email];
@@ -127,6 +129,7 @@
     password.frame = CGRectMake(200, 250, 135, 34);
     password.textColor = [UIColor whiteColor];
     password.placeholder = @"Your Password";
+    [password setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [password setReturnKeyType:UIReturnKeyDone];
     password.delegate = self;
     [self.view addSubview:password];
@@ -141,6 +144,7 @@
     passwordConfirmation.frame = CGRectMake(200, 300, 135, 34);
     passwordConfirmation.textColor = [UIColor whiteColor];
     passwordConfirmation.placeholder = @"Your Password";
+    [passwordConfirmation setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [passwordConfirmation setReturnKeyType:UIReturnKeyDone];
     passwordConfirmation.delegate = self;
     [self.view addSubview:passwordConfirmation];
