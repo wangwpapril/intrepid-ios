@@ -88,6 +88,8 @@
 		B622BB9B17C6893400027D2E /* health@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B622BB9717C6893400027D2E /* health@2x.png */; };
 		B6DB0C4717AE2C5C001694B0 /* AssistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DB0C4617AE2C5C001694B0 /* AssistanceViewController.m */; };
 		B6FCB79C17CADA7200E7CFB9 /* assistance-new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6FCB79B17CADA7200E7CFB9 /* assistance-new@2x.png */; };
+		DC45AEED181E007100ABC12C /* signout-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45AEEC181E007100ABC12C /* signout-button@2x.png */; };
+		DC45AEEF181E025800ABC12C /* signout-button2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45AEEE181E025800ABC12C /* signout-button2@2x.png */; };
 		E0203E5B17ABF93D000F8AA2 /* Call-Intrepid.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5117ABF93D000F8AA2 /* Call-Intrepid.png */; };
 		E0203E5C17ABF93D000F8AA2 /* Call-Intrepid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5217ABF93D000F8AA2 /* Call-Intrepid@2x.png */; };
 		E0203E5D17ABF93D000F8AA2 /* Call-Local.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5317ABF93D000F8AA2 /* Call-Local.png */; };
@@ -438,6 +440,8 @@
 		B6DB0C4517AE2C5C001694B0 /* AssistanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssistanceViewController.h; sourceTree = "<group>"; };
 		B6DB0C4617AE2C5C001694B0 /* AssistanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssistanceViewController.m; sourceTree = "<group>"; };
 		B6FCB79B17CADA7200E7CFB9 /* assistance-new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "assistance-new@2x.png"; sourceTree = "<group>"; };
+		DC45AEEC181E007100ABC12C /* signout-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signout-button@2x.png"; sourceTree = "<group>"; };
+		DC45AEEE181E025800ABC12C /* signout-button2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signout-button2@2x.png"; sourceTree = "<group>"; };
 		E0203E5117ABF93D000F8AA2 /* Call-Intrepid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Call-Intrepid.png"; sourceTree = "<group>"; };
 		E0203E5217ABF93D000F8AA2 /* Call-Intrepid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Call-Intrepid@2x.png"; sourceTree = "<group>"; };
 		E0203E5317ABF93D000F8AA2 /* Call-Local.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Call-Local.png"; sourceTree = "<group>"; };
@@ -1158,6 +1162,8 @@
 		E058778517A877B900E42A78 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				DC45AEEE181E025800ABC12C /* signout-button2@2x.png */,
+				DC45AEEC181E007100ABC12C /* signout-button@2x.png */,
 				E0E3CB1517C699F300D0642A /* Signout_new@2x.png */,
 				E058778617A877C200E42A78 /* divider-mid-1.png */,
 				E058778717A877C200E42A78 /* divider-mid-1@2x.png */,
@@ -1447,6 +1453,7 @@
 				E0203E5D17ABF93D000F8AA2 /* Call-Local.png in Resources */,
 				E0203E5E17ABF93D000F8AA2 /* Call-Local@2x.png in Resources */,
 				E0203E5F17ABF93D000F8AA2 /* IMG.png in Resources */,
+				DC45AEED181E007100ABC12C /* signout-button@2x.png in Resources */,
 				E0203E6017ABF93D000F8AA2 /* IMG@2x.png in Resources */,
 				E0203E6117ABF93D000F8AA2 /* Map.png in Resources */,
 				E0203E6217ABF93D000F8AA2 /* Map@2x.png in Resources */,
@@ -1508,6 +1515,7 @@
 				E0E5BA3917B565D100A1EEC0 /* Diarrhea-img@2x.png in Resources */,
 				E0E5BA3A17B565D100A1EEC0 /* Effexor-img.png in Resources */,
 				E0E5BA3B17B565D100A1EEC0 /* Effexor-img@2x.png in Resources */,
+				DC45AEEF181E025800ABC12C /* signout-button2@2x.png in Resources */,
 				E0E5BA3C17B565D100A1EEC0 /* Erythomycin-img.png in Resources */,
 				E0E5BA3D17B565D100A1EEC0 /* Erythomycin-img@2x.png in Resources */,
 				E0E5BA3E17B565D100A1EEC0 /* Estradiol-img.png in Resources */,

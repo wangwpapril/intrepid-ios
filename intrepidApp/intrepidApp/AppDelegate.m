@@ -32,9 +32,26 @@
       [UIFont fontWithName:@"ProximaNova-Bold" size:18],
       UITextAttributeFont, nil]];
     
-    UIImage * backButtonImage = [UIImage imageNamed: @"back-button.png"];
-    backButtonImage = [backButtonImage stretchableImageWithLeftCapWidth: 30.0 topCapHeight: 50.0];
-    [[UIBarButtonItem appearance] setBackButtonBackgroundImage: backButtonImage forState: UIControlStateNormal barMetrics: UIBarMetricsDefault];
+    //CHECK IF iOS7 OR PREV FOR BACK BUTTON ARROW
+    
+    UIImage *temp=nil;
+    temp = [temp stretchableImageWithLeftCapWidth: 30.0 topCapHeight: 50.0];
+    
+    if([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0)
+    {
+        temp = [UIImage imageNamed:@"back-button.png"];
+        [[UIBarButtonItem appearance] setBackButtonBackgroundImage: temp forState: UIControlStateNormal barMetrics: UIBarMetricsDefault];
+        [[UIBarButtonItem appearance] setBackButtonBackgroundImage: temp forState: UIControlStateNormal barMetrics: UIBarMetricsDefault];
+
+
+    }
+    else
+    {
+        temp = [[UIImage imageNamed:@"back-button.png"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
+        [[UINavigationBar appearance] setBackIndicatorImage:temp];
+        [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:temp];
+
+    }
 
 }
 
