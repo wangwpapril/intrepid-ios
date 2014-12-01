@@ -18,14 +18,12 @@
 
 @implementation TripsViewController
 
-//@synthesize mController;
 @synthesize tableList;
 @synthesize tripsArray;
 @synthesize filteredArray;
 @synthesize searchBar;
 @synthesize xButton;
 @synthesize cities;
-//@synthesize selectedItem;
 
 - (void)viewDidLoad
 {

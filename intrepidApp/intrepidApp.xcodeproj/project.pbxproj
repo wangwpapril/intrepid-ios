@@ -26,7 +26,6 @@
 		6851223117861138008DB6B6 /* intrepidApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6851222F17861138008DB6B6 /* intrepidApp.xcdatamodeld */; };
 		6851223F17861152008DB6B6 /* HealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6851223E17861152008DB6B6 /* HealthViewController.m */; };
 		6854D37F17B6F2E7006CC3D2 /* ScrollerTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6854D37E17B6F2E7006CC3D2 /* ScrollerTabViewController.m */; };
-		68558361179CB4C90043D473 /* SliderTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68558360179CB4C90043D473 /* SliderTabViewController.m */; };
 		6855EAB0178E4D5E000C4C57 /* mexicoBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6855EAAF178E4D5E000C4C57 /* mexicoBack@2x.png */; };
 		685B6F5C17A601DC0003B5D9 /* newMenuBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 685B6F5B17A601DC0003B5D9 /* newMenuBack@2x.png */; };
 		685B6F5F17A60B430003B5D9 /* TripCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 685B6F5E17A60B430003B5D9 /* TripCell.m */; };
@@ -350,8 +349,6 @@
 		6851223E17861152008DB6B6 /* HealthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthViewController.m; path = classes/HealthViewController.m; sourceTree = "<group>"; };
 		6854D37D17B6F2E7006CC3D2 /* ScrollerTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollerTabViewController.h; path = classes/ScrollerTabViewController.h; sourceTree = "<group>"; };
 		6854D37E17B6F2E7006CC3D2 /* ScrollerTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollerTabViewController.m; path = classes/ScrollerTabViewController.m; sourceTree = "<group>"; };
-		6855835F179CB4C90043D473 /* SliderTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SliderTabViewController.h; path = classes/SliderTabViewController.h; sourceTree = "<group>"; };
-		68558360179CB4C90043D473 /* SliderTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SliderTabViewController.m; path = classes/SliderTabViewController.m; sourceTree = "<group>"; };
 		6855EAAF178E4D5E000C4C57 /* mexicoBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mexicoBack@2x.png"; sourceTree = "<group>"; };
 		685B6F5B17A601DC0003B5D9 /* newMenuBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newMenuBack@2x.png"; sourceTree = "<group>"; };
 		685B6F5D17A60B430003B5D9 /* TripCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripCell.h; path = classes/TripCell.h; sourceTree = "<group>"; };
@@ -721,12 +718,10 @@
 				6835EC151789439600A57F86 /* MenuController.m */,
 				68E4240217926E1E00431908 /* IntreSearchBar.h */,
 				68E4240317926E1E00431908 /* IntreSearchBar.m */,
-				6855835F179CB4C90043D473 /* SliderTabViewController.h */,
-				68558360179CB4C90043D473 /* SliderTabViewController.m */,
 				684BB607179F539C004C44C9 /* SlidingTextView.h */,
+				684BB608179F539C004C44C9 /* SlidingTextView.m */,
 				6854D37D17B6F2E7006CC3D2 /* ScrollerTabViewController.h */,
 				6854D37E17B6F2E7006CC3D2 /* ScrollerTabViewController.m */,
-				684BB608179F539C004C44C9 /* SlidingTextView.m */,
 				68B997E317A2058A00AD62ED /* WebViewController.h */,
 				68B997E417A2058A00AD62ED /* WebViewController.m */,
 				68174E2017C951D5009823CE /* Reachability.h */,
@@ -1587,7 +1582,6 @@
 				7E34777C1791E79300FB86DC /* LoginViewController.m in Sources */,
 				7E34777F1791E7A700FB86DC /* SignUpViewController.m in Sources */,
 				68E4240417926E1E00431908 /* IntreSearchBar.m in Sources */,
-				68558361179CB4C90043D473 /* SliderTabViewController.m in Sources */,
 				684BB605179F5143004C44C9 /* OverViewViewController.m in Sources */,
 				684BB609179F539C004C44C9 /* SlidingTextView.m in Sources */,
 				68DBAE60179F6CC300D1DE0B /* CurrencyCell.m in Sources */,

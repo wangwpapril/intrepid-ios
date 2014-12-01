@@ -19,36 +19,17 @@
 
 @implementation HealthViewController
 
-//@synthesize tabArray;
-//@synthesize largeLetterArray;
 @synthesize contentArray;
 @synthesize tableArray;
-//@synthesize tableArray;
-//@synthesize currentTab;
-//@synthesize previousTab;
-//@synthesize mController;
-//@synthesize line;
-
 @synthesize selectedItem;
-//@synthesize healthItemArray;
 @synthesize filteredHealthItemArray;
-
-//@synthesize navLabelC;
-//@synthesize navLabelM;
-//@synthesize navLabelS;
 @synthesize searchBar;
 @synthesize xButton;
-
-//@synthesize tableList;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.view.tag = 1;
-    //    self.navigationItem.hidesBackButton = YES;
-    //
-    //    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
-    //    // background
     UIImage *backgroundImage = [UIImage imageNamed:@"mexicoBackBigger.png"];
     CGRect imageFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     CGRect whiteFrame = CGRectMake(0, 79, self.view.frame.size.width, self.view.frame.size.height - 79);
@@ -155,115 +136,6 @@
     
     self.filteredHealthItemArray = [NSMutableArray new];
 }
-
-//- (void)tabSelected:(id)sender {
-//    UIButton *clickedTab = (UIButton *)sender;
-//    [self switchTabs:clickedTab.tag];
-//}
-//
-//- (void) swipedRight:(UISwipeGestureRecognizer*)swipeGesture {
-//    NSInteger newTag = currentTab - 1;
-//    if (newTag >= 0) {
-//        [self switchTabs:newTag];
-//    }
-//}
-//
-//- (void) swipedLeft:(UISwipeGestureRecognizer*)swipeGesture {
-//    NSInteger newTag = currentTab + 1;
-//    if (newTag <= 1) {
-//        [self switchTabs:newTag];
-//    }
-//}
-//
-//
-//-(void)switchTabs:(NSInteger)newTag{
-//    NSInteger previousTab = currentTab;
-//    NSInteger index = 0;
-//    NSInteger lineX;
-//
-//    // handle tabs
-//    for (UIButton *tab in tabArray) {
-//
-//        // capital letter
-////        UILabel *capitalLetter = ((UILabel *)[largeLetterArray objectAtIndex:index]);
-//        // select that tab
-//
-//        if (tab.tag == newTag) {
-//            [tab setTitleColor:APP_TOGGLE_SELECTED forState:UIControlStateNormal];
-////            [capitalLetter setTextColor:APP_TOGGLE_SELECTED];
-//            lineX = 160 * index + 38;
-//
-//        }
-//
-//        // make sure tab is inactive
-//        else {
-//            [tab setTitleColor:APP_TOGGLE_UNSELECTED forState:UIControlStateNormal];
-////            [capitalLetter setTextColor:APP_TOGGLE_UNSELECTED];
-//        }
-//        index++;
-//    }
-//
-//    if (currentTab !=newTag) {
-//        [searchBar resignFirstResponder];
-////        [self removeText];
-//        line.frame = CGRectMake(lineX, 27, 1, 1);
-//
-//        for (UIButton * tab in tabArray) {
-//            tab.userInteractionEnabled = NO;
-//        }
-//
-//        currentTab = newTag;
-//
-//        // handle views sliding
-//
-// //       UIView *tableToBe = ((UIView *)[tableArray objectAtIndex:currentTab]);
-//
-////        tableToBe.frame = CGRectMake(0, 79, 320, self.view.frame.size.height - 79);
-//
-////        if (currentTab == 0 || currentTab == 2) {
-////            NSInteger position = (currentTab - 1) * 320;
-////            if (position < 0) {
-////            }
-////            tableToBe.frame = CGRectMake(position, 79, 320, self.view.frame.size.height - 79);
-////        }
-////        else {
-////            if (previousTab == 0) {
-////                tableToBe.frame = CGRectMake(320, 79, 320, self.view.frame.size.height - 79);
-////            }
-////            else {
-////                tableToBe.frame = CGRectMake(-320, 79, 320, self.view.frame.size.height - 79);
-////            }
-////        }
-//
-//        [UIView animateWithDuration:0.3 animations:^{
-//            line.frame = CGRectMake(lineX, 27, 80, 1);
-//            NSInteger offset;
-//            if (currentTab == 0) {
-//                offset = 320;
-//            }
-//            else {
-//                offset = -320;
-//            }
-//
-//            [self.view insertSubview:[tableArray objectAtIndex:currentTab] belowSubview:mController.menu];
-//            for (UITableView *tableView in tableArray) {
-//                [tableView setFrame:CGRectMake(tableView.frame.origin.x + offset, 79, 320, self.view.frame.size.height - 79)];
-//            }
-//        }
-//                         completion:^(BOOL finished){
-//                             [[tableArray objectAtIndex:previousTab] removeFromSuperview];
-//                             for (UIButton * tab in tabArray) {
-//                                 tab.userInteractionEnabled = YES;
-//                             }
-//                             [self removeText];
-//                         }];
-//    }
-//}
-
-//- (void)scrollViewDidScroll:(UIScrollView *)sender
-//{
-//    [super scrollViewDidScroll:sender];
-//}
 
 # pragma mark - TableView Methods
 
@@ -379,7 +251,6 @@
     }
     else {
         [filteredHealthItemArray removeAllObjects];
-//        [[tableArray objectAtIndex:self.currentTab] reloadData];
     }
 }
 

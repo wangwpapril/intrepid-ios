@@ -16,13 +16,7 @@
 
 @implementation EmbassyDetailedViewController
 
-
 @synthesize embassyItem;
-//@synthesize embassyDetailedItemNameLabel;
-//@synthesize embassyDetailedItemTitleLabel;
-//@synthesize embassyDetailedItem;
-
-
 
 - (void)viewDidLoad
 {
@@ -65,13 +59,10 @@
         
         self.edgesForExtendedLayout = UIRectEdgeNone;
         
-        
     } else {
         [self moveAllSubviewsDown];
     }
- 
-	// Do any additional setup after loading the view.
-}
+ }
 
 - (void)addContent {
     

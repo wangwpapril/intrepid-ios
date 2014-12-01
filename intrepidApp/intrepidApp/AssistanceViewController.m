@@ -10,10 +10,6 @@
 #import "MenuController.h"
 #import "Constants.h"
 
-@interface AssistanceViewController ()
-
-@end
-
 @implementation AssistanceViewController
 
 @synthesize mController;
@@ -22,9 +18,6 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
     return self;
 }
 
@@ -94,11 +87,7 @@
 
 -(IBAction)callAssistance:(id) sender
 {
-    NSString *phoneNumber = @"telprompt://14166463107";
-    
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt://14166463107"]];
-    
-    NSLog(@"Call");
 }
 
 - (void)didReceiveMemoryWarning

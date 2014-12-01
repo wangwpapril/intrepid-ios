@@ -9,12 +9,9 @@
 #import "SecurityViewController.h"
 #import "SlidingTextView.h"
 #import "EmbassyCell.h"
-//#import "EmbassyItem.h"
 #import "Constants.h"
 #import "EmbassyDetailedViewController.h"
 #import "EmbassyEntity.h"
-//#import "CityEntity.h"
-//#import "EmbassyDetailedContent.h"
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
@@ -23,14 +20,12 @@
 
 @synthesize tableList;
 @synthesize embassyArray;
-//@synthesize firstLoad;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.view.tag = 2;
 
-//    EmbassyDetailedContent *content = [[EmbassyDetailedContent alloc] init];
     embassyArray = [self.mController.city.embassies allObjects]; // makes array from set
     self.navigationItem.title = @"Security";
     
@@ -69,7 +64,6 @@
     } else {
         [self moveAllSubviewsDown];
     }
-
 }
 
 - (void) moveAllSubviewsDown{

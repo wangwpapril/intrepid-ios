@@ -11,30 +11,15 @@
 #import "HealthItem.h"
 #import "IntreSearchBar.h"
 #import "ScrollerTabViewController.h"
-#import "SliderTabViewController.h"
 
 
 @interface HealthViewController : ScrollerTabViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
 @property (nonatomic, strong) NSMutableArray *contentArray;
-//@property (nonatomic, strong) NSMutableArray *largeLetterArray;
-//@property (nonatomic, strong) NSMutableArray *tabArray;
 @property (nonatomic, strong) NSMutableArray *tableArray;
-//@property (nonatomic) NSInteger currentTab;
-//@property (nonatomic) NSInteger previousTab;
-//@property (nonatomic, strong) UILabel *line;
-//@property (nonatomic, strong) MenuController *mController;
-//@property (nonatomic, strong) UITableView *tableList;
-
-//@property (strong,nonatomic) NSArray *healthItemArray;
 @property (strong,nonatomic) NSMutableArray *filteredHealthItemArray;
 @property (nonatomic, strong) IntreSearchBar * searchBar;
 @property (nonatomic, strong) UIButton *xButton;
 @property (nonatomic, strong) HealthItem *selectedItem;
-
-//@property (nonatomic, strong) IBOutlet UILabel *navLabelC;
-//@property (nonatomic, strong) IBOutlet UILabel *navLabelS;
-//@property (nonatomic, strong) IBOutlet UILabel *navLabelM;
-
 
 @end

@@ -12,12 +12,10 @@
 
 @interface TripsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
-//@property (nonatomic, strong) MenuController *mController;
 @property (nonatomic, strong) UITableView *tableList;
 @property (strong, nonatomic) NSArray *tripsArray;
 @property (strong, nonatomic) NSMutableArray *filteredArray;
 @property (nonatomic, strong) IntreSearchBar * searchBar;
 @property (nonatomic, strong) UIButton *xButton;
 @property (nonatomic, strong) NSArray *cities;
-//@property (nonatomic, strong) NSString *selectedItem;
 @end

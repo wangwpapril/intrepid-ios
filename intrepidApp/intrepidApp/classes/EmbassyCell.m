@@ -20,7 +20,6 @@
     if (self) {
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator; // arrow
         [self initializeViews];
-        // Initialization code
     }
     return self;
 }
@@ -41,15 +40,12 @@
 - (void)setupWithImageName:(NSString *)image withCountry:(NSString *)country{
     flagLabel.image = [UIImage imageNamed:image];
     countryLabel.text = country;
-//    valueLabel.text = value;
 }
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end

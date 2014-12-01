@@ -13,7 +13,6 @@
 
 @property (nonatomic, strong) UIImageView *flagLabel;
 @property (nonatomic, strong) UILabel *countryLabel;
-//@property (nonatomic, strong) UIImageView *arrow;
 
 - (void)setupWithImageName:(NSString *)image withCountry:(NSString *)country;
 @end

@@ -24,13 +24,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     pageControlBeingUsed = NO;
-    
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
-    
-//    [self cityNames];
-    
-//    CGFloat contentOffset = 150.0f;
     
     //set background
     UIGraphicsBeginImageContext(self.view.frame.size);
@@ -39,10 +35,6 @@
     UIGraphicsEndImageContext();
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
-    
-//    [[UIImage imageNamed:@"login-image@2x.png"] drawInRect:self.view.bounds];
-//    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:];
-//    [self.view addSubview:backgroundView];
 
     //implement scrollview
     scrollView.delegate = self;
@@ -65,8 +57,6 @@
     newTrip.image = @"ANew-trip@2x.png";
     newTrip.city = @"A New Trip";
     [cityArray addObject:newTrip];
-//    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"new-trip.png", @"NMexico@2x.png", @"Guada@2x.png", @"miami@2x.png", @"Puerto-Plata@2x.png", nil];
-//    NSArray *nameArray = [[NSMutableArray alloc] initWithObjects:@" ", @"Mexico City", @"Guadalajara", @"Miami", @"Puerto Plata", nil];
 
     NSInteger height = scrollView.frame.size.height - 150.0;
     NSInteger width = height * 0.7322;
