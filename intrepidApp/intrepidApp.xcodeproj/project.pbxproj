@@ -314,9 +314,6 @@
 		E0E5BA5317B565D100A1EEC0 /* Imodium-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2517B565D100A1EEC0 /* Imodium-img@2x.png */; };
 		E0E5BA5417B565D100A1EEC0 /* Lasix-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2617B565D100A1EEC0 /* Lasix-img.png */; };
 		E0E5BA5517B565D100A1EEC0 /* Lasix-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2717B565D100A1EEC0 /* Lasix-img@2x.png */; };
-		E0E888F717DA5E7E00343454 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E888F117DA5E7E00343454 /* libTestFlight.a */; };
-		E0E888F817DA5E7E00343454 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E0E888F217DA5E7E00343454 /* README.md */; };
-		E0E888F917DA5E7E00343454 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = E0E888F317DA5E7E00343454 /* release_notes.md */; };
 		E0E91ADB17BD2247009E8607 /* Signout-new2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E91AD917BD2247009E8607 /* Signout-new2.png */; };
 		E0E91ADC17BD2247009E8607 /* Signout-new2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E91ADA17BD2247009E8607 /* Signout-new2@2x.png */; };
 /* End PBXBuildFile section */
@@ -669,12 +666,6 @@
 		E0E5BA2517B565D100A1EEC0 /* Imodium-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Imodium-img@2x.png"; sourceTree = "<group>"; };
 		E0E5BA2617B565D100A1EEC0 /* Lasix-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lasix-img.png"; sourceTree = "<group>"; };
 		E0E5BA2717B565D100A1EEC0 /* Lasix-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lasix-img@2x.png"; sourceTree = "<group>"; };
-		E0E888F117DA5E7E00343454 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
-		E0E888F217DA5E7E00343454 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		E0E888F317DA5E7E00343454 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
-		E0E888F417DA5E7E00343454 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
-		E0E888F517DA5E7E00343454 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
-		E0E888F617DA5E7E00343454 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		E0E91AD917BD2247009E8607 /* Signout-new2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Signout-new2.png"; sourceTree = "<group>"; };
 		E0E91ADA17BD2247009E8607 /* Signout-new2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Signout-new2@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -691,7 +682,6 @@
 				6851221517861138008DB6B6 /* Foundation.framework in Frameworks */,
 				6851221717861138008DB6B6 /* CoreGraphics.framework in Frameworks */,
 				6851221917861138008DB6B6 /* CoreData.framework in Frameworks */,
-				E0E888F717DA5E7E00343454 /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -849,7 +839,6 @@
 		6851220617861138008DB6B6 = {
 			isa = PBXGroup;
 			children = (
-				E0E888F017DA5E7E00343454 /* TestFlightSDK2.0.0 */,
 				68174E2317C95254009823CE /* SystemConfiguration.framework */,
 				E0B5825217A31D8100093130 /* app icon nonretina.png */,
 				E0B5825017A31D2C00093130 /* intrepid icon.png */,
@@ -1262,19 +1251,6 @@
 			name = Conditions;
 			sourceTree = "<group>";
 		};
-		E0E888F017DA5E7E00343454 /* TestFlightSDK2.0.0 */ = {
-			isa = PBXGroup;
-			children = (
-				E0E888F117DA5E7E00343454 /* libTestFlight.a */,
-				E0E888F217DA5E7E00343454 /* README.md */,
-				E0E888F317DA5E7E00343454 /* release_notes.md */,
-				E0E888F417DA5E7E00343454 /* TestFlight+AsyncLogging.h */,
-				E0E888F517DA5E7E00343454 /* TestFlight+ManualSessions.h */,
-				E0E888F617DA5E7E00343454 /* TestFlight.h */,
-			);
-			path = TestFlightSDK2.0.0;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1589,8 +1565,6 @@
 				B622BB9B17C6893400027D2E /* health@2x.png in Resources */,
 				B6FCB79C17CADA7200E7CFB9 /* assistance-new@2x.png in Resources */,
 				E0E3CB1617C699F300D0642A /* Signout_new@2x.png in Resources */,
-				E0E888F817DA5E7E00343454 /* README.md in Resources */,
-				E0E888F917DA5E7E00343454 /* release_notes.md in Resources */,
 				E0C7887217F0A7F40067D2D7 /* cool.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
