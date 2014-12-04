@@ -35,7 +35,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"signUp-background.png"]];
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"signUp-background"]];
     [self.view addSubview:backgroundView];
     
     UILabel *forgotPasswordTitleLabel = [[UILabel alloc] init];
@@ -58,7 +58,7 @@
     
     self.email.delegate = self;
     
-    UIImage *buttonImage = [[UIImage imageNamed:@"rounded-rectangle-.png"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
+    UIImage *buttonImage = [[UIImage imageNamed:@"rounded-rectangle-"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
     [signUpButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [signUpButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [signUpButton setTitle:@"SUBMIT" forState:UIControlStateNormal];
@@ -74,7 +74,7 @@
     [email setReturnKeyType:UIReturnKeyDone];
     [self.view addSubview:email];
     
-    underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline.png"]];
+    underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     underlineEmail.frame = CGRectMake(68, 171, 183, 1);
     [self.view addSubview:underlineEmail];
     

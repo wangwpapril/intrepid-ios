@@ -28,7 +28,7 @@
     [super viewDidLoad];
     
     UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:@"signup-background.png"] drawInRect:self.view.bounds];
+    [[UIImage imageNamed:@"signup-background"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     

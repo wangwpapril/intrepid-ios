@@ -75,19 +75,19 @@
     TripItem *trip1 = [[TripItem alloc] init];
     trip1.city = @"Guadalajara";
     trip1.continent = @"North America";
-    trip1.image = @"Guada-icon.png";
+    trip1.image = @"Guada-icon";
     TripItem *trip2 = [[TripItem alloc] init];
     trip2.city = @"Miami";
     trip2.continent = @"North America";
-    trip2.image = @"Miami-icon.png";
+    trip2.image = @"Miami-icon";
     TripItem *trip3 = [[TripItem alloc] init];
     trip3.city = @"Mexico City";
     trip3.continent = @"North America";
-    trip3.image = @"Mexico-icon.png";
+    trip3.image = @"Mexico-icon";
     TripItem *trip4 = [[TripItem alloc] init];
     trip4.city = @"Puerto Plata";
     trip4.continent = @"North America";
-    trip4.image = @"Puerto-Plata-icon.png";
+    trip4.image = @"Puerto-Plata-icon";
     tripsArray = [NSArray arrayWithObjects:trip1, trip2, trip3, trip4, nil];
     filteredArray = [NSMutableArray new];
 }
@@ -99,12 +99,12 @@
     [self.view addSubview:searchBar];
     searchBar.delegate = self;
     
-    UIImageView *spyGlass = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"spyGlass.png"]];
+    UIImageView *spyGlass = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"spyGlass"]];
     spyGlass.frame = CGRectMake(5, 16, 13, 13);
     [self.view addSubview:spyGlass];
     
     xButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [xButton setImage:[UIImage imageNamed:@"cancel-search.png"] forState:UIControlStateNormal];
+    [xButton setImage:[UIImage imageNamed:@"cancel-search"] forState:UIControlStateNormal];
     xButton.frame = CGRectMake(270, 0, 44, 44);
     xButton.userInteractionEnabled = YES;
     [xButton addTarget:self action:@selector(deleteText) forControlEvents:UIControlEventTouchUpInside];

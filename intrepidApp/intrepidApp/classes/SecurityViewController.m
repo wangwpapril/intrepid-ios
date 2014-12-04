@@ -34,14 +34,14 @@
     CityEntity *city = [self getCity];
     SlidingTextView *political = [[SlidingTextView alloc] initWithFrame:frame];
     
-    [political setupWithImageName:city.politicalImage withTitle:@"Safety" withIconName:@"Political-icon@2x.png"];
+    [political setupWithImageName:city.politicalImage withTitle:@"Safety" withIconName:@"Political-icon"];
     [political addTextAreaWithText:city.politicalText];
     
     SlidingTextView *embassy = [[SlidingTextView alloc] initWithFrame:frame];
-    [embassy setupWithImageName:@"security-embassy.png" withTitle:@"Embassy" withIconName:@"embassy-icon.png"];
+    [embassy setupWithImageName:@"security-embassy" withTitle:@"Embassy" withIconName:@"embassy-icon"];
     
     SlidingTextView *local = [[SlidingTextView alloc] initWithFrame:frame];
-    [local setupWithImageName:city.localImage withTitle:@"Other" withIconName:@"Tourist-icon1@2x.png"];
+    [local setupWithImageName:city.localImage withTitle:@"Other" withIconName:@"Tourist-icon1"];
     [local addTextAreaWithText:city.localText];
     
     // embassies

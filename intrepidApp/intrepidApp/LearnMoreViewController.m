@@ -36,7 +36,7 @@
     
     [self.navigationController setNavigationBarHidden:YES];
     
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login-background.png"]];
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login-background"]];
     [self.view addSubview:backgroundView];
     
     //create title label
@@ -55,7 +55,7 @@
     scrollView.pagingEnabled = YES;
     
     //create array for images
-    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"overview@2x.png", @"health@2x.png", @"cool.png", @"assistance-new@2x.png", nil];
+    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"overview", @"health", @"cool", @"assistance-new", nil];
     
     for (int i=0; i < [imageArray count]; i++) {
         CGRect frame;
@@ -78,7 +78,7 @@
     [self.view addSubview:scrollView];
     exitButton.frame = CGRectMake(280, 12, 40, 40);
     [self.view addSubview:exitButton];
-    UIImage *exitImage = [UIImage imageNamed:@"close@2x.png"];
+    UIImage *exitImage = [UIImage imageNamed:@"close"];
     //create an image and put it overtop of the button?
     UIImageView *exitImageContainer = [[UIImageView alloc] initWithFrame: CGRectMake(290, 15, 15, 15)];
     [exitImageContainer setImage:exitImage];

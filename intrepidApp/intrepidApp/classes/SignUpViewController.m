@@ -53,7 +53,7 @@
     
     //set up background
     UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:@"signup-background.png"] drawInRect:self.view.bounds];
+    [[UIImage imageNamed:@"signup-background"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
@@ -64,10 +64,10 @@
     self.name.delegate = self;
     self.email.delegate = self;
     self.password.delegate = self;
-//    [signUpButton setBackgroundImage:[UIImage imageNamed:@"login-and-signup-button.png"]
+//    [signUpButton setBackgroundImage:[UIImage imageNamed:@"login-and-signup-button"]
 //                        forState:UIControlStateNormal];
     
-    UIImage *buttonImage = [[UIImage imageNamed:@"rounded-rectangle-.png"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
+    UIImage *buttonImage = [[UIImage imageNamed:@"rounded-rectangle-"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
     [signUpButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     
     
@@ -84,7 +84,7 @@
     [name setReturnKeyType:UIReturnKeyDone];
     [self.view addSubview:name];
     
-    underlineName.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline.png"]];
+    underlineName.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlineName];
     
     email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
@@ -94,7 +94,7 @@
     [email setReturnKeyType:UIReturnKeyDone];
     [self.view addSubview:email];
     
-    underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline.png"]];
+    underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlineEmail];
     
     password.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
@@ -104,10 +104,10 @@
     [password setReturnKeyType:UIReturnKeyDone];
     [self.view addSubview:password];
     
-    underlinePassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline.png"]];
+    underlinePassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlinePassword];
     
-    [addPhoto setBackgroundImage:[UIImage imageNamed:@"Add-photo@2x.png"]
+    [addPhoto setBackgroundImage:[UIImage imageNamed:@"Add-photo"]
                         forState:UIControlStateNormal];
     [self.view addSubview:addPhoto];
     

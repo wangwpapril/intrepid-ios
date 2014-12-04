@@ -46,7 +46,7 @@
 -(void)addContent {
     //Ambulance Image
     UIImage *ambulance;
-    ambulance = [UIImage imageNamed:@"IMG@2x.png"];
+    ambulance = [UIImage imageNamed:@"IMG"];
     UIImageView *ambulanceImage = [[UIImageView alloc] initWithImage:ambulance];
     ambulanceImage.frame = CGRectMake(0, 0, 320, ambulanceImage.frame.size.height*0.5);
     
@@ -66,14 +66,14 @@
     
     //Map Image
     UIImage *map;
-    map = [UIImage imageNamed:@"Map@2x.png"];
+    map = [UIImage imageNamed:@"Map"];
     UIImageView *mapImage = [[UIImageView alloc] initWithImage:map];
     mapImage.frame = CGRectMake(0, provideLocationLabel.frame.origin.y + 30, 320, mapImage.frame.size.height*0.5);
     [scrollView addSubview:mapImage];
     
     
     //Call Assistance Button
-    UIImage *callAssistanceImage = [UIImage imageNamed:@"Call-Intrepid247@2x.png"];
+    UIImage *callAssistanceImage = [UIImage imageNamed:@"Call-Intrepid247"];
     UIButton *callAssistance = [[UIButton alloc] init];
     [callAssistance setImage:callAssistanceImage forState:UIControlStateNormal];
     callAssistance.frame = CGRectMake(0, mapImage.frame.origin.y + mapImage.frame.size.height - 2, 320, 128*0.5);

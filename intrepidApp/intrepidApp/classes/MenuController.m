@@ -35,12 +35,12 @@ static MenuController *instance =nil;
             // instantiate some global variables
             instance = [[MenuController alloc] init];
             instance.menu = [[UIImageView alloc] init];
-            instance.menu.image = [UIImage imageNamed:@"Maximized-edit@2x.png"];
+            instance.menu.image = [UIImage imageNamed:@"Maximized-edit"];
             instance.menu.layer.zPosition = MAXFLOAT;
             [instance addContentButtons];
             // add arrow
             instance.arrow = [[UIImageView alloc] initWithFrame:CGRectMake(156, 4, 9, 4)]; // 9 4
-            instance.upRight = [UIImage imageNamed:@"menuArrow.png"];
+            instance.upRight = [UIImage imageNamed:@"menuArrow"];
             instance.flipped = [UIImage imageWithCGImage:instance.upRight.CGImage scale:1.0 orientation:UIImageOrientationDown];
             [instance.menu addSubview:instance.arrow];
             

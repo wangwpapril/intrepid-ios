@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
     self.view.tag = 1;
-    UIImage *backgroundImage = [UIImage imageNamed:@"mexicoBackBigger.png"];
+    UIImage *backgroundImage = [UIImage imageNamed:@"mexicoBackBigger"];
     CGRect imageFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     CGRect whiteFrame = CGRectMake(0, 79, self.view.frame.size.width, self.view.frame.size.height - 79);
     UIImageView *myImageView = [[UIImageView alloc] initWithFrame:imageFrame];
@@ -114,12 +114,12 @@
     [self.view addSubview:searchBar];
     searchBar.delegate = self;
     
-    UIImageView *spyGlass = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"spyGlass.png"]];
+    UIImageView *spyGlass = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"spyGlass"]];
     spyGlass.frame = CGRectMake(5, 51, 13, 13);
     [self.view addSubview:spyGlass];
     
     xButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [xButton setImage:[UIImage imageNamed:@"cancel-search.png"] forState:UIControlStateNormal];
+    [xButton setImage:[UIImage imageNamed:@"cancel-search"] forState:UIControlStateNormal];
     xButton.frame = CGRectMake(270, 35, 44, 44);
     xButton.userInteractionEnabled = YES;
     [xButton addTarget:self action:@selector(deleteText) forControlEvents:UIControlEventTouchUpInside];

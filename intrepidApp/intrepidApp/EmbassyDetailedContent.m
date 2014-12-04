@@ -16,7 +16,7 @@
 //    NSArray *guadala = [NSArray arrayWithObjects:
 //                        /*[EmbassyItem embassyItemOfLocation:@"United States"
 //                                                      name:@"United States"
-//                                                      flag:@"USD.png"
+//                                                      flag:@"USD"
 //                                                   address:@"address"
 //                                                       tel:@"tel"
 //                                                       fax:@"fax"
@@ -26,7 +26,7 @@
 //                                                    notice:@"notice"],*/
 //                        [EmbassyItem embassyItemOfLocation:@"Canada"
 //                                                      name:@"Canada"
-//                                                      flag:@"CAD.png"
+//                                                      flag:@"CAD"
 //                                                   address:@"Consulate of Canada\nWorld Trade Center\nAv. Mariano Otero #1249\nPiso 8, Torre Pacifico\nCol.Rinconada del Bosque\n44530 Guadalajara, Jalisco\nMexico"
 //                                                       tel:@"From Canada dial: 011-52 + (Area Code) + Number\nFrom Mexico dial: 01 + (Area Code) + Number\n\nTelephone: (33) 3671-4740"
 //                                                       fax:@"(33) 3671-4750"
@@ -36,7 +36,7 @@
 //                                                    notice:@"The Professional Association of Foreign Service Officers (PAFSO) union is currently taking strike action."],
 //                        /*[EmbassyItem embassyItemOfLocation:@"United Kingdom"
 //                                                      name:@"United Kingdom"
-//                                                      flag:@"GBP.png"
+//                                                      flag:@"GBP"
 //                                                   address:@"address"
 //                                                       tel:@"tel"
 //                                                       fax:@"fax"
@@ -46,7 +46,7 @@
 //                                                    notice:@"notice"],*/
 //                        /*[EmbassyItem embassyItemOfLocation:@"China"
 //                                                      name:@"China"
-//                                                      flag:@"CNY.png"
+//                                                      flag:@"CNY"
 //                                                   address:@"address"
 //                                                       tel:@"tel"
 //                                                       fax:@"fax"
@@ -58,7 +58,7 @@
 //    NSArray *mexicoCity = [NSArray arrayWithObjects:
 //                           /*[EmbassyItem embassyItemOfLocation:@"United States"
 //                                                         name:@"United States"
-//                                                         flag:@"USD.png"
+//                                                         flag:@"USD"
 //                                                      address:@"address"
 //                                                          tel:@"tel"
 //                                                          fax:@"fax"
@@ -68,7 +68,7 @@
 //                                                       notice:@"notice"],*/
 //                           [EmbassyItem embassyItemOfLocation:@"Canada"
 //                                                         name:@"Canada"
-//                                                         flag:@"CAD.png"
+//                                                         flag:@"CAD"
 //                                                      address:@"Embassy of Canada\nSchiller 529, Col. Bosque de Chapultepec (Polanco)\nDel. Miguel Hidalgo\n11580 Mexico City, D.F.\nMexico"
 //                                                          tel:@"From Canada dial: 011-52 + (Area Code) + Number\nFrom Mexico dial: 01 + (Area Code) + Number\n\nTelephone: (55) 5724-7900"
 //                                                          fax:@"Administration: (55) 5724-7980\nCultural: (55) 5724-7981\nPolitical Relations: (55) 5724-7985"
@@ -78,7 +78,7 @@
 //                                                       notice:@"*Mexico citizens that require a notarized letter for their child or children to be able to travel to Canada must go to a Mexican Public Notary. As of July 6, 2009, and until further notice, the consular section of the Canadian Embassy will not be able to provide this service."],
 //                          /* [EmbassyItem embassyItemOfLocation:@"United Kingdom"
 //                                                         name:@"United Kingdom"
-//                                                         flag:@"GBP.png"
+//                                                         flag:@"GBP"
 //                                                      address:@"address"
 //                                                          tel:@"tel"
 //                                                          fax:@"fax"
@@ -88,7 +88,7 @@
 //                                                       notice:@"notice"],
 //                           [EmbassyItem embassyItemOfLocation:@"China"
 //                                                         name:@"China"
-//                                                         flag:@"CNY.png"
+//                                                         flag:@"CNY"
 //                                                      address:@"address"
 //                                                          tel:@"tel"
 //                                                          fax:@"fax"
@@ -101,7 +101,7 @@
 //    NSArray *miami = [NSArray arrayWithObjects:
 //                     /* [EmbassyItem embassyItemOfLocation:@"United States"
 //                                                    name:@"United States"
-//                                                    flag:@"USD.png"
+//                                                    flag:@"USD"
 //                                                 address:@"address"
 //                                                     tel:@"tel"
 //                                                     fax:@"fax"
@@ -111,7 +111,7 @@
 //                                                  notice:@"notice"],*/
 //                      [EmbassyItem embassyItemOfLocation:@"Canada"
 //                                                    name:@"Canada"
-//                                                    flag:@"CAD.png"
+//                                                    flag:@"CAD"
 //                                                 address:@"200 South Biscayne Blvd., Suite 1600\nMiami, Fl 33131 USA\n\n(16th floor of the Wachovia Financial Center, a major downtown landmark)."
 //                                                     tel:@"Telephone: (305) 579-1600"
 //                                                     fax:@"(305) 374-6774"
@@ -121,7 +121,7 @@
 //                                                  notice:@"The consulate does not provide regular passport services.\n\nFor general passport enquiries, you may contact Passport Canada either toll free at 1-800-567-6868 (Monday-Friday 7:30am-8pm EST) or via the General Inquiry Form, available on the website."],/*
 //                      [EmbassyItem embassyItemOfLocation:@"United Kingdom"
 //                                                    name:@"United Kingdom"
-//                                                    flag:@"GBP.png"
+//                                                    flag:@"GBP"
 //                                                 address:@"address"
 //                                                     tel:@"tel"
 //                                                     fax:@"fax"
@@ -131,7 +131,7 @@
 //                                                  notice:@"notice"],
 //                      [EmbassyItem embassyItemOfLocation:@"China"
 //                                                    name:@"China"
-//                                                    flag:@"CNY.png"
+//                                                    flag:@"CNY"
 //                                                 address:@"address"
 //                                                     tel:@"tel"
 //                                                     fax:@"fax"
@@ -145,7 +145,7 @@
 //    NSArray *puerto = [NSArray arrayWithObjects:/*
 //                       [EmbassyItem embassyItemOfLocation:@"United States"
 //                                                     name:@"United States"
-//                                                     flag:@"USD.png"
+//                                                     flag:@"USD"
 //                                                  address:@"address"
 //                                                      tel:@"tel"
 //                                                      fax:@"fax"
@@ -155,7 +155,7 @@
 //                                                   notice:@"notice"],*/
 //                       [EmbassyItem embassyItemOfLocation:@"Canada"
 //                                                     name:@"Canada"
-//                                                     flag:@"CAD.png"
+//                                                     flag:@"CAD"
 //                                                  address:@"8 Villanueva St,\nEdificio Abraxas, 2nd Floor\nPuerto Plata, RD."
 //                                                      tel:@"Telephone: 1 (809) 586-5761"
 //                                                      fax:@"1 (809) 586-5762"
@@ -165,7 +165,7 @@
 //                                                   notice:@"All enquiries about Canadian visas and immigration to Canada are handled by the Visa and Immigration section in Santo Domingo, rather than the Consular section. This includes enquiries from Cnaadian citizens who wish to sponsor their relatives to come to Canada or who wish to invite relatives or friends to come to Canada."],/*
 //                       [EmbassyItem embassyItemOfLocation:@"United Kingdom"
 //                                                     name:@"United Kingdom"
-//                                                     flag:@"GBP.png"
+//                                                     flag:@"GBP"
 //                                                  address:@"address"
 //                                                      tel:@"tel"
 //                                                      fax:@"fax"
@@ -175,7 +175,7 @@
 //                                                   notice:@"notice"],
 //                       [EmbassyItem embassyItemOfLocation:@"China"
 //                                                     name:@"China"
-//                                                     flag:@"CNY.png"
+//                                                     flag:@"CNY"
 //                                                  address:@"address"
 //                                                      tel:@"tel"
 //                                                      fax:@"fax"

@@ -30,11 +30,11 @@
     NSString *commonImageName;
     
     if (healthItem.common == TRUE) {
-        commonImageName = @"Common.png";
+        commonImageName = @"Common";
     }
     
     else {
-        commonImageName = @"Uncommon.png";
+        commonImageName = @"Uncommon";
     }
     commonImage.image = [UIImage imageNamed:commonImageName];
     

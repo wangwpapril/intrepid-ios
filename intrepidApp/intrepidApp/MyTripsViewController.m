@@ -30,7 +30,7 @@
     
     //set background
     UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:@"login-background@2x.png"] drawInRect:self.view.bounds];
+    [[UIImage imageNamed:@"login-background"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
@@ -54,7 +54,7 @@
     }
     
     TripItem *newTrip = [[TripItem alloc] init];
-    newTrip.image = @"ANew-trip@2x.png";
+    newTrip.image = @"ANew-trip";
     newTrip.city = @"A New Trip";
     [cityArray addObject:newTrip];
 

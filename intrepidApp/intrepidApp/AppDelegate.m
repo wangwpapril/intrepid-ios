@@ -19,7 +19,7 @@
 - (void)customizeAppearance
 {
     
-    UIImage *image = [UIImage imageNamed:@"top-nav-bar.png"];
+    UIImage *image = [UIImage imageNamed:@"top-nav-bar"];
     [[UINavigationBar appearance] setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     
     
@@ -39,7 +39,7 @@
     
     if([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0)
     {
-        temp = [UIImage imageNamed:@"back-button.png"];
+        temp = [UIImage imageNamed:@"back-button"];
         [[UIBarButtonItem appearance] setBackButtonBackgroundImage: temp forState: UIControlStateNormal barMetrics: UIBarMetricsDefault];
         [[UIBarButtonItem appearance] setBackButtonBackgroundImage: temp forState: UIControlStateNormal barMetrics: UIBarMetricsDefault];
 
@@ -47,7 +47,7 @@
     }
     else
     {
-        temp = [[UIImage imageNamed:@"back-button.png"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
+        temp = [[UIImage imageNamed:@"back-button"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
         [[UINavigationBar appearance] setBackIndicatorImage:temp];
         [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:temp];
 

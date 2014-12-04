@@ -41,13 +41,13 @@
     self.navigationItem.title = @"Settings";
     
     UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:@"login-background.png"] drawInRect:self.view.bounds];
+    [[UIImage imageNamed:@"login-background"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
-    [editPhoto setBackgroundImage:[UIImage imageNamed:@"Add@2x.png"]
+    [editPhoto setBackgroundImage:[UIImage imageNamed:@"Add"]
                         forState:UIControlStateNormal];
     [self.view addSubview:editPhoto];
     
@@ -102,7 +102,7 @@
     [self.view addSubview:name];
     
     UILabel *underlineName = [[UILabel alloc] init];
-    underlineName.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1.png"]];
+    underlineName.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1"]];
     underlineName.frame = CGRectMake(10, 175, 295, 1);
     [self.view addSubview:underlineName];
     
@@ -117,7 +117,7 @@
     [self.view addSubview:email];
     
     UILabel *underlineEmail = [[UILabel alloc] init];
-    underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1.png"]];
+    underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1"]];
     underlineEmail.frame = CGRectMake(10, 225, 295, 1);
     [self.view addSubview:underlineEmail];
     
@@ -132,7 +132,7 @@
     [self.view addSubview:password];
     
     UILabel *underlinePassword = [[UILabel alloc] init];
-    underlinePassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1.png"]];
+    underlinePassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1"]];
     underlinePassword.frame = CGRectMake(10, 275, 295, 1);
     [self.view addSubview:underlinePassword];
     
@@ -147,18 +147,18 @@
     [self.view addSubview:passwordConfirmation];
     
     UILabel *underlinePasswordConfirmation = [[UILabel alloc] init];
-    underlinePasswordConfirmation.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1.png"]];
+    underlinePasswordConfirmation.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1"]];
     underlinePasswordConfirmation.frame = CGRectMake(10, 325, 295, 1);
     [self.view addSubview:underlinePasswordConfirmation];
     
     //Initalize the Sign Out button
-//    UIImage *buttonImage = [[UIImage imageNamed:@"signout-button@2x.png"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
+//    UIImage *buttonImage = [[UIImage imageNamed:@"signout-button"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
     [signOutButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     signOutButton.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
     signOutButton.frame = CGRectMake(68, underlinePasswordConfirmation.frame.origin.y + 25, 183, 36);
     
     UIGraphicsBeginImageContext(signOutButton.frame.size);
-    [[UIImage imageNamed:@"signout-button2.png"] drawInRect:signOutButton.bounds];
+    [[UIImage imageNamed:@"signout-button2"] drawInRect:signOutButton.bounds];
     UIImage *imageZ = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     [signOutButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

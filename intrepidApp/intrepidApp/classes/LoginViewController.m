@@ -54,13 +54,13 @@
     
     //set background image
     UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:@"login-background.png"] drawInRect:self.view.bounds];
+    [[UIImage imageNamed:@"login-background"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
-    UIImage *buttonImage = [[UIImage imageNamed:@"rounded-rectangle-.png"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
+    UIImage *buttonImage = [[UIImage imageNamed:@"rounded-rectangle-"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
     [loginButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     
     
@@ -113,10 +113,10 @@
     [email setReturnKeyType:UIReturnKeyDone];
     [self.view addSubview:email];
     
-    underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline.png"]];
+    underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlineEmail];
     
-    underlinePassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline.png"]];
+    underlinePassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlinePassword];
 
     
