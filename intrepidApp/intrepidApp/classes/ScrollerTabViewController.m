@@ -62,8 +62,8 @@
 }
 
 - (void)addTabs:(NSArray *)nameArray {
-    int i = 0;
-    int limit = nameArray.count;
+    NSInteger i = 0;
+    NSInteger limit = nameArray.count;
     float width = 321/limit;
     while (i < limit) {        
         // create the tab
@@ -94,9 +94,9 @@
 }
 
 - (void) addViews:(NSMutableArray *)arrayOfViews withVerticalOffset:(NSInteger)offset {
-    int i = 0;
-    int limit = arrayOfViews.count;
-    int specialOffset = self.view.frame.size.height - 44;
+    NSInteger i = 0;
+    NSInteger limit = arrayOfViews.count;
+    NSInteger specialOffset = self.view.frame.size.height - 44;
     while (i < limit) {
         UIView *view =[arrayOfViews objectAtIndex:i];
         view.frame = CGRectMake(i*320, offset, 320, specialOffset);

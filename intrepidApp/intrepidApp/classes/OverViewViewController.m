@@ -128,8 +128,8 @@
     NSString* native = [NSString stringWithFormat:@"%.02f", CADtoNative];
 
     BOOL foundNative = false;
-    int i = 0;
-    int limit = currencyArray.count;
+    NSInteger i = 0;
+    NSInteger limit = currencyArray.count;
     while (i < limit && !foundNative) {
         CurrencyItem *item = [currencyArray objectAtIndex:i];
         if ([item.value isEqualToString:native]){

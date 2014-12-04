@@ -35,7 +35,7 @@ static TripManager *instance =nil;
         [self populateTrips];
         cityArray = [self fetchCityArray];
     }
-    NSLog(@"city Array count: %i", cityArray.count);
+    NSLog(@"city Array count: %lu", (unsigned long)cityArray.count);
     return cityArray;
 }
 

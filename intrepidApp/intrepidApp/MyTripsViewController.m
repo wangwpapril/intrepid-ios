@@ -122,7 +122,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     NSLog(@"view did appear");
     // init vars
-    int index, i, limit;
+    NSInteger index, i, limit;
     i = 0;
     limit = cities.count;
     
@@ -145,7 +145,7 @@
     pageControlBeingUsed = YES;
     NSLog(@"change page called");
     UIPageControl *pager=sender;
-    int page = pager.currentPage;
+    NSInteger page = pager.currentPage;
     
     CGRect frame = scrollView.frame;
     frame.origin.x = frame.size.width * page;

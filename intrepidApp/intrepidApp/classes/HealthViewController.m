@@ -147,11 +147,11 @@
 {
     NSInteger fCount = filteredHealthItemArray.count;
     if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
-        NSLog(@"fcount: %i, searhbartext: %@", fCount, searchBar.text);
+        NSLog(@"fcount: %li, searhbartext: %@", (long)fCount, searchBar.text);
         
         return fCount;
     } else {
-        NSLog(@"total count: %i", [[contentArray objectAtIndex:self.currentTab] count]);
+        NSLog(@"total count: %lu", (unsigned long)[[contentArray objectAtIndex:self.currentTab] count]);
         return [[contentArray objectAtIndex:self.currentTab] count];
     }
 }
