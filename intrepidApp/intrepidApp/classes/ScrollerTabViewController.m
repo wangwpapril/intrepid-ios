@@ -118,9 +118,15 @@
 
 -(void)addLineToTab {
     UIButton *tab = ((UIButton *)[tabArray objectAtIndex:currentTab]);
-    CGSize size = [tab.titleLabel.text sizeWithFont:[UIFont fontWithName:@"ProximaNova-Regular" size:13]
-                                  constrainedToSize:CGSizeMake(280, 15000)
-                                      lineBreakMode:NSLineBreakByWordWrapping];
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+    
+    CGSize size = [tab.titleLabel.text boundingRectWithSize:CGSizeMake(280, 15000)
+                                                    options:NSStringDrawingUsesLineFragmentOrigin
+                                                 attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:13]}
+                                                    context:nil].size;
+    
     float length = size.width + 2;
     float xPos = tab.center.x - length / 2;
     line.frame = CGRectMake(xPos, 27, length, 1);

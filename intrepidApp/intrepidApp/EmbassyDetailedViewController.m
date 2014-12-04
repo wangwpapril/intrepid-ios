@@ -72,7 +72,13 @@
     addressLabel.backgroundColor = [UIColor clearColor];
     addressLabel.text = @"Address";
     
-    CGSize size = [embassyItem.address sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:13] constrainedToSize:CGSizeMake(280, 15000) lineBreakMode:NSLineBreakByWordWrapping];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+    
+    CGSize size = [embassyItem.address boundingRectWithSize:CGSizeMake(280, 15000)
+                                                    options:NSStringDrawingUsesLineFragmentOrigin
+                                                 attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:13]}
+                                                    context:nil].size;
     UILabel *addressText = [[UILabel alloc] initWithFrame:CGRectMake(20, 30,  280, size.height + 30)];
     addressText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     addressText.backgroundColor = [UIColor clearColor];
@@ -91,7 +97,10 @@
     NSString *contactLength = [NSString stringWithFormat:@"%@\nFax:%@\nEmail:%@", embassyItem.phone,
                                embassyItem.fax, embassyItem.email];
     
-    CGSize contactSize = [contactLength sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:13] constrainedToSize:CGSizeMake(280, 15000) lineBreakMode:NSLineBreakByWordWrapping];
+    CGSize contactSize = [contactLength boundingRectWithSize:CGSizeMake(280, 15000)
+                                                     options:NSStringDrawingUsesLineFragmentOrigin
+                                                  attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:13]}
+                                                     context:nil].size;
     UILabel *contactText = [[UILabel alloc] initWithFrame:CGRectMake(20, contactLabel.frame.origin.y + 30,  280, contactSize.height + 30)];
     contactText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     contactText.backgroundColor = [UIColor clearColor];
@@ -107,7 +116,10 @@
     hoursLabel.backgroundColor = [UIColor clearColor];
     hoursLabel.text = @"Hours of Operation";
     
-    CGSize hoursSize = [embassyItem.hours sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:13] constrainedToSize:CGSizeMake(280, 15000) lineBreakMode:NSLineBreakByWordWrapping];
+    CGSize hoursSize = [embassyItem.hours boundingRectWithSize:CGSizeMake(280, 15000)
+                                                       options:NSStringDrawingUsesLineFragmentOrigin
+                                                    attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:13]}
+                                                       context:nil].size;
     UILabel *hoursText = [[UILabel alloc] initWithFrame:CGRectMake(20, hoursLabel.frame.origin.y + 30,  280, hoursSize.height + 30)];
     hoursText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     hoursText.backgroundColor = [UIColor clearColor];
@@ -124,7 +136,10 @@
     servicesLabel.text = @"Services Offered";
     
     //this needs to be fixed once content is fixed
-    CGSize servicesSize = [embassyItem.services sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:13] constrainedToSize:CGSizeMake(280, 15000) lineBreakMode:NSLineBreakByWordWrapping];
+    CGSize servicesSize = [embassyItem.services boundingRectWithSize:CGSizeMake(280, 15000)
+                                                            options:NSStringDrawingUsesLineFragmentOrigin
+                                                         attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:13]}
+                                                            context:nil].size;
     UILabel *servicesText = [[UILabel alloc] initWithFrame:CGRectMake(20, servicesLabel.frame.origin.y - 60,  280, servicesSize.height + 250)];
     servicesText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     servicesText.backgroundColor = [UIColor clearColor];
@@ -140,7 +155,10 @@
     notesLabel.backgroundColor = [UIColor clearColor];
     notesLabel.text = @"Notes";
     
-    CGSize notesSize = [embassyItem.notes sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:14] constrainedToSize:CGSizeMake(280, 15000) lineBreakMode:NSLineBreakByWordWrapping];
+    CGSize notesSize = [embassyItem.notes boundingRectWithSize:CGSizeMake(280, 15000)
+                                                    options:NSStringDrawingUsesLineFragmentOrigin
+                                                 attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:14]}
+                                                    context:nil].size;
     UILabel *notesText = [[UILabel alloc] initWithFrame:CGRectMake(20, notesLabel.frame.origin.y + 20,  280, notesSize.height + 30)];
     notesText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     notesText.backgroundColor = [UIColor clearColor];

@@ -68,11 +68,14 @@
 - (void)addTextAreaWithText:(NSString *)text {
     
     UIFont *textFont = [UIFont fontWithName:@"ProximaNova-Light" size:15];
-
-    CGSize size = [text sizeWithFont:[UIFont fontWithName:@"ProximaNova-Light" size:15]
-                                      constrainedToSize:CGSizeMake(280, 15000)
-                       lineBreakMode:NSLineBreakByWordWrapping];
-
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+    
+    CGSize size = [text boundingRectWithSize:CGSizeMake(280, 15000)
+                                     options:NSStringDrawingUsesLineFragmentOrigin
+                                  attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:15]}
+                                     context:nil].size;
     
     UILabel *textView = [[UILabel alloc] initWithFrame:CGRectMake(20, 5,  280, size.height + 5)];
     textView.textColor = APP_TEXT_COLOR;
