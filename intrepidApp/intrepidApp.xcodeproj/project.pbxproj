@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		148B33D7F50D9248207DFFAF /* libPods-intrepidApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63690BFA75C7C9F190AFF7A4 /* libPods-intrepidApp.a */; };
 		6811614717A9D1A20029134B /* TripManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6811614617A9D1A20029134B /* TripManager.m */; };
 		68174E2217C951D5009823CE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 68174E2117C951D5009823CE /* Reachability.m */; };
 		68174E2417C95254009823CE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68174E2317C95254009823CE /* SystemConfiguration.framework */; };
@@ -318,6 +319,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		288AE5EE289C5AEBF15ED8CC /* Pods-intrepidApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-intrepidApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-intrepidApp/Pods-intrepidApp.debug.xcconfig"; sourceTree = "<group>"; };
+		63690BFA75C7C9F190AFF7A4 /* libPods-intrepidApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-intrepidApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6811614517A9D1A20029134B /* TripManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripManager.h; path = classes/TripManager.h; sourceTree = "<group>"; };
 		6811614617A9D1A20029134B /* TripManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripManager.m; path = classes/TripManager.m; sourceTree = "<group>"; };
 		68174E2017C951D5009823CE /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -385,6 +388,7 @@
 		68E4240A1793190600431908 /* Uncommon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Uncommon@2x.png"; sourceTree = "<group>"; };
 		68F64BFB17A87788002C4793 /* newMenuBack2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newMenuBack2@2x.png"; sourceTree = "<group>"; };
 		68F64BFD17A87863002C4793 /* menuArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menuArrow@2x.png"; sourceTree = "<group>"; };
+		6CAAA459F58A70B7096E1942 /* Pods-intrepidApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-intrepidApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-intrepidApp/Pods-intrepidApp.release.xcconfig"; sourceTree = "<group>"; };
 		7E1C92CA17A1F56B00878249 /* underline@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "underline@2x.png"; sourceTree = "<group>"; };
 		7E347777178F8B3A00FB86DC /* cancel-search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel-search@2x.png"; sourceTree = "<group>"; };
 		7E34777A1791E79300FB86DC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = classes/LoginViewController.h; sourceTree = "<group>"; };
@@ -679,6 +683,7 @@
 				6851221517861138008DB6B6 /* Foundation.framework in Frameworks */,
 				6851221717861138008DB6B6 /* CoreGraphics.framework in Frameworks */,
 				6851221917861138008DB6B6 /* CoreData.framework in Frameworks */,
+				148B33D7F50D9248207DFFAF /* libPods-intrepidApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -842,6 +847,7 @@
 				6851221A17861138008DB6B6 /* intrepidApp */,
 				6851221117861138008DB6B6 /* Frameworks */,
 				6851221017861138008DB6B6 /* Products */,
+				808E159D2F19F67221625075 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -860,6 +866,7 @@
 				6851221417861138008DB6B6 /* Foundation.framework */,
 				6851221617861138008DB6B6 /* CoreGraphics.framework */,
 				6851221817861138008DB6B6 /* CoreData.framework */,
+				63690BFA75C7C9F190AFF7A4 /* libPods-intrepidApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1073,6 +1080,15 @@
 			name = overview;
 			sourceTree = "<group>";
 		};
+		808E159D2F19F67221625075 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				288AE5EE289C5AEBF15ED8CC /* Pods-intrepidApp.debug.xcconfig */,
+				6CAAA459F58A70B7096E1942 /* Pods-intrepidApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E0203E5017ABF927000F8AA2 /* Assistance */ = {
 			isa = PBXGroup;
 			children = (
@@ -1253,9 +1269,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6851223A17861138008DB6B6 /* Build configuration list for PBXNativeTarget "intrepidApp" */;
 			buildPhases = (
+				7B3CF094C5293BADB67E7A59 /* Check Pods Manifest.lock */,
 				6851220B17861138008DB6B6 /* Sources */,
 				6851220C17861138008DB6B6 /* Frameworks */,
 				6851220D17861138008DB6B6 /* Resources */,
+				5F5A9FD954228DD662275469 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1566,6 +1584,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5F5A9FD954228DD662275469 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-intrepidApp/Pods-intrepidApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B3CF094C5293BADB67E7A59 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6851220B17861138008DB6B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1697,11 +1748,13 @@
 		};
 		6851223B17861138008DB6B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 288AE5EE289C5AEBF15ED8CC /* Pods-intrepidApp.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "intrepidApp/intrepidApp-Prefix.pch";
 				INFOPLIST_FILE = "intrepidApp/intrepidApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1711,11 +1764,13 @@
 		};
 		6851223C17861138008DB6B6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CAAA459F58A70B7096E1942 /* Pods-intrepidApp.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "intrepidApp/intrepidApp-Prefix.pch";
 				INFOPLIST_FILE = "intrepidApp/intrepidApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
