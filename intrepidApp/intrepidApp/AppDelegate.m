@@ -22,15 +22,17 @@
     UIImage *image = [UIImage imageNamed:@"top-nav-bar"];
     [[UINavigationBar appearance] setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     
+    NSShadow *shadow = [NSShadow new];
+    shadow.shadowColor = [UIColor whiteColor];
     
     [[UINavigationBar appearance] setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
       [UIColor colorWithRed:66/255.0f green:58/255.0f blue:56/255.0f alpha:1.0f],
-      UITextAttributeTextColor,
-    [UIColor whiteColor],
-      UITextAttributeTextShadowColor,
+      NSForegroundColorAttributeName,
+    shadow,
+      NSShadowAttributeName,
       [UIFont fontWithName:@"ProximaNova-Bold" size:18],
-      UITextAttributeFont, nil]];
+      NSFontAttributeName, nil]];
     
     //CHECK IF iOS7 OR PREV FOR BACK BUTTON ARROW
     

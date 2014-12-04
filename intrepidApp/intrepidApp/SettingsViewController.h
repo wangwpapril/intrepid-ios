@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MenuController.h"
 
-@interface SettingsViewController : UIViewController <UIImagePickerControllerDelegate, UITextFieldDelegate>
+@interface SettingsViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *editPhoto;
 @property (weak, nonatomic) IBOutlet UIButton *signOutButton;
 @property(weak, nonatomic) IBOutlet UITextField *name;

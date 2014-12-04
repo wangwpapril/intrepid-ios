@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LearnMoreViewController : UIViewController
+@interface LearnMoreViewController : UIViewController <UIScrollViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet UIPageControl *pageControl;
