@@ -25,8 +25,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *underlineEmail;
 
 
-- (IBAction)typeBox:(id)sender;
-- (IBAction)button;
+//- (IBAction)typeBox:(id)sender;
+//- (IBAction)button;
 - (void)keyboardWillShow;
 - (void)keyboardWillHide;
 - (void)textFieldDidBeginEditing:(UITextField *)sender;

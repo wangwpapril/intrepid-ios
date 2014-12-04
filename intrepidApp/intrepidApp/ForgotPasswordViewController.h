@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *underlineEmail;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 
-- (IBAction)typeBox:(id)sender;
+//- (IBAction)typeBox:(id)sender;
 - (void)keyboardWillShow;
 - (void)keyboardWillHide;
 - (void)textFieldDidBeginEditing:(UITextField *)sender;

@@ -24,6 +24,6 @@
 
 @property BOOL newMedia;
 - (IBAction)useCameraRoll:(id)sender;
-- (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize;
+//- (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize;
 
 @end
