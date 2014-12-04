@@ -59,8 +59,6 @@
 		E04C4DBC17A3103E002A23F4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E04C4DBB17A3103E002A23F4 /* libz.dylib */; };
 		E058778417A8768500E42A78 /* EmbassyDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E058778317A8768500E42A78 /* EmbassyDetailedViewController.m */; };
 		E08615F117A8224D00DE240B /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E08615F017A8224D00DE240B /* ForgotPasswordViewController.m */; };
-		E0B5825117A31D2C00093130 /* intrepid icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5825017A31D2C00093130 /* intrepid icon.png */; };
-		E0B5825317A31D8100093130 /* app icon nonretina.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5825217A31D8100093130 /* app icon nonretina.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -157,8 +155,6 @@
 		E058778317A8768500E42A78 /* EmbassyDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbassyDetailedViewController.m; sourceTree = "<group>"; };
 		E08615EF17A8224D00DE240B /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		E08615F017A8224D00DE240B /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
-		E0B5825017A31D2C00093130 /* intrepid icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intrepid icon.png"; sourceTree = "<group>"; };
-		E0B5825217A31D8100093130 /* app icon nonretina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app icon nonretina.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,8 +225,6 @@
 			isa = PBXGroup;
 			children = (
 				68174E2317C95254009823CE /* SystemConfiguration.framework */,
-				E0B5825217A31D8100093130 /* app icon nonretina.png */,
-				E0B5825017A31D2C00093130 /* intrepid icon.png */,
 				E04C4DBB17A3103E002A23F4 /* libz.dylib */,
 				688F9E621786262800CF850C /* QuartzCore.framework */,
 				6851221A17861138008DB6B6 /* intrepidApp */,
@@ -444,8 +438,6 @@
 				7E82E9BB1794F0D400027268 /* proximanova-bold.ttf in Resources */,
 				7ED645C11795A2FB000475A1 /* proximanova-semibold.ttf in Resources */,
 				7ED645C51795AB83000475A1 /* proximanova-light.ttf in Resources */,
-				E0B5825117A31D2C00093130 /* intrepid icon.png in Resources */,
-				E0B5825317A31D8100093130 /* app icon nonretina.png in Resources */,
 				2CC179681A30CA55008EA775 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
