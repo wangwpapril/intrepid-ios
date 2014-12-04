@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SignUpViewController : UIViewController <UIImagePickerControllerDelegate, UITextFieldDelegate>
+@interface SignUpViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *addPhoto;
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *email;
