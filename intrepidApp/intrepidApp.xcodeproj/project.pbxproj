@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		148B33D7F50D9248207DFFAF /* libPods-intrepidApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63690BFA75C7C9F190AFF7A4 /* libPods-intrepidApp.a */; };
+		2CC179681A30CA55008EA775 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC179671A30CA55008EA775 /* Images.xcassets */; };
 		6811614717A9D1A20029134B /* TripManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6811614617A9D1A20029134B /* TripManager.m */; };
 		68174E2217C951D5009823CE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 68174E2117C951D5009823CE /* Reachability.m */; };
 		68174E2417C95254009823CE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68174E2317C95254009823CE /* SystemConfiguration.framework */; };
@@ -20,22 +21,15 @@
 		6851221917861138008DB6B6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6851221817861138008DB6B6 /* CoreData.framework */; };
 		6851222117861138008DB6B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6851222017861138008DB6B6 /* main.m */; };
 		6851222517861138008DB6B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6851222417861138008DB6B6 /* AppDelegate.m */; };
-		6851222717861138008DB6B6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6851222617861138008DB6B6 /* Default.png */; };
-		6851222917861138008DB6B6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6851222817861138008DB6B6 /* Default@2x.png */; };
-		6851222B17861138008DB6B6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6851222A17861138008DB6B6 /* Default-568h@2x.png */; };
 		6851222E17861138008DB6B6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6851222C17861138008DB6B6 /* MainStoryboard.storyboard */; };
 		6851223117861138008DB6B6 /* intrepidApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6851222F17861138008DB6B6 /* intrepidApp.xcdatamodeld */; };
 		6851223F17861152008DB6B6 /* HealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6851223E17861152008DB6B6 /* HealthViewController.m */; };
 		6854D37F17B6F2E7006CC3D2 /* ScrollerTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6854D37E17B6F2E7006CC3D2 /* ScrollerTabViewController.m */; };
-		6855EAB0178E4D5E000C4C57 /* mexicoBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6855EAAF178E4D5E000C4C57 /* mexicoBack@2x.png */; };
-		685B6F5C17A601DC0003B5D9 /* newMenuBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 685B6F5B17A601DC0003B5D9 /* newMenuBack@2x.png */; };
 		685B6F5F17A60B430003B5D9 /* TripCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 685B6F5E17A60B430003B5D9 /* TripCell.m */; };
 		685B6F6217A617C20003B5D9 /* TripItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 685B6F6117A617C20003B5D9 /* TripItem.m */; };
-		685EB840178E4C29008B7D9B /* samplePic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 685EB83F178E4C29008B7D9B /* samplePic@2x.png */; };
 		688F9E631786262800CF850C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 688F9E621786262800CF850C /* QuartzCore.framework */; };
 		688F9E661786295100CF850C /* HealthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 688F9E651786295100CF850C /* HealthCell.m */; };
 		68920D0617BEA7DE004D7743 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6851221D17861138008DB6B6 /* InfoPlist.strings */; };
-		68A2D71A178BDBE800B3C330 /* searchBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A2D719178BDBE800B3C330 /* searchBar@2x.png */; };
 		68B071E917A4D3FC0061E418 /* SecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B071E817A4D3FC0061E418 /* SecurityViewController.m */; };
 		68B071EC17A4D7290061E418 /* EmbassyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B071EB17A4D7290061E418 /* EmbassyCell.m */; };
 		68B071F317A4DB890061E418 /* TripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B071F217A4DB890061E418 /* TripsViewController.m */; };
@@ -45,281 +39,33 @@
 		68DB321717C513F70061D0F1 /* EmbassyEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DB321617C513F70061D0F1 /* EmbassyEntity.m */; };
 		68DBAE60179F6CC300D1DE0B /* CurrencyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DBAE5F179F6CC300D1DE0B /* CurrencyCell.m */; };
 		68E4240417926E1E00431908 /* IntreSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E4240317926E1E00431908 /* IntreSearchBar.m */; };
-		68E42406179274BA00431908 /* mexicoBackBigger@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68E42405179274BA00431908 /* mexicoBackBigger@2x.png */; };
-		68E42408179277C100431908 /* spyGlass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68E42407179277C100431908 /* spyGlass@2x.png */; };
-		68E4240B1793190600431908 /* Common@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68E424091793190600431908 /* Common@2x.png */; };
-		68E4240C1793190600431908 /* Uncommon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68E4240A1793190600431908 /* Uncommon@2x.png */; };
-		68F64BFC17A87788002C4793 /* newMenuBack2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68F64BFB17A87788002C4793 /* newMenuBack2@2x.png */; };
-		68F64BFE17A87863002C4793 /* menuArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68F64BFD17A87863002C4793 /* menuArrow@2x.png */; };
-		7E1C92CB17A1F56B00878249 /* underline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E1C92CA17A1F56B00878249 /* underline@2x.png */; };
-		7E347778178F8B3A00FB86DC /* cancel-search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E347777178F8B3A00FB86DC /* cancel-search@2x.png */; };
 		7E34777C1791E79300FB86DC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34777B1791E79300FB86DC /* LoginViewController.m */; };
 		7E34777F1791E7A700FB86DC /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34777E1791E7A700FB86DC /* SignUpViewController.m */; };
 		7E44F8D21788FA4B00AAA32B /* HealthItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E44F8D11788FA4B00AAA32B /* HealthItem.m */; };
-		7E5B30B81798813900692F80 /* login-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E5B30B71798813900692F80 /* login-background@2x.png */; };
-		7E5B30BA1798814800692F80 /* signUp-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E5B30B91798814800692F80 /* signUp-background@2x.png */; };
 		7E82E9B91794F01000027268 /* proximanova-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E82E9B81794EFB500027268 /* proximanova-regular.ttf */; };
 		7E82E9BB1794F0D400027268 /* proximanova-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E82E9BA1794F0B900027268 /* proximanova-bold.ttf */; };
 		7E9A130C17A876FF0082003C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9A130B17A876FF0082003C /* SettingsViewController.m */; };
 		7E9A131217A8AE5E0082003C /* TermsOfServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9A131117A8AE5E0082003C /* TermsOfServiceViewController.m */; };
 		7E9A131517A8AE6E0082003C /* PrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9A131417A8AE6E0082003C /* PrivacyPolicyViewController.m */; };
 		7EA293B117A60B0A000A56E9 /* MyTripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA293B017A60B0A000A56E9 /* MyTripsViewController.m */; };
-		7EA293B317A613C2000A56E9 /* mexico-city@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EA293B217A613C2000A56E9 /* mexico-city@2x.png */; };
 		7EA293B817A77161000A56E9 /* LearnMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA293B717A77161000A56E9 /* LearnMoreViewController.m */; };
 		7ECD0427178BD7C500D6C34B /* HealthViewDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECD0426178BD7C500D6C34B /* HealthViewDetailController.m */; };
-		7ECD0429178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD0428178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png */; };
-		7ECD042B178DAF2000D6C34B /* back-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD042A178DAF2000D6C34B /* back-button@2x.png */; };
-		7ECD042D178DC07600D6C34B /* top-nav-bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD042C178DC07600D6C34B /* top-nav-bar@2x.png */; };
-		7ECD043A178DE24F00D6C34B /* medication-pic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD0436178DE24F00D6C34B /* medication-pic@2x.png */; };
-		7ECD043B178DE24F00D6C34B /* stethoscope-pic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD0437178DE24F00D6C34B /* stethoscope-pic@2x.png */; };
-		7ECD043C178DE24F00D6C34B /* heart-rate-pic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD0438178DE24F00D6C34B /* heart-rate-pic@2x.png */; };
-		7ECD043D178DE24F00D6C34B /* conditions-pic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD0439178DE24F00D6C34B /* conditions-pic@2x.png */; };
 		7ED645C11795A2FB000475A1 /* proximanova-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED645C01795A2E9000475A1 /* proximanova-semibold.ttf */; };
 		7ED645C51795AB83000475A1 /* proximanova-light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED645C41795AB80000475A1 /* proximanova-light.ttf */; };
-		7EE44DAB179F6F75006BA2EC /* rounded-rectangle-@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DAA179F6F75006BA2EC /* rounded-rectangle-@2x.png */; };
-		7EE44DB0179F79BA006BA2EC /* overview-culture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DAD179F79BA006BA2EC /* overview-culture@2x.png */; };
-		7EE44DB1179F79BA006BA2EC /* overview-currency@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DAE179F79BA006BA2EC /* overview-currency@2x.png */; };
-		7EE44DB2179F79BA006BA2EC /* overview-history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DAF179F79BA006BA2EC /* overview-history@2x.png */; };
-		7EE44DB5179F7B24006BA2EC /* culture-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE44DB3179F7B24006BA2EC /* culture-icon@2x.png */; };
 		7EE44DB9179F7E30006BA2EC /* CurrencyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE44DB8179F7E30006BA2EC /* CurrencyItem.m */; };
 		B61550DD17B52E7400044F11 /* LegalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B61550DC17B52E7400044F11 /* LegalViewController.m */; };
-		B622BB9817C6893400027D2E /* overview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B622BB9417C6893400027D2E /* overview@2x.png */; };
-		B622BB9917C6893400027D2E /* security@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B622BB9517C6893400027D2E /* security@2x.png */; };
-		B622BB9B17C6893400027D2E /* health@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B622BB9717C6893400027D2E /* health@2x.png */; };
 		B6DB0C4717AE2C5C001694B0 /* AssistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DB0C4617AE2C5C001694B0 /* AssistanceViewController.m */; };
-		B6FCB79C17CADA7200E7CFB9 /* assistance-new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6FCB79B17CADA7200E7CFB9 /* assistance-new@2x.png */; };
-		DC45AEED181E007100ABC12C /* signout-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45AEEC181E007100ABC12C /* signout-button@2x.png */; };
-		DC45AEEF181E025800ABC12C /* signout-button2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45AEEE181E025800ABC12C /* signout-button2@2x.png */; };
-		E0203E5B17ABF93D000F8AA2 /* Call-Intrepid.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5117ABF93D000F8AA2 /* Call-Intrepid.png */; };
-		E0203E5C17ABF93D000F8AA2 /* Call-Intrepid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5217ABF93D000F8AA2 /* Call-Intrepid@2x.png */; };
-		E0203E5D17ABF93D000F8AA2 /* Call-Local.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5317ABF93D000F8AA2 /* Call-Local.png */; };
-		E0203E5E17ABF93D000F8AA2 /* Call-Local@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5417ABF93D000F8AA2 /* Call-Local@2x.png */; };
-		E0203E5F17ABF93D000F8AA2 /* IMG.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5517ABF93D000F8AA2 /* IMG.png */; };
-		E0203E6017ABF93D000F8AA2 /* IMG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5617ABF93D000F8AA2 /* IMG@2x.png */; };
-		E0203E6117ABF93D000F8AA2 /* Map.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5717ABF93D000F8AA2 /* Map.png */; };
-		E0203E6217ABF93D000F8AA2 /* Map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5817ABF93D000F8AA2 /* Map@2x.png */; };
-		E0203E6317ABF93D000F8AA2 /* Shape-24.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5917ABF93D000F8AA2 /* Shape-24.png */; };
-		E0203E6417ABF93D000F8AA2 /* Shape-24@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0203E5A17ABF93D000F8AA2 /* Shape-24@2x.png */; };
-		E0263D5F17B124980087FAC7 /* Political-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0263D5D17B124980087FAC7 /* Political-icon.png */; };
-		E0263D6017B124980087FAC7 /* Political-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0263D5E17B124980087FAC7 /* Political-icon@2x.png */; };
-		E0263D6B17B129390087FAC7 /* Tourist-icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = E0263D6917B129390087FAC7 /* Tourist-icon1.png */; };
-		E0263D6C17B129390087FAC7 /* Tourist-icon1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0263D6A17B129390087FAC7 /* Tourist-icon1@2x.png */; };
 		E02BBA0B17A8845300215CEA /* EmbassyDetailedContent.m in Sources */ = {isa = PBXBuildFile; fileRef = E02BBA0A17A8845300215CEA /* EmbassyDetailedContent.m */; };
-		E02D1A8B17BD38DF00322B6A /* Add-photo.png in Resources */ = {isa = PBXBuildFile; fileRef = E02D1A8917BD38DF00322B6A /* Add-photo.png */; };
-		E02D1A8C17BD38DF00322B6A /* Add-photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E02D1A8A17BD38DF00322B6A /* Add-photo@2x.png */; };
-		E03E0B5617A7429400E344B8 /* Currency-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5417A7429400E344B8 /* Currency-Icon.png */; };
-		E03E0B5717A7429400E344B8 /* Currency-Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5517A7429400E344B8 /* Currency-Icon@2x.png */; };
-		E03E0B6117A7480600E344B8 /* Guada-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5917A7480600E344B8 /* Guada-icon.png */; };
-		E03E0B6217A7480600E344B8 /* Guada-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5A17A7480600E344B8 /* Guada-icon@2x.png */; };
-		E03E0B6317A7480600E344B8 /* Mexico-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5B17A7480600E344B8 /* Mexico-icon.png */; };
-		E03E0B6417A7480600E344B8 /* Mexico-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5C17A7480600E344B8 /* Mexico-icon@2x.png */; };
-		E03E0B6517A7480600E344B8 /* Miami-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5D17A7480600E344B8 /* Miami-icon.png */; };
-		E03E0B6617A7480600E344B8 /* Miami@2x-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5E17A7480600E344B8 /* Miami@2x-icon.png */; };
-		E03E0B6717A7480600E344B8 /* Puerto-Plata-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B5F17A7480600E344B8 /* Puerto-Plata-icon.png */; };
-		E03E0B6817A7480600E344B8 /* Puerto-Plata-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E03E0B6017A7480600E344B8 /* Puerto-Plata-icon@2x.png */; };
-		E049C42D17A6DADB00B00B35 /* Altitude-Sickness@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42417A6DADB00B00B35 /* Altitude-Sickness@2x.png */; };
-		E049C42E17A6DADB00B00B35 /* Cholera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42517A6DADB00B00B35 /* Cholera@2x.png */; };
-		E049C42F17A6DADB00B00B35 /* Dengue-Fever@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42617A6DADB00B00B35 /* Dengue-Fever@2x.png */; };
-		E049C43017A6DADB00B00B35 /* Hepatitis-A@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42717A6DADB00B00B35 /* Hepatitis-A@2x.png */; };
-		E049C43117A6DADB00B00B35 /* Hepatitis-B@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42817A6DADB00B00B35 /* Hepatitis-B@2x.png */; };
-		E049C43217A6DADB00B00B35 /* Jet-Lag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42917A6DADB00B00B35 /* Jet-Lag@2x.png */; };
-		E049C43317A6DADB00B00B35 /* Lyme@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42A17A6DADB00B00B35 /* Lyme@2x.png */; };
-		E049C43417A6DADB00B00B35 /* Malaria@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42B17A6DADB00B00B35 /* Malaria@2x.png */; };
-		E049C43517A6DADB00B00B35 /* Meningitis@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C42C17A6DADB00B00B35 /* Meningitis@2x.png */; };
-		E049C43717A6DB9D00B00B35 /* Altitude-Sickness.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C43617A6DB9D00B00B35 /* Altitude-Sickness.png */; };
-		E049C44017A6DBBD00B00B35 /* Cholera.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C43817A6DBBD00B00B35 /* Cholera.png */; };
-		E049C44117A6DBBD00B00B35 /* Dengue-Fever.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C43917A6DBBD00B00B35 /* Dengue-Fever.png */; };
-		E049C44217A6DBBD00B00B35 /* Hepatitis-A.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C43A17A6DBBD00B00B35 /* Hepatitis-A.png */; };
-		E049C44317A6DBBD00B00B35 /* Hepatitis-B.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C43B17A6DBBD00B00B35 /* Hepatitis-B.png */; };
-		E049C44417A6DBBD00B00B35 /* Jet-Lag.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C43C17A6DBBD00B00B35 /* Jet-Lag.png */; };
-		E049C44517A6DBBD00B00B35 /* Lyme.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C43D17A6DBBD00B00B35 /* Lyme.png */; };
-		E049C44617A6DBBD00B00B35 /* Malaria.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C43E17A6DBBD00B00B35 /* Malaria.png */; };
-		E049C44717A6DBBD00B00B35 /* Meningitis.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C43F17A6DBBD00B00B35 /* Meningitis.png */; };
-		E049C45217A6DDB200B00B35 /* Diarrhea.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C44817A6DDB200B00B35 /* Diarrhea.png */; };
-		E049C45317A6DDB200B00B35 /* Diarrhea@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C44917A6DDB200B00B35 /* Diarrhea@2x.png */; };
-		E049C45417A6DDB200B00B35 /* Motion-Sickness.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C44A17A6DDB200B00B35 /* Motion-Sickness.png */; };
-		E049C45517A6DDB200B00B35 /* Motion-Sickness@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C44B17A6DDB200B00B35 /* Motion-Sickness@2x.png */; };
-		E049C45617A6DDB200B00B35 /* Rabies.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C44C17A6DDB200B00B35 /* Rabies.png */; };
-		E049C45717A6DDB200B00B35 /* Rabies@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C44D17A6DDB200B00B35 /* Rabies@2x.png */; };
-		E049C45817A6DDB200B00B35 /* Typhoid.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C44E17A6DDB200B00B35 /* Typhoid.png */; };
-		E049C45917A6DDB200B00B35 /* Typhoid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C44F17A6DDB200B00B35 /* Typhoid@2x.png */; };
-		E049C45A17A6DDB200B00B35 /* West-Nile.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C45017A6DDB200B00B35 /* West-Nile.png */; };
-		E049C45B17A6DDB200B00B35 /* West-Nile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E049C45117A6DDB200B00B35 /* West-Nile@2x.png */; };
 		E04C4DBC17A3103E002A23F4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E04C4DBB17A3103E002A23F4 /* libz.dylib */; };
-		E058778017A871CC00E42A78 /* Add.png in Resources */ = {isa = PBXBuildFile; fileRef = E058777E17A871CC00E42A78 /* Add.png */; };
-		E058778117A871CC00E42A78 /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E058777F17A871CC00E42A78 /* Add@2x.png */; };
 		E058778417A8768500E42A78 /* EmbassyDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E058778317A8768500E42A78 /* EmbassyDetailedViewController.m */; };
-		E058778A17A877C200E42A78 /* divider-mid-1.png in Resources */ = {isa = PBXBuildFile; fileRef = E058778617A877C200E42A78 /* divider-mid-1.png */; };
-		E058778B17A877C200E42A78 /* divider-mid-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E058778717A877C200E42A78 /* divider-mid-1@2x.png */; };
-		E058778C17A877C200E42A78 /* Signout.png in Resources */ = {isa = PBXBuildFile; fileRef = E058778817A877C200E42A78 /* Signout.png */; };
-		E058778D17A877C200E42A78 /* Signout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E058778917A877C200E42A78 /* Signout@2x.png */; };
-		E06FCE0A17A60852003F3FC6 /* security-embassy.png in Resources */ = {isa = PBXBuildFile; fileRef = E06FCE0817A60852003F3FC6 /* security-embassy.png */; };
-		E06FCE0B17A60852003F3FC6 /* security-political.png in Resources */ = {isa = PBXBuildFile; fileRef = E06FCE0917A60852003F3FC6 /* security-political.png */; };
-		E06FCE0D17A60963003F3FC6 /* embassy-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E06FCE0C17A60963003F3FC6 /* embassy-icon.png */; };
-		E077251D17A9E3DF00804CA9 /* ANew-trip.png in Resources */ = {isa = PBXBuildFile; fileRef = E077251317A9E3DE00804CA9 /* ANew-trip.png */; };
-		E077251E17A9E3DF00804CA9 /* ANew-trip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E077251417A9E3DF00804CA9 /* ANew-trip@2x.png */; };
-		E077251F17A9E3DF00804CA9 /* Guadala.png in Resources */ = {isa = PBXBuildFile; fileRef = E077251517A9E3DF00804CA9 /* Guadala.png */; };
-		E077252017A9E3DF00804CA9 /* Guadala@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E077251617A9E3DF00804CA9 /* Guadala@2x.png */; };
-		E077252117A9E3DF00804CA9 /* Mexico.png in Resources */ = {isa = PBXBuildFile; fileRef = E077251717A9E3DF00804CA9 /* Mexico.png */; };
-		E077252217A9E3DF00804CA9 /* Mexico@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E077251817A9E3DF00804CA9 /* Mexico@2x.png */; };
-		E077252517A9E3DF00804CA9 /* Puerto.png in Resources */ = {isa = PBXBuildFile; fileRef = E077251B17A9E3DF00804CA9 /* Puerto.png */; };
-		E077252617A9E3DF00804CA9 /* Puerto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E077251C17A9E3DF00804CA9 /* Puerto@2x.png */; };
-		E077252917A9E44B00804CA9 /* Miami-USA.png in Resources */ = {isa = PBXBuildFile; fileRef = E077252717A9E44B00804CA9 /* Miami-USA.png */; };
-		E077252A17A9E44B00804CA9 /* Miami-USA@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E077252817A9E44B00804CA9 /* Miami-USA@2x.png */; };
-		E0856C1F17B9392900E5C04F /* Macrobid.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856BFB17B9392900E5C04F /* Macrobid.png */; };
-		E0856C2017B9392900E5C04F /* Macrobid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856BFC17B9392900E5C04F /* Macrobid@2x.png */; };
-		E0856C2117B9392900E5C04F /* Mefloquine.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856BFD17B9392900E5C04F /* Mefloquine.png */; };
-		E0856C2217B9392900E5C04F /* Mefloquine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856BFE17B9392900E5C04F /* Mefloquine@2x.png */; };
-		E0856C2317B9392900E5C04F /* Naproxen.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856BFF17B9392900E5C04F /* Naproxen.png */; };
-		E0856C2417B9392900E5C04F /* Naproxen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0017B9392900E5C04F /* Naproxen@2x.png */; };
-		E0856C2517B9392900E5C04F /* Nexium.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0117B9392900E5C04F /* Nexium.png */; };
-		E0856C2617B9392900E5C04F /* Nexium@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0217B9392900E5C04F /* Nexium@2x.png */; };
-		E0856C2717B9392900E5C04F /* Norvasc.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0317B9392900E5C04F /* Norvasc.png */; };
-		E0856C2817B9392900E5C04F /* Norvasc@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0417B9392900E5C04F /* Norvasc@2x.png */; };
-		E0856C2917B9392900E5C04F /* Otriven.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0517B9392900E5C04F /* Otriven.png */; };
-		E0856C2A17B9392900E5C04F /* Otriven@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0617B9392900E5C04F /* Otriven@2x.png */; };
-		E0856C2B17B9392900E5C04F /* Oxycodone.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0717B9392900E5C04F /* Oxycodone.png */; };
-		E0856C2C17B9392900E5C04F /* Oxycodone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0817B9392900E5C04F /* Oxycodone@2x.png */; };
-		E0856C2D17B9392900E5C04F /* Pepcid.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0917B9392900E5C04F /* Pepcid.png */; };
-		E0856C2E17B9392900E5C04F /* Pepcid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0A17B9392900E5C04F /* Pepcid@2x.png */; };
-		E0856C2F17B9392900E5C04F /* Quinine.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0B17B9392900E5C04F /* Quinine.png */; };
-		E0856C3017B9392900E5C04F /* Quinine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0C17B9392900E5C04F /* Quinine@2x.png */; };
-		E0856C3117B9392900E5C04F /* Rabeprazole.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0D17B9392900E5C04F /* Rabeprazole.png */; };
-		E0856C3217B9392900E5C04F /* Rabeprazole@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0E17B9392900E5C04F /* Rabeprazole@2x.png */; };
-		E0856C3317B9392900E5C04F /* Seroquel.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C0F17B9392900E5C04F /* Seroquel.png */; };
-		E0856C3417B9392900E5C04F /* Seroquel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1017B9392900E5C04F /* Seroquel@2x.png */; };
-		E0856C3517B9392900E5C04F /* Toradole.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1117B9392900E5C04F /* Toradole.png */; };
-		E0856C3617B9392900E5C04F /* Toradole@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1217B9392900E5C04F /* Toradole@2x.png */; };
-		E0856C3717B9392900E5C04F /* Travel-Sickness.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1317B9392900E5C04F /* Travel-Sickness.png */; };
-		E0856C3817B9392900E5C04F /* Travel-Sickness@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1417B9392900E5C04F /* Travel-Sickness@2x.png */; };
-		E0856C3917B9392900E5C04F /* Tylenol.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1517B9392900E5C04F /* Tylenol.png */; };
-		E0856C3A17B9392900E5C04F /* Tylenol@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1617B9392900E5C04F /* Tylenol@2x.png */; };
-		E0856C3B17B9392900E5C04F /* Ventolin.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1717B9392900E5C04F /* Ventolin.png */; };
-		E0856C3C17B9392900E5C04F /* Ventolin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1817B9392900E5C04F /* Ventolin@2x.png */; };
-		E0856C3D17B9392900E5C04F /* Wellbutrin.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1917B9392900E5C04F /* Wellbutrin.png */; };
-		E0856C3E17B9392900E5C04F /* Wellbutrin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1A17B9392900E5C04F /* Wellbutrin@2x.png */; };
-		E0856C3F17B9392900E5C04F /* Xanax.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1B17B9392900E5C04F /* Xanax.png */; };
-		E0856C4017B9392900E5C04F /* Xanax@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1C17B9392900E5C04F /* Xanax@2x.png */; };
-		E0856C4117B9392900E5C04F /* Zoloft.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1D17B9392900E5C04F /* Zoloft.png */; };
-		E0856C4217B9392900E5C04F /* Zoloft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0856C1E17B9392900E5C04F /* Zoloft@2x.png */; };
 		E08615F117A8224D00DE240B /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E08615F017A8224D00DE240B /* ForgotPasswordViewController.m */; };
-		E095E79F17B56EA500114024 /* Benzocaine-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E095E79D17B56EA500114024 /* Benzocaine-img.png */; };
-		E095E7A017B56EA500114024 /* Benzocaine-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E095E79E17B56EA500114024 /* Benzocaine-img@2x.png */; };
-		E09DAA4F17A97EA6006AD6E9 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E09DAA4E17A97EA6006AD6E9 /* close@2x.png */; };
-		E0A0896017B43ADC007B5C65 /* Maximized-edit.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A0895E17B43ADC007B5C65 /* Maximized-edit.png */; };
-		E0A0896117B43ADC007B5C65 /* Maximized-edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A0895F17B43ADC007B5C65 /* Maximized-edit@2x.png */; };
-		E0B4268817B43E6700DA407E /* Call-Intrepid247.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B4268617B43E6700DA407E /* Call-Intrepid247.png */; };
-		E0B4268917B43E6700DA407E /* Call-Intrepid247@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B4268717B43E6700DA407E /* Call-Intrepid247@2x.png */; };
 		E0B5825117A31D2C00093130 /* intrepid icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5825017A31D2C00093130 /* intrepid icon.png */; };
 		E0B5825317A31D8100093130 /* app icon nonretina.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5825217A31D8100093130 /* app icon nonretina.png */; };
-		E0B5CF9117AC0FB200F5BB66 /* Puerto-Political.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF8917AC0FB200F5BB66 /* Puerto-Political.png */; };
-		E0B5CF9217AC0FB200F5BB66 /* Puerto-Local.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF8A17AC0FB200F5BB66 /* Puerto-Local.png */; };
-		E0B5CF9317AC0FB200F5BB66 /* Puerto-Political@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF8B17AC0FB200F5BB66 /* Puerto-Political@2x.png */; };
-		E0B5CF9417AC0FB200F5BB66 /* Puerto-Culture.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF8C17AC0FB200F5BB66 /* Puerto-Culture.png */; };
-		E0B5CF9517AC0FB200F5BB66 /* Puerto-Culture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF8D17AC0FB200F5BB66 /* Puerto-Culture@2x.png */; };
-		E0B5CF9617AC0FB200F5BB66 /* Puerto-Local@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF8E17AC0FB200F5BB66 /* Puerto-Local@2x.png */; };
-		E0B5CF9717AC0FB200F5BB66 /* Puerto-Overview.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF8F17AC0FB200F5BB66 /* Puerto-Overview.png */; };
-		E0B5CF9817AC0FB200F5BB66 /* Puerto-Overview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF9017AC0FB200F5BB66 /* Puerto-Overview@2x.png */; };
-		E0B5CFA217AC0FD400F5BB66 /* Guada-Culture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF9A17AC0FD400F5BB66 /* Guada-Culture@2x.png */; };
-		E0B5CFA317AC0FD400F5BB66 /* Guada-Political.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF9B17AC0FD400F5BB66 /* Guada-Political.png */; };
-		E0B5CFA417AC0FD400F5BB66 /* Guada-Overview.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF9C17AC0FD400F5BB66 /* Guada-Overview.png */; };
-		E0B5CFA517AC0FD400F5BB66 /* Guada-Local@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF9D17AC0FD400F5BB66 /* Guada-Local@2x.png */; };
-		E0B5CFA617AC0FD400F5BB66 /* Guada-Political@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF9E17AC0FD400F5BB66 /* Guada-Political@2x.png */; };
-		E0B5CFA717AC0FD400F5BB66 /* Guada-Overview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CF9F17AC0FD400F5BB66 /* Guada-Overview@2x.png */; };
-		E0B5CFA817AC0FD400F5BB66 /* Guada-Local.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CFA017AC0FD400F5BB66 /* Guada-Local.png */; };
-		E0B5CFA917AC0FD400F5BB66 /* Guada-Culture.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CFA117AC0FD400F5BB66 /* Guada-Culture.png */; };
-		E0B5CFB317AC0FF100F5BB66 /* Miami-Overview.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CFAB17AC0FF100F5BB66 /* Miami-Overview.png */; };
-		E0B5CFB417AC0FF100F5BB66 /* Miami-Political@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CFAC17AC0FF100F5BB66 /* Miami-Political@2x.png */; };
-		E0B5CFB517AC0FF100F5BB66 /* Miami-Local@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CFAD17AC0FF100F5BB66 /* Miami-Local@2x.png */; };
-		E0B5CFB617AC0FF100F5BB66 /* Miami-Local.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CFAE17AC0FF100F5BB66 /* Miami-Local.png */; };
-		E0B5CFB717AC0FF100F5BB66 /* Miami-Culture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CFAF17AC0FF100F5BB66 /* Miami-Culture@2x.png */; };
-		E0B5CFB817AC0FF100F5BB66 /* Miami-Political.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CFB017AC0FF100F5BB66 /* Miami-Political.png */; };
-		E0B5CFB917AC0FF100F5BB66 /* Miami-Culture.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CFB117AC0FF100F5BB66 /* Miami-Culture.png */; };
-		E0B5CFBA17AC0FF100F5BB66 /* Miami-Overview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B5CFB217AC0FF100F5BB66 /* Miami-Overview@2x.png */; };
-		E0BF3BF817A7399D00241A52 /* AUS.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BDE17A7399D00241A52 /* AUS.png */; };
-		E0BF3BF917A7399D00241A52 /* AUS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BDF17A7399D00241A52 /* AUS@2x.png */; };
-		E0BF3BFA17A7399D00241A52 /* BRL.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BE017A7399D00241A52 /* BRL.png */; };
-		E0BF3BFB17A7399D00241A52 /* BRL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BE117A7399D00241A52 /* BRL@2x.png */; };
-		E0BF3BFC17A7399D00241A52 /* CAD.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BE217A7399D00241A52 /* CAD.png */; };
-		E0BF3BFD17A7399D00241A52 /* CAD@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BE317A7399D00241A52 /* CAD@2x.png */; };
-		E0BF3BFE17A7399D00241A52 /* CHF.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BE417A7399D00241A52 /* CHF.png */; };
-		E0BF3BFF17A7399D00241A52 /* CHF@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BE517A7399D00241A52 /* CHF@2x.png */; };
-		E0BF3C0017A7399D00241A52 /* CNY.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BE617A7399D00241A52 /* CNY.png */; };
-		E0BF3C0117A7399D00241A52 /* CNY@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BE717A7399D00241A52 /* CNY@2x.png */; };
-		E0BF3C0217A7399D00241A52 /* DOP.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BE817A7399D00241A52 /* DOP.png */; };
-		E0BF3C0317A7399D00241A52 /* DOP@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BE917A7399D00241A52 /* DOP@2x.png */; };
-		E0BF3C0417A7399D00241A52 /* EUR.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BEA17A7399D00241A52 /* EUR.png */; };
-		E0BF3C0517A7399D00241A52 /* EUR@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BEB17A7399D00241A52 /* EUR@2x.png */; };
-		E0BF3C0617A7399D00241A52 /* GBP.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BEC17A7399D00241A52 /* GBP.png */; };
-		E0BF3C0717A7399D00241A52 /* GBP@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BED17A7399D00241A52 /* GBP@2x.png */; };
-		E0BF3C0817A7399D00241A52 /* INR.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BEE17A7399D00241A52 /* INR.png */; };
-		E0BF3C0917A7399D00241A52 /* INR@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BEF17A7399D00241A52 /* INR@2x.png */; };
-		E0BF3C0A17A7399D00241A52 /* MXN.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BF017A7399D00241A52 /* MXN.png */; };
-		E0BF3C0B17A7399D00241A52 /* MXN@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BF117A7399D00241A52 /* MXN@2x.png */; };
-		E0BF3C0C17A7399D00241A52 /* MYR.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BF217A7399D00241A52 /* MYR.png */; };
-		E0BF3C0D17A7399D00241A52 /* MYR@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BF317A7399D00241A52 /* MYR@2x.png */; };
-		E0BF3C0E17A7399D00241A52 /* THB.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BF417A7399D00241A52 /* THB.png */; };
-		E0BF3C0F17A7399D00241A52 /* THB@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BF517A7399D00241A52 /* THB@2x.png */; };
-		E0BF3C1017A7399D00241A52 /* USD.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BF617A7399D00241A52 /* USD.png */; };
-		E0BF3C1117A7399D00241A52 /* USD@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BF3BF717A7399D00241A52 /* USD@2x.png */; };
-		E0C7887217F0A7F40067D2D7 /* cool.png in Resources */ = {isa = PBXBuildFile; fileRef = E0C7887117F0A7F40067D2D7 /* cool.png */; };
-		E0D7ECA617AD575D006E4424 /* Menu-new.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D7ECA417AD575D006E4424 /* Menu-new.png */; };
-		E0D7ECA717AD575D006E4424 /* Menu-new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D7ECA517AD575D006E4424 /* Menu-new@2x.png */; };
-		E0E3CB1617C699F300D0642A /* Signout_new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E3CB1517C699F300D0642A /* Signout_new@2x.png */; };
-		E0E5B9F817B5651100A1EEC0 /* Advil-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9F617B5651100A1EEC0 /* Advil-img.png */; };
-		E0E5B9F917B5651100A1EEC0 /* Advil-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9F717B5651100A1EEC0 /* Advil-img@2x.png */; };
-		E0E5BA2817B565D100A1EEC0 /* Amoxillin-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9FA17B565CD00A1EEC0 /* Amoxillin-img.png */; };
-		E0E5BA2917B565D100A1EEC0 /* Amoxillin-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9FB17B565CD00A1EEC0 /* Amoxillin-img@2x.png */; };
-		E0E5BA2A17B565D100A1EEC0 /* Aspirin-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9FC17B565CD00A1EEC0 /* Aspirin-img.png */; };
-		E0E5BA2B17B565D100A1EEC0 /* Aspirin-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9FD17B565CD00A1EEC0 /* Aspirin-img@2x.png */; };
-		E0E5BA2C17B565D100A1EEC0 /* Benadryl-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9FE17B565CD00A1EEC0 /* Benadryl-img.png */; };
-		E0E5BA2D17B565D100A1EEC0 /* Benadryl-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5B9FF17B565CD00A1EEC0 /* Benadryl-img@2x.png */; };
-		E0E5BA2E17B565D100A1EEC0 /* Benylin-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0017B565CD00A1EEC0 /* Benylin-img.png */; };
-		E0E5BA2F17B565D100A1EEC0 /* Benylin-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0117B565CD00A1EEC0 /* Benylin-img@2x.png */; };
-		E0E5BA3017B565D100A1EEC0 /* Calcium-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0217B565CD00A1EEC0 /* Calcium-img.png */; };
-		E0E5BA3117B565D100A1EEC0 /* Calcium-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0317B565CD00A1EEC0 /* Calcium-img@2x.png */; };
-		E0E5BA3217B565D100A1EEC0 /* Claritan-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0417B565CD00A1EEC0 /* Claritan-img.png */; };
-		E0E5BA3317B565D100A1EEC0 /* Claritan-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0517B565CD00A1EEC0 /* Claritan-img@2x.png */; };
-		E0E5BA3417B565D100A1EEC0 /* Codeine-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0617B565CD00A1EEC0 /* Codeine-img.png */; };
-		E0E5BA3517B565D100A1EEC0 /* Codeine-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0717B565CD00A1EEC0 /* Codeine-img@2x.png */; };
-		E0E5BA3617B565D100A1EEC0 /* Dexedrine-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0817B565CD00A1EEC0 /* Dexedrine-img.png */; };
-		E0E5BA3717B565D100A1EEC0 /* Dexedrine-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0917B565CD00A1EEC0 /* Dexedrine-img@2x.png */; };
-		E0E5BA3817B565D100A1EEC0 /* Diarrhea-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0A17B565CD00A1EEC0 /* Diarrhea-img.png */; };
-		E0E5BA3917B565D100A1EEC0 /* Diarrhea-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0B17B565CD00A1EEC0 /* Diarrhea-img@2x.png */; };
-		E0E5BA3A17B565D100A1EEC0 /* Effexor-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0C17B565CE00A1EEC0 /* Effexor-img.png */; };
-		E0E5BA3B17B565D100A1EEC0 /* Effexor-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0D17B565CE00A1EEC0 /* Effexor-img@2x.png */; };
-		E0E5BA3C17B565D100A1EEC0 /* Erythomycin-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0E17B565CE00A1EEC0 /* Erythomycin-img.png */; };
-		E0E5BA3D17B565D100A1EEC0 /* Erythomycin-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA0F17B565CE00A1EEC0 /* Erythomycin-img@2x.png */; };
-		E0E5BA3E17B565D100A1EEC0 /* Estradiol-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1017B565CE00A1EEC0 /* Estradiol-img.png */; };
-		E0E5BA3F17B565D100A1EEC0 /* Estradiol-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1117B565CE00A1EEC0 /* Estradiol-img@2x.png */; };
-		E0E5BA4017B565D100A1EEC0 /* Fentanyl-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1217B565CE00A1EEC0 /* Fentanyl-img.png */; };
-		E0E5BA4117B565D100A1EEC0 /* Fentanyl-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1317B565CE00A1EEC0 /* Fentanyl-img@2x.png */; };
-		E0E5BA4217B565D100A1EEC0 /* Flexeril-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1417B565CE00A1EEC0 /* Flexeril-img.png */; };
-		E0E5BA4317B565D100A1EEC0 /* Flexeril-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1517B565CE00A1EEC0 /* Flexeril-img@2x.png */; };
-		E0E5BA4417B565D100A1EEC0 /* Flovent-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1617B565CF00A1EEC0 /* Flovent-img.png */; };
-		E0E5BA4517B565D100A1EEC0 /* Flovent-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1717B565CF00A1EEC0 /* Flovent-img@2x.png */; };
-		E0E5BA4617B565D100A1EEC0 /* Gabapentin-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1817B565CF00A1EEC0 /* Gabapentin-img.png */; };
-		E0E5BA4717B565D100A1EEC0 /* Gabapentin-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1917B565CF00A1EEC0 /* Gabapentin-img@2x.png */; };
-		E0E5BA4817B565D100A1EEC0 /* Gravol-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1A17B565CF00A1EEC0 /* Gravol-img.png */; };
-		E0E5BA4917B565D100A1EEC0 /* Gravol-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1B17B565CF00A1EEC0 /* Gravol-img@2x.png */; };
-		E0E5BA4A17B565D100A1EEC0 /* Heparin-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1C17B565CF00A1EEC0 /* Heparin-img.png */; };
-		E0E5BA4B17B565D100A1EEC0 /* Heparin-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1D17B565CF00A1EEC0 /* Heparin-img@2x.png */; };
-		E0E5BA4C17B565D100A1EEC0 /* Humalog-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1E17B565D000A1EEC0 /* Humalog-img.png */; };
-		E0E5BA4D17B565D100A1EEC0 /* Humalog-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA1F17B565D000A1EEC0 /* Humalog-img@2x.png */; };
-		E0E5BA4E17B565D100A1EEC0 /* Hydrocodone-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2017B565D000A1EEC0 /* Hydrocodone-img.png */; };
-		E0E5BA4F17B565D100A1EEC0 /* Hydrocodone-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2117B565D000A1EEC0 /* Hydrocodone-img@2x.png */; };
-		E0E5BA5017B565D100A1EEC0 /* Ibutprofen-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2217B565D000A1EEC0 /* Ibutprofen-img.png */; };
-		E0E5BA5117B565D100A1EEC0 /* Ibutprofen-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2317B565D000A1EEC0 /* Ibutprofen-img@2x.png */; };
-		E0E5BA5217B565D100A1EEC0 /* Imodium-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2417B565D000A1EEC0 /* Imodium-img.png */; };
-		E0E5BA5317B565D100A1EEC0 /* Imodium-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2517B565D100A1EEC0 /* Imodium-img@2x.png */; };
-		E0E5BA5417B565D100A1EEC0 /* Lasix-img.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2617B565D100A1EEC0 /* Lasix-img.png */; };
-		E0E5BA5517B565D100A1EEC0 /* Lasix-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E5BA2717B565D100A1EEC0 /* Lasix-img@2x.png */; };
-		E0E91ADB17BD2247009E8607 /* Signout-new2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E91AD917BD2247009E8607 /* Signout-new2.png */; };
-		E0E91ADC17BD2247009E8607 /* Signout-new2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E91ADA17BD2247009E8607 /* Signout-new2@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		288AE5EE289C5AEBF15ED8CC /* Pods-intrepidApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-intrepidApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-intrepidApp/Pods-intrepidApp.debug.xcconfig"; sourceTree = "<group>"; };
+		2CC179671A30CA55008EA775 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		63690BFA75C7C9F190AFF7A4 /* libPods-intrepidApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-intrepidApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6811614517A9D1A20029134B /* TripManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripManager.h; path = classes/TripManager.h; sourceTree = "<group>"; };
 		6811614617A9D1A20029134B /* TripManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripManager.m; path = classes/TripManager.m; sourceTree = "<group>"; };
@@ -343,27 +89,20 @@
 		6851222217861138008DB6B6 /* intrepidApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "intrepidApp-Prefix.pch"; sourceTree = "<group>"; };
 		6851222317861138008DB6B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6851222417861138008DB6B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6851222617861138008DB6B6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		6851222817861138008DB6B6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		6851222A17861138008DB6B6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6851222D17861138008DB6B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		6851223017861138008DB6B6 /* intrepidApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = intrepidApp.xcdatamodel; sourceTree = "<group>"; };
 		6851223D17861152008DB6B6 /* HealthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthViewController.h; path = classes/HealthViewController.h; sourceTree = "<group>"; };
 		6851223E17861152008DB6B6 /* HealthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthViewController.m; path = classes/HealthViewController.m; sourceTree = "<group>"; };
 		6854D37D17B6F2E7006CC3D2 /* ScrollerTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollerTabViewController.h; path = classes/ScrollerTabViewController.h; sourceTree = "<group>"; };
 		6854D37E17B6F2E7006CC3D2 /* ScrollerTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollerTabViewController.m; path = classes/ScrollerTabViewController.m; sourceTree = "<group>"; };
-		6855EAAF178E4D5E000C4C57 /* mexicoBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mexicoBack@2x.png"; sourceTree = "<group>"; };
-		685B6F5B17A601DC0003B5D9 /* newMenuBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newMenuBack@2x.png"; sourceTree = "<group>"; };
 		685B6F5D17A60B430003B5D9 /* TripCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripCell.h; path = classes/TripCell.h; sourceTree = "<group>"; };
 		685B6F5E17A60B430003B5D9 /* TripCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripCell.m; path = classes/TripCell.m; sourceTree = "<group>"; };
 		685B6F6017A617C20003B5D9 /* TripItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripItem.h; path = classes/TripItem.h; sourceTree = "<group>"; };
 		685B6F6117A617C20003B5D9 /* TripItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripItem.m; path = classes/TripItem.m; sourceTree = "<group>"; };
-		685EB83F178E4C29008B7D9B /* samplePic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "samplePic@2x.png"; sourceTree = "<group>"; };
 		688F9E611786207F00CF850C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = classes/Constants.h; sourceTree = "<group>"; };
 		688F9E621786262800CF850C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		688F9E641786295100CF850C /* HealthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthCell.h; path = classes/HealthCell.h; sourceTree = "<group>"; };
 		688F9E651786295100CF850C /* HealthCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthCell.m; path = classes/HealthCell.m; sourceTree = "<group>"; };
-		68A2D719178BDBE800B3C330 /* searchBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchBar@2x.png"; sourceTree = "<group>"; };
 		68B071E717A4D3FC0061E418 /* SecurityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecurityViewController.h; path = classes/SecurityViewController.h; sourceTree = "<group>"; };
 		68B071E817A4D3FC0061E418 /* SecurityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecurityViewController.m; path = classes/SecurityViewController.m; sourceTree = "<group>"; };
 		68B071EA17A4D7290061E418 /* EmbassyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmbassyCell.h; path = classes/EmbassyCell.h; sourceTree = "<group>"; };
@@ -382,23 +121,13 @@
 		68DBAE5F179F6CC300D1DE0B /* CurrencyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrencyCell.m; path = classes/CurrencyCell.m; sourceTree = "<group>"; };
 		68E4240217926E1E00431908 /* IntreSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntreSearchBar.h; path = classes/IntreSearchBar.h; sourceTree = "<group>"; };
 		68E4240317926E1E00431908 /* IntreSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntreSearchBar.m; path = classes/IntreSearchBar.m; sourceTree = "<group>"; };
-		68E42405179274BA00431908 /* mexicoBackBigger@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mexicoBackBigger@2x.png"; sourceTree = "<group>"; };
-		68E42407179277C100431908 /* spyGlass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spyGlass@2x.png"; sourceTree = "<group>"; };
-		68E424091793190600431908 /* Common@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Common@2x.png"; sourceTree = "<group>"; };
-		68E4240A1793190600431908 /* Uncommon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Uncommon@2x.png"; sourceTree = "<group>"; };
-		68F64BFB17A87788002C4793 /* newMenuBack2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newMenuBack2@2x.png"; sourceTree = "<group>"; };
-		68F64BFD17A87863002C4793 /* menuArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menuArrow@2x.png"; sourceTree = "<group>"; };
 		6CAAA459F58A70B7096E1942 /* Pods-intrepidApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-intrepidApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-intrepidApp/Pods-intrepidApp.release.xcconfig"; sourceTree = "<group>"; };
-		7E1C92CA17A1F56B00878249 /* underline@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "underline@2x.png"; sourceTree = "<group>"; };
-		7E347777178F8B3A00FB86DC /* cancel-search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel-search@2x.png"; sourceTree = "<group>"; };
 		7E34777A1791E79300FB86DC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = classes/LoginViewController.h; sourceTree = "<group>"; };
 		7E34777B1791E79300FB86DC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = classes/LoginViewController.m; sourceTree = "<group>"; };
 		7E34777D1791E7A700FB86DC /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = classes/SignUpViewController.h; sourceTree = "<group>"; };
 		7E34777E1791E7A700FB86DC /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = classes/SignUpViewController.m; sourceTree = "<group>"; };
 		7E44F8D01788FA4B00AAA32B /* HealthItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthItem.h; path = classes/HealthItem.h; sourceTree = "<group>"; };
 		7E44F8D11788FA4B00AAA32B /* HealthItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthItem.m; path = classes/HealthItem.m; sourceTree = "<group>"; };
-		7E5B30B71798813900692F80 /* login-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-background@2x.png"; sourceTree = "<group>"; };
-		7E5B30B91798814800692F80 /* signUp-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signUp-background@2x.png"; sourceTree = "<group>"; };
 		7E82E9B81794EFB500027268 /* proximanova-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-regular.ttf"; sourceTree = "<group>"; };
 		7E82E9BA1794F0B900027268 /* proximanova-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-bold.ttf"; sourceTree = "<group>"; };
 		7E9A130A17A876FF0082003C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -409,266 +138,27 @@
 		7E9A131417A8AE6E0082003C /* PrivacyPolicyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyPolicyViewController.m; sourceTree = "<group>"; };
 		7EA293AF17A60B0A000A56E9 /* MyTripsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTripsViewController.h; sourceTree = "<group>"; };
 		7EA293B017A60B0A000A56E9 /* MyTripsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTripsViewController.m; sourceTree = "<group>"; };
-		7EA293B217A613C2000A56E9 /* mexico-city@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mexico-city@2x.png"; sourceTree = "<group>"; };
 		7EA293B617A77161000A56E9 /* LearnMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnMoreViewController.h; sourceTree = "<group>"; };
 		7EA293B717A77161000A56E9 /* LearnMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearnMoreViewController.m; sourceTree = "<group>"; };
 		7ECD0425178BD7C500D6C34B /* HealthViewDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthViewDetailController.h; path = classes/HealthViewDetailController.h; sourceTree = "<group>"; };
 		7ECD0426178BD7C500D6C34B /* HealthViewDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthViewDetailController.m; path = classes/HealthViewDetailController.m; sourceTree = "<group>"; };
-		7ECD0428178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "descriptionAndSideEffectLogo@2x.png"; sourceTree = "<group>"; };
-		7ECD042A178DAF2000D6C34B /* back-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button@2x.png"; sourceTree = "<group>"; };
-		7ECD042C178DC07600D6C34B /* top-nav-bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top-nav-bar@2x.png"; sourceTree = "<group>"; };
-		7ECD0436178DE24F00D6C34B /* medication-pic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "medication-pic@2x.png"; sourceTree = "<group>"; };
-		7ECD0437178DE24F00D6C34B /* stethoscope-pic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stethoscope-pic@2x.png"; sourceTree = "<group>"; };
-		7ECD0438178DE24F00D6C34B /* heart-rate-pic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-rate-pic@2x.png"; sourceTree = "<group>"; };
-		7ECD0439178DE24F00D6C34B /* conditions-pic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "conditions-pic@2x.png"; sourceTree = "<group>"; };
 		7ED645C01795A2E9000475A1 /* proximanova-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-semibold.ttf"; sourceTree = "<group>"; };
 		7ED645C41795AB80000475A1 /* proximanova-light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-light.ttf"; sourceTree = "<group>"; };
-		7EE44DAA179F6F75006BA2EC /* rounded-rectangle-@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rounded-rectangle-@2x.png"; sourceTree = "<group>"; };
-		7EE44DAD179F79BA006BA2EC /* overview-culture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overview-culture@2x.png"; sourceTree = "<group>"; };
-		7EE44DAE179F79BA006BA2EC /* overview-currency@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overview-currency@2x.png"; sourceTree = "<group>"; };
-		7EE44DAF179F79BA006BA2EC /* overview-history@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overview-history@2x.png"; sourceTree = "<group>"; };
-		7EE44DB3179F7B24006BA2EC /* culture-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "culture-icon@2x.png"; sourceTree = "<group>"; };
 		7EE44DB7179F7E30006BA2EC /* CurrencyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrencyItem.h; path = classes/CurrencyItem.h; sourceTree = "<group>"; };
 		7EE44DB8179F7E30006BA2EC /* CurrencyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrencyItem.m; path = classes/CurrencyItem.m; sourceTree = "<group>"; };
 		B61550DB17B52E7400044F11 /* LegalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegalViewController.h; sourceTree = "<group>"; };
 		B61550DC17B52E7400044F11 /* LegalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegalViewController.m; sourceTree = "<group>"; };
-		B622BB9417C6893400027D2E /* overview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overview@2x.png"; sourceTree = "<group>"; };
-		B622BB9517C6893400027D2E /* security@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "security@2x.png"; sourceTree = "<group>"; };
-		B622BB9717C6893400027D2E /* health@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "health@2x.png"; sourceTree = "<group>"; };
 		B6DB0C4517AE2C5C001694B0 /* AssistanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssistanceViewController.h; sourceTree = "<group>"; };
 		B6DB0C4617AE2C5C001694B0 /* AssistanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssistanceViewController.m; sourceTree = "<group>"; };
-		B6FCB79B17CADA7200E7CFB9 /* assistance-new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "assistance-new@2x.png"; sourceTree = "<group>"; };
-		DC45AEEC181E007100ABC12C /* signout-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signout-button@2x.png"; sourceTree = "<group>"; };
-		DC45AEEE181E025800ABC12C /* signout-button2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signout-button2@2x.png"; sourceTree = "<group>"; };
-		E0203E5117ABF93D000F8AA2 /* Call-Intrepid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Call-Intrepid.png"; sourceTree = "<group>"; };
-		E0203E5217ABF93D000F8AA2 /* Call-Intrepid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Call-Intrepid@2x.png"; sourceTree = "<group>"; };
-		E0203E5317ABF93D000F8AA2 /* Call-Local.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Call-Local.png"; sourceTree = "<group>"; };
-		E0203E5417ABF93D000F8AA2 /* Call-Local@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Call-Local@2x.png"; sourceTree = "<group>"; };
-		E0203E5517ABF93D000F8AA2 /* IMG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG.png; sourceTree = "<group>"; };
-		E0203E5617ABF93D000F8AA2 /* IMG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IMG@2x.png"; sourceTree = "<group>"; };
-		E0203E5717ABF93D000F8AA2 /* Map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Map.png; sourceTree = "<group>"; };
-		E0203E5817ABF93D000F8AA2 /* Map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Map@2x.png"; sourceTree = "<group>"; };
-		E0203E5917ABF93D000F8AA2 /* Shape-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shape-24.png"; sourceTree = "<group>"; };
-		E0203E5A17ABF93D000F8AA2 /* Shape-24@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shape-24@2x.png"; sourceTree = "<group>"; };
-		E0263D5D17B124980087FAC7 /* Political-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Political-icon.png"; sourceTree = "<group>"; };
-		E0263D5E17B124980087FAC7 /* Political-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Political-icon@2x.png"; sourceTree = "<group>"; };
-		E0263D6917B129390087FAC7 /* Tourist-icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tourist-icon1.png"; sourceTree = "<group>"; };
-		E0263D6A17B129390087FAC7 /* Tourist-icon1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tourist-icon1@2x.png"; sourceTree = "<group>"; };
 		E02BBA0917A8845200215CEA /* EmbassyDetailedContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbassyDetailedContent.h; sourceTree = "<group>"; };
 		E02BBA0A17A8845300215CEA /* EmbassyDetailedContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbassyDetailedContent.m; sourceTree = "<group>"; };
-		E02D1A8917BD38DF00322B6A /* Add-photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add-photo.png"; sourceTree = "<group>"; };
-		E02D1A8A17BD38DF00322B6A /* Add-photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add-photo@2x.png"; sourceTree = "<group>"; };
-		E03E0B5417A7429400E344B8 /* Currency-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Currency-Icon.png"; sourceTree = "<group>"; };
-		E03E0B5517A7429400E344B8 /* Currency-Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Currency-Icon@2x.png"; sourceTree = "<group>"; };
-		E03E0B5917A7480600E344B8 /* Guada-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada-icon.png"; sourceTree = "<group>"; };
-		E03E0B5A17A7480600E344B8 /* Guada-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada-icon@2x.png"; sourceTree = "<group>"; };
-		E03E0B5B17A7480600E344B8 /* Mexico-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mexico-icon.png"; sourceTree = "<group>"; };
-		E03E0B5C17A7480600E344B8 /* Mexico-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mexico-icon@2x.png"; sourceTree = "<group>"; };
-		E03E0B5D17A7480600E344B8 /* Miami-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-icon.png"; sourceTree = "<group>"; };
-		E03E0B5E17A7480600E344B8 /* Miami@2x-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami@2x-icon.png"; sourceTree = "<group>"; };
-		E03E0B5F17A7480600E344B8 /* Puerto-Plata-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Plata-icon.png"; sourceTree = "<group>"; };
-		E03E0B6017A7480600E344B8 /* Puerto-Plata-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Plata-icon@2x.png"; sourceTree = "<group>"; };
-		E049C42417A6DADB00B00B35 /* Altitude-Sickness@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Altitude-Sickness@2x.png"; sourceTree = "<group>"; };
-		E049C42517A6DADB00B00B35 /* Cholera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cholera@2x.png"; sourceTree = "<group>"; };
-		E049C42617A6DADB00B00B35 /* Dengue-Fever@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dengue-Fever@2x.png"; sourceTree = "<group>"; };
-		E049C42717A6DADB00B00B35 /* Hepatitis-A@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hepatitis-A@2x.png"; sourceTree = "<group>"; };
-		E049C42817A6DADB00B00B35 /* Hepatitis-B@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hepatitis-B@2x.png"; sourceTree = "<group>"; };
-		E049C42917A6DADB00B00B35 /* Jet-Lag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jet-Lag@2x.png"; sourceTree = "<group>"; };
-		E049C42A17A6DADB00B00B35 /* Lyme@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lyme@2x.png"; sourceTree = "<group>"; };
-		E049C42B17A6DADB00B00B35 /* Malaria@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Malaria@2x.png"; sourceTree = "<group>"; };
-		E049C42C17A6DADB00B00B35 /* Meningitis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Meningitis@2x.png"; sourceTree = "<group>"; };
-		E049C43617A6DB9D00B00B35 /* Altitude-Sickness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Altitude-Sickness.png"; sourceTree = "<group>"; };
-		E049C43817A6DBBD00B00B35 /* Cholera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cholera.png; sourceTree = "<group>"; };
-		E049C43917A6DBBD00B00B35 /* Dengue-Fever.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dengue-Fever.png"; sourceTree = "<group>"; };
-		E049C43A17A6DBBD00B00B35 /* Hepatitis-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hepatitis-A.png"; sourceTree = "<group>"; };
-		E049C43B17A6DBBD00B00B35 /* Hepatitis-B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hepatitis-B.png"; sourceTree = "<group>"; };
-		E049C43C17A6DBBD00B00B35 /* Jet-Lag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jet-Lag.png"; sourceTree = "<group>"; };
-		E049C43D17A6DBBD00B00B35 /* Lyme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lyme.png; sourceTree = "<group>"; };
-		E049C43E17A6DBBD00B00B35 /* Malaria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Malaria.png; sourceTree = "<group>"; };
-		E049C43F17A6DBBD00B00B35 /* Meningitis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Meningitis.png; sourceTree = "<group>"; };
-		E049C44817A6DDB200B00B35 /* Diarrhea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Diarrhea.png; sourceTree = "<group>"; };
-		E049C44917A6DDB200B00B35 /* Diarrhea@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Diarrhea@2x.png"; sourceTree = "<group>"; };
-		E049C44A17A6DDB200B00B35 /* Motion-Sickness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Motion-Sickness.png"; sourceTree = "<group>"; };
-		E049C44B17A6DDB200B00B35 /* Motion-Sickness@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Motion-Sickness@2x.png"; sourceTree = "<group>"; };
-		E049C44C17A6DDB200B00B35 /* Rabies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rabies.png; sourceTree = "<group>"; };
-		E049C44D17A6DDB200B00B35 /* Rabies@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rabies@2x.png"; sourceTree = "<group>"; };
-		E049C44E17A6DDB200B00B35 /* Typhoid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Typhoid.png; sourceTree = "<group>"; };
-		E049C44F17A6DDB200B00B35 /* Typhoid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Typhoid@2x.png"; sourceTree = "<group>"; };
-		E049C45017A6DDB200B00B35 /* West-Nile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "West-Nile.png"; sourceTree = "<group>"; };
-		E049C45117A6DDB200B00B35 /* West-Nile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "West-Nile@2x.png"; sourceTree = "<group>"; };
 		E04C4DBB17A3103E002A23F4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		E058777E17A871CC00E42A78 /* Add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Add.png; sourceTree = "<group>"; };
-		E058777F17A871CC00E42A78 /* Add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add@2x.png"; sourceTree = "<group>"; };
 		E058778217A8768500E42A78 /* EmbassyDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbassyDetailedViewController.h; sourceTree = "<group>"; };
 		E058778317A8768500E42A78 /* EmbassyDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbassyDetailedViewController.m; sourceTree = "<group>"; };
-		E058778617A877C200E42A78 /* divider-mid-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "divider-mid-1.png"; sourceTree = "<group>"; };
-		E058778717A877C200E42A78 /* divider-mid-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "divider-mid-1@2x.png"; sourceTree = "<group>"; };
-		E058778817A877C200E42A78 /* Signout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Signout.png; sourceTree = "<group>"; };
-		E058778917A877C200E42A78 /* Signout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Signout@2x.png"; sourceTree = "<group>"; };
-		E06FCE0817A60852003F3FC6 /* security-embassy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "security-embassy.png"; sourceTree = "<group>"; };
-		E06FCE0917A60852003F3FC6 /* security-political.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "security-political.png"; sourceTree = "<group>"; };
-		E06FCE0C17A60963003F3FC6 /* embassy-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "embassy-icon.png"; sourceTree = "<group>"; };
-		E077251317A9E3DE00804CA9 /* ANew-trip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ANew-trip.png"; sourceTree = "<group>"; };
-		E077251417A9E3DF00804CA9 /* ANew-trip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ANew-trip@2x.png"; sourceTree = "<group>"; };
-		E077251517A9E3DF00804CA9 /* Guadala.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guadala.png; sourceTree = "<group>"; };
-		E077251617A9E3DF00804CA9 /* Guadala@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guadala@2x.png"; sourceTree = "<group>"; };
-		E077251717A9E3DF00804CA9 /* Mexico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mexico.png; sourceTree = "<group>"; };
-		E077251817A9E3DF00804CA9 /* Mexico@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mexico@2x.png"; sourceTree = "<group>"; };
-		E077251B17A9E3DF00804CA9 /* Puerto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Puerto.png; sourceTree = "<group>"; };
-		E077251C17A9E3DF00804CA9 /* Puerto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto@2x.png"; sourceTree = "<group>"; };
-		E077252717A9E44B00804CA9 /* Miami-USA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-USA.png"; sourceTree = "<group>"; };
-		E077252817A9E44B00804CA9 /* Miami-USA@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-USA@2x.png"; sourceTree = "<group>"; };
-		E0856BFB17B9392900E5C04F /* Macrobid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Macrobid.png; sourceTree = "<group>"; };
-		E0856BFC17B9392900E5C04F /* Macrobid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Macrobid@2x.png"; sourceTree = "<group>"; };
-		E0856BFD17B9392900E5C04F /* Mefloquine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mefloquine.png; sourceTree = "<group>"; };
-		E0856BFE17B9392900E5C04F /* Mefloquine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mefloquine@2x.png"; sourceTree = "<group>"; };
-		E0856BFF17B9392900E5C04F /* Naproxen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Naproxen.png; sourceTree = "<group>"; };
-		E0856C0017B9392900E5C04F /* Naproxen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Naproxen@2x.png"; sourceTree = "<group>"; };
-		E0856C0117B9392900E5C04F /* Nexium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nexium.png; sourceTree = "<group>"; };
-		E0856C0217B9392900E5C04F /* Nexium@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nexium@2x.png"; sourceTree = "<group>"; };
-		E0856C0317B9392900E5C04F /* Norvasc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Norvasc.png; sourceTree = "<group>"; };
-		E0856C0417B9392900E5C04F /* Norvasc@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Norvasc@2x.png"; sourceTree = "<group>"; };
-		E0856C0517B9392900E5C04F /* Otriven.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Otriven.png; sourceTree = "<group>"; };
-		E0856C0617B9392900E5C04F /* Otriven@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Otriven@2x.png"; sourceTree = "<group>"; };
-		E0856C0717B9392900E5C04F /* Oxycodone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Oxycodone.png; sourceTree = "<group>"; };
-		E0856C0817B9392900E5C04F /* Oxycodone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Oxycodone@2x.png"; sourceTree = "<group>"; };
-		E0856C0917B9392900E5C04F /* Pepcid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pepcid.png; sourceTree = "<group>"; };
-		E0856C0A17B9392900E5C04F /* Pepcid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pepcid@2x.png"; sourceTree = "<group>"; };
-		E0856C0B17B9392900E5C04F /* Quinine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Quinine.png; sourceTree = "<group>"; };
-		E0856C0C17B9392900E5C04F /* Quinine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Quinine@2x.png"; sourceTree = "<group>"; };
-		E0856C0D17B9392900E5C04F /* Rabeprazole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rabeprazole.png; sourceTree = "<group>"; };
-		E0856C0E17B9392900E5C04F /* Rabeprazole@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rabeprazole@2x.png"; sourceTree = "<group>"; };
-		E0856C0F17B9392900E5C04F /* Seroquel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Seroquel.png; sourceTree = "<group>"; };
-		E0856C1017B9392900E5C04F /* Seroquel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Seroquel@2x.png"; sourceTree = "<group>"; };
-		E0856C1117B9392900E5C04F /* Toradole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Toradole.png; sourceTree = "<group>"; };
-		E0856C1217B9392900E5C04F /* Toradole@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Toradole@2x.png"; sourceTree = "<group>"; };
-		E0856C1317B9392900E5C04F /* Travel-Sickness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Travel-Sickness.png"; sourceTree = "<group>"; };
-		E0856C1417B9392900E5C04F /* Travel-Sickness@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Travel-Sickness@2x.png"; sourceTree = "<group>"; };
-		E0856C1517B9392900E5C04F /* Tylenol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tylenol.png; sourceTree = "<group>"; };
-		E0856C1617B9392900E5C04F /* Tylenol@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tylenol@2x.png"; sourceTree = "<group>"; };
-		E0856C1717B9392900E5C04F /* Ventolin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ventolin.png; sourceTree = "<group>"; };
-		E0856C1817B9392900E5C04F /* Ventolin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ventolin@2x.png"; sourceTree = "<group>"; };
-		E0856C1917B9392900E5C04F /* Wellbutrin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wellbutrin.png; sourceTree = "<group>"; };
-		E0856C1A17B9392900E5C04F /* Wellbutrin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Wellbutrin@2x.png"; sourceTree = "<group>"; };
-		E0856C1B17B9392900E5C04F /* Xanax.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Xanax.png; sourceTree = "<group>"; };
-		E0856C1C17B9392900E5C04F /* Xanax@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Xanax@2x.png"; sourceTree = "<group>"; };
-		E0856C1D17B9392900E5C04F /* Zoloft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zoloft.png; sourceTree = "<group>"; };
-		E0856C1E17B9392900E5C04F /* Zoloft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zoloft@2x.png"; sourceTree = "<group>"; };
 		E08615EF17A8224D00DE240B /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		E08615F017A8224D00DE240B /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
-		E095E79D17B56EA500114024 /* Benzocaine-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Benzocaine-img.png"; sourceTree = "<group>"; };
-		E095E79E17B56EA500114024 /* Benzocaine-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Benzocaine-img@2x.png"; sourceTree = "<group>"; };
-		E09DAA4E17A97EA6006AD6E9 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
-		E0A0895E17B43ADC007B5C65 /* Maximized-edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Maximized-edit.png"; sourceTree = "<group>"; };
-		E0A0895F17B43ADC007B5C65 /* Maximized-edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Maximized-edit@2x.png"; sourceTree = "<group>"; };
-		E0B4268617B43E6700DA407E /* Call-Intrepid247.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Call-Intrepid247.png"; sourceTree = "<group>"; };
-		E0B4268717B43E6700DA407E /* Call-Intrepid247@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Call-Intrepid247@2x.png"; sourceTree = "<group>"; };
 		E0B5825017A31D2C00093130 /* intrepid icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intrepid icon.png"; sourceTree = "<group>"; };
 		E0B5825217A31D8100093130 /* app icon nonretina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app icon nonretina.png"; sourceTree = "<group>"; };
-		E0B5CF8917AC0FB200F5BB66 /* Puerto-Political.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Political.png"; sourceTree = "<group>"; };
-		E0B5CF8A17AC0FB200F5BB66 /* Puerto-Local.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Local.png"; sourceTree = "<group>"; };
-		E0B5CF8B17AC0FB200F5BB66 /* Puerto-Political@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Political@2x.png"; sourceTree = "<group>"; };
-		E0B5CF8C17AC0FB200F5BB66 /* Puerto-Culture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Culture.png"; sourceTree = "<group>"; };
-		E0B5CF8D17AC0FB200F5BB66 /* Puerto-Culture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Culture@2x.png"; sourceTree = "<group>"; };
-		E0B5CF8E17AC0FB200F5BB66 /* Puerto-Local@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Local@2x.png"; sourceTree = "<group>"; };
-		E0B5CF8F17AC0FB200F5BB66 /* Puerto-Overview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Overview.png"; sourceTree = "<group>"; };
-		E0B5CF9017AC0FB200F5BB66 /* Puerto-Overview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puerto-Overview@2x.png"; sourceTree = "<group>"; };
-		E0B5CF9A17AC0FD400F5BB66 /* Guada-Culture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada-Culture@2x.png"; sourceTree = "<group>"; };
-		E0B5CF9B17AC0FD400F5BB66 /* Guada-Political.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada-Political.png"; sourceTree = "<group>"; };
-		E0B5CF9C17AC0FD400F5BB66 /* Guada-Overview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada-Overview.png"; sourceTree = "<group>"; };
-		E0B5CF9D17AC0FD400F5BB66 /* Guada-Local@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada-Local@2x.png"; sourceTree = "<group>"; };
-		E0B5CF9E17AC0FD400F5BB66 /* Guada-Political@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada-Political@2x.png"; sourceTree = "<group>"; };
-		E0B5CF9F17AC0FD400F5BB66 /* Guada-Overview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada-Overview@2x.png"; sourceTree = "<group>"; };
-		E0B5CFA017AC0FD400F5BB66 /* Guada-Local.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada-Local.png"; sourceTree = "<group>"; };
-		E0B5CFA117AC0FD400F5BB66 /* Guada-Culture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guada-Culture.png"; sourceTree = "<group>"; };
-		E0B5CFAB17AC0FF100F5BB66 /* Miami-Overview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-Overview.png"; sourceTree = "<group>"; };
-		E0B5CFAC17AC0FF100F5BB66 /* Miami-Political@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-Political@2x.png"; sourceTree = "<group>"; };
-		E0B5CFAD17AC0FF100F5BB66 /* Miami-Local@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-Local@2x.png"; sourceTree = "<group>"; };
-		E0B5CFAE17AC0FF100F5BB66 /* Miami-Local.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-Local.png"; sourceTree = "<group>"; };
-		E0B5CFAF17AC0FF100F5BB66 /* Miami-Culture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-Culture@2x.png"; sourceTree = "<group>"; };
-		E0B5CFB017AC0FF100F5BB66 /* Miami-Political.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-Political.png"; sourceTree = "<group>"; };
-		E0B5CFB117AC0FF100F5BB66 /* Miami-Culture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-Culture.png"; sourceTree = "<group>"; };
-		E0B5CFB217AC0FF100F5BB66 /* Miami-Overview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miami-Overview@2x.png"; sourceTree = "<group>"; };
-		E0BF3BDE17A7399D00241A52 /* AUS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUS.png; sourceTree = "<group>"; };
-		E0BF3BDF17A7399D00241A52 /* AUS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AUS@2x.png"; sourceTree = "<group>"; };
-		E0BF3BE017A7399D00241A52 /* BRL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BRL.png; sourceTree = "<group>"; };
-		E0BF3BE117A7399D00241A52 /* BRL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BRL@2x.png"; sourceTree = "<group>"; };
-		E0BF3BE217A7399D00241A52 /* CAD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CAD.png; sourceTree = "<group>"; };
-		E0BF3BE317A7399D00241A52 /* CAD@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CAD@2x.png"; sourceTree = "<group>"; };
-		E0BF3BE417A7399D00241A52 /* CHF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CHF.png; sourceTree = "<group>"; };
-		E0BF3BE517A7399D00241A52 /* CHF@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CHF@2x.png"; sourceTree = "<group>"; };
-		E0BF3BE617A7399D00241A52 /* CNY.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CNY.png; sourceTree = "<group>"; };
-		E0BF3BE717A7399D00241A52 /* CNY@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CNY@2x.png"; sourceTree = "<group>"; };
-		E0BF3BE817A7399D00241A52 /* DOP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DOP.png; sourceTree = "<group>"; };
-		E0BF3BE917A7399D00241A52 /* DOP@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DOP@2x.png"; sourceTree = "<group>"; };
-		E0BF3BEA17A7399D00241A52 /* EUR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EUR.png; sourceTree = "<group>"; };
-		E0BF3BEB17A7399D00241A52 /* EUR@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EUR@2x.png"; sourceTree = "<group>"; };
-		E0BF3BEC17A7399D00241A52 /* GBP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GBP.png; sourceTree = "<group>"; };
-		E0BF3BED17A7399D00241A52 /* GBP@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GBP@2x.png"; sourceTree = "<group>"; };
-		E0BF3BEE17A7399D00241A52 /* INR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = INR.png; sourceTree = "<group>"; };
-		E0BF3BEF17A7399D00241A52 /* INR@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "INR@2x.png"; sourceTree = "<group>"; };
-		E0BF3BF017A7399D00241A52 /* MXN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MXN.png; sourceTree = "<group>"; };
-		E0BF3BF117A7399D00241A52 /* MXN@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MXN@2x.png"; sourceTree = "<group>"; };
-		E0BF3BF217A7399D00241A52 /* MYR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MYR.png; sourceTree = "<group>"; };
-		E0BF3BF317A7399D00241A52 /* MYR@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MYR@2x.png"; sourceTree = "<group>"; };
-		E0BF3BF417A7399D00241A52 /* THB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = THB.png; sourceTree = "<group>"; };
-		E0BF3BF517A7399D00241A52 /* THB@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "THB@2x.png"; sourceTree = "<group>"; };
-		E0BF3BF617A7399D00241A52 /* USD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = USD.png; sourceTree = "<group>"; };
-		E0BF3BF717A7399D00241A52 /* USD@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "USD@2x.png"; sourceTree = "<group>"; };
-		E0C7887117F0A7F40067D2D7 /* cool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cool.png; sourceTree = "<group>"; };
-		E0D7ECA417AD575D006E4424 /* Menu-new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-new.png"; sourceTree = "<group>"; };
-		E0D7ECA517AD575D006E4424 /* Menu-new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-new@2x.png"; sourceTree = "<group>"; };
-		E0E3CB1517C699F300D0642A /* Signout_new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Signout_new@2x.png"; sourceTree = "<group>"; };
-		E0E5B9F617B5651100A1EEC0 /* Advil-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Advil-img.png"; sourceTree = "<group>"; };
-		E0E5B9F717B5651100A1EEC0 /* Advil-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Advil-img@2x.png"; sourceTree = "<group>"; };
-		E0E5B9FA17B565CD00A1EEC0 /* Amoxillin-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Amoxillin-img.png"; sourceTree = "<group>"; };
-		E0E5B9FB17B565CD00A1EEC0 /* Amoxillin-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Amoxillin-img@2x.png"; sourceTree = "<group>"; };
-		E0E5B9FC17B565CD00A1EEC0 /* Aspirin-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Aspirin-img.png"; sourceTree = "<group>"; };
-		E0E5B9FD17B565CD00A1EEC0 /* Aspirin-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Aspirin-img@2x.png"; sourceTree = "<group>"; };
-		E0E5B9FE17B565CD00A1EEC0 /* Benadryl-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Benadryl-img.png"; sourceTree = "<group>"; };
-		E0E5B9FF17B565CD00A1EEC0 /* Benadryl-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Benadryl-img@2x.png"; sourceTree = "<group>"; };
-		E0E5BA0017B565CD00A1EEC0 /* Benylin-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Benylin-img.png"; sourceTree = "<group>"; };
-		E0E5BA0117B565CD00A1EEC0 /* Benylin-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Benylin-img@2x.png"; sourceTree = "<group>"; };
-		E0E5BA0217B565CD00A1EEC0 /* Calcium-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calcium-img.png"; sourceTree = "<group>"; };
-		E0E5BA0317B565CD00A1EEC0 /* Calcium-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calcium-img@2x.png"; sourceTree = "<group>"; };
-		E0E5BA0417B565CD00A1EEC0 /* Claritan-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Claritan-img.png"; sourceTree = "<group>"; };
-		E0E5BA0517B565CD00A1EEC0 /* Claritan-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Claritan-img@2x.png"; sourceTree = "<group>"; };
-		E0E5BA0617B565CD00A1EEC0 /* Codeine-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Codeine-img.png"; sourceTree = "<group>"; };
-		E0E5BA0717B565CD00A1EEC0 /* Codeine-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Codeine-img@2x.png"; sourceTree = "<group>"; };
-		E0E5BA0817B565CD00A1EEC0 /* Dexedrine-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dexedrine-img.png"; sourceTree = "<group>"; };
-		E0E5BA0917B565CD00A1EEC0 /* Dexedrine-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dexedrine-img@2x.png"; sourceTree = "<group>"; };
-		E0E5BA0A17B565CD00A1EEC0 /* Diarrhea-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Diarrhea-img.png"; sourceTree = "<group>"; };
-		E0E5BA0B17B565CD00A1EEC0 /* Diarrhea-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Diarrhea-img@2x.png"; sourceTree = "<group>"; };
-		E0E5BA0C17B565CE00A1EEC0 /* Effexor-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Effexor-img.png"; sourceTree = "<group>"; };
-		E0E5BA0D17B565CE00A1EEC0 /* Effexor-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Effexor-img@2x.png"; sourceTree = "<group>"; };
-		E0E5BA0E17B565CE00A1EEC0 /* Erythomycin-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Erythomycin-img.png"; sourceTree = "<group>"; };
-		E0E5BA0F17B565CE00A1EEC0 /* Erythomycin-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Erythomycin-img@2x.png"; sourceTree = "<group>"; };
-		E0E5BA1017B565CE00A1EEC0 /* Estradiol-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Estradiol-img.png"; sourceTree = "<group>"; };
-		E0E5BA1117B565CE00A1EEC0 /* Estradiol-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Estradiol-img@2x.png"; sourceTree = "<group>"; };
-		E0E5BA1217B565CE00A1EEC0 /* Fentanyl-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fentanyl-img.png"; sourceTree = "<group>"; };
-		E0E5BA1317B565CE00A1EEC0 /* Fentanyl-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fentanyl-img@2x.png"; sourceTree = "<group>"; };
-		E0E5BA1417B565CE00A1EEC0 /* Flexeril-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flexeril-img.png"; sourceTree = "<group>"; };
-		E0E5BA1517B565CE00A1EEC0 /* Flexeril-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flexeril-img@2x.png"; sourceTree = "<group>"; };
-		E0E5BA1617B565CF00A1EEC0 /* Flovent-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flovent-img.png"; sourceTree = "<group>"; };
-		E0E5BA1717B565CF00A1EEC0 /* Flovent-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flovent-img@2x.png"; sourceTree = "<group>"; };
-		E0E5BA1817B565CF00A1EEC0 /* Gabapentin-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gabapentin-img.png"; sourceTree = "<group>"; };
-		E0E5BA1917B565CF00A1EEC0 /* Gabapentin-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gabapentin-img@2x.png"; sourceTree = "<group>"; };
-		E0E5BA1A17B565CF00A1EEC0 /* Gravol-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gravol-img.png"; sourceTree = "<group>"; };
-		E0E5BA1B17B565CF00A1EEC0 /* Gravol-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gravol-img@2x.png"; sourceTree = "<group>"; };
-		E0E5BA1C17B565CF00A1EEC0 /* Heparin-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Heparin-img.png"; sourceTree = "<group>"; };
-		E0E5BA1D17B565CF00A1EEC0 /* Heparin-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Heparin-img@2x.png"; sourceTree = "<group>"; };
-		E0E5BA1E17B565D000A1EEC0 /* Humalog-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Humalog-img.png"; sourceTree = "<group>"; };
-		E0E5BA1F17B565D000A1EEC0 /* Humalog-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Humalog-img@2x.png"; sourceTree = "<group>"; };
-		E0E5BA2017B565D000A1EEC0 /* Hydrocodone-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hydrocodone-img.png"; sourceTree = "<group>"; };
-		E0E5BA2117B565D000A1EEC0 /* Hydrocodone-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hydrocodone-img@2x.png"; sourceTree = "<group>"; };
-		E0E5BA2217B565D000A1EEC0 /* Ibutprofen-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ibutprofen-img.png"; sourceTree = "<group>"; };
-		E0E5BA2317B565D000A1EEC0 /* Ibutprofen-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ibutprofen-img@2x.png"; sourceTree = "<group>"; };
-		E0E5BA2417B565D000A1EEC0 /* Imodium-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Imodium-img.png"; sourceTree = "<group>"; };
-		E0E5BA2517B565D100A1EEC0 /* Imodium-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Imodium-img@2x.png"; sourceTree = "<group>"; };
-		E0E5BA2617B565D100A1EEC0 /* Lasix-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lasix-img.png"; sourceTree = "<group>"; };
-		E0E5BA2717B565D100A1EEC0 /* Lasix-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lasix-img@2x.png"; sourceTree = "<group>"; };
-		E0E91AD917BD2247009E8607 /* Signout-new2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Signout-new2.png"; sourceTree = "<group>"; };
-		E0E91ADA17BD2247009E8607 /* Signout-new2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Signout-new2@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -735,107 +225,6 @@
 			name = "Support Classes";
 			sourceTree = "<group>";
 		};
-		684E364B178F85C1004E27B9 /* health */ = {
-			isa = PBXGroup;
-			children = (
-				E0856BFB17B9392900E5C04F /* Macrobid.png */,
-				E0856BFC17B9392900E5C04F /* Macrobid@2x.png */,
-				E0856BFD17B9392900E5C04F /* Mefloquine.png */,
-				E0856BFE17B9392900E5C04F /* Mefloquine@2x.png */,
-				E0856BFF17B9392900E5C04F /* Naproxen.png */,
-				E0856C0017B9392900E5C04F /* Naproxen@2x.png */,
-				E0856C0117B9392900E5C04F /* Nexium.png */,
-				E0856C0217B9392900E5C04F /* Nexium@2x.png */,
-				E0856C0317B9392900E5C04F /* Norvasc.png */,
-				E0856C0417B9392900E5C04F /* Norvasc@2x.png */,
-				E0856C0517B9392900E5C04F /* Otriven.png */,
-				E0856C0617B9392900E5C04F /* Otriven@2x.png */,
-				E0856C0717B9392900E5C04F /* Oxycodone.png */,
-				E0856C0817B9392900E5C04F /* Oxycodone@2x.png */,
-				E0856C0917B9392900E5C04F /* Pepcid.png */,
-				E0856C0A17B9392900E5C04F /* Pepcid@2x.png */,
-				E0856C0B17B9392900E5C04F /* Quinine.png */,
-				E0856C0C17B9392900E5C04F /* Quinine@2x.png */,
-				E0856C0D17B9392900E5C04F /* Rabeprazole.png */,
-				E0856C0E17B9392900E5C04F /* Rabeprazole@2x.png */,
-				E0856C0F17B9392900E5C04F /* Seroquel.png */,
-				E0856C1017B9392900E5C04F /* Seroquel@2x.png */,
-				E0856C1117B9392900E5C04F /* Toradole.png */,
-				E0856C1217B9392900E5C04F /* Toradole@2x.png */,
-				E0856C1317B9392900E5C04F /* Travel-Sickness.png */,
-				E0856C1417B9392900E5C04F /* Travel-Sickness@2x.png */,
-				E0856C1517B9392900E5C04F /* Tylenol.png */,
-				E0856C1617B9392900E5C04F /* Tylenol@2x.png */,
-				E0856C1717B9392900E5C04F /* Ventolin.png */,
-				E0856C1817B9392900E5C04F /* Ventolin@2x.png */,
-				E0856C1917B9392900E5C04F /* Wellbutrin.png */,
-				E0856C1A17B9392900E5C04F /* Wellbutrin@2x.png */,
-				E0856C1B17B9392900E5C04F /* Xanax.png */,
-				E0856C1C17B9392900E5C04F /* Xanax@2x.png */,
-				E0856C1D17B9392900E5C04F /* Zoloft.png */,
-				E0856C1E17B9392900E5C04F /* Zoloft@2x.png */,
-				E0E5B9F617B5651100A1EEC0 /* Advil-img.png */,
-				E095E79D17B56EA500114024 /* Benzocaine-img.png */,
-				E095E79E17B56EA500114024 /* Benzocaine-img@2x.png */,
-				E0E5B9FA17B565CD00A1EEC0 /* Amoxillin-img.png */,
-				E0E5B9FB17B565CD00A1EEC0 /* Amoxillin-img@2x.png */,
-				E0E5B9FC17B565CD00A1EEC0 /* Aspirin-img.png */,
-				E0E5B9FD17B565CD00A1EEC0 /* Aspirin-img@2x.png */,
-				E0E5B9FE17B565CD00A1EEC0 /* Benadryl-img.png */,
-				E0E5B9FF17B565CD00A1EEC0 /* Benadryl-img@2x.png */,
-				E0E5BA0017B565CD00A1EEC0 /* Benylin-img.png */,
-				E0E5BA0117B565CD00A1EEC0 /* Benylin-img@2x.png */,
-				E0E5BA0217B565CD00A1EEC0 /* Calcium-img.png */,
-				E0E5BA0317B565CD00A1EEC0 /* Calcium-img@2x.png */,
-				E0E5BA0417B565CD00A1EEC0 /* Claritan-img.png */,
-				E0E5BA0517B565CD00A1EEC0 /* Claritan-img@2x.png */,
-				E0E5BA0617B565CD00A1EEC0 /* Codeine-img.png */,
-				E0E5BA0717B565CD00A1EEC0 /* Codeine-img@2x.png */,
-				E0E5BA0817B565CD00A1EEC0 /* Dexedrine-img.png */,
-				E0E5BA0917B565CD00A1EEC0 /* Dexedrine-img@2x.png */,
-				E0E5BA0A17B565CD00A1EEC0 /* Diarrhea-img.png */,
-				E0E5BA0B17B565CD00A1EEC0 /* Diarrhea-img@2x.png */,
-				E0E5BA0C17B565CE00A1EEC0 /* Effexor-img.png */,
-				E0E5BA0D17B565CE00A1EEC0 /* Effexor-img@2x.png */,
-				E0E5BA0E17B565CE00A1EEC0 /* Erythomycin-img.png */,
-				E0E5BA0F17B565CE00A1EEC0 /* Erythomycin-img@2x.png */,
-				E0E5BA1017B565CE00A1EEC0 /* Estradiol-img.png */,
-				E0E5BA1117B565CE00A1EEC0 /* Estradiol-img@2x.png */,
-				E0E5BA1217B565CE00A1EEC0 /* Fentanyl-img.png */,
-				E0E5BA1317B565CE00A1EEC0 /* Fentanyl-img@2x.png */,
-				E0E5BA1417B565CE00A1EEC0 /* Flexeril-img.png */,
-				E0E5BA1517B565CE00A1EEC0 /* Flexeril-img@2x.png */,
-				E0E5BA1617B565CF00A1EEC0 /* Flovent-img.png */,
-				E0E5BA1717B565CF00A1EEC0 /* Flovent-img@2x.png */,
-				E0E5BA1817B565CF00A1EEC0 /* Gabapentin-img.png */,
-				E0E5BA1917B565CF00A1EEC0 /* Gabapentin-img@2x.png */,
-				E0E5BA1A17B565CF00A1EEC0 /* Gravol-img.png */,
-				E0E5BA1B17B565CF00A1EEC0 /* Gravol-img@2x.png */,
-				E0E5BA1C17B565CF00A1EEC0 /* Heparin-img.png */,
-				E0E5BA1D17B565CF00A1EEC0 /* Heparin-img@2x.png */,
-				E0E5BA1E17B565D000A1EEC0 /* Humalog-img.png */,
-				E0E5BA1F17B565D000A1EEC0 /* Humalog-img@2x.png */,
-				E0E5BA2017B565D000A1EEC0 /* Hydrocodone-img.png */,
-				E0E5BA2117B565D000A1EEC0 /* Hydrocodone-img@2x.png */,
-				E0E5BA2217B565D000A1EEC0 /* Ibutprofen-img.png */,
-				E0E5BA2317B565D000A1EEC0 /* Ibutprofen-img@2x.png */,
-				E0E5BA2417B565D000A1EEC0 /* Imodium-img.png */,
-				E0E5BA2517B565D100A1EEC0 /* Imodium-img@2x.png */,
-				E0E5BA2617B565D100A1EEC0 /* Lasix-img.png */,
-				E0E5BA2717B565D100A1EEC0 /* Lasix-img@2x.png */,
-				E0E5B9F717B5651100A1EEC0 /* Advil-img@2x.png */,
-				E0E5B9F517B564A800A1EEC0 /* Conditions */,
-				E0E5B9F417B564A300A1EEC0 /* Medications */,
-				68E424091793190600431908 /* Common@2x.png */,
-				68E4240A1793190600431908 /* Uncommon@2x.png */,
-				7ECD0436178DE24F00D6C34B /* medication-pic@2x.png */,
-				7ECD0437178DE24F00D6C34B /* stethoscope-pic@2x.png */,
-				7ECD0438178DE24F00D6C34B /* heart-rate-pic@2x.png */,
-				7ECD0439178DE24F00D6C34B /* conditions-pic@2x.png */,
-			);
-			name = health;
-			sourceTree = "<group>";
-		};
 		6851220617861138008DB6B6 = {
 			isa = PBXGroup;
 			children = (
@@ -886,6 +275,7 @@
 				688F9E5B178611C000CF850C /* Health */,
 				6851222C17861138008DB6B6 /* MainStoryboard.storyboard */,
 				6851222F17861138008DB6B6 /* intrepidApp.xcdatamodeld */,
+				2CC179671A30CA55008EA775 /* Images.xcassets */,
 				6851221B17861138008DB6B6 /* Supporting Files */,
 			);
 			path = intrepidApp;
@@ -895,14 +285,10 @@
 			isa = PBXGroup;
 			children = (
 				7E82E9B61794EE5D00027268 /* fonts */,
-				688F9E6717862DFD00CF850C /* images */,
 				6851221C17861138008DB6B6 /* intrepidApp-Info.plist */,
 				6851221D17861138008DB6B6 /* InfoPlist.strings */,
 				6851222017861138008DB6B6 /* main.m */,
 				6851222217861138008DB6B6 /* intrepidApp-Prefix.pch */,
-				6851222617861138008DB6B6 /* Default.png */,
-				6851222817861138008DB6B6 /* Default@2x.png */,
-				6851222A17861138008DB6B6 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -922,42 +308,6 @@
 				7E44F8D11788FA4B00AAA32B /* HealthItem.m */,
 			);
 			name = Health;
-			sourceTree = "<group>";
-		};
-		688F9E6717862DFD00CF850C /* images */ = {
-			isa = PBXGroup;
-			children = (
-				E0263D5C17B124880087FAC7 /* Security */,
-				E0B5CFAA17AC0FDD00F5BB66 /* Miami */,
-				E0B5CF9917AC0FC400F5BB66 /* Guada */,
-				E0B5CF8817AC0F9700F5BB66 /* Puerto Plata */,
-				E0203E5017ABF927000F8AA2 /* Assistance */,
-				68F64BFD17A87863002C4793 /* menuArrow@2x.png */,
-				E058778517A877B900E42A78 /* Settings */,
-				E03E0B6D17A74E1E00E344B8 /* Learn More */,
-				E03E0B5817A747AF00E344B8 /* Trips */,
-				7EA293B217A613C2000A56E9 /* mexico-city@2x.png */,
-				685B6F5B17A601DC0003B5D9 /* newMenuBack@2x.png */,
-				E0D7ECA417AD575D006E4424 /* Menu-new.png */,
-				E0A0895E17B43ADC007B5C65 /* Maximized-edit.png */,
-				E0A0895F17B43ADC007B5C65 /* Maximized-edit@2x.png */,
-				E0D7ECA517AD575D006E4424 /* Menu-new@2x.png */,
-				68F64BFB17A87788002C4793 /* newMenuBack2@2x.png */,
-				7EE44DAC179F79A5006BA2EC /* overview */,
-				7E5B30BF1798942E00692F80 /* login and signup */,
-				7E347777178F8B3A00FB86DC /* cancel-search@2x.png */,
-				68E42407179277C100431908 /* spyGlass@2x.png */,
-				684E364B178F85C1004E27B9 /* health */,
-				6855EAAF178E4D5E000C4C57 /* mexicoBack@2x.png */,
-				68E42405179274BA00431908 /* mexicoBackBigger@2x.png */,
-				E06FCE0C17A60963003F3FC6 /* embassy-icon.png */,
-				685EB83F178E4C29008B7D9B /* samplePic@2x.png */,
-				7ECD042C178DC07600D6C34B /* top-nav-bar@2x.png */,
-				7ECD0428178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png */,
-				7ECD042A178DAF2000D6C34B /* back-button@2x.png */,
-				68A2D719178BDBE800B3C330 /* searchBar@2x.png */,
-			);
-			name = images;
 			sourceTree = "<group>";
 		};
 		68B071E617A4D3D30061E418 /* Security */ = {
@@ -1015,21 +365,6 @@
 			name = "Login / Signup / Settings";
 			sourceTree = "<group>";
 		};
-		7E5B30BF1798942E00692F80 /* login and signup */ = {
-			isa = PBXGroup;
-			children = (
-				E02D1A8917BD38DF00322B6A /* Add-photo.png */,
-				E02D1A8A17BD38DF00322B6A /* Add-photo@2x.png */,
-				7E1C92CA17A1F56B00878249 /* underline@2x.png */,
-				E058777E17A871CC00E42A78 /* Add.png */,
-				E058777F17A871CC00E42A78 /* Add@2x.png */,
-				7EE44DAA179F6F75006BA2EC /* rounded-rectangle-@2x.png */,
-				7E5B30B91798814800692F80 /* signUp-background@2x.png */,
-				7E5B30B71798813900692F80 /* login-background@2x.png */,
-			);
-			name = "login and signup";
-			sourceTree = "<group>";
-		};
 		7E82E9B61794EE5D00027268 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1041,45 +376,6 @@
 			name = fonts;
 			sourceTree = "<group>";
 		};
-		7EE44DAC179F79A5006BA2EC /* overview */ = {
-			isa = PBXGroup;
-			children = (
-				E03E0B5417A7429400E344B8 /* Currency-Icon.png */,
-				E03E0B5517A7429400E344B8 /* Currency-Icon@2x.png */,
-				E0BF3BDE17A7399D00241A52 /* AUS.png */,
-				E0BF3BDF17A7399D00241A52 /* AUS@2x.png */,
-				E0BF3BE017A7399D00241A52 /* BRL.png */,
-				E0BF3BE117A7399D00241A52 /* BRL@2x.png */,
-				E0BF3BE217A7399D00241A52 /* CAD.png */,
-				E0BF3BE317A7399D00241A52 /* CAD@2x.png */,
-				E0BF3BE417A7399D00241A52 /* CHF.png */,
-				E0BF3BE517A7399D00241A52 /* CHF@2x.png */,
-				E0BF3BE617A7399D00241A52 /* CNY.png */,
-				E0BF3BE717A7399D00241A52 /* CNY@2x.png */,
-				E0BF3BE817A7399D00241A52 /* DOP.png */,
-				E0BF3BE917A7399D00241A52 /* DOP@2x.png */,
-				E0BF3BEA17A7399D00241A52 /* EUR.png */,
-				E0BF3BEB17A7399D00241A52 /* EUR@2x.png */,
-				E0BF3BEC17A7399D00241A52 /* GBP.png */,
-				E0BF3BED17A7399D00241A52 /* GBP@2x.png */,
-				E0BF3BEE17A7399D00241A52 /* INR.png */,
-				E0BF3BEF17A7399D00241A52 /* INR@2x.png */,
-				E0BF3BF017A7399D00241A52 /* MXN.png */,
-				E0BF3BF117A7399D00241A52 /* MXN@2x.png */,
-				E0BF3BF217A7399D00241A52 /* MYR.png */,
-				E0BF3BF317A7399D00241A52 /* MYR@2x.png */,
-				E0BF3BF417A7399D00241A52 /* THB.png */,
-				E0BF3BF517A7399D00241A52 /* THB@2x.png */,
-				E0BF3BF617A7399D00241A52 /* USD.png */,
-				E0BF3BF717A7399D00241A52 /* USD@2x.png */,
-				7EE44DB3179F7B24006BA2EC /* culture-icon@2x.png */,
-				7EE44DAD179F79BA006BA2EC /* overview-culture@2x.png */,
-				7EE44DAE179F79BA006BA2EC /* overview-currency@2x.png */,
-				7EE44DAF179F79BA006BA2EC /* overview-history@2x.png */,
-			);
-			name = overview;
-			sourceTree = "<group>";
-		};
 		808E159D2F19F67221625075 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1087,179 +383,6 @@
 				6CAAA459F58A70B7096E1942 /* Pods-intrepidApp.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		E0203E5017ABF927000F8AA2 /* Assistance */ = {
-			isa = PBXGroup;
-			children = (
-				E0B4268617B43E6700DA407E /* Call-Intrepid247.png */,
-				E0B4268717B43E6700DA407E /* Call-Intrepid247@2x.png */,
-				E0203E5117ABF93D000F8AA2 /* Call-Intrepid.png */,
-				E0203E5217ABF93D000F8AA2 /* Call-Intrepid@2x.png */,
-				E0203E5317ABF93D000F8AA2 /* Call-Local.png */,
-				E0203E5417ABF93D000F8AA2 /* Call-Local@2x.png */,
-				E0203E5517ABF93D000F8AA2 /* IMG.png */,
-				E0203E5617ABF93D000F8AA2 /* IMG@2x.png */,
-				E0203E5717ABF93D000F8AA2 /* Map.png */,
-				E0203E5817ABF93D000F8AA2 /* Map@2x.png */,
-				E0203E5917ABF93D000F8AA2 /* Shape-24.png */,
-				E0203E5A17ABF93D000F8AA2 /* Shape-24@2x.png */,
-			);
-			name = Assistance;
-			sourceTree = "<group>";
-		};
-		E0263D5C17B124880087FAC7 /* Security */ = {
-			isa = PBXGroup;
-			children = (
-				E0263D6917B129390087FAC7 /* Tourist-icon1.png */,
-				E0263D6A17B129390087FAC7 /* Tourist-icon1@2x.png */,
-				E0263D5D17B124980087FAC7 /* Political-icon.png */,
-				E0263D5E17B124980087FAC7 /* Political-icon@2x.png */,
-				E06FCE0817A60852003F3FC6 /* security-embassy.png */,
-				E06FCE0917A60852003F3FC6 /* security-political.png */,
-			);
-			name = Security;
-			sourceTree = "<group>";
-		};
-		E03E0B5817A747AF00E344B8 /* Trips */ = {
-			isa = PBXGroup;
-			children = (
-				E03E0B5917A7480600E344B8 /* Guada-icon.png */,
-				E077251317A9E3DE00804CA9 /* ANew-trip.png */,
-				E077251417A9E3DF00804CA9 /* ANew-trip@2x.png */,
-				E077251517A9E3DF00804CA9 /* Guadala.png */,
-				E077252717A9E44B00804CA9 /* Miami-USA.png */,
-				E077252817A9E44B00804CA9 /* Miami-USA@2x.png */,
-				E077251617A9E3DF00804CA9 /* Guadala@2x.png */,
-				E077251717A9E3DF00804CA9 /* Mexico.png */,
-				E077251817A9E3DF00804CA9 /* Mexico@2x.png */,
-				E077251B17A9E3DF00804CA9 /* Puerto.png */,
-				E077251C17A9E3DF00804CA9 /* Puerto@2x.png */,
-				E03E0B5A17A7480600E344B8 /* Guada-icon@2x.png */,
-				E03E0B5B17A7480600E344B8 /* Mexico-icon.png */,
-				E03E0B5C17A7480600E344B8 /* Mexico-icon@2x.png */,
-				E03E0B5D17A7480600E344B8 /* Miami-icon.png */,
-				E03E0B5E17A7480600E344B8 /* Miami@2x-icon.png */,
-				E03E0B5F17A7480600E344B8 /* Puerto-Plata-icon.png */,
-				E03E0B6017A7480600E344B8 /* Puerto-Plata-icon@2x.png */,
-			);
-			name = Trips;
-			sourceTree = "<group>";
-		};
-		E03E0B6D17A74E1E00E344B8 /* Learn More */ = {
-			isa = PBXGroup;
-			children = (
-				B6FCB79B17CADA7200E7CFB9 /* assistance-new@2x.png */,
-				B622BB9417C6893400027D2E /* overview@2x.png */,
-				B622BB9517C6893400027D2E /* security@2x.png */,
-				E0C7887117F0A7F40067D2D7 /* cool.png */,
-				B622BB9717C6893400027D2E /* health@2x.png */,
-				E09DAA4E17A97EA6006AD6E9 /* close@2x.png */,
-			);
-			name = "Learn More";
-			sourceTree = "<group>";
-		};
-		E058778517A877B900E42A78 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				DC45AEEE181E025800ABC12C /* signout-button2@2x.png */,
-				DC45AEEC181E007100ABC12C /* signout-button@2x.png */,
-				E0E3CB1517C699F300D0642A /* Signout_new@2x.png */,
-				E058778617A877C200E42A78 /* divider-mid-1.png */,
-				E058778717A877C200E42A78 /* divider-mid-1@2x.png */,
-				E0E91AD917BD2247009E8607 /* Signout-new2.png */,
-				E0E91ADA17BD2247009E8607 /* Signout-new2@2x.png */,
-				E058778817A877C200E42A78 /* Signout.png */,
-				E058778917A877C200E42A78 /* Signout@2x.png */,
-			);
-			name = Settings;
-			sourceTree = "<group>";
-		};
-		E0B5CF8817AC0F9700F5BB66 /* Puerto Plata */ = {
-			isa = PBXGroup;
-			children = (
-				E0B5CF8917AC0FB200F5BB66 /* Puerto-Political.png */,
-				E0B5CF8A17AC0FB200F5BB66 /* Puerto-Local.png */,
-				E0B5CF8B17AC0FB200F5BB66 /* Puerto-Political@2x.png */,
-				E0B5CF8C17AC0FB200F5BB66 /* Puerto-Culture.png */,
-				E0B5CF8D17AC0FB200F5BB66 /* Puerto-Culture@2x.png */,
-				E0B5CF8E17AC0FB200F5BB66 /* Puerto-Local@2x.png */,
-				E0B5CF8F17AC0FB200F5BB66 /* Puerto-Overview.png */,
-				E0B5CF9017AC0FB200F5BB66 /* Puerto-Overview@2x.png */,
-			);
-			name = "Puerto Plata";
-			sourceTree = "<group>";
-		};
-		E0B5CF9917AC0FC400F5BB66 /* Guada */ = {
-			isa = PBXGroup;
-			children = (
-				E0B5CF9A17AC0FD400F5BB66 /* Guada-Culture@2x.png */,
-				E0B5CF9B17AC0FD400F5BB66 /* Guada-Political.png */,
-				E0B5CF9C17AC0FD400F5BB66 /* Guada-Overview.png */,
-				E0B5CF9D17AC0FD400F5BB66 /* Guada-Local@2x.png */,
-				E0B5CF9E17AC0FD400F5BB66 /* Guada-Political@2x.png */,
-				E0B5CF9F17AC0FD400F5BB66 /* Guada-Overview@2x.png */,
-				E0B5CFA017AC0FD400F5BB66 /* Guada-Local.png */,
-				E0B5CFA117AC0FD400F5BB66 /* Guada-Culture.png */,
-			);
-			name = Guada;
-			sourceTree = "<group>";
-		};
-		E0B5CFAA17AC0FDD00F5BB66 /* Miami */ = {
-			isa = PBXGroup;
-			children = (
-				E0B5CFAB17AC0FF100F5BB66 /* Miami-Overview.png */,
-				E0B5CFAC17AC0FF100F5BB66 /* Miami-Political@2x.png */,
-				E0B5CFAD17AC0FF100F5BB66 /* Miami-Local@2x.png */,
-				E0B5CFAE17AC0FF100F5BB66 /* Miami-Local.png */,
-				E0B5CFAF17AC0FF100F5BB66 /* Miami-Culture@2x.png */,
-				E0B5CFB017AC0FF100F5BB66 /* Miami-Political.png */,
-				E0B5CFB117AC0FF100F5BB66 /* Miami-Culture.png */,
-				E0B5CFB217AC0FF100F5BB66 /* Miami-Overview@2x.png */,
-			);
-			name = Miami;
-			sourceTree = "<group>";
-		};
-		E0E5B9F417B564A300A1EEC0 /* Medications */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Medications;
-			sourceTree = "<group>";
-		};
-		E0E5B9F517B564A800A1EEC0 /* Conditions */ = {
-			isa = PBXGroup;
-			children = (
-				E049C43817A6DBBD00B00B35 /* Cholera.png */,
-				E049C44817A6DDB200B00B35 /* Diarrhea.png */,
-				E049C44917A6DDB200B00B35 /* Diarrhea@2x.png */,
-				E049C44A17A6DDB200B00B35 /* Motion-Sickness.png */,
-				E049C44B17A6DDB200B00B35 /* Motion-Sickness@2x.png */,
-				E049C44C17A6DDB200B00B35 /* Rabies.png */,
-				E049C44D17A6DDB200B00B35 /* Rabies@2x.png */,
-				E049C44E17A6DDB200B00B35 /* Typhoid.png */,
-				E049C44F17A6DDB200B00B35 /* Typhoid@2x.png */,
-				E049C45017A6DDB200B00B35 /* West-Nile.png */,
-				E049C45117A6DDB200B00B35 /* West-Nile@2x.png */,
-				E049C43917A6DBBD00B00B35 /* Dengue-Fever.png */,
-				E049C43A17A6DBBD00B00B35 /* Hepatitis-A.png */,
-				E049C43B17A6DBBD00B00B35 /* Hepatitis-B.png */,
-				E049C43C17A6DBBD00B00B35 /* Jet-Lag.png */,
-				E049C43D17A6DBBD00B00B35 /* Lyme.png */,
-				E049C43E17A6DBBD00B00B35 /* Malaria.png */,
-				E049C43F17A6DBBD00B00B35 /* Meningitis.png */,
-				E049C42417A6DADB00B00B35 /* Altitude-Sickness@2x.png */,
-				E049C43617A6DB9D00B00B35 /* Altitude-Sickness.png */,
-				E049C42517A6DADB00B00B35 /* Cholera@2x.png */,
-				E049C42617A6DADB00B00B35 /* Dengue-Fever@2x.png */,
-				E049C42717A6DADB00B00B35 /* Hepatitis-A@2x.png */,
-				E049C42817A6DADB00B00B35 /* Hepatitis-B@2x.png */,
-				E049C42917A6DADB00B00B35 /* Jet-Lag@2x.png */,
-				E049C42A17A6DADB00B00B35 /* Lyme@2x.png */,
-				E049C42B17A6DADB00B00B35 /* Malaria@2x.png */,
-				E049C42C17A6DADB00B00B35 /* Meningitis@2x.png */,
-			);
-			name = Conditions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1316,269 +439,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				68920D0617BEA7DE004D7743 /* InfoPlist.strings in Resources */,
-				6851222717861138008DB6B6 /* Default.png in Resources */,
-				6851222917861138008DB6B6 /* Default@2x.png in Resources */,
-				6851222B17861138008DB6B6 /* Default-568h@2x.png in Resources */,
 				6851222E17861138008DB6B6 /* MainStoryboard.storyboard in Resources */,
-				7ECD0429178C815100D6C34B /* descriptionAndSideEffectLogo@2x.png in Resources */,
-				68A2D71A178BDBE800B3C330 /* searchBar@2x.png in Resources */,
-				685EB840178E4C29008B7D9B /* samplePic@2x.png in Resources */,
-				6855EAB0178E4D5E000C4C57 /* mexicoBack@2x.png in Resources */,
-				7ECD042B178DAF2000D6C34B /* back-button@2x.png in Resources */,
-				7ECD042D178DC07600D6C34B /* top-nav-bar@2x.png in Resources */,
-				7ECD043A178DE24F00D6C34B /* medication-pic@2x.png in Resources */,
-				7ECD043B178DE24F00D6C34B /* stethoscope-pic@2x.png in Resources */,
-				7ECD043C178DE24F00D6C34B /* heart-rate-pic@2x.png in Resources */,
-				7ECD043D178DE24F00D6C34B /* conditions-pic@2x.png in Resources */,
-				7E347778178F8B3A00FB86DC /* cancel-search@2x.png in Resources */,
-				68E42406179274BA00431908 /* mexicoBackBigger@2x.png in Resources */,
-				68E42408179277C100431908 /* spyGlass@2x.png in Resources */,
-				68E4240B1793190600431908 /* Common@2x.png in Resources */,
-				68E4240C1793190600431908 /* Uncommon@2x.png in Resources */,
 				7E82E9B91794F01000027268 /* proximanova-regular.ttf in Resources */,
 				7E82E9BB1794F0D400027268 /* proximanova-bold.ttf in Resources */,
 				7ED645C11795A2FB000475A1 /* proximanova-semibold.ttf in Resources */,
 				7ED645C51795AB83000475A1 /* proximanova-light.ttf in Resources */,
-				7E5B30B81798813900692F80 /* login-background@2x.png in Resources */,
-				7E5B30BA1798814800692F80 /* signUp-background@2x.png in Resources */,
-				7EE44DAB179F6F75006BA2EC /* rounded-rectangle-@2x.png in Resources */,
-				7EE44DB0179F79BA006BA2EC /* overview-culture@2x.png in Resources */,
-				7EE44DB1179F79BA006BA2EC /* overview-currency@2x.png in Resources */,
-				7EE44DB2179F79BA006BA2EC /* overview-history@2x.png in Resources */,
-				7EE44DB5179F7B24006BA2EC /* culture-icon@2x.png in Resources */,
-				7E1C92CB17A1F56B00878249 /* underline@2x.png in Resources */,
 				E0B5825117A31D2C00093130 /* intrepid icon.png in Resources */,
 				E0B5825317A31D8100093130 /* app icon nonretina.png in Resources */,
-				685B6F5C17A601DC0003B5D9 /* newMenuBack@2x.png in Resources */,
-				7EA293B317A613C2000A56E9 /* mexico-city@2x.png in Resources */,
-				E06FCE0A17A60852003F3FC6 /* security-embassy.png in Resources */,
-				E06FCE0B17A60852003F3FC6 /* security-political.png in Resources */,
-				E06FCE0D17A60963003F3FC6 /* embassy-icon.png in Resources */,
-				E049C42D17A6DADB00B00B35 /* Altitude-Sickness@2x.png in Resources */,
-				E049C42E17A6DADB00B00B35 /* Cholera@2x.png in Resources */,
-				E049C42F17A6DADB00B00B35 /* Dengue-Fever@2x.png in Resources */,
-				E049C43017A6DADB00B00B35 /* Hepatitis-A@2x.png in Resources */,
-				E049C43117A6DADB00B00B35 /* Hepatitis-B@2x.png in Resources */,
-				E049C43217A6DADB00B00B35 /* Jet-Lag@2x.png in Resources */,
-				E049C43317A6DADB00B00B35 /* Lyme@2x.png in Resources */,
-				E049C43417A6DADB00B00B35 /* Malaria@2x.png in Resources */,
-				E049C43517A6DADB00B00B35 /* Meningitis@2x.png in Resources */,
-				E049C43717A6DB9D00B00B35 /* Altitude-Sickness.png in Resources */,
-				E049C44017A6DBBD00B00B35 /* Cholera.png in Resources */,
-				E049C44117A6DBBD00B00B35 /* Dengue-Fever.png in Resources */,
-				E049C44217A6DBBD00B00B35 /* Hepatitis-A.png in Resources */,
-				E049C44317A6DBBD00B00B35 /* Hepatitis-B.png in Resources */,
-				E049C44417A6DBBD00B00B35 /* Jet-Lag.png in Resources */,
-				E049C44517A6DBBD00B00B35 /* Lyme.png in Resources */,
-				E049C44617A6DBBD00B00B35 /* Malaria.png in Resources */,
-				E049C44717A6DBBD00B00B35 /* Meningitis.png in Resources */,
-				E049C45217A6DDB200B00B35 /* Diarrhea.png in Resources */,
-				E049C45317A6DDB200B00B35 /* Diarrhea@2x.png in Resources */,
-				E049C45417A6DDB200B00B35 /* Motion-Sickness.png in Resources */,
-				E049C45517A6DDB200B00B35 /* Motion-Sickness@2x.png in Resources */,
-				E049C45617A6DDB200B00B35 /* Rabies.png in Resources */,
-				E049C45717A6DDB200B00B35 /* Rabies@2x.png in Resources */,
-				E049C45817A6DDB200B00B35 /* Typhoid.png in Resources */,
-				E049C45917A6DDB200B00B35 /* Typhoid@2x.png in Resources */,
-				E049C45A17A6DDB200B00B35 /* West-Nile.png in Resources */,
-				E049C45B17A6DDB200B00B35 /* West-Nile@2x.png in Resources */,
-				E0BF3BF817A7399D00241A52 /* AUS.png in Resources */,
-				E0BF3BF917A7399D00241A52 /* AUS@2x.png in Resources */,
-				E0BF3BFA17A7399D00241A52 /* BRL.png in Resources */,
-				E0BF3BFB17A7399D00241A52 /* BRL@2x.png in Resources */,
-				E0BF3BFC17A7399D00241A52 /* CAD.png in Resources */,
-				E0BF3BFD17A7399D00241A52 /* CAD@2x.png in Resources */,
-				E0BF3BFE17A7399D00241A52 /* CHF.png in Resources */,
-				E0BF3BFF17A7399D00241A52 /* CHF@2x.png in Resources */,
-				E0BF3C0017A7399D00241A52 /* CNY.png in Resources */,
-				E0BF3C0117A7399D00241A52 /* CNY@2x.png in Resources */,
-				E0BF3C0217A7399D00241A52 /* DOP.png in Resources */,
-				E0BF3C0317A7399D00241A52 /* DOP@2x.png in Resources */,
-				E0BF3C0417A7399D00241A52 /* EUR.png in Resources */,
-				E0BF3C0517A7399D00241A52 /* EUR@2x.png in Resources */,
-				E0BF3C0617A7399D00241A52 /* GBP.png in Resources */,
-				E0BF3C0717A7399D00241A52 /* GBP@2x.png in Resources */,
-				E0BF3C0817A7399D00241A52 /* INR.png in Resources */,
-				E0BF3C0917A7399D00241A52 /* INR@2x.png in Resources */,
-				E0BF3C0A17A7399D00241A52 /* MXN.png in Resources */,
-				E0BF3C0B17A7399D00241A52 /* MXN@2x.png in Resources */,
-				E0BF3C0C17A7399D00241A52 /* MYR.png in Resources */,
-				E0BF3C0D17A7399D00241A52 /* MYR@2x.png in Resources */,
-				E0BF3C0E17A7399D00241A52 /* THB.png in Resources */,
-				E0BF3C0F17A7399D00241A52 /* THB@2x.png in Resources */,
-				E0BF3C1017A7399D00241A52 /* USD.png in Resources */,
-				E0BF3C1117A7399D00241A52 /* USD@2x.png in Resources */,
-				E03E0B5617A7429400E344B8 /* Currency-Icon.png in Resources */,
-				E03E0B5717A7429400E344B8 /* Currency-Icon@2x.png in Resources */,
-				E03E0B6117A7480600E344B8 /* Guada-icon.png in Resources */,
-				E03E0B6217A7480600E344B8 /* Guada-icon@2x.png in Resources */,
-				E03E0B6317A7480600E344B8 /* Mexico-icon.png in Resources */,
-				E03E0B6417A7480600E344B8 /* Mexico-icon@2x.png in Resources */,
-				E03E0B6517A7480600E344B8 /* Miami-icon.png in Resources */,
-				E03E0B6617A7480600E344B8 /* Miami@2x-icon.png in Resources */,
-				E03E0B6717A7480600E344B8 /* Puerto-Plata-icon.png in Resources */,
-				E03E0B6817A7480600E344B8 /* Puerto-Plata-icon@2x.png in Resources */,
-				E058778017A871CC00E42A78 /* Add.png in Resources */,
-				E058778117A871CC00E42A78 /* Add@2x.png in Resources */,
-				68F64BFC17A87788002C4793 /* newMenuBack2@2x.png in Resources */,
-				68F64BFE17A87863002C4793 /* menuArrow@2x.png in Resources */,
-				E058778A17A877C200E42A78 /* divider-mid-1.png in Resources */,
-				E058778B17A877C200E42A78 /* divider-mid-1@2x.png in Resources */,
-				E058778C17A877C200E42A78 /* Signout.png in Resources */,
-				E058778D17A877C200E42A78 /* Signout@2x.png in Resources */,
-				E09DAA4F17A97EA6006AD6E9 /* close@2x.png in Resources */,
-				E077251D17A9E3DF00804CA9 /* ANew-trip.png in Resources */,
-				E077251E17A9E3DF00804CA9 /* ANew-trip@2x.png in Resources */,
-				E077251F17A9E3DF00804CA9 /* Guadala.png in Resources */,
-				E077252017A9E3DF00804CA9 /* Guadala@2x.png in Resources */,
-				E077252117A9E3DF00804CA9 /* Mexico.png in Resources */,
-				E077252217A9E3DF00804CA9 /* Mexico@2x.png in Resources */,
-				E077252517A9E3DF00804CA9 /* Puerto.png in Resources */,
-				E077252617A9E3DF00804CA9 /* Puerto@2x.png in Resources */,
-				E077252917A9E44B00804CA9 /* Miami-USA.png in Resources */,
-				E077252A17A9E44B00804CA9 /* Miami-USA@2x.png in Resources */,
-				E0203E5B17ABF93D000F8AA2 /* Call-Intrepid.png in Resources */,
-				E0203E5C17ABF93D000F8AA2 /* Call-Intrepid@2x.png in Resources */,
-				E0203E5D17ABF93D000F8AA2 /* Call-Local.png in Resources */,
-				E0203E5E17ABF93D000F8AA2 /* Call-Local@2x.png in Resources */,
-				E0203E5F17ABF93D000F8AA2 /* IMG.png in Resources */,
-				DC45AEED181E007100ABC12C /* signout-button@2x.png in Resources */,
-				E0203E6017ABF93D000F8AA2 /* IMG@2x.png in Resources */,
-				E0203E6117ABF93D000F8AA2 /* Map.png in Resources */,
-				E0203E6217ABF93D000F8AA2 /* Map@2x.png in Resources */,
-				E0203E6317ABF93D000F8AA2 /* Shape-24.png in Resources */,
-				E0203E6417ABF93D000F8AA2 /* Shape-24@2x.png in Resources */,
-				E0B5CF9117AC0FB200F5BB66 /* Puerto-Political.png in Resources */,
-				E0B5CF9217AC0FB200F5BB66 /* Puerto-Local.png in Resources */,
-				E0B5CF9317AC0FB200F5BB66 /* Puerto-Political@2x.png in Resources */,
-				E0B5CF9417AC0FB200F5BB66 /* Puerto-Culture.png in Resources */,
-				E0B5CF9517AC0FB200F5BB66 /* Puerto-Culture@2x.png in Resources */,
-				E0B5CF9617AC0FB200F5BB66 /* Puerto-Local@2x.png in Resources */,
-				E0B5CF9717AC0FB200F5BB66 /* Puerto-Overview.png in Resources */,
-				E0B5CF9817AC0FB200F5BB66 /* Puerto-Overview@2x.png in Resources */,
-				E0B5CFA217AC0FD400F5BB66 /* Guada-Culture@2x.png in Resources */,
-				E0B5CFA317AC0FD400F5BB66 /* Guada-Political.png in Resources */,
-				E0B5CFA417AC0FD400F5BB66 /* Guada-Overview.png in Resources */,
-				E0B5CFA517AC0FD400F5BB66 /* Guada-Local@2x.png in Resources */,
-				E0B5CFA617AC0FD400F5BB66 /* Guada-Political@2x.png in Resources */,
-				E0B5CFA717AC0FD400F5BB66 /* Guada-Overview@2x.png in Resources */,
-				E0B5CFA817AC0FD400F5BB66 /* Guada-Local.png in Resources */,
-				E0B5CFA917AC0FD400F5BB66 /* Guada-Culture.png in Resources */,
-				E0B5CFB317AC0FF100F5BB66 /* Miami-Overview.png in Resources */,
-				E0B5CFB417AC0FF100F5BB66 /* Miami-Political@2x.png in Resources */,
-				E0B5CFB517AC0FF100F5BB66 /* Miami-Local@2x.png in Resources */,
-				E0B5CFB617AC0FF100F5BB66 /* Miami-Local.png in Resources */,
-				E0B5CFB717AC0FF100F5BB66 /* Miami-Culture@2x.png in Resources */,
-				E0B5CFB817AC0FF100F5BB66 /* Miami-Political.png in Resources */,
-				E0B5CFB917AC0FF100F5BB66 /* Miami-Culture.png in Resources */,
-				E0B5CFBA17AC0FF100F5BB66 /* Miami-Overview@2x.png in Resources */,
-				E0D7ECA617AD575D006E4424 /* Menu-new.png in Resources */,
-				E0D7ECA717AD575D006E4424 /* Menu-new@2x.png in Resources */,
-				E0263D5F17B124980087FAC7 /* Political-icon.png in Resources */,
-				E0263D6017B124980087FAC7 /* Political-icon@2x.png in Resources */,
-				E0263D6B17B129390087FAC7 /* Tourist-icon1.png in Resources */,
-				E0263D6C17B129390087FAC7 /* Tourist-icon1@2x.png in Resources */,
-				E0A0896017B43ADC007B5C65 /* Maximized-edit.png in Resources */,
-				E0A0896117B43ADC007B5C65 /* Maximized-edit@2x.png in Resources */,
-				E0B4268817B43E6700DA407E /* Call-Intrepid247.png in Resources */,
-				E0B4268917B43E6700DA407E /* Call-Intrepid247@2x.png in Resources */,
-				E0E5B9F817B5651100A1EEC0 /* Advil-img.png in Resources */,
-				E0E5B9F917B5651100A1EEC0 /* Advil-img@2x.png in Resources */,
-				E0E5BA2817B565D100A1EEC0 /* Amoxillin-img.png in Resources */,
-				E0E5BA2917B565D100A1EEC0 /* Amoxillin-img@2x.png in Resources */,
-				E0E5BA2A17B565D100A1EEC0 /* Aspirin-img.png in Resources */,
-				E0E5BA2B17B565D100A1EEC0 /* Aspirin-img@2x.png in Resources */,
-				E0E5BA2C17B565D100A1EEC0 /* Benadryl-img.png in Resources */,
-				E0E5BA2D17B565D100A1EEC0 /* Benadryl-img@2x.png in Resources */,
-				E0E5BA2E17B565D100A1EEC0 /* Benylin-img.png in Resources */,
-				E0E5BA2F17B565D100A1EEC0 /* Benylin-img@2x.png in Resources */,
-				E0E5BA3017B565D100A1EEC0 /* Calcium-img.png in Resources */,
-				E0E5BA3117B565D100A1EEC0 /* Calcium-img@2x.png in Resources */,
-				E0E5BA3217B565D100A1EEC0 /* Claritan-img.png in Resources */,
-				E0E5BA3317B565D100A1EEC0 /* Claritan-img@2x.png in Resources */,
-				E0E5BA3417B565D100A1EEC0 /* Codeine-img.png in Resources */,
-				E0E5BA3517B565D100A1EEC0 /* Codeine-img@2x.png in Resources */,
-				E0E5BA3617B565D100A1EEC0 /* Dexedrine-img.png in Resources */,
-				E0E5BA3717B565D100A1EEC0 /* Dexedrine-img@2x.png in Resources */,
-				E0E5BA3817B565D100A1EEC0 /* Diarrhea-img.png in Resources */,
-				E0E5BA3917B565D100A1EEC0 /* Diarrhea-img@2x.png in Resources */,
-				E0E5BA3A17B565D100A1EEC0 /* Effexor-img.png in Resources */,
-				E0E5BA3B17B565D100A1EEC0 /* Effexor-img@2x.png in Resources */,
-				DC45AEEF181E025800ABC12C /* signout-button2@2x.png in Resources */,
-				E0E5BA3C17B565D100A1EEC0 /* Erythomycin-img.png in Resources */,
-				E0E5BA3D17B565D100A1EEC0 /* Erythomycin-img@2x.png in Resources */,
-				E0E5BA3E17B565D100A1EEC0 /* Estradiol-img.png in Resources */,
-				E0E5BA3F17B565D100A1EEC0 /* Estradiol-img@2x.png in Resources */,
-				E0E5BA4017B565D100A1EEC0 /* Fentanyl-img.png in Resources */,
-				E0E5BA4117B565D100A1EEC0 /* Fentanyl-img@2x.png in Resources */,
-				E0E5BA4217B565D100A1EEC0 /* Flexeril-img.png in Resources */,
-				E0E5BA4317B565D100A1EEC0 /* Flexeril-img@2x.png in Resources */,
-				E0E5BA4417B565D100A1EEC0 /* Flovent-img.png in Resources */,
-				E0E5BA4517B565D100A1EEC0 /* Flovent-img@2x.png in Resources */,
-				E0E5BA4617B565D100A1EEC0 /* Gabapentin-img.png in Resources */,
-				E0E5BA4717B565D100A1EEC0 /* Gabapentin-img@2x.png in Resources */,
-				E0E5BA4817B565D100A1EEC0 /* Gravol-img.png in Resources */,
-				E0E5BA4917B565D100A1EEC0 /* Gravol-img@2x.png in Resources */,
-				E0E5BA4A17B565D100A1EEC0 /* Heparin-img.png in Resources */,
-				E0E5BA4B17B565D100A1EEC0 /* Heparin-img@2x.png in Resources */,
-				E0E5BA4C17B565D100A1EEC0 /* Humalog-img.png in Resources */,
-				E0E5BA4D17B565D100A1EEC0 /* Humalog-img@2x.png in Resources */,
-				E0E5BA4E17B565D100A1EEC0 /* Hydrocodone-img.png in Resources */,
-				E0E5BA4F17B565D100A1EEC0 /* Hydrocodone-img@2x.png in Resources */,
-				E0E5BA5017B565D100A1EEC0 /* Ibutprofen-img.png in Resources */,
-				E0E5BA5117B565D100A1EEC0 /* Ibutprofen-img@2x.png in Resources */,
-				E0E5BA5217B565D100A1EEC0 /* Imodium-img.png in Resources */,
-				E0E5BA5317B565D100A1EEC0 /* Imodium-img@2x.png in Resources */,
-				E0E5BA5417B565D100A1EEC0 /* Lasix-img.png in Resources */,
-				E0E5BA5517B565D100A1EEC0 /* Lasix-img@2x.png in Resources */,
-				E095E79F17B56EA500114024 /* Benzocaine-img.png in Resources */,
-				E095E7A017B56EA500114024 /* Benzocaine-img@2x.png in Resources */,
-				E0856C1F17B9392900E5C04F /* Macrobid.png in Resources */,
-				E0856C2017B9392900E5C04F /* Macrobid@2x.png in Resources */,
-				E0856C2117B9392900E5C04F /* Mefloquine.png in Resources */,
-				E0856C2217B9392900E5C04F /* Mefloquine@2x.png in Resources */,
-				E0856C2317B9392900E5C04F /* Naproxen.png in Resources */,
-				E0856C2417B9392900E5C04F /* Naproxen@2x.png in Resources */,
-				E0856C2517B9392900E5C04F /* Nexium.png in Resources */,
-				E0856C2617B9392900E5C04F /* Nexium@2x.png in Resources */,
-				E0856C2717B9392900E5C04F /* Norvasc.png in Resources */,
-				E0856C2817B9392900E5C04F /* Norvasc@2x.png in Resources */,
-				E0856C2917B9392900E5C04F /* Otriven.png in Resources */,
-				E0856C2A17B9392900E5C04F /* Otriven@2x.png in Resources */,
-				E0856C2B17B9392900E5C04F /* Oxycodone.png in Resources */,
-				E0856C2C17B9392900E5C04F /* Oxycodone@2x.png in Resources */,
-				E0856C2D17B9392900E5C04F /* Pepcid.png in Resources */,
-				E0856C2E17B9392900E5C04F /* Pepcid@2x.png in Resources */,
-				E0856C2F17B9392900E5C04F /* Quinine.png in Resources */,
-				E0856C3017B9392900E5C04F /* Quinine@2x.png in Resources */,
-				E0856C3117B9392900E5C04F /* Rabeprazole.png in Resources */,
-				E0856C3217B9392900E5C04F /* Rabeprazole@2x.png in Resources */,
-				E0856C3317B9392900E5C04F /* Seroquel.png in Resources */,
-				E0856C3417B9392900E5C04F /* Seroquel@2x.png in Resources */,
-				E0856C3517B9392900E5C04F /* Toradole.png in Resources */,
-				E0856C3617B9392900E5C04F /* Toradole@2x.png in Resources */,
-				E0856C3717B9392900E5C04F /* Travel-Sickness.png in Resources */,
-				E0856C3817B9392900E5C04F /* Travel-Sickness@2x.png in Resources */,
-				E0856C3917B9392900E5C04F /* Tylenol.png in Resources */,
-				E0856C3A17B9392900E5C04F /* Tylenol@2x.png in Resources */,
-				E0856C3B17B9392900E5C04F /* Ventolin.png in Resources */,
-				E0856C3C17B9392900E5C04F /* Ventolin@2x.png in Resources */,
-				E0856C3D17B9392900E5C04F /* Wellbutrin.png in Resources */,
-				E0856C3E17B9392900E5C04F /* Wellbutrin@2x.png in Resources */,
-				E0856C3F17B9392900E5C04F /* Xanax.png in Resources */,
-				E0856C4017B9392900E5C04F /* Xanax@2x.png in Resources */,
-				E0856C4117B9392900E5C04F /* Zoloft.png in Resources */,
-				E0856C4217B9392900E5C04F /* Zoloft@2x.png in Resources */,
-				E0E91ADB17BD2247009E8607 /* Signout-new2.png in Resources */,
-				E0E91ADC17BD2247009E8607 /* Signout-new2@2x.png in Resources */,
-				E02D1A8B17BD38DF00322B6A /* Add-photo.png in Resources */,
-				E02D1A8C17BD38DF00322B6A /* Add-photo@2x.png in Resources */,
-				B622BB9817C6893400027D2E /* overview@2x.png in Resources */,
-				B622BB9917C6893400027D2E /* security@2x.png in Resources */,
-				B622BB9B17C6893400027D2E /* health@2x.png in Resources */,
-				B6FCB79C17CADA7200E7CFB9 /* assistance-new@2x.png in Resources */,
-				E0E3CB1617C699F300D0642A /* Signout_new@2x.png in Resources */,
-				E0C7887217F0A7F40067D2D7 /* cool.png in Resources */,
+				2CC179681A30CA55008EA775 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1750,6 +618,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 288AE5EE289C5AEBF15ED8CC /* Pods-intrepidApp.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "intrepidApp/intrepidApp-Prefix.pch";
@@ -1766,6 +636,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6CAAA459F58A70B7096E1942 /* Pods-intrepidApp.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "intrepidApp/intrepidApp-Prefix.pch";
