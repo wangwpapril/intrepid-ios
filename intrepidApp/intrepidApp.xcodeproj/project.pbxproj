@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		148B33D7F50D9248207DFFAF /* libPods-intrepidApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63690BFA75C7C9F190AFF7A4 /* libPods-intrepidApp.a */; };
 		2CC179681A30CA55008EA775 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC179671A30CA55008EA775 /* Images.xcassets */; };
+		2CE95BA91A3110E100062423 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE95BA81A3110E100062423 /* CoreLocation.framework */; };
 		6811614717A9D1A20029134B /* TripManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6811614617A9D1A20029134B /* TripManager.m */; };
 		68174E2217C951D5009823CE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 68174E2117C951D5009823CE /* Reachability.m */; };
 		68174E2417C95254009823CE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68174E2317C95254009823CE /* SystemConfiguration.framework */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		288AE5EE289C5AEBF15ED8CC /* Pods-intrepidApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-intrepidApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-intrepidApp/Pods-intrepidApp.debug.xcconfig"; sourceTree = "<group>"; };
 		2CC179671A30CA55008EA775 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2CE95BA81A3110E100062423 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		63690BFA75C7C9F190AFF7A4 /* libPods-intrepidApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-intrepidApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6811614517A9D1A20029134B /* TripManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripManager.h; path = classes/TripManager.h; sourceTree = "<group>"; };
 		6811614617A9D1A20029134B /* TripManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripManager.m; path = classes/TripManager.m; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CE95BA91A3110E100062423 /* CoreLocation.framework in Frameworks */,
 				68174E2417C95254009823CE /* SystemConfiguration.framework in Frameworks */,
 				E04C4DBC17A3103E002A23F4 /* libz.dylib in Frameworks */,
 				688F9E631786262800CF850C /* QuartzCore.framework in Frameworks */,
@@ -224,9 +227,6 @@
 		6851220617861138008DB6B6 = {
 			isa = PBXGroup;
 			children = (
-				68174E2317C95254009823CE /* SystemConfiguration.framework */,
-				E04C4DBB17A3103E002A23F4 /* libz.dylib */,
-				688F9E621786262800CF850C /* QuartzCore.framework */,
 				6851221A17861138008DB6B6 /* intrepidApp */,
 				6851221117861138008DB6B6 /* Frameworks */,
 				6851221017861138008DB6B6 /* Products */,
@@ -245,6 +245,10 @@
 		6851221117861138008DB6B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E04C4DBB17A3103E002A23F4 /* libz.dylib */,
+				68174E2317C95254009823CE /* SystemConfiguration.framework */,
+				688F9E621786262800CF850C /* QuartzCore.framework */,
+				2CE95BA81A3110E100062423 /* CoreLocation.framework */,
 				6851221217861138008DB6B6 /* UIKit.framework */,
 				6851221417861138008DB6B6 /* Foundation.framework */,
 				6851221617861138008DB6B6 /* CoreGraphics.framework */,
@@ -257,7 +261,6 @@
 		6851221A17861138008DB6B6 /* intrepidApp */ = {
 			isa = PBXGroup;
 			children = (
-				688F9E611786207F00CF850C /* Constants.h */,
 				6851222317861138008DB6B6 /* AppDelegate.h */,
 				6851222417861138008DB6B6 /* AppDelegate.m */,
 				6811614117A9D0890029134B /* Content Managing */,
@@ -278,6 +281,7 @@
 		6851221B17861138008DB6B6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				688F9E611786207F00CF850C /* Constants.h */,
 				7E82E9B61794EE5D00027268 /* fonts */,
 				6851221C17861138008DB6B6 /* intrepidApp-Info.plist */,
 				6851221D17861138008DB6B6 /* InfoPlist.strings */,
@@ -409,6 +413,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "JonCarrHarris Consulting";
+				TargetAttributes = {
+					6851220E17861138008DB6B6 = {
+						DevelopmentTeam = Q552XM5CS3;
+					};
+				};
 			};
 			buildConfigurationList = 6851220A17861138008DB6B6 /* Build configuration list for PBXProject "intrepidApp" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -612,7 +621,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "intrepidApp/intrepidApp-Prefix.pch";
 				INFOPLIST_FILE = "intrepidApp/intrepidApp-Info.plist";
@@ -630,7 +639,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "intrepidApp/intrepidApp-Prefix.pch";
 				INFOPLIST_FILE = "intrepidApp/intrepidApp-Info.plist";

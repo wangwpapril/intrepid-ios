@@ -39,36 +39,36 @@
     UIImage *temp=nil;
     temp = [temp stretchableImageWithLeftCapWidth: 30.0 topCapHeight: 50.0];
     
-    if([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0)
-    {
+    if([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0) {
         temp = [UIImage imageNamed:@"back-button"];
         [[UIBarButtonItem appearance] setBackButtonBackgroundImage: temp forState: UIControlStateNormal barMetrics: UIBarMetricsDefault];
         [[UIBarButtonItem appearance] setBackButtonBackgroundImage: temp forState: UIControlStateNormal barMetrics: UIBarMetricsDefault];
-
-
-    }
-    else
-    {
+    } else {
         temp = [[UIImage imageNamed:@"back-button"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
         [[UINavigationBar appearance] setBackIndicatorImage:temp];
         [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:temp];
-
     }
-
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self customizeAppearance];
     
-    
     TripManager *manager = [TripManager getInstance];
     manager.managedObjectContext = self.managedObjectContext;
     
-//    // Override point for customization after application launch.
-//    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-//    MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
-//    controller.managedObjectContext = self.managedObjectContext;
+    if (self.locationManager == nil) {
+        self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.delegate = self;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+        self.locationManager.distanceFilter = 100.0f;
+        self.locationManager.pausesLocationUpdatesAutomatically = NO;
+    }
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+    [self.locationManager startUpdatingLocation];
+    
     return YES;
 }
 							
@@ -193,6 +193,23 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+#pragma mark - Location methods
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    CLLocation* location = [locations lastObject];
+    NSLog(@"latitude: %f, longitude: %f", location.coordinate.latitude, location.coordinate.longitude);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    if (error.code == kCLErrorDenied) {
+        NSLog(@"user denied access to location");
+        [self.locationManager stopUpdatingLocation];
+        [self.locationManager stopMonitoringSignificantLocationChanges];
+    } else {
+        NSLog(@"location error: %@", error);
+    }
 }
 
 @end
