@@ -14,6 +14,7 @@
 #import "MenuController.h"
 #import "HealthViewDetailController.h"
 #import "HealthContent.h"
+#import "RequestBuilder.h"
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
@@ -29,6 +30,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [RequestBuilder buildRequestWithURL:@"yoloswag"];
+    
     self.view.tag = 1;
     UIImage *backgroundImage = [UIImage imageNamed:@"mexicoBackBigger"];
     CGRect imageFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);

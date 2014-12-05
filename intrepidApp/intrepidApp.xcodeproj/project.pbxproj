@@ -10,6 +10,7 @@
 		148B33D7F50D9248207DFFAF /* libPods-intrepidApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63690BFA75C7C9F190AFF7A4 /* libPods-intrepidApp.a */; };
 		2CC179681A30CA55008EA775 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC179671A30CA55008EA775 /* Images.xcassets */; };
 		2CE95BA91A3110E100062423 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE95BA81A3110E100062423 /* CoreLocation.framework */; };
+		339118581A31626300450CB8 /* RequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 339118571A31626300450CB8 /* RequestBuilder.m */; };
 		6811614717A9D1A20029134B /* TripManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6811614617A9D1A20029134B /* TripManager.m */; };
 		68174E2217C951D5009823CE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 68174E2117C951D5009823CE /* Reachability.m */; };
 		68174E2417C95254009823CE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68174E2317C95254009823CE /* SystemConfiguration.framework */; };
@@ -66,6 +67,8 @@
 		288AE5EE289C5AEBF15ED8CC /* Pods-intrepidApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-intrepidApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-intrepidApp/Pods-intrepidApp.debug.xcconfig"; sourceTree = "<group>"; };
 		2CC179671A30CA55008EA775 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2CE95BA81A3110E100062423 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		339118561A31626300450CB8 /* RequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestBuilder.h; sourceTree = "<group>"; };
+		339118571A31626300450CB8 /* RequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestBuilder.m; sourceTree = "<group>"; };
 		63690BFA75C7C9F190AFF7A4 /* libPods-intrepidApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-intrepidApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6811614517A9D1A20029134B /* TripManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripManager.h; path = classes/TripManager.h; sourceTree = "<group>"; };
 		6811614617A9D1A20029134B /* TripManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripManager.m; path = classes/TripManager.m; sourceTree = "<group>"; };
@@ -179,6 +182,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		339118551A31623D00450CB8 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				339118561A31626300450CB8 /* RequestBuilder.h */,
+				339118571A31626300450CB8 /* RequestBuilder.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
 		6811614117A9D0890029134B /* Content Managing */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +275,7 @@
 			children = (
 				6851222317861138008DB6B6 /* AppDelegate.h */,
 				6851222417861138008DB6B6 /* AppDelegate.m */,
+				339118551A31623D00450CB8 /* Networking */,
 				6811614117A9D0890029134B /* Content Managing */,
 				684BB606179F534A004C44C9 /* Support Classes */,
 				68B071F017A4DB640061E418 /* Trips */,
@@ -522,6 +535,7 @@
 				7E9A131217A8AE5E0082003C /* TermsOfServiceViewController.m in Sources */,
 				7E9A131517A8AE6E0082003C /* PrivacyPolicyViewController.m in Sources */,
 				6811614717A9D1A20029134B /* TripManager.m in Sources */,
+				339118581A31626300450CB8 /* RequestBuilder.m in Sources */,
 				B6DB0C4717AE2C5C001694B0 /* AssistanceViewController.m in Sources */,
 				B61550DD17B52E7400044F11 /* LegalViewController.m in Sources */,
 				6854D37F17B6F2E7006CC3D2 /* ScrollerTabViewController.m in Sources */,
