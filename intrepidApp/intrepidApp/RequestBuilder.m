@@ -21,7 +21,12 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
     NSString *requestURL = [NSString stringWithFormat:@"%@destinations?token=%@", baseURL, token];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:requestURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
+//        NSLog(@"JSON: %@", responseObject);
+        
+        for (NSDictionary * dict in responseObject[@"destinations"]) {
+            NSLog(@"found a dict: %@", dict);
+        }
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
