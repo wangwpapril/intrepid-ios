@@ -154,8 +154,8 @@ static TripManager *instance =nil;
                withGeneralImage:(NSString *)generalImage
                  withLocalImage:(NSString *)localImage
                   withLocalText:(NSString *)localText
-             withPoliticalImage:(NSString *)politicalImage
-              withPoliticaltext:(NSString *)politicalText
+             withSafetyImage:(NSString *)safetyImage
+              withSafetytext:(NSString *)safetyText
                  withClinicsURL:(NSString *)clinicsURL
                   withAlertsURL:(NSString *)alertsURL
                  withWeatherURL:(NSString *)weatherURL
@@ -172,8 +172,8 @@ static TripManager *instance =nil;
     city.generalText = generalText;
     city.localImage = localImage;;
     city.localText = localText;
-    city.politicalImage = politicalImage;
-    city.politicalText = politicalText;
+    city.safetyImage = safetyImage;
+    city.safetyText = safetyText;
     city.clinicsURL = clinicsURL;
     city.alertsURL = alertsURL;
     city.weatherURL = weatherURL;

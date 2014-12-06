@@ -26,8 +26,8 @@
                        withGeneralImage:(NSString *)generalImage
                          withLocalImage:(NSString *)localImage
                           withLocalText:(NSString *)localText
-                     withPoliticalImage:(NSString *)politicalImage
-                      withPoliticaltext:(NSString *)politicalText
+                     withSafetyImage:(NSString *)safetyImage
+                      withSafetytext:(NSString *)safetyText
                          withClinicsURL:(NSString *)clinicsURL
                           withAlertsURL:(NSString *)alertsURL
                          withWeatherURL:(NSString *)weatherURL

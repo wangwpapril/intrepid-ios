@@ -27,7 +27,7 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
         for (NSDictionary *cityDict in responseObject[@"destinations"]) {
             NSString *cityName, *cityImage, *continent, *cultureText, *cultureImage;
             NSString *generalText, *generalImage, *localText, *localImage;
-            NSString *politicalImage, *politicalText, *clinicsURL, *weatherURL, *alertsURL;
+            NSString *safetyImage, *safetyText, *clinicsURL, *weatherURL, *alertsURL;
             float dollarRatio;
             
             cityName = cityDict[@"name"];
@@ -39,7 +39,7 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
                 generalText = contentDict[@"general_description"];
                 cultureText = contentDict[@"culture_description"];
                 localText = @"local text";
-                politicalText = @"poli text";
+                safetyText = @"poli text";
             
             
             NSDictionary *imageDict = cityDict[@"images"];
@@ -47,7 +47,7 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
                 generalImage = @"embassy-icon";
                 localImage = @"embassy-icon";
                 cultureImage = imageDict[@"culture_image"];
-                politicalImage = @"embassy-icon";
+                safetyImage = @"embassy-icon";
             
             
             cityImage = @"embassy-icon";
@@ -61,7 +61,7 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
 //                
 //            }
             
-            [[TripManager getInstance] createTripWithCityImage:cityImage withCityName:cityName withContinent:continent withCultureText:cultureText withCultureImage:cultureImage withGeneralText:generalText withGeneralImage:generalImage withLocalImage:localImage withLocalText:localText withPoliticalImage:politicalImage withPoliticaltext:politicalText withClinicsURL:clinicsURL withAlertsURL:alertsURL withWeatherURL:weatherURL withCADToNative:dollarRatio];
+            [[TripManager getInstance] createTripWithCityImage:cityImage withCityName:cityName withContinent:continent withCultureText:cultureText withCultureImage:cultureImage withGeneralText:generalText withGeneralImage:generalImage withLocalImage:localImage withLocalText:localText withSafetyImage:safetyImage withSafetytext:safetyText withClinicsURL:clinicsURL withAlertsURL:alertsURL withWeatherURL:weatherURL withCADToNative:dollarRatio];
         
         }
     

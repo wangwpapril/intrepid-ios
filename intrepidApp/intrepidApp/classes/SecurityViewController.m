@@ -34,8 +34,8 @@
     CityEntity *city = [self getCity];
     SlidingTextView *political = [[SlidingTextView alloc] initWithFrame:frame];
     
-    [political setupWithImageName:city.politicalImage withTitle:@"Safety" withIconName:@"Political-icon"];
-    [political addTextAreaWithText:city.politicalText];
+    [political setupWithImageName:city.safetyImage withTitle:@"Safety" withIconName:@"Political-icon"];
+    [political addTextAreaWithText:city.safetyText];
     
     SlidingTextView *embassy = [[SlidingTextView alloc] initWithFrame:frame];
     [embassy setupWithImageName:@"security-embassy" withTitle:@"Embassy" withIconName:@"embassy-icon"];

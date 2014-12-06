@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="13A497d" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="CityEntity" representedClassName="CityEntity" syncable="YES">
         <attribute name="alertsURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cadToNative" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -13,8 +13,8 @@
         <attribute name="generalText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="localImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="localText" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="politicalImage" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="politicalText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="safetyImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="safetyText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weatherURL" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="embassies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EmbassyEntity" inverseName="city" inverseEntity="EmbassyEntity" syncable="YES"/>
     </entity>
@@ -31,7 +31,7 @@
         <relationship name="city" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CityEntity" inverseName="embassies" inverseEntity="CityEntity" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CityEntity" positionX="25" positionY="-166" width="128" height="283"/>
-        <element name="EmbassyEntity" positionX="-227" positionY="-63" width="128" height="193"/>
+        <element name="CityEntity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="EmbassyEntity" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

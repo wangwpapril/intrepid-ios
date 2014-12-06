@@ -25,8 +25,8 @@
 @property (nonatomic, retain) NSString * generalText;
 @property (nonatomic, retain) NSString * localImage;
 @property (nonatomic, retain) NSString * localText;
-@property (nonatomic, retain) NSString * politicalImage;
-@property (nonatomic, retain) NSString * politicalText;
+@property (nonatomic, retain) NSString * safetyImage;
+@property (nonatomic, retain) NSString * safetyText;
 @property (nonatomic, retain) NSString * weatherURL;
 @property (nonatomic, retain) NSSet *embassies;
 @end

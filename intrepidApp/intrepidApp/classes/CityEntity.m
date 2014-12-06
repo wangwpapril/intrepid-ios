@@ -24,8 +24,8 @@
 @dynamic generalText;
 @dynamic localImage;
 @dynamic localText;
-@dynamic politicalImage;
-@dynamic politicalText;
+@dynamic safetyImage;
+@dynamic safetyText;
 @dynamic weatherURL;
 @dynamic embassies;
 
