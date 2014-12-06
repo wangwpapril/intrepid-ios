@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CityEntity.h"
 
 @interface TripManager : NSObject
 
@@ -16,4 +17,19 @@
 +(TripManager *)getInstance;
 -(NSArray *) getCities;
 
+- (CityEntity *)createTripWithCityImage:(NSString *)cityImage
+                           withCityName:(NSString *)cityName
+                          withContinent:(NSString *)continent
+                        withCultureText:(NSString *)cultureText
+                       withCultureImage:(NSString *)cultureImage
+                        withGeneralText:(NSString *)generalText
+                       withGeneralImage:(NSString *)generalImage
+                         withLocalImage:(NSString *)localImage
+                          withLocalText:(NSString *)localText
+                     withPoliticalImage:(NSString *)politicalImage
+                      withPoliticaltext:(NSString *)politicalText
+                         withClinicsURL:(NSString *)clinicsURL
+                          withAlertsURL:(NSString *)alertsURL
+                         withWeatherURL:(NSString *)weatherURL
+                        withCADToNative:(float) dollarRatio;
 @end

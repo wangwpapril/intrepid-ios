@@ -24,4 +24,5 @@
 @property (nonatomic, retain) NSString * flag;
 @property (nonatomic, retain) CityEntity *city;
 
+
 @end
