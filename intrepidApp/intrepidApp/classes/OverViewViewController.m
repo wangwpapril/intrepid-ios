@@ -96,7 +96,7 @@
     CityEntity *city = [self getCity];
     float CADtoNative = [city.cadToNative floatValue];
 
-    NSString *CAD = [NSString stringWithFormat:@"%.02f", 1.0];    
+    NSString* CAD = [NSString stringWithFormat:@"%.02f", 1.0];
     NSString* USD = [NSString stringWithFormat:@"%.02f", 0.96];
     NSString* MXN = [NSString stringWithFormat:@"%.02f", 12.19];
     NSString* GBP = [NSString stringWithFormat:@"%.02f", 0.63];

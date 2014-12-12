@@ -32,4 +32,15 @@
                           withAlertsURL:(NSString *)alertsURL
                          withWeatherURL:(NSString *)weatherURL
                         withCADToNative:(float) dollarRatio;
+
+- (EmbassyEntity *)createEmbassyWithCity:(CityEntity *)city
+                    withPhone:(NSString *)phone
+                      withFax:(NSString *)fax
+                    withEmail:(NSString *)email
+                    withHours:(NSString *)hours
+                    withNotes:(NSString *)notes
+                 withServices:(NSString *)services
+                  withAddress:(NSString *)address
+                  withCountry:(NSString *)country
+                     withFlag:(NSString *)flag;
 @end

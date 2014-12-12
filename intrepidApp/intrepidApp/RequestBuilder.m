@@ -25,10 +25,14 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
     
     [manager GET:requestURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         for (NSDictionary *cityDict in responseObject[@"destinations"]) {
+            //CityEntity
             NSString *cityName, *cityImage, *continent, *cultureText, *cultureImage;
             NSString *generalText, *generalImage, *localText, *localImage;
             NSString *safetyImage, *safetyText, *clinicsURL, *weatherURL, *alertsURL;
             float dollarRatio;
+            
+            //EmbassyEntity
+            NSString *phone, *fax, *email, *hours, *notes, *services, *address, *country, *flag;
             
             cityName = cityDict[@"name"];
             NSLog(@"city name: %@", cityName);
@@ -45,9 +49,9 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
             NSDictionary *imageDict = cityDict[@"images"];
                 NSLog(@"image dict: %@", imageDict);
                 generalImage = @"embassy-icon";
-                localImage = @"embassy-icon";
+                localImage = imageDict[@"other_image"];
                 cultureImage = imageDict[@"culture_image"];
-                safetyImage = @"embassy-icon";
+                safetyImage = imageDict[@"safety_image"];
             
             
             cityImage = @"embassy-icon";
@@ -57,9 +61,9 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
             alertsURL = @"";
             dollarRatio = 6.0;
             
-//            for (NSDictionary *medications in cityDict[@"medications"]) {
-//                
-//            }
+            //This doesn't exist yet, set up when ready
+            //NSDictionary *embassyDict = cityDict[@""];
+            
             
             [[TripManager getInstance] createTripWithCityImage:cityImage withCityName:cityName withContinent:continent withCultureText:cultureText withCultureImage:cultureImage withGeneralText:generalText withGeneralImage:generalImage withLocalImage:localImage withLocalText:localText withSafetyImage:safetyImage withSafetytext:safetyText withClinicsURL:clinicsURL withAlertsURL:alertsURL withWeatherURL:weatherURL withCADToNative:dollarRatio];
         
@@ -70,6 +74,18 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
         NSLog(@"Error: %@", error);
     }];
 }
+
+//- (void)createEmbassyWithCity:(CityEntity *)city
+//                    withPhone:(NSString *)phone
+//                      withFax:(NSString *)fax
+//                    withEmail:(NSString *)email
+//                    withHours:(NSString *)hours
+//                    withNotes:(NSString *)notes
+//                 withServices:(NSString *)services
+//                  withAddress:(NSString *)address
+//                  withCountry:(NSString *)country
+//                     withFlag:(NSString *)flag
+//{
 
 //- (CityEntity *)createTripWithCityImage:(NSString *)cityImage
 //                           withCityName:(NSString *)cityName
