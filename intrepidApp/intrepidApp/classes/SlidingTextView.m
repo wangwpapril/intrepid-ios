@@ -84,7 +84,7 @@
     textView.lineBreakMode = NSLineBreakByWordWrapping;
     textView.numberOfLines = 0;
     
-    UILabel *textViewContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, 308,  320, size.height + 10)];
+    UILabel *textViewContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, 308,  320, size.height + 20)];
 
     [textViewContainer addSubview: textView];
     [scroll addSubview:textViewContainer];

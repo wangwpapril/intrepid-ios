@@ -43,7 +43,7 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
                 generalText = contentDict[@"general_description"];
                 cultureText = contentDict[@"culture_description"];
                 localText = @"local text";
-                safetyText = @"poli text";
+                safetyText = contentDict[@"security_description"];
             
             
             NSDictionary *imageDict = cityDict[@"images"];
@@ -74,33 +74,5 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
         NSLog(@"Error: %@", error);
     }];
 }
-
-//- (void)createEmbassyWithCity:(CityEntity *)city
-//                    withPhone:(NSString *)phone
-//                      withFax:(NSString *)fax
-//                    withEmail:(NSString *)email
-//                    withHours:(NSString *)hours
-//                    withNotes:(NSString *)notes
-//                 withServices:(NSString *)services
-//                  withAddress:(NSString *)address
-//                  withCountry:(NSString *)country
-//                     withFlag:(NSString *)flag
-//{
-
-//- (CityEntity *)createTripWithCityImage:(NSString *)cityImage
-//                           withCityName:(NSString *)cityName
-//                          withContinent:(NSString *)continent
-//                        withCultureText:(NSString *)cultureText
-//                       withCultureImage:(NSString *)cultureImage
-//                        withGeneralText:(NSString *)generalText
-//                       withGeneralImage:(NSString *)generalImage
-//                         withLocalImage:(NSString *)localImage
-//                          withLocalText:(NSString *)localText
-//                     withPoliticalImage:(NSString *)politicalImage
-//                      withPoliticaltext:(NSString *)politicalText
-//                         withClinicsURL:(NSString *)clinicsURL
-//                          withAlertsURL:(NSString *)alertsURL
-//                         withWeatherURL:(NSString *)weatherURL
-//                        withCADToNative:(float) dollarRatio;
 
 @end
