@@ -39,7 +39,6 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
             NSString *phone, *fax, *email, *hours, *notes, *services, *address, *country, *flag;
             
             cityName = cityDict[@"name"];
-            //NSLog(@"city name: %@", cityName);
             
             NSDictionary *contentDict = cityDict[@"content"];
             
@@ -65,25 +64,34 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
             alertsURL = @"";
             dollarRatio = 6.0;
             
+            CityEntity *city = [[TripManager getInstance] createTripWithCityImage:cityImage withCityName:cityName withContinent:continent withCultureText:cultureText withCultureImage:cultureImage withGeneralText:generalText withGeneralImage:generalImage withLocalImage:localImage withLocalText:localText withSafetyImage:safetyImage withSafetytext:safetyText withClinicsURL:clinicsURL withAlertsURL:alertsURL withWeatherURL:weatherURL withCADToNative:dollarRatio];
+            
             //This doesn't exist yet, set up when ready
-            NSArray *embassyArray = cityDict[@"diplomatic_offices"];
-            for (NSDictionary *embassyDict in embassyArray) {
-                phone = embassyDict[@"content.telephone"];
-                fax = embassyDict[@"content.fax"];
-                email = embassyDict[@"content.email"];
-                hours = embassyDict[@"content.hours_of_operation"];
-                notes = embassyDict[@"notes"];
-                services = embassyDict[@"services"];
-                address = embassyDict[@"content.address"];
-                country = embassyDict[@"country"];
-                flag = embassyDict[@"images.other_image"];
-            }
+            //NSArray *embassyArray = cityDict[@"diplomatic_offices"];
+            for (NSDictionary *embassyDict in cityDict[@"diplomatic_offices"]) {
+                country = embassyDict[@"name"];
 
-            
-            
-            [[TripManager getInstance] createTripWithCityImage:cityImage withCityName:cityName withContinent:continent withCultureText:cultureText withCultureImage:cultureImage withGeneralText:generalText withGeneralImage:generalImage withLocalImage:localImage withLocalText:localText withSafetyImage:safetyImage withSafetytext:safetyText withClinicsURL:clinicsURL withAlertsURL:alertsURL withWeatherURL:weatherURL withCADToNative:dollarRatio];
-            
-//            [[TripManager getInstance] createEmbassyWithCity:(CityEntity *)cityName withPhone:phone withFax:fax withEmail:email withHours:hours withNotes:notes withServices:services withAddress:address withCountry:country withFlag:flag];
+                NSDictionary *embassyContent = embassyDict[@"content"];
+                if (![embassyContent count] == 0) {
+                    phone = embassyContent[@"telephone"];
+                    fax = embassyContent[@"fax"];
+                    email = embassyContent[@"email"];
+                    hours = embassyContent[@"hours_of_operation"];
+                    address = embassyContent[@"address"];
+                }
+                else {
+                    phone = @"phone placeholder";
+                    fax = @"fax placeholder";
+                    email = @"email placeholder";
+                    hours = @"hours placeholder";
+                    address = @"address placeholder";
+                }
+                notes = @"notes";
+                services = @"services";
+                flag = @"embassy-icon";
+                [[TripManager getInstance] createEmbassyWithCity:city withPhone:phone withFax:fax withEmail:email withHours:hours withNotes:notes withServices:services withAddress:address withCountry:country withFlag:flag];
+            }
+    
 
         }
         NSLog(@"firing note");

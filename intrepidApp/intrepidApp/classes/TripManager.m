@@ -49,7 +49,7 @@ static TripManager *instance =nil;
     return intermediateArray;
 }
 
-- (void)createEmbassyWithCity:(CityEntity *)city
+- (EmbassyEntity *)createEmbassyWithCity:(CityEntity *)city
               withPhone:(NSString *)phone
                 withFax:(NSString *)fax
               withEmail:(NSString *)email
@@ -61,6 +61,8 @@ static TripManager *instance =nil;
                withFlag:(NSString *)flag
 {
     EmbassyEntity *embassy = [NSEntityDescription insertNewObjectForEntityForName:@"EmbassyEntity" inManagedObjectContext:managedObjectContext];
+    
+    NSLog(@"lol embassy");
     embassy.phone = phone;
     embassy.fax = fax;
     embassy.email = email;
@@ -79,7 +81,7 @@ static TripManager *instance =nil;
     } else {
         NSLog(@"save failed");
     }
-    
+    return embassy;
 }
 
 - (CityEntity *)createTripWithCityImage:(NSString *)cityImage
