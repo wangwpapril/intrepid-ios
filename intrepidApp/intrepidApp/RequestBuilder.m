@@ -24,6 +24,9 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     [manager GET:requestURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        [[TripManager getInstance] deleteAllObjects:@"CityEntity"];
+        
         for (NSDictionary *cityDict in responseObject[@"destinations"]) {
             //CityEntity
             NSString *cityName, *cityImage, *continent, *cultureText, *cultureImage;
@@ -68,6 +71,8 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
             [[TripManager getInstance] createTripWithCityImage:cityImage withCityName:cityName withContinent:continent withCultureText:cultureText withCultureImage:cultureImage withGeneralText:generalText withGeneralImage:generalImage withLocalImage:localImage withLocalText:localText withSafetyImage:safetyImage withSafetytext:safetyText withClinicsURL:clinicsURL withAlertsURL:alertsURL withWeatherURL:weatherURL withCADToNative:dollarRatio];
         
         }
+        NSLog(@"firing note");
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
     
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

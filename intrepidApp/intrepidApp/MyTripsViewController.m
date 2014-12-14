@@ -13,6 +13,7 @@
 #import "CityEntity.h"
 #import "TripItem.h"
 #import "OverViewViewController.h"
+#import "RequestBuilder.h"
 
 @implementation MyTripsViewController
 
@@ -41,9 +42,27 @@
     scrollView.scrollEnabled = YES;
     scrollView.pagingEnabled = YES;
     
+    // register for notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(loadCities)
+                                                 name:@"TRIP_UPDATE"
+                                               object:nil];
+    [self.view addSubview:scrollView];
+    
+    pageControl.frame = CGRectMake(0, self.view.frame.size.height - 78, 320, 50);
+    pageControl.currentPage = 0;
+    pageControl.pageIndicatorTintColor = [UIColor darkGrayColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+    [pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:pageControl];
+    
+}
+
+-(void)loadCities {
+    
     TripManager *manager = [TripManager getInstance];
     cities = [manager getCities];
-    
+
     //create array for images
     NSMutableArray *cityArray = [NSMutableArray new];
     for (CityEntity *city in cities) {
@@ -57,7 +76,7 @@
     newTrip.image = @"ANew-trip";
     newTrip.city = @"A New Trip";
     [cityArray addObject:newTrip];
-
+    
     NSInteger height = scrollView.frame.size.height - 150.0;
     NSInteger width = height * 0.7322;
     int i = 0;
@@ -80,7 +99,7 @@
             UIButton *toTrips = [UIButton buttonWithType:UIButtonTypeCustom];
             toTrips.frame = imageView.frame;
             [toTrips addTarget:self action:@selector(toTrips) forControlEvents:UIControlEventTouchUpInside];
-            [scrollView addSubview:toTrips];       
+            [scrollView addSubview:toTrips];
         }
         else {
             UIButton *toSecurity = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -100,23 +119,15 @@
         [cityName setTextAlignment:NSTextAlignmentCenter];
         cityName.text =city.city;
         [scrollView addSubview:cityName];
-
+        
         i++;
     }
-
+    
     NSInteger entries = [cityArray count];
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * entries, 366.0);
     
-    [self.view addSubview:scrollView];
-    
-    pageControl.frame = CGRectMake(0, self.view.frame.size.height - 78, 320, 50);
-    pageControl.numberOfPages = entries;
-    pageControl.currentPage = 0;
-    pageControl.pageIndicatorTintColor = [UIColor darkGrayColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
-    [pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
-    [self.view addSubview:pageControl];
-    
+    pageControl.numberOfPages = entries;;
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -179,6 +190,7 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [RequestBuilder buildRequestWithURL:@"placeholder"];
 }
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
     if (!pageControlBeingUsed) {

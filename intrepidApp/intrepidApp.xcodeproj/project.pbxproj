@@ -34,7 +34,6 @@
 		68920D0617BEA7DE004D7743 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6851221D17861138008DB6B6 /* InfoPlist.strings */; };
 		68B071E917A4D3FC0061E418 /* SecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B071E817A4D3FC0061E418 /* SecurityViewController.m */; };
 		68B071EC17A4D7290061E418 /* EmbassyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B071EB17A4D7290061E418 /* EmbassyCell.m */; };
-		68B071F317A4DB890061E418 /* TripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B071F217A4DB890061E418 /* TripsViewController.m */; };
 		68B997E517A2058A00AD62ED /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B997E417A2058A00AD62ED /* WebViewController.m */; };
 		68BE3ACA17A1DCA600A87E52 /* HealthContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 68BE3AC917A1DCA600A87E52 /* HealthContent.m */; };
 		68DB321417C513D90061D0F1 /* CityEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DB321317C513D90061D0F1 /* CityEntity.m */; };
@@ -113,8 +112,6 @@
 		68B071E817A4D3FC0061E418 /* SecurityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecurityViewController.m; path = classes/SecurityViewController.m; sourceTree = "<group>"; };
 		68B071EA17A4D7290061E418 /* EmbassyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmbassyCell.h; path = classes/EmbassyCell.h; sourceTree = "<group>"; };
 		68B071EB17A4D7290061E418 /* EmbassyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmbassyCell.m; path = classes/EmbassyCell.m; sourceTree = "<group>"; };
-		68B071F117A4DB890061E418 /* TripsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripsViewController.h; path = classes/TripsViewController.h; sourceTree = "<group>"; };
-		68B071F217A4DB890061E418 /* TripsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripsViewController.m; path = classes/TripsViewController.m; sourceTree = "<group>"; };
 		68B997E317A2058A00AD62ED /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = classes/WebViewController.h; sourceTree = "<group>"; };
 		68B997E417A2058A00AD62ED /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = classes/WebViewController.m; sourceTree = "<group>"; };
 		68BE3AC817A1DCA600A87E52 /* HealthContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthContent.h; path = classes/HealthContent.h; sourceTree = "<group>"; };
@@ -352,8 +349,6 @@
 		68B071F017A4DB640061E418 /* Trips */ = {
 			isa = PBXGroup;
 			children = (
-				68B071F117A4DB890061E418 /* TripsViewController.h */,
-				68B071F217A4DB890061E418 /* TripsViewController.m */,
 				7EA293AF17A60B0A000A56E9 /* MyTripsViewController.h */,
 				7EA293B017A60B0A000A56E9 /* MyTripsViewController.m */,
 				685B6F5D17A60B430003B5D9 /* TripCell.h */,
@@ -549,7 +544,6 @@
 				68B997E517A2058A00AD62ED /* WebViewController.m in Sources */,
 				68B071E917A4D3FC0061E418 /* SecurityViewController.m in Sources */,
 				68B071EC17A4D7290061E418 /* EmbassyCell.m in Sources */,
-				68B071F317A4DB890061E418 /* TripsViewController.m in Sources */,
 				7EA293B117A60B0A000A56E9 /* MyTripsViewController.m in Sources */,
 				685B6F5F17A60B430003B5D9 /* TripCell.m in Sources */,
 				685B6F6217A617C20003B5D9 /* TripItem.m in Sources */,
