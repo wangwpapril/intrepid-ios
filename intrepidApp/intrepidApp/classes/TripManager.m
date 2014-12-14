@@ -32,10 +32,8 @@ static TripManager *instance =nil;
 -(NSArray *) getCities {
     NSArray *cityArray = [self fetchCityArray];
     if (cityArray.count == 0) {
-        [self populateTrips];
         cityArray = [self fetchCityArray];
     }
-    NSLog(@"city Array count: %lu", (unsigned long)cityArray.count);
     return cityArray;
 }
 
@@ -49,12 +47,6 @@ static TripManager *instance =nil;
     NSError *error;
     NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
     return intermediateArray;
-}
-
--(void) populateTrips {
-    
-    [RequestBuilder buildRequestWithURL:@""];
-    
 }
 
 - (void)createEmbassyWithCity:(CityEntity *)city
@@ -134,7 +126,22 @@ static TripManager *instance =nil;
         }
 //    });
     return city;
+}
 
+- (void) deleteAllObjects: (NSString *) entityDescription  {
+    NSLog(@"delete all the things!");
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityDescription inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSError *error;
+    NSArray *items = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    for (NSManagedObject *managedObject in items) {
+        [managedObjectContext deleteObject:managedObject];
+    }
+    if (![managedObjectContext save:&error]) {
+    }
     
 }
 

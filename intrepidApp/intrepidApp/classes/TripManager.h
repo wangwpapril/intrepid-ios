@@ -43,4 +43,6 @@
                   withAddress:(NSString *)address
                   withCountry:(NSString *)country
                      withFlag:(NSString *)flag;
+
+- (void) deleteAllObjects: (NSString *) entityDescription;
 @end
