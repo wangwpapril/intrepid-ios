@@ -179,14 +179,12 @@ static TripManager *instance =nil;
     health.city = city;
     health.category = category;
     health.name = name;
-    health.common = [[NSNumber numberWithBool:YES] boolValue];
+    health.common = common;
     health.desc = desc;
     health.symptoms = symptoms;
     health.details = details;
     health.immunization = immunizations;
     health.image = image;
-    
-    NSLog(@"saving health item city: %@", health.city.cityName);
     
     NSError *error = nil;
     if ([managedObjectContext save:&error]) {
