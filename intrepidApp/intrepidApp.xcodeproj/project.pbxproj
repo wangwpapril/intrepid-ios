@@ -36,7 +36,6 @@
 		68B071EC17A4D7290061E418 /* EmbassyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B071EB17A4D7290061E418 /* EmbassyCell.m */; };
 		68B997E517A2058A00AD62ED /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B997E417A2058A00AD62ED /* WebViewController.m */; };
 		68BE3ACA17A1DCA600A87E52 /* HealthContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 68BE3AC917A1DCA600A87E52 /* HealthContent.m */; };
-		68DB321417C513D90061D0F1 /* CityEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DB321317C513D90061D0F1 /* CityEntity.m */; };
 		68DB321717C513F70061D0F1 /* EmbassyEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DB321617C513F70061D0F1 /* EmbassyEntity.m */; };
 		68DBAE60179F6CC300D1DE0B /* CurrencyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DBAE5F179F6CC300D1DE0B /* CurrencyCell.m */; };
 		68E4240417926E1E00431908 /* IntreSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E4240317926E1E00431908 /* IntreSearchBar.m */; };
@@ -57,6 +56,7 @@
 		B61550DD17B52E7400044F11 /* LegalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B61550DC17B52E7400044F11 /* LegalViewController.m */; };
 		B6DB0C4717AE2C5C001694B0 /* AssistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DB0C4617AE2C5C001694B0 /* AssistanceViewController.m */; };
 		DC85087D1A3E5FDF00C3173B /* HealthEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DC85087C1A3E5FDF00C3173B /* HealthEntity.m */; };
+		DC8508801A3EB57500C3173B /* CityEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DC85087F1A3EB57500C3173B /* CityEntity.m */; };
 		DCC843B81A37CB4B00C0B3AB /* DDCurrencyUnitConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC8438E1A37CB4B00C0B3AB /* DDCurrencyUnitConverter.m */; };
 		DCC843C71A37CB4B00C0B3AB /* DDUnitConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC843AD1A37CB4B00C0B3AB /* DDUnitConverter.m */; };
 		DCC843CA1A37CB4B00C0B3AB /* NSDecimalNumber+DDConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC843B31A37CB4B00C0B3AB /* NSDecimalNumber+DDConstants.m */; };
@@ -117,8 +117,6 @@
 		68B997E417A2058A00AD62ED /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = classes/WebViewController.m; sourceTree = "<group>"; };
 		68BE3AC817A1DCA600A87E52 /* HealthContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthContent.h; path = classes/HealthContent.h; sourceTree = "<group>"; };
 		68BE3AC917A1DCA600A87E52 /* HealthContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthContent.m; path = classes/HealthContent.m; sourceTree = "<group>"; };
-		68DB321217C513D90061D0F1 /* CityEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityEntity.h; path = classes/CityEntity.h; sourceTree = "<group>"; };
-		68DB321317C513D90061D0F1 /* CityEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityEntity.m; path = classes/CityEntity.m; sourceTree = "<group>"; };
 		68DB321517C513F70061D0F1 /* EmbassyEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmbassyEntity.h; path = classes/EmbassyEntity.h; sourceTree = "<group>"; };
 		68DB321617C513F70061D0F1 /* EmbassyEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmbassyEntity.m; path = classes/EmbassyEntity.m; sourceTree = "<group>"; };
 		68DBAE5E179F6CC300D1DE0B /* CurrencyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrencyCell.h; path = classes/CurrencyCell.h; sourceTree = "<group>"; };
@@ -156,6 +154,8 @@
 		B6DB0C4617AE2C5C001694B0 /* AssistanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssistanceViewController.m; sourceTree = "<group>"; };
 		DC85087B1A3E5FDF00C3173B /* HealthEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthEntity.h; sourceTree = "<group>"; };
 		DC85087C1A3E5FDF00C3173B /* HealthEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthEntity.m; sourceTree = "<group>"; };
+		DC85087E1A3EB57500C3173B /* CityEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityEntity.h; sourceTree = "<group>"; };
+		DC85087F1A3EB57500C3173B /* CityEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityEntity.m; sourceTree = "<group>"; };
 		DCC8438D1A37CB4B00C0B3AB /* DDCurrencyUnitConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCurrencyUnitConverter.h; sourceTree = "<group>"; };
 		DCC8438E1A37CB4B00C0B3AB /* DDCurrencyUnitConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCurrencyUnitConverter.m; sourceTree = "<group>"; };
 		DCC843AB1A37CB4B00C0B3AB /* DDUnitConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDUnitConversion.h; sourceTree = "<group>"; };
@@ -204,8 +204,8 @@
 		6811614117A9D0890029134B /* Content Managing */ = {
 			isa = PBXGroup;
 			children = (
-				68DB321217C513D90061D0F1 /* CityEntity.h */,
-				68DB321317C513D90061D0F1 /* CityEntity.m */,
+				DC85087E1A3EB57500C3173B /* CityEntity.h */,
+				DC85087F1A3EB57500C3173B /* CityEntity.m */,
 				68DB321517C513F70061D0F1 /* EmbassyEntity.h */,
 				68DB321617C513F70061D0F1 /* EmbassyEntity.m */,
 				DC85087B1A3E5FDF00C3173B /* HealthEntity.h */,
@@ -554,6 +554,7 @@
 				685B6F5F17A60B430003B5D9 /* TripCell.m in Sources */,
 				685B6F6217A617C20003B5D9 /* TripItem.m in Sources */,
 				7EA293B817A77161000A56E9 /* LearnMoreViewController.m in Sources */,
+				DC8508801A3EB57500C3173B /* CityEntity.m in Sources */,
 				E08615F117A8224D00DE240B /* ForgotPasswordViewController.m in Sources */,
 				7E9A130C17A876FF0082003C /* SettingsViewController.m in Sources */,
 				E058778417A8768500E42A78 /* EmbassyDetailedViewController.m in Sources */,
@@ -567,7 +568,6 @@
 				B6DB0C4717AE2C5C001694B0 /* AssistanceViewController.m in Sources */,
 				B61550DD17B52E7400044F11 /* LegalViewController.m in Sources */,
 				6854D37F17B6F2E7006CC3D2 /* ScrollerTabViewController.m in Sources */,
-				68DB321417C513D90061D0F1 /* CityEntity.m in Sources */,
 				68DB321717C513F70061D0F1 /* EmbassyEntity.m in Sources */,
 				68174E2217C951D5009823CE /* Reachability.m in Sources */,
 			);

@@ -1,15 +1,15 @@
 //
 //  CityEntity.h
-//  intrepidApp
+//  
 //
-//  Created by Philip Ojha on 8/21/2013.
-//  Copyright (c) 2013 JonCarrHarris Consulting. All rights reserved.
+//  Created by Madelaine Page on 2014-12-15.
+//
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class EmbassyEntity;
+@class EmbassyEntity, HealthEntity;
 
 @interface CityEntity : NSManagedObject
 
@@ -29,6 +29,7 @@
 @property (nonatomic, retain) NSString * safetyText;
 @property (nonatomic, retain) NSString * weatherURL;
 @property (nonatomic, retain) NSSet *embassies;
+@property (nonatomic, retain) HealthEntity *health;
 @end
 
 @interface CityEntity (CoreDataGeneratedAccessors)

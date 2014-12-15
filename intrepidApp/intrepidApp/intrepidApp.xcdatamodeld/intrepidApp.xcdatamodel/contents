@@ -17,7 +17,7 @@
         <attribute name="safetyText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weatherURL" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="embassies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EmbassyEntity" inverseName="city" inverseEntity="EmbassyEntity" syncable="YES"/>
-        <relationship name="health" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HealthEntity" inverseName="city" inverseEntity="HealthEntity" syncable="YES"/>
+        <relationship name="health" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HealthEntity" inverseName="city" inverseEntity="HealthEntity" syncable="YES"/>
     </entity>
     <entity name="EmbassyEntity" representedClassName="EmbassyEntity" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>

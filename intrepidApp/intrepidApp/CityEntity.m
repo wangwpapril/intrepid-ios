@@ -1,13 +1,14 @@
 //
 //  CityEntity.m
-//  intrepidApp
+//  
 //
-//  Created by Philip Ojha on 8/21/2013.
-//  Copyright (c) 2013 JonCarrHarris Consulting. All rights reserved.
+//  Created by Madelaine Page on 2014-12-15.
+//
 //
 
 #import "CityEntity.h"
 #import "EmbassyEntity.h"
+#import "HealthEntity.h"
 
 
 @implementation CityEntity
@@ -28,5 +29,6 @@
 @dynamic safetyText;
 @dynamic weatherURL;
 @dynamic embassies;
+@dynamic health;
 
 @end

@@ -132,7 +132,8 @@
 #pragma mark - Content Handling
 
 - (void)populateContentArray {
-    contentArray = [[TripManager getInstance] getHealthItems];
+    CityEntity * currentCity = [MenuController getInstance].city;
+    contentArray = [[TripManager getInstance] getHealthItemsWithCity:currentCity];
     
     self.filteredHealthItemArray = [NSMutableArray new];
 }

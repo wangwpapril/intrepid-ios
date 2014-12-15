@@ -56,5 +56,5 @@
                                  withImage:(NSString *)image;
 
 - (void) deleteAllObjects: (NSString *) entityDescription;
--(NSMutableArray *)getHealthItems;
+-(NSMutableArray *)getHealthItemsWithCity:(CityEntity *)city;
 @end

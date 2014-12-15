@@ -13,7 +13,6 @@
 @implementation TripManager
 
 @synthesize managedObjectContext;
-//@synthesize persistentStoreCoordinator;
 
 static TripManager *instance =nil;
 +(TripManager *)getInstance
@@ -49,7 +48,7 @@ static TripManager *instance =nil;
     return intermediateArray;
 }
 
--(NSMutableArray *)getHealthItems {
+-(NSMutableArray *)getHealthItemsWithCity:(CityEntity *)city {
     NSEntityDescription *entityDescription = [NSEntityDescription
                                               entityForName:@"HealthEntity" inManagedObjectContext:managedObjectContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -62,12 +61,18 @@ static TripManager *instance =nil;
     NSMutableArray * medication = [NSMutableArray new];
 
     for (HealthEntity *healthItem in intermediateArray) {
-        NSLog(@"name %@ with bool value %d", healthItem.name, healthItem.common);
-        if ([healthItem.category isEqualToString:@"medications"]) {
-            [medication addObject:healthItem];
+        NSLog(@"looking for city: %@", city.cityName);
+        if ([healthItem.city.cityName isEqualToString:city.cityName]) {
+            NSLog(@"name %@ with bool value %d", healthItem.name, healthItem.common);
+            if ([healthItem.category isEqualToString:@"medications"]) {
+                [medication addObject:healthItem];
+            }
+            else {
+                [diseases addObject:healthItem];
+            }
         }
         else {
-            [diseases addObject:healthItem];
+            NSLog(@"city name was: %@", healthItem.city.cityName);
         }
     }
     
@@ -170,15 +175,18 @@ static TripManager *instance =nil;
                                  withImage:(NSString *)image{
     HealthEntity *health = [NSEntityDescription insertNewObjectForEntityForName:@"HealthEntity" inManagedObjectContext:managedObjectContext];
     
+    
     health.city = city;
     health.category = category;
     health.name = name;
-    health.common = [NSNumber numberWithBool:YES];
+    health.common = [[NSNumber numberWithBool:YES] boolValue];
     health.desc = desc;
     health.symptoms = symptoms;
     health.details = details;
     health.immunization = immunizations;
     health.image = image;
+    
+    NSLog(@"saving health item city: %@", health.city.cityName);
     
     NSError *error = nil;
     if ([managedObjectContext save:&error]) {

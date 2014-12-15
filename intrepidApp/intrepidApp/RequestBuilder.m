@@ -46,7 +46,6 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
             
             NSDictionary *contentDict = cityDict[@"content"];
             
-                NSLog(@"content dict: %@", contentDict);
                 generalText = contentDict[@"general_description"];
                 cultureText = contentDict[@"culture_description"];
                 localText = @"local text";
@@ -54,7 +53,6 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
             
             
             NSDictionary *imageDict = cityDict[@"images"];
-                NSLog(@"image dict: %@", imageDict);
                 generalImage = @"embassy-icon";
                 localImage = imageDict[@"other_image"];
                 cultureImage = imageDict[@"culture_image"];
@@ -133,7 +131,6 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
     
 
         }
-        NSLog(@"firing note");
         [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
     
         
