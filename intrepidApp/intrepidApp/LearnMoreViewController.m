@@ -35,13 +35,21 @@
     [super viewDidLoad];
     
     [self.navigationController setNavigationBarHidden:YES];
+
+    //set background image
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"login-background"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
     
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login-background"]];
-    [self.view addSubview:backgroundView];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
+//    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login-background"]];
+//    [self.view addSubview:backgroundView];
     
     //create title label
     UILabel *learnMoreLabel = [[UILabel alloc] init];
-    learnMoreLabel.frame = CGRectMake(85, self.view.frame.origin.y - 65, 150, 150);
+    learnMoreLabel.frame = CGRectMake(85, self.view.frame.origin.y - 35, 150, 150);
     learnMoreLabel.text = @"Learn More";
     learnMoreLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:24];
     learnMoreLabel.textColor = [UIColor colorWithRed:231/255.0f green:238/255.0f blue:226/255.0f alpha:1.0f];
@@ -62,7 +70,7 @@
         NSInteger height = scrollView.frame.size.height - 150.0;
         NSInteger width = height * 0.5634;
         frame.origin.x = 320 * i + (320 - width)/2;
-        frame.origin.y = scrollView.frame.origin.y + 50;
+        frame.origin.y = scrollView.frame.origin.y + 75;
         //0.7322;
         frame.size = CGSizeMake(width, height);
                 
@@ -76,11 +84,11 @@
     [self populateDescriptions];
     
     [self.view addSubview:scrollView];
-    exitButton.frame = CGRectMake(280, 12, 40, 40);
+    exitButton.frame = CGRectMake(280, 32, 40, 40);
     [self.view addSubview:exitButton];
     UIImage *exitImage = [UIImage imageNamed:@"close"];
     //create an image and put it overtop of the button?
-    UIImageView *exitImageContainer = [[UIImageView alloc] initWithFrame: CGRectMake(290, 15, 15, 15)];
+    UIImageView *exitImageContainer = [[UIImageView alloc] initWithFrame: CGRectMake(290, 32, 15, 15)];
     [exitImageContainer setImage:exitImage];
     [self.view addSubview:exitImageContainer];
     
@@ -113,7 +121,7 @@
 
 -(void)populateDescriptions {
     UILabel *mexicoEmbassyDescription = [[UILabel alloc] init];
-    mexicoEmbassyDescription.frame = CGRectMake(677, self.view.frame.size.height - 200, 250.0, 250.0);
+    mexicoEmbassyDescription.frame = CGRectMake(677, self.view.frame.size.height - 175, 250.0, 250.0);
     mexicoEmbassyDescription.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
     mexicoEmbassyDescription.backgroundColor = [UIColor clearColor];
     mexicoEmbassyDescription.textColor = [UIColor whiteColor];
@@ -124,7 +132,7 @@
     [scrollView addSubview:mexicoEmbassyDescription];
     
     UILabel *healthOverviewDescription = [[UILabel alloc] init];
-    healthOverviewDescription.frame = CGRectMake(345, self.view.frame.size.height - 200, 275.0, 275.0);
+    healthOverviewDescription.frame = CGRectMake(345, self.view.frame.size.height - 190, 275.0, 275.0);
     healthOverviewDescription.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
     healthOverviewDescription.backgroundColor = [UIColor clearColor];
     healthOverviewDescription.textColor = [UIColor whiteColor];
@@ -135,7 +143,7 @@
     [scrollView addSubview:healthOverviewDescription];
     
     UILabel *mexicoCultureDescription = [[UILabel alloc] init];
-    mexicoCultureDescription.frame = CGRectMake(37, self.view.frame.size.height - 200, 250.0, 250.0);
+    mexicoCultureDescription.frame = CGRectMake(37, self.view.frame.size.height - 175, 250.0, 250.0);
     mexicoCultureDescription.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
     mexicoCultureDescription.backgroundColor = [UIColor clearColor];
     mexicoCultureDescription.textColor = [UIColor whiteColor];
@@ -146,7 +154,7 @@
     [scrollView addSubview:mexicoCultureDescription];
     
     UILabel *assistanceScreenDescription = [[UILabel alloc] init];
-    assistanceScreenDescription.frame = CGRectMake(995, self.view.frame.size.height - 200, 250.0, 250.0);
+    assistanceScreenDescription.frame = CGRectMake(995, self.view.frame.size.height - 175, 250.0, 250.0);
     assistanceScreenDescription.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
     assistanceScreenDescription.backgroundColor = [UIColor clearColor];
     assistanceScreenDescription.textColor = [UIColor whiteColor];
