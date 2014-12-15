@@ -38,7 +38,7 @@
     [political addTextAreaWithText:city.safetyText];
     
     SlidingTextView *embassy = [[SlidingTextView alloc] initWithFrame:frame];
-    [embassy setupWithImageName:@"security-embassy" withTitle:@"Embassy" withIconName:@"embassy-icon"];
+    [embassy setupWithImageName:@"" withTitle:@"Embassy" withIconName:@"embassy-icon"];
     
     SlidingTextView *local = [[SlidingTextView alloc] initWithFrame:frame];
     [local setupWithImageName:city.localImage withTitle:@"Other" withIconName:@"Tourist-icon1"];

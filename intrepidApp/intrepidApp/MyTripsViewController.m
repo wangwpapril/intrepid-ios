@@ -51,6 +51,8 @@
     
     pageControl.frame = CGRectMake(0, self.view.frame.size.height - 78, 320, 50);
     pageControl.currentPage = 0;
+    // replace with loading indicator
+    pageControl.numberOfPages = 2;
     pageControl.pageIndicatorTintColor = [UIColor darkGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     [pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];

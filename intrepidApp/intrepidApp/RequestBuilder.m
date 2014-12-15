@@ -48,19 +48,19 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
             
                 generalText = contentDict[@"general_description"];
                 cultureText = contentDict[@"culture_description"];
-                localText = @"local text";
+                localText = @"";
                 safetyText = contentDict[@"security_description"];
             
             
             NSDictionary *imageDict = cityDict[@"images"];
-                generalImage = @"embassy-icon";
+                generalImage = @"";
                 localImage = imageDict[@"other_image"];
                 cultureImage = imageDict[@"culture_image"];
                 safetyImage = imageDict[@"safety_image"];
             
             
-            cityImage = @"embassy-icon";
-            continent = @"the continent";
+            cityImage = @"";
+            continent = @"";
             clinicsURL= @"";
             weatherURL = @"";
             alertsURL = @"";
@@ -78,17 +78,10 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
                     email = embassyContent[@"email"];
                     hours = embassyContent[@"hours_of_operation"];
                     address = embassyContent[@"address"];
+                    notes = embassyContent[@"notes"];
+                    services = embassyContent[@"services_offered"];
                 }
-                else {
-                    phone = @"phone placeholder";
-                    fax = @"fax placeholder";
-                    email = @"email placeholder";
-                    hours = @"hours placeholder";
-                    address = @"address placeholder";
-                }
-                notes = @"notes";
-                services = @"services";
-                flag = @"embassy-icon";
+                flag = @"";
                 [[TripManager getInstance] createEmbassyWithCity:city withPhone:phone withFax:fax withEmail:email withHours:hours withNotes:notes withServices:services withAddress:address withCountry:country withFlag:flag];
             }
             
@@ -105,7 +98,7 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
                 
                 NSDictionary *medImage = medDict[@"images"];
                     //for debugging purposes
-                    image = @"embassy-icon"; //medImage[@"other_image"];
+                    image = medImage[@"other_image"];
                 
                 [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImage:image];
             }
@@ -123,7 +116,7 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
                 
                 NSDictionary *healthImage = healthDict[@"images"];
                     //for debugging purposes
-                    image = @"embassy-icon"; //healthImage[@"other_image"];
+                    image = healthImage[@"other_image"];
                 
                 [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImage:image];
             }
@@ -136,6 +129,7 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
     }];
 }
 

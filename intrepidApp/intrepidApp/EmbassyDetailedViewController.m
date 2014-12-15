@@ -52,6 +52,7 @@
     [embassyDetailedItemTitleLabel addSubview:embassyDetailedItemNameLabel];
     
     [self.view addSubview:embassyDetailedItemTitleLabel];
+    self.navigationItem.title = embassyItem.country;
     [self addContent];
     [self.view addSubview:scrollView];
     
@@ -94,7 +95,7 @@
     contactLabel.backgroundColor = [UIColor clearColor];
     contactLabel.text = @"Telephone/Fax/Email";
     
-    NSString *contactLength = [NSString stringWithFormat:@"%@\nFax:%@\nEmail:%@", embassyItem.phone,
+    NSString *contactLength = [NSString stringWithFormat:@"Telephone: %@\nFax: %@\nEmail: %@", embassyItem.phone,
                                embassyItem.fax, embassyItem.email];
     
     CGSize contactSize = [contactLength boundingRectWithSize:CGSizeMake(280, 15000)
@@ -105,7 +106,7 @@
     contactText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     contactText.backgroundColor = [UIColor clearColor];
     contactText.textColor = [UIColor blackColor];
-    contactText.text = [NSString stringWithFormat:@"%@\nFax: %@\nEmail: %@", embassyItem.phone, embassyItem.fax, embassyItem.email];
+    contactText.text = [NSString stringWithFormat:@"Telephone: %@\nFax: %@\nEmail: %@", embassyItem.phone, embassyItem.fax, embassyItem.email];
     contactText.lineBreakMode = NSLineBreakByWordWrapping;
     contactText.numberOfLines = 0;
     
