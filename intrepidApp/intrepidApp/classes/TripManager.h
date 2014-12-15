@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CityEntity.h"
+#import "HealthEntity.h"
 
 @interface TripManager : NSObject
 
@@ -44,5 +45,16 @@
                   withCountry:(NSString *)country
                      withFlag:(NSString *)flag;
 
+- (HealthEntity *)createHealthItemWithCity:(CityEntity *)city
+                    withCategory:(NSString *)category
+                        withName:(NSString *)name
+                        withCommon:(BOOL)common
+                        withDesc:(NSString *)desc
+                    withDetails:(NSString *)details
+                    withSymptoms:(NSString *)symptoms
+                withImmunizations:(NSString *)immunizations
+                                 withImage:(NSString *)image;
+
 - (void) deleteAllObjects: (NSString *) entityDescription;
+-(NSMutableArray *)getHealthItems;
 @end

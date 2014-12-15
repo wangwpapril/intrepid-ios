@@ -7,9 +7,10 @@
 //
 
 #import "HealthCell.h"
-#import "HealthItem.h"
+#import "HealthEntity.h"
 #import "Constants.h"
 #import "QuartzCore/QuartzCore.h"
+
 
 @implementation HealthCell
 
@@ -24,12 +25,12 @@
     return self;
 }
 
--(void)setupWithHealthItem:(HealthItem *)healthItem {
+-(void)setupWithHealthItem:(HealthEntity *)healthItem {
     
     // common image
     NSString *commonImageName;
     
-    if (healthItem.common == TRUE) {
+    if (healthItem.common == YES) {
         commonImageName = @"Common";
     }
     

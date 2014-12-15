@@ -17,6 +17,7 @@
         <attribute name="safetyText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weatherURL" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="embassies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EmbassyEntity" inverseName="city" inverseEntity="EmbassyEntity" syncable="YES"/>
+        <relationship name="health" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HealthEntity" inverseName="city" inverseEntity="HealthEntity" syncable="YES"/>
     </entity>
     <entity name="EmbassyEntity" representedClassName="EmbassyEntity" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
@@ -30,8 +31,20 @@
         <attribute name="services" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="city" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CityEntity" inverseName="embassies" inverseEntity="CityEntity" syncable="YES"/>
     </entity>
+    <entity name="HealthEntity" representedClassName="HealthEntity" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="common" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="immunization" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="symptoms" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CityEntity" inverseName="health" inverseEntity="CityEntity" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="CityEntity" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="EmbassyEntity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="CityEntity" positionX="-477" positionY="3" width="128" height="298"/>
+        <element name="EmbassyEntity" positionX="-677" positionY="-0" width="128" height="195"/>
+        <element name="HealthEntity" positionX="-272" positionY="81" width="128" height="178"/>
     </elements>
 </model>

@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HealthItem.h"
+#import "HealthEntity.h"
 
 @interface HealthCell : UITableViewCell
 
 @property (nonatomic, strong) UIImageView *commonImage;
 
 
--(void)setupWithHealthItem:(HealthItem *)healthItem;
+-(void)setupWithHealthItem:(HealthEntity *)healthItem;
 
 @end

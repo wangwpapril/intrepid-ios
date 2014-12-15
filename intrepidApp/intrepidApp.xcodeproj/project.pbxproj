@@ -56,6 +56,7 @@
 		7EE44DB9179F7E30006BA2EC /* CurrencyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE44DB8179F7E30006BA2EC /* CurrencyItem.m */; };
 		B61550DD17B52E7400044F11 /* LegalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B61550DC17B52E7400044F11 /* LegalViewController.m */; };
 		B6DB0C4717AE2C5C001694B0 /* AssistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DB0C4617AE2C5C001694B0 /* AssistanceViewController.m */; };
+		DC85087D1A3E5FDF00C3173B /* HealthEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DC85087C1A3E5FDF00C3173B /* HealthEntity.m */; };
 		DCC843B81A37CB4B00C0B3AB /* DDCurrencyUnitConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC8438E1A37CB4B00C0B3AB /* DDCurrencyUnitConverter.m */; };
 		DCC843C71A37CB4B00C0B3AB /* DDUnitConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC843AD1A37CB4B00C0B3AB /* DDUnitConverter.m */; };
 		DCC843CA1A37CB4B00C0B3AB /* NSDecimalNumber+DDConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC843B31A37CB4B00C0B3AB /* NSDecimalNumber+DDConstants.m */; };
@@ -153,6 +154,8 @@
 		B61550DC17B52E7400044F11 /* LegalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegalViewController.m; sourceTree = "<group>"; };
 		B6DB0C4517AE2C5C001694B0 /* AssistanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssistanceViewController.h; sourceTree = "<group>"; };
 		B6DB0C4617AE2C5C001694B0 /* AssistanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssistanceViewController.m; sourceTree = "<group>"; };
+		DC85087B1A3E5FDF00C3173B /* HealthEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthEntity.h; sourceTree = "<group>"; };
+		DC85087C1A3E5FDF00C3173B /* HealthEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthEntity.m; sourceTree = "<group>"; };
 		DCC8438D1A37CB4B00C0B3AB /* DDCurrencyUnitConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCurrencyUnitConverter.h; sourceTree = "<group>"; };
 		DCC8438E1A37CB4B00C0B3AB /* DDCurrencyUnitConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCurrencyUnitConverter.m; sourceTree = "<group>"; };
 		DCC843AB1A37CB4B00C0B3AB /* DDUnitConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDUnitConversion.h; sourceTree = "<group>"; };
@@ -205,6 +208,8 @@
 				68DB321317C513D90061D0F1 /* CityEntity.m */,
 				68DB321517C513F70061D0F1 /* EmbassyEntity.h */,
 				68DB321617C513F70061D0F1 /* EmbassyEntity.m */,
+				DC85087B1A3E5FDF00C3173B /* HealthEntity.h */,
+				DC85087C1A3E5FDF00C3173B /* HealthEntity.m */,
 				6811614517A9D1A20029134B /* TripManager.h */,
 				6811614617A9D1A20029134B /* TripManager.m */,
 			);
@@ -532,6 +537,7 @@
 				7E44F8D21788FA4B00AAA32B /* HealthItem.m in Sources */,
 				6835EC161789439600A57F86 /* MenuController.m in Sources */,
 				7ECD0427178BD7C500D6C34B /* HealthViewDetailController.m in Sources */,
+				DC85087D1A3E5FDF00C3173B /* HealthEntity.m in Sources */,
 				7E34777C1791E79300FB86DC /* LoginViewController.m in Sources */,
 				7E34777F1791E7A700FB86DC /* SignUpViewController.m in Sources */,
 				68E4240417926E1E00431908 /* IntreSearchBar.m in Sources */,

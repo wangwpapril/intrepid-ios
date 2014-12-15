@@ -95,7 +95,7 @@
     paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
     
     //Set descriptionText to auto-fit content
-    CGSize size = [healthItem.description boundingRectWithSize:CGSizeMake(290, 15000)
+    CGSize size = [healthItem.desc boundingRectWithSize:CGSizeMake(290, 15000)
                                                        options:NSStringDrawingUsesLineFragmentOrigin
                                                     attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:15]}
                                                        context:nil].size;
@@ -103,7 +103,7 @@
     descriptionText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     descriptionText.backgroundColor = [UIColor clearColor];
     descriptionText.textColor = APP_TEXT_COLOR;
-    descriptionText.text = healthItem.description;
+    descriptionText.text = healthItem.desc;
     descriptionText.lineBreakMode = NSLineBreakByWordWrapping;
     descriptionText.numberOfLines = 0;
     

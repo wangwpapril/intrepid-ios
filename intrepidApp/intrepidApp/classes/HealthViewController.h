@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MenuController.h"
-#import "HealthItem.h"
+#import "HealthEntity.h"
 #import "IntreSearchBar.h"
 #import "ScrollerTabViewController.h"
 
@@ -20,6 +20,6 @@
 @property (strong,nonatomic) NSMutableArray *filteredHealthItemArray;
 @property (nonatomic, strong) IntreSearchBar * searchBar;
 @property (nonatomic, strong) UIButton *xButton;
-@property (nonatomic, strong) HealthItem *selectedItem;
+@property (nonatomic, strong) HealthEntity *selectedItem;
 
 @end

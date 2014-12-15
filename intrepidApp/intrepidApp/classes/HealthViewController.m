@@ -10,11 +10,10 @@
 #import "Constants.h"
 #import "QuartzCore/QuartzCore.h"
 #import "HealthCell.h"
-#import "HealthItem.h"
 #import "MenuController.h"
 #import "HealthViewDetailController.h"
-#import "HealthContent.h"
 #import "RequestBuilder.h"
+#import "TripManager.h"
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
@@ -133,8 +132,7 @@
 #pragma mark - Content Handling
 
 - (void)populateContentArray {
-    HealthContent *content = [[HealthContent alloc] init];
-    contentArray = [content getContent];
+    contentArray = [[TripManager getInstance] getHealthItems];
     
     self.filteredHealthItemArray = [NSMutableArray new];
 }
@@ -168,7 +166,7 @@
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     
-    HealthItem *healthItem = nil;
+    HealthEntity *healthItem = nil;
     if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
         healthItem = [filteredHealthItemArray objectAtIndex:indexPath.row];
     } else {
@@ -183,11 +181,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
         NSLog(@"text is not default, instead it's :%@", searchBar.text);
-        selectedItem = (HealthItem *)[filteredHealthItemArray objectAtIndex:indexPath.row];
+        selectedItem = (HealthEntity *)[filteredHealthItemArray objectAtIndex:indexPath.row];
     }
     else {
         NSLog(@"text is default : %@", searchBar.text);
-        selectedItem = (HealthItem *)[[contentArray objectAtIndex:self.currentTab] objectAtIndex:indexPath.row];
+        selectedItem = (HealthEntity *)[[contentArray objectAtIndex:self.currentTab] objectAtIndex:indexPath.row];
     }
     HealthViewDetailController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"healthDetails"];
     viewController.healthItem = selectedItem;

@@ -26,6 +26,7 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
     [manager GET:requestURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         [[TripManager getInstance] deleteAllObjects:@"CityEntity"];
+        [[TripManager getInstance] deleteAllObjects:@"HealthEntity"];
         
         for (NSDictionary *cityDict in responseObject[@"destinations"]) {
             
@@ -37,6 +38,9 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
             
             //EmbassyEntity
             NSString *phone, *fax, *email, *hours, *notes, *services, *address, *country, *flag;
+            
+            NSString *name, *category, *desc, *details, *symptoms, *immunizations, *image;
+            Boolean common;
             
             cityName = cityDict[@"name"];
             
@@ -66,8 +70,6 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
             
             CityEntity *city = [[TripManager getInstance] createTripWithCityImage:cityImage withCityName:cityName withContinent:continent withCultureText:cultureText withCultureImage:cultureImage withGeneralText:generalText withGeneralImage:generalImage withLocalImage:localImage withLocalText:localText withSafetyImage:safetyImage withSafetytext:safetyText withClinicsURL:clinicsURL withAlertsURL:alertsURL withWeatherURL:weatherURL withCADToNative:dollarRatio];
             
-            //This doesn't exist yet, set up when ready
-            //NSArray *embassyArray = cityDict[@"diplomatic_offices"];
             for (NSDictionary *embassyDict in cityDict[@"diplomatic_offices"]) {
                 country = embassyDict[@"name"];
 
@@ -91,6 +93,43 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
                 flag = @"embassy-icon";
                 [[TripManager getInstance] createEmbassyWithCity:city withPhone:phone withFax:fax withEmail:email withHours:hours withNotes:notes withServices:services withAddress:address withCountry:country withFlag:flag];
             }
+            
+            for (NSDictionary *medDict in cityDict[@"medications"]) {
+                name = medDict[@"name"];
+                category = @"medications";
+                common = [medDict[@"common"] boolValue];
+                
+                NSDictionary *medContent = medDict[@"content"];
+                    desc = medContent[@"general_description"];
+                    details = medContent[@"details"];
+                    symptoms = medContent[@"symptoms"];
+                    immunizations = medContent[@"immunization"];
+                
+                NSDictionary *medImage = medDict[@"images"];
+                    //for debugging purposes
+                    image = @"embassy-icon"; //medImage[@"other_image"];
+                
+                [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImage:image];
+            }
+            
+            for (NSDictionary *healthDict in cityDict[@"health_conditions"]) {
+                category = @"conditions";
+                name = healthDict[@"name"];
+                common = [healthDict[@"common"] boolValue];
+                
+                NSDictionary *healthContent = healthDict[@"content"];
+                    desc = healthContent[@"general_description"];
+                    details = @"";
+                    symptoms = healthContent[@"symptom_description"];
+                    immunizations = healthContent[@"prevention_description"];
+                
+                NSDictionary *healthImage = healthDict[@"images"];
+                    //for debugging purposes
+                    image = @"embassy-icon"; //healthImage[@"other_image"];
+                
+                [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImage:image];
+            }
+
     
 
         }
