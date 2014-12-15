@@ -20,8 +20,6 @@
 
 @implementation SignUpViewController
 
-#define kOFFSET_FOR_KEYBOARD 110.0
-
 @synthesize signUpButton;
 @synthesize name;
 @synthesize email;
@@ -340,13 +338,13 @@ finishedSavingWithError:(NSError *)error
     {
         // 1. move the view's origin up so that the text field that will be hidden come above the keyboard
         // 2. increase the size of the view so that the area behind the keyboard is covered up.
-        rect.origin.y -= kOFFSET_FOR_KEYBOARD;
+        rect.origin.y -= 110.0;
         //rect.size.height -= kOFFSET_FOR_KEYBOARD;
     }
     else
     {
         // revert back to the normal state.
-        rect.origin.y += kOFFSET_FOR_KEYBOARD;
+        rect.origin.y += 110.0;
         //rect.size.height -= kOFFSET_FOR_KEYBOARD;
     }
     self.view.frame = rect;
