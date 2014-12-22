@@ -56,9 +56,6 @@
 		B6DB0C4717AE2C5C001694B0 /* AssistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DB0C4617AE2C5C001694B0 /* AssistanceViewController.m */; };
 		DC85087D1A3E5FDF00C3173B /* HealthEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DC85087C1A3E5FDF00C3173B /* HealthEntity.m */; };
 		DC8508801A3EB57500C3173B /* CityEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DC85087F1A3EB57500C3173B /* CityEntity.m */; };
-		DCC843B81A37CB4B00C0B3AB /* DDCurrencyUnitConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC8438E1A37CB4B00C0B3AB /* DDCurrencyUnitConverter.m */; };
-		DCC843C71A37CB4B00C0B3AB /* DDUnitConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC843AD1A37CB4B00C0B3AB /* DDUnitConverter.m */; };
-		DCC843CA1A37CB4B00C0B3AB /* NSDecimalNumber+DDConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC843B31A37CB4B00C0B3AB /* NSDecimalNumber+DDConstants.m */; };
 		E02BBA0B17A8845300215CEA /* EmbassyDetailedContent.m in Sources */ = {isa = PBXBuildFile; fileRef = E02BBA0A17A8845300215CEA /* EmbassyDetailedContent.m */; };
 		E04C4DBC17A3103E002A23F4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E04C4DBB17A3103E002A23F4 /* libz.dylib */; };
 		E058778417A8768500E42A78 /* EmbassyDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E058778317A8768500E42A78 /* EmbassyDetailedViewController.m */; };
@@ -155,13 +152,6 @@
 		DC85087C1A3E5FDF00C3173B /* HealthEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthEntity.m; sourceTree = "<group>"; };
 		DC85087E1A3EB57500C3173B /* CityEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityEntity.h; sourceTree = "<group>"; };
 		DC85087F1A3EB57500C3173B /* CityEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityEntity.m; sourceTree = "<group>"; };
-		DCC8438D1A37CB4B00C0B3AB /* DDCurrencyUnitConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCurrencyUnitConverter.h; sourceTree = "<group>"; };
-		DCC8438E1A37CB4B00C0B3AB /* DDCurrencyUnitConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCurrencyUnitConverter.m; sourceTree = "<group>"; };
-		DCC843AB1A37CB4B00C0B3AB /* DDUnitConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDUnitConversion.h; sourceTree = "<group>"; };
-		DCC843AC1A37CB4B00C0B3AB /* DDUnitConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDUnitConverter.h; sourceTree = "<group>"; };
-		DCC843AD1A37CB4B00C0B3AB /* DDUnitConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDUnitConverter.m; sourceTree = "<group>"; };
-		DCC843B21A37CB4B00C0B3AB /* NSDecimalNumber+DDConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+DDConstants.h"; sourceTree = "<group>"; };
-		DCC843B31A37CB4B00C0B3AB /* NSDecimalNumber+DDConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+DDConstants.m"; sourceTree = "<group>"; };
 		E02BBA0917A8845200215CEA /* EmbassyDetailedContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbassyDetailedContent.h; sourceTree = "<group>"; };
 		E02BBA0A17A8845300215CEA /* EmbassyDetailedContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbassyDetailedContent.m; sourceTree = "<group>"; };
 		E04C4DBB17A3103E002A23F4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -285,7 +275,6 @@
 			children = (
 				6851222317861138008DB6B6 /* AppDelegate.h */,
 				6851222417861138008DB6B6 /* AppDelegate.m */,
-				DCC843841A37CB4B00C0B3AB /* DDUnitConverter */,
 				339118551A31623D00450CB8 /* Networking */,
 				6811614117A9D0890029134B /* Content Managing */,
 				684BB606179F534A004C44C9 /* Support Classes */,
@@ -405,20 +394,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		DCC843841A37CB4B00C0B3AB /* DDUnitConverter */ = {
-			isa = PBXGroup;
-			children = (
-				DCC8438D1A37CB4B00C0B3AB /* DDCurrencyUnitConverter.h */,
-				DCC8438E1A37CB4B00C0B3AB /* DDCurrencyUnitConverter.m */,
-				DCC843AB1A37CB4B00C0B3AB /* DDUnitConversion.h */,
-				DCC843AC1A37CB4B00C0B3AB /* DDUnitConverter.h */,
-				DCC843AD1A37CB4B00C0B3AB /* DDUnitConverter.m */,
-				DCC843B21A37CB4B00C0B3AB /* NSDecimalNumber+DDConstants.h */,
-				DCC843B31A37CB4B00C0B3AB /* NSDecimalNumber+DDConstants.m */,
-			);
-			path = DDUnitConverter;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -504,7 +479,6 @@
 				7E34777C1791E79300FB86DC /* LoginViewController.m in Sources */,
 				7E34777F1791E7A700FB86DC /* SignUpViewController.m in Sources */,
 				68E4240417926E1E00431908 /* IntreSearchBar.m in Sources */,
-				DCC843CA1A37CB4B00C0B3AB /* NSDecimalNumber+DDConstants.m in Sources */,
 				684BB605179F5143004C44C9 /* OverViewViewController.m in Sources */,
 				684BB609179F539C004C44C9 /* SlidingTextView.m in Sources */,
 				68DBAE60179F6CC300D1DE0B /* CurrencyCell.m in Sources */,
@@ -523,8 +497,6 @@
 				E058778417A8768500E42A78 /* EmbassyDetailedViewController.m in Sources */,
 				E02BBA0B17A8845300215CEA /* EmbassyDetailedContent.m in Sources */,
 				7E9A131217A8AE5E0082003C /* TermsOfServiceViewController.m in Sources */,
-				DCC843C71A37CB4B00C0B3AB /* DDUnitConverter.m in Sources */,
-				DCC843B81A37CB4B00C0B3AB /* DDCurrencyUnitConverter.m in Sources */,
 				7E9A131517A8AE6E0082003C /* PrivacyPolicyViewController.m in Sources */,
 				6811614717A9D1A20029134B /* TripManager.m in Sources */,
 				339118581A31626300450CB8 /* RequestBuilder.m in Sources */,

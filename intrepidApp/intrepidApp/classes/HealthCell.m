@@ -27,18 +27,6 @@
 
 -(void)setupWithHealthItem:(HealthEntity *)healthItem {
     
-    // common image
-    NSString *commonImageName;
-    
-    if (healthItem.common == YES) {
-        commonImageName = @"Common";
-    }
-    
-    else {
-        commonImageName = @"Uncommon";
-    }
-    commonImage.image = [UIImage imageNamed:commonImageName];
-    
     UIImage *image = [UIImage imageNamed:healthItem.image];
     self.imageView.image = image;
     self.imageView.layer.cornerRadius = 5;
