@@ -172,6 +172,7 @@ static TripManager *instance =nil;
                                withDetails:(NSString *)details
                               withSymptoms:(NSString *)symptoms
                          withImmunizations:(NSString *)immunizations
+                             withImportant:(NSString *)important
                                  withImage:(NSString *)image{
     HealthEntity *health = [NSEntityDescription insertNewObjectForEntityForName:@"HealthEntity" inManagedObjectContext:managedObjectContext];
     
@@ -184,6 +185,7 @@ static TripManager *instance =nil;
     health.symptoms = symptoms;
     health.details = details;
     health.immunization = immunizations;
+    health.important = important;
     health.image = image;
     
     NSError *error = nil;

@@ -53,7 +53,8 @@
                     withDetails:(NSString *)details
                     withSymptoms:(NSString *)symptoms
                 withImmunizations:(NSString *)immunizations
-                                 withImage:(NSString *)image;
+                        withImportant:(NSString *)important
+                        withImage:(NSString *)image;
 
 - (void) deleteAllObjects: (NSString *) entityDescription;
 -(NSMutableArray *)getHealthItemsWithCity:(CityEntity *)city;

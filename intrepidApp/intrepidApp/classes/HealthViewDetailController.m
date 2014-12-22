@@ -252,7 +252,47 @@
         
     }
     
-    scrollView.contentSize = CGSizeMake(320, immunizationTextContainer.frame.origin.y + immunizationTextContainer.frame.size.height + 50);
+    // THE IMPORTANT FIELD
+    if (![healthItem.important isEqualToString:@""]) {
+        //there is an important field, must add
+        UILabel *importantTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, immunizationTextContainer.frame.origin.y + immunizationSize.height + 20, 250, 25)];
+        importantTitleLabel .font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
+        importantTitleLabel.backgroundColor = [UIColor clearColor];
+        importantTitleLabel.textColor = UIColorFromRGB(0x423a38);
+        importantTitleLabel.text = @"Important";
+        [scrollView addSubview:importantTitleLabel];
+        
+        UIImageView  *importantImageLabel = [[UIImageView alloc] init];
+        [importantImageLabel setImage:[UIImage imageNamed:@"conditions-pic"]];
+        importantImageLabel.frame = CGRectMake(7, immunizationTextContainer.frame.origin.y + immunizationSize.height + 20, 20, 25);
+        [scrollView addSubview:importantImageLabel];
+        
+        CGSize importantSize = [healthItem.important boundingRectWithSize:CGSizeMake(290, 15000)
+                                                                        options:NSStringDrawingUsesLineFragmentOrigin
+                                                                     attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:15]}
+                                                                        context:nil].size;
+        UILabel *importantText = [[UILabel alloc] initWithFrame:CGRectMake(15, 5,  290, importantSize.height + 5)];
+        importantText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
+        importantText.backgroundColor = [UIColor clearColor];
+        importantText.textColor = APP_TEXT_COLOR;
+        importantText.text = healthItem.important;
+        importantText.lineBreakMode = NSLineBreakByWordWrapping;
+        importantText.numberOfLines = 0;
+        
+        UILabel *importantTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, immunizationTextContainer.frame.origin.y + immunizationSize.height + 55,  320, importantSize.height + 15)];
+        importantTextContainer.layer.borderWidth = 1.0f;
+        importantTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
+        importantTextContainer.backgroundColor = [UIColor clearColor];
+        
+        [importantTextContainer addSubview:importantText];
+        [scrollView addSubview:importantTextContainer];
+        
+        scrollView.contentSize = CGSizeMake(320, importantTextContainer.frame.origin.y + importantTextContainer.frame.size.height + 50);
+        
+    }
+    else {
+        scrollView.contentSize = CGSizeMake(320, immunizationTextContainer.frame.origin.y + immunizationTextContainer.frame.size.height + 50);
+    }
     
 }
 

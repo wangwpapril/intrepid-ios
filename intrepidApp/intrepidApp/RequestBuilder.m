@@ -40,7 +40,7 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
                 //EmbassyEntity
                 NSString *phone, *fax, *email, *hours, *notes, *services, *address, *country, *flag;
                 
-                NSString *name, *category, *desc, *details, *symptoms, *immunizations, *image;
+                NSString *name, *category, *desc, *details, *symptoms, *immunizations, *important, *image;
                 Boolean common;
                 
                 cityName = cityDict[@"name"];
@@ -96,12 +96,13 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
                     details = medContent[@"details"];
                     symptoms = medContent[@"symptoms"];
                     immunizations = medContent[@"immunization"];
+                    important = @"this is a test to see if the box works, I am writing a lot to test this, my favourite colour is blue and my favourite day of the week is friday";
                     
                     NSDictionary *medImage = medDict[@"images"];
                     //for debugging purposes
                     image = medImage[@"other_image"];
                     
-                    [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImage:image];
+                    [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImportant:important withImage:image];
                 }
                 
                 for (NSDictionary *healthDict in cityDict[@"health_conditions"]) {
@@ -114,12 +115,14 @@ static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
                     details = @"";
                     symptoms = healthContent[@"symptom_description"];
                     immunizations = healthContent[@"prevention_description"];
+                    //test to see if it works when there is no important field
+                    important = @"";
                     
                     NSDictionary *healthImage = healthDict[@"images"];
                     //for debugging purposes
                     image = healthImage[@"other_image"];
                     
-                    [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImage:image];
+                    [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImportant:important withImage:image];
                 }
                 
             }

@@ -38,6 +38,7 @@
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="immunization" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="important" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="symptoms" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CityEntity" inverseName="health" inverseEntity="CityEntity" syncable="YES"/>
@@ -45,6 +46,6 @@
     <elements>
         <element name="CityEntity" positionX="-477" positionY="3" width="128" height="298"/>
         <element name="EmbassyEntity" positionX="-677" positionY="-0" width="128" height="195"/>
-        <element name="HealthEntity" positionX="-272" positionY="81" width="128" height="178"/>
+        <element name="HealthEntity" positionX="-272" positionY="81" width="128" height="195"/>
     </elements>
 </model>

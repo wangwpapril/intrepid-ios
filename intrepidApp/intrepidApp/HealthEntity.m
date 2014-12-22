@@ -19,6 +19,7 @@
 @dynamic details;
 @dynamic symptoms;
 @dynamic immunization;
+@dynamic important;
 @dynamic image;
 @dynamic city;
 
