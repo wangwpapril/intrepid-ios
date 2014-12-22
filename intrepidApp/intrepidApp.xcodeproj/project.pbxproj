@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		148B33D7F50D9248207DFFAF /* libPods-intrepidApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63690BFA75C7C9F190AFF7A4 /* libPods-intrepidApp.a */; };
 		2CC179681A30CA55008EA775 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC179671A30CA55008EA775 /* Images.xcassets */; };
 		2CE95BA91A3110E100062423 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE95BA81A3110E100062423 /* CoreLocation.framework */; };
 		339118581A31626300450CB8 /* RequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 339118571A31626300450CB8 /* RequestBuilder.m */; };
@@ -185,7 +184,6 @@
 				6851221517861138008DB6B6 /* Foundation.framework in Frameworks */,
 				6851221717861138008DB6B6 /* CoreGraphics.framework in Frameworks */,
 				6851221917861138008DB6B6 /* CoreData.framework in Frameworks */,
-				148B33D7F50D9248207DFFAF /* libPods-intrepidApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,11 +426,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6851223A17861138008DB6B6 /* Build configuration list for PBXNativeTarget "intrepidApp" */;
 			buildPhases = (
-				7B3CF094C5293BADB67E7A59 /* Check Pods Manifest.lock */,
 				6851220B17861138008DB6B6 /* Sources */,
 				6851220C17861138008DB6B6 /* Frameworks */,
 				6851220D17861138008DB6B6 /* Resources */,
-				5F5A9FD954228DD662275469 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -490,39 +486,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		5F5A9FD954228DD662275469 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-intrepidApp/Pods-intrepidApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7B3CF094C5293BADB67E7A59 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6851220B17861138008DB6B6 /* Sources */ = {
@@ -621,7 +584,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "629F9663-BBA7-400C-85D5-AB8F8DF11E03";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "629F9663-BBA7-400C-85D5-AB8F8DF11E03";
@@ -648,7 +611,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "629F9663-BBA7-400C-85D5-AB8F8DF11E03";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "629F9663-BBA7-400C-85D5-AB8F8DF11E03";
@@ -659,7 +622,6 @@
 		};
 		6851223B17861138008DB6B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 288AE5EE289C5AEBF15ED8CC /* Pods-intrepidApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -677,7 +639,6 @@
 		};
 		6851223C17861138008DB6B6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CAAA459F58A70B7096E1942 /* Pods-intrepidApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
