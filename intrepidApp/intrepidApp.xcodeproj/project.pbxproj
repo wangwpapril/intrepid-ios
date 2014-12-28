@@ -68,7 +68,6 @@
 		2CE95BA81A3110E100062423 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		339118561A31626300450CB8 /* RequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestBuilder.h; sourceTree = "<group>"; };
 		339118571A31626300450CB8 /* RequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestBuilder.m; sourceTree = "<group>"; };
-		63690BFA75C7C9F190AFF7A4 /* libPods-intrepidApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-intrepidApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6811614517A9D1A20029134B /* TripManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripManager.h; path = classes/TripManager.h; sourceTree = "<group>"; };
 		6811614617A9D1A20029134B /* TripManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripManager.m; path = classes/TripManager.m; sourceTree = "<group>"; };
 		68174E2017C951D5009823CE /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -265,7 +264,6 @@
 				6851221417861138008DB6B6 /* Foundation.framework */,
 				6851221617861138008DB6B6 /* CoreGraphics.framework */,
 				6851221817861138008DB6B6 /* CoreData.framework */,
-				63690BFA75C7C9F190AFF7A4 /* libPods-intrepidApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
