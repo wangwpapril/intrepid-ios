@@ -31,14 +31,12 @@ static NSString * currencyURL = @"http://api.fixer.io/latest?base=CAD";
                 [[TripManager getInstance] deleteAllObjects:@"CurrencyEntity"];
                 
                 NSDictionary *currencyDict = currencyObject[@"rates"];
-                for (NSString *countries in currencyDict) {
-                    NSString *country, *value;
+                for (NSString *country in currencyDict) {
 
-                    country = countries;
-                    value = [currencyDict objectForKey:countries];
+                    NSString *value = [[currencyDict objectForKey:country] stringValue];
                     NSLog(@"country %@, value %@", country, value);
                     
-                    //[[TripManager getInstance] createCurrencyItemWithCountry:country withValue:value];
+                    [[TripManager getInstance] createCurrencyItemWithCountry:country withValue:value];
                 }
                 
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
