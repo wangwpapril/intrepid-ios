@@ -67,22 +67,22 @@
 
     //create array for images
     NSMutableArray *cityArray = [NSMutableArray new];
-    for (CityEntity *city in cities) {
-        TripItem *trip = [[TripItem alloc] init];
-        trip.image = city.cityImage;
-        trip.city = city.cityName;
-        [cityArray addObject:trip];
-    }
+//    for (CityEntity *city in cities) {
+//        TripItem *trip = [[TripItem alloc] init];
+//        trip.image = city.cityImage;
+//        trip.city = city.cityName;
+//        [cityArray addObject:trip];
+//    }
     
-//    TripItem *newTrip = [[TripItem alloc] init];
-//    newTrip.image = @"ANew-trip";
-//    newTrip.city = @"A New Trip";
-//    [cityArray addObject:newTrip];
+    TripItem *newTrip = [[TripItem alloc] init];
+    newTrip.image = @"ANew-trip";
+    newTrip.city = @"A New Trip";
+    [cityArray addObject:newTrip];
     
     NSInteger height = scrollView.frame.size.height - 150.0;
     NSInteger width = height * 0.7322;
     int i = 0;
-//    NSInteger max = cityArray.count - 1;
+    NSInteger max = cityArray.count + 1;
     for (TripItem *city in cityArray) {
         NSLog(@"city name: %@ city img: %@", city.city, city.image);
         CGRect frame;
@@ -97,20 +97,20 @@
         [scrollView addSubview:imageView];
         
         // make imageViews clickable with invisible buttons
-//        if (i == max) {
-//            UIButton *toTrips = [UIButton buttonWithType:UIButtonTypeCustom];
-//            toTrips.frame = imageView.frame;
-//            [toTrips addTarget:self action:@selector(toTrips) forControlEvents:UIControlEventTouchUpInside];
-//            [scrollView addSubview:toTrips];
-//        }
-//        else {
+        if (i == max) {
+            UIButton *toTrips = [UIButton buttonWithType:UIButtonTypeCustom];
+            toTrips.frame = imageView.frame;
+            [toTrips addTarget:self action:@selector(toTrips) forControlEvents:UIControlEventTouchUpInside];
+            [scrollView addSubview:toTrips];
+        }
+        else {
             UIButton *toSecurity = [UIButton buttonWithType:UIButtonTypeCustom];
             toSecurity.tag = i;
             toSecurity.frame = imageView.frame;
             [toSecurity addTarget:self action:@selector(toSecurity:) forControlEvents:UIControlEventTouchUpInside];
             [scrollView addSubview:toSecurity];
-//        }
-        
+        }
+    
         // add a label
         UILabel *cityName = [[UILabel alloc] init];
         cityName.frame = CGRectMake(110 + 320 * i, self.view.frame.size.height - 138, 100.0, 100.0);

@@ -195,7 +195,22 @@ static TripManager *instance =nil;
         NSLog(@"save failed");
     }
     return health;
+}
+
+- (CurrencyEntity *)createCurrencyItemWithCountry:(NSString *)country
+                                     withValue:(NSString *)value {
+    CurrencyEntity *currency = [NSEntityDescription insertNewObjectForEntityForName:@"CurrencyEntity" inManagedObjectContext:managedObjectContext];
     
+    currency.country = country;
+    currency.value = value;
+    
+    NSError *error = nil;
+    if ([managedObjectContext save:&error]) {
+        NSLog(@"saved");
+    } else {
+        NSLog(@"save failed");
+    }
+    return currency;
     
 }
 

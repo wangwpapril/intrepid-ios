@@ -54,6 +54,7 @@
 		7EE44DB9179F7E30006BA2EC /* CurrencyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE44DB8179F7E30006BA2EC /* CurrencyItem.m */; };
 		B61550DD17B52E7400044F11 /* LegalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B61550DC17B52E7400044F11 /* LegalViewController.m */; };
 		B6DB0C4717AE2C5C001694B0 /* AssistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DB0C4617AE2C5C001694B0 /* AssistanceViewController.m */; };
+		DC26B28E1A4FE60200E9A549 /* CurrencyEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DC26B28D1A4FE60200E9A549 /* CurrencyEntity.m */; };
 		DC85087D1A3E5FDF00C3173B /* HealthEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DC85087C1A3E5FDF00C3173B /* HealthEntity.m */; };
 		DC8508801A3EB57500C3173B /* CityEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DC85087F1A3EB57500C3173B /* CityEntity.m */; };
 		E02BBA0B17A8845300215CEA /* EmbassyDetailedContent.m in Sources */ = {isa = PBXBuildFile; fileRef = E02BBA0A17A8845300215CEA /* EmbassyDetailedContent.m */; };
@@ -147,6 +148,8 @@
 		B61550DC17B52E7400044F11 /* LegalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegalViewController.m; sourceTree = "<group>"; };
 		B6DB0C4517AE2C5C001694B0 /* AssistanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssistanceViewController.h; sourceTree = "<group>"; };
 		B6DB0C4617AE2C5C001694B0 /* AssistanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssistanceViewController.m; sourceTree = "<group>"; };
+		DC26B28C1A4FE60200E9A549 /* CurrencyEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrencyEntity.h; sourceTree = "<group>"; };
+		DC26B28D1A4FE60200E9A549 /* CurrencyEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrencyEntity.m; sourceTree = "<group>"; };
 		DC85087B1A3E5FDF00C3173B /* HealthEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthEntity.h; sourceTree = "<group>"; };
 		DC85087C1A3E5FDF00C3173B /* HealthEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthEntity.m; sourceTree = "<group>"; };
 		DC85087E1A3EB57500C3173B /* CityEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityEntity.h; sourceTree = "<group>"; };
@@ -191,6 +194,8 @@
 		6811614117A9D0890029134B /* Content Managing */ = {
 			isa = PBXGroup;
 			children = (
+				DC26B28C1A4FE60200E9A549 /* CurrencyEntity.h */,
+				DC26B28D1A4FE60200E9A549 /* CurrencyEntity.m */,
 				DC85087E1A3EB57500C3173B /* CityEntity.h */,
 				DC85087F1A3EB57500C3173B /* CityEntity.m */,
 				68DB321517C513F70061D0F1 /* EmbassyEntity.h */,
@@ -478,6 +483,7 @@
 				7E34777F1791E7A700FB86DC /* SignUpViewController.m in Sources */,
 				68E4240417926E1E00431908 /* IntreSearchBar.m in Sources */,
 				684BB605179F5143004C44C9 /* OverViewViewController.m in Sources */,
+				DC26B28E1A4FE60200E9A549 /* CurrencyEntity.m in Sources */,
 				684BB609179F539C004C44C9 /* SlidingTextView.m in Sources */,
 				68DBAE60179F6CC300D1DE0B /* CurrencyCell.m in Sources */,
 				7EE44DB9179F7E30006BA2EC /* CurrencyItem.m in Sources */,

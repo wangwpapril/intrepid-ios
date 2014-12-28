@@ -14,5 +14,5 @@
 @property (nonatomic, strong) UILabel *countryLabel;
 @property (nonatomic, strong) UILabel *valueLabel;
 
-- (void)setupWithImageName:(NSString *)image withCountry:(NSString *)country withValue:(NSString *)value;
+- (void)setupWithCountry:(NSString *)country withValue:(NSString *)value;
 @end

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CityEntity.h"
 #import "HealthEntity.h"
+#import "CurrencyEntity.h"
 
 @interface TripManager : NSObject
 
@@ -55,6 +56,9 @@
                 withImmunizations:(NSString *)immunizations
                         withImportant:(NSString *)important
                         withImage:(NSString *)image;
+
+- (CurrencyEntity *)createCurrencyItemWithCountry:(NSString *)country
+                            withValue:(NSString *)value;
 
 - (void) deleteAllObjects: (NSString *) entityDescription;
 -(NSMutableArray *)getHealthItemsWithCity:(CityEntity *)city;

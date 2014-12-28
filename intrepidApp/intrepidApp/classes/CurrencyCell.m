@@ -26,8 +26,8 @@
 
 - (void)initializeViews {
     // flag
-    flagLabel = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 30, 30)];
-    [self addSubview:flagLabel];
+//    flagLabel = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 30, 30)];
+//    [self addSubview:flagLabel];
     
     // country
     countryLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 2, 150, 40)];
@@ -43,8 +43,7 @@
     [self addSubview:valueLabel];
 }
 
-- (void)setupWithImageName:(NSString *)image withCountry:(NSString *)country withValue:(NSString *)value {
-    flagLabel.image = [UIImage imageNamed:image];
+- (void)setupWithCountry:(NSString *)country withValue:(NSString *)value {
     countryLabel.text = country;
     valueLabel.text = value;
 }
