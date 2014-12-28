@@ -40,10 +40,6 @@
     SlidingTextView *embassy = [[SlidingTextView alloc] initWithFrame:frame];
     [embassy setupWithImageName:@"" withTitle:@"Embassy" withIconName:@"embassy-icon"];
     
-    SlidingTextView *local = [[SlidingTextView alloc] initWithFrame:frame];
-    [local setupWithImageName:city.localImage withTitle:@"Other" withIconName:@"Tourist-icon1"];
-    [local addTextAreaWithText:city.localText];
-    
     // embassies
     tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 308,  320, height - 308)];
     tableList.dataSource = self;
@@ -51,10 +47,10 @@
     tableList.scrollEnabled = YES;
     [embassy addTableViewWithRows:embassyArray.count withTableView:tableList];
     
-    NSMutableArray *views = [NSMutableArray arrayWithObjects:political, embassy, local, nil];
+    NSMutableArray *views = [NSMutableArray arrayWithObjects:political, embassy, nil];
     [self addViews:views withVerticalOffset:0];
 
-    NSArray *names = [NSArray arrayWithObjects:@"SAFETY", @"EMBASSY", @"OTHER", nil];
+    NSArray *names = [NSArray arrayWithObjects:@"SAFETY", @"EMBASSY", nil];
     [self addTabs:names];
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
