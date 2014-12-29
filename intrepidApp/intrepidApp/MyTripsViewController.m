@@ -63,7 +63,7 @@
 -(void)loadCities {
     
     TripManager *manager = [TripManager getInstance];
-    cities = [manager getCities];
+    cities = [manager getSavedCities];
 
     NSMutableArray *cityArray = [NSMutableArray new];
     for (CityEntity *city in cities) {

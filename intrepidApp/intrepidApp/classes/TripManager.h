@@ -15,9 +15,12 @@
 
 // Core Data
 @property ( strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSMutableArray *unsavedCities;
 
 +(TripManager *)getInstance;
--(NSArray *) getCities;
+-(NSArray *) getSavedCities;
+-(void) addCityDict:(NSDictionary *)cityDict;
+
 
 - (CityEntity *)createTripWithCityImage:(NSString *)cityImage
                            withCityName:(NSString *)cityName
@@ -63,4 +66,6 @@
 - (void) deleteAllObjects: (NSString *) entityDescription;
 -(NSMutableArray *)getHealthItemsWithCity:(CityEntity *)city;
 -(NSMutableArray *)getCurrencyItemsWithCity:(CityEntity *)city;
+- (void)saveCity:(NSDictionary *)cityDict;
+
 @end

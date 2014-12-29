@@ -15,11 +15,10 @@
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
-
 @implementation TripsViewController
 
 @synthesize tableList;
-//@synthesize tripsArray;
+@synthesize tripsArray;
 @synthesize filteredArray;
 @synthesize searchBar;
 @synthesize xButton;
@@ -40,9 +39,6 @@
     [self.view addSubview:tableList];
     tableList.delegate = self;
     tableList.dataSource = self;
-    
-    TripManager *manager = [TripManager getInstance];
-    cities = [manager getCities];
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
         
@@ -76,26 +72,19 @@
 }
 
 - (void)populateContentArray {
-//    TripItem *trip1 = [[TripItem alloc] init];
-//    trip1.city = @"Guadalajara";
-//    trip1.continent = @"North America";
-//    trip1.image = @"Guada-icon.png";
-//    TripItem *trip2 = [[TripItem alloc] init];
-//    trip2.city = @"Miami";
-//    trip2.continent = @"North America";
-//    trip2.image = @"Miami-icon.png";
-//    TripItem *trip3 = [[TripItem alloc] init];
-//    trip3.city = @"Mexico City";
-//    trip3.continent = @"North America";
-//    trip3.image = @"Mexico-icon.png";
-//    TripItem *trip4 = [[TripItem alloc] init];
-//    trip4.city = @"Puerto Plata";
-//    trip4.continent = @"North America";
-//    trip4.image = @"Puerto-Plata-icon.png";
-//    tripsArray = [NSArray arrayWithObjects:trip1, trip2, trip3, trip4, nil];
-    TripManager *manager = [TripManager getInstance];
-    cities = [manager getCities];
+    tripsArray = [NSMutableArray new];
     filteredArray = [NSMutableArray new];
+
+    TripManager *manager = [TripManager getInstance];
+    cities = manager.unsavedCities;
+    for (NSDictionary *cityDict in cities) {
+        TripItem *trip = [[TripItem alloc] init];
+        trip.city = cityDict[@"name"];
+        trip.continent = @"Europe";
+        trip.image = @"Guada-icon.png";
+        [tripsArray addObject:trip];
+    }
+    [tableList reloadData];
 }
 
 -(void)addIntreSearchBar {
@@ -133,7 +122,7 @@
     if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
         return fCount;
     } else {
-        return [cities count];
+        return [tripsArray count];
     }
 }
 
@@ -147,11 +136,11 @@
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     
-    CityEntity *item = nil;
+    TripItem *item = nil;
     if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
         item = [filteredArray objectAtIndex:indexPath.row];
     } else {
-        item = [cities objectAtIndex:indexPath.row];
+        item = [tripsArray objectAtIndex:indexPath.row];
     }
     
     [cell setupWithHealthItem:item];
@@ -160,19 +149,23 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    CityEntity *city;
+    TripItem *trip;
     if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
-        city = [filteredArray objectAtIndex:indexPath.row];
+        trip = [filteredArray objectAtIndex:indexPath.row];
     }
     else {
-        city = [cities objectAtIndex:indexPath.row];
+        trip = [tripsArray objectAtIndex:indexPath.row];
     }
-//    CityEntity *city;
-//    for (CityEntity *town in cities) {
-//        if ([town.cityName isEqualToString:name]) {
-//            city = town;
-//        }
-//    }
+    
+    NSInteger tripIndex = [tripsArray indexOfObject:trip];
+    [[TripManager getInstance] saveCity:cities[tripIndex]]; // replace it
+    CityEntity *city;
+    NSArray *savedCities = [[TripManager getInstance] getSavedCities];
+    for (CityEntity *town in savedCities) {
+        if ([town.cityName isEqualToString:trip.city]) {
+            city = town;
+        }
+    }
     
     [MenuController getInstance].city = city;
     OverViewViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"overView"];

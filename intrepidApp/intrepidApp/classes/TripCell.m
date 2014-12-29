@@ -7,7 +7,7 @@
 //
 
 #import "TripCell.h"
-#import "TripItem.h"  
+#import "TripItem.h"
 #import "Constants.h"
 #import "QuartzCore/QuartzCore.h"
 
@@ -34,16 +34,16 @@
     return self;
 }
 
--(void)setupWithHealthItem:(CityEntity *)city {
-
+-(void)setupWithHealthItem:(TripItem *)tripItem {
     
-    UIImage *image = [UIImage imageNamed:city.cityImage];
+    
+    UIImage *image = [UIImage imageNamed:tripItem.image];
     self.imageView.image = image;
     self.imageView.layer.cornerRadius = 5;
     self.imageView.layer.masksToBounds = YES;
     
-    self.textLabel.text = city.cityName;
-    continentLabel.text = @"Europe";
+    self.textLabel.text = tripItem.city;
+    continentLabel.text = tripItem.continent;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

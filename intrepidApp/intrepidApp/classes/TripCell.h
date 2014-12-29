@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CityEntity.h"
+#import "TripItem.h"
 
 @interface TripCell : UITableViewCell
 
@@ -15,5 +15,5 @@
 @property (nonatomic, strong) UILabel *continentLabel;
 
 
--(void)setupWithHealthItem:(CityEntity *)city;
+-(void)setupWithHealthItem:(TripItem *)tripItem;
 @end
