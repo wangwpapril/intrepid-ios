@@ -84,7 +84,6 @@
     int i = 0;
     NSInteger max = cityArray.count + 1;
     for (TripItem *city in cityArray) {
-        NSLog(@"city name: %@ city img: %@", city.city, city.image);
         CGRect frame;
         frame.origin.x = 320 * i + (320 - width)/2;
         frame.origin.y = scrollView.frame.origin.y + 37; // was 15
@@ -133,7 +132,6 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"view did appear");
     // init vars
     NSInteger index, i, limit;
     i = 0;
@@ -141,14 +139,12 @@
     
     MenuController *mController = [MenuController getInstance];
     if (mController.city) {
-        NSLog(@"city exists");
         while (i < limit) {
             if (mController.city == [cities objectAtIndex:i]) {
                 index = i;
             }
             i++;
         }
-        NSLog(@"scrolling to rect");
         CGRect target = CGRectMake(320 * index, 0, 320, self.view.frame.size.height);
         [scrollView scrollRectToVisible:target animated:YES];
     }
@@ -156,7 +152,6 @@
 
 - (IBAction)changePage:(id)sender {
     pageControlBeingUsed = YES;
-    NSLog(@"change page called");
     UIPageControl *pager=sender;
     NSInteger page = pager.currentPage;
     
@@ -167,6 +162,7 @@
 }
 
 -(void)toTrips {
+    NSLog(@"roll 2 tripz");
     UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"trips"];
     [self.navigationController pushViewController:viewController animated:YES];
 }

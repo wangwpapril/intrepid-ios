@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2CC179681A30CA55008EA775 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC179671A30CA55008EA775 /* Images.xcassets */; };
 		2CE95BA91A3110E100062423 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE95BA81A3110E100062423 /* CoreLocation.framework */; };
+		337237691A50F392003FF7C2 /* TripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 337237681A50F392003FF7C2 /* TripsViewController.m */; };
 		339118581A31626300450CB8 /* RequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 339118571A31626300450CB8 /* RequestBuilder.m */; };
 		6811614717A9D1A20029134B /* TripManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6811614617A9D1A20029134B /* TripManager.m */; };
 		68174E2217C951D5009823CE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 68174E2117C951D5009823CE /* Reachability.m */; };
@@ -67,6 +68,8 @@
 		288AE5EE289C5AEBF15ED8CC /* Pods-intrepidApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-intrepidApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-intrepidApp/Pods-intrepidApp.debug.xcconfig"; sourceTree = "<group>"; };
 		2CC179671A30CA55008EA775 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2CE95BA81A3110E100062423 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		337237671A50F392003FF7C2 /* TripsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripsViewController.h; path = classes/TripsViewController.h; sourceTree = "<group>"; };
+		337237681A50F392003FF7C2 /* TripsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripsViewController.m; path = classes/TripsViewController.m; sourceTree = "<group>"; };
 		339118561A31626300450CB8 /* RequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestBuilder.h; sourceTree = "<group>"; };
 		339118571A31626300450CB8 /* RequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestBuilder.m; sourceTree = "<group>"; };
 		6811614517A9D1A20029134B /* TripManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripManager.h; path = classes/TripManager.h; sourceTree = "<group>"; };
@@ -346,6 +349,8 @@
 			children = (
 				7EA293AF17A60B0A000A56E9 /* MyTripsViewController.h */,
 				7EA293B017A60B0A000A56E9 /* MyTripsViewController.m */,
+				337237671A50F392003FF7C2 /* TripsViewController.h */,
+				337237681A50F392003FF7C2 /* TripsViewController.m */,
 				685B6F5D17A60B430003B5D9 /* TripCell.h */,
 				685B6F5E17A60B430003B5D9 /* TripCell.m */,
 				685B6F6017A617C20003B5D9 /* TripItem.h */,
@@ -495,6 +500,7 @@
 				685B6F5F17A60B430003B5D9 /* TripCell.m in Sources */,
 				685B6F6217A617C20003B5D9 /* TripItem.m in Sources */,
 				7EA293B817A77161000A56E9 /* LearnMoreViewController.m in Sources */,
+				337237691A50F392003FF7C2 /* TripsViewController.m in Sources */,
 				DC8508801A3EB57500C3173B /* CityEntity.m in Sources */,
 				E08615F117A8224D00DE240B /* ForgotPasswordViewController.m in Sources */,
 				7E9A130C17A876FF0082003C /* SettingsViewController.m in Sources */,

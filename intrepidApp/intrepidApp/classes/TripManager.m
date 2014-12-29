@@ -61,18 +61,13 @@ static TripManager *instance =nil;
     NSMutableArray * medication = [NSMutableArray new];
 
     for (HealthEntity *healthItem in intermediateArray) {
-        NSLog(@"looking for city: %@", city.cityName);
         if ([healthItem.city.cityName isEqualToString:city.cityName]) {
-            NSLog(@"name %@ with bool value %d", healthItem.name, healthItem.common);
             if ([healthItem.category isEqualToString:@"medications"]) {
                 [medication addObject:healthItem];
             }
             else {
                 [diseases addObject:healthItem];
             }
-        }
-        else {
-            NSLog(@"city name was: %@", healthItem.city.cityName);
         }
     }
     
@@ -129,9 +124,7 @@ static TripManager *instance =nil;
     [city addEmbassiesObject:embassy];
     
     NSError *error = nil;
-    if ([managedObjectContext save:&error]) {
-        NSLog(@"saved");
-    } else {
+    if (![managedObjectContext save:&error]) {
         NSLog(@"save failed");
     }
     return embassy;
@@ -174,9 +167,7 @@ static TripManager *instance =nil;
 //    city.embassyItems;
 //    dispatch_async(dispatch_get_main_queue(), ^{
         NSError *error = nil;
-        if ([managedObjectContext save:&error]) {
-            NSLog(@"saved");
-        } else {
+        if (![managedObjectContext save:&error]) {
             NSLog(@"save failed");
         }
 //    });
@@ -208,9 +199,7 @@ static TripManager *instance =nil;
     health.image = image;
     
     NSError *error = nil;
-    if ([managedObjectContext save:&error]) {
-        NSLog(@"saved");
-    } else {
+    if (![managedObjectContext save:&error]) {
         NSLog(@"save failed");
     }
     return health;
@@ -224,9 +213,7 @@ static TripManager *instance =nil;
     currency.value = value;
     
     NSError *error = nil;
-    if ([managedObjectContext save:&error]) {
-        NSLog(@"saved");
-    } else {
+    if (![managedObjectContext save:&error]) {
         NSLog(@"save failed");
     }
     return currency;
@@ -234,7 +221,6 @@ static TripManager *instance =nil;
 }
 
 - (void) deleteAllObjects: (NSString *) entityDescription  {
-    NSLog(@"delete all the things!");
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:entityDescription inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];

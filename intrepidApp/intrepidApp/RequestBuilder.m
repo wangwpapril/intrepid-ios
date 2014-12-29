@@ -34,8 +34,6 @@ static NSString * currencyURL = @"http://api.fixer.io/latest?base=CAD";
                 for (NSString *country in currencyDict) {
 
                     NSString *value = [[currencyDict objectForKey:country] stringValue];
-                    NSLog(@"country %@, value %@", country, value);
-                    
                     [[TripManager getInstance] createCurrencyItemWithCountry:country withValue:value];
                 }
                 
