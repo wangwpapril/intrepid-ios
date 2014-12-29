@@ -160,42 +160,8 @@ NSString * canadaCurrency = @"CAD";
                                 }
                         
                             }
-                            
-                            [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
-                        } else
-                        {
-                            NSLog(@"error: %@", error.localizedDescription);
-                            [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
-                        }
-                }];
-                    
-//                NSURL *currencySecondRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",currencyURL, currencyCode]];
-//                NSMutableURLRequest *currencySecondRequest = [[NSMutableURLRequest alloc] initWithURL:currencySecondRequestURL];
-//                request.HTTPMethod = @"GET";
-//                [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-//                
-//                [NSURLConnection sendAsynchronousRequest:currencySecondRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-//                    if (!error) {
-//                        NSDictionary *currencyObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-//                        
-//                        [[TripManager getInstance] deleteAllObjects:@"CurrencyEntity"];
-//                        NSDictionary *currencyDict = currencyObject[@"rates"];
-//                        for (NSString *country in currencyDict) {
-//                            if ([country isEqualToString:canadaCurrency]) {
-//                                NSString *value = [[currencyDict objectForKey:country] stringValue];
-//                                [[TripManager getInstance] createCurrencyItemWithCountry:country withValue:value];
-//                            }
-//                        }
-//                        
-//                        [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
-//                    } else
-//                    {
-//                        NSLog(@"error: %@", error.localizedDescription);
-//                        [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
-//                    }
-//                }];
-                    
-                    
+                       }
+                    }];
                 }
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
             } else {
