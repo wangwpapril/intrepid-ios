@@ -66,7 +66,9 @@ static NSString * currencyURL = @"http://api.fixer.io/latest?base=";
     NSLog(@"fetch currency called");
     
     NSDictionary *currencyDict = cityDict[@"country"];
-    NSString *currencyCode = @"USD"; //currencyDict[@"currency_code"]; //@"USD"; use this to test
+    
+    //this is currently to demonstrate, remove once testing completed
+    NSString *currencyCode = @"EUR"; //currencyDict[@"currency_code"];
     
     NSURL *currencyRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",currencyURL, @"CAD"]];
     NSMutableURLRequest *currencyRequest = [[NSMutableURLRequest alloc] initWithURL:currencyRequestURL];
