@@ -99,7 +99,6 @@
     CityEntity *city = [self getCity];
     
     currencyArray = [[TripManager getInstance] getCurrencyItemsWithCity:city];
-    NSLog(@"data %@", currencyArray);
     
     
 //    float CADtoNative = [city.cadToNative floatValue];
@@ -149,7 +148,6 @@
 //        i++;
 //    }
     
-    NSLog(@"currencyArray %@", currencyArray);
 }
 
 - (void)didReceiveMemoryWarning

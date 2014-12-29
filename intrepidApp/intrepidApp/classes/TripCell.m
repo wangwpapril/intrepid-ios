@@ -34,16 +34,16 @@
     return self;
 }
 
--(void)setupWithHealthItem:(TripItem *)tripItem {
+-(void)setupWithHealthItem:(CityEntity *)city {
 
     
-    UIImage *image = [UIImage imageNamed:tripItem.image];
+    UIImage *image = [UIImage imageNamed:city.cityImage];
     self.imageView.image = image;
     self.imageView.layer.cornerRadius = 5;
     self.imageView.layer.masksToBounds = YES;
     
-    self.textLabel.text = tripItem.city;
-    continentLabel.text = tripItem.continent;
+    self.textLabel.text = city.cityName;
+    continentLabel.text = @"Europe";
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

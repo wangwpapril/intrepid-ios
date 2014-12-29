@@ -65,14 +65,13 @@
     TripManager *manager = [TripManager getInstance];
     cities = [manager getCities];
 
-    //create array for images
     NSMutableArray *cityArray = [NSMutableArray new];
-//    for (CityEntity *city in cities) {
-//        TripItem *trip = [[TripItem alloc] init];
-//        trip.image = city.cityImage;
-//        trip.city = city.cityName;
-//        [cityArray addObject:trip];
-//    }
+    for (CityEntity *city in cities) {
+        TripItem *trip = [[TripItem alloc] init];
+        trip.image = city.cityImage;
+        trip.city = city.cityName;
+        [cityArray addObject:trip];
+    }
     
     TripItem *newTrip = [[TripItem alloc] init];
     newTrip.image = @"ANew-trip";
@@ -82,7 +81,7 @@
     NSInteger height = scrollView.frame.size.height - 150.0;
     NSInteger width = height * 0.7322;
     int i = 0;
-    NSInteger max = cityArray.count + 1;
+    NSInteger max = cityArray.count - 1;
     for (TripItem *city in cityArray) {
         CGRect frame;
         frame.origin.x = 320 * i + (320 - width)/2;

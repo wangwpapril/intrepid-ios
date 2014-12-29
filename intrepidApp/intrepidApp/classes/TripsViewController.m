@@ -19,7 +19,7 @@
 @implementation TripsViewController
 
 @synthesize tableList;
-@synthesize tripsArray;
+//@synthesize tripsArray;
 @synthesize filteredArray;
 @synthesize searchBar;
 @synthesize xButton;
@@ -28,7 +28,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //    self.view.tag = 7;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     
     [self populateContentArray];
@@ -53,6 +52,11 @@
         [self moveAllSubviewsDown];
     }
     
+    // register for notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(populateContentArray)
+                                                 name:@"TRIP_UPDATE"
+                                               object:nil];
 }
 
 - (void) moveAllSubviewsDown{
@@ -72,23 +76,25 @@
 }
 
 - (void)populateContentArray {
-    TripItem *trip1 = [[TripItem alloc] init];
-    trip1.city = @"Guadalajara";
-    trip1.continent = @"North America";
-    trip1.image = @"Guada-icon.png";
-    TripItem *trip2 = [[TripItem alloc] init];
-    trip2.city = @"Miami";
-    trip2.continent = @"North America";
-    trip2.image = @"Miami-icon.png";
-    TripItem *trip3 = [[TripItem alloc] init];
-    trip3.city = @"Mexico City";
-    trip3.continent = @"North America";
-    trip3.image = @"Mexico-icon.png";
-    TripItem *trip4 = [[TripItem alloc] init];
-    trip4.city = @"Puerto Plata";
-    trip4.continent = @"North America";
-    trip4.image = @"Puerto-Plata-icon.png";
-    tripsArray = [NSArray arrayWithObjects:trip1, trip2, trip3, trip4, nil];
+//    TripItem *trip1 = [[TripItem alloc] init];
+//    trip1.city = @"Guadalajara";
+//    trip1.continent = @"North America";
+//    trip1.image = @"Guada-icon.png";
+//    TripItem *trip2 = [[TripItem alloc] init];
+//    trip2.city = @"Miami";
+//    trip2.continent = @"North America";
+//    trip2.image = @"Miami-icon.png";
+//    TripItem *trip3 = [[TripItem alloc] init];
+//    trip3.city = @"Mexico City";
+//    trip3.continent = @"North America";
+//    trip3.image = @"Mexico-icon.png";
+//    TripItem *trip4 = [[TripItem alloc] init];
+//    trip4.city = @"Puerto Plata";
+//    trip4.continent = @"North America";
+//    trip4.image = @"Puerto-Plata-icon.png";
+//    tripsArray = [NSArray arrayWithObjects:trip1, trip2, trip3, trip4, nil];
+    TripManager *manager = [TripManager getInstance];
+    cities = [manager getCities];
     filteredArray = [NSMutableArray new];
 }
 
@@ -127,7 +133,7 @@
     if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
         return fCount;
     } else {
-        return [tripsArray count];
+        return [cities count];
     }
 }
 
@@ -141,11 +147,11 @@
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     
-    TripItem *item = nil;
+    CityEntity *item = nil;
     if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
         item = [filteredArray objectAtIndex:indexPath.row];
     } else {
-        item = [tripsArray objectAtIndex:indexPath.row];
+        item = [cities objectAtIndex:indexPath.row];
     }
     
     [cell setupWithHealthItem:item];
@@ -154,22 +160,19 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    TripItem *trip;
+    CityEntity *city;
     if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
-        NSLog(@"from trips array");
-        trip = [filteredArray objectAtIndex:indexPath.row];
+        city = [filteredArray objectAtIndex:indexPath.row];
     }
     else {
-        NSLog(@"from filtered array");
-        trip = [tripsArray objectAtIndex:indexPath.row];
+        city = [cities objectAtIndex:indexPath.row];
     }
-    NSString *name = trip.city;
-    CityEntity *city;
-    for (CityEntity *town in cities) {
-        if ([town.cityName isEqualToString:name]) {
-            city = town;
-        }
-    }
+//    CityEntity *city;
+//    for (CityEntity *town in cities) {
+//        if ([town.cityName isEqualToString:name]) {
+//            city = town;
+//        }
+//    }
     
     [MenuController getInstance].city = city;
     OverViewViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"overView"];
@@ -184,8 +187,8 @@
     [self.filteredArray removeAllObjects];
     
     // Filter the array using NSPredicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.city contains[c] %@",searchBar.text];
-    filteredArray = [NSMutableArray arrayWithArray:[tripsArray filteredArrayUsingPredicate:predicate]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.cityName contains[c] %@",searchBar.text];
+    filteredArray = [NSMutableArray arrayWithArray:[cities filteredArrayUsingPredicate:predicate]];
     [tableList reloadData];
 }
 
