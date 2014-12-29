@@ -308,7 +308,7 @@ static TripManager *instance =nil;
         details = medContent[@"details"];
         symptoms = medContent[@"symptoms"];
         immunizations = medContent[@"immunization"];
-        important = @"this is a test to see if the box works, I am writing a lot to test this, my favourite colour is blue and my favourite day of the week is friday";
+        important = medContent[@"important"];
         
         NSDictionary *medImage = medDict[@"images"];
         //for debugging purposes
