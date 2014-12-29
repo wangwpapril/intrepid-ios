@@ -5,7 +5,7 @@
 //  Created by Madelaine Page on 2013-07-23.
 //  Copyright (c) 2013 JonCarrHarris Consulting. All rights reserved.
 //
-
+//
 //#import <UIKit/UIKit.h>
 //
 //@interface CurrencyItem: NSObject {

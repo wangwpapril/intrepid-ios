@@ -44,6 +44,7 @@
 }
 
 - (void)setupWithCountry:(NSString *)country withValue:(NSString *)value {
+    
     countryLabel.text = country;
     valueLabel.text = value;
 }

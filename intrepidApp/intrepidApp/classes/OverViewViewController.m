@@ -12,6 +12,7 @@
 #import "Constants.h"
 #import "RequestBuilder.h"
 #import "CurrencyEntity.h"
+#import "TripManager.h"
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
@@ -25,6 +26,7 @@
 {
     [super viewDidLoad];
     self.view.tag = 0;
+    //[RequestBuilder buildRequestWithURL:@"currency"];
     [self populateCurrencyItems];
     self.navigationItem.title = @"Overview";
          
@@ -95,7 +97,10 @@
 
 -(void)populateCurrencyItems {
     CityEntity *city = [self getCity];
-    [RequestBuilder buildRequestWithURL:@"currency"];
+    
+    currencyArray = [[TripManager getInstance] getCurrencyItemsWithCity:city];
+    NSLog(@"data %@", currencyArray);
+    
     
 //    float CADtoNative = [city.cadToNative floatValue];
 //
@@ -143,6 +148,8 @@
 //        }
 //        i++;
 //    }
+    
+    NSLog(@"currencyArray %@", currencyArray);
 }
 
 - (void)didReceiveMemoryWarning

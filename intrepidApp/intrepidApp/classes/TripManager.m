@@ -84,6 +84,29 @@ static TripManager *instance =nil;
     return healthArray;
 }
 
+
+-(NSMutableArray *)getCurrencyItemsWithCity:(CityEntity *)city {
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:@"CurrencyEntity" inManagedObjectContext:managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    
+    
+    NSError *error;
+    NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
+    NSMutableArray * currencies = [NSMutableArray new];
+    
+    for (CurrencyEntity *currencyItem in intermediateArray) {
+        [currencies addObject:currencyItem];
+    }
+
+    NSMutableArray * currencyArray = [NSMutableArray new];
+    
+    [currencyArray addObject:currencies];
+    
+    return currencyArray;
+}
+
 - (EmbassyEntity *)createEmbassyWithCity:(CityEntity *)city
               withPhone:(NSString *)phone
                 withFax:(NSString *)fax
