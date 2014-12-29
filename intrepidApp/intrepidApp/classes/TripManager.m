@@ -99,12 +99,8 @@ static TripManager *instance =nil;
     for (CurrencyEntity *currencyItem in intermediateArray) {
         [currencies addObject:currencyItem];
     }
-
-    NSMutableArray * currencyArray = [NSMutableArray new];
     
-    [currencyArray addObject:currencies];
-    
-    return currencyArray;
+    return currencies;
 }
 
 - (EmbassyEntity *)createEmbassyWithCity:(CityEntity *)city
