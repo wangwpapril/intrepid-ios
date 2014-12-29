@@ -84,12 +84,13 @@ static NSString * currencyURL = @"http://api.fixer.io/latest?base=";
                 float valueConv;
                 if ([country isEqualToString:currencyCode]) {
                     value = [[currencyDict objectForKey:country] stringValue];
-                    [[TripManager getInstance] createCurrencyItemWithCountry:country withValue:value];
+                    NSString *slicedValue = [value substringToIndex:4];
+                    [[TripManager getInstance] createCurrencyItemWithCountry:country withValue:slicedValue];
                     
                     valueConv = [value floatValue];
                     float cityToCad = (1/valueConv);
-                    //float nearest = roundf(cityToCad * 100) / 100;
-                    NSString *cityToCadStr = [NSString stringWithFormat:@"%.4f", cityToCad];
+                    
+                    NSString *cityToCadStr = [NSString stringWithFormat:@"%.2f", cityToCad];
                     [[TripManager getInstance] createCurrencyItemWithCountry:@"CAD" withValue:cityToCadStr];
                 }
             }
