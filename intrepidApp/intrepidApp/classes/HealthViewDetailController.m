@@ -253,7 +253,7 @@
     }
     
     // THE IMPORTANT FIELD
-    if (![healthItem.important isEqualToString:@""]) {
+    if (healthItem.important) {
         //there is an important field, must add
         UILabel *importantTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, immunizationTextContainer.frame.origin.y + immunizationSize.height + 20, 250, 25)];
         importantTitleLabel .font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];

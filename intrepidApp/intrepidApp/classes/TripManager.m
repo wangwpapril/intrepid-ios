@@ -328,7 +328,7 @@ static TripManager *instance =nil;
         symptoms = healthContent[@"symptom_description"];
         immunizations = healthContent[@"prevention_description"];
         //test to see if it works when there is no important field
-        important = @"";
+        important = healthContent[@"important"];
         
         NSDictionary *healthImage = healthDict[@"images"];
         //for debugging purposes
