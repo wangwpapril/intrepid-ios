@@ -26,7 +26,6 @@
 {
     [super viewDidLoad];
     self.view.tag = 0;
-    //[RequestBuilder buildRequestWithURL:@"currency"];
     [self populateCurrencyItems];
     self.navigationItem.title = @"Overview";
          
@@ -99,54 +98,7 @@
     CityEntity *city = [self getCity];
     
     currencyArray = [[TripManager getInstance] getCurrencyItemsWithCity:city];
-    
-    
-//    float CADtoNative = [city.cadToNative floatValue];
-//
-//    NSString* CAD = [NSString stringWithFormat:@"%.02f", 1.0];
-//    NSString* USD = [NSString stringWithFormat:@"%.02f", 0.96];
-//    NSString* MXN = [NSString stringWithFormat:@"%.02f", 12.19];
-//    NSString* GBP = [NSString stringWithFormat:@"%.02f", 0.63];
-//    NSString* BRL = [NSString stringWithFormat:@"%.02f", 2.20];
-//    NSString* AUS = [NSString stringWithFormat:@"%.02f", 1.08];
-//    NSString* EUR = [NSString stringWithFormat:@"%.02f", 0.72];
-//    NSString* CNY = [NSString stringWithFormat:@"%.02f", 5.90];
-//    NSString* CHF = [NSString stringWithFormat:@"%.02f", 0.89];
-//    NSString* MYR = [NSString stringWithFormat:@"%.02f", 3.14];
-//    NSString* THB = [NSString stringWithFormat:@"%.02f", 30.09];
-//    NSString* INR = [NSString stringWithFormat:@"%.02f", 58.81];
-//    NSString* DOP = [NSString stringWithFormat:@"%.02f", 40.38];
-//    
-//    currencyArray = [NSMutableArray arrayWithObjects:
-//                     [CurrencyItem currencyItemOfCountry:@"Canadian Dollar" flag:@"CAD" value:CAD],
-//                     [CurrencyItem currencyItemOfCountry:@"Mexican Peso" flag:@"MXN" value:MXN],
-//                     [CurrencyItem currencyItemOfCountry:@"US Dollar" flag:@"USD" value:USD],
-//                     [CurrencyItem currencyItemOfCountry:@"Euro" flag:@"EUR" value:EUR],
-//                     [CurrencyItem currencyItemOfCountry:@"UK Pound" flag:@"GBP" value:GBP],
-//                     [CurrencyItem currencyItemOfCountry:@"Chinese Yen" flag:@"CNY" value:CNY],
-//                     [CurrencyItem currencyItemOfCountry:@"Brazilian Real" flag:@"BRL" value:BRL],
-//                     [CurrencyItem currencyItemOfCountry:@"Australian Dollar" flag:@"AUS" value:AUS],
-//                     [CurrencyItem currencyItemOfCountry:@"Swiss Franc" flag:@"CHF" value:CHF],
-//                     [CurrencyItem currencyItemOfCountry:@"Indian Rupee" flag:@"INR" value:INR],
-//                     [CurrencyItem currencyItemOfCountry:@"Thai Bhat" flag:@"THB" value:THB],
-//                     [CurrencyItem currencyItemOfCountry:@"Malaysian Ringgit" flag:@"MYR" value:MYR],
-//                     [CurrencyItem currencyItemOfCountry:@"Dominican Peso" flag:@"DOP" value:DOP],nil];
-//
-//    NSString* native = [NSString stringWithFormat:@"%.02f", CADtoNative];
-//
-//    BOOL foundNative = false;
-//    NSInteger i = 0;
-//    NSInteger limit = currencyArray.count;
-//    while (i < limit && !foundNative) {
-//        CurrencyItem *item = [currencyArray objectAtIndex:i];
-//        if ([item.value isEqualToString:native]){
-//            CurrencyItem *toAdd = item;
-//            [currencyArray removeObject:item];
-//            [currencyArray insertObject:toAdd atIndex:1];
-//            foundNative = true;
-//        }
-//        i++;
-//    }
+
     
 }
 

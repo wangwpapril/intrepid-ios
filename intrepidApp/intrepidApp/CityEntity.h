@@ -30,6 +30,19 @@
 @property (nonatomic, retain) NSString * weatherURL;
 @property (nonatomic, retain) NSSet *embassies;
 @property (nonatomic, retain) HealthEntity *health;
+@property (nonatomic, retain) NSString * location;
+@property (nonatomic, retain) NSString * climate;
+@property (nonatomic, retain) NSString * type_of_government;
+@property (nonatomic, retain) NSString * visa_requirements;
+@property (nonatomic, retain) NSString * communication_infrastructure;
+@property (nonatomic, retain) NSString * electricity;
+@property (nonatomic, retain) NSString * development;
+@property (nonatomic, retain) NSString * language;
+@property (nonatomic, retain) NSString * religion;
+@property (nonatomic, retain) NSString * ethnic_makeup;
+@property (nonatomic, retain) NSString * cultural_norms;
+@property (nonatomic, retain) NSString * safety;
+@property (nonatomic, retain) NSString * other_concerns;
 @end
 
 @interface CityEntity (CoreDataGeneratedAccessors)

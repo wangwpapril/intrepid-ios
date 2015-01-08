@@ -5,16 +5,29 @@
         <attribute name="cadToNative" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="cityImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cityName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="climate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="clinicsURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="communication_infrastructure" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="continent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cultural_norms" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cultureImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cultureText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="development" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="electricity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ethnic_makeup" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="generalImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="generalText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="localImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="localText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="other_concerns" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="religion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="safety" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="safetyImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="safetyText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type_of_government" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="visa_requirements" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weatherURL" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="embassies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EmbassyEntity" inverseName="city" inverseEntity="EmbassyEntity" syncable="YES"/>
         <relationship name="health" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HealthEntity" inverseName="city" inverseEntity="HealthEntity" syncable="YES"/>
@@ -48,9 +61,9 @@
         <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CityEntity" inverseName="health" inverseEntity="CityEntity" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CityEntity" positionX="-477" positionY="3" width="128" height="298"/>
+        <element name="CityEntity" positionX="-477" positionY="3" width="128" height="493"/>
+        <element name="CurrencyEntity" positionX="-317" positionY="-63" width="128" height="73"/>
         <element name="EmbassyEntity" positionX="-677" positionY="-0" width="128" height="195"/>
         <element name="HealthEntity" positionX="-272" positionY="81" width="128" height="195"/>
-        <element name="CurrencyEntity" positionX="-317" positionY="-63" width="128" height="73"/>
     </elements>
 </model>

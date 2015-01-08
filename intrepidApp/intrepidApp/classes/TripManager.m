@@ -243,10 +243,14 @@ static TripManager *instance =nil;
 }
 
 - (void)saveCity:(NSDictionary *)cityDict {
-    //CityEntity
+//    //CityEntity
     NSString *cityName, *cityImage, *continent, *cultureText, *cultureImage;
     NSString *generalText, *generalImage, *localText, *localImage;
     NSString *safetyImage, *safetyText, *clinicsURL, *weatherURL, *alertsURL;
+    NSString *location, *climate, *type_of_government, *visa_requirements;
+    NSString *communication_infrastructure, *electricity, *development;
+    NSString *language, *religion, *ethnic_makeup, *cultural_norms;
+    NSString *safety, *other_concerns;
     float dollarRatio;
     
     //EmbassyEntity
@@ -259,18 +263,35 @@ static TripManager *instance =nil;
     
     NSDictionary *contentDict = cityDict[@"content"];
     
-    generalText = contentDict[@"general_description"];
-    cultureText = contentDict[@"culture_description"];
-    localText = @"";
-    safetyText = contentDict[@"security_description"];
+    //General Description Subtext
+    location = contentDict[@"location"];
+    climate = contentDict[@"climate"];
+    type_of_government = contentDict[@"type_of_government"];
+    visa_requirements = contentDict[@"visa_map_attributes"];
+    communication_infrastructure = contentDict[@"communication_infrastructure"];
+    electricity = contentDict[@"electricity"];
+    development = contentDict[@"development"];
     
+    //Culture Description Subtext
+    language = contentDict[@"language"];
+    religion = contentDict[@"religion"];
+    ethnic_makeup = contentDict[@"ethnic_makeup"];
+    cultural_norms = contentDict[@"cultural_norms"];
+    
+    //Security Description Subtext
+    safety = contentDict[@"safety"];
+    other_concerns = contentDict[@"other_concerns"];
+    
+    generalText = [NSString stringWithFormat:@"Location \n%@ \n\nClimate \n%@ \n\nType of Government \n%@ \n\nVisa Requirements \n%@ \n\nCommunication Infrastructure \n%@ \n\nElectricity \n%@ \n\nDevelopment \n%@",location, climate,type_of_government, visa_requirements, communication_infrastructure, electricity, development];
+    cultureText = [NSString stringWithFormat:@"Language \n%@ \n\nReligion \n%@ \n\nEthnic Makeup \n%@ \n\nCultural Norms \n%@",language,religion,ethnic_makeup, cultural_norms];
+    localText = @"";
+    safetyText = [NSString stringWithFormat:@"Safety \n%@ \n\nOther Concerns \n%@",safety,other_concerns];
     
     NSDictionary *imageDict = cityDict[@"images"];
     generalImage = @"";
-    localImage = imageDict[@"other_image"];
-    cultureImage = imageDict[@"culture_image"];
-    safetyImage = imageDict[@"safety_image"];
-    
+    localImage = @"";
+    cultureImage = @"";
+    safetyImage = @"";
     
     cityImage = @"";
     continent = @"";
@@ -281,61 +302,61 @@ static TripManager *instance =nil;
     
     CityEntity *city = [[TripManager getInstance] createTripWithCityImage:cityImage withCityName:cityName withContinent:continent withCultureText:cultureText withCultureImage:cultureImage withGeneralText:generalText withGeneralImage:generalImage withLocalImage:localImage withLocalText:localText withSafetyImage:safetyImage withSafetytext:safetyText withClinicsURL:clinicsURL withAlertsURL:alertsURL withWeatherURL:weatherURL withCADToNative:dollarRatio];
     
-    for (NSDictionary *embassyDict in cityDict[@"diplomatic_offices"]) {
-        country = embassyDict[@"name"];
-        
-        NSDictionary *embassyContent = embassyDict[@"content"];
-        if (![embassyContent count] == 0) {
-            phone = embassyContent[@"telephone"];
-            fax = embassyContent[@"fax"];
-            email = embassyContent[@"email"];
-            hours = embassyContent[@"hours_of_operation"];
-            address = embassyContent[@"address"];
-            notes = embassyContent[@"notes"];
-            services = embassyContent[@"services_offered"];
-        }
-        flag = @"";
-        [[TripManager getInstance] createEmbassyWithCity:city withPhone:phone withFax:fax withEmail:email withHours:hours withNotes:notes withServices:services withAddress:address withCountry:country withFlag:flag];
-    }
+//    for (NSDictionary *embassyDict in cityDict[@"diplomatic_offices"]) {
+//        country = embassyDict[@"name"];
+//        
+//        NSDictionary *embassyContent = embassyDict[@"content"];
+//        if (![embassyContent count] == 0) {
+//            phone = embassyContent[@"telephone"];
+//            fax = embassyContent[@"fax"];
+//            email = embassyContent[@"email"];
+//            hours = embassyContent[@"hours_of_operation"];
+//            address = embassyContent[@"address"];
+//            notes = embassyContent[@"notes"];
+//            services = embassyContent[@"services_offered"];
+//        }
+//        flag = @"";
+//        [[TripManager getInstance] createEmbassyWithCity:city withPhone:phone withFax:fax withEmail:email withHours:hours withNotes:notes withServices:services withAddress:address withCountry:country withFlag:flag];
+//    }
     
-    for (NSDictionary *medDict in cityDict[@"medications"]) {
-        name = medDict[@"name"];
-        category = @"medications";
-        common = [medDict[@"common"] boolValue];
-        
-        NSDictionary *medContent = medDict[@"content"];
-        desc = medContent[@"general_description"];
-        details = medContent[@"details"];
-        symptoms = medContent[@"symptoms"];
-        immunizations = medContent[@"immunization"];
-        important = medContent[@"important"];
-        
-        NSDictionary *medImage = medDict[@"images"];
-        //for debugging purposes
-        image = medImage[@"other_image"];
-        
-        [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImportant:important withImage:image];
-    }
-    
-    for (NSDictionary *healthDict in cityDict[@"health_conditions"]) {
-        category = @"conditions";
-        name = healthDict[@"name"];
-        common = [healthDict[@"common"] boolValue];
-        
-        NSDictionary *healthContent = healthDict[@"content"];
-        desc = healthContent[@"general_description"];
-        details = @"";
-        symptoms = healthContent[@"symptom_description"];
-        immunizations = healthContent[@"prevention_description"];
-        //test to see if it works when there is no important field
-        important = healthContent[@"important"];
-        
-        NSDictionary *healthImage = healthDict[@"images"];
-        //for debugging purposes
-        image = healthImage[@"other_image"];
-        
-        [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImportant:important withImage:image];
-    }
+//    for (NSDictionary *medDict in cityDict[@"medications"]) {
+//        name = medDict[@"name"];
+//        category = @"medications";
+//        common = [medDict[@"common"] boolValue];
+//        
+//        NSDictionary *medContent = medDict[@"content"];
+//        desc = medContent[@"general_description"];
+//        details = medContent[@"details"];
+//        symptoms = medContent[@"symptoms"];
+//        immunizations = medContent[@"immunization"];
+//        important = medContent[@"important"];
+//        
+//        NSDictionary *medImage = medDict[@"images"];
+//        //for debugging purposes
+//        image = medImage[@"other_image"];
+//        
+//        [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImportant:important withImage:image];
+//    }
+//    
+//    for (NSDictionary *healthDict in cityDict[@"health_conditions"]) {
+//        category = @"conditions";
+//        name = healthDict[@"name"];
+//        common = [healthDict[@"common"] boolValue];
+//        
+//        NSDictionary *healthContent = healthDict[@"content"];
+//        desc = healthContent[@"general_description"];
+//        details = @"";
+//        symptoms = healthContent[@"symptom_description"];
+//        immunizations = healthContent[@"prevention_description"];
+//        //test to see if it works when there is no important field
+//        important = healthContent[@"important"];
+//        
+//        NSDictionary *healthImage = healthDict[@"images"];
+//        //for debugging purposes
+//        image = healthImage[@"other_image"];
+//        
+//        [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImportant:important withImage:image];
+//    }
 }
 
 @end

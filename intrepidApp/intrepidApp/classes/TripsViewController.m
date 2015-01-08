@@ -142,7 +142,6 @@
     } else {
         item = [tripsArray objectAtIndex:indexPath.row];
     }
-    
     [cell setupWithHealthItem:item];
     
     return cell;

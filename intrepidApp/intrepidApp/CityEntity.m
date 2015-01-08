@@ -29,6 +29,18 @@
 @dynamic safetyText;
 @dynamic weatherURL;
 @dynamic embassies;
-@dynamic health;
+@dynamic location;
+@dynamic climate;
+@dynamic type_of_government;
+@dynamic visa_requirements;
+@dynamic communication_infrastructure;
+@dynamic electricity;
+@dynamic development;
+@dynamic language;
+@dynamic religion;
+@dynamic ethnic_makeup;
+@dynamic cultural_norms;
+@dynamic safety;
+@dynamic other_concerns;
 
 @end
