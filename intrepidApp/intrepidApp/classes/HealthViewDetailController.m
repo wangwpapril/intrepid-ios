@@ -85,11 +85,16 @@
     descriptionImageLabel.frame = CGRectMake(5, 10, 25, 25);
     [scrollView addSubview:descriptionImageLabel];
     
-    UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 10, 120, 25)];
+    UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(45, 10, 250, 25)];
     descriptionLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
     descriptionLabel.backgroundColor = [UIColor clearColor];
     descriptionLabel.textColor = UIColorFromRGB(0x423a38);
-    descriptionLabel.text = @"Description";
+    
+    if ([healthItem.category isEqualToString:@"conditions"]) {
+        descriptionLabel.text = @"Description";
+    } else {
+        descriptionLabel.text = @"Common Names";
+    }
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
@@ -132,7 +137,7 @@
         sideEffectsLabel.text = @"Side Effects";
         sideEffectsLabel.textColor = UIColorFromRGB(0x423a38);
 
-        NSString *secondTitle = @"Side Effects";
+        NSString *secondTitle = @"Brand Name";
         if ([healthItem.category isEqualToString:@"conditions"]) {
             secondTitle = @"Symptoms";
         }
@@ -242,8 +247,8 @@
     [scrollView addSubview:immunizationTextContainer];
     
     if ([healthItem.category isEqualToString:@"medications"]) {
-        transmissionTitleLabel.text = @"Storage";
-        immunizationTitleLabel.text = @"General Information";
+        transmissionTitleLabel.text = @"Side Effects";
+        immunizationTitleLabel.text = @"Storage";
     }
     
     if (([healthItem.category isEqualToString:@"conditions"]) || ([healthItem.category isEqualToString:@"symptoms"])) {
@@ -259,7 +264,7 @@
         importantTitleLabel .font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         importantTitleLabel.backgroundColor = [UIColor clearColor];
         importantTitleLabel.textColor = UIColorFromRGB(0x423a38);
-        importantTitleLabel.text = @"Important";
+        importantTitleLabel.text = @"Notes";
         [scrollView addSubview:importantTitleLabel];
         
         UIImageView  *importantImageLabel = [[UIImageView alloc] init];
