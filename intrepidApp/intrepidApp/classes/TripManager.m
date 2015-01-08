@@ -319,44 +319,44 @@ static TripManager *instance =nil;
 //        [[TripManager getInstance] createEmbassyWithCity:city withPhone:phone withFax:fax withEmail:email withHours:hours withNotes:notes withServices:services withAddress:address withCountry:country withFlag:flag];
 //    }
     
-//    for (NSDictionary *medDict in cityDict[@"medications"]) {
-//        name = medDict[@"name"];
-//        category = @"medications";
-//        common = [medDict[@"common"] boolValue];
-//        
-//        NSDictionary *medContent = medDict[@"content"];
-//        desc = medContent[@"general_description"];
-//        details = medContent[@"details"];
-//        symptoms = medContent[@"symptoms"];
-//        immunizations = medContent[@"immunization"];
-//        important = medContent[@"important"];
-//        
-//        NSDictionary *medImage = medDict[@"images"];
-//        //for debugging purposes
-//        image = medImage[@"other_image"];
-//        
-//        [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImportant:important withImage:image];
-//    }
-//    
-//    for (NSDictionary *healthDict in cityDict[@"health_conditions"]) {
-//        category = @"conditions";
-//        name = healthDict[@"name"];
-//        common = [healthDict[@"common"] boolValue];
-//        
-//        NSDictionary *healthContent = healthDict[@"content"];
-//        desc = healthContent[@"general_description"];
-//        details = @"";
-//        symptoms = healthContent[@"symptom_description"];
-//        immunizations = healthContent[@"prevention_description"];
-//        //test to see if it works when there is no important field
-//        important = healthContent[@"important"];
-//        
-//        NSDictionary *healthImage = healthDict[@"images"];
-//        //for debugging purposes
-//        image = healthImage[@"other_image"];
-//        
-//        [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImportant:important withImage:image];
-//    }
+    for (NSDictionary *medDict in cityDict[@"medications"]) {
+        name = medDict[@"name"];
+        category = @"medications";
+        common = [medDict[@"common"] boolValue];
+        
+        NSDictionary *medContent = medDict[@"content"];
+        desc = medContent[@"common_names"];
+        details = medContent[@"brand_name"];
+        symptoms = medContent[@"description_side_effects"];
+        immunizations = medContent[@"storage"];
+        important = medContent[@"notes"];
+        
+        NSDictionary *medImage = medDict[@"images"];
+        //for debugging purposes
+        image = @"";
+        
+        [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImportant:important withImage:image];
+    }
+    
+    for (NSDictionary *healthDict in cityDict[@"health_conditions"]) {
+        category = @"conditions";
+        name = healthDict[@"name"];
+        common = [healthDict[@"common"] boolValue];
+        
+        NSDictionary *healthContent = healthDict[@"content"];
+        desc = healthContent[@"description"];
+        details = @"";
+        symptoms = healthContent[@"symptoms"];
+        immunizations = healthContent[@"prevention"];
+        //test to see if it works when there is no important field
+        important = healthContent[@"important"];
+        
+        NSDictionary *healthImage = healthDict[@"images"];
+        //for debugging purposes
+        image = @"";
+        
+        [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImportant:important withImage:image];
+    }
 }
 
 @end
