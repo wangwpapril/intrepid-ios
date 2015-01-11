@@ -14,13 +14,17 @@
 static NSString * token = @"UIcodif8e0";
 static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
 static NSString * currencyURL = @"http://api.fixer.io/latest?base=";
+static NSDictionary * userDict;
 
++ (void)fetchUser:(NSDictionary *)user {
+    userDict = user;
+}
 
 + (void)buildRequestWithURL:(NSString *)url {
     
         url = @"destinations"; // temp
         
-        NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@destinations?token=%@", baseURL, token]];
+        NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@destinations?token=%@", baseURL, userDict[@"user"][@"token"]]];
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
         request.HTTPMethod = @"GET";
         [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];

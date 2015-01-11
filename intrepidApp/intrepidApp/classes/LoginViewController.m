@@ -9,6 +9,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "LoginViewController.h"
 #import "Constants.h"
+#import "RequestBuilder.h"
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
@@ -259,6 +260,32 @@
     [UIView commitAnimations];
 }
 
+- (IBAction)login:(id)sender {    
+    NSDictionary *body = @{@"user": @{@"email": self.email.text,
+                                      @"password": self.password.text}
+                           };
+
+    NSURL *requestURL = [NSURL URLWithString:@"https://staging.intrepid247.com/v1/users/login"];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
+    request.HTTPMethod = @"POST";
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    request.HTTPBody = [NSJSONSerialization dataWithJSONObject:body options:0 error:nil];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (!error) {
+            NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSLog(@"%@", responseBody);
+            if (responseBody[@"user"]) {
+                [RequestBuilder fetchUser:responseBody];
+                [self performSegueWithIdentifier:@"toTrips" sender:self];
+            } else {
+                NSLog(@"error: %@", responseBody[@"error"][@"message"]);
+            }
+        } else {
+            NSLog(@"error: %@", error.localizedDescription);
+        }
+    }];
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
