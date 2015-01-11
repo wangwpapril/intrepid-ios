@@ -31,6 +31,7 @@
 - (void)keyboardWillHide;
 - (void)textFieldDidBeginEditing:(UITextField *)sender;
 - (void)setViewMovedUp:(BOOL)movedUp;
+- (IBAction)login:(id)sender;
 
 
 @end

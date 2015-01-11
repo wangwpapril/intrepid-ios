@@ -55,7 +55,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gil-vz-SGD" kind="push" id="FC5-Ma-cRC"/>
+                                    <action selector="login:" destination="lgv-mR-8mz" eventType="touchUpInside" id="H3B-Eb-Jxq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zhz-zF-bYZ">
@@ -161,6 +161,7 @@
                         <outlet property="tagline" destination="3Ms-XL-sg9" id="lTp-to-OuO"/>
                         <outlet property="underlineEmail" destination="J25-eA-sZr" id="xJm-b5-R1c"/>
                         <outlet property="underlinePassword" destination="5sI-vr-9hj" id="onq-BO-SyB"/>
+                        <segue destination="gil-vz-SGD" kind="push" identifier="toTrips" id="kQM-GK-nli"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ve-Tw-7eT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -329,7 +330,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Oye-dv-Dnx" kind="relationship" relationship="rootViewController" id="M7P-6a-6Y8"/>
+                        <segue destination="lgv-mR-8mz" kind="relationship" relationship="rootViewController" id="v1z-mz-lP0"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
@@ -777,7 +778,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Qvd-hq-w6L"/>
-        <segue reference="FC5-Ma-cRC"/>
+        <segue reference="v1z-mz-lP0"/>
+        <segue reference="kQM-GK-nli"/>
     </inferredMetricsTieBreakers>
 </document>

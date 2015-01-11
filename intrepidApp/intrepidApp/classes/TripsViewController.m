@@ -179,8 +179,9 @@
     [self.filteredArray removeAllObjects];
     
     // Filter the array using NSPredicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.cityName contains[c] %@",searchBar.text];
-    filteredArray = [NSMutableArray arrayWithArray:[cities filteredArrayUsingPredicate:predicate]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.city contains[c] %@",searchBar.text];
+    filteredArray = [NSMutableArray arrayWithArray:[tripsArray filteredArrayUsingPredicate:predicate]];
+    NSLog(@"filtered array size: %lu", (unsigned long)filteredArray.count);
     [tableList reloadData];
 }
 

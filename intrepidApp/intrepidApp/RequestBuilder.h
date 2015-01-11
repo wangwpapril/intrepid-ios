@@ -10,6 +10,7 @@
 
 @interface RequestBuilder : NSObject
 
++ (void)fetchUser:(NSDictionary *)user;
 + (void)buildRequestWithURL:(NSString *)url;
 
 @end
