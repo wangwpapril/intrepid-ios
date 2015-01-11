@@ -186,9 +186,7 @@ static MenuController *instance =nil;
             break;
             
         case 4:
-            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
-            [((WebViewController *)viewController) setupWithTitle:@"Clinics" withURL:city.clinicsURL];
-            viewController.view.tag = 4;
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"clinics"];
             break;
 
         case 5:

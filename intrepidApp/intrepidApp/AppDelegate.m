@@ -69,6 +69,7 @@
     }
     [self.locationManager startUpdatingLocation];
     
+    
     return YES;
 }
 							

@@ -56,8 +56,19 @@
 		B61550DD17B52E7400044F11 /* LegalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B61550DC17B52E7400044F11 /* LegalViewController.m */; };
 		B6DB0C4717AE2C5C001694B0 /* AssistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DB0C4617AE2C5C001694B0 /* AssistanceViewController.m */; };
 		DC26B28E1A4FE60200E9A549 /* CurrencyEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DC26B28D1A4FE60200E9A549 /* CurrencyEntity.m */; };
+		DC73F08D1A6229BC0051898F /* ClinicsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC73F08C1A6229BC0051898F /* ClinicsTableViewCell.xib */; };
+		DC73F0931A622C180051898F /* ClinicsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC73F0921A622C180051898F /* ClinicsTableViewCell.m */; };
 		DC85087D1A3E5FDF00C3173B /* HealthEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DC85087C1A3E5FDF00C3173B /* HealthEntity.m */; };
 		DC8508801A3EB57500C3173B /* CityEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DC85087F1A3EB57500C3173B /* CityEntity.m */; };
+		DCFB6F301A5F204500375B7D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCFB6F2F1A5F204500375B7D /* AVFoundation.framework */; };
+		DCFB6F321A5F205B00375B7D /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCFB6F311A5F205B00375B7D /* CoreText.framework */; };
+		DCFB6F341A5F206000375B7D /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCFB6F331A5F206000375B7D /* GLKit.framework */; };
+		DCFB6F361A5F206600375B7D /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCFB6F351A5F206600375B7D /* ImageIO.framework */; };
+		DCFB6F381A5F206F00375B7D /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCFB6F371A5F206F00375B7D /* libc++.dylib */; };
+		DCFB6F3A1A5F207600375B7D /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCFB6F391A5F207600375B7D /* libicucore.dylib */; };
+		DCFB6F3C1A5F208200375B7D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCFB6F3B1A5F208200375B7D /* OpenGLES.framework */; };
+		DCFB6F3F1A5F218E00375B7D /* ClinicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFB6F3E1A5F218E00375B7D /* ClinicsViewController.m */; };
+		DCFB6F411A5F264200375B7D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCFB6F401A5F264200375B7D /* MapKit.framework */; };
 		E02BBA0B17A8845300215CEA /* EmbassyDetailedContent.m in Sources */ = {isa = PBXBuildFile; fileRef = E02BBA0A17A8845300215CEA /* EmbassyDetailedContent.m */; };
 		E04C4DBC17A3103E002A23F4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E04C4DBB17A3103E002A23F4 /* libz.dylib */; };
 		E058778417A8768500E42A78 /* EmbassyDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E058778317A8768500E42A78 /* EmbassyDetailedViewController.m */; };
@@ -153,10 +164,23 @@
 		B6DB0C4617AE2C5C001694B0 /* AssistanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssistanceViewController.m; sourceTree = "<group>"; };
 		DC26B28C1A4FE60200E9A549 /* CurrencyEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrencyEntity.h; sourceTree = "<group>"; };
 		DC26B28D1A4FE60200E9A549 /* CurrencyEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrencyEntity.m; sourceTree = "<group>"; };
+		DC73F08C1A6229BC0051898F /* ClinicsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ClinicsTableViewCell.xib; path = classes/ClinicsTableViewCell.xib; sourceTree = "<group>"; };
+		DC73F0911A622C180051898F /* ClinicsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClinicsTableViewCell.h; sourceTree = "<group>"; };
+		DC73F0921A622C180051898F /* ClinicsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClinicsTableViewCell.m; sourceTree = "<group>"; };
 		DC85087B1A3E5FDF00C3173B /* HealthEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthEntity.h; sourceTree = "<group>"; };
 		DC85087C1A3E5FDF00C3173B /* HealthEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthEntity.m; sourceTree = "<group>"; };
 		DC85087E1A3EB57500C3173B /* CityEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityEntity.h; sourceTree = "<group>"; };
 		DC85087F1A3EB57500C3173B /* CityEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityEntity.m; sourceTree = "<group>"; };
+		DCFB6F2F1A5F204500375B7D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DCFB6F311A5F205B00375B7D /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		DCFB6F331A5F206000375B7D /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		DCFB6F351A5F206600375B7D /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		DCFB6F371A5F206F00375B7D /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		DCFB6F391A5F207600375B7D /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		DCFB6F3B1A5F208200375B7D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		DCFB6F3D1A5F218E00375B7D /* ClinicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClinicsViewController.h; path = classes/ClinicsViewController.h; sourceTree = "<group>"; };
+		DCFB6F3E1A5F218E00375B7D /* ClinicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClinicsViewController.m; path = classes/ClinicsViewController.m; sourceTree = "<group>"; };
+		DCFB6F401A5F264200375B7D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E02BBA0917A8845200215CEA /* EmbassyDetailedContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbassyDetailedContent.h; sourceTree = "<group>"; };
 		E02BBA0A17A8845300215CEA /* EmbassyDetailedContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbassyDetailedContent.m; sourceTree = "<group>"; };
 		E04C4DBB17A3103E002A23F4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -171,14 +195,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CE95BA91A3110E100062423 /* CoreLocation.framework in Frameworks */,
+				DCFB6F411A5F264200375B7D /* MapKit.framework in Frameworks */,
 				68174E2417C95254009823CE /* SystemConfiguration.framework in Frameworks */,
-				E04C4DBC17A3103E002A23F4 /* libz.dylib in Frameworks */,
 				688F9E631786262800CF850C /* QuartzCore.framework in Frameworks */,
+				DCFB6F3C1A5F208200375B7D /* OpenGLES.framework in Frameworks */,
+				E04C4DBC17A3103E002A23F4 /* libz.dylib in Frameworks */,
+				DCFB6F3A1A5F207600375B7D /* libicucore.dylib in Frameworks */,
+				DCFB6F381A5F206F00375B7D /* libc++.dylib in Frameworks */,
+				DCFB6F361A5F206600375B7D /* ImageIO.framework in Frameworks */,
+				DCFB6F341A5F206000375B7D /* GLKit.framework in Frameworks */,
+				DCFB6F321A5F205B00375B7D /* CoreText.framework in Frameworks */,
+				2CE95BA91A3110E100062423 /* CoreLocation.framework in Frameworks */,
+				6851221917861138008DB6B6 /* CoreData.framework in Frameworks */,
+				DCFB6F301A5F204500375B7D /* AVFoundation.framework in Frameworks */,
 				6851221317861138008DB6B6 /* UIKit.framework in Frameworks */,
 				6851221517861138008DB6B6 /* Foundation.framework in Frameworks */,
 				6851221717861138008DB6B6 /* CoreGraphics.framework in Frameworks */,
-				6851221917861138008DB6B6 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +296,14 @@
 		6851221117861138008DB6B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DCFB6F401A5F264200375B7D /* MapKit.framework */,
+				DCFB6F3B1A5F208200375B7D /* OpenGLES.framework */,
+				DCFB6F391A5F207600375B7D /* libicucore.dylib */,
+				DCFB6F371A5F206F00375B7D /* libc++.dylib */,
+				DCFB6F351A5F206600375B7D /* ImageIO.framework */,
+				DCFB6F331A5F206000375B7D /* GLKit.framework */,
+				DCFB6F311A5F205B00375B7D /* CoreText.framework */,
+				DCFB6F2F1A5F204500375B7D /* AVFoundation.framework */,
 				E04C4DBB17A3103E002A23F4 /* libz.dylib */,
 				68174E2317C95254009823CE /* SystemConfiguration.framework */,
 				688F9E621786262800CF850C /* QuartzCore.framework */,
@@ -313,6 +353,11 @@
 		688F9E5B178611C000CF850C /* Health */ = {
 			isa = PBXGroup;
 			children = (
+				DCFB6F3D1A5F218E00375B7D /* ClinicsViewController.h */,
+				DCFB6F3E1A5F218E00375B7D /* ClinicsViewController.m */,
+				DC73F08C1A6229BC0051898F /* ClinicsTableViewCell.xib */,
+				DC73F0911A622C180051898F /* ClinicsTableViewCell.h */,
+				DC73F0921A622C180051898F /* ClinicsTableViewCell.m */,
 				6851223D17861152008DB6B6 /* HealthViewController.h */,
 				6851223E17861152008DB6B6 /* HealthViewController.m */,
 				68BE3AC817A1DCA600A87E52 /* HealthContent.h */,
@@ -459,6 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68920D0617BEA7DE004D7743 /* InfoPlist.strings in Resources */,
+				DC73F08D1A6229BC0051898F /* ClinicsTableViewCell.xib in Resources */,
 				6851222E17861138008DB6B6 /* MainStoryboard.storyboard in Resources */,
 				7E82E9B91794F01000027268 /* proximanova-regular.ttf in Resources */,
 				7E82E9BB1794F0D400027268 /* proximanova-bold.ttf in Resources */,
@@ -483,6 +529,7 @@
 				7E44F8D21788FA4B00AAA32B /* HealthItem.m in Sources */,
 				6835EC161789439600A57F86 /* MenuController.m in Sources */,
 				7ECD0427178BD7C500D6C34B /* HealthViewDetailController.m in Sources */,
+				DCFB6F3F1A5F218E00375B7D /* ClinicsViewController.m in Sources */,
 				DC85087D1A3E5FDF00C3173B /* HealthEntity.m in Sources */,
 				7E34777C1791E79300FB86DC /* LoginViewController.m in Sources */,
 				7E34777F1791E7A700FB86DC /* SignUpViewController.m in Sources */,
@@ -509,6 +556,7 @@
 				7E9A131217A8AE5E0082003C /* TermsOfServiceViewController.m in Sources */,
 				7E9A131517A8AE6E0082003C /* PrivacyPolicyViewController.m in Sources */,
 				6811614717A9D1A20029134B /* TripManager.m in Sources */,
+				DC73F0931A622C180051898F /* ClinicsTableViewCell.m in Sources */,
 				339118581A31626300450CB8 /* RequestBuilder.m in Sources */,
 				B6DB0C4717AE2C5C001694B0 /* AssistanceViewController.m in Sources */,
 				B61550DD17B52E7400044F11 /* LegalViewController.m in Sources */,
@@ -608,11 +656,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "intrepidApp/intrepidApp-Prefix.pch";
 				INFOPLIST_FILE = "intrepidApp/intrepidApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -625,11 +678,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "intrepidApp/intrepidApp-Prefix.pch";
 				INFOPLIST_FILE = "intrepidApp/intrepidApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

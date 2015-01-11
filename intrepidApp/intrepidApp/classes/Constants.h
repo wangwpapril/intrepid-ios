@@ -22,6 +22,8 @@
 #define HEADER_MEDIUM 36
 #define HEADER_LARGE 48
 
+#define METERS_PER_MILE 1609.344
+
 // colors
 #define APP_TEXT_COLOR [UIColor colorWithRed: 66.0/255 green: 58.0/255 blue: 56.0/255 alpha: 1.0]
 
