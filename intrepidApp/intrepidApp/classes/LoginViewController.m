@@ -108,7 +108,7 @@
     [self.view addSubview:tagline];
     
     email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
-    email.textColor = [UIColor colorWithRed: 66.0/255 green: 58.0/255 blue: 56.0/255 alpha: 1.0];
+    email.textColor = UIColorFromRGB(0xe7eee2);
     email.placeholder = @"EMAIL";
     [email setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [email setReturnKeyType:UIReturnKeyDone];
@@ -197,18 +197,10 @@
     {
         [self setViewMovedUp:YES];
     }
-    else if (self.view.frame.origin.y < 0)
-    {
-        [self setViewMovedUp:NO];
-    }
 }
 
 -(void)keyboardWillHide {
-    if (self.view.frame.origin.y >= 0)
-    {
-        [self setViewMovedUp:YES];
-    }
-    else if (self.view.frame.origin.y < 0)
+    if (self.view.frame.origin.y < 0)
     {
         [self setViewMovedUp:NO];
     }
@@ -279,10 +271,20 @@
                 [RequestBuilder fetchUser:responseBody];
                 [self performSegueWithIdentifier:@"toTrips" sender:self];
             } else {
-                NSLog(@"error: %@", responseBody[@"error"][@"message"]);
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                                    message:responseBody[@"error"][@"message"][0]
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+                [alertView show];
             }
         } else {
-            NSLog(@"error: %@", error.localizedDescription);
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                                message:error.localizedDescription
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+            [alertView show];
         }
     }];
 }
