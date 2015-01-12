@@ -325,9 +325,9 @@ static TripManager *instance =nil;
         common = [medDict[@"common"] boolValue];
         
         NSDictionary *medContent = medDict[@"content"];
-        desc = medContent[@"common_names"];
-        details = medContent[@"brand_name"];
-        symptoms = medContent[@"description_side_effects"];
+        desc = medContent[@"brand_names"];
+        details = medContent[@"description"];
+        symptoms = medContent[@"side_effects"];
         immunizations = medContent[@"storage"];
         important = medContent[@"notes"];
         

@@ -93,7 +93,7 @@
     if ([healthItem.category isEqualToString:@"conditions"]) {
         descriptionLabel.text = @"Description";
     } else {
-        descriptionLabel.text = @"Common Names";
+        descriptionLabel.text = @"Brand Name";
     }
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
@@ -137,7 +137,7 @@
         sideEffectsLabel.text = @"Side Effects";
         sideEffectsLabel.textColor = UIColorFromRGB(0x423a38);
 
-        NSString *secondTitle = @"Brand Name";
+        NSString *secondTitle = @"Description";
         if ([healthItem.category isEqualToString:@"conditions"]) {
             secondTitle = @"Symptoms";
         }
