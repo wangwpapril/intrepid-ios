@@ -66,6 +66,7 @@
 - (void) deleteAllObjects: (NSString *) entityDescription;
 -(NSMutableArray *)getHealthItemsWithCity:(CityEntity *)city;
 -(NSMutableArray *)getCurrencyItemsWithCity:(CityEntity *)city;
+-(NSMutableArray *)getEmbassyItemsWithCity:(CityEntity *)city;
 - (void)saveCity:(NSDictionary *)cityDict;
 
 @end

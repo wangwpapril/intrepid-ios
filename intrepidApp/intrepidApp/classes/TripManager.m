@@ -41,6 +41,25 @@ static TripManager *instance =nil;
     [unsavedCities addObject:cityDict];
 }
 
+-(NSMutableArray *)getEmbassyItemsWithCity:(CityEntity*)city {
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:@"EmbassyEntity" inManagedObjectContext:managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    
+    NSError *error;
+    NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
+    NSLog(@"intermediate array %@", intermediateArray);
+    NSMutableArray *embassies = [NSMutableArray new];
+    
+    for (EmbassyEntity *embassyItem in intermediateArray) {
+        [embassies addObject:embassyItem];
+    }
+    //NSLog(@"embassies %@", embassies);
+    
+    return embassies;
+}
+
 
 
 -(NSArray *)fetchCityArray {
@@ -253,9 +272,6 @@ static TripManager *instance =nil;
     NSString *safety, *other_concerns;
     float dollarRatio;
     
-    //EmbassyEntity
-    NSString *phone, *fax, *email, *hours, *notes, *services, *address, *country, *flag;
-    
     NSString *name, *category, *desc, *details, *symptoms, *immunizations, *important, *image;
     Boolean common;
     
@@ -302,23 +318,6 @@ static TripManager *instance =nil;
     
     CityEntity *city = [[TripManager getInstance] createTripWithCityImage:cityImage withCityName:cityName withContinent:continent withCultureText:cultureText withCultureImage:cultureImage withGeneralText:generalText withGeneralImage:generalImage withLocalImage:localImage withLocalText:localText withSafetyImage:safetyImage withSafetytext:safetyText withClinicsURL:clinicsURL withAlertsURL:alertsURL withWeatherURL:weatherURL withCADToNative:dollarRatio];
     
-//    for (NSDictionary *embassyDict in cityDict[@"diplomatic_offices"]) {
-//        country = embassyDict[@"name"];
-//        
-//        NSDictionary *embassyContent = embassyDict[@"content"];
-//        if (![embassyContent count] == 0) {
-//            phone = embassyContent[@"telephone"];
-//            fax = embassyContent[@"fax"];
-//            email = embassyContent[@"email"];
-//            hours = embassyContent[@"hours_of_operation"];
-//            address = embassyContent[@"address"];
-//            notes = embassyContent[@"notes"];
-//            services = embassyContent[@"services_offered"];
-//        }
-//        flag = @"";
-//        [[TripManager getInstance] createEmbassyWithCity:city withPhone:phone withFax:fax withEmail:email withHours:hours withNotes:notes withServices:services withAddress:address withCountry:country withFlag:flag];
-//    }
-    
     for (NSDictionary *medDict in cityDict[@"medications"]) {
         name = medDict[@"name"];
         category = @"medications";
@@ -357,6 +356,7 @@ static TripManager *instance =nil;
         
         [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImportant:important withImage:image];
     }
+    [RequestBuilder fetchEmbassy:cityDict withCity:city];
 }
 
 @end

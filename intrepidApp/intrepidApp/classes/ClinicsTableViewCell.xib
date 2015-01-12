@@ -13,9 +13,6 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ClinicsTableCell" tableViewCell="Gth-kX-KvW" id="OKy-w1-8KK">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tvk-cx-2kH">
-                        <rect key="frame" x="15" y="12" width="83" height="74.5"/>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1C-I9-Sf6">
                         <rect key="frame" x="112" y="12" width="197" height="19"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -28,6 +25,9 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tvk-cx-2kH">
+                        <rect key="frame" x="28" y="12" width="49" height="46.5"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>

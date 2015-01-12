@@ -12,6 +12,7 @@
 #import "Constants.h"
 #import "EmbassyDetailedViewController.h"
 #import "EmbassyEntity.h"
+#import "TripManager.h"
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
@@ -28,6 +29,7 @@
 
     embassyArray = [self.mController.city.embassies allObjects]; // makes array from set
     self.navigationItem.title = @"Security";
+    [self populateEmbassyItems];
     
     NSInteger height = self.view.bounds.size.height;
     CGRect frame = CGRectMake(0, 0, 320, height);
@@ -72,6 +74,11 @@
             view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height);
         }
     }
+}
+- (void)populateEmbassyItems {
+    CityEntity *city = [self getCity];
+    
+    embassyArray = [[TripManager getInstance] getEmbassyItemsWithCity:city];
 }
 
 # pragma mark - tableView methods

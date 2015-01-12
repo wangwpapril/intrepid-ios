@@ -13,6 +13,6 @@
 @interface SecurityViewController : ScrollerTabViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableList;
-@property (nonatomic, strong) NSArray *embassyArray;
+@property (nonatomic, strong) NSMutableArray *embassyArray;
 
 @end

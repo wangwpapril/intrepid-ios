@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CityEntity.h"
 
 @interface RequestBuilder : NSObject
 
 + (void)fetchUser:(NSDictionary *)user;
 + (void)buildRequestWithURL:(NSString *)url;
++ (void)fetchEmbassy:(NSDictionary *)cityDict withCity:(CityEntity *)city;
 
 @end
