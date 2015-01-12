@@ -52,7 +52,7 @@
     pageControl.frame = CGRectMake(0, self.view.frame.size.height - 78, 320, 50);
     pageControl.currentPage = 0;
     // replace with loading indicator
-    pageControl.numberOfPages = 2;
+    pageControl.numberOfPages = 1;
     pageControl.pageIndicatorTintColor = [UIColor darkGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     [pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
@@ -127,7 +127,7 @@
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * entries, 366.0);
     
     pageControl.numberOfPages = entries;;
-
+    [self.activityIndicator stopAnimating];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -187,6 +187,10 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityIndicator.center = self.view.center;
+    [self.view addSubview:self.activityIndicator];
+    [self.activityIndicator startAnimating];
     [RequestBuilder buildRequestWithURL:@"placeholder"];
 }
 - (void)scrollViewDidScroll:(UIScrollView *)sender {

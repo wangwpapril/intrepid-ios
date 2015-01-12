@@ -35,7 +35,7 @@
     self.navigationItem.title = @"Trips";
     self.navigationItem.backBarButtonItem.title = @" ";
     
-    tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 44, 320, self.view.bounds.size.height - 44) style:UITableViewStylePlain];
+    tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 44, 320, self.view.bounds.size.height - 108) style:UITableViewStylePlain];
     [self.view addSubview:tableList];
     tableList.delegate = self;
     tableList.dataSource = self;
@@ -211,10 +211,6 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    textField.text = @"Tap to Search";
-    [UIView animateWithDuration:0.1 animations:^{
-        xButton.alpha = 0;
-    }];
 }
 
 - (void)textFieldDidChange {

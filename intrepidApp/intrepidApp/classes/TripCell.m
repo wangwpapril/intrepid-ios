@@ -43,7 +43,7 @@
     self.imageView.layer.masksToBounds = YES;
     
     self.textLabel.text = tripItem.city;
-    continentLabel.text = tripItem.continent;
+//    continentLabel.text = tripItem.continent;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

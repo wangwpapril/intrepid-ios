@@ -235,10 +235,6 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     NSLog(@"text field ended editing");
-    textField.text = @"Tap to Search";
-    [UIView animateWithDuration:0.1 animations:^{
-        xButton.alpha = 0;
-    }];
 }
 
 - (void)textFieldDidChange {
