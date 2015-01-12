@@ -45,6 +45,7 @@ static TripManager *instance =nil;
     NSEntityDescription *entityDescription = [NSEntityDescription
                                               entityForName:@"EmbassyEntity" inManagedObjectContext:managedObjectContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"city == %@", city]];
     [request setEntity:entityDescription];
     
     NSError *error;

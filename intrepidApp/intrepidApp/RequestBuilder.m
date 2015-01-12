@@ -36,6 +36,8 @@ static NSDictionary * cityDict;
             if (!error) {
                 NSDictionary *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                 [[TripManager getInstance] deleteAllObjects:@"HealthEntity"];
+                [[TripManager getInstance] deleteAllObjects:@"EmbassyEntity"];
+
                 
                 bool found;
                 NSArray *savedCities = [[TripManager getInstance] getSavedCities];
@@ -88,7 +90,6 @@ static NSDictionary * cityDict;
         if (!error) {
             //EmbassyEntity
             NSDictionary *embassyObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            [[TripManager getInstance] deleteAllObjects:@"EmbassyEntity"];
             
             NSString *phone, *fax, *email, *hours, *notes, *services, *address, *country, *flag;
             
