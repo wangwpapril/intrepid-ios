@@ -12,6 +12,7 @@
 @interface RequestBuilder : NSObject
 
 + (void)fetchUser:(NSDictionary *)user;
++ (void)fetchDestinations;
 + (void)buildRequestWithURL:(NSString *)url;
 + (void)fetchEmbassy:(NSDictionary *)cityDict withCity:(CityEntity *)city;
 

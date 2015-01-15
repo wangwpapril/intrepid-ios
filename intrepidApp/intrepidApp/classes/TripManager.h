@@ -10,6 +10,7 @@
 #import "CityEntity.h"
 #import "HealthEntity.h"
 #import "CurrencyEntity.h"
+#import "DestinationEntity.h"
 
 @interface TripManager : NSObject
 
@@ -19,6 +20,7 @@
 
 +(TripManager *)getInstance;
 -(NSArray *) getSavedCities;
+- (NSArray *)getDestinations;
 -(void) addCityDict:(NSDictionary *)cityDict;
 
 
@@ -27,16 +29,22 @@
                           withContinent:(NSString *)continent
                         withCultureText:(NSString *)cultureText
                        withCultureImage:(NSString *)cultureImage
+                      withDestinationId:(NSInteger )destinationId
+                    withDestinationType:(NSString *)destinationType
                         withGeneralText:(NSString *)generalText
                        withGeneralImage:(NSString *)generalImage
                          withLocalImage:(NSString *)localImage
                           withLocalText:(NSString *)localText
                      withSafetyImage:(NSString *)safetyImage
-                      withSafetytext:(NSString *)safetyText
+                      withSafetyText:(NSString *)safetyText
                          withClinicsURL:(NSString *)clinicsURL
                           withAlertsURL:(NSString *)alertsURL
                          withWeatherURL:(NSString *)weatherURL
                         withCADToNative:(float) dollarRatio;
+
+- (DestinationEntity *)createDestinationWithName:(NSString *)name
+                               withDestinationId:(NSInteger )destinationId
+                                        withType:(NSString *)type;
 
 - (EmbassyEntity *)createEmbassyWithCity:(CityEntity *)city
                     withPhone:(NSString *)phone

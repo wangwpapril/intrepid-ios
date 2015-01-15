@@ -13,7 +13,6 @@
 #import "CityEntity.h"
 #import "TripItem.h"
 #import "OverViewViewController.h"
-#import "RequestBuilder.h"
 
 @implementation MyTripsViewController
 
@@ -41,12 +40,6 @@
     scrollView.delegate = self;
     scrollView.scrollEnabled = YES;
     scrollView.pagingEnabled = YES;
-    
-    // register for notifications
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(loadCities)
-                                                 name:@"TRIP_UPDATE"
-                                               object:nil];
     [self.view addSubview:scrollView];
     
     pageControl.frame = CGRectMake(0, self.view.frame.size.height - 78, 320, 50);
@@ -57,7 +50,7 @@
     pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     [pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:pageControl];
-    
+    [self loadCities];
 }
 
 -(void)loadCities {
@@ -127,7 +120,7 @@
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * entries, 366.0);
     
     pageControl.numberOfPages = entries;;
-    [self.activityIndicator stopAnimating];
+//    [self.activityIndicator stopAnimating];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -183,16 +176,14 @@
     // Dispose of any resources that can be recreated.
 }
 
- - (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
+ - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
-    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    self.activityIndicator.center = self.view.center;
-    [self.view addSubview:self.activityIndicator];
-    [self.activityIndicator startAnimating];
-    [RequestBuilder buildRequestWithURL:@"placeholder"];
+//    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+//    self.activityIndicator.center = self.view.center;
+//    [self.view addSubview:self.activityIndicator];
+//    [self.activityIndicator startAnimating];
 }
+
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
     if (!pageControlBeingUsed) {
     // Update the page when more than 50% of the previous/next page is visible

@@ -14,8 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (nonatomic, strong) NSArray *cities;
 @property (nonatomic) BOOL pageControlBeingUsed;
-@property (nonatomic,retain) UIActivityIndicatorView *activityIndicator;
-
-//-(void)cityNames;
+//@property (nonatomic,retain) UIActivityIndicatorView *activityIndicator;
 
 @end

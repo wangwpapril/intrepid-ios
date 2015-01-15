@@ -12,6 +12,7 @@
 #import "TripCell.h"
 #import "OverViewViewController.h"
 #import "TripManager.h"
+#import "RequestBuilder.h"
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
@@ -29,7 +30,6 @@
     [super viewDidLoad];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     
-    [self populateContentArray];
     [self addIntreSearchBar];
     
     self.navigationItem.title = @"Trips";
@@ -51,7 +51,7 @@
     // register for notifications
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(populateContentArray)
-                                                 name:@"TRIP_UPDATE"
+                                                 name:@"DESTINATION_UPDATE"
                                                object:nil];
 }
 
@@ -67,8 +67,10 @@
     }
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
+//    [RequestBuilder buildRequestWithURL:@"placeholder"];
+    [RequestBuilder fetchDestinations];
 }
 
 - (void)populateContentArray {
@@ -76,10 +78,12 @@
     filteredArray = [NSMutableArray new];
 
     TripManager *manager = [TripManager getInstance];
-    cities = manager.unsavedCities;
-    for (NSDictionary *cityDict in cities) {
+    NSArray *destinations = [manager getDestinations];
+    NSLog(@"%@", destinations);
+//    cities = manager.unsavedCities;
+    for (DestinationEntity *destination in destinations) {
         TripItem *trip = [[TripItem alloc] init];
-        trip.city = cityDict[@"name"];
+        trip.city = destination.name;
         trip.continent = @"Europe";
         trip.image = @"Guada-icon.png";
         [tripsArray addObject:trip];

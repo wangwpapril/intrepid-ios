@@ -9,6 +9,7 @@
 #import "RequestBuilder.h"
 #import "TripManager.h"
 #import "CityEntity.h"
+#import "DestinationEntity.h"
 
 @implementation RequestBuilder
 static NSString * token = @"UIcodif8e0";
@@ -20,6 +21,27 @@ static NSDictionary * cityDict;
 
 + (void)fetchUser:(NSDictionary *)user {
     userDict = user;
+}
+
++ (void)fetchDestinations {
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@destinations?short_list=true&token=%@", baseURL, userDict[@"user"][@"token"]]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
+    request.HTTPMethod = @"GET";
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (!error) {
+            NSDictionary *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            [[TripManager getInstance] deleteAllObjects:@"DestinationEntity"];
+            for (NSDictionary *destinationDict in responseObject[@"destinations"]) {
+                [[TripManager getInstance] createDestinationWithName:destinationDict[@"name"] withDestinationId:[destinationDict[@"id"] integerValue] withType:destinationDict[@"type"]];
+            }
+        } else {
+            NSLog(@"error: %@", error.localizedDescription);
+        }
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"DESTINATION_UPDATE" object:nil];
+        
+    }];
 }
 
 + (void)buildRequestWithURL:(NSString *)url {

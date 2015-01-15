@@ -50,7 +50,6 @@ static TripManager *instance =nil;
     
     NSError *error;
     NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
-    NSLog(@"intermediate array %@", intermediateArray);
     NSMutableArray *embassies = [NSMutableArray new];
     
     for (EmbassyEntity *embassyItem in intermediateArray) {
@@ -61,7 +60,17 @@ static TripManager *instance =nil;
     return embassies;
 }
 
-
+- (NSArray *)getDestinations {
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:@"DestinationEntity" inManagedObjectContext:managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    [request setReturnsObjectsAsFaults:NO];
+    
+    NSError *error;
+    NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
+    return intermediateArray;
+}
 
 -(NSArray *)fetchCityArray {
     NSEntityDescription *entityDescription = [NSEntityDescription
@@ -162,12 +171,14 @@ static TripManager *instance =nil;
                   withContinent:(NSString *)continent
                 withCultureText:(NSString *)cultureText
                withCultureImage:(NSString *)cultureImage
+              withDestinationId:(NSInteger )destinationId
+            withDestinationType:(NSString *)destinationType
                 withGeneralText:(NSString *)generalText
                withGeneralImage:(NSString *)generalImage
                  withLocalImage:(NSString *)localImage
                   withLocalText:(NSString *)localText
              withSafetyImage:(NSString *)safetyImage
-              withSafetytext:(NSString *)safetyText
+              withSafetyText:(NSString *)safetyText
                  withClinicsURL:(NSString *)clinicsURL
                   withAlertsURL:(NSString *)alertsURL
                  withWeatherURL:(NSString *)weatherURL
@@ -180,6 +191,8 @@ static TripManager *instance =nil;
     city.continent = continent;
     city.cultureImage = cultureImage;
     city.cultureText = cultureText;
+    city.destinationId = [NSNumber numberWithInteger:destinationId];
+    city.destinationType = destinationType;
     city.generalImage = generalImage;
     city.generalText = generalText;
     city.localImage = localImage;;
@@ -199,6 +212,24 @@ static TripManager *instance =nil;
         }
 //    });
     return city;
+}
+
+- (DestinationEntity *)createDestinationWithName:(NSString *)name
+                               withDestinationId:(NSInteger )destinationId
+                                        withType:(NSString *)type
+{
+    DestinationEntity *destination = [NSEntityDescription insertNewObjectForEntityForName:@"DestinationEntity" inManagedObjectContext:managedObjectContext];
+    
+    destination.name = name;
+    destination.destinationId = [NSNumber numberWithInteger:destinationId];
+    destination.type = type;
+    
+    NSError *error = nil;
+    if (![managedObjectContext save:&error]) {
+        NSLog(@"save failed");
+    }
+    NSLog(@"saved destination: %@", destination);
+    return destination;
 }
 
 - (HealthEntity *)createHealthItemWithCity:(CityEntity *)city
@@ -264,19 +295,22 @@ static TripManager *instance =nil;
 
 - (void)saveCity:(NSDictionary *)cityDict {
 //    //CityEntity
-    NSString *cityName, *cityImage, *continent, *cultureText, *cultureImage;
+    NSString *cityName, *cityImage, *continent, *cultureText, *cultureImage, *destinationType;
     NSString *generalText, *generalImage, *localText, *localImage;
     NSString *safetyImage, *safetyText, *clinicsURL, *weatherURL, *alertsURL;
     NSString *location, *climate, *type_of_government, *visa_requirements;
     NSString *communication_infrastructure, *electricity, *development;
     NSString *language, *religion, *ethnic_makeup, *cultural_norms;
     NSString *safety, *other_concerns;
+    NSInteger destinationId;
     float dollarRatio;
     
     NSString *name, *category, *desc, *details, *symptoms, *immunizations, *important, *image;
     Boolean common;
     
     cityName = cityDict[@"name"];
+    destinationId = [cityDict[@"id"] integerValue];
+    destinationType = cityDict[@"type"];
     
     NSDictionary *contentDict = cityDict[@"content"];
     
@@ -317,7 +351,7 @@ static TripManager *instance =nil;
     alertsURL = @"";
     dollarRatio = 6.0;
     
-    CityEntity *city = [[TripManager getInstance] createTripWithCityImage:cityImage withCityName:cityName withContinent:continent withCultureText:cultureText withCultureImage:cultureImage withGeneralText:generalText withGeneralImage:generalImage withLocalImage:localImage withLocalText:localText withSafetyImage:safetyImage withSafetytext:safetyText withClinicsURL:clinicsURL withAlertsURL:alertsURL withWeatherURL:weatherURL withCADToNative:dollarRatio];
+    CityEntity *city = [[TripManager getInstance] createTripWithCityImage:cityImage withCityName:cityName withContinent:continent withCultureText:cultureText withCultureImage:cultureImage withDestinationId:destinationId withDestinationType:destinationType withGeneralText:generalText withGeneralImage:generalImage withLocalImage:localImage withLocalText:localText withSafetyImage:safetyImage withSafetyText:safetyText withClinicsURL:clinicsURL withAlertsURL:alertsURL withWeatherURL:weatherURL withCADToNative:dollarRatio];
     
     for (NSDictionary *medDict in cityDict[@"medications"]) {
         name = medDict[@"name"];

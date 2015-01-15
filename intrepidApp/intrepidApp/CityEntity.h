@@ -21,6 +21,8 @@
 @property (nonatomic, retain) NSString * continent;
 @property (nonatomic, retain) NSString * cultureImage;
 @property (nonatomic, retain) NSString * cultureText;
+@property (nonatomic, retain) NSString * destinationType;
+@property (nonatomic, retain) NSNumber * destinationId;
 @property (nonatomic, retain) NSString * generalImage;
 @property (nonatomic, retain) NSString * generalText;
 @property (nonatomic, retain) NSString * localImage;

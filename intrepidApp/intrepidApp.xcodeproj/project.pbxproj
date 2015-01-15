@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2CC179681A30CA55008EA775 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC179671A30CA55008EA775 /* Images.xcassets */; };
+		2CDDEAAE1A683D1B004654D8 /* DestinationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDEAAD1A683D1B004654D8 /* DestinationEntity.m */; };
 		2CE95BA91A3110E100062423 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE95BA81A3110E100062423 /* CoreLocation.framework */; };
 		337237691A50F392003FF7C2 /* TripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 337237681A50F392003FF7C2 /* TripsViewController.m */; };
 		339118581A31626300450CB8 /* RequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 339118571A31626300450CB8 /* RequestBuilder.m */; };
@@ -78,6 +79,8 @@
 /* Begin PBXFileReference section */
 		288AE5EE289C5AEBF15ED8CC /* Pods-intrepidApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-intrepidApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-intrepidApp/Pods-intrepidApp.debug.xcconfig"; sourceTree = "<group>"; };
 		2CC179671A30CA55008EA775 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2CDDEAAC1A683D1B004654D8 /* DestinationEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationEntity.h; sourceTree = "<group>"; };
+		2CDDEAAD1A683D1B004654D8 /* DestinationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationEntity.m; sourceTree = "<group>"; };
 		2CE95BA81A3110E100062423 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		337237671A50F392003FF7C2 /* TripsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripsViewController.h; path = classes/TripsViewController.h; sourceTree = "<group>"; };
 		337237681A50F392003FF7C2 /* TripsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripsViewController.m; path = classes/TripsViewController.m; sourceTree = "<group>"; };
@@ -233,6 +236,8 @@
 				DC26B28D1A4FE60200E9A549 /* CurrencyEntity.m */,
 				DC85087E1A3EB57500C3173B /* CityEntity.h */,
 				DC85087F1A3EB57500C3173B /* CityEntity.m */,
+				2CDDEAAC1A683D1B004654D8 /* DestinationEntity.h */,
+				2CDDEAAD1A683D1B004654D8 /* DestinationEntity.m */,
 				68DB321517C513F70061D0F1 /* EmbassyEntity.h */,
 				68DB321617C513F70061D0F1 /* EmbassyEntity.m */,
 				DC85087B1A3E5FDF00C3173B /* HealthEntity.h */,
@@ -529,6 +534,7 @@
 				7E44F8D21788FA4B00AAA32B /* HealthItem.m in Sources */,
 				6835EC161789439600A57F86 /* MenuController.m in Sources */,
 				7ECD0427178BD7C500D6C34B /* HealthViewDetailController.m in Sources */,
+				2CDDEAAE1A683D1B004654D8 /* DestinationEntity.m in Sources */,
 				DCFB6F3F1A5F218E00375B7D /* ClinicsViewController.m in Sources */,
 				DC85087D1A3E5FDF00C3173B /* HealthEntity.m in Sources */,
 				7E34777C1791E79300FB86DC /* LoginViewController.m in Sources */,

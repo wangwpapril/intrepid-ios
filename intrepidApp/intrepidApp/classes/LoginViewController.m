@@ -164,7 +164,8 @@
     
     
 	// Do any additional setup after loading the view.
-
+    email.text = @"cherry@swishlabs.co";
+    password.text = @"pass@swish123";
 }
 - (void) moveAllSubviewsDown{
     float barHeight = 45.0;

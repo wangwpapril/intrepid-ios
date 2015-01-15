@@ -21,6 +21,8 @@
 @dynamic continent;
 @dynamic cultureImage;
 @dynamic cultureText;
+@dynamic destinationId;
+@dynamic destinationType;
 @dynamic generalImage;
 @dynamic generalText;
 @dynamic localImage;
