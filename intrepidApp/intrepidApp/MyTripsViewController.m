@@ -99,10 +99,14 @@
             [scrollView addSubview:toTrips];
         }
         else {
-            if (scaleFactor > 2.9) {
+            if (scaleFactor > 2.9 && ![city.image3x isEqualToString:@""]) {
                 imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[city.image3x stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]] scale:3.0];
-            } else {
+            } else if (![city.image2x isEqualToString:@""]) {
                 imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[city.image2x stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]] scale:2.0];
+            } else if (![city.image isEqualToString:@""]) {
+                imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[city.image stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]] scale:1.0];
+            } else {
+                imageView.image = [UIImage imageNamed:@"worldmap"];
             }
             [scrollView addSubview:imageView];
             

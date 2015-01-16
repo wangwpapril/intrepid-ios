@@ -361,15 +361,21 @@ static TripManager *instance =nil;
     localText = @"";
     safetyText = [NSString stringWithFormat:@"Safety \n%@ \n\nOther Concerns \n%@",safety,other_concerns];
     
-    NSDictionary *imageDict = cityDict[@"images"];
     generalImage = @"";
     localImage = @"";
     cultureImage = @"";
     safetyImage = @"";
     
-    introImage1x = imageDict[@"intro"][@"versions"][@"1x"][@"source_url"];
-    introImage2x = imageDict[@"intro"][@"versions"][@"2x"][@"source_url"];
-    introImage3x = imageDict[@"intro"][@"versions"][@"3x"][@"source_url"];
+    if (cityDict[@"images"] != [NSNull null]) {
+        introImage1x = cityDict[@"images"][@"intro"][@"versions"][@"1x"][@"source_url"];
+        introImage2x = cityDict[@"images"][@"intro"][@"versions"][@"2x"][@"source_url"];
+        introImage3x = cityDict[@"images"][@"intro"][@"versions"][@"3x"][@"source_url"];
+    } else {
+        introImage1x = @"";
+        introImage2x = @"";
+        introImage3x = @"";
+    }
+
     continent = @"";
     clinicsURL= @"";
     weatherURL = @"";
