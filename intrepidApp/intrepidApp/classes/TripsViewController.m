@@ -95,13 +95,11 @@
 }
 
 - (void)populateTrip {
-    //    NSInteger tripIndex = [tripsArray indexOfObject:trip];
-    //    [[TripManager getInstance] saveCity:cities[tripIndex]]; // replace it
     CityEntity *city;
     NSArray *savedCities = [[TripManager getInstance] getSavedCities];
-    for (CityEntity *town in savedCities) {
-        if ([town.cityName isEqualToString:selectedTrip.city]) {
-            city = town;
+    for (CityEntity *destination in savedCities) {
+        if ([destination.destinationId isEqualToNumber:selectedTrip.destinationId]) {
+            city = destination;
         }
     }
     

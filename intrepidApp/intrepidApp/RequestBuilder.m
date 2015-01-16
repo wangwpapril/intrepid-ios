@@ -45,40 +45,38 @@ static NSDictionary * cityDict;
 }
 
 + (void)buildRequestWithURL:(NSString *)url {
-        NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@destinations/%@?token=%@", baseURL, url, userDict[@"user"][@"token"]]];
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
-        request.HTTPMethod = @"GET";
-        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-        
-        [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-            if (!error) {
-                NSDictionary *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                
-                NSLog(@"got %@: %@", responseObject[@"destination"][@"id"], responseObject[@"destination"][@"name"]);
-//                [[TripManager getInstance] deleteAllObjects:@"HealthEntity"];
-//                [[TripManager getInstance] deleteAllObjects:@"EmbassyEntity"];
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@destinations/%@?token=%@", baseURL, url, userDict[@"user"][@"token"]]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
+    request.HTTPMethod = @"GET";
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (!error) {
+            NSDictionary *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSLog(@"got %@: %@", responseObject[@"destination"][@"id"], responseObject[@"destination"][@"name"]);
+            NSArray *savedCities = [[TripManager getInstance] getSavedCities];
 
-                NSArray *savedCities = [[TripManager getInstance] getSavedCities];
-//                
-                // update existing entries
-                CityEntity *city;
-                cityDict = responseObject[@"destination"];
-                
-                for (city in savedCities) {
-                    if ([city.destinationId isEqualToNumber:cityDict[@"id"]]) {
-                        NSLog(@"delete city");
-                        [[TripManager getInstance].managedObjectContext deleteObject:city]; // delete object
-                    }
+            // update existing entries
+            CityEntity *city;
+            cityDict = responseObject[@"destination"];
+            
+            for (city in savedCities) {
+                if ([city.destinationId isEqualToNumber:cityDict[@"id"]]) {
+                    [[TripManager getInstance] deleteHealthItemsWithCity:city];
+                    [[TripManager getInstance] deleteEmbassyItemsWithCity:city];
+                    [[TripManager getInstance].managedObjectContext deleteObject:city]; // delete object
                 }
-                NSLog(@"save city");
-                [[TripManager getInstance] saveCity:cityDict]; // replace it
-                [self fetchCurrency:cityDict];
-            } else {
-                NSLog(@"error: %@", error.localizedDescription);
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
             }
-        }];
+            
+            [[TripManager getInstance] saveCity:cityDict]; // replace it
+            [self fetchCurrency:cityDict];
+        } else {
+            NSLog(@"error: %@", error.localizedDescription);
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
+        }
+    }];
 }
+
 + (void)fetchEmbassy:(NSDictionary *)cityDict withCity:(CityEntity *)city {
     
     NSURL *embassyRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@diplomatic-offices/%@?origin_country=%@&token=%@", baseURL, cityDict[@"country"][@"country_code"], userDict[@"user"][@"country_code"], userDict[@"user"][@"token"]]];
@@ -88,7 +86,6 @@ static NSDictionary * cityDict;
     NSMutableURLRequest *currencyRequest = [[NSMutableURLRequest alloc] initWithURL:embassyRequestURL];
     currencyRequest.HTTPMethod = @"GET";
     [currencyRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
     [NSURLConnection sendAsynchronousRequest:currencyRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         if (!error) {
             //EmbassyEntity
@@ -97,9 +94,7 @@ static NSDictionary * cityDict;
             NSString *phone, *fax, *email, *hours, *notes, *services, *address, *country, *flag;
             
             for (NSDictionary *embassy in embassyObject[@"diplomatic_office"]) {
-                
                 country = embassy[@"name"];
-                
                 NSDictionary *embassyContent = embassy[@"content"];
                 
                 phone = embassyContent[@"telephone"];

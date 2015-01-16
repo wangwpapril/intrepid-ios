@@ -29,7 +29,19 @@ static TripManager *instance =nil;
     return instance;    
 }
 
--(NSArray *) getSavedCities {
+- (NSArray *)getDestinations {
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:@"DestinationEntity" inManagedObjectContext:managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    [request setReturnsObjectsAsFaults:NO];
+    
+    NSError *error;
+    NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
+    return intermediateArray;
+}
+
+- (NSArray *)getSavedCities {
     NSArray *cityArray = [self fetchCityArray];
     if (cityArray.count == 0) {
         cityArray = [self fetchCityArray];
@@ -37,11 +49,49 @@ static TripManager *instance =nil;
     return cityArray;
 }
 
--(void) addCityDict:(NSDictionary *)cityDict {
+- (NSArray *)fetchCityArray {
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:@"CityEntity" inManagedObjectContext:managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    
+    
+    NSError *error;
+    NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
+    return intermediateArray;
+}
+
+- (void)addCityDict:(NSDictionary *)cityDict {
     [unsavedCities addObject:cityDict];
 }
 
--(NSMutableArray *)getEmbassyItemsWithCity:(CityEntity*)city {
+- (NSMutableArray *)getHealthItemsWithCity:(CityEntity *)city {
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:@"HealthEntity" inManagedObjectContext:managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"city == %@", city]];
+    [request setEntity:entityDescription];
+    
+    NSError *error;
+    NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
+    NSMutableArray * diseases = [NSMutableArray new];
+    NSMutableArray * medication = [NSMutableArray new];
+    
+    for (HealthEntity *healthItem in intermediateArray) {
+        if ([healthItem.category isEqualToString:@"medications"]) {
+            [medication addObject:healthItem];
+        } else {
+            [diseases addObject:healthItem];
+        }
+    }
+    
+    NSMutableArray * healthArray = [NSMutableArray new];
+    [healthArray addObject:diseases];
+    [healthArray addObject:medication];
+    return healthArray;
+}
+
+- (NSMutableArray *)getEmbassyItemsWithCity:(CityEntity*)city {
     NSEntityDescription *entityDescription = [NSEntityDescription
                                               entityForName:@"EmbassyEntity" inManagedObjectContext:managedObjectContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -55,68 +105,11 @@ static TripManager *instance =nil;
     for (EmbassyEntity *embassyItem in intermediateArray) {
         [embassies addObject:embassyItem];
     }
-    //NSLog(@"embassies %@", embassies);
     
     return embassies;
 }
 
-- (NSArray *)getDestinations {
-    NSEntityDescription *entityDescription = [NSEntityDescription
-                                              entityForName:@"DestinationEntity" inManagedObjectContext:managedObjectContext];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDescription];
-    [request setReturnsObjectsAsFaults:NO];
-    
-    NSError *error;
-    NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
-    return intermediateArray;
-}
-
--(NSArray *)fetchCityArray {
-    NSEntityDescription *entityDescription = [NSEntityDescription
-                                              entityForName:@"CityEntity" inManagedObjectContext:managedObjectContext];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDescription];
-
-    
-    NSError *error;
-    NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
-    return intermediateArray;
-}
-
--(NSMutableArray *)getHealthItemsWithCity:(CityEntity *)city {
-    NSEntityDescription *entityDescription = [NSEntityDescription
-                                              entityForName:@"HealthEntity" inManagedObjectContext:managedObjectContext];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDescription];
-    
-    
-    NSError *error;
-    NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
-    NSMutableArray * diseases = [NSMutableArray new];
-    NSMutableArray * medication = [NSMutableArray new];
-
-    for (HealthEntity *healthItem in intermediateArray) {
-        if ([healthItem.city.cityName isEqualToString:city.cityName]) {
-            if ([healthItem.category isEqualToString:@"medications"]) {
-                [medication addObject:healthItem];
-            }
-            else {
-                [diseases addObject:healthItem];
-            }
-        }
-    }
-    
-    NSMutableArray * healthArray = [NSMutableArray new];
-
-    [healthArray addObject:diseases];
-    [healthArray addObject:medication];
-    
-    return healthArray;
-}
-
-
--(NSMutableArray *)getCurrencyItemsWithCity:(CityEntity *)city {
+- (NSMutableArray *)getCurrencyItemsWithCity:(CityEntity *)city {
     NSEntityDescription *entityDescription = [NSEntityDescription
                                               entityForName:@"CurrencyEntity" inManagedObjectContext:managedObjectContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -132,6 +125,55 @@ static TripManager *instance =nil;
     }
     
     return currencies;
+}
+
+- (void)deleteAllObjects:(NSString *)entityDescription  {
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityDescription inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSError *error;
+    NSArray *items = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    for (NSManagedObject *managedObject in items) {
+        [managedObjectContext deleteObject:managedObject];
+    }
+    if (![managedObjectContext save:&error]) {
+    }
+}
+
+- (void)deleteHealthItemsWithCity:(CityEntity *)city {
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:@"HealthEntity" inManagedObjectContext:managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"city == %@", city]];
+    [request setEntity:entityDescription];
+    
+    NSError *error;
+    NSArray *items = [managedObjectContext executeFetchRequest:request error:&error];
+
+    for (NSManagedObject *managedObject in items) {
+        [managedObjectContext deleteObject:managedObject];
+    }
+    if (![managedObjectContext save:&error]) {
+    }
+}
+
+- (void)deleteEmbassyItemsWithCity:(CityEntity *)city {
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:@"EmbassyEntity" inManagedObjectContext:managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"city == %@", city]];
+    [request setEntity:entityDescription];
+    
+    NSError *error;
+    NSArray *items = [managedObjectContext executeFetchRequest:request error:&error];
+    
+    for (NSManagedObject *managedObject in items) {
+        [managedObjectContext deleteObject:managedObject];
+    }
+    if (![managedObjectContext save:&error]) {
+    }
 }
 
 - (EmbassyEntity *)createEmbassyWithCity:(CityEntity *)city
@@ -274,26 +316,9 @@ static TripManager *instance =nil;
         NSLog(@"save failed");
     }
     return currency;
-    
-}
-
-- (void) deleteAllObjects: (NSString *) entityDescription  {
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:entityDescription inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    NSError *error;
-    NSArray *items = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
-    for (NSManagedObject *managedObject in items) {
-        [managedObjectContext deleteObject:managedObject];
-    }
-    if (![managedObjectContext save:&error]) {
-    }
 }
 
 - (void)saveCity:(NSDictionary *)cityDict {
-//    //CityEntity
     NSString *cityName, *cityImage, *continent, *cultureText, *cultureImage, *destinationType;
     NSString *generalText, *generalImage, *localText, *localImage;
     NSString *safetyImage, *safetyText, *clinicsURL, *weatherURL, *alertsURL;
@@ -352,6 +377,8 @@ static TripManager *instance =nil;
     
     CityEntity *city = [[TripManager getInstance] createTripWithCityImage:cityImage withCityName:cityName withContinent:continent withCultureText:cultureText withCultureImage:cultureImage withDestinationId:destinationId withDestinationType:destinationType withGeneralText:generalText withGeneralImage:generalImage withLocalImage:localImage withLocalText:localText withSafetyImage:safetyImage withSafetyText:safetyText withClinicsURL:clinicsURL withAlertsURL:alertsURL withWeatherURL:weatherURL withCADToNative:dollarRatio];
     
+    [RequestBuilder fetchEmbassy:cityDict withCity:city];
+    
     for (NSDictionary *medDict in cityDict[@"medications"]) {
         name = medDict[@"name"];
         category = @"medications";
@@ -390,7 +417,6 @@ static TripManager *instance =nil;
         
         [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImportant:important withImage:image];
     }
-    [RequestBuilder fetchEmbassy:cityDict withCity:city];
 }
 
 @end

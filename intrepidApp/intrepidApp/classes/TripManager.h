@@ -71,10 +71,12 @@
 - (CurrencyEntity *)createCurrencyItemWithCountry:(NSString *)country
                             withValue:(NSString *)value;
 
-- (void)deleteAllObjects:(NSString *)entityDescription;
 - (NSMutableArray *)getHealthItemsWithCity:(CityEntity *)city;
 - (NSMutableArray *)getCurrencyItemsWithCity:(CityEntity *)city;
 - (NSMutableArray *)getEmbassyItemsWithCity:(CityEntity *)city;
+- (void)deleteAllObjects:(NSString *)entityDescription;
+- (void)deleteHealthItemsWithCity:(CityEntity *)city;
+- (void)deleteEmbassyItemsWithCity:(CityEntity *)city;
 - (void)saveCity:(NSDictionary *)cityDict;
 
 @end
