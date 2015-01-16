@@ -40,7 +40,6 @@ static NSDictionary * cityDict;
             NSLog(@"error: %@", error.localizedDescription);
         }
         [[NSNotificationCenter defaultCenter] postNotificationName:@"DESTINATION_UPDATE" object:nil];
-        
     }];
 }
 
@@ -72,17 +71,14 @@ static NSDictionary * cityDict;
             [self fetchCurrency:cityDict];
         } else {
             NSLog(@"error: %@", error.localizedDescription);
+            NSLog(@"request trip update");
             [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
         }
     }];
 }
 
 + (void)fetchEmbassy:(NSDictionary *)cityDict withCity:(CityEntity *)city {
-    
     NSURL *embassyRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@diplomatic-offices/%@?origin_country=%@&token=%@", baseURL, cityDict[@"country"][@"country_code"], userDict[@"user"][@"country_code"], userDict[@"user"][@"token"]]];
-    
-    NSLog(@"req URL %@", embassyRequestURL);
-
     NSMutableURLRequest *currencyRequest = [[NSMutableURLRequest alloc] initWithURL:embassyRequestURL];
     currencyRequest.HTTPMethod = @"GET";
     [currencyRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -111,14 +107,13 @@ static NSDictionary * cityDict;
         } else {
             NSLog(@"error: %@", error.localizedDescription);
         }
+        NSLog(@"embassy trip update");
         [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
     }];
 }
 
 + (void)fetchCurrency:(NSDictionary *)cityDict {
-    
     NSDictionary *currencyDict = cityDict[@"country"];
-    
     //this is currently to demonstrate, remove once testing completed
     NSString *currencyCode = @"EUR"; //currencyDict[@"currency_code"];
     

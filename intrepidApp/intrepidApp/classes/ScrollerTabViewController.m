@@ -93,14 +93,13 @@
     [self.view addSubview:line];
 }
 
-- (void) addViews:(NSMutableArray *)arrayOfViews withVerticalOffset:(NSInteger)offset {
+- (void)addViews:(NSMutableArray *)arrayOfViews withVerticalOffset:(NSInteger)offset {
     NSInteger i = 0;
     NSInteger limit = arrayOfViews.count;
     NSInteger specialOffset = self.view.frame.size.height - 44;
     while (i < limit) {
         UIView *view =[arrayOfViews objectAtIndex:i];
         view.frame = CGRectMake(i*320, offset, 320, specialOffset);
-        NSLog(@"the view's y: %f, height: %f", view.frame.origin.y, view.frame.size.height);
         [scroll addSubview:[arrayOfViews objectAtIndex:i]];
         i++;
     }
@@ -110,7 +109,6 @@
 #pragma  mark - handle view swiping
 
 - (void)tabSelected:(id)sender {
-    NSLog(@"tab is clicked");
     UIButton *clickedTab = (UIButton *)sender;
     [self switchTabs:clickedTab.tag];
     [self.scroll scrollRectToVisible:CGRectMake(currentTab * 320, 0, 320, self.view.frame.size.height) animated:YES];

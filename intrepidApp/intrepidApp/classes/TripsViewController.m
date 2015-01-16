@@ -47,16 +47,6 @@
     } else {
         [self moveAllSubviewsDown];
     }
-    
-    // register for notifications
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(populateContentArray)
-                                                 name:@"DESTINATION_UPDATE"
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(populateTrip)
-                                                 name:@"TRIP_UPDATE"
-                                               object:nil];
 }
 
 - (void) moveAllSubviewsDown{
@@ -73,7 +63,27 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(populateContentArray)
+                                                 name:@"DESTINATION_UPDATE"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(populateTrip)
+                                                 name:@"TRIP_UPDATE"
+                                               object:nil];
+    
     [RequestBuilder fetchDestinations];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:@"DESTINATION_UPDATE"
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:@"TRIP_UPDATE"
+                                                  object:nil];
 }
 
 - (void)populateContentArray {
@@ -82,7 +92,7 @@
 
     TripManager *manager = [TripManager getInstance];
     NSArray *destinations = [manager getDestinations];
-//    cities = manager.unsavedCities;
+
     for (DestinationEntity *destination in destinations) {
         TripItem *trip = [[TripItem alloc] init];
         trip.city = destination.name;
@@ -95,19 +105,26 @@
 }
 
 - (void)populateTrip {
-    CityEntity *city;
     NSArray *savedCities = [[TripManager getInstance] getSavedCities];
-    for (CityEntity *destination in savedCities) {
-        if ([destination.destinationId isEqualToNumber:selectedTrip.destinationId]) {
-            city = destination;
+    for (CityEntity *city in savedCities) {
+        if ([city.destinationId isEqualToNumber:selectedTrip.destinationId]) {
+            [MenuController getInstance].city = city;
+            OverViewViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"overView"];
+            viewController.firstLoad = true;
+            [[MenuController getInstance] selectButtonWithTag:0];
+            [self.navigationController pushViewController:viewController animated:YES];
+            [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+            return;
         }
     }
     
-    [MenuController getInstance].city = city;
-    OverViewViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"overView"];
-    viewController.firstLoad = true;
-    [[MenuController getInstance] selectButtonWithTag:0];
-    [self.navigationController pushViewController:viewController animated:YES];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:@"The Internet connection appears to be offline."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    [alertView show];
+    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
 }
 
 -(void)addIntreSearchBar {
@@ -171,6 +188,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"selected row");
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
         selectedTrip = [filteredArray objectAtIndex:indexPath.row];
     }

@@ -153,13 +153,12 @@
     [scrollView scrollRectToVisible:frame animated:YES];
 }
 
--(void)toTrips {
-    NSLog(@"roll 2 tripz");
+- (void)toTrips {
     UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"trips"];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
--(void)toSecurity:sender {
+- (void)toSecurity:sender {
     NSInteger index = ((UIButton *)sender).tag;
     CityEntity *city = [cities objectAtIndex:index];
     [MenuController getInstance].city = city;
@@ -168,12 +167,6 @@
     [[MenuController getInstance] selectButtonWithTag:0];
     [self.navigationController pushViewController:viewController animated:YES];
 //    [[MenuController getInstance] showMenu];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
  - (void)viewWillAppear:(BOOL)animated {
@@ -200,7 +193,5 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     pageControlBeingUsed = NO;
 }
-
-
 
 @end
