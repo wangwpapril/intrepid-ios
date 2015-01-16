@@ -12,6 +12,7 @@
 
 @synthesize city;
 @synthesize continent;
+@synthesize destinationId;
 @synthesize image;
 
 @end

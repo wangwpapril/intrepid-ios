@@ -18,10 +18,10 @@
 @property ( strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NSMutableArray *unsavedCities;
 
-+(TripManager *)getInstance;
--(NSArray *) getSavedCities;
++ (TripManager *)getInstance;
+- (NSArray *)getSavedCities;
 - (NSArray *)getDestinations;
--(void) addCityDict:(NSDictionary *)cityDict;
+- (void)addCityDict:(NSDictionary *)cityDict;
 
 
 - (CityEntity *)createTripWithCityImage:(NSString *)cityImage
@@ -71,10 +71,10 @@
 - (CurrencyEntity *)createCurrencyItemWithCountry:(NSString *)country
                             withValue:(NSString *)value;
 
-- (void) deleteAllObjects: (NSString *) entityDescription;
--(NSMutableArray *)getHealthItemsWithCity:(CityEntity *)city;
--(NSMutableArray *)getCurrencyItemsWithCity:(CityEntity *)city;
--(NSMutableArray *)getEmbassyItemsWithCity:(CityEntity *)city;
+- (void)deleteAllObjects:(NSString *)entityDescription;
+- (NSMutableArray *)getHealthItemsWithCity:(CityEntity *)city;
+- (NSMutableArray *)getCurrencyItemsWithCity:(CityEntity *)city;
+- (NSMutableArray *)getEmbassyItemsWithCity:(CityEntity *)city;
 - (void)saveCity:(NSDictionary *)cityDict;
 
 @end

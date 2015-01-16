@@ -228,7 +228,6 @@ static TripManager *instance =nil;
     if (![managedObjectContext save:&error]) {
         NSLog(@"save failed");
     }
-    NSLog(@"saved destination: %@", destination);
     return destination;
 }
 

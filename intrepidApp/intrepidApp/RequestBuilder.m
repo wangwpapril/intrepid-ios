@@ -45,11 +45,7 @@ static NSDictionary * cityDict;
 }
 
 + (void)buildRequestWithURL:(NSString *)url {
-    
-        url = @"destinations"; // temp
-        NSLog(@"this is my user country code: %@", userDict[@"user"][@"country_code"]);
-        
-        NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@destinations?token=%@", baseURL, userDict[@"user"][@"token"]]];
+        NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@destinations/%@?token=%@", baseURL, url, userDict[@"user"][@"token"]]];
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
         request.HTTPMethod = @"GET";
         [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -57,48 +53,33 @@ static NSDictionary * cityDict;
         [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
             if (!error) {
                 NSDictionary *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                [[TripManager getInstance] deleteAllObjects:@"HealthEntity"];
-                [[TripManager getInstance] deleteAllObjects:@"EmbassyEntity"];
+                
+                NSLog(@"got %@: %@", responseObject[@"destination"][@"id"], responseObject[@"destination"][@"name"]);
+//                [[TripManager getInstance] deleteAllObjects:@"HealthEntity"];
+//                [[TripManager getInstance] deleteAllObjects:@"EmbassyEntity"];
 
-                
-                bool found;
                 NSArray *savedCities = [[TripManager getInstance] getSavedCities];
-                [TripManager getInstance].unsavedCities = [NSMutableArray new];
-                
+//                
                 // update existing entries
-                
                 CityEntity *city;
+                cityDict = responseObject[@"destination"];
                 
-                for (NSDictionary *cityDict in responseObject[@"destinations"]) {
-                    found = false;
-                    for (city in savedCities) {
-                        if ([city.cityName isEqualToString:cityDict[@"name"]]) {
-                            
-# warning move this functionality to TripManager
-                            [[TripManager getInstance].managedObjectContext deleteObject:city]; // delete object
-                            [[TripManager getInstance] saveCity:cityDict]; // replace it
-                            found = true;
-                        }
+                for (city in savedCities) {
+                    if ([city.destinationId isEqualToNumber:cityDict[@"id"]]) {
+                        NSLog(@"delete city");
+                        [[TripManager getInstance].managedObjectContext deleteObject:city]; // delete object
                     }
-                    
-                    // add a city to all cities
-                    if (!found) {
-                        [[TripManager getInstance] addCityDict:cityDict];
-                    }
-                    
-                    [self fetchCurrency:cityDict];
                 }
-                
+                NSLog(@"save city");
+                [[TripManager getInstance] saveCity:cityDict]; // replace it
+                [self fetchCurrency:cityDict];
             } else {
                 NSLog(@"error: %@", error.localizedDescription);
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
             }
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
-            
-            }];
-
-
+        }];
 }
-+(void)fetchEmbassy:(NSDictionary *)cityDict withCity:(CityEntity *)city {
++ (void)fetchEmbassy:(NSDictionary *)cityDict withCity:(CityEntity *)city {
     
     NSURL *embassyRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@diplomatic-offices/%@?origin_country=%@&token=%@", baseURL, cityDict[@"country"][@"country_code"], userDict[@"user"][@"country_code"], userDict[@"user"][@"token"]]];
     

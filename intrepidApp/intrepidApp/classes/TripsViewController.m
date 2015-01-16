@@ -8,7 +8,6 @@
 
 #import "TripsViewController.h"
 #import "MenuController.h"
-#import "TripItem.h"
 #import "TripCell.h"
 #import "OverViewViewController.h"
 #import "TripManager.h"
@@ -24,6 +23,7 @@
 @synthesize searchBar;
 @synthesize xButton;
 @synthesize cities;
+@synthesize selectedTrip;
 
 - (void)viewDidLoad
 {
@@ -53,6 +53,10 @@
                                              selector:@selector(populateContentArray)
                                                  name:@"DESTINATION_UPDATE"
                                                object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(populateTrip)
+                                                 name:@"TRIP_UPDATE"
+                                               object:nil];
 }
 
 - (void) moveAllSubviewsDown{
@@ -69,7 +73,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
-//    [RequestBuilder buildRequestWithURL:@"placeholder"];
     [RequestBuilder fetchDestinations];
 }
 
@@ -79,16 +82,34 @@
 
     TripManager *manager = [TripManager getInstance];
     NSArray *destinations = [manager getDestinations];
-    NSLog(@"%@", destinations);
 //    cities = manager.unsavedCities;
     for (DestinationEntity *destination in destinations) {
         TripItem *trip = [[TripItem alloc] init];
         trip.city = destination.name;
+        trip.destinationId = destination.destinationId;
         trip.continent = @"Europe";
         trip.image = @"Guada-icon.png";
         [tripsArray addObject:trip];
     }
     [tableList reloadData];
+}
+
+- (void)populateTrip {
+    //    NSInteger tripIndex = [tripsArray indexOfObject:trip];
+    //    [[TripManager getInstance] saveCity:cities[tripIndex]]; // replace it
+    CityEntity *city;
+    NSArray *savedCities = [[TripManager getInstance] getSavedCities];
+    for (CityEntity *town in savedCities) {
+        if ([town.cityName isEqualToString:selectedTrip.city]) {
+            city = town;
+        }
+    }
+    
+    [MenuController getInstance].city = city;
+    OverViewViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"overView"];
+    viewController.firstLoad = true;
+    [[MenuController getInstance] selectButtonWithTag:0];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 -(void)addIntreSearchBar {
@@ -152,29 +173,14 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    TripItem *trip;
     if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
-        trip = [filteredArray objectAtIndex:indexPath.row];
+        selectedTrip = [filteredArray objectAtIndex:indexPath.row];
     }
     else {
-        trip = [tripsArray objectAtIndex:indexPath.row];
+        selectedTrip = [tripsArray objectAtIndex:indexPath.row];
     }
     
-    NSInteger tripIndex = [tripsArray indexOfObject:trip];
-    [[TripManager getInstance] saveCity:cities[tripIndex]]; // replace it
-    CityEntity *city;
-    NSArray *savedCities = [[TripManager getInstance] getSavedCities];
-    for (CityEntity *town in savedCities) {
-        if ([town.cityName isEqualToString:trip.city]) {
-            city = town;
-        }
-    }
-    
-    [MenuController getInstance].city = city;
-    OverViewViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"overView"];
-    viewController.firstLoad = true;
-    [[MenuController getInstance] selectButtonWithTag:0];
-    [self.navigationController pushViewController:viewController animated:YES];
+    [RequestBuilder buildRequestWithURL:[NSString stringWithFormat:@"%@", selectedTrip.destinationId]];
 }
 
 #pragma mark Content Filtering
