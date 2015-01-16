@@ -54,9 +54,11 @@
 }
 
 -(void)loadCities {
-    
     TripManager *manager = [TripManager getInstance];
-    cities = [manager getSavedCities];
+    
+    NSArray *intermediateArray = [manager getSavedCities];
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"cityName" ascending:YES];
+    cities = [intermediateArray sortedArrayUsingDescriptors:@[sort]];
 
     NSMutableArray *cityArray = [NSMutableArray new];
     for (CityEntity *city in cities) {
