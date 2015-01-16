@@ -14,5 +14,7 @@
 @synthesize continent;
 @synthesize destinationId;
 @synthesize image;
+@synthesize image2x;
+@synthesize image3x;
 
 @end

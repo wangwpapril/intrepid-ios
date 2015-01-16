@@ -15,8 +15,7 @@
 
 @dynamic alertsURL;
 @dynamic cadToNative;
-@dynamic cityImage;
-@dynamic cityName;
+@dynamic destinationName;
 @dynamic clinicsURL;
 @dynamic continent;
 @dynamic cultureImage;
@@ -25,6 +24,9 @@
 @dynamic destinationType;
 @dynamic generalImage;
 @dynamic generalText;
+@dynamic introImage1x;
+@dynamic introImage2x;
+@dynamic introImage3x;
 @dynamic localImage;
 @dynamic localText;
 @dynamic safetyImage;

@@ -208,35 +208,39 @@ static TripManager *instance =nil;
     return embassy;
 }
 
-- (CityEntity *)createTripWithCityImage:(NSString *)cityImage
-                   withCityName:(NSString *)cityName
-                  withContinent:(NSString *)continent
-                withCultureText:(NSString *)cultureText
-               withCultureImage:(NSString *)cultureImage
-              withDestinationId:(NSInteger )destinationId
-            withDestinationType:(NSString *)destinationType
-                withGeneralText:(NSString *)generalText
-               withGeneralImage:(NSString *)generalImage
-                 withLocalImage:(NSString *)localImage
-                  withLocalText:(NSString *)localText
-             withSafetyImage:(NSString *)safetyImage
-              withSafetyText:(NSString *)safetyText
-                 withClinicsURL:(NSString *)clinicsURL
-                  withAlertsURL:(NSString *)alertsURL
-                 withWeatherURL:(NSString *)weatherURL
-                withCADToNative:(float) dollarRatio
+- (CityEntity *)createTripWithContinent:(NSString *)continent
+                        withCultureText:(NSString *)cultureText
+                       withCultureImage:(NSString *)cultureImage
+                    withDestinationName:(NSString *)destinationName
+                      withDestinationId:(NSInteger )destinationId
+                    withDestinationType:(NSString *)destinationType
+                        withGeneralText:(NSString *)generalText
+                       withGeneralImage:(NSString *)generalImage
+                       withIntroImage1x:(NSString *)introImage1x
+                       withIntroImage2x:(NSString *)introImage2x
+                       withIntroImage3x:(NSString *)introImage3x
+                         withLocalImage:(NSString *)localImage
+                          withLocalText:(NSString *)localText
+                        withSafetyImage:(NSString *)safetyImage
+                         withSafetyText:(NSString *)safetyText
+                         withClinicsURL:(NSString *)clinicsURL
+                          withAlertsURL:(NSString *)alertsURL
+                         withWeatherURL:(NSString *)weatherURL
+                        withCADToNative:(float) dollarRatio
 {
     CityEntity *city = [NSEntityDescription insertNewObjectForEntityForName:@"CityEntity" inManagedObjectContext:managedObjectContext];
 
-    city.cityImage = cityImage;
-    city.cityName = cityName;
     city.continent = continent;
     city.cultureImage = cultureImage;
     city.cultureText = cultureText;
+    city.destinationName = destinationName;
     city.destinationId = [NSNumber numberWithInteger:destinationId];
     city.destinationType = destinationType;
     city.generalImage = generalImage;
     city.generalText = generalText;
+    city.introImage1x = introImage1x;
+    city.introImage2x = introImage2x;
+    city.introImage3x = introImage3x;
     city.localImage = localImage;;
     city.localText = localText;
     city.safetyImage = safetyImage;
@@ -319,20 +323,15 @@ static TripManager *instance =nil;
 }
 
 - (void)saveCity:(NSDictionary *)cityDict {
-    NSString *cityName, *cityImage, *continent, *cultureText, *cultureImage, *destinationType;
-    NSString *generalText, *generalImage, *localText, *localImage;
-    NSString *safetyImage, *safetyText, *clinicsURL, *weatherURL, *alertsURL;
-    NSString *location, *climate, *type_of_government, *visa_requirements;
-    NSString *communication_infrastructure, *electricity, *development;
-    NSString *language, *religion, *ethnic_makeup, *cultural_norms;
-    NSString *safety, *other_concerns;
+    NSString *continent, *cultureText, *cultureImage, *destinationName, *destinationType, *generalText, *generalImage, *localText, *localImage, *safetyImage, *safetyText, *clinicsURL, *weatherURL, *alertsURL, *location, *climate, *type_of_government, *visa_requirements, *communication_infrastructure, *electricity, *development, *language, *religion, *ethnic_makeup, *cultural_norms, *safety, *other_concerns;
+    NSString *introImage1x, *introImage2x, *introImage3x;
     NSInteger destinationId;
     float dollarRatio;
     
     NSString *name, *category, *desc, *details, *symptoms, *immunizations, *important, *image;
     Boolean common;
     
-    cityName = cityDict[@"name"];
+    destinationName = cityDict[@"name"];
     destinationId = [cityDict[@"id"] integerValue];
     destinationType = cityDict[@"type"];
     
@@ -368,14 +367,16 @@ static TripManager *instance =nil;
     cultureImage = @"";
     safetyImage = @"";
     
-    cityImage = @"";
+    introImage1x = imageDict[@"intro"][@"versions"][@"1x"][@"source_url"];
+    introImage2x = imageDict[@"intro"][@"versions"][@"2x"][@"source_url"];
+    introImage3x = imageDict[@"intro"][@"versions"][@"3x"][@"source_url"];
     continent = @"";
     clinicsURL= @"";
     weatherURL = @"";
     alertsURL = @"";
     dollarRatio = 6.0;
     
-    CityEntity *city = [[TripManager getInstance] createTripWithCityImage:cityImage withCityName:cityName withContinent:continent withCultureText:cultureText withCultureImage:cultureImage withDestinationId:destinationId withDestinationType:destinationType withGeneralText:generalText withGeneralImage:generalImage withLocalImage:localImage withLocalText:localText withSafetyImage:safetyImage withSafetyText:safetyText withClinicsURL:clinicsURL withAlertsURL:alertsURL withWeatherURL:weatherURL withCADToNative:dollarRatio];
+    CityEntity *city = [[TripManager getInstance] createTripWithContinent:continent withCultureText:cultureText withCultureImage:cultureImage withDestinationName:destinationName withDestinationId:destinationId withDestinationType:destinationType withGeneralText:generalText withGeneralImage:generalImage withIntroImage1x:introImage1x withIntroImage2x:introImage2x withIntroImage3x:introImage3x withLocalImage:localImage withLocalText:localText withSafetyImage:safetyImage withSafetyText:safetyText withClinicsURL:clinicsURL withAlertsURL:alertsURL withWeatherURL:weatherURL withCADToNative:dollarRatio];
     
     [RequestBuilder fetchEmbassy:cityDict withCity:city];
     

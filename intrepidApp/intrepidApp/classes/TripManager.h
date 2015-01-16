@@ -24,15 +24,17 @@
 - (void)addCityDict:(NSDictionary *)cityDict;
 
 
-- (CityEntity *)createTripWithCityImage:(NSString *)cityImage
-                           withCityName:(NSString *)cityName
-                          withContinent:(NSString *)continent
+- (CityEntity *)createTripWithContinent:(NSString *)continent
                         withCultureText:(NSString *)cultureText
                        withCultureImage:(NSString *)cultureImage
+                    withDestinationName:(NSString *)destinationName
                       withDestinationId:(NSInteger )destinationId
                     withDestinationType:(NSString *)destinationType
                         withGeneralText:(NSString *)generalText
                        withGeneralImage:(NSString *)generalImage
+                        withIntroImage1x:(NSString *)introImage1x
+                        withIntroImage2x:(NSString *)introImage2x
+                        withIntroImage3x:(NSString *)introImage3x
                          withLocalImage:(NSString *)localImage
                           withLocalText:(NSString *)localText
                      withSafetyImage:(NSString *)safetyImage

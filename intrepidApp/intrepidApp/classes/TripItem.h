@@ -14,5 +14,7 @@
 @property (nonatomic, copy) NSString *continent;
 @property (nonatomic, copy) NSNumber *destinationId;
 @property (nonatomic, copy) NSString *image;
+@property (nonatomic, copy) NSString *image2x;
+@property (nonatomic, copy) NSString *image3x;
 
 @end

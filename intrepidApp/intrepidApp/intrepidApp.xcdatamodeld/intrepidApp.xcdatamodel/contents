@@ -3,8 +3,6 @@
     <entity name="CityEntity" representedClassName="CityEntity" syncable="YES">
         <attribute name="alertsURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cadToNative" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="cityImage" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="cityName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="climate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="clinicsURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="communication_infrastructure" optional="YES" attributeType="String" syncable="YES"/>
@@ -13,12 +11,16 @@
         <attribute name="cultureImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cultureText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="destinationId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="destinationName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="destinationType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="development" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="electricity" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="ethnic_makeup" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="generalImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="generalText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="introImage1x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="introImage2x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="introImage3x" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="localImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="localText" optional="YES" attributeType="String" syncable="YES"/>
@@ -70,7 +72,7 @@
         <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CityEntity" inverseName="health" inverseEntity="CityEntity" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CityEntity" positionX="-477" positionY="3" width="128" height="538"/>
+        <element name="CityEntity" positionX="-477" positionY="3" width="128" height="568"/>
         <element name="CurrencyEntity" positionX="-317" positionY="-63" width="128" height="73"/>
         <element name="EmbassyEntity" positionX="-677" positionY="-0" width="128" height="195"/>
         <element name="HealthEntity" positionX="-272" positionY="81" width="128" height="195"/>

@@ -57,14 +57,16 @@
     TripManager *manager = [TripManager getInstance];
     
     NSArray *intermediateArray = [manager getSavedCities];
-    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"cityName" ascending:YES];
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"destinationName" ascending:YES];
     cities = [intermediateArray sortedArrayUsingDescriptors:@[sort]];
 
     NSMutableArray *cityArray = [NSMutableArray new];
     for (CityEntity *city in cities) {
         TripItem *trip = [[TripItem alloc] init];
-        trip.image = city.cityImage;
-        trip.city = city.cityName;
+        trip.image = city.introImage1x;
+        trip.image2x = city.introImage2x;
+        trip.image3x = city.introImage3x;
+        trip.city = city.destinationName;
         [cityArray addObject:trip];
     }
     
@@ -72,6 +74,8 @@
     newTrip.image = @"ANew-trip";
     newTrip.city = @"A New Trip";
     [cityArray addObject:newTrip];
+    
+    double scaleFactor = [UIScreen mainScreen].scale;
     
     NSInteger height = scrollView.frame.size.height - 150.0;
     NSInteger width = height * 0.7322;
@@ -81,22 +85,27 @@
         CGRect frame;
         frame.origin.x = 320 * i + (320 - width)/2;
         frame.origin.y = scrollView.frame.origin.y + 37; // was 15
-        
         frame.size = CGSizeMake(width, height);
         
-        
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
-        imageView.image = [UIImage imageNamed:city.image];
-        [scrollView addSubview:imageView];
-        
         // make imageViews clickable with invisible buttons
         if (i == max) {
+            imageView.image = [UIImage imageNamed:city.image];
+            [scrollView addSubview:imageView];
+            
             UIButton *toTrips = [UIButton buttonWithType:UIButtonTypeCustom];
             toTrips.frame = imageView.frame;
             [toTrips addTarget:self action:@selector(toTrips) forControlEvents:UIControlEventTouchUpInside];
             [scrollView addSubview:toTrips];
         }
         else {
+            if (scaleFactor > 2.9) {
+                imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[city.image3x stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]] scale:3.0];
+            } else {
+                imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[city.image2x stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]] scale:2.0];
+            }
+            [scrollView addSubview:imageView];
+            
             UIButton *toSecurity = [UIButton buttonWithType:UIButtonTypeCustom];
             toSecurity.tag = i;
             toSecurity.frame = imageView.frame;
@@ -111,7 +120,7 @@
         cityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
         cityName.backgroundColor = [UIColor clearColor];
         cityName.textColor = [UIColor whiteColor];
-        cityName.text =city.city;
+        cityName.text = city.city;
         [scrollView addSubview:cityName];
         
         i++;
