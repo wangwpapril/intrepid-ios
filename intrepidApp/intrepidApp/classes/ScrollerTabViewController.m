@@ -50,13 +50,6 @@
     [mController displayMenuWithParent:self];
 }
 
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (CityEntity *)getCity {
     return mController.city;
 }
@@ -114,7 +107,7 @@
     [self.scroll scrollRectToVisible:CGRectMake(currentTab * 320, 0, 320, self.view.frame.size.height) animated:YES];
 }
 
--(void)addLineToTab {
+- (void)addLineToTab {
     UIButton *tab = ((UIButton *)[tabArray objectAtIndex:currentTab]);
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
@@ -131,7 +124,7 @@
 }
 
 
--(void)switchTabs:(NSInteger)newTag{ // refactor this method so that line drawin / tab selection is separated
+- (void)switchTabs:(NSInteger)newTag{ // refactor this method so that line drawin / tab selection is separated
     previousTab = currentTab;
     NSInteger index = 0;
     
@@ -189,7 +182,7 @@
 
 #pragma mark - scrollView delegate methods
 
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     CGFloat pageWidth = self.scroll.frame.size.width;
     int page = floor((scroll.contentOffset.x - pageWidth / 2)/pageWidth) +1;
     [self switchTabs:page];

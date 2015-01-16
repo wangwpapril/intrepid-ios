@@ -52,6 +52,7 @@
     tableList.dataSource = self;
     tableList.delegate = self;
     tableList.scrollEnabled = YES;
+    tableList.allowsSelection = NO;
     [currency addTableViewWithRows:currencyArray.count withTableView:tableList];
     
     NSMutableArray *views = [NSMutableArray arrayWithObjects:history, culture, currency, nil];
@@ -94,12 +95,9 @@
         }
 }
 
--(void)populateCurrencyItems {
+- (void)populateCurrencyItems {
     CityEntity *city = [self getCity];
-    
     currencyArray = [[TripManager getInstance] getCurrencyItemsWithCity:city];
-
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -115,7 +113,7 @@
     return currencyArray.count;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *CellIdentifier = [NSString stringWithFormat:@"Cell"];
     CurrencyCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -127,13 +125,13 @@
     CurrencyEntity *item = [currencyArray objectAtIndex:indexPath.row];
     [cell setupWithCountry:item.country withValue:item.value];
     
-    UIView *bgColorView = [[UIView alloc] init];
-    [bgColorView setBackgroundColor:UIColorFromRGB(0xdaf1f4)];
-    [cell setSelectedBackgroundView:bgColorView];
-    
-    if (cell.selected) {
-        cell.detailTextLabel.font = [UIFont fontWithName:@"ProximaNova-Bold" size:16];
-    }    
+//    UIView *bgColorView = [[UIView alloc] init];
+//    [bgColorView setBackgroundColor:UIColorFromRGB(0xdaf1f4)];
+//    [cell setSelectedBackgroundView:bgColorView];
+//    
+//    if (cell.selected) {
+//        cell.detailTextLabel.font = [UIFont fontWithName:@"ProximaNova-Bold" size:16];
+//    }
     
     return cell;
 }
