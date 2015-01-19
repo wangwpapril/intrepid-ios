@@ -88,6 +88,7 @@ static NSDictionary * cityDict;
             NSDictionary *embassyObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             
             NSString *phone, *fax, *email, *hours, *notes, *services, *address, *country, *flag;
+            NSString *image1x, *image2x, *image3x;
             
             for (NSDictionary *embassy in embassyObject[@"diplomatic_office"]) {
                 country = embassy[@"name"];
@@ -100,9 +101,19 @@ static NSDictionary * cityDict;
                 address = embassyContent[@"address"];
                 notes = embassyContent[@"notes"];
                 services = embassyContent[@"services_offered"];
+
+                if (embassy[@"images"] != [NSNull null]) {
+                    image1x = embassy[@"images"][@"embassy"][@"versions"][@"1x"][@"source_url"];
+                    image2x = embassy[@"images"][@"embassy"][@"versions"][@"2x"][@"source_url"];
+                    image3x = embassy[@"images"][@"embassy"][@"versions"][@"3x"][@"source_url"];
+                } else {
+                    image1x = @"";
+                    image2x = @"";
+                    image3x = @"";
+                }
                 
                 flag = @"";
-                [[TripManager getInstance] createEmbassyWithCity:city withPhone:phone withFax:fax withEmail:email withHours:hours withNotes:notes withServices:services withAddress:address withCountry:country withFlag:flag];
+                [[TripManager getInstance] createEmbassyWithCity:city withPhone:phone withFax:fax withEmail:email withHours:hours withNotes:notes withServices:services withAddress:address withCountry:country withFlag:flag withImage1x:image1x withImage2x:image2x withImage3x:image3x];
             }
         } else {
             NSLog(@"error: %@", error.localizedDescription);

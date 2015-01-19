@@ -186,6 +186,9 @@ static TripManager *instance =nil;
             withAddress:(NSString *)address
             withCountry:(NSString *)country
                withFlag:(NSString *)flag
+            withImage1x:(NSString *)image1x
+            withImage2x:(NSString *)image2x
+            withImage3x:(NSString *)image3x
 {
     EmbassyEntity *embassy = [NSEntityDescription insertNewObjectForEntityForName:@"EmbassyEntity" inManagedObjectContext:managedObjectContext];
 
@@ -199,6 +202,9 @@ static TripManager *instance =nil;
     embassy.city = city;
     embassy.country = country;
     embassy.flag = flag;
+    embassy.image1x = image1x;
+    embassy.image2x = image2x;
+    embassy.image3x = image3x;
     [city addEmbassiesObject:embassy];
     
     NSError *error = nil;

@@ -40,8 +40,9 @@
     [political addTextAreaWithText:city.safetyText];
     
     SlidingTextView *embassy = [[SlidingTextView alloc] initWithFrame:frame];
-    [embassy setupWithImageName1x:@"" withImageName2x:@"" withImageName3x:@"" withTitle:@"Embassy" withIconName:@"embassy-icon"];
-    
+    EmbassyEntity *embassyEntity = embassyArray[0];
+    [embassy setupWithImageName1x:embassyEntity.image1x withImageName2x:embassyEntity.image2x withImageName3x:embassyEntity.image3x withTitle:@"Embassy" withIconName:@"embassy-icon"];
+
     // embassies
     tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 308,  320, height - 308)];
     tableList.dataSource = self;

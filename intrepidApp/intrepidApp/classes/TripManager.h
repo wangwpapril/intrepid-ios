@@ -60,7 +60,10 @@
                  withServices:(NSString *)services
                   withAddress:(NSString *)address
                   withCountry:(NSString *)country
-                     withFlag:(NSString *)flag;
+                     withFlag:(NSString *)flag
+                  withImage1x:(NSString *)image1x
+                  withImage2x:(NSString *)image2x
+                  withImage3x:(NSString *)image3x;
 
 - (HealthEntity *)createHealthItemWithCity:(CityEntity *)city
                     withCategory:(NSString *)category

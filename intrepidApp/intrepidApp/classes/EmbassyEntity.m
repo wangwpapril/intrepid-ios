@@ -13,14 +13,17 @@
 @implementation EmbassyEntity
 
 @dynamic address;
+@dynamic city;
+@dynamic country;
 @dynamic email;
 @dynamic fax;
+@dynamic flag;
 @dynamic hours;
+@dynamic image1x;
+@dynamic image2x;
+@dynamic image3x;
 @dynamic notes;
 @dynamic phone;
 @dynamic services;
-@dynamic country;
-@dynamic flag;
-@dynamic city;
 
 @end
