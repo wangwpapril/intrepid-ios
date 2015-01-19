@@ -24,21 +24,24 @@
 - (void)addCityDict:(NSDictionary *)cityDict;
 
 
-- (CityEntity *)createTripWithContinent:(NSString *)continent
-                        withCultureText:(NSString *)cultureText
-                       withCultureImage:(NSString *)cultureImage
+- (CityEntity *)createTripWithCultureText:(NSString *)cultureText
+                       withCultureImage1x:(NSString *)cultureImage1x
+                       withCultureImage2x:(NSString *)cultureImage2x
+                       withCultureImage3x:(NSString *)cultureImage3x
                     withDestinationName:(NSString *)destinationName
                       withDestinationId:(NSInteger )destinationId
                     withDestinationType:(NSString *)destinationType
                         withGeneralText:(NSString *)generalText
-                       withGeneralImage:(NSString *)generalImage
+                       withGeneralImage1x:(NSString *)generalImage1x
+                       withGeneralImage2x:(NSString *)generalImage2x
+                       withGeneralImage3x:(NSString *)generalImage3x
                         withIntroImage1x:(NSString *)introImage1x
                         withIntroImage2x:(NSString *)introImage2x
                         withIntroImage3x:(NSString *)introImage3x
-                         withLocalImage:(NSString *)localImage
-                          withLocalText:(NSString *)localText
-                     withSafetyImage:(NSString *)safetyImage
-                      withSafetyText:(NSString *)safetyText
+                        withSafetyImage1x:(NSString *)safetyImage1x
+                        withSafetyImage2x:(NSString *)safetyImage2x
+                        withSafetyImage3x:(NSString *)safetyImage3x
+                         withSafetyText:(NSString *)safetyText
                          withClinicsURL:(NSString *)clinicsURL
                           withAlertsURL:(NSString *)alertsURL
                          withWeatherURL:(NSString *)weatherURL

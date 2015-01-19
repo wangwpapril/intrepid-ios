@@ -22,7 +22,7 @@
     return self;
 }
 
--(void)setupWithImageName:(NSString *)image withTitle:(NSString *)title withIconName:(NSString *)icon {
+- (void)setupWithImageName1x:(NSString *)image1x withImageName2x:(NSString *)image2x withImageName3x:(NSString *)image3x withTitle:(NSString *)title withIconName:(NSString *)icon {
     
 //    CGRect rect=CGRectMake(0, 0, 320, 480);
     scroll = [[UIScrollView alloc] initWithFrame:self.frame];
@@ -31,7 +31,18 @@
     scroll.scrollEnabled = YES;
     
     // top image
-    UIImageView  *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:image]];
+    UIImageView  *imageView = [[UIImageView alloc] init];
+    double scaleFactor = [UIScreen mainScreen].scale;
+    if (scaleFactor > 2.9 && ![image3x isEqualToString:@""]) {
+        imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[image3x stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]] scale:3.0];
+    } else if (![image2x isEqualToString:@""]) {
+        imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[image2x stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]] scale:2.0];
+    } else if (![image1x isEqualToString:@""]) {
+        imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[image1x stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]] scale:1.0];
+    } else {
+        imageView.image = [UIImage imageNamed:@"overview-currency"];
+    }
+    
     imageView.frame = CGRectMake(0, 0, 320, 268);
     [scroll addSubview:imageView];
     

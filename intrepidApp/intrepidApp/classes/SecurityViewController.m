@@ -36,11 +36,11 @@
     CityEntity *city = [self getCity];
     SlidingTextView *political = [[SlidingTextView alloc] initWithFrame:frame];
     
-    [political setupWithImageName:city.safetyImage withTitle:@"Safety" withIconName:@"Political-icon"];
+    [political setupWithImageName1x:city.safetyImage1x withImageName2x:city.safetyImage2x withImageName3x:city.safetyImage3x withTitle:@"Safety" withIconName:@"Political-icon"];
     [political addTextAreaWithText:city.safetyText];
     
     SlidingTextView *embassy = [[SlidingTextView alloc] initWithFrame:frame];
-    [embassy setupWithImageName:@"" withTitle:@"Embassy" withIconName:@"embassy-icon"];
+    [embassy setupWithImageName1x:@"" withImageName2x:@"" withImageName3x:@"" withTitle:@"Embassy" withIconName:@"embassy-icon"];
     
     // embassies
     tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 308,  320, height - 308)];

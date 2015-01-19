@@ -35,17 +35,17 @@
     CityEntity *city = [self getCity];
     
     SlidingTextView *history = [[SlidingTextView alloc] initWithFrame:frame];
-    [history setupWithImageName:city.generalImage withTitle:@"General" withIconName:@"descriptionAndSideEffectLogo"];
+    [history setupWithImageName1x:city.generalImage1x withImageName2x:city.generalImage2x withImageName3x:city.generalImage3x withTitle:@"General" withIconName:@"descriptionAndSideEffectLogo"];
     [history addTextAreaWithText:city.generalText];
     
     
     SlidingTextView *culture = [[SlidingTextView alloc] initWithFrame:frame];
-    [culture setupWithImageName:city.cultureImage withTitle:@"Culture" withIconName:@"culture-icon"];
+    [culture setupWithImageName1x:city.cultureImage1x withImageName2x:city.cultureImage2x withImageName3x:city.cultureImage3x withTitle:@"Culture" withIconName:@"culture-icon"];
     [culture addTextAreaWithText:city.cultureText];
     
 
     SlidingTextView *currency = [[SlidingTextView alloc] initWithFrame:frame];
-    [currency setupWithImageName:@"overview-currency" withTitle:@"Currency (approx.)" withIconName:@"Currency-Icon"];
+    [currency setupWithImageName1x:@"" withImageName2x:@"" withImageName3x:@"" withTitle:@"Currency (approx.)" withIconName:@"Currency-Icon"];
     
     // currency table
     tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 308,  320, height - 308)];
