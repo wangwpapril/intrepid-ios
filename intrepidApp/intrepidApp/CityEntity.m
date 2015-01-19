@@ -34,6 +34,7 @@
 @dynamic generalImage2x;
 @dynamic generalImage3x;
 @dynamic generalText;
+@dynamic health;
 @dynamic introImage1x;
 @dynamic introImage2x;
 @dynamic introImage3x;

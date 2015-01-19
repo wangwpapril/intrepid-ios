@@ -29,7 +29,7 @@
 
     embassyArray = [self.mController.city.embassies allObjects]; // makes array from set
     self.navigationItem.title = @"Security";
-    [self populateEmbassyItems];
+//    [self populateEmbassyItems];
     
     NSInteger height = self.view.bounds.size.height;
     CGRect frame = CGRectMake(0, 0, 320, height);
@@ -122,12 +122,6 @@
     EmbassyDetailedViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"embassyDetailed"];
     viewController.embassyItem = selectedItem; // MUST CHANGE, same for detailed controller
     [self.navigationController pushViewController:viewController animated:YES];
-}
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
 }
 
 @end
