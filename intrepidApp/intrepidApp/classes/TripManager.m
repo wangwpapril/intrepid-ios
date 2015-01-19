@@ -113,13 +113,13 @@ static TripManager *instance =nil;
     NSEntityDescription *entityDescription = [NSEntityDescription
                                               entityForName:@"CurrencyEntity" inManagedObjectContext:managedObjectContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"city == %@", city]];
     [request setEntity:entityDescription];
-    
     
     NSError *error;
     NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
     NSMutableArray * currencies = [NSMutableArray new];
-    
+
     for (CurrencyEntity *currencyItem in intermediateArray) {
         [currencies addObject:currencyItem];
     }
@@ -162,6 +162,23 @@ static TripManager *instance =nil;
 - (void)deleteEmbassyItemsWithCity:(CityEntity *)city {
     NSEntityDescription *entityDescription = [NSEntityDescription
                                               entityForName:@"EmbassyEntity" inManagedObjectContext:managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"city == %@", city]];
+    [request setEntity:entityDescription];
+    
+    NSError *error;
+    NSArray *items = [managedObjectContext executeFetchRequest:request error:&error];
+    
+    for (NSManagedObject *managedObject in items) {
+        [managedObjectContext deleteObject:managedObject];
+    }
+    if (![managedObjectContext save:&error]) {
+    }
+}
+
+- (void)deleteCurrencyItemsWithCity:(CityEntity *)city {
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:@"CurrencyEntity" inManagedObjectContext:managedObjectContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setPredicate:[NSPredicate predicateWithFormat:@"city == %@", city]];
     [request setEntity:entityDescription];
@@ -286,6 +303,7 @@ static TripManager *instance =nil;
     if (![managedObjectContext save:&error]) {
         NSLog(@"save failed");
     }
+    
     return destination;
 }
 
@@ -300,7 +318,6 @@ static TripManager *instance =nil;
                              withImportant:(NSString *)important
                                  withImage:(NSString *)image{
     HealthEntity *health = [NSEntityDescription insertNewObjectForEntityForName:@"HealthEntity" inManagedObjectContext:managedObjectContext];
-    
     
     health.city = city;
     health.category = category;
@@ -317,13 +334,16 @@ static TripManager *instance =nil;
     if (![managedObjectContext save:&error]) {
         NSLog(@"save failed");
     }
+    
     return health;
 }
 
-- (CurrencyEntity *)createCurrencyItemWithCountry:(NSString *)country
+- (CurrencyEntity *)createCurrencyItemWithCity:(CityEntity *)city
+                                       Country:(NSString *)country
                                      withValue:(NSString *)value {
     CurrencyEntity *currency = [NSEntityDescription insertNewObjectForEntityForName:@"CurrencyEntity" inManagedObjectContext:managedObjectContext];
     
+    currency.city = city;
     currency.country = country;
     currency.value = value;
     
@@ -331,6 +351,7 @@ static TripManager *instance =nil;
     if (![managedObjectContext save:&error]) {
         NSLog(@"save failed");
     }
+
     return currency;
 }
 
@@ -429,6 +450,7 @@ static TripManager *instance =nil;
                                                             withCADToNative:dollarRatio];
     
     [RequestBuilder fetchEmbassy:cityDict withCity:city];
+    [RequestBuilder fetchCurrency:cityDict withCity:city];
     
     for (NSDictionary *medDict in cityDict[@"medications"]) {
         name = medDict[@"name"];

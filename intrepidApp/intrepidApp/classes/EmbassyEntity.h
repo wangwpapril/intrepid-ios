@@ -14,7 +14,7 @@
 @interface EmbassyEntity : NSManagedObject
 
 @property (nonatomic, retain) NSString * address;
-@property (nonatomic, retain) CityEntity *city;
+@property (nonatomic, retain) CityEntity * city;
 @property (nonatomic, retain) NSString * country;
 @property (nonatomic, retain) NSString * email;
 @property (nonatomic, retain) NSString * fax;

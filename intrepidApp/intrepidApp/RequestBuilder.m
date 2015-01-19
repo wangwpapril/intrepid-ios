@@ -43,8 +43,8 @@ static NSDictionary * cityDict;
     }];
 }
 
-+ (void)buildRequestWithURL:(NSString *)url {
-    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@destinations/%@?token=%@", baseURL, url, userDict[@"user"][@"token"]]];
++ (void)fetchTrip:(NSString *)trip {
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@destinations/%@?token=%@", baseURL, trip, userDict[@"user"][@"token"]]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
     request.HTTPMethod = @"GET";
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -52,7 +52,6 @@ static NSDictionary * cityDict;
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         if (!error) {
             NSDictionary *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            NSLog(@"got %@: %@", responseObject[@"destination"][@"id"], responseObject[@"destination"][@"name"]);
             NSArray *savedCities = [[TripManager getInstance] getSavedCities];
 
             // update existing entries
@@ -63,12 +62,12 @@ static NSDictionary * cityDict;
                 if ([city.destinationId isEqualToNumber:cityDict[@"id"]]) {
                     [[TripManager getInstance] deleteHealthItemsWithCity:city];
                     [[TripManager getInstance] deleteEmbassyItemsWithCity:city];
+                    [[TripManager getInstance] deleteCurrencyItemsWithCity:city];
                     [[TripManager getInstance].managedObjectContext deleteObject:city]; // delete object
                 }
             }
             
             [[TripManager getInstance] saveCity:cityDict]; // replace it
-            [self fetchCurrency:cityDict];
         } else {
             NSLog(@"error: %@", error.localizedDescription);
             NSLog(@"request trip update");
@@ -118,38 +117,29 @@ static NSDictionary * cityDict;
         } else {
             NSLog(@"error: %@", error.localizedDescription);
         }
-        NSLog(@"embassy trip update");
+        
         [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
     }];
 }
 
-+ (void)fetchCurrency:(NSDictionary *)cityDict {
-    NSDictionary *currencyDict = cityDict[@"country"];
-    //this is currently to demonstrate, remove once testing completed
-    NSString *currencyCode = @"EUR"; //currencyDict[@"currency_code"];
-    
-    NSURL *currencyRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",currencyURL, @"CAD"]];
++ (void)fetchCurrency:(NSDictionary *)cityDict withCity:(CityEntity *)city {
+    NSString *currencyCode = cityDict[@"country"][@"currency_code"];
+    NSURL *currencyRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@&symbols=%@", currencyURL, userDict[@"user"][@"currency_code"], currencyCode]];
     NSMutableURLRequest *currencyRequest = [[NSMutableURLRequest alloc] initWithURL:currencyRequestURL];
     
     [NSURLConnection sendAsynchronousRequest:currencyRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         if (!error) {
             NSDictionary *currencyObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            
-            [[TripManager getInstance] deleteAllObjects:@"CurrencyEntity"];
-            NSDictionary *currencyDict = currencyObject[@"rates"];
-            for (NSString *country in currencyDict) {
-                NSString *value;
-                float valueConv;
+            for (NSString *country in currencyObject[@"rates"]) {
                 if ([country isEqualToString:currencyCode]) {
-                    value = [[currencyDict objectForKey:country] stringValue];
+                    NSString *value = [currencyObject[@"rates"][country] stringValue];
                     NSString *slicedValue = [value substringToIndex:4];
-                    [[TripManager getInstance] createCurrencyItemWithCountry:country withValue:slicedValue];
+                    [[TripManager getInstance] createCurrencyItemWithCity:city Country:country withValue:slicedValue];
                     
-                    valueConv = [value floatValue];
+                    float valueConv = [value floatValue];
                     float cityToCad = (1/valueConv);
-                    
                     NSString *cityToCadStr = [NSString stringWithFormat:@"%.2f", cityToCad];
-                    [[TripManager getInstance] createCurrencyItemWithCountry:@"CAD" withValue:cityToCadStr];
+                    [[TripManager getInstance] createCurrencyItemWithCity:city Country:userDict[@"user"][@"currency_code"] withValue:cityToCadStr];
                 }
             }
         } else {

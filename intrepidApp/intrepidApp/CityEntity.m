@@ -9,15 +9,13 @@
 #import "CityEntity.h"
 #import "EmbassyEntity.h"
 #import "HealthEntity.h"
-
+#import "CurrencyEntity.h"
 
 @implementation CityEntity
 
 @dynamic alertsURL;
 @dynamic cadToNative;
 @dynamic climate;
-@dynamic destinationName;
-@dynamic development;
 @dynamic clinicsURL;
 @dynamic communication_infrastructure;
 @dynamic cultural_norms;
@@ -25,8 +23,11 @@
 @dynamic cultureImage2x;
 @dynamic cultureImage3x;
 @dynamic cultureText;
+@dynamic currency;
 @dynamic destinationId;
+@dynamic destinationName;
 @dynamic destinationType;
+@dynamic development;
 @dynamic electricity;
 @dynamic embassies;
 @dynamic ethnic_makeup;

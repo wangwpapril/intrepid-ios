@@ -12,6 +12,7 @@
 
 @implementation CurrencyEntity
 
+@dynamic city;
 @dynamic country;
 @dynamic value;
 

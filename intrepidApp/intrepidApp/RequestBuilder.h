@@ -13,7 +13,8 @@
 
 + (void)fetchUser:(NSDictionary *)user;
 + (void)fetchDestinations;
-+ (void)buildRequestWithURL:(NSString *)url;
++ (void)fetchTrip:(NSString *)trip;
 + (void)fetchEmbassy:(NSDictionary *)cityDict withCity:(CityEntity *)city;
++ (void)fetchCurrency:(NSDictionary *)cityDict withCity:(CityEntity *)city;
 
 @end

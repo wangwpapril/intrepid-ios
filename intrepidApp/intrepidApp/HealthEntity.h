@@ -22,6 +22,6 @@
 @property (nonatomic, retain) NSString * immunization;
 @property (nonatomic, retain) NSString * important;
 @property (nonatomic, retain) NSString * image;
-@property (nonatomic, retain) CityEntity *city;
+@property (nonatomic, retain) CityEntity * city;
 
 @end

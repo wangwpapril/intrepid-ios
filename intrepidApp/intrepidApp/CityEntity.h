@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class EmbassyEntity, HealthEntity;
+@class EmbassyEntity, HealthEntity, CurrencyEntity;
 
 @interface CityEntity : NSManagedObject
 
@@ -23,18 +23,19 @@
 @property (nonatomic, retain) NSString * cultureImage2x;
 @property (nonatomic, retain) NSString * cultureImage3x;
 @property (nonatomic, retain) NSString * cultureText;
+@property (nonatomic, retain) CurrencyEntity * currency;
 @property (nonatomic, retain) NSNumber * destinationId;
 @property (nonatomic, retain) NSString * destinationName;
 @property (nonatomic, retain) NSString * destinationType;
 @property (nonatomic, retain) NSString * development;
 @property (nonatomic, retain) NSString * electricity;
-@property (nonatomic, retain) NSSet *embassies;
+@property (nonatomic, retain) NSSet * embassies;
 @property (nonatomic, retain) NSString * ethnic_makeup;
 @property (nonatomic, retain) NSString * generalImage1x;
 @property (nonatomic, retain) NSString * generalImage2x;
 @property (nonatomic, retain) NSString * generalImage3x;
 @property (nonatomic, retain) NSString * generalText;
-@property (nonatomic, retain) HealthEntity *health;
+@property (nonatomic, retain) HealthEntity * health;
 @property (nonatomic, retain) NSString * introImage1x;
 @property (nonatomic, retain) NSString * introImage2x;
 @property (nonatomic, retain) NSString * introImage3x;

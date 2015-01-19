@@ -76,8 +76,9 @@
                         withImportant:(NSString *)important
                         withImage:(NSString *)image;
 
-- (CurrencyEntity *)createCurrencyItemWithCountry:(NSString *)country
-                            withValue:(NSString *)value;
+- (CurrencyEntity *)createCurrencyItemWithCity:(CityEntity *)city
+                                       Country:(NSString *)country
+                                     withValue:(NSString *)value;
 
 - (NSMutableArray *)getHealthItemsWithCity:(CityEntity *)city;
 - (NSMutableArray *)getCurrencyItemsWithCity:(CityEntity *)city;
@@ -85,6 +86,7 @@
 - (void)deleteAllObjects:(NSString *)entityDescription;
 - (void)deleteHealthItemsWithCity:(CityEntity *)city;
 - (void)deleteEmbassyItemsWithCity:(CityEntity *)city;
+- (void)deleteCurrencyItemsWithCity:(CityEntity *)city;
 - (void)saveCity:(NSDictionary *)cityDict;
 
 @end

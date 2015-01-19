@@ -188,7 +188,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"selected row");
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
         selectedTrip = [filteredArray objectAtIndex:indexPath.row];
@@ -197,7 +196,7 @@
         selectedTrip = [tripsArray objectAtIndex:indexPath.row];
     }
     
-    [RequestBuilder buildRequestWithURL:[NSString stringWithFormat:@"%@", selectedTrip.destinationId]];
+    [RequestBuilder fetchTrip:[NSString stringWithFormat:@"%@", selectedTrip.destinationId]];
 }
 
 #pragma mark Content Filtering
