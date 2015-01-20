@@ -46,7 +46,7 @@
 -(void)addContent {
     //Ambulance Image
     UIImage *ambulance;
-    ambulance = [UIImage imageNamed:@"IMG"];
+    ambulance = [UIImage imageNamed:@"ambulance"];
     UIImageView *ambulanceImage = [[UIImageView alloc] initWithImage:ambulance];
     ambulanceImage.frame = CGRectMake(0, 0, 320, ambulanceImage.frame.size.height*1);
     
@@ -73,10 +73,15 @@
     
     
     //Call Assistance Button
-    UIImage *callAssistanceImage = [UIImage imageNamed:@"Call-Intrepid247"];
-    UIButton *callAssistance = [[UIButton alloc] init];
-    [callAssistance setImage:callAssistanceImage forState:UIControlStateNormal];
+        UIButton *callAssistance = [[UIButton alloc] init];
+    // [callAssistance setImage:callAssistanceImage forState:UIControlStateNormal];
+    callAssistance.backgroundColor = [UIColor colorWithRed:0.53 green:0.73 blue:0.14 alpha:1];
     callAssistance.frame = CGRectMake(0, mapImage.frame.origin.y + mapImage.frame.size.height - 2, 320, 128*0.5);
+    callAssistance.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:21];
+    callAssistance.tintColor = [UIColor clearColor];
+    [callAssistance setTitleColor: [UIColor colorWithRed:1 green:1 blue:1 alpha:1] forState:UIControlStateNormal];
+    [callAssistance setTitle:@"Contact ACE Assistance" forState:UIControlStateNormal];
+
     [callAssistance addTarget:self
                         action:@selector(callAssistance:)
               forControlEvents:UIControlEventTouchUpInside];
