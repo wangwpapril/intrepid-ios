@@ -82,10 +82,10 @@
 - (void)addContent {
     int y = 0;
     UIImageView  *descriptionImageLabel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"stethoscope-pic"]];
-    descriptionImageLabel.frame = CGRectMake(5, 10, 25, 25);
+    descriptionImageLabel.frame = CGRectMake(17, 10, 25, 25);
     [scrollView addSubview:descriptionImageLabel];
     
-    UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(45, 10, 250, 25)];
+    UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 10, 250, 25)];
     descriptionLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
     descriptionLabel.backgroundColor = [UIColor clearColor];
     descriptionLabel.textColor = UIColorFromRGB(0x423a38);
@@ -104,7 +104,7 @@
                                                        options:NSStringDrawingUsesLineFragmentOrigin
                                                     attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:15]}
                                                        context:nil].size;
-    UILabel *descriptionText = [[UILabel alloc] initWithFrame:CGRectMake(15, 5,  290, size.height + 5)];
+    UILabel *descriptionText = [[UILabel alloc] initWithFrame:CGRectMake(17, 5,  290, size.height + 5)];
     descriptionText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     descriptionText.backgroundColor = [UIColor clearColor];
     descriptionText.textColor = APP_TEXT_COLOR;
@@ -114,7 +114,7 @@
     
     UILabel *descriptionTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, 45,  320, size.height + 15)];
     descriptionTextContainer.layer.borderWidth = 1.0f;
-    descriptionTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
+    descriptionTextContainer.layer.borderColor = [[UIColor colorWithRed:0.91 green:0.9 blue:0.9 alpha:1] CGColor];
     descriptionTextContainer.backgroundColor = [UIColor clearColor];
 
     
@@ -128,10 +128,10 @@
         UIImageView  *sideEffectsImageLabel = [[UIImageView alloc] init];
 
         [sideEffectsImageLabel setImage:[UIImage imageNamed:@"medication-pic"]];
-        sideEffectsImageLabel.frame = CGRectMake(7, descriptionTextContainer.frame.origin.y + size.height + 20, 25, 25);
+        sideEffectsImageLabel.frame = CGRectMake(17, descriptionTextContainer.frame.origin.y + size.height + 20, 25, 25);
         [scrollView addSubview:sideEffectsImageLabel];
 
-        UILabel *sideEffectsLabel = [[UILabel alloc] initWithFrame:CGRectMake(45, descriptionTextContainer.frame.origin.y + size.height + 20, 120, 25)];
+        UILabel *sideEffectsLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, descriptionTextContainer.frame.origin.y + size.height + 20, 120, 25)];
         sideEffectsLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         sideEffectsLabel.backgroundColor = [UIColor clearColor];
         sideEffectsLabel.text = @"Side Effects";
@@ -148,7 +148,7 @@
                                                                   options:NSStringDrawingUsesLineFragmentOrigin
                                                                attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:15]}
                                                                   context:nil].size;
-        UILabel *sideEffectsText = [[UILabel alloc] initWithFrame:CGRectMake(15, 5,  290, sideEffectsSize.height + 5)];
+        UILabel *sideEffectsText = [[UILabel alloc] initWithFrame:CGRectMake(17, 5,  290, sideEffectsSize.height + 5)];
         sideEffectsText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
         sideEffectsText.backgroundColor = [UIColor clearColor];
         sideEffectsText.textColor = APP_TEXT_COLOR;
@@ -158,7 +158,7 @@
 
         UILabel *sideEffectsTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, descriptionTextContainer.frame.origin.y + size.height + 55,  320, sideEffectsSize.height + 15)];
         sideEffectsTextContainer.layer.borderWidth = 1.0f;
-        sideEffectsTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
+        sideEffectsTextContainer.layer.borderColor = [[UIColor colorWithRed:0.91 green:0.9 blue:0.9 alpha:1] CGColor];
         sideEffectsText.backgroundColor = [UIColor clearColor];
 
 
@@ -178,7 +178,7 @@
     }
     
     //begin creating transmission description box and text box containers
-    UILabel *transmissionTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, y, 120, 25)];
+    UILabel *transmissionTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, y, 120, 25)];
     transmissionTitleLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
     transmissionTitleLabel.backgroundColor = [UIColor clearColor];
     transmissionTitleLabel.textColor = UIColorFromRGB(0x423a38);
@@ -187,7 +187,7 @@
     
     UIImageView  *transmissionImageLabel = [[UIImageView alloc] init];
     [transmissionImageLabel setImage:[UIImage imageNamed:@"heart-rate-pic"]];
-    transmissionImageLabel.frame = CGRectMake(7, y, 20, 25);
+    transmissionImageLabel.frame = CGRectMake(17, y, 20, 25);
     [scrollView addSubview:transmissionImageLabel];
     
     CGSize transmissionSize = [healthItem.symptoms boundingRectWithSize:CGSizeMake(290, 15000)
@@ -207,14 +207,14 @@
     transmissionTextContainer.layer.borderWidth = 1.0f;
     transmissionTextContainer.backgroundColor = [UIColor clearColor];
 
-    transmissionTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
+    transmissionTextContainer.layer.borderColor = [[UIColor colorWithRed:0.91 green:0.9 blue:0.9 alpha:1] CGColor];
     
     [transmissionTextContainer addSubview:transmissionText];
     [scrollView addSubview:transmissionTextContainer];
 
     //begin creating immunization text header and text container
 
-    UILabel *immunizationTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, transmissionTextContainer.frame.origin.y + transmissionSize.height + 20, 250, 25)];
+    UILabel *immunizationTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, transmissionTextContainer.frame.origin.y + transmissionSize.height + 20, 250, 25)];
     immunizationTitleLabel .font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
     immunizationTitleLabel.backgroundColor = [UIColor clearColor];
     immunizationTitleLabel.textColor = UIColorFromRGB(0x423a38);
@@ -223,7 +223,7 @@
 
     UIImageView  *immunizationImageLabel = [[UIImageView alloc] init];
     [immunizationImageLabel setImage:[UIImage imageNamed:@"conditions-pic"]];
-    immunizationImageLabel.frame = CGRectMake(7, transmissionTextContainer.frame.origin.y + transmissionSize.height + 20, 20, 25);
+    immunizationImageLabel.frame = CGRectMake(17, transmissionTextContainer.frame.origin.y + transmissionSize.height + 20, 20, 25);
     [scrollView addSubview:immunizationImageLabel];
 
     CGSize immunizationSize = [healthItem.immunization boundingRectWithSize:CGSizeMake(290, 15000)
@@ -240,7 +240,7 @@
     
     UILabel *immunizationTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, transmissionTextContainer.frame.origin.y + transmissionSize.height + 55,  320, immunizationSize.height + 15)];
     immunizationTextContainer.layer.borderWidth = 1.0f;
-    immunizationTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
+    immunizationTextContainer.layer.borderColor = [[UIColor colorWithRed:0.91 green:0.9 blue:0.9 alpha:1] CGColor];
     immunizationTextContainer.backgroundColor = [UIColor clearColor];
     
     [immunizationTextContainer addSubview:immunizationText];
@@ -260,7 +260,7 @@
     // THE IMPORTANT FIELD
     if (healthItem.important) {
         //there is an important field, must add
-        UILabel *importantTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, immunizationTextContainer.frame.origin.y + immunizationSize.height + 20, 250, 25)];
+        UILabel *importantTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, immunizationTextContainer.frame.origin.y + immunizationSize.height + 20, 250, 25)];
         importantTitleLabel .font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         importantTitleLabel.backgroundColor = [UIColor clearColor];
         importantTitleLabel.textColor = UIColorFromRGB(0x423a38);
@@ -269,7 +269,7 @@
         
         UIImageView  *importantImageLabel = [[UIImageView alloc] init];
         [importantImageLabel setImage:[UIImage imageNamed:@"conditions-pic"]];
-        importantImageLabel.frame = CGRectMake(7, immunizationTextContainer.frame.origin.y + immunizationSize.height + 20, 20, 25);
+        importantImageLabel.frame = CGRectMake(17, immunizationTextContainer.frame.origin.y + immunizationSize.height + 20, 20, 25);
         [scrollView addSubview:importantImageLabel];
         
         CGSize importantSize = [healthItem.important boundingRectWithSize:CGSizeMake(290, 15000)
@@ -286,7 +286,7 @@
         
         UILabel *importantTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, immunizationTextContainer.frame.origin.y + immunizationSize.height + 55,  320, importantSize.height + 15)];
         importantTextContainer.layer.borderWidth = 1.0f;
-        importantTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
+        importantTextContainer.layer.borderColor = [[UIColor colorWithRed:0.91 green:0.9 blue:0.9 alpha:1] CGColor];
         importantTextContainer.backgroundColor = [UIColor clearColor];
         
         [importantTextContainer addSubview:importantText];

@@ -42,7 +42,7 @@
     scrollView.pagingEnabled = YES;
     [self.view addSubview:scrollView];
     
-    pageControl.frame = CGRectMake(0, self.view.frame.size.height - 78, 320, 50);
+    pageControl.frame = CGRectMake(0, self.view.frame.size.height - 60, 320, 50);
     pageControl.currentPage = 0;
     // replace with loading indicator
     pageControl.numberOfPages = 1;
@@ -77,7 +77,7 @@
     
     double scaleFactor = [UIScreen mainScreen].scale;
     
-    NSInteger height = scrollView.frame.size.height - 150.0;
+    NSInteger height = scrollView.frame.size.height - 170.0;
     NSInteger width = height * 0.7322;
     int i = 0;
     NSInteger max = cityArray.count - 1;
@@ -88,6 +88,9 @@
         frame.size = CGSizeMake(width, height);
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
+        imageView.layer.cornerRadius = 10.0;
+        imageView.clipsToBounds = YES;
+
         // make imageViews clickable with invisible buttons
         if (i == max) {
             imageView.image = [UIImage imageNamed:city.image];
