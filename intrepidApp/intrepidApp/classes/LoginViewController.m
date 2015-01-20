@@ -22,7 +22,6 @@
 @implementation LoginViewController
 
 @synthesize loginButton;
-@synthesize signUp;
 @synthesize learnMore;
 @synthesize legal;
 
@@ -58,31 +57,27 @@
     [[UIImage imageNamed:@"login-background"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
+
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
     UIImage *buttonImage = [[UIImage imageNamed:@"rounded-rectangle-"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
     [loginButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    
-    
     [loginButton setTitleColor:UIColorFromRGB(0xe7eee2) forState:UIControlStateNormal];
     loginButton.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
     [self.view addSubview:loginButton];
     
     
-    NSMutableAttributedString *signUpString = [[NSMutableAttributedString alloc] initWithString:@"Sign Up"];
+    NSMutableAttributedString *legalString = [[NSMutableAttributedString alloc] initWithString:@"Legal"];
     
     // making text property to underline text-
-    [signUpString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [signUpString length])];
+    [legalString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [legalString length])];
     
     // using text on button
-    [signUp setAttributedTitle: signUpString forState:UIControlStateNormal];
-    [signUpString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0,[signUpString length])];
-    signUp.frame = CGRectMake(9, self.view.frame.size.height - 50, 81, 44);
-    
-    signUp.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
-    [self.view addSubview:signUp];
-    
+    [legal setAttributedTitle:legalString forState:UIControlStateNormal];
+    [legalString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [legalString length])];
+    legal.frame = CGRectMake(9, self.view.frame.size.height - 50, 81, 44);
+    legal.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+    [self.view addSubview:legal];
     
     NSMutableAttributedString *learnMoreString = [[NSMutableAttributedString alloc] initWithString:@"Learn More"];
     
@@ -119,18 +114,14 @@
     
     underlinePassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlinePassword];
-
     
     password.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
     password.textColor = [UIColor whiteColor];
     [password setReturnKeyType:UIReturnKeyDone];
     password.placeholder =@"PASSWORD";
     [password setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-
     password.secureTextEntry = YES;
     [self.view addSubview:password];
-    
-    
     
     NSMutableAttributedString *forgotPasswordString = [[NSMutableAttributedString alloc] initWithString:@"Forgot Password?"];
     
@@ -147,26 +138,24 @@
     forgotPassword.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:forgotPassword];
     
-    legal.frame = CGRectMake(240, 5, 100, 50);
-    legal.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
-    legal.backgroundColor = [UIColor clearColor];
-    legal.titleLabel.textAlignment = NSTextAlignmentCenter;
-    [legal setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.view addSubview:legal];
+//    legal.frame = CGRectMake(240, 5, 100, 50);
+//    legal.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
+//    legal.backgroundColor = [UIColor clearColor];
+//    legal.titleLabel.textAlignment = NSTextAlignmentCenter;
+//    [legal setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    [self.view addSubview:legal];
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        
         self.edgesForExtendedLayout = UIRectEdgeNone;
-        
     } else {
         [self moveAllSubviewsDown];
     }
-    
     
 	// Do any additional setup after loading the view.
     email.text = @"cherry@swishlabs.co";
     password.text = @"pass@swish123";
 }
+
 - (void) moveAllSubviewsDown{
     float barHeight = 45.0;
     for (UIView *view in self.view.subviews) {

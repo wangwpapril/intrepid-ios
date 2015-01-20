@@ -58,21 +58,6 @@
                                     <action selector="login:" destination="lgv-mR-8mz" eventType="touchUpInside" id="H3B-Eb-Jxq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zhz-zF-bYZ">
-                                <rect key="frame" x="9" y="505" width="81" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Sign Up">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="G8m-le-uyD" kind="push" id="XXT-vu-w2c"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nEI-D0-7dv">
                                 <rect key="frame" x="209" y="505" width="105" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -130,8 +115,12 @@
                                     <segue destination="mMb-6M-vTZ" kind="push" id="02Y-ui-9NR"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ace-tagline" id="IOC-SN-nlu">
+                                <rect key="frame" x="85" y="30" width="150" height="113"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VqX-BL-dWs">
-                                <rect key="frame" x="125" y="428" width="73" height="44"/>
+                                <rect key="frame" x="16" y="505" width="73" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Legal">
@@ -145,10 +134,6 @@
                                     <segue destination="KcC-nk-vjb" kind="push" id="LRU-oV-ELh"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ace-tagline" id="IOC-SN-nlu">
-                                <rect key="frame" x="85" y="30" width="150" height="113"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -161,7 +146,6 @@
                         <outlet property="legal" destination="VqX-BL-dWs" id="CvL-Z2-VXv"/>
                         <outlet property="loginButton" destination="8tT-pp-zgM" id="jXP-Rz-eGJ"/>
                         <outlet property="password" destination="2ba-9J-4KN" id="m6U-cM-Aip"/>
-                        <outlet property="signUp" destination="Zhz-zF-bYZ" id="q2b-nK-e6O"/>
                         <outlet property="tagline" destination="3Ms-XL-sg9" id="lTp-to-OuO"/>
                         <outlet property="underlineEmail" destination="J25-eA-sZr" id="xJm-b5-R1c"/>
                         <outlet property="underlinePassword" destination="5sI-vr-9hj" id="onq-BO-SyB"/>
@@ -779,7 +763,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ace-tagline" width="138" height="118"/>
+        <image name="Ace-tagline" width="152" height="118"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -787,7 +771,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="7CT-6H-1PF"/>
+        <segue reference="MOD-2m-s2s"/>
         <segue reference="kQM-GK-nli"/>
     </inferredMetricsTieBreakers>
 </document>
