@@ -21,6 +21,7 @@ static NSDictionary * cityDict;
 
 + (void)fetchUser:(NSDictionary *)user {
     userDict = user;
+    [[TripManager getInstance] addUserDict:user];
 }
 
 + (void)fetchDestinations {

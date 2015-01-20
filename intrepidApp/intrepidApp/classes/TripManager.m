@@ -13,7 +13,7 @@
 @implementation TripManager
 
 @synthesize managedObjectContext;
-@synthesize unsavedCities;
+@synthesize currentUser;
 
 static TripManager *instance =nil;
 +(TripManager *)getInstance
@@ -61,8 +61,8 @@ static TripManager *instance =nil;
     return intermediateArray;
 }
 
-- (void)addCityDict:(NSDictionary *)cityDict {
-    [unsavedCities addObject:cityDict];
+- (void)addUserDict:(NSDictionary *)userDict {
+    currentUser = userDict;
 }
 
 - (NSMutableArray *)getHealthItemsWithCity:(CityEntity *)city {

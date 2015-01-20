@@ -718,7 +718,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="lgv-mR-8mz" kind="push" id="Qvd-hq-w6L"/>
+                                    <action selector="signout:" destination="joz-Qr-Afk" eventType="touchUpInside" id="Eks-gB-FEc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -728,6 +728,7 @@
                     <connections>
                         <outlet property="editPhoto" destination="EvX-rp-9EL" id="IP9-eh-VM5"/>
                         <outlet property="signOutButton" destination="Mm6-s5-WIK" id="1Tk-ie-AaJ"/>
+                        <segue destination="lgv-mR-8mz" kind="push" identifier="toLogin" id="7CT-6H-1PF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FUl-yV-3hb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -786,7 +787,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="v1z-mz-lP0"/>
+        <segue reference="7CT-6H-1PF"/>
         <segue reference="kQM-GK-nli"/>
     </inferredMetricsTieBreakers>
 </document>

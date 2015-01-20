@@ -11,6 +11,8 @@
 #import "Constants.h"
 #import "MenuController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "TripManager.h"
+#import "RequestBuilder.h"
 
 #define kOFFSET_FOR_KEYBOARD 130.0
 
@@ -53,7 +55,7 @@
     
     //Initalize the Labels
     UILabel *nameLabel = [[UILabel alloc] init];
-    nameLabel.frame = CGRectMake(10, 150, 150, 20);
+    nameLabel.frame = CGRectMake(10, 150, 75, 20);
     nameLabel.backgroundColor = [UIColor clearColor];
     nameLabel.font = [UIFont fontWithName:@"ProximaNova-Semi-Bold" size:15];
     nameLabel.textColor = [UIColor whiteColor];
@@ -62,7 +64,7 @@
     [self.view addSubview:nameLabel];
     
     UILabel *emailLabel = [[UILabel alloc] init];
-    emailLabel.frame = CGRectMake(10, 200, 150, 20);
+    emailLabel.frame = CGRectMake(10, 200, 75, 20);
     emailLabel.backgroundColor = [UIColor clearColor];
     emailLabel.font = [UIFont fontWithName:@"ProximaNova-Semi-Bold" size:15];
     emailLabel.textColor = [UIColor whiteColor];
@@ -93,9 +95,10 @@
     
     UITextField *name = [[UITextField alloc] init];
     name.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
-    name.frame = CGRectMake(200, 150, 135, 34);
+    name.frame = CGRectMake(75, 150, 200, 24);
     name.textColor = [UIColor whiteColor];
-    name.placeholder = @"Your Name";
+    name.enabled = NO;
+    name.text = [NSString stringWithFormat:@"%@ %@", [TripManager getInstance].currentUser[@"user"][@"first_name"], [TripManager getInstance].currentUser[@"user"][@"last_name"]];
     [name setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [name setReturnKeyType:UIReturnKeyDone];
     name.delegate = self;
@@ -108,9 +111,10 @@
     
     UITextField *email = [[UITextField alloc] init];
     email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
-    email.frame = CGRectMake(200, 200, 135, 34);
+    email.frame = CGRectMake(75, 200, 200, 24);
     email.textColor = [UIColor whiteColor];
-    email.placeholder = @"Your Email";
+    email.enabled = NO;
+    email.text = [TripManager getInstance].currentUser[@"user"][@"email"];
     [email setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [email setReturnKeyType:UIReturnKeyDone];
     email.delegate = self;
@@ -123,7 +127,7 @@
     
     UITextField *password = [[UITextField alloc] init];
     password.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
-    password.frame = CGRectMake(200, 250, 135, 34);
+    password.frame = CGRectMake(200, 250, 135, 24);
     password.textColor = [UIColor whiteColor];
     password.placeholder = @"Your Password";
     [password setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -138,7 +142,7 @@
     
     UITextField *passwordConfirmation = [[UITextField alloc] init];
     passwordConfirmation.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
-    passwordConfirmation.frame = CGRectMake(200, 300, 135, 34);
+    passwordConfirmation.frame = CGRectMake(200, 300, 135, 24);
     passwordConfirmation.textColor = [UIColor whiteColor];
     passwordConfirmation.placeholder = @"Your Password";
     [passwordConfirmation setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -177,12 +181,6 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)useCameraRoll:(id)sender
 {
     if ([UIImagePickerController isSourceTypeAvailable:
@@ -200,7 +198,15 @@
     }
 }
 
-- (void) moveAllSubviewsDown{
+- (IBAction)signout:(id)sender {
+    [[TripManager getInstance] deleteAllObjects:@"CityEntity"];
+    [[TripManager getInstance] deleteAllObjects:@"CurrencyEntity"];
+    [[TripManager getInstance] deleteAllObjects:@"EmbassyEntity"];
+    [[TripManager getInstance] deleteAllObjects:@"HealthEntity"];
+    [self performSegueWithIdentifier:@"toLogin" sender:self];
+}
+
+- (void)moveAllSubviewsDown {
     float barHeight = 45.0;
     for (UIView *view in self.view.subviews) {
         
@@ -212,10 +218,9 @@
     }
 }
 
-#pragma mark -
-#pragma mark UIImagePickerControllerDelegate
+#pragma mark - UIImagePickerControllerDelegate
 
--(void)imagePickerController:(UIImagePickerController *)picker
+- (void)imagePickerController:(UIImagePickerController *)picker
 didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     
@@ -229,12 +234,12 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [editPhoto.imageView setContentMode:UIViewContentModeScaleAspectFill];
 }
 
--(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)image:(UIImage *)image
+- (void)image:(UIImage *)image
 finishedSavingWithError:(NSError *)error
  contextInfo:(void *)contextInfo
 {
@@ -249,14 +254,14 @@ finishedSavingWithError:(NSError *)error
     }
 }
 
-# pragma mark - keyboard stuff
+#pragma mark - keyboard stuff
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
     [theTextField resignFirstResponder];
     return YES;
 }
 
--(void)keyboardWillShow {
+- (void)keyboardWillShow {
     // Animate the current view out of the way
     if (self.view.frame.origin.y >= 0)
     {
@@ -268,7 +273,7 @@ finishedSavingWithError:(NSError *)error
     }
 }
 
--(void)keyboardWillHide {
+- (void)keyboardWillHide {
     if (self.view.frame.origin.y >= 0)
     {
         [self setViewMovedUp:YES];
@@ -301,7 +306,7 @@ finishedSavingWithError:(NSError *)error
 }
 
 //method to move the view up/down whenever the keyboard is shown/dismissed
--(void)setViewMovedUp:(BOOL)movedUp
+- (void)setViewMovedUp:(BOOL)movedUp
 {
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.3]; // if you want to slide up the view

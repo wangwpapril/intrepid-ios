@@ -16,12 +16,12 @@
 
 // Core Data
 @property ( strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (strong, nonatomic) NSMutableArray *unsavedCities;
+@property (strong, nonatomic) NSDictionary *currentUser;
 
 + (TripManager *)getInstance;
 - (NSArray *)getSavedCities;
 - (NSArray *)getDestinations;
-- (void)addCityDict:(NSDictionary *)cityDict;
+- (void)addUserDict:(NSDictionary *)userDict;
 
 
 - (CityEntity *)createTripWithCultureText:(NSString *)cultureText

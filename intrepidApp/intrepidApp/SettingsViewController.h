@@ -19,4 +19,6 @@
 
 @property BOOL newMedia;
 - (IBAction)useCameraRoll:(id)sender;
+- (IBAction)signout:(id)sender;
+
 @end
