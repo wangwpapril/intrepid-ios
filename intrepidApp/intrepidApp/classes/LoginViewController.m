@@ -96,10 +96,10 @@
     learnMore.frame = CGRectMake(215, self.view.frame.size.height - 50, 81, 44);
     [self.view addSubview:learnMore];
     
-    intrepidTitle.font = [UIFont fontWithName:@"ProximaNova-Bold" size:24];
-    intrepidTitle.textColor = [UIColor whiteColor];
-    [intrepidTitle setTextAlignment:NSTextAlignmentCenter];
-    [self.view addSubview:intrepidTitle];
+//    intrepidTitle.font = [UIFont fontWithName:@"ProximaNova-Bold" size:24];
+//    intrepidTitle.textColor = [UIColor whiteColor];
+//    [intrepidTitle setTextAlignment:NSTextAlignmentCenter];
+//    [self.view addSubview:intrepidTitle];
     
     tagline.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
     tagline.textColor = [UIColor whiteColor];
@@ -151,7 +151,7 @@
     legal.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
     legal.backgroundColor = [UIColor clearColor];
     legal.titleLabel.textAlignment = NSTextAlignmentCenter;
-    [legal setTitleColor:[UIColor colorWithRed:189/255.0f green:185/255.0f blue:177/255.0f alpha:1.0f] forState:UIControlStateNormal];
+    [legal setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:legal];
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
