@@ -47,7 +47,7 @@
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
-    [editPhoto setBackgroundImage:[UIImage imageNamed:@"Add"]
+    [editPhoto setBackgroundImage:[UIImage imageNamed:@"Add-photo"]
                         forState:UIControlStateNormal];
     [self.view addSubview:editPhoto];
     

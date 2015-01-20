@@ -464,7 +464,7 @@ static TripManager *instance =nil;
         immunizations = medContent[@"storage"];
         important = medContent[@"notes"];
         
-        NSDictionary *medImage = medDict[@"images"];
+//        NSDictionary *medImage = medDict[@"images"];
         //for debugging purposes
         image = @"";
         
@@ -484,7 +484,7 @@ static TripManager *instance =nil;
         //test to see if it works when there is no important field
         important = healthContent[@"important"];
         
-        NSDictionary *healthImage = healthDict[@"images"];
+//        NSDictionary *healthImage = healthDict[@"images"];
         //for debugging purposes
         image = @"";
         

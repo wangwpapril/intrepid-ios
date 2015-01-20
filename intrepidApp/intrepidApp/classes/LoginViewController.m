@@ -77,7 +77,7 @@
     
     // using text on button
     [signUp setAttributedTitle: signUpString forState:UIControlStateNormal];
-    [signUpString addAttribute:NSForegroundColorAttributeName value:UIColorFromRGB(0xe7eee2) range:NSMakeRange(0,[signUpString length])];
+    [signUpString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0,[signUpString length])];
     signUp.frame = CGRectMake(9, self.view.frame.size.height - 50, 81, 44);
     
     signUp.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
@@ -91,24 +91,24 @@
     
     // using text on button
     [learnMore setAttributedTitle: learnMoreString forState:UIControlStateNormal];
-    [learnMoreString addAttribute:NSForegroundColorAttributeName value:UIColorFromRGB(0xe7eee2) range:NSMakeRange(0,[learnMoreString length])];
+    [learnMoreString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0,[learnMoreString length])];
     learnMore.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
     learnMore.frame = CGRectMake(215, self.view.frame.size.height - 50, 81, 44);
     [self.view addSubview:learnMore];
     
     intrepidTitle.font = [UIFont fontWithName:@"ProximaNova-Bold" size:24];
-    intrepidTitle.textColor = UIColorFromRGB(0xe7eee2);
+    intrepidTitle.textColor = [UIColor whiteColor];
     [intrepidTitle setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:intrepidTitle];
     
     tagline.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
-    tagline.textColor = UIColorFromRGB(0xe7eee2);
+    tagline.textColor = [UIColor whiteColor];
     [tagline setTextAlignment:NSTextAlignmentCenter];
     tagline.text = @"YOUR PERSONAL TRAVEL NAVIGATOR";
     [self.view addSubview:tagline];
     
     email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
-    email.textColor = UIColorFromRGB(0xe7eee2);
+    email.textColor = [UIColor whiteColor];
     email.placeholder = @"EMAIL";
     [email setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [email setReturnKeyType:UIReturnKeyDone];
@@ -122,7 +122,7 @@
 
     
     password.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
-    password.textColor = UIColorFromRGB(0xe7eee2);
+    password.textColor = [UIColor whiteColor];
     [password setReturnKeyType:UIReturnKeyDone];
     password.placeholder =@"PASSWORD";
     [password setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -139,7 +139,7 @@
     
     // using text on button
     [forgotPassword setAttributedTitle: forgotPasswordString forState:UIControlStateNormal];
-    [forgotPasswordString addAttribute:NSForegroundColorAttributeName value:UIColorFromRGB(0xd7503e) range:NSMakeRange(0,[forgotPasswordString length])];
+    [forgotPasswordString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.53 green:0.73 blue:0.14 alpha:1] range:NSMakeRange(0,[forgotPasswordString length])];
     forgotPassword.frame = CGRectMake(77, loginButton.frame.origin.y + 50, 166, 15);
     forgotPassword.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
     forgotPassword.backgroundColor = [UIColor clearColor];

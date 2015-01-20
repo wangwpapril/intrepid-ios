@@ -48,7 +48,7 @@
     UIImage *ambulance;
     ambulance = [UIImage imageNamed:@"IMG"];
     UIImageView *ambulanceImage = [[UIImageView alloc] initWithImage:ambulance];
-    ambulanceImage.frame = CGRectMake(0, 0, 320, ambulanceImage.frame.size.height*0.5);
+    ambulanceImage.frame = CGRectMake(0, 0, 320, ambulanceImage.frame.size.height*1);
     
     [scrollView addSubview:ambulanceImage];
     
@@ -68,7 +68,7 @@
     UIImage *map;
     map = [UIImage imageNamed:@"Map"];
     UIImageView *mapImage = [[UIImageView alloc] initWithImage:map];
-    mapImage.frame = CGRectMake(0, provideLocationLabel.frame.origin.y + 30, 320, mapImage.frame.size.height*0.5);
+    mapImage.frame = CGRectMake(0, provideLocationLabel.frame.origin.y + 30, 320, mapImage.frame.size.height*1);
     [scrollView addSubview:mapImage];
     
     
