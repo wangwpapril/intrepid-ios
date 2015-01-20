@@ -27,10 +27,10 @@
 
 -(void)setupWithHealthItem:(HealthEntity *)healthItem {
     
-    UIImage *image = [UIImage imageNamed:healthItem.image];
-    self.imageView.image = image;
-    self.imageView.layer.cornerRadius = 5;
-    self.imageView.layer.masksToBounds = YES;
+//    UIImage *image = [UIImage imageNamed:healthItem.image];
+//    self.imageView.image = image;
+//    self.imageView.layer.cornerRadius = 5;
+//    self.imageView.layer.masksToBounds = YES;
     
     self.textLabel.text = healthItem.name;
     self.textLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:17];

@@ -35,12 +35,10 @@
 }
 
 -(void)setupWithHealthItem:(TripItem *)tripItem {
-    
-    
-    UIImage *image = [UIImage imageNamed:tripItem.image];
-    self.imageView.image = image;
-    self.imageView.layer.cornerRadius = 5;
-    self.imageView.layer.masksToBounds = YES;
+//    UIImage *image = [UIImage imageNamed:tripItem.image];
+//    self.imageView.image = image;
+//    self.imageView.layer.cornerRadius = 5;
+//    self.imageView.layer.masksToBounds = YES;
     
     self.textLabel.text = tripItem.city;
 //    continentLabel.text = tripItem.continent;
