@@ -13,6 +13,11 @@
 #import <QuartzCore/QuartzCore.h>
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define APP_TEXT_COLOR [UIColor colorWithRed: 0.2 green:0.25 blue:0.28 alpha:1]
+#define UIColorFromRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @implementation EmbassyDetailedViewController
 
@@ -30,7 +35,7 @@
     whiteLayer.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:whiteLayer];
     
-    CGRect rect=CGRectMake(0, 36, 320, self.view.frame.size.height);
+    CGRect rect = CGRectMake(0, 0, 320, self.view.frame.size.height);
     scrollView = [[UIScrollView alloc] initWithFrame:rect];
     scrollView.showsVerticalScrollIndicator = YES;
     scrollView.showsHorizontalScrollIndicator = NO;
@@ -40,7 +45,6 @@
     // UILabel *embassyDetailedItemTitleLabel = [[UILabel alloc] init];
     //embassyDetailedItemTitleLabel.frame = CGRectMake(0, 0, 320, 36);
     // embassyDetailedItemTitleLabel.backgroundColor = [UIColor colorWithRed:66/255.0f green:58/255.0f blue:56/255.0f alpha:1];
-
     
     // NSString *uppercaseString = [embassyItem.country uppercaseString];
     // UILabel *embassyDetailedItemNameLabel = [[UILabel alloc] init];
@@ -50,143 +54,184 @@
     // embassyDetailedItemNameLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:16];
     // embassyDetailedItemNameLabel.textColor = [UIColor whiteColor];
     // [embassyDetailedItemTitleLabel addSubview:embassyDetailedItemNameLabel];
-    
     // [self.view addSubview:embassyDetailedItemTitleLabel];
+    
     self.navigationItem.title = embassyItem.country;
     [self addContent];
     [self.view addSubview:scrollView];
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        
         self.edgesForExtendedLayout = UIRectEdgeNone;
-        
     } else {
         [self moveAllSubviewsDown];
     }
- }
+}
 
 - (void)addContent {
-    
-    //ADDRESS
-    UILabel *addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 5, 300, 30)];
-    addressLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:16];
-    addressLabel.backgroundColor = [UIColor clearColor];
-    addressLabel.text = @"Address";
-    
+    int y = 10;
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
     
-    CGSize size = [embassyItem.address boundingRectWithSize:CGSizeMake(280, 15000)
-                                                    options:NSStringDrawingUsesLineFragmentOrigin
-                                                 attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:13]}
-                                                    context:nil].size;
-    UILabel *addressText = [[UILabel alloc] initWithFrame:CGRectMake(20, 30,  280, size.height + 30)];
-    addressText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
-    addressText.backgroundColor = [UIColor clearColor];
-    addressText.textColor = [UIColor blackColor];
-    addressText.text = embassyItem.address;
-    addressText.lineBreakMode = NSLineBreakByWordWrapping;
-    addressText.numberOfLines = 0;
     
-    //TELEPHONE/FAX/EMAIL
-
-    UILabel *contactLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, addressText.frame.origin.y + size.height + 30, 300, 30)];
-    contactLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:16];
-    contactLabel.backgroundColor = [UIColor clearColor];
-    contactLabel.text = @"Telephone/Fax/Email";
-    
-    NSString *contactLength = [NSString stringWithFormat:@"Telephone: %@\nFax: %@\nEmail: %@", embassyItem.phone,
-                               embassyItem.fax, embassyItem.email];
-    
-    CGSize contactSize = [contactLength boundingRectWithSize:CGSizeMake(280, 15000)
-                                                     options:NSStringDrawingUsesLineFragmentOrigin
-                                                  attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:13]}
-                                                     context:nil].size;
-    UILabel *contactText = [[UILabel alloc] initWithFrame:CGRectMake(20, contactLabel.frame.origin.y + 30,  280, contactSize.height + 30)];
-    contactText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
-    contactText.backgroundColor = [UIColor clearColor];
-    contactText.textColor = [UIColor blackColor];
-    contactText.text = [NSString stringWithFormat:@"Telephone: %@\nFax: %@\nEmail: %@", embassyItem.phone, embassyItem.fax, embassyItem.email];
-    contactText.lineBreakMode = NSLineBreakByWordWrapping;
-    contactText.numberOfLines = 0;
-    
-    //HOURS OF OPERATION
-    
-    UILabel *hoursLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, contactText.frame.origin.y + contactSize.height + 30, 300, 30)];
-    hoursLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:16];
-    hoursLabel.backgroundColor = [UIColor clearColor];
-    hoursLabel.text = @"Hours of Operation";
-    
-    CGSize hoursSize = [embassyItem.hours boundingRectWithSize:CGSizeMake(280, 15000)
-                                                       options:NSStringDrawingUsesLineFragmentOrigin
-                                                    attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:13]}
-                                                       context:nil].size;
-    UILabel *hoursText = [[UILabel alloc] initWithFrame:CGRectMake(20, hoursLabel.frame.origin.y + 30,  280, hoursSize.height + 30)];
-    hoursText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
-    hoursText.backgroundColor = [UIColor clearColor];
-    hoursText.textColor = [UIColor blackColor];
-    hoursText.text = embassyItem.hours;
-    hoursText.lineBreakMode = NSLineBreakByWordWrapping;
-    hoursText.numberOfLines = 0;
-    
-    //SERVICES OFFERED
-    
-    UILabel *servicesLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, hoursText.frame.origin.y + hoursSize.height + 30, 300, 30)];
-    servicesLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:16];
-    servicesLabel.backgroundColor = [UIColor clearColor];
-    servicesLabel.text = @"Services Offered";
-    
-    //this needs to be fixed once content is fixed
-    CGSize servicesSize = [embassyItem.services boundingRectWithSize:CGSizeMake(280, 15000)
-                                                            options:NSStringDrawingUsesLineFragmentOrigin
-                                                         attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:13]}
-                                                            context:nil].size;
-    UILabel *servicesText = [[UILabel alloc] initWithFrame:CGRectMake(20, servicesLabel.frame.origin.y - 60,  280, servicesSize.height + 250)];
-    servicesText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
-    servicesText.backgroundColor = [UIColor clearColor];
-    servicesText.textColor = [UIColor blackColor];
-    servicesText.text = embassyItem.services;
-    servicesText.lineBreakMode = NSLineBreakByWordWrapping;
-    servicesText.numberOfLines = 0;
-    
-    //NOTES
-    
-    UILabel *notesLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, servicesText.frame.origin.y + servicesSize.height + 160, 300, 30)];
-    notesLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:16];
-    notesLabel.backgroundColor = [UIColor clearColor];
-    notesLabel.text = @"Notes";
-    
-    CGSize notesSize = [embassyItem.notes boundingRectWithSize:CGSizeMake(280, 15000)
-                                                    options:NSStringDrawingUsesLineFragmentOrigin
-                                                 attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:14]}
-                                                    context:nil].size;
-    UILabel *notesText = [[UILabel alloc] initWithFrame:CGRectMake(20, notesLabel.frame.origin.y + 20,  280, notesSize.height + 30)];
-    notesText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
-    notesText.backgroundColor = [UIColor clearColor];
-    notesText.textColor = [UIColor blackColor];
-    notesText.text = embassyItem.notes;
-    notesText.lineBreakMode = NSLineBreakByWordWrapping;
-    notesText.numberOfLines = 0;
+    if (![embassyItem.address isEqualToString:@""]) {
+        UILabel *embassyLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, y + 10, 290, 25)];
+        embassyLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
+        embassyLabel.backgroundColor = [UIColor clearColor];
+        embassyLabel.textColor = UIColorFromRGB(0x423a38);
+        embassyLabel.text = @"Address";
         
-    //add all subviews to large container
-    UILabel *embassyTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,  320, notesText.frame.origin.y + notesSize.height + 50)];
+        NSString *content = embassyItem.address;
+        CGSize size = [content boundingRectWithSize:CGSizeMake(290, 15000)
+                                                        options:NSStringDrawingUsesLineFragmentOrigin
+                                                     attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:15]}
+                                                        context:nil].size;
+        UILabel *embassyText = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 290, size.height + 5)];
+        embassyText.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
+        embassyText.backgroundColor = [UIColor clearColor];
+        embassyText.textColor = APP_TEXT_COLOR;
+        embassyText.text = content;
+        embassyText.lineBreakMode = NSLineBreakByWordWrapping;
+        embassyText.numberOfLines = 0;
+        
+        UIView *embassyTextContainer = [[UIView alloc] initWithFrame:CGRectMake(0, y + 35, 320, size.height + 15)];
+        embassyTextContainer.layer.borderWidth = 1.0f;
+        embassyTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
+        embassyTextContainer.backgroundColor = [UIColor clearColor];
+        
+        [scrollView addSubview:embassyLabel];
+        [embassyTextContainer addSubview:embassyText];
+        [scrollView addSubview:embassyTextContainer];
+        y = embassyTextContainer.frame.origin.y + size.height + 20;
+    }
     
-    [embassyTextContainer addSubview:addressLabel];
-    [embassyTextContainer addSubview:addressText];
-    [embassyTextContainer addSubview:contactLabel];
-    [embassyTextContainer addSubview:contactText];
-    [embassyTextContainer addSubview:hoursLabel];
-    [embassyTextContainer addSubview:hoursText];
-    [embassyTextContainer addSubview:servicesLabel];
-    [embassyTextContainer addSubview:servicesText];
-    [embassyTextContainer addSubview:notesLabel];
-    [embassyTextContainer addSubview:notesText];
-    [scrollView addSubview:embassyTextContainer];
+    if (![embassyItem.phone isEqualToString:@""] || ![embassyItem.fax isEqualToString:@""] || ![embassyItem.email isEqualToString:@""]) {
+        UILabel *embassyLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(15, y + 10, 290, 25)];
+        embassyLabel2.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
+        embassyLabel2.backgroundColor = [UIColor clearColor];
+        embassyLabel2.text = @"Contact Info";
+        embassyLabel2.textColor = UIColorFromRGB(0x423a38);
+        
+        NSString *content2 = [NSString stringWithFormat:@"Telephone: %@\n\nFax: %@\n\nEmail: %@", embassyItem.phone, embassyItem.fax, embassyItem.email];
+        CGSize size2 = [content2 boundingRectWithSize:CGSizeMake(290, 15000)
+                                              options:NSStringDrawingUsesLineFragmentOrigin
+                                           attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:15]}
+                                              context:nil].size;
+        UILabel *embassyText2 = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 290, size2.height + 5)];
+        embassyText2.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
+        embassyText2.backgroundColor = [UIColor clearColor];
+        embassyText2.textColor = APP_TEXT_COLOR;
+        embassyText2.text = content2;
+        embassyText2.lineBreakMode = NSLineBreakByWordWrapping;
+        embassyText2.numberOfLines = 0;
+        
+        UIView *embassyTextContainer2 = [[UIView alloc] initWithFrame:CGRectMake(0, y + 35, 320, size2.height + 15)];
+        embassyTextContainer2.layer.borderWidth = 1.0f;
+        embassyTextContainer2.layer.borderColor = [[UIColor grayColor] CGColor];
+        embassyTextContainer2.backgroundColor = [UIColor clearColor];
+        
+        [scrollView addSubview:embassyLabel2];
+        [embassyTextContainer2 addSubview:embassyText2];
+        [scrollView addSubview:embassyTextContainer2];
+        y = embassyTextContainer2.frame.origin.y + size2.height + 20;
+    }
     
-    scrollView.contentSize = CGSizeMake(320, notesText.frame.origin.y + notesSize.height + 115);
+    if (![embassyItem.hours isEqualToString:@""]) {
+        UILabel *embassyLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(15, y + 10, 290, 25)];
+        embassyLabel3.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
+        embassyLabel3.backgroundColor = [UIColor clearColor];
+        embassyLabel3.text = @"Hours of Operation";
+        embassyLabel3.textColor = UIColorFromRGB(0x423a38);
+        
+        NSString *content3 = embassyItem.hours;
+        CGSize size3 = [content3 boundingRectWithSize:CGSizeMake(290, 15000)
+                                              options:NSStringDrawingUsesLineFragmentOrigin
+                                           attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:15]}
+                                              context:nil].size;
+        UILabel *embassyText3 = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 290, size3.height + 5)];
+        embassyText3.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
+        embassyText3.backgroundColor = [UIColor clearColor];
+        embassyText3.textColor = APP_TEXT_COLOR;
+        embassyText3.text = content3;
+        embassyText3.lineBreakMode = NSLineBreakByWordWrapping;
+        embassyText3.numberOfLines = 0;
+        
+        UIView *embassyTextContainer3 = [[UIView alloc] initWithFrame:CGRectMake(0, y + 35, 320, size3.height + 15)];
+        embassyTextContainer3.layer.borderWidth = 1.0f;
+        embassyTextContainer3.layer.borderColor = [[UIColor grayColor] CGColor];
+        embassyTextContainer3.backgroundColor = [UIColor clearColor];
+        
+        [scrollView addSubview:embassyLabel3];
+        [embassyTextContainer3 addSubview:embassyText3];
+        [scrollView addSubview:embassyTextContainer3];
+        y = embassyTextContainer3.frame.origin.y + size3.height + 20;
+    }
+
+    if (![embassyItem.services isEqualToString:@""]) {
+        UILabel *embassyLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(15, y + 10, 290, 25)];
+        embassyLabel4.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
+        embassyLabel4.backgroundColor = [UIColor clearColor];
+        embassyLabel4.text = @"Services Offered";
+        embassyLabel4.textColor = UIColorFromRGB(0x423a38);
+        
+        NSString *content4 = embassyItem.services;
+        CGSize size4 = [content4 boundingRectWithSize:CGSizeMake(290, 15000)
+                                              options:NSStringDrawingUsesLineFragmentOrigin
+                                           attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:15]}
+                                              context:nil].size;
+        UILabel *embassyText4 = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 290, size4.height + 5)];
+        embassyText4.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
+        embassyText4.backgroundColor = [UIColor clearColor];
+        embassyText4.textColor = APP_TEXT_COLOR;
+        embassyText4.text = content4;
+        embassyText4.lineBreakMode = NSLineBreakByWordWrapping;
+        embassyText4.numberOfLines = 0;
+        
+        UIView *embassyTextContainer4 = [[UIView alloc] initWithFrame:CGRectMake(0, y + 35, 320, size4.height + 15)];
+        embassyTextContainer4.layer.borderWidth = 1.0f;
+        embassyTextContainer4.layer.borderColor = [[UIColor grayColor] CGColor];
+        embassyTextContainer4.backgroundColor = [UIColor clearColor];
+        
+        [scrollView addSubview:embassyLabel4];
+        [embassyTextContainer4 addSubview:embassyText4];
+        [scrollView addSubview:embassyTextContainer4];
+        y = embassyTextContainer4.frame.origin.y + size4.height + 20;
+    }
+    
+    if (![embassyItem.notes isEqualToString:@""]) {
+        UILabel *embassyLabel5 = [[UILabel alloc] initWithFrame:CGRectMake(15, y + 10, 290, 25)];
+        embassyLabel5.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
+        embassyLabel5.backgroundColor = [UIColor clearColor];
+        embassyLabel5.text = @"Notes";
+        embassyLabel5.textColor = UIColorFromRGB(0x423a38);
+        
+        NSString *content5 = embassyItem.notes;
+        CGSize size5 = [content5 boundingRectWithSize:CGSizeMake(290, 15000)
+                                              options:NSStringDrawingUsesLineFragmentOrigin
+                                           attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:15]}
+                                              context:nil].size;
+        UILabel *embassyText5 = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 290, size5.height + 5)];
+        embassyText5.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
+        embassyText5.backgroundColor = [UIColor clearColor];
+        embassyText5.textColor = APP_TEXT_COLOR;
+        embassyText5.text = content5;
+        embassyText5.lineBreakMode = NSLineBreakByWordWrapping;
+        embassyText5.numberOfLines = 0;
+        
+        UIView *embassyTextContainer5 = [[UIView alloc] initWithFrame:CGRectMake(0, y + 35, 320, size5.height + 15)];
+        embassyTextContainer5.layer.borderWidth = 1.0f;
+        embassyTextContainer5.layer.borderColor = [[UIColor grayColor] CGColor];
+        embassyTextContainer5.backgroundColor = [UIColor clearColor];
+        
+        [scrollView addSubview:embassyLabel5];
+        [embassyTextContainer5 addSubview:embassyText5];
+        [scrollView addSubview:embassyTextContainer5];
+        y = embassyTextContainer5.frame.origin.y + size5.height + 20;
+    }
+    
+    scrollView.contentSize = CGSizeMake(320, y + 80);
 }
 
-- (void) moveAllSubviewsDown{
+- (void)moveAllSubviewsDown {
     float barHeight = 45.0;
     for (UIView *view in self.view.subviews) {
         
@@ -196,12 +241,6 @@
             view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height);
         }
     }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
