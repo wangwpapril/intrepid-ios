@@ -104,7 +104,7 @@
     tagline.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
     tagline.textColor = [UIColor whiteColor];
     [tagline setTextAlignment:NSTextAlignmentCenter];
-    tagline.text = @"YOUR PERSONAL TRAVEL NAVIGATOR";
+    tagline.text = @"TRAVEL SMART";
     [self.view addSubview:tagline];
     
     email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
