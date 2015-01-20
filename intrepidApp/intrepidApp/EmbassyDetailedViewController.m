@@ -37,21 +37,21 @@
     scrollView.scrollEnabled = YES;
     
     // Set Header label
-    UILabel *embassyDetailedItemTitleLabel = [[UILabel alloc] init];
-    embassyDetailedItemTitleLabel.frame = CGRectMake(0, 0, 320, 36);
-    embassyDetailedItemTitleLabel.backgroundColor = [UIColor colorWithRed:66/255.0f green:58/255.0f blue:56/255.0f alpha:1];
+    // UILabel *embassyDetailedItemTitleLabel = [[UILabel alloc] init];
+    //embassyDetailedItemTitleLabel.frame = CGRectMake(0, 0, 320, 36);
+    // embassyDetailedItemTitleLabel.backgroundColor = [UIColor colorWithRed:66/255.0f green:58/255.0f blue:56/255.0f alpha:1];
 
     
-    NSString *uppercaseString = [embassyItem.country uppercaseString];
-    UILabel *embassyDetailedItemNameLabel = [[UILabel alloc] init];
-    embassyDetailedItemNameLabel.frame = CGRectMake(20, 7, 275, 21);
-    embassyDetailedItemNameLabel.text = uppercaseString;
-    embassyDetailedItemNameLabel.backgroundColor = [UIColor clearColor];
-    embassyDetailedItemNameLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:16];
-    embassyDetailedItemNameLabel.textColor = [UIColor whiteColor];
-    [embassyDetailedItemTitleLabel addSubview:embassyDetailedItemNameLabel];
+    // NSString *uppercaseString = [embassyItem.country uppercaseString];
+    // UILabel *embassyDetailedItemNameLabel = [[UILabel alloc] init];
+    // embassyDetailedItemNameLabel.frame = CGRectMake(20, 7, 275, 21);
+    // embassyDetailedItemNameLabel.text = uppercaseString;
+    // embassyDetailedItemNameLabel.backgroundColor = [UIColor clearColor];
+    // embassyDetailedItemNameLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:16];
+    // embassyDetailedItemNameLabel.textColor = [UIColor whiteColor];
+    // [embassyDetailedItemTitleLabel addSubview:embassyDetailedItemNameLabel];
     
-    [self.view addSubview:embassyDetailedItemTitleLabel];
+    // [self.view addSubview:embassyDetailedItemTitleLabel];
     self.navigationItem.title = embassyItem.country;
     [self addContent];
     [self.view addSubview:scrollView];
