@@ -31,18 +31,18 @@
     [super viewDidLoad];
             
     self.view.tag = 1;
-    UIImage *backgroundImage = [UIImage imageNamed:@"mexicoBackBigger"];
-    CGRect imageFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    CGRect whiteFrame = CGRectMake(0, 79, self.view.frame.size.width, self.view.frame.size.height - 79);
-    UIImageView *myImageView = [[UIImageView alloc] initWithFrame:imageFrame];
-    [myImageView setImage:backgroundImage];
-    [self.view insertSubview:myImageView atIndex:0];
-    
-    // white layer to make the tableview 90% opaque
-    UIView *whiteLayer = [[UIView alloc] initWithFrame:whiteFrame];
-    whiteLayer.backgroundColor = [UIColor whiteColor];
-    whiteLayer.alpha = 0.9;
-    [self.view insertSubview:whiteLayer atIndex:1];
+//    UIImage *backgroundImage = [UIImage imageNamed:@"mexicoBackBigger"];
+//    CGRect imageFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+//    CGRect whiteFrame = CGRectMake(0, 79, self.view.frame.size.width, self.view.frame.size.height - 79);
+//    UIImageView *myImageView = [[UIImageView alloc] initWithFrame:imageFrame];
+//    [myImageView setImage:backgroundImage];
+//    [self.view insertSubview:myImageView atIndex:0];
+//    
+//    // white layer to make the tableview 90% opaque
+//    UIView *whiteLayer = [[UIView alloc] initWithFrame:whiteFrame];
+//    whiteLayer.backgroundColor = [UIColor whiteColor];
+//    whiteLayer.alpha = 0.9;
+//    [self.view insertSubview:whiteLayer atIndex:1];
     
     [self populateContentArray];
     

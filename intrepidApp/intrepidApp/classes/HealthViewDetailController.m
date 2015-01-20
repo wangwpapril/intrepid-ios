@@ -23,16 +23,16 @@
 {
     [super viewDidLoad];
     
-    UIImage *backgroundImage = [UIImage imageNamed:@"mexicoBackBigger"];
-    CGRect imageFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    CGRect whiteFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    UIImageView *myImageView = [[UIImageView alloc] initWithFrame:imageFrame];
-    [myImageView setImage:backgroundImage];
-    [self.view addSubview:myImageView];
-    UIView *whiteLayer = [[UIView alloc] initWithFrame:whiteFrame];
-    whiteLayer.backgroundColor = [UIColor whiteColor];
-    whiteLayer.alpha = 0.9;
-    [self.view addSubview:whiteLayer];
+//    UIImage *backgroundImage = [UIImage imageNamed:@"mexicoBackBigger"];
+//    CGRect imageFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+//    CGRect whiteFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+//    UIImageView *myImageView = [[UIImageView alloc] initWithFrame:imageFrame];
+//    [myImageView setImage:backgroundImage];
+//    [self.view addSubview:myImageView];
+//    UIView *whiteLayer = [[UIView alloc] initWithFrame:whiteFrame];
+//    whiteLayer.backgroundColor = [UIColor whiteColor];
+//    whiteLayer.alpha = 0.9;
+//    [self.view addSubview:whiteLayer];
     
     CGRect rect=CGRectMake(0, 36, 320, self.view.frame.size.height - 44);
     scrollView = [[UIScrollView alloc] initWithFrame:rect];

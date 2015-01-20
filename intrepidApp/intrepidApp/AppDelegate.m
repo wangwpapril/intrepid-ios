@@ -43,11 +43,11 @@
     temp = [temp stretchableImageWithLeftCapWidth: 30.0 topCapHeight: 50.0];
     
     if([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0) {
-        temp = [UIImage imageNamed:@"back-button"];
+        temp = [UIImage imageNamed:@"Back-arrow"];
         [[UIBarButtonItem appearance] setBackButtonBackgroundImage: temp forState: UIControlStateNormal barMetrics: UIBarMetricsDefault];
         [[UIBarButtonItem appearance] setBackButtonBackgroundImage: temp forState: UIControlStateNormal barMetrics: UIBarMetricsDefault];
     } else {
-        temp = [[UIImage imageNamed:@"back-button"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
+        temp = [[UIImage imageNamed:@"Back-arrow"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
         [[UINavigationBar appearance] setBackIndicatorImage:temp];
         [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:temp];
     }
