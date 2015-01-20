@@ -12,12 +12,13 @@
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UILabel *underlineEmail;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
+@property (weak, nonatomic) IBOutlet UIButton *exitButton;
 
 //- (IBAction)typeBox:(id)sender;
+- (IBAction)exit:(id)sender;
 - (void)keyboardWillShow;
 - (void)keyboardWillHide;
 - (void)textFieldDidBeginEditing:(UITextField *)sender;
 - (void)setViewMovedUp:(BOOL)movedUp;
-
 
 @end

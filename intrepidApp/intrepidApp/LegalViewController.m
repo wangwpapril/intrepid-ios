@@ -14,6 +14,8 @@
 
 @implementation LegalViewController
 
+@synthesize exitButton;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,13 +30,31 @@
     [super viewDidLoad];
     
     UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:@"signup-background"] drawInRect:self.view.bounds];
+    [[UIImage imageNamed:@"login-background"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
-    CGRect rect=CGRectMake(0, 0, 320, self.view.frame.size.height);
+    //create title label
+    UILabel *legalLabel = [[UILabel alloc] init];
+    legalLabel.frame = CGRectMake(85, self.view.frame.origin.y - 35, 150, 150);
+    legalLabel.text = @"Legal";
+    legalLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:24];
+    legalLabel.textColor = [UIColor colorWithRed:231/255.0f green:238/255.0f blue:226/255.0f alpha:1.0f];
+    legalLabel.backgroundColor = [UIColor clearColor];
+    [legalLabel setTextAlignment:NSTextAlignmentCenter];
+    [self.view addSubview:legalLabel];
+    
+    exitButton.frame = CGRectMake(280, 32, 40, 40);
+    [self.view addSubview:exitButton];
+    UIImage *exitImage = [UIImage imageNamed:@"close"];
+    //create an image and put it overtop of the button?
+    UIImageView *exitImageContainer = [[UIImageView alloc] initWithFrame: CGRectMake(290, 32, 15, 15)];
+    [exitImageContainer setImage:exitImage];
+    [self.view addSubview:exitImageContainer];
+    
+    CGRect rect = CGRectMake(0, 75, 320, self.view.frame.size.height);
     scrollView = [[UIScrollView alloc] initWithFrame:rect];
     scrollView.showsVerticalScrollIndicator = YES;
     scrollView.showsHorizontalScrollIndicator = NO;
@@ -56,7 +76,8 @@
     [self.view addSubview:scrollView];
     scrollView.contentSize = CGSizeMake(320, legal.frame.size.height + 80);
 }
-- (void) moveAllSubviewsDown{
+
+- (void)moveAllSubviewsDown {
     float barHeight = 45.0;
     for (UIView *view in self.view.subviews) {
         
@@ -68,10 +89,8 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)exit:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

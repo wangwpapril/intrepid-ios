@@ -34,7 +34,7 @@
 {
     [super viewDidLoad];
     
-    [self.navigationController setNavigationBarHidden:YES];
+//    [self.navigationController setNavigationBarHidden:YES];
 
     //set background image
     UIGraphicsBeginImageContext(self.view.frame.size);
@@ -107,6 +107,7 @@
         [self moveAllSubviewsDown];
     }
 }
+
 - (void) moveAllSubviewsDown{
     float barHeight = 45.0;
     for (UIView *view in self.view.subviews) {
@@ -119,7 +120,7 @@
     }
 }
 
--(void)populateDescriptions {
+- (void)populateDescriptions {
     UILabel *mexicoEmbassyDescription = [[UILabel alloc] init];
     mexicoEmbassyDescription.frame = CGRectMake(677, self.view.frame.size.height - 175, 250.0, 250.0);
     mexicoEmbassyDescription.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
@@ -166,30 +167,15 @@
 
 }
 
--(void)scrollViewDidScroll:(UIScrollView *)sender {
+- (void)scrollViewDidScroll:(UIScrollView *)sender {
     CGFloat pageWidth = self.scrollView.frame.size.width;
     int page = floor((scrollView.contentOffset.x - pageWidth / 2)/pageWidth) +1;
     pageControl.currentPage = page;
 
 }
-- (void)viewWillAppear:(BOOL)animated
-{
-    
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
-    [super viewWillAppear:animated];
-}
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-    
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
-    [super viewWillDisappear:animated];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)exit:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

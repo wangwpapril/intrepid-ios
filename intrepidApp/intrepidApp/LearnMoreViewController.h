@@ -15,6 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *exitButton;
 
 //- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
-
+- (IBAction)exit:(id)sender;
 
 @end

@@ -21,6 +21,7 @@
 @synthesize email;
 @synthesize underlineEmail;
 @synthesize signUpButton;
+@synthesize exitButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,20 +36,34 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"signUp-background"]];
-    [self.view addSubview:backgroundView];
     
-    UILabel *forgotPasswordTitleLabel = [[UILabel alloc] init];
-    forgotPasswordTitleLabel.frame = CGRectMake(0, 15, 320, 35);
-    forgotPasswordTitleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:24];
-    forgotPasswordTitleLabel.textColor = [UIColor whiteColor];
-    forgotPasswordTitleLabel.backgroundColor = [UIColor clearColor];
-    forgotPasswordTitleLabel.text = @"Forgot Password?";
-    forgotPasswordTitleLabel.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:forgotPasswordTitleLabel];
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"login-background"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
+    //create title label
+    UILabel *forgotLabel = [[UILabel alloc] init];
+    forgotLabel.frame = CGRectMake(40, self.view.frame.origin.y - 35, 240, 150);
+    forgotLabel.text = @"Forgot Password?";
+    forgotLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:24];
+    forgotLabel.textColor = [UIColor colorWithRed:231/255.0f green:238/255.0f blue:226/255.0f alpha:1.0f];
+    forgotLabel.backgroundColor = [UIColor clearColor];
+    [forgotLabel setTextAlignment:NSTextAlignmentCenter];
+    [self.view addSubview:forgotLabel];
+    
+    exitButton.frame = CGRectMake(280, 32, 40, 40);
+    [self.view addSubview:exitButton];
+    UIImage *exitImage = [UIImage imageNamed:@"close"];
+    //create an image and put it overtop of the button?
+    UIImageView *exitImageContainer = [[UIImageView alloc] initWithFrame: CGRectMake(290, 32, 15, 15)];
+    [exitImageContainer setImage:exitImage];
+    [self.view addSubview:exitImageContainer];
     
     UILabel *enterEmailLabel = [[UILabel alloc] init];
-    enterEmailLabel.frame = CGRectMake(0, 80, 320, 35);
+    enterEmailLabel.frame = CGRectMake(0, 180, 320, 35);
     enterEmailLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
     enterEmailLabel.textColor = [UIColor whiteColor];
     enterEmailLabel.backgroundColor = [UIColor clearColor];
@@ -69,13 +84,13 @@
     
     email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
     email.textColor = [UIColor whiteColor];
-    email.frame = CGRectMake(68, 135, 183, 35);
+    email.frame = CGRectMake(68, 235, 183, 35);
     email.backgroundColor = [UIColor clearColor];
     [email setReturnKeyType:UIReturnKeyDone];
     [self.view addSubview:email];
     
     underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
-    underlineEmail.frame = CGRectMake(68, 171, 183, 1);
+    underlineEmail.frame = CGRectMake(68, 271, 183, 1);
     [self.view addSubview:underlineEmail];
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
@@ -179,6 +194,11 @@
     
     [UIView commitAnimations];
 }
+
+- (IBAction)exit:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     // register for keyboard notifications
