@@ -35,7 +35,7 @@
     CityEntity *city = [self getCity];
     
     SlidingTextView *history = [[SlidingTextView alloc] initWithFrame:frame];
-    [history setupWithImageName1x:city.generalImage1x withImageName2x:city.generalImage2x withImageName3x:city.generalImage3x withTitle:@"General" withIconName:@"descriptionAndSideEffectLogo"];
+    [history setupWithImageName1x:city.generalImage1x withImageName2x:city.generalImage2x withImageName3x:city.generalImage3x withTitle:@"General" withIconName:@"history-icon"];
     [history addTextAreaWithText:city.generalText];
     
     
