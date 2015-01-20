@@ -18,21 +18,24 @@
 
 - (void)customizeAppearance
 {
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHue:0.57 saturation:0.29 brightness:0.28 alpha:1]];[[UINavigationBar appearance] setTranslucent:NO];
+  [[UINavigationBar appearance] setTintColor: [UIColor colorWithHue:0.57 saturation:0.29 brightness:0.28 alpha:1]];
     
-    UIImage *image = [UIImage imageNamed:@"top-nav-bar"];
-    [[UINavigationBar appearance] setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
-    
-    NSShadow *shadow = [NSShadow new];
-    shadow.shadowColor = [UIColor whiteColor];
-    
-    [[UINavigationBar appearance] setTitleTextAttributes:
-     [NSDictionary dictionaryWithObjectsAndKeys:
-      [UIColor colorWithRed:66/255.0f green:58/255.0f blue:56/255.0f alpha:1.0f],
-      NSForegroundColorAttributeName,
-    shadow,
-      NSShadowAttributeName,
-      [UIFont fontWithName:@"ProximaNova-Bold" size:18],
-      NSFontAttributeName, nil]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{
+                                                           NSForegroundColorAttributeName: [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0],
+                                                           NSFontAttributeName: [UIFont fontWithName:@"ProximaNova-Bold" size:18],
+                                                           }];
+//    NSShadow *shadow = [NSShadow new];
+//    shadow.shadowColor = [UIColor whiteColor];
+//    
+//    [[UINavigationBar appearance] setTitleTextAttributes:
+//     [NSDictionary dictionaryWithObjectsAndKeys:
+//      [UIColor colorWithRed:66/255.0f green:58/255.0f blue:56/255.0f alpha:1.0f],
+//      NSForegroundColorAttributeName,
+//    shadow,
+//      NSShadowAttributeName,
+//      [UIFont fontWithName:@"ProximaNova-Bold" size:18],
+//      NSFontAttributeName, nil]];
     
     //CHECK IF iOS7 OR PREV FOR BACK BUTTON ARROW
     
