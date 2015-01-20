@@ -44,7 +44,6 @@
                          withSafetyText:(NSString *)safetyText
                          withClinicsURL:(NSString *)clinicsURL
                           withAlertsURL:(NSString *)alertsURL
-                         withWeatherURL:(NSString *)weatherURL
                         withCADToNative:(float) dollarRatio;
 
 - (DestinationEntity *)createDestinationWithName:(NSString *)name

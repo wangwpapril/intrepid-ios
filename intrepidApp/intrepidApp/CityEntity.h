@@ -50,7 +50,6 @@
 @property (nonatomic, retain) NSString * safetyText;
 @property (nonatomic, retain) NSString * type_of_government;
 @property (nonatomic, retain) NSString * visa_requirements;
-@property (nonatomic, retain) NSString * weatherURL;
 
 @end
 

@@ -251,7 +251,6 @@ static TripManager *instance =nil;
                            withSafetyText:(NSString *)safetyText
                            withClinicsURL:(NSString *)clinicsURL
                             withAlertsURL:(NSString *)alertsURL
-                           withWeatherURL:(NSString *)weatherURL
                           withCADToNative:(float) dollarRatio
 {
     CityEntity *city = [NSEntityDescription insertNewObjectForEntityForName:@"CityEntity" inManagedObjectContext:managedObjectContext];
@@ -276,7 +275,6 @@ static TripManager *instance =nil;
     city.safetyText = safetyText;
     city.clinicsURL = clinicsURL;
     city.alertsURL = alertsURL;
-    city.weatherURL = weatherURL;
     city.cadToNative = [NSNumber numberWithFloat:dollarRatio];
     
 //    city.embassyItems;
@@ -356,7 +354,7 @@ static TripManager *instance =nil;
 }
 
 - (void)saveCity:(NSDictionary *)cityDict {
-    NSString *cultureText, *destinationName, *destinationType, *generalText, *safetyText, *clinicsURL, *weatherURL, *alertsURL, *location, *climate, *type_of_government, *visa_requirements, *communication_infrastructure, *electricity, *development, *language, *religion, *ethnic_makeup, *cultural_norms, *safety, *other_concerns;
+    NSString *cultureText, *destinationName, *destinationType, *generalText, *safetyText, *clinicsURL, *alertsURL, *location, *climate, *type_of_government, *visa_requirements, *communication_infrastructure, *electricity, *development, *language, *religion, *ethnic_makeup, *cultural_norms, *safety, *other_concerns;
     NSString *cultureImage1x, *cultureImage2x, *cultureImage3x, *introImage1x, *introImage2x, *introImage3x, *generalImage1x, *generalImage2x, *generalImage3x, *safetyImage1x, *safetyImage2x, *safetyImage3x;
     NSInteger destinationId;
     float dollarRatio;
@@ -422,7 +420,6 @@ static TripManager *instance =nil;
     }
 
     clinicsURL= @"";
-    weatherURL = @"";
     alertsURL = @"";
     dollarRatio = 6.0;
     
@@ -446,7 +443,6 @@ static TripManager *instance =nil;
                                                              withSafetyText:safetyText
                                                              withClinicsURL:clinicsURL
                                                               withAlertsURL:alertsURL
-                                                             withWeatherURL:weatherURL
                                                             withCADToNative:dollarRatio];
     
     [RequestBuilder fetchEmbassy:cityDict withCity:city];

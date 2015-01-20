@@ -50,6 +50,5 @@
 @dynamic safetyText;
 @dynamic type_of_government;
 @dynamic visa_requirements;
-@dynamic weatherURL;
 
 @end
