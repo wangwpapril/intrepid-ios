@@ -41,7 +41,7 @@
     legalLabel.frame = CGRectMake(85, self.view.frame.origin.y - 35, 150, 150);
     legalLabel.text = @"Legal";
     legalLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:24];
-    legalLabel.textColor = [UIColor colorWithRed:231/255.0f green:238/255.0f blue:226/255.0f alpha:1.0f];
+    legalLabel.textColor = [UIColor whiteColor];
     legalLabel.backgroundColor = [UIColor clearColor];
     [legalLabel setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:legalLabel];

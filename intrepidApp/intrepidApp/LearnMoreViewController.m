@@ -52,7 +52,7 @@
     learnMoreLabel.frame = CGRectMake(85, self.view.frame.origin.y - 35, 150, 150);
     learnMoreLabel.text = @"Learn More";
     learnMoreLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:24];
-    learnMoreLabel.textColor = [UIColor colorWithRed:231/255.0f green:238/255.0f blue:226/255.0f alpha:1.0f];
+    learnMoreLabel.textColor = [UIColor whiteColor];
     learnMoreLabel.backgroundColor = [UIColor clearColor];
     [learnMoreLabel setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:learnMoreLabel];

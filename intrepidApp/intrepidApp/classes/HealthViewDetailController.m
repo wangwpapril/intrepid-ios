@@ -50,7 +50,7 @@
     healthItemNameLabel.text = uppercaseString;
     healthItemNameLabel.backgroundColor = [UIColor clearColor];
     healthItemNameLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:16];
-    healthItemNameLabel.textColor = UIColorFromRGB(0xeaf0e6);
+    healthItemNameLabel.textColor = [UIColor whiteColor];
     
     [healthItemTitleLabel addSubview:healthItemNameLabel];
     [self.view addSubview:healthItemTitleLabel];
