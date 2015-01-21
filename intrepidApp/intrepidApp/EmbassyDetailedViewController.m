@@ -14,6 +14,7 @@
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 #define APP_TEXT_COLOR [UIColor colorWithRed: 0.2 green:0.25 blue:0.28 alpha:1]
+#define APP_BORDER_COLOR [[UIColor colorWithRed:0.91 green:0.9 blue:0.9 alpha:1] CGColor]
 #define UIColorFromRGB(rgbValue) [UIColor \
 colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
@@ -98,7 +99,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         
         UIView *embassyTextContainer = [[UIView alloc] initWithFrame:CGRectMake(0, y + 35, 320, size.height + 15)];
         embassyTextContainer.layer.borderWidth = 1.0f;
-        embassyTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
+        embassyTextContainer.layer.borderColor = APP_BORDER_COLOR;
         embassyTextContainer.backgroundColor = [UIColor clearColor];
         
         [scrollView addSubview:embassyImageView];
@@ -133,7 +134,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         
         UIView *embassyTextContainer2 = [[UIView alloc] initWithFrame:CGRectMake(0, y + 35, 320, size2.height + 15)];
         embassyTextContainer2.layer.borderWidth = 1.0f;
-        embassyTextContainer2.layer.borderColor = [[UIColor grayColor] CGColor];
+        embassyTextContainer2.layer.borderColor = APP_BORDER_COLOR;
         embassyTextContainer2.backgroundColor = [UIColor clearColor];
         
         [scrollView addSubview:embassyImageView2];
@@ -168,7 +169,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         
         UIView *embassyTextContainer3 = [[UIView alloc] initWithFrame:CGRectMake(0, y + 35, 320, size3.height + 15)];
         embassyTextContainer3.layer.borderWidth = 1.0f;
-        embassyTextContainer3.layer.borderColor = [[UIColor grayColor] CGColor];
+        embassyTextContainer3.layer.borderColor = APP_BORDER_COLOR;
         embassyTextContainer3.backgroundColor = [UIColor clearColor];
         
         [scrollView addSubview:embassyImageView3];
@@ -203,7 +204,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         
         UIView *embassyTextContainer4 = [[UIView alloc] initWithFrame:CGRectMake(0, y + 35, 320, size4.height + 15)];
         embassyTextContainer4.layer.borderWidth = 1.0f;
-        embassyTextContainer4.layer.borderColor = [[UIColor grayColor] CGColor];
+        embassyTextContainer4.layer.borderColor = APP_BORDER_COLOR;
         embassyTextContainer4.backgroundColor = [UIColor clearColor];
         
         [scrollView addSubview:embassyImageView4];
@@ -238,7 +239,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         
         UIView *embassyTextContainer5 = [[UIView alloc] initWithFrame:CGRectMake(0, y + 35, 320, size5.height + 15)];
         embassyTextContainer5.layer.borderWidth = 1.0f;
-        embassyTextContainer5.layer.borderColor = [[UIColor grayColor] CGColor];
+        embassyTextContainer5.layer.borderColor = APP_BORDER_COLOR;
         embassyTextContainer5.backgroundColor = [UIColor clearColor];
         
         [scrollView addSubview:embassyImageView5];

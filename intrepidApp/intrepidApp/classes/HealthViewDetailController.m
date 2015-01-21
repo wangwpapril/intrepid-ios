@@ -109,7 +109,7 @@
     
     UILabel *descriptionTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, 45,  320, size.height + 15)];
     descriptionTextContainer.layer.borderWidth = 1.0f;
-    descriptionTextContainer.layer.borderColor = [[UIColor colorWithRed:0.91 green:0.9 blue:0.9 alpha:1] CGColor];
+    descriptionTextContainer.layer.borderColor = APP_BORDER_COLOR;
     descriptionTextContainer.backgroundColor = [UIColor clearColor];
 
     
@@ -153,7 +153,7 @@
 
         UILabel *sideEffectsTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, descriptionTextContainer.frame.origin.y + size.height + 55,  320, sideEffectsSize.height + 15)];
         sideEffectsTextContainer.layer.borderWidth = 1.0f;
-        sideEffectsTextContainer.layer.borderColor = [[UIColor colorWithRed:0.91 green:0.9 blue:0.9 alpha:1] CGColor];
+        sideEffectsTextContainer.layer.borderColor = APP_BORDER_COLOR;
         sideEffectsText.backgroundColor = [UIColor clearColor];
 
 
@@ -202,7 +202,7 @@
     transmissionTextContainer.layer.borderWidth = 1.0f;
     transmissionTextContainer.backgroundColor = [UIColor clearColor];
 
-    transmissionTextContainer.layer.borderColor = [[UIColor colorWithRed:0.91 green:0.9 blue:0.9 alpha:1] CGColor];
+    transmissionTextContainer.layer.borderColor = APP_BORDER_COLOR;
     
     [transmissionTextContainer addSubview:transmissionText];
     [scrollView addSubview:transmissionTextContainer];
@@ -235,7 +235,7 @@
     
     UILabel *immunizationTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, transmissionTextContainer.frame.origin.y + transmissionSize.height + 55,  320, immunizationSize.height + 15)];
     immunizationTextContainer.layer.borderWidth = 1.0f;
-    immunizationTextContainer.layer.borderColor = [[UIColor colorWithRed:0.91 green:0.9 blue:0.9 alpha:1] CGColor];
+    immunizationTextContainer.layer.borderColor = APP_BORDER_COLOR;
     immunizationTextContainer.backgroundColor = [UIColor clearColor];
     
     [immunizationTextContainer addSubview:immunizationText];
@@ -281,7 +281,7 @@
         
         UILabel *importantTextContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, immunizationTextContainer.frame.origin.y + immunizationSize.height + 55,  320, importantSize.height + 15)];
         importantTextContainer.layer.borderWidth = 1.0f;
-        importantTextContainer.layer.borderColor = [[UIColor colorWithRed:0.91 green:0.9 blue:0.9 alpha:1] CGColor];
+        importantTextContainer.layer.borderColor = APP_BORDER_COLOR;
         importantTextContainer.backgroundColor = [UIColor clearColor];
         
         [importantTextContainer addSubview:importantText];
