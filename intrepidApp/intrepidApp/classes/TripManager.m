@@ -231,44 +231,40 @@ static TripManager *instance =nil;
     return embassy;
 }
 
-- (CityEntity *)createTripWithCultureText:(NSString *)cultureText
-                             withLanguage:(NSString *)language
-                             withReligion:(NSString *)religion
-                         withethnicMakeup:(NSString *)ethnicMakeup
-                        withCulturalNorms:(NSString *)culturalNorms
-                       withCultureImage1x:(NSString *)cultureImage1x
-                       withCultureImage2x:(NSString *)cultureImage2x
-                       withCultureImage3x:(NSString *)cultureImage3x
-                      withDestinationName:(NSString *)destinationName
-                        withDestinationId:(NSInteger )destinationId
-                      withDestinationType:(NSString *)destinationType
-                          withGeneralText:(NSString *)generalText
-                             withLocation:(NSString *)location
-                              withClimate:(NSString *)climate
-                     withTypeOfGovernment:(NSString *)typeOfGovernment
-                     withVisaRequirements:(NSString *)visaRequirements
-          withCommunicationInfrastructure:(NSString *)communicationInfrastructure
-                          withElectricity:(NSString *)electricity
-                          withDevelopment:(NSString *)development
-                       withGeneralImage1x:(NSString *)generalImage1x
-                       withGeneralImage2x:(NSString *)generalImage2x
-                       withGeneralImage3x:(NSString *)generalImage3x
-                         withIntroImage1x:(NSString *)introImage1x
-                         withIntroImage2x:(NSString *)introImage2x
-                         withIntroImage3x:(NSString *)introImage3x
-                           withSafetyText:(NSString *)safetyText
-                               withSafety:(NSString *)safety
-                        withOtherConcerns:(NSString *)otherConcerns
-                        withSafetyImage1x:(NSString *)safetyImage1x
-                        withSafetyImage2x:(NSString *)safetyImage2x
-                        withSafetyImage3x:(NSString *)safetyImage3x
-                           withClinicsURL:(NSString *)clinicsURL
-                            withAlertsURL:(NSString *)alertsURL
-                          withCADToNative:(float) dollarRatio
+- (CityEntity *)createTripWithLanguage:(NSString *)language
+                         withReligion:(NSString *)religion
+                     withethnicMakeup:(NSString *)ethnicMakeup
+                    withCulturalNorms:(NSString *)culturalNorms
+                   withCultureImage1x:(NSString *)cultureImage1x
+                   withCultureImage2x:(NSString *)cultureImage2x
+                   withCultureImage3x:(NSString *)cultureImage3x
+                  withDestinationName:(NSString *)destinationName
+                    withDestinationId:(NSInteger )destinationId
+                  withDestinationType:(NSString *)destinationType
+                         withLocation:(NSString *)location
+                          withClimate:(NSString *)climate
+                 withTypeOfGovernment:(NSString *)typeOfGovernment
+                 withVisaRequirements:(NSString *)visaRequirements
+      withCommunicationInfrastructure:(NSString *)communicationInfrastructure
+                      withElectricity:(NSString *)electricity
+                      withDevelopment:(NSString *)development
+                   withGeneralImage1x:(NSString *)generalImage1x
+                   withGeneralImage2x:(NSString *)generalImage2x
+                   withGeneralImage3x:(NSString *)generalImage3x
+                     withIntroImage1x:(NSString *)introImage1x
+                     withIntroImage2x:(NSString *)introImage2x
+                     withIntroImage3x:(NSString *)introImage3x
+                           withSafety:(NSString *)safety
+                    withOtherConcerns:(NSString *)otherConcerns
+                    withSafetyImage1x:(NSString *)safetyImage1x
+                    withSafetyImage2x:(NSString *)safetyImage2x
+                    withSafetyImage3x:(NSString *)safetyImage3x
+                       withClinicsURL:(NSString *)clinicsURL
+                        withAlertsURL:(NSString *)alertsURL
+                      withCADToNative:(float) dollarRatio
 {
     CityEntity *city = [NSEntityDescription insertNewObjectForEntityForName:@"CityEntity" inManagedObjectContext:managedObjectContext];
 
-    city.cultureText = cultureText;
     city.language = language;
     city.religion = religion;
     city.ethnicMakeup = ethnicMakeup;
@@ -279,7 +275,6 @@ static TripManager *instance =nil;
     city.destinationName = destinationName;
     city.destinationId = [NSNumber numberWithInteger:destinationId];
     city.destinationType = destinationType;
-    city.generalText = generalText;
     city.location = location;
     city.climate = climate;
     city.typeOfGovernment = typeOfGovernment;
@@ -293,7 +288,6 @@ static TripManager *instance =nil;
     city.introImage1x = introImage1x;
     city.introImage2x = introImage2x;
     city.introImage3x = introImage3x;
-    city.safetyText = safetyText;
     city.safety = safety;
     city.otherConcerns = otherConcerns;
     city.safetyImage1x = safetyImage1x;
@@ -416,10 +410,6 @@ static TripManager *instance =nil;
     safety = contentDict[@"safety"];
     otherConcerns = contentDict[@"other_concerns"];
     
-    generalText = [NSString stringWithFormat:@"Location \n%@ \n\nClimate \n%@ \n\nType of Government \n%@ \n\nVisa Requirements \n%@ \n\nCommunication Infrastructure \n%@ \n\nElectricity \n%@ \n\nDevelopment \n%@", location, climate,typeOfGovernment, visaRequirements, communicationInfrastructure, electricity, development];
-    cultureText = [NSString stringWithFormat:@"Language \n%@ \n\nReligion \n%@ \n\nEthnic Makeup \n%@ \n\nCultural Norms \n%@", language, religion, ethnicMakeup, culturalNorms];
-    safetyText = [NSString stringWithFormat:@"Safety \n%@ \n\nOther Concerns \n%@", safety, otherConcerns];
-    
     if (cityDict[@"images"] != [NSNull null]) {
         cultureImage1x = cityDict[@"images"][@"culture"][@"versions"][@"1x"][@"source_url"];
         cultureImage2x = cityDict[@"images"][@"culture"][@"versions"][@"2x"][@"source_url"];
@@ -452,40 +442,37 @@ static TripManager *instance =nil;
     alertsURL = @"";
     dollarRatio = 6.0;
     
-    CityEntity *city = [[TripManager getInstance] createTripWithCultureText:cultureText
-                                                               withLanguage:language
-                                                               withReligion:religion
-                                                           withethnicMakeup:ethnicMakeup
-                                                          withCulturalNorms:culturalNorms
-                                                         withCultureImage1x:cultureImage1x
-                                                         withCultureImage2x:cultureImage2x
-                                                         withCultureImage3x:cultureImage3x
-                                                        withDestinationName:destinationName
-                                                          withDestinationId:destinationId
-                                                        withDestinationType:destinationType
-                                                            withGeneralText:generalText
-                                                               withLocation:location
-                                                                withClimate:climate
-                                                       withTypeOfGovernment:typeOfGovernment
-                                                       withVisaRequirements:visaRequirements
-                                            withCommunicationInfrastructure:communicationInfrastructure
-                                                            withElectricity:electricity
-                                                            withDevelopment:development
-                                                         withGeneralImage1x:generalImage1x
-                                                         withGeneralImage2x:generalImage2x
-                                                         withGeneralImage3x:generalImage3x
-                                                           withIntroImage1x:introImage1x
-                                                           withIntroImage2x:introImage2x
-                                                           withIntroImage3x:introImage3x
-                                                             withSafetyText:safetyText
-                                                                 withSafety:safety
-                                                          withOtherConcerns:otherConcerns
-                                                          withSafetyImage1x:safetyImage1x
-                                                          withSafetyImage2x:safetyImage2x
-                                                          withSafetyImage3x:safetyImage3x
-                                                             withClinicsURL:clinicsURL
-                                                              withAlertsURL:alertsURL
-                                                            withCADToNative:dollarRatio];
+    CityEntity *city = [[TripManager getInstance] createTripWithLanguage:language
+                                                           withReligion:religion
+                                                       withethnicMakeup:ethnicMakeup
+                                                      withCulturalNorms:culturalNorms
+                                                     withCultureImage1x:cultureImage1x
+                                                     withCultureImage2x:cultureImage2x
+                                                     withCultureImage3x:cultureImage3x
+                                                    withDestinationName:destinationName
+                                                      withDestinationId:destinationId
+                                                    withDestinationType:destinationType
+                                                           withLocation:location
+                                                            withClimate:climate
+                                                   withTypeOfGovernment:typeOfGovernment
+                                                   withVisaRequirements:visaRequirements
+                                        withCommunicationInfrastructure:communicationInfrastructure
+                                                        withElectricity:electricity
+                                                        withDevelopment:development
+                                                     withGeneralImage1x:generalImage1x
+                                                     withGeneralImage2x:generalImage2x
+                                                     withGeneralImage3x:generalImage3x
+                                                       withIntroImage1x:introImage1x
+                                                       withIntroImage2x:introImage2x
+                                                       withIntroImage3x:introImage3x
+                                                             withSafety:safety
+                                                      withOtherConcerns:otherConcerns
+                                                      withSafetyImage1x:safetyImage1x
+                                                      withSafetyImage2x:safetyImage2x
+                                                      withSafetyImage3x:safetyImage3x
+                                                         withClinicsURL:clinicsURL
+                                                          withAlertsURL:alertsURL
+                                                        withCADToNative:dollarRatio];
     
     [RequestBuilder fetchEmbassy:cityDict withCity:city];
     [RequestBuilder fetchCurrency:cityDict withCity:city];

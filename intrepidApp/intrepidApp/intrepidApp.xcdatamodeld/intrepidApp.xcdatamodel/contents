@@ -10,7 +10,6 @@
         <attribute name="cultureImage1x" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cultureImage2x" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cultureImage3x" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="cultureText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="destinationId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="destinationName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="destinationType" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,7 +19,6 @@
         <attribute name="generalImage1x" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="generalImage2x" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="generalImage3x" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="generalText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="introImage1x" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="introImage2x" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="introImage3x" optional="YES" attributeType="String" syncable="YES"/>
@@ -32,7 +30,6 @@
         <attribute name="safetyImage1x" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="safetyImage2x" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="safetyImage3x" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="safetyText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="typeOfGovernment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="visaRequirements" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="currency" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CurrencyEntity" inverseName="city" inverseEntity="CurrencyEntity" syncable="YES"/>
@@ -79,7 +76,7 @@
         <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CityEntity" inverseName="health" inverseEntity="CityEntity" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CityEntity" positionX="-477" positionY="3" width="128" height="615"/>
+        <element name="CityEntity" positionX="-477" positionY="3" width="128" height="570"/>
         <element name="CurrencyEntity" positionX="-317" positionY="-63" width="128" height="88"/>
         <element name="DestinationEntity" positionX="-459" positionY="108" width="128" height="103"/>
         <element name="EmbassyEntity" positionX="-677" positionY="-0" width="128" height="240"/>

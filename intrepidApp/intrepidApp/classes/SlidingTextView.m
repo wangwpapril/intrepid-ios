@@ -78,32 +78,6 @@
     self.contentSize = CGSizeMake(320, 330 + height); // was 308
 }
 
-- (void)addTextAreaWithText:(NSArray *)text {
-    NSLog(@"%@", text);
-    UIFont *textFont = [UIFont fontWithName:@"ProximaNova-Light" size:15];
-    
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
-    
-    CGSize size = [text[0][@"location"] boundingRectWithSize:CGSizeMake(280, 15000)
-                                     options:NSStringDrawingUsesLineFragmentOrigin
-                                  attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:15]}
-                                     context:nil].size;
-    
-    UILabel *textView = [[UILabel alloc] initWithFrame:CGRectMake(20, 5,  280, size.height + 5)];
-    textView.textColor = APP_TEXT_COLOR;
-    textView.font = textFont;
-    textView.text = text[0][@"location"];
-    textView.lineBreakMode = NSLineBreakByWordWrapping;
-    textView.numberOfLines = 0;
-    
-    UILabel *textViewContainer = [[UILabel alloc] initWithFrame:CGRectMake(0, 308,  320, size.height + 20)];
-
-    [textViewContainer addSubview: textView];
-    [scroll addSubview:textViewContainer];
-    scroll.contentSize = CGSizeMake(320, 308 + textViewContainer.frame.size.height + 75); // used to be 5 but impossible to read last few lines
-}
-
 - (void)addTextAreaWithText:(NSArray *)text withIconName:(NSString *)icon {
     int y = 273;
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
