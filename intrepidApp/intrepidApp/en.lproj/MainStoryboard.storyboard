@@ -423,27 +423,11 @@
                                     <outlet property="delegate" destination="8Jz-x1-9iz" id="8IK-M4-7R3"/>
                                 </connections>
                             </scrollView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T1t-Jb-QgQ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="header" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R40-X8-ZUQ">
-                                <rect key="frame" x="20" y="7" width="275" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Health" id="deZ-eK-uWZ"/>
                     <connections>
-                        <outlet property="healthItemNameLabel" destination="R40-X8-ZUQ" id="6XU-i2-UEG"/>
-                        <outlet property="healthItemTitleLabel" destination="T1t-Jb-QgQ" id="VRb-7Z-q4N"/>
                         <outlet property="scrollView" destination="gVH-ZX-sBE" id="RCO-b6-vpA"/>
                     </connections>
                 </viewController>

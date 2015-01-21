@@ -14,9 +14,6 @@
     IBOutlet UIScrollView *scrollView;
 }
 
-@property (nonatomic, strong) IBOutlet UILabel *healthItemNameLabel;
-@property (nonatomic, strong) IBOutlet UILabel *healthItemTitleLabel;
 @property (nonatomic, strong) HealthEntity *healthItem;
-
 
 @end

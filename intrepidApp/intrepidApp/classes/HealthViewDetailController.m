@@ -15,8 +15,6 @@
 
 @implementation HealthViewDetailController
 
-@synthesize healthItemNameLabel;
-@synthesize healthItemTitleLabel;
 @synthesize healthItem;
 
 - (void)viewDidLoad
@@ -34,40 +32,37 @@
 //    whiteLayer.alpha = 0.9;
 //    [self.view addSubview:whiteLayer];
     
-    CGRect rect=CGRectMake(0, 36, 320, self.view.frame.size.height - 44);
+    CGRect rect=CGRectMake(0, 0, 320, self.view.frame.size.height);
     scrollView = [[UIScrollView alloc] initWithFrame:rect];
     scrollView.showsVerticalScrollIndicator = YES;
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.scrollEnabled = YES;
     
-    [self addContent];
-    
     // Set Header label
-    healthItemTitleLabel.backgroundColor = NAVIGATION_BG_COLOR;
-    healthItemTitleLabel.text = NULL;
+//    healthItemTitleLabel.backgroundColor = NAVIGATION_BG_COLOR;
+//    healthItemTitleLabel.text = NULL;
+//    
+//    NSString *uppercaseString = [healthItem.name uppercaseString];
+//    healthItemNameLabel.text = uppercaseString;
+//    healthItemNameLabel.backgroundColor = [UIColor clearColor];
+//    healthItemNameLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:16];
+//    healthItemNameLabel.textColor = [UIColor whiteColor];
+//    
+//    [healthItemTitleLabel addSubview:healthItemNameLabel];
+//    [self.view addSubview:healthItemTitleLabel];
     
-    NSString *uppercaseString = [healthItem.name uppercaseString];
-    healthItemNameLabel.text = uppercaseString;
-    healthItemNameLabel.backgroundColor = [UIColor clearColor];
-    healthItemNameLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:16];
-    healthItemNameLabel.textColor = [UIColor whiteColor];
-    
-    [healthItemTitleLabel addSubview:healthItemNameLabel];
-    [self.view addSubview:healthItemTitleLabel];
+    self.navigationItem.title = healthItem.name;
+    [self addContent];
     [self.view addSubview:scrollView];
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        
         self.edgesForExtendedLayout = UIRectEdgeNone;
-        
     } else {
         [self moveAllSubviewsDown];
     }
-    
-	// Do any additional setup after loading the view.
 }
 
-- (void) moveAllSubviewsDown{
+- (void)moveAllSubviewsDown{
     float barHeight = 45.0;
     for (UIView *view in self.view.subviews) {
         

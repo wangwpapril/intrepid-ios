@@ -113,6 +113,7 @@
     if (cell.selected) {
         cell.detailTextLabel.font = [UIFont fontWithName:@"ProximaNova-Bold" size:16];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
