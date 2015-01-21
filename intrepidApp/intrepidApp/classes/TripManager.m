@@ -232,6 +232,10 @@ static TripManager *instance =nil;
 }
 
 - (CityEntity *)createTripWithCultureText:(NSString *)cultureText
+                             withLanguage:(NSString *)language
+                             withReligion:(NSString *)religion
+                         withethnicMakeup:(NSString *)ethnicMakeup
+                        withCulturalNorms:(NSString *)culturalNorms
                        withCultureImage1x:(NSString *)cultureImage1x
                        withCultureImage2x:(NSString *)cultureImage2x
                        withCultureImage3x:(NSString *)cultureImage3x
@@ -239,40 +243,62 @@ static TripManager *instance =nil;
                         withDestinationId:(NSInteger )destinationId
                       withDestinationType:(NSString *)destinationType
                           withGeneralText:(NSString *)generalText
+                             withLocation:(NSString *)location
+                              withClimate:(NSString *)climate
+                     withTypeOfGovernment:(NSString *)typeOfGovernment
+                     withVisaRequirements:(NSString *)visaRequirements
+          withCommunicationInfrastructure:(NSString *)communicationInfrastructure
+                          withElectricity:(NSString *)electricity
+                          withDevelopment:(NSString *)development
                        withGeneralImage1x:(NSString *)generalImage1x
                        withGeneralImage2x:(NSString *)generalImage2x
                        withGeneralImage3x:(NSString *)generalImage3x
                          withIntroImage1x:(NSString *)introImage1x
                          withIntroImage2x:(NSString *)introImage2x
                          withIntroImage3x:(NSString *)introImage3x
+                           withSafetyText:(NSString *)safetyText
+                               withSafety:(NSString *)safety
+                        withOtherConcerns:(NSString *)otherConcerns
                         withSafetyImage1x:(NSString *)safetyImage1x
                         withSafetyImage2x:(NSString *)safetyImage2x
                         withSafetyImage3x:(NSString *)safetyImage3x
-                           withSafetyText:(NSString *)safetyText
                            withClinicsURL:(NSString *)clinicsURL
                             withAlertsURL:(NSString *)alertsURL
                           withCADToNative:(float) dollarRatio
 {
     CityEntity *city = [NSEntityDescription insertNewObjectForEntityForName:@"CityEntity" inManagedObjectContext:managedObjectContext];
 
+    city.cultureText = cultureText;
+    city.language = language;
+    city.religion = religion;
+    city.ethnicMakeup = ethnicMakeup;
+    city.culturalNorms = culturalNorms;
     city.cultureImage1x = cultureImage1x;
     city.cultureImage2x = cultureImage2x;
     city.cultureImage3x = cultureImage3x;
-    city.cultureText = cultureText;
     city.destinationName = destinationName;
     city.destinationId = [NSNumber numberWithInteger:destinationId];
     city.destinationType = destinationType;
+    city.generalText = generalText;
+    city.location = location;
+    city.climate = climate;
+    city.typeOfGovernment = typeOfGovernment;
+    city.visaRequirements = visaRequirements;
+    city.communicationInfrastructure = communicationInfrastructure;
+    city.electricity = electricity;
+    city.development = development;
     city.generalImage1x = generalImage1x;
     city.generalImage2x = generalImage2x;
     city.generalImage3x = generalImage3x;
-    city.generalText = generalText;
     city.introImage1x = introImage1x;
     city.introImage2x = introImage2x;
     city.introImage3x = introImage3x;
+    city.safetyText = safetyText;
+    city.safety = safety;
+    city.otherConcerns = otherConcerns;
     city.safetyImage1x = safetyImage1x;
     city.safetyImage2x = safetyImage2x;
     city.safetyImage3x = safetyImage3x;
-    city.safetyText = safetyText;
     city.clinicsURL = clinicsURL;
     city.alertsURL = alertsURL;
     city.cadToNative = [NSNumber numberWithFloat:dollarRatio];
@@ -354,7 +380,10 @@ static TripManager *instance =nil;
 }
 
 - (void)saveCity:(NSDictionary *)cityDict {
-    NSString *cultureText, *destinationName, *destinationType, *generalText, *safetyText, *clinicsURL, *alertsURL, *location, *climate, *type_of_government, *visa_requirements, *communication_infrastructure, *electricity, *development, *language, *religion, *ethnic_makeup, *cultural_norms, *safety, *other_concerns;
+    NSString *generalText, *location, *climate, *typeOfGovernment, *visaRequirements, *communicationInfrastructure, *electricity, *development;
+    NSString *cultureText, *language, *religion, *ethnicMakeup, *culturalNorms;
+    NSString *safetyText, *safety, *otherConcerns;
+    NSString *destinationName, *destinationType, *clinicsURL, *alertsURL;
     NSString *cultureImage1x, *cultureImage2x, *cultureImage3x, *introImage1x, *introImage2x, *introImage3x, *generalImage1x, *generalImage2x, *generalImage3x, *safetyImage1x, *safetyImage2x, *safetyImage3x;
     NSInteger destinationId;
     float dollarRatio;
@@ -371,25 +400,25 @@ static TripManager *instance =nil;
     //General Description Subtext
     location = contentDict[@"location"];
     climate = contentDict[@"climate"];
-    type_of_government = contentDict[@"type_of_government"];
-    visa_requirements = contentDict[@"visa_map_attributes"];
-    communication_infrastructure = contentDict[@"communication_infrastructure"];
+    typeOfGovernment = contentDict[@"type_of_government"];
+    visaRequirements = contentDict[@"visa_map_attributes"];
+    communicationInfrastructure = contentDict[@"communication_infrastructure"];
     electricity = contentDict[@"electricity"];
     development = contentDict[@"development"];
     
     //Culture Description Subtext
     language = contentDict[@"language"];
     religion = contentDict[@"religion"];
-    ethnic_makeup = contentDict[@"ethnic_makeup"];
-    cultural_norms = contentDict[@"cultural_norms"];
+    ethnicMakeup = contentDict[@"ethnic_makeup"];
+    culturalNorms = contentDict[@"cultural_norms"];
     
     //Security Description Subtext
     safety = contentDict[@"safety"];
-    other_concerns = contentDict[@"other_concerns"];
+    otherConcerns = contentDict[@"other_concerns"];
     
-    generalText = [NSString stringWithFormat:@"Location \n%@ \n\nClimate \n%@ \n\nType of Government \n%@ \n\nVisa Requirements \n%@ \n\nCommunication Infrastructure \n%@ \n\nElectricity \n%@ \n\nDevelopment \n%@",location, climate,type_of_government, visa_requirements, communication_infrastructure, electricity, development];
-    cultureText = [NSString stringWithFormat:@"Language \n%@ \n\nReligion \n%@ \n\nEthnic Makeup \n%@ \n\nCultural Norms \n%@",language,religion,ethnic_makeup, cultural_norms];
-    safetyText = [NSString stringWithFormat:@"Safety \n%@ \n\nOther Concerns \n%@",safety,other_concerns];
+    generalText = [NSString stringWithFormat:@"Location \n%@ \n\nClimate \n%@ \n\nType of Government \n%@ \n\nVisa Requirements \n%@ \n\nCommunication Infrastructure \n%@ \n\nElectricity \n%@ \n\nDevelopment \n%@", location, climate,typeOfGovernment, visaRequirements, communicationInfrastructure, electricity, development];
+    cultureText = [NSString stringWithFormat:@"Language \n%@ \n\nReligion \n%@ \n\nEthnic Makeup \n%@ \n\nCultural Norms \n%@", language, religion, ethnicMakeup, culturalNorms];
+    safetyText = [NSString stringWithFormat:@"Safety \n%@ \n\nOther Concerns \n%@", safety, otherConcerns];
     
     if (cityDict[@"images"] != [NSNull null]) {
         cultureImage1x = cityDict[@"images"][@"culture"][@"versions"][@"1x"][@"source_url"];
@@ -424,6 +453,10 @@ static TripManager *instance =nil;
     dollarRatio = 6.0;
     
     CityEntity *city = [[TripManager getInstance] createTripWithCultureText:cultureText
+                                                               withLanguage:language
+                                                               withReligion:religion
+                                                           withethnicMakeup:ethnicMakeup
+                                                          withCulturalNorms:culturalNorms
                                                          withCultureImage1x:cultureImage1x
                                                          withCultureImage2x:cultureImage2x
                                                          withCultureImage3x:cultureImage3x
@@ -431,16 +464,25 @@ static TripManager *instance =nil;
                                                           withDestinationId:destinationId
                                                         withDestinationType:destinationType
                                                             withGeneralText:generalText
+                                                               withLocation:location
+                                                                withClimate:climate
+                                                       withTypeOfGovernment:typeOfGovernment
+                                                       withVisaRequirements:visaRequirements
+                                            withCommunicationInfrastructure:communicationInfrastructure
+                                                            withElectricity:electricity
+                                                            withDevelopment:development
                                                          withGeneralImage1x:generalImage1x
                                                          withGeneralImage2x:generalImage2x
                                                          withGeneralImage3x:generalImage3x
                                                            withIntroImage1x:introImage1x
                                                            withIntroImage2x:introImage2x
                                                            withIntroImage3x:introImage3x
+                                                             withSafetyText:safetyText
+                                                                 withSafety:safety
+                                                          withOtherConcerns:otherConcerns
                                                           withSafetyImage1x:safetyImage1x
                                                           withSafetyImage2x:safetyImage2x
                                                           withSafetyImage3x:safetyImage3x
-                                                             withSafetyText:safetyText
                                                              withClinicsURL:clinicsURL
                                                               withAlertsURL:alertsURL
                                                             withCADToNative:dollarRatio];

@@ -36,19 +36,52 @@
     
     SlidingTextView *history = [[SlidingTextView alloc] initWithFrame:frame];
     [history setupWithImageName1x:city.generalImage1x withImageName2x:city.generalImage2x withImageName3x:city.generalImage3x withTitle:@"General" withIconName:@"history-icon"];
-    [history addTextAreaWithText:city.generalText];
-    
+    NSMutableArray *historyArray = [NSMutableArray new];
+    if (city.location) {
+        [historyArray addObject:@{@"Location" : city.location}];
+    }
+    if (city.climate) {
+        [historyArray addObject:@{@"Climate" : city.climate}];
+    }
+    if (city.typeOfGovernment) {
+        [historyArray addObject:@{@"Type Of Government" : city.typeOfGovernment}];
+    }
+    if (city.visaRequirements) {
+        [historyArray addObject:@{@"Visa Requirements" : city.visaRequirements}];
+    }
+    if (city.communicationInfrastructure) {
+        [historyArray addObject:@{@"Communication Infrastructure" : city.communicationInfrastructure}];
+    }
+    if (city.electricity) {
+        [historyArray addObject:@{@"Electricity" : city.electricity}];
+    }
+    if (city.development) {
+        [historyArray addObject:@{@"Development" : city.development}];
+    }
+    [history addTextAreaWithText:historyArray withIconName:@"history-icon"];
     
     SlidingTextView *culture = [[SlidingTextView alloc] initWithFrame:frame];
     [culture setupWithImageName1x:city.cultureImage1x withImageName2x:city.cultureImage2x withImageName3x:city.cultureImage3x withTitle:@"Culture" withIconName:@"culture-icon"];
-    [culture addTextAreaWithText:city.cultureText];
-    
+    NSMutableArray *cultureArray = [NSMutableArray new];
+    if (city.location) {
+        [cultureArray addObject:@{@"Language" : city.language}];
+    }
+    if (city.climate) {
+        [cultureArray addObject:@{@"Religion" : city.religion}];
+    }
+    if (city.electricity) {
+        [cultureArray addObject:@{@"Ethnic Makeup" : city.ethnicMakeup}];
+    }
+    if (city.development) {
+        [cultureArray addObject:@{@"Cultural Norms" : city.culturalNorms}];
+    }
+    [culture addTextAreaWithText:cultureArray withIconName:@"culture-icon"];
 
     SlidingTextView *currency = [[SlidingTextView alloc] initWithFrame:frame];
     [currency setupWithImageName1x:@"" withImageName2x:@"" withImageName3x:@"" withTitle:@"Currency (approx.)" withIconName:@"currency-icon"];
     
     // currency table
-    tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 308,  320, height - 308)];
+    tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 273,  320, height - 308)];
     tableList.dataSource = self;
     tableList.delegate = self;
     tableList.scrollEnabled = YES;

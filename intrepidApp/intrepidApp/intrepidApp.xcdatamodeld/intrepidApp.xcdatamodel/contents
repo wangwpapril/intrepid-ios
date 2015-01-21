@@ -5,8 +5,8 @@
         <attribute name="cadToNative" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="climate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="clinicsURL" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="communication_infrastructure" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="cultural_norms" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="communicationInfrastructure" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="culturalNorms" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cultureImage1x" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cultureImage2x" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cultureImage3x" optional="YES" attributeType="String" syncable="YES"/>
@@ -16,7 +16,7 @@
         <attribute name="destinationType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="development" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="electricity" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="ethnic_makeup" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ethnicMakeup" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="generalImage1x" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="generalImage2x" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="generalImage3x" optional="YES" attributeType="String" syncable="YES"/>
@@ -26,15 +26,15 @@
         <attribute name="introImage3x" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="other_concerns" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="otherConcerns" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="religion" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="safety" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="safetyImage1x" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="safetyImage2x" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="safetyImage3x" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="safetyText" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="type_of_government" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="visa_requirements" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="typeOfGovernment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="visaRequirements" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="currency" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CurrencyEntity" inverseName="city" inverseEntity="CurrencyEntity" syncable="YES"/>
         <relationship name="desintation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DestinationEntity" inverseName="city" inverseEntity="DestinationEntity" syncable="YES"/>
         <relationship name="embassies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EmbassyEntity" inverseName="city" inverseEntity="EmbassyEntity" syncable="YES"/>
