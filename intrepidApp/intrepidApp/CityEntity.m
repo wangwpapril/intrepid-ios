@@ -17,8 +17,8 @@
 @dynamic cadToNative;
 @dynamic climate;
 @dynamic clinicsURL;
-@dynamic communication_infrastructure;
-@dynamic cultural_norms;
+@dynamic communicationInfrastructure;
+@dynamic culturalNorms;
 @dynamic cultureImage1x;
 @dynamic cultureImage2x;
 @dynamic cultureImage3x;
@@ -30,7 +30,7 @@
 @dynamic development;
 @dynamic electricity;
 @dynamic embassies;
-@dynamic ethnic_makeup;
+@dynamic ethnicMakeup;
 @dynamic generalImage1x;
 @dynamic generalImage2x;
 @dynamic generalImage3x;
@@ -41,14 +41,14 @@
 @dynamic introImage3x;
 @dynamic language;
 @dynamic location;
-@dynamic other_concerns;
+@dynamic otherConcerns;
 @dynamic religion;
 @dynamic safety;
 @dynamic safetyImage1x;
 @dynamic safetyImage2x;
 @dynamic safetyImage3x;
 @dynamic safetyText;
-@dynamic type_of_government;
-@dynamic visa_requirements;
+@dynamic typeOfGovernment;
+@dynamic visaRequirements;
 
 @end

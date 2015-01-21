@@ -37,7 +37,14 @@
     SlidingTextView *political = [[SlidingTextView alloc] initWithFrame:frame];
     
     [political setupWithImageName1x:city.safetyImage1x withImageName2x:city.safetyImage2x withImageName3x:city.safetyImage3x withTitle:@"Safety" withIconName:@"Political-icon"];
-    [political addTextAreaWithText:city.safetyText];
+    NSMutableArray *politicalArray = [NSMutableArray new];
+    if (city.safety) {
+        [politicalArray addObject:@{@"Safety" : city.safety}];
+    }
+    if (city.otherConcerns) {
+        [politicalArray addObject:@{@"Other Concerns" : city.otherConcerns}];
+    }
+    [political addTextAreaWithText:politicalArray withIconName:@"Political-icon"];
     
     SlidingTextView *embassy = [[SlidingTextView alloc] initWithFrame:frame];
     
@@ -49,7 +56,7 @@
     }
 
     // embassies
-    tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 308,  320, height - 308)];
+    tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 273,  320, height - 308)];
     tableList.dataSource = self;
     tableList.delegate = self;
     tableList.scrollEnabled = YES;
