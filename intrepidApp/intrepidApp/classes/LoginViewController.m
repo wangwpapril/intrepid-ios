@@ -95,7 +95,7 @@
 //    [intrepidTitle setTextAlignment:NSTextAlignmentCenter];
 //    [self.view addSubview:intrepidTitle];
     
-    tagline.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+    tagline.font = [UIFont fontWithName:@"ProximaNova-Regular" size:20];
     tagline.textColor = [UIColor whiteColor];
     [tagline setTextAlignment:NSTextAlignmentCenter];
     tagline.text = @"TRAVEL SMART";
