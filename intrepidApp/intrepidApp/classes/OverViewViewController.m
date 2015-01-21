@@ -60,6 +60,7 @@
     }
     [history addTextAreaWithText:historyArray withIconName:@"history-icon"];
     
+    
     SlidingTextView *culture = [[SlidingTextView alloc] initWithFrame:frame];
     [culture setupWithImageName1x:city.cultureImage1x withImageName2x:city.cultureImage2x withImageName3x:city.cultureImage3x withTitle:@"Culture" withIconName:@"culture-icon"];
     NSMutableArray *cultureArray = [NSMutableArray new];
@@ -70,13 +71,27 @@
         [cultureArray addObject:@{@"Religion" : city.religion}];
     }
     if (city.electricity) {
-        [cultureArray addObject:@{@"Ethnic Makeup" : city.ethnicMakeup}];
+        [cultureArray addObject:@{@"Ethnic Makeup" : city.ethnicMakeup} ];
     }
     if (city.development) {
         [cultureArray addObject:@{@"Cultural Norms" : city.culturalNorms}];
     }
     [culture addTextAreaWithText:cultureArray withIconName:@"culture-icon"];
 
+//    NSMutableArray *cultureArrayImages = [[NSMutableArray alloc] init];
+//    if (city.location) {
+//        [cultureArrayImages addObject:[UIImage imageNamed:@"diversity-icon"]];
+//    }
+//    if (city.climate) {
+//        [cultureArrayImages addObject:[UIImage imageNamed:@"diversity-icon"]];
+//    }
+//    if (city.electricity) {
+//        [cultureArrayImages addObject:[UIImage imageNamed:@"diversity-icon"]];
+//    }
+//    if (city.development) {
+//        [cultureArrayImages addObject:[UIImage imageNamed:@"diversity-icon"]];
+//    }
+    
     SlidingTextView *currency = [[SlidingTextView alloc] initWithFrame:frame];
     [currency setupWithImageName1x:@"" withImageName2x:@"" withImageName3x:@"" withTitle:@"Currency (approx.)" withIconName:@"currency-icon"];
     
