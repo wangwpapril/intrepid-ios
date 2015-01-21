@@ -74,7 +74,10 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     
     
     if (![embassyItem.address isEqualToString:@""]) {
-        UILabel *embassyLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, y + 10, 290, 25)];
+        UIImageView  *embassyImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"embassy-icon"]];
+        embassyImageView.frame = CGRectMake(14, y + 5, 25, 25);
+        
+        UILabel *embassyLabel = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 7, 250, 25)];
         embassyLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         embassyLabel.backgroundColor = [UIColor clearColor];
         embassyLabel.textColor = UIColorFromRGB(0x423a38);
@@ -98,6 +101,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         embassyTextContainer.layer.borderColor = [[UIColor grayColor] CGColor];
         embassyTextContainer.backgroundColor = [UIColor clearColor];
         
+        [scrollView addSubview:embassyImageView];
         [scrollView addSubview:embassyLabel];
         [embassyTextContainer addSubview:embassyText];
         [scrollView addSubview:embassyTextContainer];
@@ -105,7 +109,10 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     }
     
     if (![embassyItem.phone isEqualToString:@""] || ![embassyItem.fax isEqualToString:@""] || ![embassyItem.email isEqualToString:@""]) {
-        UILabel *embassyLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(15, y + 10, 290, 25)];
+        UIImageView  *embassyImageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"embassy-icon"]];
+        embassyImageView2.frame = CGRectMake(14, y + 5, 25, 25);
+        
+        UILabel *embassyLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 7, 250, 25)];
         embassyLabel2.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         embassyLabel2.backgroundColor = [UIColor clearColor];
         embassyLabel2.text = @"Contact Info";
@@ -129,6 +136,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         embassyTextContainer2.layer.borderColor = [[UIColor grayColor] CGColor];
         embassyTextContainer2.backgroundColor = [UIColor clearColor];
         
+        [scrollView addSubview:embassyImageView2];
         [scrollView addSubview:embassyLabel2];
         [embassyTextContainer2 addSubview:embassyText2];
         [scrollView addSubview:embassyTextContainer2];
@@ -136,7 +144,10 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     }
     
     if (![embassyItem.hours isEqualToString:@""]) {
-        UILabel *embassyLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(15, y + 10, 290, 25)];
+        UIImageView  *embassyImageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"embassy-icon"]];
+        embassyImageView3.frame = CGRectMake(14, y + 5, 25, 25);
+        
+        UILabel *embassyLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 7, 250, 25)];
         embassyLabel3.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         embassyLabel3.backgroundColor = [UIColor clearColor];
         embassyLabel3.text = @"Hours of Operation";
@@ -160,6 +171,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         embassyTextContainer3.layer.borderColor = [[UIColor grayColor] CGColor];
         embassyTextContainer3.backgroundColor = [UIColor clearColor];
         
+        [scrollView addSubview:embassyImageView3];
         [scrollView addSubview:embassyLabel3];
         [embassyTextContainer3 addSubview:embassyText3];
         [scrollView addSubview:embassyTextContainer3];
@@ -167,7 +179,10 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     }
 
     if (![embassyItem.services isEqualToString:@""]) {
-        UILabel *embassyLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(15, y + 10, 290, 25)];
+        UIImageView  *embassyImageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"embassy-icon"]];
+        embassyImageView4.frame = CGRectMake(14, y + 5, 25, 25);
+        
+        UILabel *embassyLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 7, 250, 25)];
         embassyLabel4.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         embassyLabel4.backgroundColor = [UIColor clearColor];
         embassyLabel4.text = @"Services Offered";
@@ -191,6 +206,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         embassyTextContainer4.layer.borderColor = [[UIColor grayColor] CGColor];
         embassyTextContainer4.backgroundColor = [UIColor clearColor];
         
+        [scrollView addSubview:embassyImageView4];
         [scrollView addSubview:embassyLabel4];
         [embassyTextContainer4 addSubview:embassyText4];
         [scrollView addSubview:embassyTextContainer4];
@@ -198,7 +214,10 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     }
     
     if (![embassyItem.notes isEqualToString:@""]) {
-        UILabel *embassyLabel5 = [[UILabel alloc] initWithFrame:CGRectMake(15, y + 10, 290, 25)];
+        UIImageView  *embassyImageView5 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"embassy-icon"]];
+        embassyImageView5.frame = CGRectMake(14, y + 5, 25, 25);
+        
+        UILabel *embassyLabel5 = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 7, 250, 25)];
         embassyLabel5.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         embassyLabel5.backgroundColor = [UIColor clearColor];
         embassyLabel5.text = @"Notes";
@@ -222,6 +241,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         embassyTextContainer5.layer.borderColor = [[UIColor grayColor] CGColor];
         embassyTextContainer5.backgroundColor = [UIColor clearColor];
         
+        [scrollView addSubview:embassyImageView5];
         [scrollView addSubview:embassyLabel5];
         [embassyTextContainer5 addSubview:embassyText5];
         [scrollView addSubview:embassyTextContainer5];
