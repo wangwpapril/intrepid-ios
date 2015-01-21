@@ -49,10 +49,10 @@
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
-    [editPhoto setBackgroundImage:[UIImage imageNamed:@"Add-photo"]
-                        forState:UIControlStateNormal];
-    [self.view addSubview:editPhoto];
-    
+//    [editPhoto setBackgroundImage:[UIImage imageNamed:@"Add-photo"]
+//                        forState:UIControlStateNormal];
+//    [self.view addSubview:editPhoto];
+//    
     //Initalize the Labels
     UILabel *nameLabel = [[UILabel alloc] init];
     nameLabel.frame = CGRectMake(10, 150, 75, 20);
