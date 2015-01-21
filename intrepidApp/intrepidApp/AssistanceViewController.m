@@ -53,7 +53,7 @@
     [scrollView addSubview:ambulanceImage];
     
     //Provide Location
-    UILabel *provideLocationLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, ambulanceImage.frame.origin.y + ambulanceImage.frame.size.height + 10, 250, 20)];
+    UILabel *provideLocationLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, ambulanceImage.frame.origin.y + ambulanceImage.frame.size.height + 10, 250, 20)];
     provideLocationLabel.text = @"Current Location:";
     provideLocationLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:21];
     provideLocationLabel.backgroundColor = [UIColor clearColor];
