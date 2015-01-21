@@ -54,14 +54,14 @@
     
     //Provide Location
     UILabel *provideLocationLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, ambulanceImage.frame.origin.y + ambulanceImage.frame.size.height + 10, 250, 20)];
-    provideLocationLabel.text = @"Provide my Location:";
+    provideLocationLabel.text = @"Current Location:";
     provideLocationLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:21];
     provideLocationLabel.backgroundColor = [UIColor clearColor];
-    provideLocationLabel.textColor = [UIColor colorWithRed: 66.0/255 green: 58.0/255 blue: 56.0/255 alpha: 0.9];
+    provideLocationLabel.textColor = [UIColor colorWithRed:0.2 green:0.25 blue:0.28 alpha:1];
     [scrollView addSubview:provideLocationLabel];
     
     onOff.frame = CGRectMake(230, ambulanceImage.frame.origin.y + ambulanceImage.frame.size.height + 7, 63, 23);
-    [onOff setOnTintColor: [UIColor colorWithRed:84/255.0f green:213/255.0f blue:105/255.0f alpha:1.0f]];
+    [onOff setOnTintColor: [UIColor clearColor]];
     [scrollView addSubview:onOff];
     
     //Map Image
