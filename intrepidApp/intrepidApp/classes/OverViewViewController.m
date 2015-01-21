@@ -62,7 +62,7 @@
     
     
     SlidingTextView *culture = [[SlidingTextView alloc] initWithFrame:frame];
-    [culture setupWithImageName1x:city.cultureImage1x withImageName2x:city.cultureImage2x withImageName3x:city.cultureImage3x withTitle:@"Culture" withIconName:@"culture-icon"];
+    [culture setupWithImageName1x:city.cultureImage1x withImageName2x:city.cultureImage2x withImageName3x:city.cultureImage3x withTitle:@"Culture" withIconName:@"diversity-icon"];
     NSMutableArray *cultureArray = [NSMutableArray new];
     if (city.location) {
         [cultureArray addObject:@{@"Language" : city.language}];

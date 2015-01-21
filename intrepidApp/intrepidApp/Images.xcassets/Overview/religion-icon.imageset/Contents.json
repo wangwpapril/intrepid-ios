@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "diversity-icon.png"
+      "filename" : "religion-icon.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "diversity-icon@2x.png"
+      "filename" : "religion-icon@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "diversity-icon@3x.png"
+      "filename" : "religion-icon@3x.png"
     }
   ],
   "info" : {
