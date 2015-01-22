@@ -144,7 +144,7 @@
                                     <segue destination="KcC-nk-vjb" kind="modal" id="LRU-oV-ELh"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ace-tagline" id="IOC-SN-nlu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo2" id="IOC-SN-nlu">
                                 <rect key="frame" x="30" y="50" width="260" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -772,7 +772,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Ace-tagline" width="200" height="66"/>
+        <image name="logo2" width="96" height="32"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
