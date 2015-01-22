@@ -150,6 +150,11 @@
         [self moveAllSubviewsDown];
     }
     
+    // Navigation bar translucency for iOS 7 and earlier
+    if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
+        self.navigationController.navigationBar.translucent = NO;
+    }
+    
 	// Do any additional setup after loading the view.
     email.text = @"cherry@swishlabs.co";
     password.text = @"pass@swish123";
