@@ -374,9 +374,9 @@ static TripManager *instance =nil;
 }
 
 - (void)saveCity:(NSDictionary *)cityDict {
-    NSString *generalText, *location, *climate, *typeOfGovernment, *visaRequirements, *communicationInfrastructure, *electricity, *development;
-    NSString *cultureText, *language, *religion, *ethnicMakeup, *culturalNorms;
-    NSString *safetyText, *safety, *otherConcerns;
+    NSString *location, *climate, *typeOfGovernment, *visaRequirements, *communicationInfrastructure, *electricity, *development;
+    NSString *language, *religion, *ethnicMakeup, *culturalNorms;
+    NSString *safety, *otherConcerns;
     NSString *destinationName, *destinationType, *clinicsURL, *alertsURL;
     NSString *cultureImage1x, *cultureImage2x, *cultureImage3x, *introImage1x, *introImage2x, *introImage3x, *generalImage1x, *generalImage2x, *generalImage3x, *safetyImage1x, *safetyImage2x, *safetyImage3x;
     NSInteger destinationId;

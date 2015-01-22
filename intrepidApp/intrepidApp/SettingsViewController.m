@@ -183,19 +183,19 @@
 
 - (IBAction)useCameraRoll:(id)sender
 {
-    if ([UIImagePickerController isSourceTypeAvailable:
-         UIImagePickerControllerSourceTypePhotoLibrary])
-    {
-        UIImagePickerController *imagePicker =
-        [[UIImagePickerController alloc] init];
-        imagePicker.delegate = self;
-        imagePicker.sourceType =
-        UIImagePickerControllerSourceTypePhotoLibrary;
-        imagePicker.allowsEditing = NO;
-        [self presentViewController:imagePicker
-                           animated:YES completion:nil];
-        newMedia = NO;
-    }
+//    if ([UIImagePickerController isSourceTypeAvailable:
+//         UIImagePickerControllerSourceTypePhotoLibrary])
+//    {
+//        UIImagePickerController *imagePicker =
+//        [[UIImagePickerController alloc] init];
+//        imagePicker.delegate = self;
+//        imagePicker.sourceType =
+//        UIImagePickerControllerSourceTypePhotoLibrary;
+//        imagePicker.allowsEditing = NO;
+//        [self presentViewController:imagePicker
+//                           animated:YES completion:nil];
+//        newMedia = NO;
+//    }
 }
 
 - (IBAction)signout:(id)sender {
