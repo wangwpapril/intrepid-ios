@@ -12,9 +12,8 @@
 #import "DestinationEntity.h"
 
 @implementation RequestBuilder
-static NSString * token = @"UIcodif8e0";
 static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
-static NSString * currencyURL = @"http://api.fixer.io/latest?base=";
+static NSString * currencyURL = @"https://openexchangerates.org/api/latest.json?app_id=14073d8e6b8c4687951ed926cbbd3589";
 static NSString * embassyURL = @" https://staging.intrepid247.com/v1/diplomatic-offices/";
 static NSDictionary * userDict;
 static NSDictionary * cityDict;
@@ -71,7 +70,6 @@ static NSDictionary * cityDict;
             [[TripManager getInstance] saveCity:cityDict]; // replace it
         } else {
             NSLog(@"error: %@", error.localizedDescription);
-            NSLog(@"request trip update");
             [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
         }
     }];
@@ -118,14 +116,12 @@ static NSDictionary * cityDict;
         } else {
             NSLog(@"error: %@", error.localizedDescription);
         }
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
     }];
 }
 
 + (void)fetchCurrency:(NSDictionary *)cityDict withCity:(CityEntity *)city {
     NSString *currencyCode = cityDict[@"country"][@"currency_code"];
-    NSURL *currencyRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@&symbols=%@", currencyURL, userDict[@"user"][@"currency_code"], currencyCode]];
+    NSURL *currencyRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@&base=%@&symbols=%@", currencyURL, userDict[@"user"][@"currency_code"], currencyCode]];
     NSMutableURLRequest *currencyRequest = [[NSMutableURLRequest alloc] initWithURL:currencyRequestURL];
     
     [NSURLConnection sendAsynchronousRequest:currencyRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
@@ -133,19 +129,20 @@ static NSDictionary * cityDict;
             NSDictionary *currencyObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             for (NSString *country in currencyObject[@"rates"]) {
                 if ([country isEqualToString:currencyCode]) {
-                    NSString *value = [currencyObject[@"rates"][country] stringValue];
-                    NSString *slicedValue = [value substringToIndex:4];
+                    float value = [currencyObject[@"rates"][country] floatValue];
+                    NSString *slicedValue = [NSString stringWithFormat:@"%.2f", value];
                     [[TripManager getInstance] createCurrencyItemWithCity:city Country:country withValue:slicedValue];
                     
-                    float valueConv = [value floatValue];
-                    float cityToCad = (1/valueConv);
-                    NSString *cityToCadStr = [NSString stringWithFormat:@"%.2f", cityToCad];
-                    [[TripManager getInstance] createCurrencyItemWithCity:city Country:userDict[@"user"][@"currency_code"] withValue:cityToCadStr];
+                    float inverseValue = (1/value);
+                    NSString *inverseSlicedValue = [NSString stringWithFormat:@"%.2f", inverseValue];
+                    [[TripManager getInstance] createCurrencyItemWithCity:city Country:userDict[@"user"][@"currency_code"] withValue:inverseSlicedValue];
                 }
             }
         } else {
             NSLog(@"got an error: %@", error);
         }
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
     }];
 }
 
