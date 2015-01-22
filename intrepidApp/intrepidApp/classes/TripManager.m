@@ -410,42 +410,57 @@ static TripManager *instance =nil;
     safety = contentDict[@"safety"];
     otherConcerns = contentDict[@"other_concerns"];
     
-    if (cityDict[@"images"][@"culture"]) {
-        cultureImage1x = cityDict[@"images"][@"culture"][@"versions"][@"1x"][@"source_url"];
-        cultureImage2x = cityDict[@"images"][@"culture"][@"versions"][@"2x"][@"source_url"];
-        cultureImage3x = cityDict[@"images"][@"culture"][@"versions"][@"3x"][@"source_url"];
+    if (cityDict[@"images"] != [NSNull null]) {
+        if (cityDict[@"images"][@"culture"]) {
+            cultureImage1x = cityDict[@"images"][@"culture"][@"versions"][@"1x"][@"source_url"];
+            cultureImage2x = cityDict[@"images"][@"culture"][@"versions"][@"2x"][@"source_url"];
+            cultureImage3x = cityDict[@"images"][@"culture"][@"versions"][@"3x"][@"source_url"];
+        } else {
+            cultureImage1x = @"";
+            cultureImage2x = @"";
+            cultureImage3x = @"";
+        }
+        
+        if (cityDict[@"images"][@"intro"]) {
+            NSLog(@"got intro: %@", cityDict[@"images"][@"intro"]);
+            introImage1x = cityDict[@"images"][@"intro"][@"versions"][@"1x"][@"source_url"];
+            introImage2x = cityDict[@"images"][@"intro"][@"versions"][@"2x"][@"source_url"];
+            introImage3x = cityDict[@"images"][@"intro"][@"versions"][@"3x"][@"source_url"];
+        } else {
+            introImage1x = @"";
+            introImage2x = @"";
+            introImage3x = @"";
+        }
+        
+        if (cityDict[@"images"][@"overview"]) {
+            generalImage1x = cityDict[@"images"][@"overview"][@"versions"][@"1x"][@"source_url"];
+            generalImage2x = cityDict[@"images"][@"overview"][@"versions"][@"2x"][@"source_url"];
+            generalImage3x = cityDict[@"images"][@"overview"][@"versions"][@"3x"][@"source_url"];
+        } else {
+            generalImage1x = @"";
+            generalImage2x = @"";
+            generalImage3x = @"";
+        }
+        
+        if (cityDict[@"images"][@"security"]) {
+            safetyImage1x = cityDict[@"images"][@"security"][@"versions"][@"1x"][@"source_url"];
+            safetyImage2x = cityDict[@"images"][@"security"][@"versions"][@"2x"][@"source_url"];
+            safetyImage3x = cityDict[@"images"][@"security"][@"versions"][@"3x"][@"source_url"];
+        } else {
+            safetyImage1x = @"";
+            safetyImage2x = @"";
+            safetyImage3x = @"";
+        }
     } else {
         cultureImage1x = @"";
         cultureImage2x = @"";
         cultureImage3x = @"";
-    }
-    
-    if (cityDict[@"images"][@"intro"]) {
-        NSLog(@"got intro: %@", cityDict[@"images"][@"intro"]);
-        introImage1x = cityDict[@"images"][@"intro"][@"versions"][@"1x"][@"source_url"];
-        introImage2x = cityDict[@"images"][@"intro"][@"versions"][@"2x"][@"source_url"];
-        introImage3x = cityDict[@"images"][@"intro"][@"versions"][@"3x"][@"source_url"];
-    } else {
         introImage1x = @"";
         introImage2x = @"";
         introImage3x = @"";
-    }
-    
-    if (cityDict[@"images"][@"overview"]) {
-        generalImage1x = cityDict[@"images"][@"overview"][@"versions"][@"1x"][@"source_url"];
-        generalImage2x = cityDict[@"images"][@"overview"][@"versions"][@"2x"][@"source_url"];
-        generalImage3x = cityDict[@"images"][@"overview"][@"versions"][@"3x"][@"source_url"];
-    } else {
         generalImage1x = @"";
         generalImage2x = @"";
         generalImage3x = @"";
-    }
-    
-    if (cityDict[@"images"][@"security"]) {
-        safetyImage1x = cityDict[@"images"][@"security"][@"versions"][@"1x"][@"source_url"];
-        safetyImage2x = cityDict[@"images"][@"security"][@"versions"][@"2x"][@"source_url"];
-        safetyImage3x = cityDict[@"images"][@"security"][@"versions"][@"3x"][@"source_url"];
-    } else {
         safetyImage1x = @"";
         safetyImage2x = @"";
         safetyImage3x = @"";
