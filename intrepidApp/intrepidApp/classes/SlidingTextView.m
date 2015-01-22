@@ -78,22 +78,22 @@
     self.contentSize = CGSizeMake(320, 330 + height); // was 308
 }
 
-- (void)addTextAreaWithText:(NSArray *)text withIconName:(NSString *)icon {
+- (void)addTextAreaWithText:(NSArray *)text {
     int y = 273;
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
     
     for (id section in text) {
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:icon]];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:section[2]]];
         imageView.frame = CGRectMake(14, y + 5, 25, 25);
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 7, 250, 25)];
         label.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         label.backgroundColor = [UIColor clearColor];
         label.textColor = UIColorFromRGB(0x423a38);
-        label.text = [section allKeys][0];
+        label.text = section[0];
         
-        NSString *content = section[[section allKeys][0]];
+        NSString *content = section[1];
         CGSize size = [content boundingRectWithSize:CGSizeMake(290, 15000)
                                             options:NSStringDrawingUsesLineFragmentOrigin
                                          attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:15]}

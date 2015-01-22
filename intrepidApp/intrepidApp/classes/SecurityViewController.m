@@ -39,12 +39,12 @@
     [political setupWithImageName1x:city.safetyImage1x withImageName2x:city.safetyImage2x withImageName3x:city.safetyImage3x withTitle:@"Safety" withIconName:@"Political-icon"];
     NSMutableArray *politicalArray = [NSMutableArray new];
     if (city.safety) {
-        [politicalArray addObject:@{@"Safety" : city.safety}];
+        [politicalArray addObject:@[@"Safety", city.safety, @"safety-icon"]];
     }
     if (city.otherConcerns) {
-        [politicalArray addObject:@{@"Other Concerns" : city.otherConcerns}];
+        [politicalArray addObject:@[@"Other Concerns", city.otherConcerns, @"Political-icon"]];
     }
-    [political addTextAreaWithText:politicalArray withIconName:@"Political-icon"];
+    [political addTextAreaWithText:politicalArray];
     
     SlidingTextView *embassy = [[SlidingTextView alloc] initWithFrame:frame];
     

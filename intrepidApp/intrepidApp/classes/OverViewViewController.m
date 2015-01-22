@@ -38,59 +38,45 @@
     [history setupWithImageName1x:city.generalImage1x withImageName2x:city.generalImage2x withImageName3x:city.generalImage3x withTitle:@"General" withIconName:@"history-icon"];
     NSMutableArray *historyArray = [NSMutableArray new];
     if (city.location) {
-        [historyArray addObject:@{@"Location" : city.location}];
+        [historyArray addObject:@[@"Location", city.location, @"history-icon"]];
     }
     if (city.climate) {
-        [historyArray addObject:@{@"Climate" : city.climate}];
+        [historyArray addObject:@[@"Climate", city.climate, @"weather-icon"]];
     }
     if (city.typeOfGovernment) {
-        [historyArray addObject:@{@"Type Of Government" : city.typeOfGovernment}];
+        [historyArray addObject:@[@"Type Of Government", city.typeOfGovernment, @"government-icon"]];
     }
     if (city.visaRequirements) {
-        [historyArray addObject:@{@"Visa Requirements" : city.visaRequirements}];
+        [historyArray addObject:@[@"Visa Requirements", city.visaRequirements, @"history-icon"]];
     }
     if (city.communicationInfrastructure) {
-        [historyArray addObject:@{@"Communication Infrastructure" : city.communicationInfrastructure}];
+        [historyArray addObject:@[@"Communication Infrastructure", city.communicationInfrastructure, @"communication-icon"]];
     }
     if (city.electricity) {
-        [historyArray addObject:@{@"Electricity" : city.electricity}];
+        [historyArray addObject:@[@"Electricity", city.electricity, @"electricity-icon"]];
     }
     if (city.development) {
-        [historyArray addObject:@{@"Development" : city.development}];
+        [historyArray addObject:@[@"Development", city.development, @"development-icon"]];
     }
-    [history addTextAreaWithText:historyArray withIconName:@"history-icon"];
+    [history addTextAreaWithText:historyArray];
     
     
     SlidingTextView *culture = [[SlidingTextView alloc] initWithFrame:frame];
     [culture setupWithImageName1x:city.cultureImage1x withImageName2x:city.cultureImage2x withImageName3x:city.cultureImage3x withTitle:@"Culture" withIconName:@"diversity-icon"];
     NSMutableArray *cultureArray = [NSMutableArray new];
     if (city.location) {
-        [cultureArray addObject:@{@"Language" : city.language}];
+        [cultureArray addObject:@[@"Language", city.language, @"culture-icon"]];
     }
     if (city.climate) {
-        [cultureArray addObject:@{@"Religion" : city.religion}];
+        [cultureArray addObject:@[@"Religion", city.religion, @"religion-icon"]];
     }
     if (city.electricity) {
-        [cultureArray addObject:@{@"Ethnic Makeup" : city.ethnicMakeup} ];
+        [cultureArray addObject:@[@"Ethnic Makeup", city.ethnicMakeup, @"diversity-icon"]];
     }
     if (city.development) {
-        [cultureArray addObject:@{@"Cultural Norms" : city.culturalNorms}];
+        [cultureArray addObject:@[@"Cultural Norms", city.culturalNorms, @"cultural-norms-icon"]];
     }
-    [culture addTextAreaWithText:cultureArray withIconName:@"culture-icon"];
-
-//    NSMutableArray *cultureArrayImages = [[NSMutableArray alloc] init];
-//    if (city.location) {
-//        [cultureArrayImages addObject:[UIImage imageNamed:@"diversity-icon"]];
-//    }
-//    if (city.climate) {
-//        [cultureArrayImages addObject:[UIImage imageNamed:@"diversity-icon"]];
-//    }
-//    if (city.electricity) {
-//        [cultureArrayImages addObject:[UIImage imageNamed:@"diversity-icon"]];
-//    }
-//    if (city.development) {
-//        [cultureArrayImages addObject:[UIImage imageNamed:@"diversity-icon"]];
-//    }
+    [culture addTextAreaWithText:cultureArray];
     
     SlidingTextView *currency = [[SlidingTextView alloc] initWithFrame:frame];
     [currency setupWithImageName1x:@"" withImageName2x:@"" withImageName3x:@"" withTitle:@"Currency (approx.)" withIconName:@"currency-icon"];
