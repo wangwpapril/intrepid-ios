@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "WebViewController.h"
 #import "AppDelegate.h"
+#import <CoreLocation/CoreLocation.h>
 
 @implementation MenuController
 
@@ -187,18 +188,9 @@ static MenuController *instance =nil;
             
         case 4:
             [self getLocation];
-            if (self.location) {
-                viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
-                [((WebViewController *)viewController) setupWithTitle:@"Weather" withURL:[NSString stringWithFormat:@"https://m.intrepid247.com/weather.html?latitude=%f&longitude=%f", self.location.coordinate.latitude, self.location.coordinate.longitude]];
-                viewController.view.tag = 4;
-            } else {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-                                                                    message:@"We do not have access to your location. Please enable Location Services in your phone's Privacy Settings."
-                                                                   delegate:nil
-                                                          cancelButtonTitle:@"OK"
-                                                          otherButtonTitles:nil];
-                [alertView show];
-            }
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
+            [((WebViewController *)viewController) setupWithTitle:@"Weather" withURL:[NSString stringWithFormat:@"https://m.intrepid247.com/weather.html%@", self.location]];
+            viewController.view.tag = 4;
             break;
 
         case 5:
@@ -244,7 +236,10 @@ static MenuController *instance =nil;
 
 - (void)getLocation {
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    self.location = app.lastLocation;
+    self.location = @"";
+    if (app.lastLocation) {
+        self.location = [NSString stringWithFormat:@"?latitude=%f&longitude=%f", app.lastLocation.coordinate.latitude, app.lastLocation.coordinate.longitude];
+    }
 }
 
 @end

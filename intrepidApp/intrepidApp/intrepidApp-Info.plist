@@ -10,12 +10,6 @@
 	<string>en</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
-	<key>UIStatusBarStyle</key>
-	<string>UIStatusBarStyleLightContent</string>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
-	<key>UIStatusBarHidden</key>
-	<true/>
 	<key>UIStatusBarTintParameters</key>
 	<dict>
 		<key></key>
@@ -28,22 +22,28 @@
 			<false/>
 		</dict>
 	</dict>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>UIMainStoryboardFile</key>
 	<string>MainStoryboard</string>
+	<key>UIStatusBarHidden</key>
+	<true/>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
 	<key>NSLocationUsageDescription</key>
-	<string>Your location is used to provide directions and relevant search results.</string>
+	<string>Your location helps us provide better emergency assistance and accurate weather information.</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 	<key>CFBundleIdentifier</key>
 	<string>com.intrepidapp247.$(PRODUCT_NAME:rfc1034identifier)</string>
 	<key>UIAppFonts</key>
@@ -73,6 +73,6 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Your location is used to provide directions and relevant search results.</string>
+	<string>Your location helps us provide better emergency assistance and accurate weather information.</string>
 </dict>
 </plist>
