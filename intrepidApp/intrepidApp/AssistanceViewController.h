@@ -8,13 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "MenuController.h"
+#import "MapKit/MapKit.h"
 
-@interface AssistanceViewController : UIViewController <UIActionSheetDelegate> {
-    UISwitch *onOff;
+@interface AssistanceViewController : UIViewController <UIActionSheetDelegate, MKMapViewDelegate> {
     UIScrollView *scrollView;
 }
 
 @property (nonatomic, strong) MenuController *mController;
-@property (retain, nonatomic) IBOutlet UISwitch *onOff;
 
 @end

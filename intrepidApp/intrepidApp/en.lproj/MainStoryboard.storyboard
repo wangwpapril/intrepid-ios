@@ -390,19 +390,10 @@
                     <view key="view" contentMode="scaleToFill" id="j7h-Nr-7P0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="pYx-Zq-lhu">
-                                <rect key="frame" x="221" y="285" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Emergency Assistance" id="i9o-Gy-OVD"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <connections>
-                        <outlet property="onOff" destination="pYx-Zq-lhu" id="d9R-xA-QRe"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lvt-Ur-T0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -507,7 +498,6 @@
         <!--Clinics View Controller-->
         <scene sceneID="guV-Tn-HwU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DYI-ef-O8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="clinics" id="Oye-dv-Dnx" customClass="ClinicsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Zq-KW-wZD">
                         <rect key="frame" x="0.0" y="64" width="320" height="568"/>
@@ -535,6 +525,7 @@
                         <outlet property="map" destination="vSV-F3-kYq" id="UYN-4Q-doe"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DYI-ef-O8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1559" y="810"/>
         </scene>
