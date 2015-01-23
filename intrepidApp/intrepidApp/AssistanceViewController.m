@@ -9,6 +9,7 @@
 #import "AssistanceViewController.h"
 #import "MenuController.h"
 #import "Constants.h"
+#import "TripManager.h"
 
 @implementation AssistanceViewController
 
@@ -92,13 +93,32 @@
 
 -(IBAction)callAssistance:(id) sender
 {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt://14166463107"]];
+    NSArray *providers = [TripManager getInstance].currentUser[@"user"][@"company"][@"assistance_providers"];
+    if (providers.count > 1) {
+        UIActionSheet *assitanceSheet = [[UIActionSheet alloc] init];
+        assitanceSheet.title = @"Call";
+        assitanceSheet.delegate = self;
+        for (id assistance in providers) {
+            [assitanceSheet addButtonWithTitle:assistance[@"phone"]];
+        }
+        assitanceSheet.cancelButtonIndex = [assitanceSheet addButtonWithTitle:@"Cancel"];
+        [assitanceSheet showInView:self.view];
+    } else if (providers.count == 1) {
+        NSString *formattedNum = [providers[0][@"phone"] stringByReplacingOccurrencesOfString:@" " withString:@""];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@", formattedNum]]];
+    } else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry"
+                                                            message:@"There are no ACE Assistance providers available to help you."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSString *formattedNum = [[actionSheet buttonTitleAtIndex:buttonIndex] stringByReplacingOccurrencesOfString:@" " withString:@""];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", formattedNum]]];
 }
 
 @end

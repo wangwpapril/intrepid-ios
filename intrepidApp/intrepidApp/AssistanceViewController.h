@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MenuController.h"
 
-@interface AssistanceViewController : UIViewController {
+@interface AssistanceViewController : UIViewController <UIActionSheetDelegate> {
     UISwitch *onOff;
     UIScrollView *scrollView;
 }
