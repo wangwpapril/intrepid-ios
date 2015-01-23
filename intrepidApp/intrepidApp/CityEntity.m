@@ -13,10 +13,7 @@
 
 @implementation CityEntity
 
-@dynamic alertsURL;
-@dynamic cadToNative;
 @dynamic climate;
-@dynamic clinicsURL;
 @dynamic communicationInfrastructure;
 @dynamic culturalNorms;
 @dynamic cultureImage1x;
@@ -29,7 +26,7 @@
 @dynamic destinationType;
 @dynamic development;
 @dynamic electricity;
-@dynamic embassies;
+@dynamic embassy;
 @dynamic ethnicMakeup;
 @dynamic generalImage1x;
 @dynamic generalImage2x;

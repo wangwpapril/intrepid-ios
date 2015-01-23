@@ -13,10 +13,7 @@
 
 @interface CityEntity : NSManagedObject
 
-@property (nonatomic, retain) NSString * alertsURL;
-@property (nonatomic, retain) NSNumber * cadToNative;
 @property (nonatomic, retain) NSString * climate;
-@property (nonatomic, retain) NSString * clinicsURL;
 @property (nonatomic, retain) NSString * communicationInfrastructure;
 @property (nonatomic, retain) NSString * culturalNorms;
 @property (nonatomic, retain) NSString * cultureImage1x;
@@ -29,7 +26,7 @@
 @property (nonatomic, retain) NSString * destinationType;
 @property (nonatomic, retain) NSString * development;
 @property (nonatomic, retain) NSString * electricity;
-@property (nonatomic, retain) NSSet * embassies;
+@property (nonatomic, retain) EmbassyEntity * embassy;
 @property (nonatomic, retain) NSString * ethnicMakeup;
 @property (nonatomic, retain) NSString * generalImage1x;
 @property (nonatomic, retain) NSString * generalImage2x;
@@ -50,14 +47,5 @@
 @property (nonatomic, retain) NSString * safetyText;
 @property (nonatomic, retain) NSString * typeOfGovernment;
 @property (nonatomic, retain) NSString * visaRequirements;
-
-@end
-
-@interface CityEntity (CoreDataGeneratedAccessors)
-
-- (void)addEmbassiesObject:(EmbassyEntity *)value;
-- (void)removeEmbassiesObject:(EmbassyEntity *)value;
-- (void)addEmbassies:(NSSet *)values;
-- (void)removeEmbassies:(NSSet *)values;
 
 @end

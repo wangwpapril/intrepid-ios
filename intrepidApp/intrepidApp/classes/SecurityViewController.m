@@ -26,10 +26,7 @@
 {
     [super viewDidLoad];
     self.view.tag = 2;
-
-    embassyArray = [self.mController.city.embassies allObjects]; // makes array from set
     self.navigationItem.title = @"Security";
-//    [self populateEmbassyItems];
     
     NSInteger height = self.view.bounds.size.height;
     CGRect frame = CGRectMake(0, 0, 320, height);
@@ -48,6 +45,7 @@
     
     SlidingTextView *embassy = [[SlidingTextView alloc] initWithFrame:frame];
     
+    [self populateEmbassyItems];    
     if (embassyArray.count > 0) {
         EmbassyEntity *embassyEntity = embassyArray[0];
         [embassy setupWithImageName1x:embassyEntity.image1x withImageName2x:embassyEntity.image2x withImageName3x:embassyEntity.image3x withTitle:@"Embassy" withIconName:@"embassy-icon"];

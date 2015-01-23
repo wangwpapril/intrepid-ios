@@ -51,10 +51,7 @@
                     withOtherConcerns:(NSString *)otherConcerns
                     withSafetyImage1x:(NSString *)safetyImage1x
                     withSafetyImage2x:(NSString *)safetyImage2x
-                    withSafetyImage3x:(NSString *)safetyImage3x
-                       withClinicsURL:(NSString *)clinicsURL
-                        withAlertsURL:(NSString *)alertsURL
-                      withCADToNative:(float) dollarRatio;
+                    withSafetyImage3x:(NSString *)safetyImage3x;
 
 - (DestinationEntity *)createDestinationWithName:(NSString *)name
                                withDestinationId:(NSInteger )destinationId

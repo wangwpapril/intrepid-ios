@@ -222,7 +222,6 @@ static TripManager *instance =nil;
     embassy.image1x = image1x;
     embassy.image2x = image2x;
     embassy.image3x = image3x;
-    [city addEmbassiesObject:embassy];
     
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {
@@ -259,9 +258,6 @@ static TripManager *instance =nil;
                     withSafetyImage1x:(NSString *)safetyImage1x
                     withSafetyImage2x:(NSString *)safetyImage2x
                     withSafetyImage3x:(NSString *)safetyImage3x
-                       withClinicsURL:(NSString *)clinicsURL
-                        withAlertsURL:(NSString *)alertsURL
-                      withCADToNative:(float) dollarRatio
 {
     CityEntity *city = [NSEntityDescription insertNewObjectForEntityForName:@"CityEntity" inManagedObjectContext:managedObjectContext];
 
@@ -293,9 +289,6 @@ static TripManager *instance =nil;
     city.safetyImage1x = safetyImage1x;
     city.safetyImage2x = safetyImage2x;
     city.safetyImage3x = safetyImage3x;
-    city.clinicsURL = clinicsURL;
-    city.alertsURL = alertsURL;
-    city.cadToNative = [NSNumber numberWithFloat:dollarRatio];
     
 //    city.embassyItems;
 //    dispatch_async(dispatch_get_main_queue(), ^{
@@ -377,10 +370,9 @@ static TripManager *instance =nil;
     NSString *location, *climate, *typeOfGovernment, *visaRequirements, *communicationInfrastructure, *electricity, *development;
     NSString *language, *religion, *ethnicMakeup, *culturalNorms;
     NSString *safety, *otherConcerns;
-    NSString *destinationName, *destinationType, *clinicsURL, *alertsURL;
     NSString *cultureImage1x, *cultureImage2x, *cultureImage3x, *introImage1x, *introImage2x, *introImage3x, *generalImage1x, *generalImage2x, *generalImage3x, *safetyImage1x, *safetyImage2x, *safetyImage3x;
+    NSString *destinationName, *destinationType;
     NSInteger destinationId;
-    float dollarRatio;
     
     NSString *name, *category, *desc, *details, *symptoms, *immunizations, *important, *image;
     Boolean common;
@@ -465,10 +457,6 @@ static TripManager *instance =nil;
         safetyImage2x = @"";
         safetyImage3x = @"";
     }
-
-    clinicsURL= @"";
-    alertsURL = @"";
-    dollarRatio = 6.0;
     
     CityEntity *city = [[TripManager getInstance] createTripWithLanguage:language
                                                            withReligion:religion
@@ -497,10 +485,7 @@ static TripManager *instance =nil;
                                                       withOtherConcerns:otherConcerns
                                                       withSafetyImage1x:safetyImage1x
                                                       withSafetyImage2x:safetyImage2x
-                                                      withSafetyImage3x:safetyImage3x
-                                                         withClinicsURL:clinicsURL
-                                                          withAlertsURL:alertsURL
-                                                        withCADToNative:dollarRatio];
+                                                      withSafetyImage3x:safetyImage3x];
     
     [RequestBuilder fetchEmbassy:cityDict withCity:city];
     [RequestBuilder fetchCurrency:cityDict withCity:city];
