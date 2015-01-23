@@ -205,8 +205,8 @@
 #pragma mark - Location methods
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    CLLocation* location = [locations lastObject];
-    NSLog(@"latitude: %f, longitude: %f", location.coordinate.latitude, location.coordinate.longitude);
+    self.lastLocation = [locations lastObject];
+    NSLog(@"latitude: %f, longitude: %f", self.lastLocation.coordinate.latitude, self.lastLocation.coordinate.longitude);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {

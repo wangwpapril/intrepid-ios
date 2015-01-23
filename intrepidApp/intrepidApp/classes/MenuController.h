@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CityEntity.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface MenuController : NSObject
 
@@ -22,6 +23,7 @@
 @property (nonatomic, strong) CityEntity *city;
 @property (nonatomic, strong) NSMutableArray *buttonArray;
 @property (nonatomic, strong) UIButton *outsideMenu;
+@property (strong, nonatomic) CLLocation *location;
 
 +(MenuController *)getInstance;
 -(void)displayMenuWithParent:(UIViewController *)controller;

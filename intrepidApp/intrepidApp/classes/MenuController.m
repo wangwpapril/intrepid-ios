@@ -9,7 +9,7 @@
 #import "MenuController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "WebViewController.h"
-
+#import "AppDelegate.h"
 
 @implementation MenuController
 
@@ -186,9 +186,19 @@ static MenuController *instance =nil;
             break;
             
         case 4:
-            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
-                [((WebViewController *)viewController) setupWithTitle:@"Weather" withURL:@"https://m.intrepid247.com/weather.html"];
-            viewController.view.tag = 4;
+            [self getLocation];
+            if (self.location) {
+                viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
+                [((WebViewController *)viewController) setupWithTitle:@"Weather" withURL:[NSString stringWithFormat:@"https://m.intrepid247.com/weather.html?latitude=%f&longitude=%f", self.location.coordinate.latitude, self.location.coordinate.longitude]];
+                viewController.view.tag = 4;
+            } else {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                                    message:@"We do not have access to your location. Please enable Location Services in your phone's Privacy Settings."
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+                [alertView show];
+            }
             break;
 
         case 5:
@@ -221,7 +231,7 @@ static MenuController *instance =nil;
     
 }
 
--(void)makeContentButtonWithOrigin:(CGPoint)origin withTag:(NSInteger)tag{
+- (void)makeContentButtonWithOrigin:(CGPoint)origin withTag:(NSInteger)tag{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     NSInteger size = 107;
     button.tag = tag;
@@ -230,6 +240,11 @@ static MenuController *instance =nil;
     [menu addSubview:button];
     [button addTarget:self action:@selector(goToController:) forControlEvents:UIControlEventTouchUpInside];
     [buttonArray addObject:button];
+}
+
+- (void)getLocation {
+    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    self.location = app.lastLocation;
 }
 
 @end
