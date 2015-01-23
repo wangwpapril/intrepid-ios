@@ -507,6 +507,7 @@
         <!--Clinics View Controller-->
         <scene sceneID="guV-Tn-HwU">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DYI-ef-O8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="clinics" id="Oye-dv-Dnx" customClass="ClinicsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Zq-KW-wZD">
                         <rect key="frame" x="0.0" y="64" width="320" height="568"/>
@@ -534,7 +535,6 @@
                         <outlet property="map" destination="vSV-F3-kYq" id="UYN-4Q-doe"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DYI-ef-O8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1559" y="810"/>
         </scene>
@@ -772,7 +772,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo2" width="96" height="32"/>
+        <image name="logo2" width="303" height="101"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

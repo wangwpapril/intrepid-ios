@@ -35,7 +35,7 @@ static MenuController *instance =nil;
             // instantiate some global variables
             instance = [[MenuController alloc] init];
             instance.menu = [[UIImageView alloc] init];
-            instance.menu.image = [UIImage imageNamed:@"Menu-branded"];
+            instance.menu.image = [UIImage imageNamed:@"Menu2"];
             instance.menu.layer.zPosition = MAXFLOAT;
             [instance addContentButtons];
             // add arrow
@@ -186,7 +186,9 @@ static MenuController *instance =nil;
             break;
             
         case 4:
-            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"clinics"];
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
+                [((WebViewController *)viewController) setupWithTitle:@"Weather" withURL:@"https://m.intrepid247.com/weather.html"];
+            viewController.view.tag = 4;
             break;
 
         case 5:
