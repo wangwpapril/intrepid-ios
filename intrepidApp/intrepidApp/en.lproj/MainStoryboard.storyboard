@@ -399,6 +399,22 @@
             </objects>
             <point key="canvasLocation" x="1959" y="-530"/>
         </scene>
+        <!--Alerts-->
+        <scene sceneID="y3Z-lv-BoG">
+            <objects>
+                <viewController storyboardIdentifier="alerts" id="Lx0-mg-Sg9" customClass="AlertsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bcJ-zV-xrF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Alerts" id="ZVv-3Z-D8d"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oax-EL-LVV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2363" y="-527"/>
+        </scene>
         <!--Health-->
         <scene sceneID="pvv-Xq-Sdt">
             <objects>

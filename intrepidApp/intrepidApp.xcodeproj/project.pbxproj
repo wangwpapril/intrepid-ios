@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CB19AB41A730B42007CEC79 /* AlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB19AB31A730B42007CEC79 /* AlertsViewController.m */; };
 		2CC179681A30CA55008EA775 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC179671A30CA55008EA775 /* Images.xcassets */; };
 		2CDDEAAE1A683D1B004654D8 /* DestinationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDEAAD1A683D1B004654D8 /* DestinationEntity.m */; };
 		2CE95BA91A3110E100062423 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE95BA81A3110E100062423 /* CoreLocation.framework */; };
@@ -78,6 +79,8 @@
 
 /* Begin PBXFileReference section */
 		288AE5EE289C5AEBF15ED8CC /* Pods-intrepidApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-intrepidApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-intrepidApp/Pods-intrepidApp.debug.xcconfig"; sourceTree = "<group>"; };
+		2CB19AB21A730B42007CEC79 /* AlertsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertsViewController.h; sourceTree = "<group>"; };
+		2CB19AB31A730B42007CEC79 /* AlertsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertsViewController.m; sourceTree = "<group>"; };
 		2CC179671A30CA55008EA775 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2CDDEAAC1A683D1B004654D8 /* DestinationEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationEntity.h; sourceTree = "<group>"; };
 		2CDDEAAD1A683D1B004654D8 /* DestinationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationEntity.m; sourceTree = "<group>"; };
@@ -380,6 +383,8 @@
 		68B071E617A4D3D30061E418 /* Security */ = {
 			isa = PBXGroup;
 			children = (
+				2CB19AB21A730B42007CEC79 /* AlertsViewController.h */,
+				2CB19AB31A730B42007CEC79 /* AlertsViewController.m */,
 				68B071E717A4D3FC0061E418 /* SecurityViewController.h */,
 				68B071E817A4D3FC0061E418 /* SecurityViewController.m */,
 				68B071EA17A4D7290061E418 /* EmbassyCell.h */,
@@ -545,6 +550,7 @@
 				684BB609179F539C004C44C9 /* SlidingTextView.m in Sources */,
 				68DBAE60179F6CC300D1DE0B /* CurrencyCell.m in Sources */,
 				7EE44DB9179F7E30006BA2EC /* CurrencyItem.m in Sources */,
+				2CB19AB41A730B42007CEC79 /* AlertsViewController.m in Sources */,
 				68BE3ACA17A1DCA600A87E52 /* HealthContent.m in Sources */,
 				68B997E517A2058A00AD62ED /* WebViewController.m in Sources */,
 				68B071E917A4D3FC0061E418 /* SecurityViewController.m in Sources */,
