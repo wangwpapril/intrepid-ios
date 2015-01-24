@@ -14,7 +14,6 @@
 @implementation RequestBuilder
 static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
 static NSString * currencyURL = @"https://openexchangerates.org/api/latest.json?app_id=14073d8e6b8c4687951ed926cbbd3589";
-static NSString * embassyURL = @" https://staging.intrepid247.com/v1/diplomatic-offices/";
 static NSDictionary * userDict;
 static NSDictionary * cityDict;
 
@@ -63,6 +62,7 @@ static NSDictionary * cityDict;
                     [[TripManager getInstance] deleteHealthItemsWithCity:city];
                     [[TripManager getInstance] deleteEmbassyItemsWithCity:city];
                     [[TripManager getInstance] deleteCurrencyItemsWithCity:city];
+                    [[TripManager getInstance] deleteAlertItemsWithCity:city];
                     [[TripManager getInstance].managedObjectContext deleteObject:city]; // delete object
                 }
             }
@@ -77,12 +77,11 @@ static NSDictionary * cityDict;
 
 + (void)fetchEmbassy:(NSDictionary *)cityDict withCity:(CityEntity *)city {
     NSURL *embassyRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@diplomatic-offices/%@?origin_country=%@&token=%@", baseURL, cityDict[@"country"][@"country_code"], userDict[@"user"][@"country_code"], userDict[@"user"][@"token"]]];
-    NSMutableURLRequest *currencyRequest = [[NSMutableURLRequest alloc] initWithURL:embassyRequestURL];
-    currencyRequest.HTTPMethod = @"GET";
-    [currencyRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [NSURLConnection sendAsynchronousRequest:currencyRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+    NSMutableURLRequest *embassyRequest = [[NSMutableURLRequest alloc] initWithURL:embassyRequestURL];
+    embassyRequest.HTTPMethod = @"GET";
+    [embassyRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [NSURLConnection sendAsynchronousRequest:embassyRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         if (!error) {
-            //EmbassyEntity
             NSDictionary *embassyObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             
             NSString *phone, *fax, *email, *hours, *notes, *services, *address, *country, *flag;
@@ -143,6 +142,35 @@ static NSDictionary * cityDict;
         }
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
+    }];
+}
+
++ (void)fetchAlert:(NSDictionary *)cityDict withCity:(CityEntity *)city {
+    NSURL *alertRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@alerts/%@?token=%@", baseURL, cityDict[@"country"][@"country_code"], userDict[@"user"][@"token"]]];
+    NSMutableURLRequest *alertRequest = [[NSMutableURLRequest alloc] initWithURL:alertRequestURL];
+    alertRequest.HTTPMethod = @"GET";
+    [alertRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [NSURLConnection sendAsynchronousRequest:alertRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (!error) {
+            NSDictionary *alertObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            
+            NSString *category, *link, *text;
+            NSDate *startDate, *endDate;
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateFormat:@"MM/dd/yyyy"];
+            
+            for (NSDictionary *alert in alertObject[@"content"]) {
+                category = alert[@"category"];
+                link = alert[@"link"];
+                text = alert[@"description"];
+                startDate = [formatter dateFromString:alert[@"start"]];
+                endDate = [formatter dateFromString:alert[@"end"]];
+
+                [[TripManager getInstance] createAlertItemWithCity:city withCategory:category withLink:link withText:text withStartDate:startDate withEndDate:endDate];
+            }
+        } else {
+            NSLog(@"error: %@", error.localizedDescription);
+        }
     }];
 }
 

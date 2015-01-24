@@ -11,6 +11,7 @@
 #import "HealthEntity.h"
 #import "CurrencyEntity.h"
 #import "DestinationEntity.h"
+#import "AlertEntity.h"
 
 @interface TripManager : NSObject
 
@@ -22,7 +23,6 @@
 - (NSArray *)getSavedCities;
 - (NSArray *)getDestinations;
 - (void)addUserDict:(NSDictionary *)userDict;
-
 
 - (CityEntity *)createTripWithLanguage:(NSString *)language
                          withReligion:(NSString *)religion
@@ -86,13 +86,22 @@
                                        Country:(NSString *)country
                                      withValue:(NSString *)value;
 
+- (AlertEntity *)createAlertItemWithCity:(CityEntity *)city
+                            withCategory:(NSString *)category
+                                withLink:(NSString *)link
+                                withText:(NSString *)text
+                           withStartDate:(NSDate *)startDate
+                             withEndDate:(NSDate *)endDate;
+
 - (NSMutableArray *)getHealthItemsWithCity:(CityEntity *)city;
-- (NSMutableArray *)getCurrencyItemsWithCity:(CityEntity *)city;
 - (NSMutableArray *)getEmbassyItemsWithCity:(CityEntity *)city;
+- (NSMutableArray *)getCurrencyItemsWithCity:(CityEntity *)city;
+- (NSMutableArray *)getAlertItemsWithCity:(CityEntity *)city;
 - (void)deleteAllObjects:(NSString *)entityDescription;
 - (void)deleteHealthItemsWithCity:(CityEntity *)city;
 - (void)deleteEmbassyItemsWithCity:(CityEntity *)city;
 - (void)deleteCurrencyItemsWithCity:(CityEntity *)city;
+- (void)deleteAlertItemsWithCity:(CityEntity *)city;
 - (void)saveCity:(NSDictionary *)cityDict;
 
 @end

@@ -9,6 +9,7 @@
 #import "AlertsViewController.h"
 #import "MenuController.h"
 #import "TripManager.h"
+#import "AlertCell.h"
 
 @interface AlertsViewController ()
 
@@ -18,6 +19,7 @@
 
 @synthesize mController;
 @synthesize tableList;
+@synthesize alertsArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,7 +40,8 @@
     tableList.dataSource = self;
 //    [self.view addSubview:tableList];
     
-    [self addContent];
+    alertsArray = [[TripManager getInstance] getAlertItemsWithCity:mController.city];
+    [tableList reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -46,21 +49,26 @@
     [mController displayMenuWithParent:self];
 }
 
-- (void)addContent {
-    self.alertsArray = [NSMutableArray new];
+# pragma mark - TableView Methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return alertsArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell"];
+    AlertCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    TripManager *manager = [TripManager getInstance];
-//    NSArray *alerts = [manager getAlerts];
+    if(cell == nil) {
+        cell = [[AlertCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
     
-//    for (DestinationEntity *destination in destinations) {
-//        TripItem *trip = [[TripItem alloc] init];
-//        trip.city = destination.name;
-//        trip.destinationId = destination.destinationId;
-//        trip.continent = @"Europe";
-//        trip.image = @"Guada-icon.png";
-//        [tripsArray addObject:trip];
-//    }
-    [tableList reloadData];
+    AlertEntity *alert = alertsArray[indexPath.row];
+    [cell setupWithAlert:alert];
+    
+    return cell;
 }
 
 @end

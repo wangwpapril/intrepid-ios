@@ -16,5 +16,6 @@
 + (void)fetchTrip:(NSString *)trip;
 + (void)fetchEmbassy:(NSDictionary *)cityDict withCity:(CityEntity *)city;
 + (void)fetchCurrency:(NSDictionary *)cityDict withCity:(CityEntity *)city;
++ (void)fetchAlert:(NSDictionary *)cityDict withCity:(CityEntity *)city;
 
 @end

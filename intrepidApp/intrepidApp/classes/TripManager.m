@@ -55,7 +55,6 @@ static TripManager *instance =nil;
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entityDescription];
     
-    
     NSError *error;
     NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
     return intermediateArray;
@@ -74,8 +73,8 @@ static TripManager *instance =nil;
     
     NSError *error;
     NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
-    NSMutableArray * diseases = [NSMutableArray new];
-    NSMutableArray * medication = [NSMutableArray new];
+    NSMutableArray *diseases = [NSMutableArray new];
+    NSMutableArray *medication = [NSMutableArray new];
     
     for (HealthEntity *healthItem in intermediateArray) {
         if ([healthItem.category isEqualToString:@"medications"]) {
@@ -118,13 +117,31 @@ static TripManager *instance =nil;
     
     NSError *error;
     NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
-    NSMutableArray * currencies = [NSMutableArray new];
+    NSMutableArray *currencies = [NSMutableArray new];
 
     for (CurrencyEntity *currencyItem in intermediateArray) {
         [currencies addObject:currencyItem];
     }
     
     return currencies;
+}
+
+- (NSMutableArray *)getAlertItemsWithCity:(CityEntity *)city {
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:@"AlertEntity" inManagedObjectContext:managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"city == %@", city]];
+    [request setEntity:entityDescription];
+    
+    NSError *error;
+    NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
+    NSMutableArray *alerts = [NSMutableArray new];
+    
+    for (AlertEntity *alertItem in intermediateArray) {
+        [alerts addObject:alertItem];
+    }
+    
+    return alerts;
 }
 
 - (void)deleteAllObjects:(NSString *)entityDescription  {
@@ -179,6 +196,23 @@ static TripManager *instance =nil;
 - (void)deleteCurrencyItemsWithCity:(CityEntity *)city {
     NSEntityDescription *entityDescription = [NSEntityDescription
                                               entityForName:@"CurrencyEntity" inManagedObjectContext:managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"city == %@", city]];
+    [request setEntity:entityDescription];
+    
+    NSError *error;
+    NSArray *items = [managedObjectContext executeFetchRequest:request error:&error];
+    
+    for (NSManagedObject *managedObject in items) {
+        [managedObjectContext deleteObject:managedObject];
+    }
+    if (![managedObjectContext save:&error]) {
+    }
+}
+
+- (void)deleteAlertItemsWithCity:(CityEntity *)city {
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:@"AlertEntity" inManagedObjectContext:managedObjectContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setPredicate:[NSPredicate predicateWithFormat:@"city == %@", city]];
     [request setEntity:entityDescription];
@@ -366,6 +400,29 @@ static TripManager *instance =nil;
     return currency;
 }
 
+- (AlertEntity *)createAlertItemWithCity:(CityEntity *)city
+                            withCategory:(NSString *)category
+                                withLink:(NSString *)link
+                                withText:(NSString *)text
+                           withStartDate:(NSDate *)startDate
+                             withEndDate:(NSDate *)endDate {
+    AlertEntity *alert = [NSEntityDescription insertNewObjectForEntityForName:@"AlertEntity" inManagedObjectContext:managedObjectContext];
+    
+    alert.city = city;
+    alert.category = category;
+    alert.link = link;
+    alert.text = text;
+    alert.startDate = startDate;
+    alert.endDate = endDate;
+    
+    NSError *error = nil;
+    if (![managedObjectContext save:&error]) {
+        NSLog(@"save failed");
+    }
+    
+    return alert;
+}
+
 - (void)saveCity:(NSDictionary *)cityDict {
     NSString *location, *climate, *typeOfGovernment, *visaRequirements, *communicationInfrastructure, *electricity, *development;
     NSString *language, *religion, *ethnicMakeup, *culturalNorms;
@@ -489,6 +546,7 @@ static TripManager *instance =nil;
     
     [RequestBuilder fetchEmbassy:cityDict withCity:city];
     [RequestBuilder fetchCurrency:cityDict withCity:city];
+    [RequestBuilder fetchAlert:cityDict withCity:city];
     
     for (NSDictionary *medDict in cityDict[@"medications"]) {
         name = medDict[@"name"];

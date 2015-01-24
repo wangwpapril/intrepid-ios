@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AlertEntity" representedClassName="AlertEntity" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CityEntity" inverseName="alert" inverseEntity="CityEntity" syncable="YES"/>
+    </entity>
     <entity name="CityEntity" representedClassName="CityEntity" syncable="YES">
         <attribute name="climate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="communicationInfrastructure" optional="YES" attributeType="String" syncable="YES"/>
@@ -29,6 +37,7 @@
         <attribute name="safetyImage3x" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="typeOfGovernment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="visaRequirements" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="alert" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AlertEntity" inverseName="city" inverseEntity="AlertEntity" syncable="YES"/>
         <relationship name="currency" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CurrencyEntity" inverseName="city" inverseEntity="CurrencyEntity" syncable="YES"/>
         <relationship name="destination" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DestinationEntity" inverseName="city" inverseEntity="DestinationEntity" syncable="YES"/>
         <relationship name="embassy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EmbassyEntity" inverseName="city" inverseEntity="EmbassyEntity" syncable="YES"/>
@@ -73,10 +82,11 @@
         <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CityEntity" inverseName="health" inverseEntity="CityEntity" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CityEntity" positionX="-477" positionY="3" width="128" height="523"/>
+        <element name="CityEntity" positionX="-477" positionY="3" width="128" height="538"/>
         <element name="CurrencyEntity" positionX="-317" positionY="-63" width="128" height="88"/>
         <element name="DestinationEntity" positionX="-459" positionY="108" width="128" height="103"/>
         <element name="EmbassyEntity" positionX="-677" positionY="-0" width="128" height="240"/>
         <element name="HealthEntity" positionX="-272" positionY="81" width="128" height="195"/>
+        <element name="AlertEntity" positionX="-468" positionY="99" width="128" height="133"/>
     </elements>
 </model>

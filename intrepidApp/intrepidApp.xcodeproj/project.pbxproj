@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2CB19AB41A730B42007CEC79 /* AlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB19AB31A730B42007CEC79 /* AlertsViewController.m */; };
+		2CB19AB71A73169E007CEC79 /* AlertEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB19AB61A73169E007CEC79 /* AlertEntity.m */; };
+		2CB19ABD1A731FC4007CEC79 /* AlertCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB19ABC1A731FC4007CEC79 /* AlertCell.m */; };
 		2CC179681A30CA55008EA775 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC179671A30CA55008EA775 /* Images.xcassets */; };
 		2CDDEAAE1A683D1B004654D8 /* DestinationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDEAAD1A683D1B004654D8 /* DestinationEntity.m */; };
 		2CE95BA91A3110E100062423 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE95BA81A3110E100062423 /* CoreLocation.framework */; };
@@ -81,6 +83,10 @@
 		288AE5EE289C5AEBF15ED8CC /* Pods-intrepidApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-intrepidApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-intrepidApp/Pods-intrepidApp.debug.xcconfig"; sourceTree = "<group>"; };
 		2CB19AB21A730B42007CEC79 /* AlertsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertsViewController.h; sourceTree = "<group>"; };
 		2CB19AB31A730B42007CEC79 /* AlertsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertsViewController.m; sourceTree = "<group>"; };
+		2CB19AB51A73169E007CEC79 /* AlertEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertEntity.h; sourceTree = "<group>"; };
+		2CB19AB61A73169E007CEC79 /* AlertEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertEntity.m; sourceTree = "<group>"; };
+		2CB19ABB1A731FC4007CEC79 /* AlertCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertCell.h; sourceTree = "<group>"; };
+		2CB19ABC1A731FC4007CEC79 /* AlertCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertCell.m; sourceTree = "<group>"; };
 		2CC179671A30CA55008EA775 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2CDDEAAC1A683D1B004654D8 /* DestinationEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationEntity.h; sourceTree = "<group>"; };
 		2CDDEAAD1A683D1B004654D8 /* DestinationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationEntity.m; sourceTree = "<group>"; };
@@ -235,6 +241,8 @@
 		6811614117A9D0890029134B /* Content Managing */ = {
 			isa = PBXGroup;
 			children = (
+				2CB19AB51A73169E007CEC79 /* AlertEntity.h */,
+				2CB19AB61A73169E007CEC79 /* AlertEntity.m */,
 				DC26B28C1A4FE60200E9A549 /* CurrencyEntity.h */,
 				DC26B28D1A4FE60200E9A549 /* CurrencyEntity.m */,
 				DC85087E1A3EB57500C3173B /* CityEntity.h */,
@@ -385,6 +393,8 @@
 			children = (
 				2CB19AB21A730B42007CEC79 /* AlertsViewController.h */,
 				2CB19AB31A730B42007CEC79 /* AlertsViewController.m */,
+				2CB19ABB1A731FC4007CEC79 /* AlertCell.h */,
+				2CB19ABC1A731FC4007CEC79 /* AlertCell.m */,
 				68B071E717A4D3FC0061E418 /* SecurityViewController.h */,
 				68B071E817A4D3FC0061E418 /* SecurityViewController.m */,
 				68B071EA17A4D7290061E418 /* EmbassyCell.h */,
@@ -537,6 +547,7 @@
 				6851223F17861152008DB6B6 /* HealthViewController.m in Sources */,
 				688F9E661786295100CF850C /* HealthCell.m in Sources */,
 				7E44F8D21788FA4B00AAA32B /* HealthItem.m in Sources */,
+				2CB19ABD1A731FC4007CEC79 /* AlertCell.m in Sources */,
 				6835EC161789439600A57F86 /* MenuController.m in Sources */,
 				7ECD0427178BD7C500D6C34B /* HealthViewDetailController.m in Sources */,
 				2CDDEAAE1A683D1B004654D8 /* DestinationEntity.m in Sources */,
@@ -546,6 +557,7 @@
 				7E34777F1791E7A700FB86DC /* SignUpViewController.m in Sources */,
 				68E4240417926E1E00431908 /* IntreSearchBar.m in Sources */,
 				684BB605179F5143004C44C9 /* OverViewViewController.m in Sources */,
+				2CB19AB71A73169E007CEC79 /* AlertEntity.m in Sources */,
 				DC26B28E1A4FE60200E9A549 /* CurrencyEntity.m in Sources */,
 				684BB609179F539C004C44C9 /* SlidingTextView.m in Sources */,
 				68DBAE60179F6CC300D1DE0B /* CurrencyCell.m in Sources */,
