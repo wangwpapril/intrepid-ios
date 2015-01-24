@@ -7,11 +7,8 @@
 //
 #import "HealthViewDetailController.h"
 #import "HealthViewController.h"
-#import "HealthItem.h"
 #import "Constants.h"
 #import <QuartzCore/QuartzCore.h>
-
-#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 @implementation HealthViewDetailController
 

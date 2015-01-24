@@ -9,10 +9,6 @@
 #import "ForgotPasswordViewController.h"
 #import "Constants.h"
 
-#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
-
-#define kOFFSET_FOR_KEYBOARD 80.0
-
 @interface ForgotPasswordViewController ()
 
 @end

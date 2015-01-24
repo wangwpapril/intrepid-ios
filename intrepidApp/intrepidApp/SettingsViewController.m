@@ -5,7 +5,6 @@
 //  Created by Madelaine Page on 2013-07-30.
 //  Copyright (c) 2013 JonCarrHarris Consulting. All rights reserved.
 //
-#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 #import "SettingsViewController.h"
 #import "Constants.h"
@@ -13,8 +12,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import "TripManager.h"
 #import "RequestBuilder.h"
-
-#define kOFFSET_FOR_KEYBOARD 130.0
 
 @interface SettingsViewController ()
 
@@ -316,13 +313,13 @@ finishedSavingWithError:(NSError *)error
     {
         // 1. move the view's origin up so that the text field that will be hidden come above the keyboard
         // 2. increase the size of the view so that the area behind the keyboard is covered up.
-        rect.origin.y -= kOFFSET_FOR_KEYBOARD;
+        rect.origin.y -= 130;
         //rect.size.height -= kOFFSET_FOR_KEYBOARD;
     }
     else
     {
         // revert back to the normal state.
-        rect.origin.y += kOFFSET_FOR_KEYBOARD;
+        rect.origin.y += 130;
         //rect.size.height -= kOFFSET_FOR_KEYBOARD;
     }
     self.view.frame = rect;
