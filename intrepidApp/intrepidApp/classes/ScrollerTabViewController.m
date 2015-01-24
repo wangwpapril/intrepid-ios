@@ -7,8 +7,6 @@
 //
 
 #import "ScrollerTabViewController.h"
-#import "Constants.h"
-
 
 @implementation ScrollerTabViewController
 
@@ -66,7 +64,7 @@
 
         [tab setTitle:title forState:UIControlStateNormal];
         [tab setTitleColor:APP_TOGGLE_SELECTED forState:UIControlStateNormal];
-        tab.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
+        tab.titleLabel.font = [UIFont fontWithName:APP_FONT size:13];
         [tab setBackgroundColor:NAVIGATION_BG_COLOR];
         tab.alpha = 0.8;
         [tab.titleLabel setTextAlignment:NSTextAlignmentCenter];

@@ -7,7 +7,6 @@
 //
 
 #import "EmbassyCell.h"
-#import "Constants.h"
 
 @implementation EmbassyCell
 
@@ -31,7 +30,7 @@
     
     // country
     countryLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 2, 150, 40)];
-    countryLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:16];
+    countryLabel.font = [UIFont fontWithName:APP_FONT size:16];
     countryLabel.textColor = APP_TEXT_COLOR;
     [self addSubview:countryLabel];
     

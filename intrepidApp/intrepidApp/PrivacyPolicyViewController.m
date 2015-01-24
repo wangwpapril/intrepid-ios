@@ -7,7 +7,6 @@
 //
 
 #import "PrivacyPolicyViewController.h"
-#import "Constants.h"
 
 @interface PrivacyPolicyViewController ()
 

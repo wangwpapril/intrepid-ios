@@ -8,7 +8,6 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "LoginViewController.h"
-#import "Constants.h"
 #import "RequestBuilder.h"
 
 @interface LoginViewController ()
@@ -58,7 +57,7 @@
     UIImage *buttonImage = [[UIImage imageNamed:@"rounded-rectangle-"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
     [loginButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [loginButton setTitleColor:UIColorFromRGB(0xe7eee2) forState:UIControlStateNormal];
-    loginButton.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
+    loginButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:14];
     [self.view addSubview:loginButton];
     
     
@@ -71,7 +70,7 @@
     [legal setAttributedTitle:legalString forState:UIControlStateNormal];
     [legalString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [legalString length])];
     legal.frame = CGRectMake(9, self.view.frame.size.height - 50, 81, 44);
-    legal.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+    legal.titleLabel.font = [UIFont fontWithName:APP_FONT size:15];
     [self.view addSubview:legal];
     
     NSMutableAttributedString *learnMoreString = [[NSMutableAttributedString alloc] initWithString:@"Learn More"];
@@ -82,22 +81,22 @@
     // using text on button
     [learnMore setAttributedTitle: learnMoreString forState:UIControlStateNormal];
     [learnMoreString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0,[learnMoreString length])];
-    learnMore.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+    learnMore.titleLabel.font = [UIFont fontWithName:APP_FONT size:15];
     learnMore.frame = CGRectMake(215, self.view.frame.size.height - 50, 81, 44);
     [self.view addSubview:learnMore];
     
-//    intrepidTitle.font = [UIFont fontWithName:@"ProximaNova-Bold" size:24];
+//    intrepidTitle.font = [UIFont fontWithName:APP_FONT_BOLD size:24];
 //    intrepidTitle.textColor = [UIColor whiteColor];
 //    [intrepidTitle setTextAlignment:NSTextAlignmentCenter];
 //    [self.view addSubview:intrepidTitle];
     
-    tagline.font = [UIFont fontWithName:@"ProximaNova-Regular" size:20];
+    tagline.font = [UIFont fontWithName:APP_FONT size:20];
     tagline.textColor = [UIColor whiteColor];
     [tagline setTextAlignment:NSTextAlignmentCenter];
     tagline.text = @"TRAVEL SMART";
     [self.view addSubview:tagline];
     
-    email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
+    email.font = [UIFont fontWithName:APP_FONT size:14];
     email.textColor = [UIColor whiteColor];
     email.placeholder = @"EMAIL";
     [email setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -110,7 +109,7 @@
     underlinePassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlinePassword];
     
-    password.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
+    password.font = [UIFont fontWithName:APP_FONT size:14];
     password.textColor = [UIColor whiteColor];
     [password setReturnKeyType:UIReturnKeyDone];
     password.placeholder =@"PASSWORD";
@@ -127,14 +126,14 @@
     [forgotPassword setAttributedTitle: forgotPasswordString forState:UIControlStateNormal];
     [forgotPasswordString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.53 green:0.73 blue:0.14 alpha:1] range:NSMakeRange(0,[forgotPasswordString length])];
     forgotPassword.frame = CGRectMake(77, loginButton.frame.origin.y + 50, 166, 15);
-    forgotPassword.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
+    forgotPassword.titleLabel.font = [UIFont fontWithName:APP_FONT size:13];
     forgotPassword.backgroundColor = [UIColor clearColor];
     
     forgotPassword.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:forgotPassword];
     
 //    legal.frame = CGRectMake(240, 5, 100, 50);
-//    legal.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
+//    legal.titleLabel.font = [UIFont fontWithName:APP_FONT size:13];
 //    legal.backgroundColor = [UIColor clearColor];
 //    legal.titleLabel.textAlignment = NSTextAlignmentCenter;
 //    [legal setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

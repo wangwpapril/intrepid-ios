@@ -9,11 +9,9 @@
 #import "SecurityViewController.h"
 #import "SlidingTextView.h"
 #import "EmbassyCell.h"
-#import "Constants.h"
 #import "EmbassyDetailedViewController.h"
 #import "EmbassyEntity.h"
 #import "TripManager.h"
-
 
 @implementation SecurityViewController
 
@@ -114,7 +112,7 @@
     [cell setSelectedBackgroundView:bgColorView];
     
     if (cell.selected) {
-        cell.detailTextLabel.font = [UIFont fontWithName:@"ProximaNova-Bold" size:16];
+        cell.detailTextLabel.font = [UIFont fontWithName:APP_FONT_BOLD size:16];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     

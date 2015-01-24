@@ -7,7 +7,6 @@
 //
 
 #import "HealthViewController.h"
-#import "Constants.h"
 #import "QuartzCore/QuartzCore.h"
 #import "HealthCell.h"
 #import "MenuController.h"

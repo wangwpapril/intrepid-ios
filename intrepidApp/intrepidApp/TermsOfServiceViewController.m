@@ -7,7 +7,6 @@
 //
 
 #import "TermsOfServiceViewController.h"
-#import "Constants.h"
 
 @interface TermsOfServiceViewController ()
 

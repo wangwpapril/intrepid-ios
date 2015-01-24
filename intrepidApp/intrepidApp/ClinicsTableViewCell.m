@@ -7,7 +7,6 @@
 //
 
 #import "ClinicsTableViewCell.h"
-#import "Constants.h"
 
 @implementation ClinicsTableViewCell
 

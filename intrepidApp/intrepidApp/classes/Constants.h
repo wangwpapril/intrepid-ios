@@ -11,6 +11,7 @@
 
 // font and font size
 #define APP_FONT @"ProximaNova-Regular"
+#define APP_FONT_BOLD @"ProximaNova-Bold"
 
 #define PARA_SMALL 18
 #define PARA_MEDIUM 24

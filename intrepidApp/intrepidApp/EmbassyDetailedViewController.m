@@ -9,7 +9,6 @@
 //
 
 #import "EmbassyDetailedViewController.h"
-#import "Constants.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation EmbassyDetailedViewController
@@ -44,7 +43,7 @@
     // embassyDetailedItemNameLabel.frame = CGRectMake(20, 7, 275, 21);
     // embassyDetailedItemNameLabel.text = uppercaseString;
     // embassyDetailedItemNameLabel.backgroundColor = [UIColor clearColor];
-    // embassyDetailedItemNameLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:16];
+    // embassyDetailedItemNameLabel.font = [UIFont fontWithName:APP_FONT size:16];
     // embassyDetailedItemNameLabel.textColor = [UIColor whiteColor];
     // [embassyDetailedItemTitleLabel addSubview:embassyDetailedItemNameLabel];
     // [self.view addSubview:embassyDetailedItemTitleLabel];

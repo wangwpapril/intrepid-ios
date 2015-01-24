@@ -5,12 +5,11 @@
 //  Created by Madelaine Page on 2013-07-13.
 //  Copyright (c) 2013 JonCarrHarris Consulting. All rights reserved.
 //
+
 #import <UIKit/UIKit.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <QuartzCore/QuartzCore.h>
-
 #import "SignUpViewController.h"
-#import "Constants.h"
 
 @interface SignUpViewController ()
 
@@ -68,12 +67,12 @@
     
     
     [signUpButton setTitleColor:UIColorFromRGB(0xe7eee2) forState:UIControlStateNormal];
-    signUpButton.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
+    signUpButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:14];
     signUpButton.frame = CGRectMake(68, self.view.frame.size.height - 150, 183, 36);
     [self.view addSubview:signUpButton];
 
     
-    name.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
+    name.font = [UIFont fontWithName:APP_FONT size:14];
     name.textColor = UIColorFromRGB(0xe7eee2);
     name.placeholder = @"NAME";
     [name setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -83,7 +82,7 @@
     underlineName.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlineName];
     
-    email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
+    email.font = [UIFont fontWithName:APP_FONT size:14];
     email.textColor = UIColorFromRGB(0xe7eee2);
     email.placeholder = @"EMAIL";
     [email setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -93,7 +92,7 @@
     underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlineEmail];
     
-    password.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
+    password.font = [UIFont fontWithName:APP_FONT size:14];
     password.textColor = UIColorFromRGB(0xe7eee2);
     password.placeholder = @"PASSWORD";
     [password setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -119,7 +118,7 @@
     [termsOfServiceString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [termsOfServiceString length])];
     [termsOfService setAttributedTitle: termsOfServiceString forState:UIControlStateNormal];
     [termsOfServiceString addAttribute:NSForegroundColorAttributeName value:UIColorFromRGB(0xe7eee2) range:NSMakeRange(0,[termsOfServiceString length])];
-    termsOfService.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
+    termsOfService.titleLabel.font = [UIFont fontWithName:APP_FONT size:13];
     termsOfService.frame = CGRectMake(43, self.view.frame.size.height - 70, 121, 19);
     [self.view addSubview:termsOfService];
     
@@ -129,7 +128,7 @@
     [privacyPolicyString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [privacyPolicyString length])];
     [privacyPolicy setAttributedTitle: privacyPolicyString forState:UIControlStateNormal];
     [privacyPolicyString addAttribute:NSForegroundColorAttributeName value:UIColorFromRGB(0xe7eee2) range:NSMakeRange(0,[privacyPolicyString length])];
-    privacyPolicy.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
+    privacyPolicy.titleLabel.font = [UIFont fontWithName:APP_FONT size:13];
     privacyPolicy.frame = CGRectMake(163, self.view.frame.size.height - 70, 102, 19);
     privacyPolicy.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [self.view addSubview:privacyPolicy];

@@ -7,7 +7,6 @@
 //
 
 #import "SettingsViewController.h"
-#import "Constants.h"
 #import "MenuController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "TripManager.h"
@@ -91,7 +90,7 @@
     //Initalize the TextFields and keyboard
     
     UITextField *name = [[UITextField alloc] init];
-    name.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+    name.font = [UIFont fontWithName:APP_FONT size:15];
     name.frame = CGRectMake(75, 150, 200, 24);
     name.textColor = [UIColor whiteColor];
     name.enabled = NO;
@@ -107,7 +106,7 @@
     [self.view addSubview:underlineName];
     
     UITextField *email = [[UITextField alloc] init];
-    email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+    email.font = [UIFont fontWithName:APP_FONT size:15];
     email.frame = CGRectMake(75, 200, 200, 24);
     email.textColor = [UIColor whiteColor];
     email.enabled = NO;
@@ -123,7 +122,7 @@
     [self.view addSubview:underlineEmail];
     
     UITextField *password = [[UITextField alloc] init];
-    password.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+    password.font = [UIFont fontWithName:APP_FONT size:15];
     password.frame = CGRectMake(200, 250, 135, 24);
     password.textColor = [UIColor whiteColor];
     password.placeholder = @"Your Password";
@@ -138,7 +137,7 @@
     [self.view addSubview:underlinePassword];
     
     UITextField *passwordConfirmation = [[UITextField alloc] init];
-    passwordConfirmation.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+    passwordConfirmation.font = [UIFont fontWithName:APP_FONT size:15];
     passwordConfirmation.frame = CGRectMake(200, 300, 135, 24);
     passwordConfirmation.textColor = [UIColor whiteColor];
     passwordConfirmation.placeholder = @"Your Password";
@@ -155,7 +154,7 @@
     //Initalize the Sign Out button
 //    UIImage *buttonImage = [[UIImage imageNamed:@"signout-button"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
     [signOutButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    signOutButton.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
+    signOutButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:14];
     signOutButton.frame = CGRectMake(68, underlinePasswordConfirmation.frame.origin.y + 25, 183, 36);
     
     UIGraphicsBeginImageContext(signOutButton.frame.size);
@@ -164,7 +163,7 @@
     UIGraphicsEndImageContext();
     [signOutButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [signOutButton setTitle:@"SIGN OUT" forState:UIControlStateNormal];
-    signOutButton.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
+    signOutButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:14];
     [signOutButton setBackgroundImage:imageZ forState:UIControlStateNormal];
     
     [self.view addSubview:signOutButton];

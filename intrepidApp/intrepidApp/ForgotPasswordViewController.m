@@ -7,7 +7,6 @@
 //
 
 #import "ForgotPasswordViewController.h"
-#import "Constants.h"
 
 @interface ForgotPasswordViewController ()
 
@@ -44,7 +43,7 @@
     UILabel *forgotLabel = [[UILabel alloc] init];
     forgotLabel.frame = CGRectMake(40, self.view.frame.origin.y - 35, 240, 150);
     forgotLabel.text = @"Forgot Password?";
-    forgotLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:24];
+    forgotLabel.font = [UIFont fontWithName:APP_FONT size:24];
     forgotLabel.textColor = [UIColor colorWithRed:231/255.0f green:238/255.0f blue:226/255.0f alpha:1.0f];
     forgotLabel.backgroundColor = [UIColor clearColor];
     [forgotLabel setTextAlignment:NSTextAlignmentCenter];
@@ -60,7 +59,7 @@
     
     UILabel *enterEmailLabel = [[UILabel alloc] init];
     enterEmailLabel.frame = CGRectMake(0, 180, 320, 35);
-    enterEmailLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
+    enterEmailLabel.font = [UIFont fontWithName:APP_FONT size:18];
     enterEmailLabel.textColor = [UIColor whiteColor];
     enterEmailLabel.backgroundColor = [UIColor clearColor];
     enterEmailLabel.text = @"Please Enter Your Email:";
@@ -73,12 +72,12 @@
     [signUpButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [signUpButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [signUpButton setTitle:@"SUBMIT" forState:UIControlStateNormal];
-    signUpButton.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
+    signUpButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:14];
     signUpButton.frame = CGRectMake(68, self.view.frame.size.height - 250, 183, 36);
     [self.view addSubview:signUpButton];
     
     
-    email.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+    email.font = [UIFont fontWithName:APP_FONT size:15];
     email.textColor = [UIColor whiteColor];
     email.frame = CGRectMake(68, 235, 183, 35);
     email.backgroundColor = [UIColor clearColor];

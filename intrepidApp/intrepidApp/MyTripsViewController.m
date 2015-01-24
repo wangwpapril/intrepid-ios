@@ -8,7 +8,6 @@
 
 #import "MyTripsViewController.h"
 #import "MenuController.h"
-#import "Constants.h"
 #import "TripManager.h"
 #import "CityEntity.h"
 #import "TripItem.h"
@@ -124,7 +123,7 @@
         UILabel *cityName = [[UILabel alloc] init];
         cityName.frame = CGRectMake(10 + 320 * i, self.view.frame.size.height - 138, 300.0, 100.0);
         [cityName setTextAlignment:NSTextAlignmentCenter];
-        cityName.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
+        cityName.font = [UIFont fontWithName:APP_FONT size:18];
         cityName.backgroundColor = [UIColor clearColor];
         cityName.textColor = [UIColor whiteColor];
         cityName.text = city.city;

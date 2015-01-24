@@ -12,7 +12,6 @@
 #import "OverViewViewController.h"
 #import "TripManager.h"
 #import "RequestBuilder.h"
-#import "Constants.h"
 
 @implementation TripsViewController
 

@@ -7,7 +7,6 @@
 //
 
 #import "IntreSearchBar.h"
-#import "Constants.h"
 
 @implementation IntreSearchBar
 

@@ -10,7 +10,6 @@
 #import "MenuController.h"
 #import "TripManager.h"
 #import "AlertCell.h"
-#import "Constants.h"
 
 @interface AlertsViewController ()
 

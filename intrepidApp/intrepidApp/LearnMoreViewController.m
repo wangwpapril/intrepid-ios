@@ -7,7 +7,6 @@
 //
 
 #import "LearnMoreViewController.h"
-#import "Constants.h"
 
 @interface LearnMoreViewController ()
 
@@ -49,7 +48,7 @@
     UILabel *learnMoreLabel = [[UILabel alloc] init];
     learnMoreLabel.frame = CGRectMake(85, self.view.frame.origin.y - 35, 150, 150);
     learnMoreLabel.text = @"Learn More";
-    learnMoreLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:24];
+    learnMoreLabel.font = [UIFont fontWithName:APP_FONT size:24];
     learnMoreLabel.textColor = [UIColor whiteColor];
     learnMoreLabel.backgroundColor = [UIColor clearColor];
     [learnMoreLabel setTextAlignment:NSTextAlignmentCenter];
@@ -121,7 +120,7 @@
 - (void)populateDescriptions {
     UILabel *mexicoEmbassyDescription = [[UILabel alloc] init];
     mexicoEmbassyDescription.frame = CGRectMake(677, self.view.frame.size.height - 175, 250.0, 250.0);
-    mexicoEmbassyDescription.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
+    mexicoEmbassyDescription.font = [UIFont fontWithName:APP_FONT size:13];
     mexicoEmbassyDescription.backgroundColor = [UIColor clearColor];
     mexicoEmbassyDescription.textColor = [UIColor whiteColor];
     [mexicoEmbassyDescription setTextAlignment:NSTextAlignmentCenter];
@@ -132,7 +131,7 @@
     
     UILabel *healthOverviewDescription = [[UILabel alloc] init];
     healthOverviewDescription.frame = CGRectMake(345, self.view.frame.size.height - 190, 275.0, 275.0);
-    healthOverviewDescription.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
+    healthOverviewDescription.font = [UIFont fontWithName:APP_FONT size:13];
     healthOverviewDescription.backgroundColor = [UIColor clearColor];
     healthOverviewDescription.textColor = [UIColor whiteColor];
     [healthOverviewDescription setTextAlignment:NSTextAlignmentCenter];
@@ -143,7 +142,7 @@
     
     UILabel *mexicoCultureDescription = [[UILabel alloc] init];
     mexicoCultureDescription.frame = CGRectMake(37, self.view.frame.size.height - 175, 250.0, 250.0);
-    mexicoCultureDescription.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
+    mexicoCultureDescription.font = [UIFont fontWithName:APP_FONT size:13];
     mexicoCultureDescription.backgroundColor = [UIColor clearColor];
     mexicoCultureDescription.textColor = [UIColor whiteColor];
     [mexicoCultureDescription setTextAlignment:NSTextAlignmentCenter];
@@ -154,7 +153,7 @@
     
     UILabel *assistanceScreenDescription = [[UILabel alloc] init];
     assistanceScreenDescription.frame = CGRectMake(995, self.view.frame.size.height - 175, 250.0, 250.0);
-    assistanceScreenDescription.font = [UIFont fontWithName:@"ProximaNova-Regular" size:13];
+    assistanceScreenDescription.font = [UIFont fontWithName:APP_FONT size:13];
     assistanceScreenDescription.backgroundColor = [UIColor clearColor];
     assistanceScreenDescription.textColor = [UIColor whiteColor];
     [assistanceScreenDescription setTextAlignment:NSTextAlignmentCenter];

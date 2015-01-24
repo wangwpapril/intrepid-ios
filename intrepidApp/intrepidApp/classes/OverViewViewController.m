@@ -9,7 +9,6 @@
 #import "OverViewViewController.h"
 #import "SlidingTextView.h"
 #import "CurrencyCell.h"
-#import "Constants.h"
 #import "RequestBuilder.h"
 #import "CurrencyEntity.h"
 #import "TripManager.h"
@@ -156,7 +155,7 @@
 //    [cell setSelectedBackgroundView:bgColorView];
 //    
 //    if (cell.selected) {
-//        cell.detailTextLabel.font = [UIFont fontWithName:@"ProximaNova-Bold" size:16];
+//        cell.detailTextLabel.font = [UIFont fontWithName:APP_FONT_BOLD size:16];
 //    }
     
     return cell;

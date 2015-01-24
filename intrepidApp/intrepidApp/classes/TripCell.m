@@ -8,7 +8,6 @@
 
 #import "TripCell.h"
 #import "TripItem.h"
-#import "Constants.h"
 #import "QuartzCore/QuartzCore.h"
 
 @implementation TripCell

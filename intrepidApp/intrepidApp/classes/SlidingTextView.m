@@ -8,7 +8,6 @@
 
 #import "SlidingTextView.h"
 #import "QuartzCore/QuartzCore.h"
-#import "Constants.h"
 
 @implementation SlidingTextView
 

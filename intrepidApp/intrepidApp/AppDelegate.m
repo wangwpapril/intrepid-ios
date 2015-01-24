@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "Constants.h"
 #import "TripManager.h"
 
 @implementation AppDelegate
@@ -26,7 +25,7 @@
     [[UINavigationBar appearance] setTintColor: [UIColor colorWithHue:0.57 saturation:0.29 brightness:0.28 alpha:1]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{
                                                            NSForegroundColorAttributeName: [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0],
-                                                           NSFontAttributeName: [UIFont fontWithName:@"ProximaNova-Bold" size:18],
+                                                           NSFontAttributeName: [UIFont fontWithName:APP_FONT_BOLD size:18],
                                                            }];
 //    NSShadow *shadow = [NSShadow new];
 //    shadow.shadowColor = [UIColor whiteColor];
@@ -37,7 +36,7 @@
 //      NSForegroundColorAttributeName,
 //    shadow,
 //      NSShadowAttributeName,
-//      [UIFont fontWithName:@"ProximaNova-Bold" size:18],
+//      [UIFont fontWithName:APP_FONT_BOLD size:18],
 //      NSFontAttributeName, nil]];
     
     //CHECK IF iOS7 OR PREV FOR BACK BUTTON ARROW

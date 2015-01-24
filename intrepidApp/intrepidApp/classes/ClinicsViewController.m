@@ -9,9 +9,7 @@
 #import "ClinicsViewController.h"
 #import "MenuController.h"
 #import "MapKit/MapKit.h"
-#import "Constants.h"
 #import "ClinicsTableViewCell.h"
-
 
 @interface ClinicsViewController ()
 

@@ -7,7 +7,6 @@
 //
 #import "HealthViewDetailController.h"
 #import "HealthViewController.h"
-#import "Constants.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation HealthViewDetailController
@@ -42,7 +41,7 @@
 //    NSString *uppercaseString = [healthItem.name uppercaseString];
 //    healthItemNameLabel.text = uppercaseString;
 //    healthItemNameLabel.backgroundColor = [UIColor clearColor];
-//    healthItemNameLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:16];
+//    healthItemNameLabel.font = [UIFont fontWithName:APP_FONT size:16];
 //    healthItemNameLabel.textColor = [UIColor whiteColor];
 //    
 //    [healthItemTitleLabel addSubview:healthItemNameLabel];

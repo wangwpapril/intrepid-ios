@@ -8,9 +8,7 @@
 
 #import "HealthCell.h"
 #import "HealthEntity.h"
-#import "Constants.h"
 #import "QuartzCore/QuartzCore.h"
-
 
 @implementation HealthCell
 
