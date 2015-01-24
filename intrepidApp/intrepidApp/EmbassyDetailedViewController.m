@@ -13,12 +13,6 @@
 #import <QuartzCore/QuartzCore.h>
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
-#define APP_TEXT_COLOR [UIColor colorWithRed: 0.2 green:0.25 blue:0.28 alpha:1]
-#define APP_BORDER_COLOR [[UIColor colorWithRed:0.91 green:0.9 blue:0.9 alpha:1] CGColor]
-#define UIColorFromRGB(rgbValue) [UIColor \
-colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
-green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
-blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @implementation EmbassyDetailedViewController
 
