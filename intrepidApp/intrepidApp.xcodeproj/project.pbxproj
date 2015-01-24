@@ -39,13 +39,11 @@
 		68B071E917A4D3FC0061E418 /* SecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B071E817A4D3FC0061E418 /* SecurityViewController.m */; };
 		68B071EC17A4D7290061E418 /* EmbassyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B071EB17A4D7290061E418 /* EmbassyCell.m */; };
 		68B997E517A2058A00AD62ED /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B997E417A2058A00AD62ED /* WebViewController.m */; };
-		68BE3ACA17A1DCA600A87E52 /* HealthContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 68BE3AC917A1DCA600A87E52 /* HealthContent.m */; };
 		68DB321717C513F70061D0F1 /* EmbassyEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DB321617C513F70061D0F1 /* EmbassyEntity.m */; };
 		68DBAE60179F6CC300D1DE0B /* CurrencyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DBAE5F179F6CC300D1DE0B /* CurrencyCell.m */; };
 		68E4240417926E1E00431908 /* IntreSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E4240317926E1E00431908 /* IntreSearchBar.m */; };
 		7E34777C1791E79300FB86DC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34777B1791E79300FB86DC /* LoginViewController.m */; };
 		7E34777F1791E7A700FB86DC /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34777E1791E7A700FB86DC /* SignUpViewController.m */; };
-		7E44F8D21788FA4B00AAA32B /* HealthItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E44F8D11788FA4B00AAA32B /* HealthItem.m */; };
 		7E82E9B91794F01000027268 /* proximanova-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E82E9B81794EFB500027268 /* proximanova-regular.ttf */; };
 		7E82E9BB1794F0D400027268 /* proximanova-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E82E9BA1794F0B900027268 /* proximanova-bold.ttf */; };
 		7E9A130C17A876FF0082003C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9A130B17A876FF0082003C /* SettingsViewController.m */; };
@@ -56,7 +54,6 @@
 		7ECD0427178BD7C500D6C34B /* HealthViewDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECD0426178BD7C500D6C34B /* HealthViewDetailController.m */; };
 		7ED645C11795A2FB000475A1 /* proximanova-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED645C01795A2E9000475A1 /* proximanova-semibold.ttf */; };
 		7ED645C51795AB83000475A1 /* proximanova-light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED645C41795AB80000475A1 /* proximanova-light.ttf */; };
-		7EE44DB9179F7E30006BA2EC /* CurrencyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE44DB8179F7E30006BA2EC /* CurrencyItem.m */; };
 		B61550DD17B52E7400044F11 /* LegalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B61550DC17B52E7400044F11 /* LegalViewController.m */; };
 		B6DB0C4717AE2C5C001694B0 /* AssistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DB0C4617AE2C5C001694B0 /* AssistanceViewController.m */; };
 		DC26B28E1A4FE60200E9A549 /* CurrencyEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DC26B28D1A4FE60200E9A549 /* CurrencyEntity.m */; };
@@ -73,7 +70,6 @@
 		DCFB6F3C1A5F208200375B7D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCFB6F3B1A5F208200375B7D /* OpenGLES.framework */; };
 		DCFB6F3F1A5F218E00375B7D /* ClinicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFB6F3E1A5F218E00375B7D /* ClinicsViewController.m */; };
 		DCFB6F411A5F264200375B7D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCFB6F401A5F264200375B7D /* MapKit.framework */; };
-		E02BBA0B17A8845300215CEA /* EmbassyDetailedContent.m in Sources */ = {isa = PBXBuildFile; fileRef = E02BBA0A17A8845300215CEA /* EmbassyDetailedContent.m */; };
 		E04C4DBC17A3103E002A23F4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E04C4DBB17A3103E002A23F4 /* libz.dylib */; };
 		E058778417A8768500E42A78 /* EmbassyDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E058778317A8768500E42A78 /* EmbassyDetailedViewController.m */; };
 		E08615F117A8224D00DE240B /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E08615F017A8224D00DE240B /* ForgotPasswordViewController.m */; };
@@ -137,8 +133,6 @@
 		68B071EB17A4D7290061E418 /* EmbassyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmbassyCell.m; path = classes/EmbassyCell.m; sourceTree = "<group>"; };
 		68B997E317A2058A00AD62ED /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = classes/WebViewController.h; sourceTree = "<group>"; };
 		68B997E417A2058A00AD62ED /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = classes/WebViewController.m; sourceTree = "<group>"; };
-		68BE3AC817A1DCA600A87E52 /* HealthContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthContent.h; path = classes/HealthContent.h; sourceTree = "<group>"; };
-		68BE3AC917A1DCA600A87E52 /* HealthContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthContent.m; path = classes/HealthContent.m; sourceTree = "<group>"; };
 		68DB321517C513F70061D0F1 /* EmbassyEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmbassyEntity.h; path = classes/EmbassyEntity.h; sourceTree = "<group>"; };
 		68DB321617C513F70061D0F1 /* EmbassyEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmbassyEntity.m; path = classes/EmbassyEntity.m; sourceTree = "<group>"; };
 		68DBAE5E179F6CC300D1DE0B /* CurrencyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrencyCell.h; path = classes/CurrencyCell.h; sourceTree = "<group>"; };
@@ -150,8 +144,6 @@
 		7E34777B1791E79300FB86DC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = classes/LoginViewController.m; sourceTree = "<group>"; };
 		7E34777D1791E7A700FB86DC /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = classes/SignUpViewController.h; sourceTree = "<group>"; };
 		7E34777E1791E7A700FB86DC /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = classes/SignUpViewController.m; sourceTree = "<group>"; };
-		7E44F8D01788FA4B00AAA32B /* HealthItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthItem.h; path = classes/HealthItem.h; sourceTree = "<group>"; };
-		7E44F8D11788FA4B00AAA32B /* HealthItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthItem.m; path = classes/HealthItem.m; sourceTree = "<group>"; };
 		7E82E9B81794EFB500027268 /* proximanova-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-regular.ttf"; sourceTree = "<group>"; };
 		7E82E9BA1794F0B900027268 /* proximanova-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-bold.ttf"; sourceTree = "<group>"; };
 		7E9A130A17A876FF0082003C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -168,8 +160,6 @@
 		7ECD0426178BD7C500D6C34B /* HealthViewDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthViewDetailController.m; path = classes/HealthViewDetailController.m; sourceTree = "<group>"; };
 		7ED645C01795A2E9000475A1 /* proximanova-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-semibold.ttf"; sourceTree = "<group>"; };
 		7ED645C41795AB80000475A1 /* proximanova-light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-light.ttf"; sourceTree = "<group>"; };
-		7EE44DB7179F7E30006BA2EC /* CurrencyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrencyItem.h; path = classes/CurrencyItem.h; sourceTree = "<group>"; };
-		7EE44DB8179F7E30006BA2EC /* CurrencyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrencyItem.m; path = classes/CurrencyItem.m; sourceTree = "<group>"; };
 		B61550DB17B52E7400044F11 /* LegalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegalViewController.h; sourceTree = "<group>"; };
 		B61550DC17B52E7400044F11 /* LegalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegalViewController.m; sourceTree = "<group>"; };
 		B6DB0C4517AE2C5C001694B0 /* AssistanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssistanceViewController.h; sourceTree = "<group>"; };
@@ -193,8 +183,6 @@
 		DCFB6F3D1A5F218E00375B7D /* ClinicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClinicsViewController.h; path = classes/ClinicsViewController.h; sourceTree = "<group>"; };
 		DCFB6F3E1A5F218E00375B7D /* ClinicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClinicsViewController.m; path = classes/ClinicsViewController.m; sourceTree = "<group>"; };
 		DCFB6F401A5F264200375B7D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		E02BBA0917A8845200215CEA /* EmbassyDetailedContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbassyDetailedContent.h; sourceTree = "<group>"; };
-		E02BBA0A17A8845300215CEA /* EmbassyDetailedContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbassyDetailedContent.m; sourceTree = "<group>"; };
 		E04C4DBB17A3103E002A23F4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		E058778217A8768500E42A78 /* EmbassyDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbassyDetailedViewController.h; sourceTree = "<group>"; };
 		E058778317A8768500E42A78 /* EmbassyDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbassyDetailedViewController.m; sourceTree = "<group>"; };
@@ -266,8 +254,6 @@
 				684BB604179F5143004C44C9 /* OverViewViewController.m */,
 				68DBAE5E179F6CC300D1DE0B /* CurrencyCell.h */,
 				68DBAE5F179F6CC300D1DE0B /* CurrencyCell.m */,
-				7EE44DB7179F7E30006BA2EC /* CurrencyItem.h */,
-				7EE44DB8179F7E30006BA2EC /* CurrencyItem.m */,
 			);
 			name = Overview;
 			sourceTree = "<group>";
@@ -376,14 +362,10 @@
 				DC73F0921A622C180051898F /* ClinicsTableViewCell.m */,
 				6851223D17861152008DB6B6 /* HealthViewController.h */,
 				6851223E17861152008DB6B6 /* HealthViewController.m */,
-				68BE3AC817A1DCA600A87E52 /* HealthContent.h */,
-				68BE3AC917A1DCA600A87E52 /* HealthContent.m */,
 				7ECD0425178BD7C500D6C34B /* HealthViewDetailController.h */,
 				7ECD0426178BD7C500D6C34B /* HealthViewDetailController.m */,
 				688F9E641786295100CF850C /* HealthCell.h */,
 				688F9E651786295100CF850C /* HealthCell.m */,
-				7E44F8D01788FA4B00AAA32B /* HealthItem.h */,
-				7E44F8D11788FA4B00AAA32B /* HealthItem.m */,
 			);
 			name = Health;
 			sourceTree = "<group>";
@@ -399,8 +381,6 @@
 				68B071E817A4D3FC0061E418 /* SecurityViewController.m */,
 				68B071EA17A4D7290061E418 /* EmbassyCell.h */,
 				68B071EB17A4D7290061E418 /* EmbassyCell.m */,
-				E02BBA0917A8845200215CEA /* EmbassyDetailedContent.h */,
-				E02BBA0A17A8845300215CEA /* EmbassyDetailedContent.m */,
 				E058778217A8768500E42A78 /* EmbassyDetailedViewController.h */,
 				E058778317A8768500E42A78 /* EmbassyDetailedViewController.m */,
 				B6DB0C4517AE2C5C001694B0 /* AssistanceViewController.h */,
@@ -546,7 +526,6 @@
 				6851223117861138008DB6B6 /* intrepidApp.xcdatamodeld in Sources */,
 				6851223F17861152008DB6B6 /* HealthViewController.m in Sources */,
 				688F9E661786295100CF850C /* HealthCell.m in Sources */,
-				7E44F8D21788FA4B00AAA32B /* HealthItem.m in Sources */,
 				2CB19ABD1A731FC4007CEC79 /* AlertCell.m in Sources */,
 				6835EC161789439600A57F86 /* MenuController.m in Sources */,
 				7ECD0427178BD7C500D6C34B /* HealthViewDetailController.m in Sources */,
@@ -561,9 +540,7 @@
 				DC26B28E1A4FE60200E9A549 /* CurrencyEntity.m in Sources */,
 				684BB609179F539C004C44C9 /* SlidingTextView.m in Sources */,
 				68DBAE60179F6CC300D1DE0B /* CurrencyCell.m in Sources */,
-				7EE44DB9179F7E30006BA2EC /* CurrencyItem.m in Sources */,
 				2CB19AB41A730B42007CEC79 /* AlertsViewController.m in Sources */,
-				68BE3ACA17A1DCA600A87E52 /* HealthContent.m in Sources */,
 				68B997E517A2058A00AD62ED /* WebViewController.m in Sources */,
 				68B071E917A4D3FC0061E418 /* SecurityViewController.m in Sources */,
 				68B071EC17A4D7290061E418 /* EmbassyCell.m in Sources */,
@@ -576,7 +553,6 @@
 				E08615F117A8224D00DE240B /* ForgotPasswordViewController.m in Sources */,
 				7E9A130C17A876FF0082003C /* SettingsViewController.m in Sources */,
 				E058778417A8768500E42A78 /* EmbassyDetailedViewController.m in Sources */,
-				E02BBA0B17A8845300215CEA /* EmbassyDetailedContent.m in Sources */,
 				7E9A131217A8AE5E0082003C /* TermsOfServiceViewController.m in Sources */,
 				7E9A131517A8AE6E0082003C /* PrivacyPolicyViewController.m in Sources */,
 				6811614717A9D1A20029134B /* TripManager.m in Sources */,
