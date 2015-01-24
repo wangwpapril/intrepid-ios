@@ -10,6 +10,7 @@
 #import "MenuController.h"
 #import "TripManager.h"
 #import "AlertCell.h"
+#import "Constants.h"
 
 @interface AlertsViewController ()
 
@@ -34,19 +35,23 @@
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     
-    tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 44, 320, self.view.bounds.size.height) style:UITableViewStylePlain];
+    tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.bounds.size.height - 64) style:UITableViewStylePlain];
     [self.view addSubview:tableList];
     tableList.delegate = self;
     tableList.dataSource = self;
-//    [self.view addSubview:tableList];
     
-    alertsArray = [[TripManager getInstance] getAlertItemsWithCity:mController.city];
+    CityEntity *currentCity = [MenuController getInstance].city;
+    alertsArray = [[TripManager getInstance] getAlertItemsWithCity:currentCity];
     [tableList reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     mController = [MenuController getInstance];
     [mController displayMenuWithParent:self];
+}
+
+- (CityEntity *)getCity {
+    return mController.city;
 }
 
 # pragma mark - TableView Methods
@@ -64,11 +69,27 @@
     if(cell == nil) {
         cell = [[AlertCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
+
     AlertEntity *alert = alertsArray[indexPath.row];
     [cell setupWithAlert:alert];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat height = 0.0;
+    AlertEntity *alert = alertsArray[indexPath.row];    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+    height = [alert.text boundingRectWithSize:CGSizeMake(300, CGFLOAT_MAX)
+                                           options:NSStringDrawingUsesLineFragmentOrigin
+                                        attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:15]}
+                                           context:nil].size.height;
+    if (height < 25) {
+        height = 25;
+    }
+    return height + 60;
 }
 
 @end

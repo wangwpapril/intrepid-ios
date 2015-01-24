@@ -11,6 +11,10 @@
 
 @interface AlertCell : UITableViewCell
 
--(void)setupWithAlert:(AlertEntity *)alert;
+@property (nonatomic, strong) UILabel *categoryLabel;
+@property (nonatomic, strong) UILabel *dateLabel;
+@property (nonatomic, strong) UILabel *textLabel;
+
+- (void)setupWithAlert:(AlertEntity *)alert;
 
 @end
