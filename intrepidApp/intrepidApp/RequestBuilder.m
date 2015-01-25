@@ -37,9 +37,9 @@ static NSDictionary * cityDict;
                 NSString *image1x, *image2x, *image3x;
                 
                 if (destinationDict[@"flag"] != [NSNull null]) {
-                    image1x = destinationDict[@"flag"][@"versions"][@"1x"][@"source_url"];
-                    image2x = destinationDict[@"flag"][@"versions"][@"2x"][@"source_url"];
-                    image3x = destinationDict[@"flag"][@"versions"][@"3x"][@"source_url"];
+                    image1x = [destinationDict[@"flag"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                    image2x = [destinationDict[@"flag"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                    image3x = [destinationDict[@"flag"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                 } else {
                     image1x = @"";
                     image2x = @"";
@@ -113,9 +113,9 @@ static NSDictionary * cityDict;
                 services = embassyContent[@"services_offered"];
 
                 if (embassy[@"images"] != [NSNull null]) {
-                    image1x = embassy[@"images"][@"embassy"][@"versions"][@"1x"][@"source_url"];
-                    image2x = embassy[@"images"][@"embassy"][@"versions"][@"2x"][@"source_url"];
-                    image3x = embassy[@"images"][@"embassy"][@"versions"][@"3x"][@"source_url"];
+                    image1x = [embassy[@"images"][@"embassy"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                    image2x = [embassy[@"images"][@"embassy"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                    image3x = [embassy[@"images"][@"embassy"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                 } else {
                     image1x = @"";
                     image2x = @"";

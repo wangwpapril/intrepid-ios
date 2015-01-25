@@ -12,6 +12,7 @@
 #import "CityEntity.h"
 #import "TripItem.h"
 #import "OverViewViewController.h"
+#import "UIImageView+WebCache.h"
 
 @implementation MyTripsViewController
 
@@ -102,11 +103,11 @@
         }
         else {
             if (scaleFactor > 2.9 && ![city.image3x isEqualToString:@""]) {
-                imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[city.image3x stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]] scale:3.0];
+                [imageView sd_setImageWithURL:[NSURL URLWithString:city.image3x]];
             } else if (![city.image2x isEqualToString:@""]) {
-                imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[city.image2x stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]] scale:2.0];
+                [imageView sd_setImageWithURL:[NSURL URLWithString:city.image2x]];
             } else if (![city.image isEqualToString:@""]) {
-                imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[city.image stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]] scale:1.0];
+                [imageView sd_setImageWithURL:[NSURL URLWithString:city.image]];
             } else {
                 imageView.image = [UIImage imageNamed:@"worldmap"];
             }

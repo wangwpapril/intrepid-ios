@@ -9,6 +9,7 @@
 #import "TripCell.h"
 #import "TripItem.h"
 #import "QuartzCore/QuartzCore.h"
+#import "UIImageView+WebCache.h"
 
 @implementation TripCell
 
@@ -26,11 +27,11 @@
     
     double scaleFactor = [UIScreen mainScreen].scale;
     if (scaleFactor > 2.9 && ![destination.image3x isEqualToString:@""]) {
-        self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[destination.image3x stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]] scale:3.0];
+        [self.imageView sd_setImageWithURL:[NSURL URLWithString:destination.image3x]];
     } else if (![destination.image2x isEqualToString:@""]) {
-        self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[destination.image2x stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]] scale:2.0];
+        [self.imageView sd_setImageWithURL:[NSURL URLWithString:destination.image2x]];
     } else if (![destination.image1x isEqualToString:@""]) {
-        self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[destination.image1x stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]] scale:1.0];
+        [self.imageView sd_setImageWithURL:[NSURL URLWithString:destination.image1x]];
     } else {
         self.imageView.image = [UIImage imageNamed:@"worldmap"];
     }

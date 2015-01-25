@@ -8,6 +8,7 @@
 
 #import "SlidingTextView.h"
 #import "QuartzCore/QuartzCore.h"
+#import "UIImageView+WebCache.h"
 
 @implementation SlidingTextView
 
@@ -33,11 +34,11 @@
     UIImageView  *imageView = [[UIImageView alloc] init];
     double scaleFactor = [UIScreen mainScreen].scale;
     if (scaleFactor > 2.9 && ![image3x isEqualToString:@""]) {
-        imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[image3x stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]] scale:3.0];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:image3x]];
     } else if (![image2x isEqualToString:@""]) {
-        imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[image2x stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]] scale:2.0];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:image2x]];
     } else if (![image1x isEqualToString:@""]) {
-        imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[image1x stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]] scale:1.0];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:image1x]];
     } else {
         imageView.image = [UIImage imageNamed:@"overview-currency"];
     }

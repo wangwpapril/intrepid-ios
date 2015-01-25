@@ -467,9 +467,9 @@ static TripManager *instance =nil;
     
     if (cityDict[@"images"] != [NSNull null]) {
         if (cityDict[@"images"][@"culture"]) {
-            cultureImage1x = cityDict[@"images"][@"culture"][@"versions"][@"1x"][@"source_url"];
-            cultureImage2x = cityDict[@"images"][@"culture"][@"versions"][@"2x"][@"source_url"];
-            cultureImage3x = cityDict[@"images"][@"culture"][@"versions"][@"3x"][@"source_url"];
+            cultureImage1x = [cityDict[@"images"][@"culture"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            cultureImage2x = [cityDict[@"images"][@"culture"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            cultureImage3x = [cityDict[@"images"][@"culture"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         } else {
             cultureImage1x = @"";
             cultureImage2x = @"";
@@ -478,9 +478,9 @@ static TripManager *instance =nil;
         
         if (cityDict[@"images"][@"intro"]) {
             NSLog(@"got intro: %@", cityDict[@"images"][@"intro"]);
-            introImage1x = cityDict[@"images"][@"intro"][@"versions"][@"1x"][@"source_url"];
-            introImage2x = cityDict[@"images"][@"intro"][@"versions"][@"2x"][@"source_url"];
-            introImage3x = cityDict[@"images"][@"intro"][@"versions"][@"3x"][@"source_url"];
+            introImage1x = [cityDict[@"images"][@"intro"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            introImage2x = [cityDict[@"images"][@"intro"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            introImage3x = [cityDict[@"images"][@"intro"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         } else {
             introImage1x = @"";
             introImage2x = @"";
@@ -488,9 +488,9 @@ static TripManager *instance =nil;
         }
         
         if (cityDict[@"images"][@"overview"]) {
-            generalImage1x = cityDict[@"images"][@"overview"][@"versions"][@"1x"][@"source_url"];
-            generalImage2x = cityDict[@"images"][@"overview"][@"versions"][@"2x"][@"source_url"];
-            generalImage3x = cityDict[@"images"][@"overview"][@"versions"][@"3x"][@"source_url"];
+            generalImage1x = [cityDict[@"images"][@"overview"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            generalImage2x = [cityDict[@"images"][@"overview"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            generalImage3x = [cityDict[@"images"][@"overview"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         } else {
             generalImage1x = @"";
             generalImage2x = @"";
@@ -498,9 +498,9 @@ static TripManager *instance =nil;
         }
         
         if (cityDict[@"images"][@"security"]) {
-            safetyImage1x = cityDict[@"images"][@"security"][@"versions"][@"1x"][@"source_url"];
-            safetyImage2x = cityDict[@"images"][@"security"][@"versions"][@"2x"][@"source_url"];
-            safetyImage3x = cityDict[@"images"][@"security"][@"versions"][@"3x"][@"source_url"];
+            safetyImage1x = [cityDict[@"images"][@"security"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            safetyImage2x = [cityDict[@"images"][@"security"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            safetyImage3x = [cityDict[@"images"][@"security"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         } else {
             safetyImage1x = @"";
             safetyImage2x = @"";
