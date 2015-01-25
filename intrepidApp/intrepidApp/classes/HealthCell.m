@@ -19,7 +19,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        commonImage = [[UIImageView alloc] initWithFrame:CGRectMake(205, 16, 106, 13)];
+//        commonImage = [[UIImageView alloc] initWithFrame:CGRectMake(205, 16, 106, 13)];
     }
     return self;
 }
@@ -30,11 +30,11 @@
     
     double scaleFactor = [UIScreen mainScreen].scale;
     if (scaleFactor > 2.9 && ![healthItem.image3x isEqualToString:@""]) {
-        [self.imageView sd_setImageWithURL:[NSURL URLWithString:healthItem.image3x]];
+        [self.imageView sd_setImageWithURL:[NSURL URLWithString:healthItem.image3x] placeholderImage:[UIImage imageNamed:@"unused"]];
     } else if (![healthItem.image2x isEqualToString:@""]) {
-        [self.imageView sd_setImageWithURL:[NSURL URLWithString:healthItem.image2x]];
+        [self.imageView sd_setImageWithURL:[NSURL URLWithString:healthItem.image2x] placeholderImage:[UIImage imageNamed:@"unused"]];
     } else if (![healthItem.image1x isEqualToString:@""]) {
-        [self.imageView sd_setImageWithURL:[NSURL URLWithString:healthItem.image1x]];
+        [self.imageView sd_setImageWithURL:[NSURL URLWithString:healthItem.image1x] placeholderImage:[UIImage imageNamed:@"unused"]];
     } else {
         self.imageView.image = [UIImage imageNamed:@"unused"];
     }
@@ -43,16 +43,9 @@
     self.textLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:17];
     self.textLabel.textColor = APP_TEXT_COLOR;
     
-    [self addSubview:commonImage];
+//    [self addSubview:commonImage];
     self.contentView.backgroundColor = [UIColor clearColor];
     self.textLabel.backgroundColor = [UIColor clearColor];
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end

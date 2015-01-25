@@ -49,11 +49,11 @@
     if (destination) {
         double scaleFactor = [UIScreen mainScreen].scale;
         if (scaleFactor > 2.9 && ![destination.currencyImage3x isEqualToString:@""]) {
-            [flagLabel sd_setImageWithURL:[NSURL URLWithString:destination.currencyImage3x]];
+            [flagLabel sd_setImageWithURL:[NSURL URLWithString:destination.currencyImage3x] placeholderImage:[UIImage imageNamed:@"world"]];
         } else if (![destination.currencyImage2x isEqualToString:@""]) {
-            [flagLabel sd_setImageWithURL:[NSURL URLWithString:destination.currencyImage2x]];
+            [flagLabel sd_setImageWithURL:[NSURL URLWithString:destination.currencyImage2x] placeholderImage:[UIImage imageNamed:@"world"]];
         } else if (![destination.currencyImage1x isEqualToString:@""]) {
-            [flagLabel sd_setImageWithURL:[NSURL URLWithString:destination.currencyImage1x]];
+            [flagLabel sd_setImageWithURL:[NSURL URLWithString:destination.currencyImage1x] placeholderImage:[UIImage imageNamed:@"world"]];
         } else {
             flagLabel.image = [UIImage imageNamed:@"world"];
         }
