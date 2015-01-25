@@ -33,7 +33,7 @@
     } else if (![destination.image1x isEqualToString:@""]) {
         [self.imageView sd_setImageWithURL:[NSURL URLWithString:destination.image1x]];
     } else {
-        self.imageView.image = [UIImage imageNamed:@"worldmap"];
+        self.imageView.image = [UIImage imageNamed:@"world"];
     }
     
     self.textLabel.text = destination.name;
