@@ -109,7 +109,7 @@
             } else if (![city.image isEqualToString:@""]) {
                 [imageView sd_setImageWithURL:[NSURL URLWithString:city.image]];
             } else {
-                imageView.image = [UIImage imageNamed:@"worldmap"];
+                imageView.image = [UIImage imageNamed:@"empty-trip"];
             }
             [scrollView addSubview:imageView];
             
