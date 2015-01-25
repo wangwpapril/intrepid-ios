@@ -13,14 +13,16 @@
 @implementation HealthEntity
 
 @dynamic category;
-@dynamic name;
+@dynamic city;
 @dynamic common;
 @dynamic desc;
 @dynamic details;
-@dynamic symptoms;
+@dynamic image1x;
+@dynamic image2x;
+@dynamic image3x;
 @dynamic immunization;
 @dynamic important;
-@dynamic image;
-@dynamic city;
+@dynamic name;
+@dynamic symptoms;
 
 @end

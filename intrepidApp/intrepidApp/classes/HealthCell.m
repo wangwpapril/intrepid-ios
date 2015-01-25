@@ -9,6 +9,7 @@
 #import "HealthCell.h"
 #import "HealthEntity.h"
 #import "QuartzCore/QuartzCore.h"
+#import "UIImageView+WebCache.h"
 
 @implementation HealthCell
 
@@ -24,11 +25,19 @@
 }
 
 -(void)setupWithHealthItem:(HealthEntity *)healthItem {
+    self.imageView.layer.cornerRadius = 5;
+    self.imageView.layer.masksToBounds = YES;
     
-//    UIImage *image = [UIImage imageNamed:healthItem.image];
-//    self.imageView.image = image;
-//    self.imageView.layer.cornerRadius = 5;
-//    self.imageView.layer.masksToBounds = YES;
+    double scaleFactor = [UIScreen mainScreen].scale;
+    if (scaleFactor > 2.9 && ![healthItem.image3x isEqualToString:@""]) {
+        [self.imageView sd_setImageWithURL:[NSURL URLWithString:healthItem.image3x]];
+    } else if (![healthItem.image2x isEqualToString:@""]) {
+        [self.imageView sd_setImageWithURL:[NSURL URLWithString:healthItem.image2x]];
+    } else if (![healthItem.image1x isEqualToString:@""]) {
+        [self.imageView sd_setImageWithURL:[NSURL URLWithString:healthItem.image1x]];
+    } else {
+        self.imageView.image = [UIImage imageNamed:@"stethoscope"];
+    }
     
     self.textLabel.text = healthItem.name;
     self.textLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:17];

@@ -367,7 +367,10 @@ static TripManager *instance =nil;
                               withSymptoms:(NSString *)symptoms
                          withImmunizations:(NSString *)immunizations
                              withImportant:(NSString *)important
-                                 withImage:(NSString *)image{
+                               withImage1x:(NSString *)image1x
+                               withImage2x:(NSString *)image2x
+                               withImage3x:(NSString *)image3x
+{
     HealthEntity *health = [NSEntityDescription insertNewObjectForEntityForName:@"HealthEntity" inManagedObjectContext:managedObjectContext];
     
     health.city = city;
@@ -379,7 +382,9 @@ static TripManager *instance =nil;
     health.details = details;
     health.immunization = immunizations;
     health.important = important;
-    health.image = image;
+    health.image1x = image1x;
+    health.image2x = image2x;
+    health.image3x = image3x;
     
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {
@@ -437,7 +442,7 @@ static TripManager *instance =nil;
     NSString *destinationName, *destinationType;
     NSInteger destinationId;
     
-    NSString *name, *category, *desc, *details, *symptoms, *immunizations, *important, *image;
+    NSString *name, *category, *desc, *details, *symptoms, *immunizations, *important, *image1x, *image2x, *image3x;
     Boolean common;
     
     destinationName = cityDict[@"name"];
@@ -566,11 +571,17 @@ static TripManager *instance =nil;
         immunizations = medContent[@"storage"];
         important = medContent[@"notes"];
         
-//        NSDictionary *medImage = medDict[@"images"];
-        //for debugging purposes
-        image = @"";
+        if (medDict[@"images"] != [NSNull null]) {
+            image1x = [medDict[@"images"][@"general"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            image2x = [medDict[@"images"][@"general"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            image3x = [medDict[@"images"][@"general"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        } else {
+            image1x = @"";
+            image2x = @"";
+            image3x = @"";
+        }
         
-        [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImportant:important withImage:image];
+        [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImportant:important withImage1x:image1x withImage2x:image2x withImage3x:image3x];
     }
     
     for (NSDictionary *healthDict in cityDict[@"health_conditions"]) {
@@ -586,11 +597,17 @@ static TripManager *instance =nil;
         //test to see if it works when there is no important field
         important = healthContent[@"important"];
         
-//        NSDictionary *healthImage = healthDict[@"images"];
-        //for debugging purposes
-        image = @"";
+        if (healthDict[@"images"] != [NSNull null]) {
+            image1x = [healthDict[@"images"][@"general"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            image2x = [healthDict[@"images"][@"general"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            image3x = [healthDict[@"images"][@"general"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        } else {
+            image1x = @"";
+            image2x = @"";
+            image3x = @"";
+        }
         
-        [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImportant:important withImage:image];
+        [[TripManager getInstance] createHealthItemWithCity:city withCategory:category withName:name withCommon:common withDesc:desc withDetails:details withSymptoms:symptoms withImmunizations:immunizations withImportant:important withImage1x:image1x withImage2x:image2x withImage3x:image3x];
     }
 }
 

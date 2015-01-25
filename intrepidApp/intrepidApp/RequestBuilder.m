@@ -153,8 +153,6 @@ static NSDictionary * cityDict;
         } else {
             NSLog(@"got an error: %@", error);
         }
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
     }];
 }
 
@@ -188,6 +186,8 @@ static NSDictionary * cityDict;
         } else {
             NSLog(@"error: %@", error.localizedDescription);
         }
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"TRIP_UPDATE" object:nil];
     }];
 }
 

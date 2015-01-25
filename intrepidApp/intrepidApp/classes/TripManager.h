@@ -75,15 +75,17 @@
                   withImage3x:(NSString *)image3x;
 
 - (HealthEntity *)createHealthItemWithCity:(CityEntity *)city
-                    withCategory:(NSString *)category
-                        withName:(NSString *)name
-                        withCommon:(BOOL)common
-                        withDesc:(NSString *)desc
-                    withDetails:(NSString *)details
-                    withSymptoms:(NSString *)symptoms
-                withImmunizations:(NSString *)immunizations
-                        withImportant:(NSString *)important
-                        withImage:(NSString *)image;
+                              withCategory:(NSString *)category
+                                  withName:(NSString *)name
+                                withCommon:(BOOL)common
+                                  withDesc:(NSString *)desc
+                               withDetails:(NSString *)details
+                              withSymptoms:(NSString *)symptoms
+                         withImmunizations:(NSString *)immunizations
+                             withImportant:(NSString *)important
+                               withImage1x:(NSString *)image1x
+                               withImage2x:(NSString *)image2x
+                               withImage3x:(NSString *)image3x;
 
 - (CurrencyEntity *)createCurrencyItemWithCity:(CityEntity *)city
                                        Country:(NSString *)country
