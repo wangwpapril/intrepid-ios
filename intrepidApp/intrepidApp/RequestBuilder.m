@@ -174,7 +174,11 @@ static NSDictionary * cityDict;
             
             for (NSDictionary *alert in alertObject[@"content"]) {
                 category = alert[@"category"];
-                link = alert[@"link"];
+                if([alert[@"link"] isKindOfClass:[NSString class]]){
+                    link = alert[@"link"];
+                } else {
+                    link = @"";
+                }
                 text = alert[@"description"];
                 startDate = [formatter dateFromString:alert[@"start"]];
                 endDate = [formatter dateFromString:alert[@"end"]];
