@@ -12,7 +12,7 @@
 #import "DestinationEntity.h"
 
 @implementation RequestBuilder
-static NSString * baseURL = @"https://staging.intrepid247.com/v1/";
+static NSString * baseURL = @"https://api.intrepid247.com/v1/";
 static NSString * currencyURL = @"https://openexchangerates.org/api/latest.json?app_id=14073d8e6b8c4687951ed926cbbd3589";
 static NSDictionary * userDict;
 static NSDictionary * cityDict;
@@ -33,13 +33,19 @@ static NSDictionary * cityDict;
             NSDictionary *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             [[TripManager getInstance] deleteAllObjects:@"DestinationEntity"];
             for (NSDictionary *destinationDict in responseObject[@"destinations"]) {
-                
+                NSLog(@"%@", destinationDict);
                 NSString *image1x, *image2x, *image3x;
-                
-                if (destinationDict[@"flag"] != [NSNull null]) {
-                    image1x = [destinationDict[@"flag"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-                    image2x = [destinationDict[@"flag"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-                    image3x = [destinationDict[@"flag"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
+                if (destinationDict[@"images"] != [NSNull null] && ![destinationDict[@"images"] isEqual:@""]) {
+                    if (destinationDict[@"images"][@"flag"] != [NSNull null] && ![destinationDict[@"images"][@"flag"] isEqual:@""]) {
+                        image1x = [destinationDict[@"images"][@"flag"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                        image2x = [destinationDict[@"images"][@"flag"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                        image3x = [destinationDict[@"images"][@"flag"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                    } else {
+                        image1x = @"";
+                        image2x = @"";
+                        image3x = @"";
+                    }
                 } else {
                     image1x = @"";
                     image2x = @"";
@@ -112,10 +118,16 @@ static NSDictionary * cityDict;
                 notes = embassyContent[@"notes"];
                 services = embassyContent[@"services_offered"];
 
-                if (embassy[@"images"] != [NSNull null]) {
-                    image1x = [embassy[@"images"][@"embassy"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-                    image2x = [embassy[@"images"][@"embassy"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-                    image3x = [embassy[@"images"][@"embassy"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                if (embassy[@"images"] != [NSNull null] && ![embassy[@"images"] isEqual:@""]) {
+                    if (embassy[@"images"][@"embassy"] != [NSNull null] && ![embassy[@"images"][@"embassy"] isEqual:@""]) {
+                        image1x = [embassy[@"images"][@"embassy"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                        image2x = [embassy[@"images"][@"embassy"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                        image3x = [embassy[@"images"][@"embassy"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                    } else {
+                        image1x = @"";
+                        image2x = @"";
+                        image3x = @"";
+                    }
                 } else {
                     image1x = @"";
                     image2x = @"";

@@ -470,8 +470,8 @@ static TripManager *instance =nil;
     safety = contentDict[@"safety"];
     otherConcerns = contentDict[@"other_concerns"];
     
-    if (cityDict[@"images"] != [NSNull null]) {
-        if (cityDict[@"images"][@"culture"]) {
+    if (cityDict[@"images"] != [NSNull null] && ![cityDict[@"images"] isEqual:@""]) {
+        if (cityDict[@"images"][@"culture"] != [NSNull null] && ![cityDict[@"images"][@"culture"] isEqual:@""]) {
             cultureImage1x = [cityDict[@"images"][@"culture"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             cultureImage2x = [cityDict[@"images"][@"culture"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             cultureImage3x = [cityDict[@"images"][@"culture"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -481,8 +481,7 @@ static TripManager *instance =nil;
             cultureImage3x = @"";
         }
         
-        if (cityDict[@"images"][@"intro"]) {
-            NSLog(@"got intro: %@", cityDict[@"images"][@"intro"]);
+        if (cityDict[@"images"][@"intro"] != [NSNull null] && ![cityDict[@"images"][@"intro"] isEqual:@""]) {
             introImage1x = [cityDict[@"images"][@"intro"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             introImage2x = [cityDict[@"images"][@"intro"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             introImage3x = [cityDict[@"images"][@"intro"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -492,7 +491,7 @@ static TripManager *instance =nil;
             introImage3x = @"";
         }
         
-        if (cityDict[@"images"][@"overview"]) {
+        if (cityDict[@"images"][@"overview"] != [NSNull null] && ![cityDict[@"images"][@"overview"] isEqual:@""]) {
             generalImage1x = [cityDict[@"images"][@"overview"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             generalImage2x = [cityDict[@"images"][@"overview"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             generalImage3x = [cityDict[@"images"][@"overview"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -502,7 +501,7 @@ static TripManager *instance =nil;
             generalImage3x = @"";
         }
         
-        if (cityDict[@"images"][@"security"]) {
+        if (cityDict[@"images"][@"security"] != [NSNull null] && ![cityDict[@"images"][@"security"] isEqual:@""]) {
             safetyImage1x = [cityDict[@"images"][@"security"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             safetyImage2x = [cityDict[@"images"][@"security"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             safetyImage3x = [cityDict[@"images"][@"security"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -571,10 +570,16 @@ static TripManager *instance =nil;
         immunizations = medContent[@"storage"];
         important = medContent[@"notes"];
         
-        if (medDict[@"images"] != [NSNull null]) {
-            image1x = [medDict[@"images"][@"general"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-            image2x = [medDict[@"images"][@"general"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-            image3x = [medDict[@"images"][@"general"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        if (medDict[@"images"] != [NSNull null] && ![medDict[@"images"] isEqual:@""]) {
+            if (medDict[@"images"][@"general"] != [NSNull null] && ![medDict[@"images"][@"general"] isEqual:@""]) {
+                image1x = [medDict[@"images"][@"general"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                image2x = [medDict[@"images"][@"general"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                image3x = [medDict[@"images"][@"general"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            } else {
+                image1x = @"";
+                image2x = @"";
+                image3x = @"";
+            }
         } else {
             image1x = @"";
             image2x = @"";
@@ -597,10 +602,16 @@ static TripManager *instance =nil;
         //test to see if it works when there is no important field
         important = healthContent[@"important"];
         
-        if (healthDict[@"images"] != [NSNull null]) {
-            image1x = [healthDict[@"images"][@"general"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-            image2x = [healthDict[@"images"][@"general"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-            image3x = [healthDict[@"images"][@"general"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        if (healthDict[@"images"] != [NSNull null] && ![healthDict[@"images"] isEqual:@""]) {
+            if (healthDict[@"images"][@"general"] != [NSNull null] && ![healthDict[@"images"][@"general"] isEqual:@""]) {
+                image1x = [healthDict[@"images"][@"general"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                image2x = [healthDict[@"images"][@"general"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                image3x = [healthDict[@"images"][@"general"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            } else {
+                image1x = @"";
+                image2x = @"";
+                image3x = @"";
+            }
         } else {
             image1x = @"";
             image2x = @"";
