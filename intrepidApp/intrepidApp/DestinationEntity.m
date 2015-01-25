@@ -11,10 +11,13 @@
 
 @implementation DestinationEntity
 
+@dynamic currencyImage1x;
+@dynamic currencyImage2x;
+@dynamic currencyImage3x;
 @dynamic destinationId;
-@dynamic image1x;
-@dynamic image2x;
-@dynamic image3x;
+@dynamic flagImage1x;
+@dynamic flagImage2x;
+@dynamic flagImage3x;
 @dynamic name;
 @dynamic type;
 

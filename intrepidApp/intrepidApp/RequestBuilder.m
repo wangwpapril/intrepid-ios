@@ -33,26 +33,38 @@ static NSDictionary * cityDict;
             NSDictionary *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             [[TripManager getInstance] deleteAllObjects:@"DestinationEntity"];
             for (NSDictionary *destinationDict in responseObject[@"destinations"]) {
-                NSLog(@"%@", destinationDict);
-                NSString *image1x, *image2x, *image3x;
+                NSString *flagImage1x, *flagImage2x, *flagImage3x, *currencyImage1x, *currencyImage2x, *currencyImage3x;
 
                 if (destinationDict[@"images"] != [NSNull null] && ![destinationDict[@"images"] isEqual:@""]) {
                     if (destinationDict[@"images"][@"flag"] != [NSNull null] && ![destinationDict[@"images"][@"flag"] isEqual:@""]) {
-                        image1x = [destinationDict[@"images"][@"flag"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-                        image2x = [destinationDict[@"images"][@"flag"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-                        image3x = [destinationDict[@"images"][@"flag"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                        flagImage1x = [destinationDict[@"images"][@"flag"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                        flagImage2x = [destinationDict[@"images"][@"flag"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                        flagImage3x = [destinationDict[@"images"][@"flag"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                     } else {
-                        image1x = @"";
-                        image2x = @"";
-                        image3x = @"";
+                        flagImage1x = @"";
+                        flagImage2x = @"";
+                        flagImage3x = @"";
+                    }
+                    
+                    if (destinationDict[@"images"][@"currency"] != [NSNull null] && ![destinationDict[@"images"][@"currency"] isEqual:@""]) {
+                        currencyImage1x = [destinationDict[@"images"][@"currency"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                        currencyImage2x = [destinationDict[@"images"][@"currency"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                        currencyImage3x = [destinationDict[@"images"][@"currency"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                    } else {
+                        currencyImage1x = @"";
+                        currencyImage2x = @"";
+                        currencyImage3x = @"";
                     }
                 } else {
-                    image1x = @"";
-                    image2x = @"";
-                    image3x = @"";
+                    flagImage1x = @"";
+                    flagImage2x = @"";
+                    flagImage3x = @"";
+                    currencyImage1x = @"";
+                    currencyImage2x = @"";
+                    currencyImage3x = @"";
                 }
                 
-                [[TripManager getInstance] createDestinationWithName:destinationDict[@"name"] withDestinationId:[destinationDict[@"id"] integerValue] withType:destinationDict[@"type"] withImage1x:image1x withImage2x:image2x withImage3x:image3x];
+                [[TripManager getInstance] createDestinationWithName:destinationDict[@"name"] withDestinationId:[destinationDict[@"id"] integerValue] withType:destinationDict[@"type"] withFlagImage1x:flagImage1x withFlagImage2x:flagImage2x withFlagImage3x:flagImage3x withCurrencyImage1x:currencyImage1x withCurrencyImage2x:currencyImage2x withCurrencyImage3x:currencyImage3x];
             }
         } else {
             NSLog(@"error: %@", error.localizedDescription);

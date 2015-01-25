@@ -56,9 +56,12 @@
 - (DestinationEntity *)createDestinationWithName:(NSString *)name
                                withDestinationId:(NSInteger )destinationId
                                         withType:(NSString *)type
-                                     withImage1x:(NSString *)image1x
-                                     withImage2x:(NSString *)image2x
-                                     withImage3x:(NSString *)image3x;
+                                 withFlagImage1x:(NSString *)flagImage1x
+                                 withFlagImage2x:(NSString *)flagImage2x
+                                 withFlagImage3x:(NSString *)flagImage3x
+                             withCurrencyImage1x:(NSString *)currencyImage1x
+                             withCurrencyImage2x:(NSString *)currencyImage2x
+                             withCurrencyImage3x:(NSString *)currencyImage3x;
 
 - (EmbassyEntity *)createEmbassyWithCity:(CityEntity *)city
                     withPhone:(NSString *)phone

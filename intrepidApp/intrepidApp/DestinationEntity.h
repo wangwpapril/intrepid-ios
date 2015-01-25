@@ -12,10 +12,13 @@
 
 @interface DestinationEntity : NSManagedObject
 
+@property (nonatomic, retain) NSString * currencyImage1x;
+@property (nonatomic, retain) NSString * currencyImage2x;
+@property (nonatomic, retain) NSString * currencyImage3x;
 @property (nonatomic, retain) NSNumber * destinationId;
-@property (nonatomic, retain) NSString * image1x;
-@property (nonatomic, retain) NSString * image2x;
-@property (nonatomic, retain) NSString * image3x;
+@property (nonatomic, retain) NSString * flagImage1x;
+@property (nonatomic, retain) NSString * flagImage2x;
+@property (nonatomic, retain) NSString * flagImage3x;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * type;
 

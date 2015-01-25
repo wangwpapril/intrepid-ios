@@ -26,12 +26,12 @@
     self.imageView.layer.masksToBounds = YES;
     
     double scaleFactor = [UIScreen mainScreen].scale;
-    if (scaleFactor > 2.9 && ![destination.image3x isEqualToString:@""]) {
-        [self.imageView sd_setImageWithURL:[NSURL URLWithString:destination.image3x]];
-    } else if (![destination.image2x isEqualToString:@""]) {
-        [self.imageView sd_setImageWithURL:[NSURL URLWithString:destination.image2x]];
-    } else if (![destination.image1x isEqualToString:@""]) {
-        [self.imageView sd_setImageWithURL:[NSURL URLWithString:destination.image1x]];
+    if (scaleFactor > 2.9 && ![destination.flagImage3x isEqualToString:@""]) {
+        [self.imageView sd_setImageWithURL:[NSURL URLWithString:destination.flagImage3x]];
+    } else if (![destination.flagImage2x isEqualToString:@""]) {
+        [self.imageView sd_setImageWithURL:[NSURL URLWithString:destination.flagImage2x]];
+    } else if (![destination.flagImage1x isEqualToString:@""]) {
+        [self.imageView sd_setImageWithURL:[NSURL URLWithString:destination.flagImage1x]];
     } else {
         self.imageView.image = [UIImage imageNamed:@"world"];
     }

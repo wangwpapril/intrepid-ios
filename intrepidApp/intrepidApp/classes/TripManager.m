@@ -337,18 +337,24 @@ static TripManager *instance =nil;
 - (DestinationEntity *)createDestinationWithName:(NSString *)name
                                withDestinationId:(NSInteger )destinationId
                                         withType:(NSString *)type
-                                     withImage1x:(NSString *)image1x
-                                     withImage2x:(NSString *)image2x
-                                     withImage3x:(NSString *)image3x
+                                 withFlagImage1x:(NSString *)flagImage1x
+                                 withFlagImage2x:(NSString *)flagImage2x
+                                 withFlagImage3x:(NSString *)flagImage3x
+                             withCurrencyImage1x:(NSString *)currencyImage1x
+                             withCurrencyImage2x:(NSString *)currencyImage2x
+                             withCurrencyImage3x:(NSString *)currencyImage3x
 {
     DestinationEntity *destination = [NSEntityDescription insertNewObjectForEntityForName:@"DestinationEntity" inManagedObjectContext:managedObjectContext];
     
     destination.name = name;
     destination.destinationId = [NSNumber numberWithInteger:destinationId];
     destination.type = type;
-    destination.image1x = image1x;
-    destination.image2x = image2x;
-    destination.image3x = image3x;
+    destination.flagImage1x = flagImage1x;
+    destination.flagImage2x = flagImage2x;
+    destination.flagImage3x = flagImage3x;
+    destination.currencyImage1x = currencyImage1x;
+    destination.currencyImage2x = currencyImage2x;
+    destination.currencyImage3x = currencyImage3x;
     
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {
