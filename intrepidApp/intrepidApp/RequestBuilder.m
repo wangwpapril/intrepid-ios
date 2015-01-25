@@ -34,7 +34,8 @@ static NSDictionary * cityDict;
             [[TripManager getInstance] deleteAllObjects:@"DestinationEntity"];
             for (NSDictionary *destinationDict in responseObject[@"destinations"]) {
                 NSString *flagImage1x, *flagImage2x, *flagImage3x, *currencyImage1x, *currencyImage2x, *currencyImage3x;
-
+                NSString *currencyCode = @"";
+                
                 if (destinationDict[@"images"] != [NSNull null] && ![destinationDict[@"images"] isEqual:@""]) {
                     if (destinationDict[@"images"][@"flag"] != [NSNull null] && ![destinationDict[@"images"][@"flag"] isEqual:@""]) {
                         flagImage1x = [destinationDict[@"images"][@"flag"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -47,6 +48,16 @@ static NSDictionary * cityDict;
                     }
                     
                     if (destinationDict[@"images"][@"currency"] != [NSNull null] && ![destinationDict[@"images"][@"currency"] isEqual:@""]) {
+                        NSString *currencyString = destinationDict[@"images"][@"currency"][@"source_url"];
+                        NSString *searchString = @"/currency/";
+                        NSRange rangeOfYourString = [currencyString rangeOfString:searchString];
+                        if (rangeOfYourString.location != NSNotFound) {
+                            NSUInteger locate = rangeOfYourString.location + searchString.length;
+                            if (currencyString.length > (locate + 2)) {
+                                currencyCode = [currencyString substringWithRange:NSMakeRange(locate, 3)];
+                            }
+                        }
+                        
                         currencyImage1x = [destinationDict[@"images"][@"currency"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                         currencyImage2x = [destinationDict[@"images"][@"currency"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                         currencyImage3x = [destinationDict[@"images"][@"currency"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -64,7 +75,7 @@ static NSDictionary * cityDict;
                     currencyImage3x = @"";
                 }
                 
-                [[TripManager getInstance] createDestinationWithName:destinationDict[@"name"] withDestinationId:[destinationDict[@"id"] integerValue] withType:destinationDict[@"type"] withFlagImage1x:flagImage1x withFlagImage2x:flagImage2x withFlagImage3x:flagImage3x withCurrencyImage1x:currencyImage1x withCurrencyImage2x:currencyImage2x withCurrencyImage3x:currencyImage3x];
+                [[TripManager getInstance] createDestinationWithName:destinationDict[@"name"] withDestinationId:[destinationDict[@"id"] integerValue] withType:destinationDict[@"type"] withFlagImage1x:flagImage1x withFlagImage2x:flagImage2x withFlagImage3x:flagImage3x withCurrencyImage1x:currencyImage1x withCurrencyImage2x:currencyImage2x withCurrencyImage3x:currencyImage3x withCurrencyCode:currencyCode];
             }
         } else {
             NSLog(@"error: %@", error.localizedDescription);

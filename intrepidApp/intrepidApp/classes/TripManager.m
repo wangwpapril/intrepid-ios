@@ -144,6 +144,23 @@ static TripManager *instance =nil;
     return alerts;
 }
 
+- (DestinationEntity *)getDestinationItemWithCurrencyCode:(NSString *)currencyCode {
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:@"DestinationEntity" inManagedObjectContext:managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"currencyCode == %@", currencyCode]];
+    [request setEntity:entityDescription];
+    [request setFetchLimit:1];
+    
+    NSError *error;
+    NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
+    DestinationEntity *destination;
+    if (intermediateArray.count > 0) {
+        destination = intermediateArray[0];
+    }
+    return destination;
+}
+
 - (void)deleteAllObjects:(NSString *)entityDescription  {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:entityDescription inManagedObjectContext:self.managedObjectContext];
@@ -343,6 +360,7 @@ static TripManager *instance =nil;
                              withCurrencyImage1x:(NSString *)currencyImage1x
                              withCurrencyImage2x:(NSString *)currencyImage2x
                              withCurrencyImage3x:(NSString *)currencyImage3x
+                                withCurrencyCode:(NSString *)currencyCode
 {
     DestinationEntity *destination = [NSEntityDescription insertNewObjectForEntityForName:@"DestinationEntity" inManagedObjectContext:managedObjectContext];
     
@@ -355,6 +373,7 @@ static TripManager *instance =nil;
     destination.currencyImage1x = currencyImage1x;
     destination.currencyImage2x = currencyImage2x;
     destination.currencyImage3x = currencyImage3x;
+    destination.currencyCode = currencyCode;
     
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {

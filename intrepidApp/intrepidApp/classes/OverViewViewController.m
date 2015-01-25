@@ -146,9 +146,10 @@
     if(cell == nil) {
         cell = [[CurrencyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
-    CurrencyEntity *item = [currencyArray objectAtIndex:indexPath.row];
-    [cell setupWithCountry:item.country withValue:item.value];
+
+    CurrencyEntity *currency = [currencyArray objectAtIndex:indexPath.row];
+    DestinationEntity *destination = [[TripManager getInstance] getDestinationItemWithCurrencyCode:currency.country];
+    [cell setupWithCurrency:currency withDestination:destination];
     
 //    UIView *bgColorView = [[UIView alloc] init];
 //    [bgColorView setBackgroundColor:UIColorFromRGB(0xdaf1f4)];

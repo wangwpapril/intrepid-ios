@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CurrencyEntity.h"
+#import "DestinationEntity.h"
 
 @interface CurrencyCell : UITableViewCell
 
@@ -14,5 +16,5 @@
 @property (nonatomic, strong) UILabel *countryLabel;
 @property (nonatomic, strong) UILabel *valueLabel;
 
-- (void)setupWithCountry:(NSString *)country withValue:(NSString *)value;
+- (void)setupWithCurrency:(CurrencyEntity *)currency withDestination:(DestinationEntity *)destination;
 @end

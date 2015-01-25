@@ -11,6 +11,7 @@
 
 @implementation DestinationEntity
 
+@dynamic currencyCode;
 @dynamic currencyImage1x;
 @dynamic currencyImage2x;
 @dynamic currencyImage3x;

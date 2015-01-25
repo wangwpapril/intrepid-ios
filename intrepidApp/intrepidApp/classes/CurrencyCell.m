@@ -7,6 +7,7 @@
 //
 
 #import "CurrencyCell.h"
+#import "UIImageView+WebCache.h"
 
 @implementation CurrencyCell
 
@@ -25,8 +26,10 @@
 
 - (void)initializeViews {
     // flag
-//    flagLabel = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 30, 30)];
-//    [self addSubview:flagLabel];
+    flagLabel = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 30, 30)];
+    flagLabel.layer.cornerRadius = 5;
+    flagLabel.layer.masksToBounds = YES;
+    [self addSubview:flagLabel];
     
     // country
     countryLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 2, 150, 40)];
@@ -42,9 +45,24 @@
     [self addSubview:valueLabel];
 }
 
-- (void)setupWithCountry:(NSString *)country withValue:(NSString *)value {
-    countryLabel.text = country;
-    valueLabel.text = value;
+- (void)setupWithCurrency:(CurrencyEntity *)currency withDestination:(DestinationEntity *)destination {
+    if (destination) {
+        double scaleFactor = [UIScreen mainScreen].scale;
+        if (scaleFactor > 2.9 && ![destination.currencyImage3x isEqualToString:@""]) {
+            [flagLabel sd_setImageWithURL:[NSURL URLWithString:destination.currencyImage3x]];
+        } else if (![destination.currencyImage2x isEqualToString:@""]) {
+            [flagLabel sd_setImageWithURL:[NSURL URLWithString:destination.currencyImage2x]];
+        } else if (![destination.currencyImage1x isEqualToString:@""]) {
+            [flagLabel sd_setImageWithURL:[NSURL URLWithString:destination.currencyImage1x]];
+        } else {
+            flagLabel.image = [UIImage imageNamed:@"world"];
+        }
+    } else {
+        flagLabel.image = [UIImage imageNamed:@"world"];
+    }
+    
+    countryLabel.text = currency.country;
+    valueLabel.text = currency.value;
 }
 
 @end

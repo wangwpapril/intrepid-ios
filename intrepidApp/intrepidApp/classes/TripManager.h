@@ -61,7 +61,8 @@
                                  withFlagImage3x:(NSString *)flagImage3x
                              withCurrencyImage1x:(NSString *)currencyImage1x
                              withCurrencyImage2x:(NSString *)currencyImage2x
-                             withCurrencyImage3x:(NSString *)currencyImage3x;
+                             withCurrencyImage3x:(NSString *)currencyImage3x
+                                withCurrencyCode:(NSString *)currencyCode;
 
 - (EmbassyEntity *)createEmbassyWithCity:(CityEntity *)city
                     withPhone:(NSString *)phone
@@ -105,6 +106,7 @@
 - (NSMutableArray *)getEmbassyItemsWithCity:(CityEntity *)city;
 - (NSMutableArray *)getCurrencyItemsWithCity:(CityEntity *)city;
 - (NSMutableArray *)getAlertItemsWithCity:(CityEntity *)city;
+- (DestinationEntity *)getDestinationItemWithCurrencyCode:(NSString *)currencyCode;
 - (void)deleteAllObjects:(NSString *)entityDescription;
 - (void)deleteHealthItemsWithCity:(CityEntity *)city;
 - (void)deleteEmbassyItemsWithCity:(CityEntity *)city;

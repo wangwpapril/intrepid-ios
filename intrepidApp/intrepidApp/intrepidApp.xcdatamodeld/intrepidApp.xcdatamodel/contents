@@ -49,6 +49,7 @@
         <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CityEntity" inverseName="currency" inverseEntity="CityEntity" syncable="YES"/>
     </entity>
     <entity name="DestinationEntity" representedClassName="DestinationEntity" syncable="YES">
+        <attribute name="currencyCode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="currencyImage1x" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="currencyImage2x" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="currencyImage3x" optional="YES" attributeType="String" syncable="YES"/>
@@ -92,7 +93,7 @@
     <elements>
         <element name="CityEntity" positionX="-477" positionY="3" width="128" height="538"/>
         <element name="CurrencyEntity" positionX="-317" positionY="-63" width="128" height="88"/>
-        <element name="DestinationEntity" positionX="-459" positionY="108" width="128" height="193"/>
+        <element name="DestinationEntity" positionX="-459" positionY="108" width="128" height="208"/>
         <element name="EmbassyEntity" positionX="-677" positionY="-0" width="128" height="240"/>
         <element name="HealthEntity" positionX="-272" positionY="81" width="128" height="225"/>
         <element name="AlertEntity" positionX="-468" positionY="99" width="128" height="133"/>
