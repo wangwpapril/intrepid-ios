@@ -150,7 +150,7 @@
 		684BB604179F5143004C44C9 /* OverViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OverViewViewController.m; path = classes/OverViewViewController.m; sourceTree = "<group>"; };
 		684BB607179F539C004C44C9 /* SlidingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlidingTextView.h; path = classes/SlidingTextView.h; sourceTree = "<group>"; };
 		684BB608179F539C004C44C9 /* SlidingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlidingTextView.m; path = classes/SlidingTextView.m; sourceTree = "<group>"; };
-		6851220F17861138008DB6B6 /* intrepidApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = intrepidApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6851220F17861138008DB6B6 /* Travel Smart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Smart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6851221217861138008DB6B6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6851221417861138008DB6B6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6851221617861138008DB6B6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -376,7 +376,7 @@
 		6851221017861138008DB6B6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6851220F17861138008DB6B6 /* intrepidApp.app */,
+				6851220F17861138008DB6B6 /* Travel Smart.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -542,7 +542,7 @@
 			);
 			name = intrepidApp;
 			productName = intrepidApp;
-			productReference = 6851220F17861138008DB6B6 /* intrepidApp.app */;
+			productReference = 6851220F17861138008DB6B6 /* Travel Smart.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -760,7 +760,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Travel Smart";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -782,7 +782,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Travel Smart";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
