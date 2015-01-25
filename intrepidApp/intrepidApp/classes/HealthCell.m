@@ -36,7 +36,7 @@
     } else if (![healthItem.image1x isEqualToString:@""]) {
         [self.imageView sd_setImageWithURL:[NSURL URLWithString:healthItem.image1x]];
     } else {
-        self.imageView.image = [UIImage imageNamed:@"stethoscope"];
+        self.imageView.image = [UIImage imageNamed:@"unused"];
     }
     
     self.textLabel.text = healthItem.name;

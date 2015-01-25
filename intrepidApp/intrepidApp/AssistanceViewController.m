@@ -50,7 +50,15 @@
     ambulanceImage.frame = CGRectMake(0, 0, 320, ambulanceImage.frame.size.height*1);
     [scrollView addSubview:ambulanceImage];
     
-    MKMapView *mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, ambulanceImage.frame.origin.y + ambulanceImage.frame.size.height + 30, 320, 200)];
+    
+    UILabel *provideLocationLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, ambulanceImage.frame.origin.y + ambulanceImage.frame.size.height + 15, 250, 20)];
+    provideLocationLabel.text = @"My Current Location";
+    provideLocationLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
+    provideLocationLabel.backgroundColor = [UIColor clearColor];
+    provideLocationLabel.textColor = [UIColor colorWithRed:0.2 green:0.25 blue:0.28 alpha:1];
+    [scrollView addSubview:provideLocationLabel];
+    
+    MKMapView *mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, ambulanceImage.frame.origin.y+20 + ambulanceImage.frame.size.height + 30, 320, 200)];
     mapView.showsUserLocation = YES;
     mapView.userTrackingMode = MKUserTrackingModeFollow;
     [scrollView addSubview:mapView];

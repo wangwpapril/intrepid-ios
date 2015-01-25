@@ -119,10 +119,10 @@
         UIImageView  *sideEffectsImageLabel = [[UIImageView alloc] init];
 
         [sideEffectsImageLabel setImage:[UIImage imageNamed:@"medication-pic"]];
-        sideEffectsImageLabel.frame = CGRectMake(17, descriptionTextContainer.frame.origin.y + size.height + 20, 25, 25);
+        sideEffectsImageLabel.frame = CGRectMake(17, descriptionTextContainer.frame.origin.y + size.height + 22, 25, 25);
         [scrollView addSubview:sideEffectsImageLabel];
 
-        UILabel *sideEffectsLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, descriptionTextContainer.frame.origin.y + size.height + 20, 120, 25)];
+        UILabel *sideEffectsLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, descriptionTextContainer.frame.origin.y + size.height + 22, 120, 25)];
         sideEffectsLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         sideEffectsLabel.backgroundColor = [UIColor clearColor];
         sideEffectsLabel.text = @"Side Effects";
@@ -205,7 +205,7 @@
 
     //begin creating immunization text header and text container
 
-    UILabel *immunizationTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, transmissionTextContainer.frame.origin.y + transmissionSize.height + 20, 250, 25)];
+    UILabel *immunizationTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, transmissionTextContainer.frame.origin.y + transmissionSize.height + 22, 250, 25)];
     immunizationTitleLabel .font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
     immunizationTitleLabel.backgroundColor = [UIColor clearColor];
     immunizationTitleLabel.textColor = UIColorFromRGB(0x423a38);
@@ -214,7 +214,7 @@
 
     UIImageView  *immunizationImageLabel = [[UIImageView alloc] init];
     [immunizationImageLabel setImage:[UIImage imageNamed:@"conditions-pic"]];
-    immunizationImageLabel.frame = CGRectMake(17, transmissionTextContainer.frame.origin.y + transmissionSize.height + 20, 20, 25);
+    immunizationImageLabel.frame = CGRectMake(17, transmissionTextContainer.frame.origin.y + transmissionSize.height + 22, 20, 25);
     [scrollView addSubview:immunizationImageLabel];
 
     CGSize immunizationSize = [healthItem.immunization boundingRectWithSize:CGSizeMake(290, 15000)
@@ -240,6 +240,7 @@
     if ([healthItem.category isEqualToString:@"medications"]) {
         transmissionTitleLabel.text = @"Side Effects";
         immunizationTitleLabel.text = @"Storage";
+        [immunizationImageLabel setImage:[UIImage imageNamed:@"storage-icon"]];
     }
     
     if (([healthItem.category isEqualToString:@"conditions"]) || ([healthItem.category isEqualToString:@"symptoms"])) {
@@ -251,7 +252,7 @@
     // THE IMPORTANT FIELD
     if (healthItem.important) {
         //there is an important field, must add
-        UILabel *importantTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, immunizationTextContainer.frame.origin.y + immunizationSize.height + 20, 250, 25)];
+        UILabel *importantTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, immunizationTextContainer.frame.origin.y + immunizationSize.height + 22, 250, 25)];
         importantTitleLabel .font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         importantTitleLabel.backgroundColor = [UIColor clearColor];
         importantTitleLabel.textColor = UIColorFromRGB(0x423a38);
@@ -260,7 +261,7 @@
         
         UIImageView  *importantImageLabel = [[UIImageView alloc] init];
         [importantImageLabel setImage:[UIImage imageNamed:@"conditions-pic"]];
-        importantImageLabel.frame = CGRectMake(17, immunizationTextContainer.frame.origin.y + immunizationSize.height + 20, 20, 25);
+        importantImageLabel.frame = CGRectMake(17, immunizationTextContainer.frame.origin.y + immunizationSize.height + 22, 20, 25);
         [scrollView addSubview:importantImageLabel];
         
         CGSize importantSize = [healthItem.important boundingRectWithSize:CGSizeMake(290, 15000)
