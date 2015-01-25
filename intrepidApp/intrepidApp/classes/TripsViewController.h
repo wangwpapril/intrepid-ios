@@ -7,17 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TripItem.h"
+#import "DestinationEntity.h"
 #import "IntreSearchBar.h"
 
 @interface TripsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
 @property (nonatomic, strong) UITableView *tableList;
-@property (strong, nonatomic) NSMutableArray *tripsArray;
+@property (strong, nonatomic) NSArray *tripsArray;
 @property (strong, nonatomic) NSMutableArray *filteredArray;
 @property (nonatomic, strong) IntreSearchBar * searchBar;
 @property (nonatomic, strong) UIButton *xButton;
 @property (nonatomic, strong) NSMutableArray *cities;
-@property (nonatomic, strong) TripItem *selectedTrip;
+@property (nonatomic, strong) DestinationEntity *selectedTrip;
 
 @end

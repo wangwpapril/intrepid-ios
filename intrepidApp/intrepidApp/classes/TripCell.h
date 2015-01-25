@@ -7,13 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TripItem.h"
+#import "DestinationEntity.h"
 
 @interface TripCell : UITableViewCell
 
-@property (nonatomic, strong) UIImageView *tripImage;
-@property (nonatomic, strong) UILabel *continentLabel;
+-(void)setupWithTripItem:(DestinationEntity *)destination;
 
-
--(void)setupWithHealthItem:(TripItem *)tripItem;
 @end

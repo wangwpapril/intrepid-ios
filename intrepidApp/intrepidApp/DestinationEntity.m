@@ -12,7 +12,10 @@
 @implementation DestinationEntity
 
 @dynamic destinationId;
-@dynamic type;
+@dynamic image1x;
+@dynamic image2x;
+@dynamic image3x;
 @dynamic name;
+@dynamic type;
 
 @end

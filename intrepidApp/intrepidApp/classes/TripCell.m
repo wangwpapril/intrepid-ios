@@ -12,40 +12,30 @@
 
 @implementation TripCell
 
-@synthesize continentLabel;
-@synthesize tripImage;
-
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        continentLabel = [[UILabel alloc] initWithFrame:CGRectMake(180, 0, 140, 40)];
-        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        self.textLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:17];
-        self.textLabel.textColor = APP_TEXT_COLOR;
-        continentLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:13];
-        continentLabel.textColor = [UIColor colorWithRed:71/255.0 green:184/255.0 blue:200/255.0 alpha:1];
-        continentLabel.backgroundColor = [UIColor clearColor];
-        self.contentView.backgroundColor = [UIColor clearColor];
-        self.textLabel.backgroundColor = [UIColor clearColor];
-        [self addSubview:continentLabel];
     }
     return self;
 }
 
--(void)setupWithHealthItem:(TripItem *)tripItem {
-//    UIImage *image = [UIImage imageNamed:tripItem.image];
-//    self.imageView.image = image;
-//    self.imageView.layer.cornerRadius = 5;
-//    self.imageView.layer.masksToBounds = YES;
+-(void)setupWithTripItem:(DestinationEntity *)destination {
+    self.imageView.layer.cornerRadius = 5;
+    self.imageView.layer.masksToBounds = YES;
     
-    self.textLabel.text = tripItem.city;
-//    continentLabel.text = tripItem.continent;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
+    double scaleFactor = [UIScreen mainScreen].scale;
+    if (scaleFactor > 2.9 && ![destination.image3x isEqualToString:@""]) {
+        self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[destination.image3x stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]] scale:3.0];
+    } else if (![destination.image2x isEqualToString:@""]) {
+        self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[destination.image2x stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]] scale:2.0];
+    } else if (![destination.image1x isEqualToString:@""]) {
+        self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[destination.image1x stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]] scale:1.0];
+    } else {
+        self.imageView.image = [UIImage imageNamed:@"worldmap"];
+    }
+    
+    self.textLabel.text = destination.name;
 }
 
 @end

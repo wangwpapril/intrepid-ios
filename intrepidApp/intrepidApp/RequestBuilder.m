@@ -33,7 +33,20 @@ static NSDictionary * cityDict;
             NSDictionary *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             [[TripManager getInstance] deleteAllObjects:@"DestinationEntity"];
             for (NSDictionary *destinationDict in responseObject[@"destinations"]) {
-                [[TripManager getInstance] createDestinationWithName:destinationDict[@"name"] withDestinationId:[destinationDict[@"id"] integerValue] withType:destinationDict[@"type"]];
+                
+                NSString *image1x, *image2x, *image3x;
+                
+                if (destinationDict[@"flag"] != [NSNull null]) {
+                    image1x = destinationDict[@"flag"][@"versions"][@"1x"][@"source_url"];
+                    image2x = destinationDict[@"flag"][@"versions"][@"2x"][@"source_url"];
+                    image3x = destinationDict[@"flag"][@"versions"][@"3x"][@"source_url"];
+                } else {
+                    image1x = @"";
+                    image2x = @"";
+                    image3x = @"";
+                }
+                
+                [[TripManager getInstance] createDestinationWithName:destinationDict[@"name"] withDestinationId:[destinationDict[@"id"] integerValue] withType:destinationDict[@"type"] withImage1x:image1x withImage2x:image2x withImage3x:image3x];
             }
         } else {
             NSLog(@"error: %@", error.localizedDescription);

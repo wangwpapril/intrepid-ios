@@ -337,12 +337,18 @@ static TripManager *instance =nil;
 - (DestinationEntity *)createDestinationWithName:(NSString *)name
                                withDestinationId:(NSInteger )destinationId
                                         withType:(NSString *)type
+                                     withImage1x:(NSString *)image1x
+                                     withImage2x:(NSString *)image2x
+                                     withImage3x:(NSString *)image3x
 {
     DestinationEntity *destination = [NSEntityDescription insertNewObjectForEntityForName:@"DestinationEntity" inManagedObjectContext:managedObjectContext];
     
     destination.name = name;
     destination.destinationId = [NSNumber numberWithInteger:destinationId];
     destination.type = type;
+    destination.image1x = image1x;
+    destination.image2x = image2x;
+    destination.image3x = image3x;
     
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {

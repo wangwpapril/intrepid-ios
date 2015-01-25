@@ -39,9 +39,7 @@
     tableList.dataSource = self;
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        
         self.edgesForExtendedLayout = UIRectEdgeNone;
-        
     } else {
         [self moveAllSubviewsDown];
     }
@@ -85,20 +83,8 @@
 }
 
 - (void)populateContentArray {
-    tripsArray = [NSMutableArray new];
-    filteredArray = [NSMutableArray new];
-
     TripManager *manager = [TripManager getInstance];
-    NSArray *destinations = [manager getDestinations];
-
-    for (DestinationEntity *destination in destinations) {
-        TripItem *trip = [[TripItem alloc] init];
-        trip.city = destination.name;
-        trip.destinationId = destination.destinationId;
-        trip.continent = @"Europe";
-        trip.image = @"Guada-icon.png";
-        [tripsArray addObject:trip];
-    }
+    tripsArray = [manager getDestinations];
     [tableList reloadData];
 }
 
@@ -146,12 +132,6 @@
     
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 # pragma mark - TableView Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -174,13 +154,13 @@
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     
-    TripItem *item = nil;
+    DestinationEntity *item = nil;
     if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
         item = [filteredArray objectAtIndex:indexPath.row];
     } else {
         item = [tripsArray objectAtIndex:indexPath.row];
     }
-    [cell setupWithHealthItem:item];
+    [cell setupWithTripItem:item];
     
     return cell;
 }
@@ -203,7 +183,7 @@
     [self.filteredArray removeAllObjects];
     
     // Filter the array using NSPredicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.city contains[c] %@",searchBar.text];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.name contains[c] %@",searchBar.text];
     filteredArray = [NSMutableArray arrayWithArray:[tripsArray filteredArrayUsingPredicate:predicate]];
     NSLog(@"filtered array size: %lu", (unsigned long)filteredArray.count);
     [tableList reloadData];
