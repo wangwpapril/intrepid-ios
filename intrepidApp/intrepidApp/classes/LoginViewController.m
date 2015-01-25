@@ -25,7 +25,7 @@
 
 @synthesize email;
 @synthesize password;
-@synthesize forgotPassword;
+@synthesize signupButton;
 @synthesize underlinePassword;
 @synthesize underlineEmail;
 
@@ -117,20 +117,20 @@
     password.secureTextEntry = YES;
     [self.view addSubview:password];
     
-    NSMutableAttributedString *forgotPasswordString = [[NSMutableAttributedString alloc] initWithString:@"Forgot Password?"];
+    NSMutableAttributedString *signupString = [[NSMutableAttributedString alloc] initWithString:@"Sign Up"];
     
     // making text property to underline text-
-    [forgotPasswordString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [forgotPasswordString length])];
+    [signupString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [signupString length])];
     
     // using text on button
-    [forgotPassword setAttributedTitle: forgotPasswordString forState:UIControlStateNormal];
-    [forgotPasswordString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.53 green:0.73 blue:0.14 alpha:1] range:NSMakeRange(0,[forgotPasswordString length])];
-    forgotPassword.frame = CGRectMake(77, loginButton.frame.origin.y + 50, 166, 15);
-    forgotPassword.titleLabel.font = [UIFont fontWithName:APP_FONT size:13];
-    forgotPassword.backgroundColor = [UIColor clearColor];
+    [signupButton setAttributedTitle:signupString forState:UIControlStateNormal];
+    [signupString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.53 green:0.73 blue:0.14 alpha:1] range:NSMakeRange(0,[signupString length])];
+    signupButton.frame = CGRectMake(77, loginButton.frame.origin.y + 50, 166, 15);
+    signupButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:13];
+    signupButton.backgroundColor = [UIColor clearColor];
     
-    forgotPassword.titleLabel.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:forgotPassword];
+    signupButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:signupButton];
     
 //    legal.frame = CGRectMake(240, 5, 100, 50);
 //    legal.titleLabel.font = [UIFont fontWithName:APP_FONT size:13];

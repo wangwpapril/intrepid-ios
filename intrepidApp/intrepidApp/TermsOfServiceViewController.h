@@ -11,5 +11,7 @@
 @interface TermsOfServiceViewController : UIViewController {
     IBOutlet UIScrollView *scrollView;
 }
+@property (weak, nonatomic) IBOutlet UIButton *exitButton;
 
+- (IBAction)exit:(id)sender;
 @end

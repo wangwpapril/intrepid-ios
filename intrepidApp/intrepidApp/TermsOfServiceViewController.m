@@ -14,6 +14,8 @@
 
 @implementation TermsOfServiceViewController
 
+@synthesize exitButton;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,7 +36,25 @@
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
-    CGRect rect=CGRectMake(0, 0, 320, self.view.frame.size.height);
+    //create title label
+    UILabel *legalLabel = [[UILabel alloc] init];
+    legalLabel.frame = CGRectMake(10, self.view.frame.origin.y - 35, 300, 150);
+    legalLabel.text = @"Terms of Service";
+    legalLabel.font = [UIFont fontWithName:APP_FONT size:24];
+    legalLabel.textColor = [UIColor whiteColor];
+    legalLabel.backgroundColor = [UIColor clearColor];
+    [legalLabel setTextAlignment:NSTextAlignmentCenter];
+    [self.view addSubview:legalLabel];
+    
+    exitButton.frame = CGRectMake(280, 32, 40, 40);
+    [self.view addSubview:exitButton];
+    UIImage *exitImage = [UIImage imageNamed:@"close"];
+    //create an image and put it overtop of the button?
+    UIImageView *exitImageContainer = [[UIImageView alloc] initWithFrame: CGRectMake(290, 32, 15, 15)];
+    [exitImageContainer setImage:exitImage];
+    [self.view addSubview:exitImageContainer];
+    
+    CGRect rect=CGRectMake(0, 75, 320, self.view.frame.size.height);
     scrollView = [[UIScrollView alloc] initWithFrame:rect];
     scrollView.showsVerticalScrollIndicator = YES;
     scrollView.showsHorizontalScrollIndicator = NO;
@@ -57,14 +77,13 @@
     scrollView.contentSize = CGSizeMake(320, termsOfService.frame.size.height);
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        
         self.edgesForExtendedLayout = UIRectEdgeNone;
-        
     } else {
         [self moveAllSubviewsDown];
     }
 }
-- (void) moveAllSubviewsDown{
+
+- (void)moveAllSubviewsDown{
     float barHeight = 45.0;
     for (UIView *view in self.view.subviews) {
         
@@ -76,10 +95,7 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)exit:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-
 @end
