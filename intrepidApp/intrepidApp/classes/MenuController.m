@@ -182,6 +182,7 @@ static MenuController *instance =nil;
         
         case 3:
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"alerts"];
+            viewController.view.tag = 3;
             break;
             
         case 4:
