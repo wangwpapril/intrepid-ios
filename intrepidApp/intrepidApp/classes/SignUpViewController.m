@@ -10,6 +10,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <QuartzCore/QuartzCore.h>
 #import "SignUpViewController.h"
+#import "RequestBuilder.h"
 
 @interface SignUpViewController ()
 
@@ -17,20 +18,26 @@
 
 @implementation SignUpViewController
 
+static NSString *baseURL = @"https://api.intrepid247.com/v1/";
+
 @synthesize signUpButton;
+@synthesize firstName;
+@synthesize lastName;
+@synthesize country;
+@synthesize policyNumber;
 @synthesize name;
 @synthesize email;
 @synthesize password;
-@synthesize addPhoto;
-
-@synthesize underlineEmail;
+@synthesize underlineFirstName;
+@synthesize underlineLastName;
+@synthesize underlineCountry;
+@synthesize underlinePolicyNumber;
 @synthesize underlineName;
+@synthesize underlineEmail;
 @synthesize underlinePassword;
-
 @synthesize termsOfService;
 @synthesize privacyPolicy;
 @synthesize acceptanceLabel;
-
 @synthesize newMedia;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -45,7 +52,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     //set up background
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"signup-background"] drawInRect:self.view.bounds];
@@ -59,6 +66,10 @@
     self.name.delegate = self;
     self.email.delegate = self;
     self.password.delegate = self;
+    self.firstName.delegate = self;
+    self.lastName.delegate = self;
+    self.country.delegate = self;
+    self.policyNumber.delegate = self;
 //    [signUpButton setBackgroundImage:[UIImage imageNamed:@"login-and-signup-button"]
 //                        forState:UIControlStateNormal];
     
@@ -71,6 +82,52 @@
     signUpButton.frame = CGRectMake(68, self.view.frame.size.height - 150, 183, 36);
     [self.view addSubview:signUpButton];
 
+    firstName.font = [UIFont fontWithName:APP_FONT size:14];
+    firstName.textColor = UIColorFromRGB(0xe7eee2);
+    firstName.placeholder = @"FIRST NAME";
+    [firstName setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [firstName setReturnKeyType:UIReturnKeyDone];
+    [self.view addSubview:firstName];
+    
+    underlineFirstName.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
+    [self.view addSubview:underlineFirstName];
+    
+    lastName.font = [UIFont fontWithName:APP_FONT size:14];
+    lastName.textColor = UIColorFromRGB(0xe7eee2);
+    lastName.placeholder = @"LAST NAME";
+    [lastName setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [lastName setReturnKeyType:UIReturnKeyDone];
+    [self.view addSubview:lastName];
+    
+    underlineLastName.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
+    [self.view addSubview:underlineLastName];
+    
+    country.font = [UIFont fontWithName:APP_FONT size:14];
+    country.textColor = UIColorFromRGB(0xe7eee2);
+    country.placeholder = @"COUNTRY";
+    [country setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [country setReturnKeyType:UIReturnKeyDone];
+    
+    UIPickerView *picker = [[UIPickerView alloc] init];
+    picker.delegate = self;
+    picker.showsSelectionIndicator = YES;
+    country.inputView = picker;
+    [self fetchCountries];
+    
+    [self.view addSubview:name];
+    
+    underlineCountry.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
+    [self.view addSubview:underlineCountry];
+    
+    policyNumber.font = [UIFont fontWithName:APP_FONT size:14];
+    policyNumber.textColor = UIColorFromRGB(0xe7eee2);
+    policyNumber.placeholder = @"POLICY NUMBER";
+    [policyNumber setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [policyNumber setReturnKeyType:UIReturnKeyDone];
+    [self.view addSubview:policyNumber];
+    
+    underlinePolicyNumber.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
+    [self.view addSubview:underlinePolicyNumber];
     
     name.font = [UIFont fontWithName:APP_FONT size:14];
     name.textColor = UIColorFromRGB(0xe7eee2);
@@ -101,10 +158,6 @@
     
     underlinePassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlinePassword];
-    
-    [addPhoto setBackgroundImage:[UIImage imageNamed:@"Add-photo"]
-                        forState:UIControlStateNormal];
-    [self.view addSubview:addPhoto];
     
     acceptanceLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:14];
     acceptanceLabel.textColor = UIColorFromRGB(0xe7eee2);
@@ -144,7 +197,8 @@
     
 	// Do any additional setup after loading the view.
 }
-- (void) moveAllSubviewsDown{
+
+- (void)moveAllSubviewsDown {
     float barHeight = 45.0;
     for (UIView *view in self.view.subviews) {
         
@@ -156,122 +210,79 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-//-(IBAction)alertMessage:(id)sender {
-//    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Add a Photo"
-//                                                      message:@""
-//                                                     delegate:self
-//                                            cancelButtonTitle:@"Cancel"
-//                                            otherButtonTitles:@"Camera", @"From Library", nil];
-//    [message show];
-//}
-//
-//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-//{
-//    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-//    if([title isEqualToString:@"Cancel"])
-//    {
-//
-//    }
-//    else if([title isEqualToString:@"Camera"])
-//    {
-//    [title addTarget:self action:@selector(staypressed:) forControlEvents:UIControlEventTouchUpInside];
-//    }
-//    else if([title isEqualToString:@"From Library"])
-//    {
-//    }
-//}
-//- (IBAction)useCamera:(id)sender
-//{
-//    if ([UIImagePickerController isSourceTypeAvailable:
-//         UIImagePickerControllerSourceTypeCamera])
-//    {
-//        UIImagePickerController *imagePicker =
-//        [[UIImagePickerController alloc] init];
-//        imagePicker.delegate = self;
-//        imagePicker.sourceType =
-//        UIImagePickerControllerSourceTypeCamera;
-//        imagePicker.allowsEditing = NO;
-//        [self presentViewController:imagePicker
-//                           animated:YES completion:nil];
-//        newMedia = YES;
-//    }
-//}
-
-- (IBAction)useCameraRoll:(id)sender
-{
-    if ([UIImagePickerController isSourceTypeAvailable:
-         UIImagePickerControllerSourceTypePhotoLibrary])
-    {
-        UIImagePickerController *imagePicker =
-        [[UIImagePickerController alloc] init];
-        imagePicker.delegate = self;
-        imagePicker.sourceType =
-        UIImagePickerControllerSourceTypePhotoLibrary;
-        imagePicker.allowsEditing = NO;
-        [self presentViewController:imagePicker
-                           animated:YES completion:nil];
-        newMedia = NO;
-    }
-}
-//-(void)setRoundedView:(UIImageView *)roundedView toDiameter:(float)newSize;
-//{
-//    CGPoint saveCenter = roundedView.center;
-//    CGRect newFrame = CGRectMake(roundedView.frame.origin.x, roundedView.frame.origin.y, newSize, newSize);
-//    roundedView.frame = newFrame;
-//    roundedView.layer.cornerRadius = newSize / 2.0;
-//    roundedView.center = saveCenter;
-//}
-
-#pragma mark -
-#pragma mark UIImagePickerControllerDelegate
-
--(void)imagePickerController:(UIImagePickerController *)picker
-didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
+- (void)fetchCountries {
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@countries", baseURL]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
+    request.HTTPMethod = @"GET";
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-//    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-////    [self setRoundedView:imageView toDiameter:50.0];
-//    
-//    UIImage *circleImage = [[UIImage alloc] init];
-//    circleImage=imageView.image;
-    [addPhoto setImage:image forState:UIControlStateNormal];
-    addPhoto.layer.cornerRadius = 50;
-    addPhoto.layer.masksToBounds = YES;
-    [addPhoto.imageView setContentMode:UIViewContentModeScaleAspectFill];
-    
-//    [[addPhoto imageView] setContentMode: UIViewContentModeScaleAspectFit];
-}
-
--(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-
--(void)image:(UIImage *)image
-finishedSavingWithError:(NSError *)error
- contextInfo:(void *)contextInfo
-{
-    if (error) {
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle: @"Save failed"
-                              message: @"Failed to save image"
-                              delegate: nil
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil];
-        [alert show];
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if (!error) {
+        NSDictionary *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        self.countryArray = responseObject[@"countries"];
+        NSLog(@"%@", self.countryArray);
+    } else {
+        NSLog(@"error: %@", error.localizedDescription);
     }
 }
 
+- (IBAction)signup:(id)sender {
+    NSDictionary *body = @{@"company": @{@"group_num": name.text}};
+    
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@companies/checkGroupNum", baseURL]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
+    request.HTTPMethod = @"POST";
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    request.HTTPBody = [NSJSONSerialization dataWithJSONObject:body options:0 error:nil];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (!error) {
+            NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSLog(@"%@", responseBody);
+            if (responseBody[@"company"]) {
+//                [RequestBuilder fetchUser:responseBody];
+//                [self performSegueWithIdentifier:@"toTrips" sender:self];
+            } else {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                                    message:responseBody[@"error"][@"message"][0]
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+                [alertView show];
+            }
+        } else {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                                message:error.localizedDescription
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+            [alertView show];
+        }
+    }];
+}
+
+#pragma mark - Picker View methods
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return self.countryArray.count;
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return self.countryArray[row][@"name"];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    self.selectedCountry = self.countryArray[row][@"country_code"];
+    country.text = self.countryArray[row][@"name"];
+    [country resignFirstResponder];
+}
 
 # pragma mark - keyboard stuff
 
@@ -376,6 +387,5 @@ finishedSavingWithError:(NSError *)error
                                                     name:UIKeyboardWillHideNotification
                                                   object:nil];
 }
-
 
 @end

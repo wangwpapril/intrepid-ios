@@ -16,13 +16,13 @@
 
 @implementation LoginViewController
 
+static NSString *baseURL = @"https://api.intrepid247.com/v1/";
+
 @synthesize loginButton;
 @synthesize learnMore;
 @synthesize legal;
-
 @synthesize intrepidTitle;
 @synthesize tagline;
-
 @synthesize email;
 @synthesize password;
 @synthesize signupButton;
@@ -130,7 +130,8 @@
     signupButton.backgroundColor = [UIColor clearColor];
     
     signupButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:signupButton];
+    signupButton.hidden = true;
+//    [self.view addSubview:signupButton];
     
 //    legal.frame = CGRectMake(240, 5, 100, 50);
 //    legal.titleLabel.font = [UIFont fontWithName:APP_FONT size:13];
@@ -151,8 +152,8 @@
     }
     
 	// Do any additional setup after loading the view.
-    email.text = @"cherry@swishlabs.co";
-    password.text = @"pass@swish123";
+//    email.text = @"cherry@swishlabs.co";
+//    password.text = @"pass@swish123";
 }
 
 - (void) moveAllSubviewsDown{
@@ -246,7 +247,7 @@
                                       @"password": self.password.text}
                            };
 
-    NSURL *requestURL = [NSURL URLWithString:@"https://staging.intrepid247.com/v1/users/login"];
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/login", baseURL]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
     request.HTTPMethod = @"POST";
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];

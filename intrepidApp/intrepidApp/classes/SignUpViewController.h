@@ -8,22 +8,29 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SignUpViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UIButton *addPhoto;
+@interface SignUpViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
+@property (weak, nonatomic) IBOutlet UITextField *firstName;
+@property (weak, nonatomic) IBOutlet UITextField *lastName;
+@property (weak, nonatomic) IBOutlet UITextField *country;
+@property (weak, nonatomic) IBOutlet UITextField *policyNumber;
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
-
+@property (weak, nonatomic) IBOutlet UILabel *underlineFirstName;
+@property (weak, nonatomic) IBOutlet UILabel *underlineLastName;
+@property (weak, nonatomic) IBOutlet UILabel *underlineCountry;
+@property (weak, nonatomic) IBOutlet UILabel *underlinePolicyNumber;
 @property (weak, nonatomic) IBOutlet UILabel *underlineName;
 @property (weak, nonatomic) IBOutlet UILabel *underlineEmail;
 @property (weak, nonatomic) IBOutlet UILabel *underlinePassword;
 @property (weak, nonatomic) IBOutlet UILabel *acceptanceLabel;
 @property (weak, nonatomic) IBOutlet UIButton *termsOfService;
 @property (weak, nonatomic) IBOutlet UIButton *privacyPolicy;
-
 @property BOOL newMedia;
-- (IBAction)useCameraRoll:(id)sender;
-//- (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize;
+@property (strong, nonatomic) NSArray *countryArray;
+@property (strong, nonatomic) NSString *selectedCountry;
+
+- (IBAction)signup:(id)sender;
 
 @end
