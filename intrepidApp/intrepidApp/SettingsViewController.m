@@ -75,7 +75,7 @@
     passwordLabel.textColor = [UIColor whiteColor];
     [passwordLabel setTextAlignment:NSTextAlignmentLeft];
     passwordLabel.text = @"Password:";
-    [self.view addSubview:passwordLabel];
+//    [self.view addSubview:passwordLabel];
     
     UILabel *passwordConfirmationLabel = [[UILabel alloc] init];
     passwordConfirmationLabel.frame = CGRectMake(10, 300, 150, 20);
@@ -84,7 +84,7 @@
     passwordConfirmationLabel.textColor = [UIColor whiteColor];
     [passwordConfirmationLabel setTextAlignment:NSTextAlignmentLeft];
     passwordConfirmationLabel.text = @"Confirm Password:";
-    [self.view addSubview:passwordConfirmationLabel];
+//    [self.view addSubview:passwordConfirmationLabel];
     
     
     //Initalize the TextFields and keyboard
@@ -129,12 +129,12 @@
     [password setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [password setReturnKeyType:UIReturnKeyDone];
     password.delegate = self;
-    [self.view addSubview:password];
+//    [self.view addSubview:password];
     
     UILabel *underlinePassword = [[UILabel alloc] init];
     underlinePassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1"]];
     underlinePassword.frame = CGRectMake(10, 275, 295, 1);
-    [self.view addSubview:underlinePassword];
+//    [self.view addSubview:underlinePassword];
     
     UITextField *passwordConfirmation = [[UITextField alloc] init];
     passwordConfirmation.font = [UIFont fontWithName:APP_FONT size:15];
@@ -144,12 +144,12 @@
     [passwordConfirmation setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [passwordConfirmation setReturnKeyType:UIReturnKeyDone];
     passwordConfirmation.delegate = self;
-    [self.view addSubview:passwordConfirmation];
+//    [self.view addSubview:passwordConfirmation];
     
     UILabel *underlinePasswordConfirmation = [[UILabel alloc] init];
     underlinePasswordConfirmation.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1"]];
     underlinePasswordConfirmation.frame = CGRectMake(10, 325, 295, 1);
-    [self.view addSubview:underlinePasswordConfirmation];
+//    [self.view addSubview:underlinePasswordConfirmation];
     
     //Initalize the Sign Out button
 //    UIImage *buttonImage = [[UIImage imageNamed:@"signout-button"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
