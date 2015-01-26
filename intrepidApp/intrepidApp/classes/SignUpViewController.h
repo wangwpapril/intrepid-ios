@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *lastName;
 @property (weak, nonatomic) IBOutlet UITextField *country;
 @property (weak, nonatomic) IBOutlet UITextField *policyNumber;
-@property (weak, nonatomic) IBOutlet UITextField *name;
+@property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
@@ -21,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *underlineLastName;
 @property (weak, nonatomic) IBOutlet UILabel *underlineCountry;
 @property (weak, nonatomic) IBOutlet UILabel *underlinePolicyNumber;
-@property (weak, nonatomic) IBOutlet UILabel *underlineName;
+@property (weak, nonatomic) IBOutlet UILabel *underlineUsername;
 @property (weak, nonatomic) IBOutlet UILabel *underlineEmail;
 @property (weak, nonatomic) IBOutlet UILabel *underlinePassword;
 @property (weak, nonatomic) IBOutlet UILabel *acceptanceLabel;

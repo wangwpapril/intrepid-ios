@@ -221,7 +221,7 @@
                                 <rect key="frame" x="68" y="162" width="183" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PASSWORD" minimumFontSize="17" id="pL1-xH-iP7">
                                 <rect key="frame" x="69" y="276" width="183" height="30"/>
@@ -335,14 +335,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="LAST NAME" minimumFontSize="17" id="g3t-A2-Xmx">
                                 <rect key="frame" x="69" y="124" width="183" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="COUNTRY" minimumFontSize="17" id="DiD-rk-lei">
                                 <rect key="frame" x="68" y="200" width="183" height="30"/>
@@ -355,7 +355,7 @@
                                 <rect key="frame" x="69" y="311" width="183" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -368,7 +368,6 @@
                         <outlet property="email" destination="CCb-bP-Q5A" id="ELu-JW-8Nx"/>
                         <outlet property="firstName" destination="f56-cV-e1R" id="Eve-wF-MVt"/>
                         <outlet property="lastName" destination="g3t-A2-Xmx" id="jDm-B7-WGW"/>
-                        <outlet property="name" destination="xt5-l6-QSP" id="X4w-2A-5LG"/>
                         <outlet property="password" destination="pL1-xH-iP7" id="9X4-K3-l9K"/>
                         <outlet property="policyNumber" destination="Ytp-rZ-kaE" id="pQw-Y8-zgl"/>
                         <outlet property="privacyPolicy" destination="oOr-PD-5W9" id="ChY-h1-TFp"/>
@@ -378,9 +377,10 @@
                         <outlet property="underlineEmail" destination="wkh-i3-VgY" id="B8h-sL-chZ"/>
                         <outlet property="underlineFirstName" destination="CTC-FR-GOH" id="PF4-vK-uEL"/>
                         <outlet property="underlineLastName" destination="V1A-tN-U1l" id="m04-65-roN"/>
-                        <outlet property="underlineName" destination="H26-OT-Dwl" id="sKq-44-iGj"/>
                         <outlet property="underlinePassword" destination="Ns4-JY-YKv" id="FXL-7m-k6a"/>
                         <outlet property="underlinePolicyNumber" destination="vqC-Wd-507" id="BmY-OD-rhw"/>
+                        <outlet property="underlineUsername" destination="H26-OT-Dwl" id="sik-gp-d89"/>
+                        <outlet property="username" destination="xt5-l6-QSP" id="vyq-GU-9wb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YxC-Y6-RjD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -866,6 +866,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="v1z-mz-lP0"/>
+        <segue reference="7CT-6H-1PF"/>
     </inferredMetricsTieBreakers>
 </document>

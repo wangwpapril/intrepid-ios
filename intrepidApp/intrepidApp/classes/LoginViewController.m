@@ -130,8 +130,7 @@ static NSString *baseURL = @"https://api.intrepid247.com/v1/";
     signupButton.backgroundColor = [UIColor clearColor];
     
     signupButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-    signupButton.hidden = true;
-//    [self.view addSubview:signupButton];
+    [self.view addSubview:signupButton];
     
 //    legal.frame = CGRectMake(240, 5, 100, 50);
 //    legal.titleLabel.font = [UIFont fontWithName:APP_FONT size:13];
@@ -168,10 +167,41 @@ static NSString *baseURL = @"https://api.intrepid247.com/v1/";
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)login:(id)sender {
+    NSDictionary *body = @{@"user": @{@"email": self.email.text,
+                                      @"password": self.password.text}
+                           };
+    
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/login", baseURL]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
+    request.HTTPMethod = @"POST";
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    request.HTTPBody = [NSJSONSerialization dataWithJSONObject:body options:0 error:nil];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (!error) {
+            NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSLog(@"%@", responseBody);
+            if (responseBody[@"user"]) {
+                [RequestBuilder fetchUser:responseBody];
+                [self performSegueWithIdentifier:@"toTrips" sender:self];
+            } else {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                                    message:responseBody[@"error"][@"message"][0]
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+                [alertView show];
+            }
+        } else {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                                message:error.localizedDescription
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+            [alertView show];
+        }
+    }];
 }
 
 # pragma mark - keyboard stuff
@@ -201,8 +231,6 @@ static NSString *baseURL = @"https://api.intrepid247.com/v1/";
 {
     [email resignFirstResponder];
     [password resignFirstResponder];
-
-    
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)sender
@@ -240,43 +268,6 @@ static NSString *baseURL = @"https://api.intrepid247.com/v1/";
     self.view.frame = rect;
     
     [UIView commitAnimations];
-}
-
-- (IBAction)login:(id)sender {    
-    NSDictionary *body = @{@"user": @{@"email": self.email.text,
-                                      @"password": self.password.text}
-                           };
-
-    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/login", baseURL]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
-    request.HTTPMethod = @"POST";
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    request.HTTPBody = [NSJSONSerialization dataWithJSONObject:body options:0 error:nil];
-    
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        if (!error) {
-            NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            NSLog(@"%@", responseBody);
-            if (responseBody[@"user"]) {
-                [RequestBuilder fetchUser:responseBody];
-                [self performSegueWithIdentifier:@"toTrips" sender:self];
-            } else {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-                                                                    message:responseBody[@"error"][@"message"][0]
-                                                                   delegate:nil
-                                                          cancelButtonTitle:@"OK"
-                                                          otherButtonTitles:nil];
-                [alertView show];
-            }
-        } else {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-                                                                message:error.localizedDescription
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil];
-            [alertView show];
-        }
-    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated

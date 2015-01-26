@@ -18,21 +18,21 @@
 
 @implementation SignUpViewController
 
-static NSString *baseURL = @"https://api.intrepid247.com/v1/";
+static NSString *baseURL = @"https://staging.intrepid247.com/v1/";
 
 @synthesize signUpButton;
 @synthesize firstName;
 @synthesize lastName;
 @synthesize country;
 @synthesize policyNumber;
-@synthesize name;
+@synthesize username;
 @synthesize email;
 @synthesize password;
 @synthesize underlineFirstName;
 @synthesize underlineLastName;
 @synthesize underlineCountry;
 @synthesize underlinePolicyNumber;
-@synthesize underlineName;
+@synthesize underlineUsername;
 @synthesize underlineEmail;
 @synthesize underlinePassword;
 @synthesize termsOfService;
@@ -63,7 +63,7 @@ static NSString *baseURL = @"https://api.intrepid247.com/v1/";
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     
-    self.name.delegate = self;
+    self.username.delegate = self;
     self.email.delegate = self;
     self.password.delegate = self;
     self.firstName.delegate = self;
@@ -112,9 +112,10 @@ static NSString *baseURL = @"https://api.intrepid247.com/v1/";
     picker.delegate = self;
     picker.showsSelectionIndicator = YES;
     country.inputView = picker;
+    country.tag = 1;
+    country.tintColor = [UIColor clearColor];
     [self fetchCountries];
-    
-    [self.view addSubview:name];
+    [self.view addSubview:country];
     
     underlineCountry.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlineCountry];
@@ -129,15 +130,15 @@ static NSString *baseURL = @"https://api.intrepid247.com/v1/";
     underlinePolicyNumber.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlinePolicyNumber];
     
-    name.font = [UIFont fontWithName:APP_FONT size:14];
-    name.textColor = UIColorFromRGB(0xe7eee2);
-    name.placeholder = @"NAME";
-    [name setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [name setReturnKeyType:UIReturnKeyDone];
-    [self.view addSubview:name];
+    username.font = [UIFont fontWithName:APP_FONT size:14];
+    username.textColor = UIColorFromRGB(0xe7eee2);
+    username.placeholder = @"USERNAME";
+    [username setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [username setReturnKeyType:UIReturnKeyDone];
+    [self.view addSubview:username];
     
-    underlineName.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
-    [self.view addSubview:underlineName];
+    underlineUsername.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
+    [self.view addSubview:underlineUsername];
     
     email.font = [UIFont fontWithName:APP_FONT size:14];
     email.textColor = UIColorFromRGB(0xe7eee2);
@@ -210,26 +211,32 @@ static NSString *baseURL = @"https://api.intrepid247.com/v1/";
     }
 }
 
-- (void)fetchCountries {
-    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@countries", baseURL]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
-    request.HTTPMethod = @"GET";
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
-    NSURLResponse *response = nil;
-    NSError *error = nil;
-    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    if (!error) {
-        NSDictionary *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        self.countryArray = responseObject[@"countries"];
-        NSLog(@"%@", self.countryArray);
-    } else {
-        NSLog(@"error: %@", error.localizedDescription);
-    }
-}
-
 - (IBAction)signup:(id)sender {
-    NSDictionary *body = @{@"company": @{@"group_num": name.text}};
+    firstName.text = @"Test";
+    lastName.text = @"User";
+    email.text = @"test@gmail.com";
+    username.text = @"test";
+    password.text = @"testuser";
+    policyNumber.text = @"42424242";
+    
+    NSDictionary *body = @{@"company": @{@"group_num": policyNumber.text}};
+    
+    if (firstName.text.length < 1 || lastName.text.length < 1 || email.text.length < 1 || country.text.length < 1 || username.text.length < 1 || password.text.length < 1 || policyNumber.text.length < 1) {
+        [self sendAlertWithError:@"All fields are required."];
+        return;
+    }
+    if (![self NSStringIsValidEmail:email.text]) {
+        [self sendAlertWithError:@"The email format is invalid."];
+        return;
+    }
+    if (username.text.length < 3) {
+        [self sendAlertWithError:@"Username must be at least 3 characters."];
+        return;
+    }
+    if (password.text.length < 7) {
+        [self sendAlertWithError:@"Password must be at least 7 characters."];
+        return;
+    }
     
     NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@companies/checkGroupNum", baseURL]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
@@ -242,6 +249,50 @@ static NSString *baseURL = @"https://api.intrepid247.com/v1/";
             NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             NSLog(@"%@", responseBody);
             if (responseBody[@"company"]) {
+                [self createUserWithCompanyId:responseBody[@"company"][@"group_number"]];
+            } else {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                                    message:responseBody[@"error"][@"message"][0]
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+                [alertView show];
+            }
+        } else {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                                message:error.localizedDescription
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+            [alertView show];
+        }
+    }];
+}
+
+- (void)createUserWithCompanyId:(NSNumber *)companyId {
+    NSDictionary *body = @{@"user": @{@"email": email.text,
+                                      @"first_name": firstName.text,
+                                      @"last_name": lastName.text,
+                                      @"username": username.text,
+                                      @"password": password.text,
+                                      @"roles": @[@"end_user"],
+                                      @"locale_code": @"en_CA",
+                                      @"country_code": self.selectedCountry,
+                                      @"company_id": companyId
+                                      }
+                           };
+    
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users", baseURL]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
+    request.HTTPMethod = @"POST";
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    request.HTTPBody = [NSJSONSerialization dataWithJSONObject:body options:0 error:nil];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (!error) {
+            NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSLog(@"%@", responseBody);
+            if (responseBody[@"user"]) {
 //                [RequestBuilder fetchUser:responseBody];
 //                [self performSegueWithIdentifier:@"toTrips" sender:self];
             } else {
@@ -261,6 +312,44 @@ static NSString *baseURL = @"https://api.intrepid247.com/v1/";
             [alertView show];
         }
     }];
+}
+
+#pragma mark - Helper methods
+
+- (void)fetchCountries {
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@countries", baseURL]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
+    request.HTTPMethod = @"GET";
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if (!error) {
+        NSDictionary *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        self.countryArray = responseObject[@"countries"];
+    } else {
+        NSLog(@"error: %@", error.localizedDescription);
+    }
+}
+
+- (BOOL)NSStringIsValidEmail:(NSString *)checkString
+{
+    BOOL stricterFilter = YES; // Discussion http://blog.logichigh.com/2010/09/02/validating-an-e-mail-address/
+    NSString *stricterFilterString = @"[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}";
+    NSString *laxString = @".+@([A-Za-z0-9]+\\.)+[A-Za-z]{2}[A-Za-z]*";
+    NSString *emailRegex = stricterFilter ? stricterFilterString : laxString;
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:checkString];
+}
+
+- (void)sendAlertWithError:(NSString *)errorString {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:errorString
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    [alertView show];
 }
 
 #pragma mark - Picker View methods
@@ -286,6 +375,14 @@ static NSString *baseURL = @"https://api.intrepid247.com/v1/";
 
 # pragma mark - keyboard stuff
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if (textField.tag == 1) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
     [theTextField resignFirstResponder];
     return YES;
@@ -297,18 +394,10 @@ static NSString *baseURL = @"https://api.intrepid247.com/v1/";
     {
         [self setViewMovedUp:YES];
     }
-    else if (self.view.frame.origin.y < 0)
-    {
-        [self setViewMovedUp:NO];
-    }
 }
 
 -(void)keyboardWillHide {
-    if (self.view.frame.origin.y >= 0)
-    {
-        [self setViewMovedUp:YES];
-    }
-    else if (self.view.frame.origin.y < 0)
+    if (self.view.frame.origin.y < 0)
     {
         [self setViewMovedUp:NO];
     }
@@ -317,10 +406,12 @@ static NSString *baseURL = @"https://api.intrepid247.com/v1/";
 // added so that you can click outside of keyboard for finishing typing - JCH
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    [firstName resignFirstResponder];
+    [lastName resignFirstResponder];
     [email resignFirstResponder];
+    [username resignFirstResponder];
     [password resignFirstResponder];
-    
-    
+    [policyNumber resignFirstResponder];
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)sender
@@ -346,14 +437,12 @@ static NSString *baseURL = @"https://api.intrepid247.com/v1/";
     {
         // 1. move the view's origin up so that the text field that will be hidden come above the keyboard
         // 2. increase the size of the view so that the area behind the keyboard is covered up.
-        rect.origin.y -= 110.0;
-        //rect.size.height -= kOFFSET_FOR_KEYBOARD;
+        rect.origin.y -= kOFFSET_FOR_KEYBOARD;
     }
     else
     {
         // revert back to the normal state.
-        rect.origin.y += 110.0;
-        //rect.size.height -= kOFFSET_FOR_KEYBOARD;
+        rect.origin.y += kOFFSET_FOR_KEYBOARD;
     }
     self.view.frame = rect;
     
