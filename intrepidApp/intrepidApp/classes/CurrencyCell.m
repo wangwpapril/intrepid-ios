@@ -49,16 +49,16 @@
     if (destination) {
         double scaleFactor = [UIScreen mainScreen].scale;
         if (scaleFactor > 2.9 && ![destination.currencyImage3x isEqualToString:@""]) {
-            [flagLabel sd_setImageWithURL:[NSURL URLWithString:destination.currencyImage3x] placeholderImage:[UIImage imageNamed:@"world"]];
+            [flagLabel sd_setImageWithURL:[NSURL URLWithString:destination.currencyImage3x] placeholderImage:[UIImage imageNamed:@"unused"]];
         } else if (![destination.currencyImage2x isEqualToString:@""]) {
-            [flagLabel sd_setImageWithURL:[NSURL URLWithString:destination.currencyImage2x] placeholderImage:[UIImage imageNamed:@"world"]];
+            [flagLabel sd_setImageWithURL:[NSURL URLWithString:destination.currencyImage2x] placeholderImage:[UIImage imageNamed:@"unused"]];
         } else if (![destination.currencyImage1x isEqualToString:@""]) {
-            [flagLabel sd_setImageWithURL:[NSURL URLWithString:destination.currencyImage1x] placeholderImage:[UIImage imageNamed:@"world"]];
+            [flagLabel sd_setImageWithURL:[NSURL URLWithString:destination.currencyImage1x] placeholderImage:[UIImage imageNamed:@"unused"]];
         } else {
-            flagLabel.image = [UIImage imageNamed:@"world"];
+            flagLabel.image = [UIImage imageNamed:@"unused"];
         }
     } else {
-        flagLabel.image = [UIImage imageNamed:@"world"];
+        flagLabel.image = [UIImage imageNamed:@"unused"];
     }
     
     countryLabel.text = currency.country;

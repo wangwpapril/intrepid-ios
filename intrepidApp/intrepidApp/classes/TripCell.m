@@ -27,13 +27,13 @@
     
     double scaleFactor = [UIScreen mainScreen].scale;
     if (scaleFactor > 2.9 && ![destination.flagImage3x isEqualToString:@""]) {
-        [self.imageView sd_setImageWithURL:[NSURL URLWithString:destination.flagImage3x] placeholderImage:[UIImage imageNamed:@"world"]];
+        [self.imageView sd_setImageWithURL:[NSURL URLWithString:destination.flagImage3x] placeholderImage:[UIImage imageNamed:@"unused"]];
     } else if (![destination.flagImage2x isEqualToString:@""]) {
-        [self.imageView sd_setImageWithURL:[NSURL URLWithString:destination.flagImage2x] placeholderImage:[UIImage imageNamed:@"world"]];
+        [self.imageView sd_setImageWithURL:[NSURL URLWithString:destination.flagImage2x] placeholderImage:[UIImage imageNamed:@"unused"]];
     } else if (![destination.flagImage1x isEqualToString:@""]) {
-        [self.imageView sd_setImageWithURL:[NSURL URLWithString:destination.flagImage1x] placeholderImage:[UIImage imageNamed:@"world"]];
+        [self.imageView sd_setImageWithURL:[NSURL URLWithString:destination.flagImage1x] placeholderImage:[UIImage imageNamed:@"unused"]];
     } else {
-        self.imageView.image = [UIImage imageNamed:@"world"];
+        self.imageView.image = [UIImage imageNamed:@"unused"];
     }
     
     self.textLabel.text = destination.name;
