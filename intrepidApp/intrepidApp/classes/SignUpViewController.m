@@ -18,8 +18,6 @@
 
 @implementation SignUpViewController
 
-static NSString *baseURL = @"https://staging.intrepid247.com/v1/";
-
 @synthesize signUpButton;
 @synthesize firstName;
 @synthesize lastName;
@@ -231,7 +229,7 @@ static NSString *baseURL = @"https://staging.intrepid247.com/v1/";
         return;
     }
     
-    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@companies/checkGroupNum", baseURL]];
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@companies/checkGroupNum", BASE_URL]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
     request.HTTPMethod = @"POST";
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -265,7 +263,7 @@ static NSString *baseURL = @"https://staging.intrepid247.com/v1/";
                                       }
                            };
     
-    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users", baseURL]];
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users", BASE_URL]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
     request.HTTPMethod = @"POST";
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -289,16 +287,16 @@ static NSString *baseURL = @"https://staging.intrepid247.com/v1/";
 - (void)sendEmailWithActivationCode:(NSString *)activationCode {
     NSDictionary *body = @{@"key": @"2Hw47otRRKIaEQ3sQwoXAg",
                            @"message": @{
-                               @"text": [NSString stringWithFormat:@"Hi %@,\n\nThank you for signing up with ACE Travel Smart.\nPlease click on the confirmation code below to activate your account.\nhttps://app-staging.intrepid247.com/?#/users/activate/%@", firstName.text, activationCode],
+                               @"text": [NSString stringWithFormat:@"Hi %@,\n\nThank you for signing up with ACE Travel Smart.\nPlease click on the confirmation link below to activate your account.\n%@%@", firstName.text, ACTIVATE_URL, activationCode],
                                @"subject": @"Thank you for signing up",
                                @"from_email": @"do-not-reply@acetravelsmart.com",
                                @"from_name": @"ACE Travel Smart",
                                @"to": @[@{@"email": email.text,
-                                          @"name": firstName.text}],
+                                          @"name": [NSString stringWithFormat:@"%@ %@", firstName.text, lastName.text]}],
                                },
                            };
     
-    NSURL *requestURL = [NSURL URLWithString:@"https://mandrillapp.com/api/1.0/messages/send.json"];
+    NSURL *requestURL = [NSURL URLWithString:EMAIL_URL];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
     request.HTTPMethod = @"POST";
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -327,7 +325,7 @@ static NSString *baseURL = @"https://staging.intrepid247.com/v1/";
 #pragma mark - Helper methods
 
 - (void)fetchCountries {
-    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@countries", baseURL]];
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@countries", BASE_URL]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
     request.HTTPMethod = @"GET";
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];

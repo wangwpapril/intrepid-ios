@@ -10,10 +10,9 @@
 #import "TripManager.h"
 #import "CityEntity.h"
 #import "DestinationEntity.h"
+#import "Constants.h"
 
 @implementation RequestBuilder
-static NSString * baseURL = @"https://api.intrepid247.com/v1/";
-static NSString * currencyURL = @"https://openexchangerates.org/api/latest.json?app_id=14073d8e6b8c4687951ed926cbbd3589";
 static NSDictionary * userDict;
 static NSDictionary * cityDict;
 
@@ -23,7 +22,7 @@ static NSDictionary * cityDict;
 }
 
 + (void)fetchDestinations {
-    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@destinations?short_list=true&token=%@", baseURL, userDict[@"user"][@"token"]]];
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@destinations?short_list=true&token=%@", BASE_URL, userDict[@"user"][@"token"]]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
     request.HTTPMethod = @"GET";
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -85,7 +84,7 @@ static NSDictionary * cityDict;
 }
 
 + (void)fetchTrip:(NSString *)trip {
-    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@destinations/%@?token=%@", baseURL, trip, userDict[@"user"][@"token"]]];
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@destinations/%@?token=%@", BASE_URL, trip, userDict[@"user"][@"token"]]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
     request.HTTPMethod = @"GET";
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -118,7 +117,7 @@ static NSDictionary * cityDict;
 }
 
 + (void)fetchEmbassy:(NSDictionary *)cityDict withCity:(CityEntity *)city {
-    NSURL *embassyRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@diplomatic-offices/%@?origin_country=%@&token=%@", baseURL, cityDict[@"country"][@"country_code"], userDict[@"user"][@"country_code"], userDict[@"user"][@"token"]]];
+    NSURL *embassyRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@diplomatic-offices/%@?origin_country=%@&token=%@", BASE_URL, cityDict[@"country"][@"country_code"], userDict[@"user"][@"country_code"], userDict[@"user"][@"token"]]];
     NSMutableURLRequest *embassyRequest = [[NSMutableURLRequest alloc] initWithURL:embassyRequestURL];
     embassyRequest.HTTPMethod = @"GET";
     [embassyRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -168,7 +167,7 @@ static NSDictionary * cityDict;
 
 + (void)fetchCurrency:(NSDictionary *)cityDict withCity:(CityEntity *)city {
     NSString *currencyCode = cityDict[@"country"][@"currency_code"];
-    NSURL *currencyRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@&base=%@&symbols=%@", currencyURL, userDict[@"user"][@"currency_code"], currencyCode]];
+    NSURL *currencyRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@&base=%@&symbols=%@", CURRENCY_URL, userDict[@"user"][@"currency_code"], currencyCode]];
     NSMutableURLRequest *currencyRequest = [[NSMutableURLRequest alloc] initWithURL:currencyRequestURL];
     
     [NSURLConnection sendAsynchronousRequest:currencyRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
@@ -192,7 +191,7 @@ static NSDictionary * cityDict;
 }
 
 + (void)fetchAlert:(NSDictionary *)cityDict withCity:(CityEntity *)city {
-    NSURL *alertRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@alerts/%@?token=%@", baseURL, cityDict[@"country"][@"country_code"], userDict[@"user"][@"token"]]];
+    NSURL *alertRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@alerts/%@?token=%@", BASE_URL, cityDict[@"country"][@"country_code"], userDict[@"user"][@"token"]]];
     NSMutableURLRequest *alertRequest = [[NSMutableURLRequest alloc] initWithURL:alertRequestURL];
     alertRequest.HTTPMethod = @"GET";
     [alertRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];

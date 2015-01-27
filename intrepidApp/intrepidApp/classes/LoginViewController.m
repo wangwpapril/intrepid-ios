@@ -9,14 +9,13 @@
 #import <QuartzCore/QuartzCore.h>
 #import "LoginViewController.h"
 #import "RequestBuilder.h"
+#import "Constants.h"
 
 @interface LoginViewController ()
 
 @end
 
 @implementation LoginViewController
-
-static NSString *baseURL = @"https://api.intrepid247.com/v1/";
 
 @synthesize loginButton;
 @synthesize learnMore;
@@ -172,7 +171,7 @@ static NSString *baseURL = @"https://api.intrepid247.com/v1/";
                                       @"password": self.password.text}
                            };
     
-    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/login", baseURL]];
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/login", BASE_URL]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
     request.HTTPMethod = @"POST";
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
