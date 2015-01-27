@@ -232,6 +232,84 @@
 }
 
 - (IBAction)update:(id)sender {
+    if (firstName.text.length < 1 || lastName.text.length < 1) {
+        [self sendAlertWithError:@"First and last name are required."];
+        return;
+    }
+    if (![self NSStringIsValidEmail:email.text]) {
+        [self sendAlertWithError:@"The email format is invalid."];
+        return;
+    }
+    if (username.text.length < 3) {
+        [self sendAlertWithError:@"Username must be at least 3 characters."];
+        return;
+    }
+    
+    if (oldPassword.text.length > 0 || changePassword.text.length > 0) {
+        if (oldPassword.text.length < 7 || changePassword.text.length < 7) {
+            [self sendAlertWithError:@"Password must be at least 7 characters."];
+            return;
+        } else {
+            [self resetPassword];
+        }
+    } else {
+        [self updateProfile];
+    }
+}
+
+- (void)resetPassword {
+    NSDictionary *body = @{@"user": @{@"old_password": oldPassword.text,
+                                      @"new_password": changePassword.text}
+                           };
+    
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/%@/resetPassword?token=%@", BASE_URL, [TripManager getInstance].currentUser[@"user"][@"id"], [TripManager getInstance].currentUser[@"user"][@"token"]]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
+    request.HTTPMethod = @"POST";
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    request.HTTPBody = [NSJSONSerialization dataWithJSONObject:body options:0 error:nil];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (!error) {
+            NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSLog(@"%@", responseBody);
+            if (responseBody[@"success"]) {
+                [self updateProfile];
+            } else {
+                [self sendAlertWithError:responseBody[@"error"][@"message"][0]];
+            }
+        } else {
+            [self sendAlertWithError:error.localizedDescription];
+        }
+    }];
+}
+
+- (void)updateProfile {
+    NSDictionary *body = @{@"user": @{@"email": email.text,
+                                      @"first_name": firstName.text,
+                                      @"last_name": lastName.text,
+                                      @"username": username.text}
+                           };
+    
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/%@?token=%@", BASE_URL, [TripManager getInstance].currentUser[@"user"][@"id"], [TripManager getInstance].currentUser[@"user"][@"token"]]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
+    request.HTTPMethod = @"PUT";
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    request.HTTPBody = [NSJSONSerialization dataWithJSONObject:body options:0 error:nil];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (!error) {
+            NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSLog(@"%@", responseBody);
+            if (responseBody[@"user"]) {
+                [RequestBuilder fetchUser:responseBody];
+                [self sendAlertWithError:@"Your profile has been updated."];
+            } else {
+                [self sendAlertWithError:responseBody[@"error"][@"message"][0]];
+            }
+        } else {
+            [self sendAlertWithError:error.localizedDescription];
+        }
+    }];
 }
 
 - (IBAction)signout:(id)sender {
@@ -253,6 +331,27 @@
             view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height);
         }
     }
+}
+
+#pragma mark - Helper methods
+
+- (BOOL)NSStringIsValidEmail:(NSString *)checkString
+{
+    BOOL stricterFilter = YES; // Discussion http://blog.logichigh.com/2010/09/02/validating-an-e-mail-address/
+    NSString *stricterFilterString = @"[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}";
+    NSString *laxString = @".+@([A-Za-z0-9]+\\.)+[A-Za-z]{2}[A-Za-z]*";
+    NSString *emailRegex = stricterFilter ? stricterFilterString : laxString;
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:checkString];
+}
+
+- (void)sendAlertWithError:(NSString *)errorString {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:errorString
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    [alertView show];
 }
 
 #pragma mark - keyboard stuff
