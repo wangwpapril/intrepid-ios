@@ -51,36 +51,36 @@
     
     //Initalize the Labels
     UILabel *nameLabel = [[UILabel alloc] init];
-    nameLabel.frame = CGRectMake(10, 150, 75, 20);
+    nameLabel.frame = CGRectMake(20, 150, 75, 20);
     nameLabel.backgroundColor = [UIColor clearColor];
-    nameLabel.font = [UIFont fontWithName:@"ProximaNova-Semi-Bold" size:15];
+    nameLabel.font = [UIFont fontWithName:APP_FONT size:14];
     nameLabel.textColor = [UIColor whiteColor];
     [nameLabel setTextAlignment:NSTextAlignmentLeft];
     nameLabel.text = @"Name:";
     [self.view addSubview:nameLabel];
     
     UILabel *emailLabel = [[UILabel alloc] init];
-    emailLabel.frame = CGRectMake(10, 200, 75, 20);
+    emailLabel.frame = CGRectMake(20, 200, 75, 20);
     emailLabel.backgroundColor = [UIColor clearColor];
-    emailLabel.font = [UIFont fontWithName:@"ProximaNova-Semi-Bold" size:15];
+    emailLabel.font = [UIFont fontWithName:APP_FONT size:14];
     emailLabel.textColor = [UIColor whiteColor];
     [emailLabel setTextAlignment:NSTextAlignmentLeft];
     emailLabel.text = @"Email:";
     [self.view addSubview:emailLabel];
     
     UILabel *passwordLabel = [[UILabel alloc] init];
-    passwordLabel.frame = CGRectMake(10, 250, 150, 20);
+    passwordLabel.frame = CGRectMake(20, 250, 150, 20);
     passwordLabel.backgroundColor = [UIColor clearColor];
-    passwordLabel.font = [UIFont fontWithName:@"ProximaNova-Semi-Bold" size:15];
+    passwordLabel.font = [UIFont fontWithName:APP_FONT size:14];
     passwordLabel.textColor = [UIColor whiteColor];
     [passwordLabel setTextAlignment:NSTextAlignmentLeft];
     passwordLabel.text = @"Old Password:";
     [self.view addSubview:passwordLabel];
     
     UILabel *passwordConfirmationLabel = [[UILabel alloc] init];
-    passwordConfirmationLabel.frame = CGRectMake(10, 300, 150, 20);
+    passwordConfirmationLabel.frame = CGRectMake(20, 300, 150, 20);
     passwordConfirmationLabel.backgroundColor = [UIColor clearColor];
-    passwordConfirmationLabel.font = [UIFont fontWithName:@"ProximaNova-Semi-Bold" size:15];
+    passwordConfirmationLabel.font = [UIFont fontWithName:APP_FONT size:14];
     passwordConfirmationLabel.textColor = [UIColor whiteColor];
     [passwordConfirmationLabel setTextAlignment:NSTextAlignmentLeft];
     passwordConfirmationLabel.text = @"New Password:";
@@ -89,8 +89,8 @@
     
     //Initalize the TextFields and keyboard
     
-    firstName.font = [UIFont fontWithName:APP_FONT size:15];
-    firstName.frame = CGRectMake(75, 150, 235, 24);
+    firstName.font = [UIFont fontWithName:APP_FONT size:13];
+    firstName.frame = CGRectMake(125, 150, 235, 24);
     firstName.textColor = [UIColor whiteColor];
     firstName.text = [NSString stringWithFormat:@"%@ %@", [TripManager getInstance].currentUser[@"user"][@"first_name"], [TripManager getInstance].currentUser[@"user"][@"last_name"]];
     [firstName setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -100,11 +100,11 @@
     
     UILabel *underlineName = [[UILabel alloc] init];
     underlineName.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1"]];
-    underlineName.frame = CGRectMake(10, 175, 300, 1);
+    underlineName.frame = CGRectMake(125, 175, 170, 1);
     [self.view addSubview:underlineName];
     
-    email.font = [UIFont fontWithName:APP_FONT size:15];
-    email.frame = CGRectMake(75, 200, 235, 24);
+    email.font = [UIFont fontWithName:APP_FONT size:13];
+    email.frame = CGRectMake(125, 200, 235, 24);
     email.textColor = [UIColor whiteColor];
     email.text = [TripManager getInstance].currentUser[@"user"][@"email"];
     [email setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -114,11 +114,11 @@
     
     UILabel *underlineEmail = [[UILabel alloc] init];
     underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1"]];
-    underlineEmail.frame = CGRectMake(10, 225, 300, 1);
+    underlineEmail.frame = CGRectMake(125, 225, 170, 1);
     [self.view addSubview:underlineEmail];
     
-    oldPassword.font = [UIFont fontWithName:APP_FONT size:15];
-    oldPassword.frame = CGRectMake(150, 250, 160, 24);
+    oldPassword.font = [UIFont fontWithName:APP_FONT size:13];
+    oldPassword.frame = CGRectMake(125, 250, 160, 24);
     oldPassword.textColor = [UIColor whiteColor];
     oldPassword.placeholder = @"(Optional)";
     [oldPassword setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -128,11 +128,11 @@
     
     UILabel *underlinePassword = [[UILabel alloc] init];
     underlinePassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1"]];
-    underlinePassword.frame = CGRectMake(10, 275, 300, 1);
+    underlinePassword.frame = CGRectMake(125, 275, 170, 1);
     [self.view addSubview:underlinePassword];
     
-    changePassword.font = [UIFont fontWithName:APP_FONT size:15];
-    changePassword.frame = CGRectMake(150, 300, 160, 24);
+    changePassword.font = [UIFont fontWithName:APP_FONT size:13];
+    changePassword.frame = CGRectMake(125, 300, 160, 24);
     changePassword.textColor = [UIColor whiteColor];
     changePassword.placeholder = @"(Optional)";
     [changePassword setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -142,7 +142,7 @@
     
     UILabel *underlinePasswordConfirmation = [[UILabel alloc] init];
     underlinePasswordConfirmation.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"divider-mid-1"]];
-    underlinePasswordConfirmation.frame = CGRectMake(10, 325, 300, 1);
+    underlinePasswordConfirmation.frame = CGRectMake(125, 325, 170, 1);
     [self.view addSubview:underlinePasswordConfirmation];
     
     //Initalize the Sign Out button
