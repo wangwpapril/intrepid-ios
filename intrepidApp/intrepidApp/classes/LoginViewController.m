@@ -150,8 +150,8 @@
     }
     
 	// Do any additional setup after loading the view.
-//    email.text = @"cherry@swishlabs.co";
-//    password.text = @"pass@swish123";
+    email.text = @"cherry@swishlabs.co";
+    password.text = @"pass@swish123";
 }
 
 - (void) moveAllSubviewsDown{

@@ -9,16 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "MenuController.h"
 
-@interface SettingsViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UIButton *editPhoto;
+@interface SettingsViewController : UIViewController <UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UIButton *signOutButton;
-@property(weak, nonatomic) IBOutlet UITextField *name;
+@property(weak, nonatomic) IBOutlet UITextField *firstName;
+@property(weak, nonatomic) IBOutlet UITextField *lastName;
 @property(weak, nonatomic) IBOutlet UITextField *email;
-@property(weak, nonatomic) IBOutlet UITextField *password;
+@property(weak, nonatomic) IBOutlet UITextField *oldPassword;
+@property(weak, nonatomic) IBOutlet UITextField *changePassword;
 @property (nonatomic, strong) MenuController *mController;
 
 @property BOOL newMedia;
-- (IBAction)useCameraRoll:(id)sender;
 - (IBAction)signout:(id)sender;
 
 @end
