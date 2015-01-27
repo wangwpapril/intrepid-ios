@@ -42,7 +42,7 @@ green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 // system
-#define kOFFSET_FOR_KEYBOARD 80.0
+#define kOFFSET_FOR_KEYBOARD 50.0
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 // Server URLs
