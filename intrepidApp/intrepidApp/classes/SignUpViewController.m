@@ -75,13 +75,13 @@
     [signUpButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     
     
-    [signUpButton setTitleColor:UIColorFromRGB(0xe7eee2) forState:UIControlStateNormal];
+    [signUpButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     signUpButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:14];
     signUpButton.frame = CGRectMake(68, self.view.frame.size.height - 230, 183, 36);
     [self.view addSubview:signUpButton];
 
     firstName.font = [UIFont fontWithName:APP_FONT size:14];
-    firstName.textColor = UIColorFromRGB(0xe7eee2);
+    firstName.textColor = [UIColor whiteColor];
     firstName.placeholder = @"FIRST NAME";
     [firstName setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [firstName setReturnKeyType:UIReturnKeyDone];
@@ -91,7 +91,7 @@
     [self.view addSubview:underlineFirstName];
     
     lastName.font = [UIFont fontWithName:APP_FONT size:14];
-    lastName.textColor = UIColorFromRGB(0xe7eee2);
+    lastName.textColor = [UIColor whiteColor];
     lastName.placeholder = @"LAST NAME";
     [lastName setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [lastName setReturnKeyType:UIReturnKeyDone];
@@ -101,7 +101,7 @@
     [self.view addSubview:underlineLastName];
     
     country.font = [UIFont fontWithName:APP_FONT size:14];
-    country.textColor = UIColorFromRGB(0xe7eee2);
+    country.textColor = [UIColor whiteColor];
     country.placeholder = @"COUNTRY";
     [country setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [country setReturnKeyType:UIReturnKeyDone];
@@ -119,7 +119,7 @@
     [self.view addSubview:underlineCountry];
     
     policyNumber.font = [UIFont fontWithName:APP_FONT size:14];
-    policyNumber.textColor = UIColorFromRGB(0xe7eee2);
+    policyNumber.textColor = [UIColor whiteColor];
     policyNumber.placeholder = @"POLICY NUMBER";
     [policyNumber setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [policyNumber setReturnKeyType:UIReturnKeyDone];
@@ -129,7 +129,7 @@
     [self.view addSubview:underlinePolicyNumber];
     
     username.font = [UIFont fontWithName:APP_FONT size:14];
-    username.textColor = UIColorFromRGB(0xe7eee2);
+    username.textColor = [UIColor whiteColor];
     username.placeholder = @"USERNAME";
     [username setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [username setReturnKeyType:UIReturnKeyDone];
@@ -139,7 +139,7 @@
     [self.view addSubview:underlineUsername];
     
     email.font = [UIFont fontWithName:APP_FONT size:14];
-    email.textColor = UIColorFromRGB(0xe7eee2);
+    email.textColor = [UIColor whiteColor];
     email.placeholder = @"EMAIL";
     [email setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [email setReturnKeyType:UIReturnKeyDone];
@@ -149,7 +149,7 @@
     [self.view addSubview:underlineEmail];
     
     password.font = [UIFont fontWithName:APP_FONT size:14];
-    password.textColor = UIColorFromRGB(0xe7eee2);
+    password.textColor = [UIColor whiteColor];
     password.placeholder = @"PASSWORD";
     [password setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [password setReturnKeyType:UIReturnKeyDone];
@@ -159,17 +159,17 @@
     [self.view addSubview:underlinePassword];
     
     acceptanceLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:11];
-    acceptanceLabel.textColor = UIColorFromRGB(0xe7eee2);
+    acceptanceLabel.textColor = [UIColor whiteColor];
     acceptanceLabel.textAlignment = NSTextAlignmentCenter;
     acceptanceLabel.frame = CGRectMake(68, self.view.frame.size.height - 170, 183, 21);
     [self.view addSubview:acceptanceLabel];
     
-    NSMutableAttributedString *termsOfServiceString = [[NSMutableAttributedString alloc] initWithString:@"Terms of Service"];
+    NSMutableAttributedString *termsOfServiceString = [[NSMutableAttributedString alloc] initWithString:@"Terms of Service, "];
     
     // making text property to underline text-
     [termsOfServiceString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [termsOfServiceString length])];
     [termsOfService setAttributedTitle: termsOfServiceString forState:UIControlStateNormal];
-    [termsOfServiceString addAttribute:NSForegroundColorAttributeName value:UIColorFromRGB(0xe7eee2) range:NSMakeRange(0,[termsOfServiceString length])];
+    [termsOfServiceString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0,[termsOfServiceString length])];
     termsOfService.titleLabel.font = [UIFont fontWithName:APP_FONT size:11];
     termsOfService.frame = CGRectMake(70, self.view.frame.size.height - 150, 111, 19);
     [self.view addSubview:termsOfService];
@@ -179,7 +179,7 @@
     // making text property to underline text-
     [privacyPolicyString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [privacyPolicyString length])];
     [privacyPolicy setAttributedTitle: privacyPolicyString forState:UIControlStateNormal];
-    [privacyPolicyString addAttribute:NSForegroundColorAttributeName value:UIColorFromRGB(0xe7eee2) range:NSMakeRange(0,[privacyPolicyString length])];
+    [privacyPolicyString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0,[privacyPolicyString length])];
     privacyPolicy.titleLabel.font = [UIFont fontWithName:APP_FONT size:11];
     privacyPolicy.frame = CGRectMake(133, self.view.frame.size.height - 150, 102, 19);
     privacyPolicy.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;

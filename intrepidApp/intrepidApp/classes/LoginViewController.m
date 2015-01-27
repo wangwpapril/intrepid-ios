@@ -125,7 +125,7 @@
     // using text on button
     [signupButton setAttributedTitle:signupString forState:UIControlStateNormal];
     [signupString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.53 green:0.73 blue:0.14 alpha:1] range:NSMakeRange(0,[signupString length])];
-    signupButton.frame = CGRectMake(77, loginButton.frame.origin.y + 50, 166, 15);
+    signupButton.frame = CGRectMake(77, loginButton.frame.origin.y + 55, 166, 15);
     signupButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:13];
     signupButton.backgroundColor = [UIColor clearColor];
     
