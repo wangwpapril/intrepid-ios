@@ -158,10 +158,10 @@
     underlinePassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlinePassword];
     
-    acceptanceLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:14];
+    acceptanceLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:11];
     acceptanceLabel.textColor = UIColorFromRGB(0xe7eee2);
     acceptanceLabel.textAlignment = NSTextAlignmentCenter;
-    acceptanceLabel.frame = CGRectMake(68, self.view.frame.size.height - 150, 183, 21);
+    acceptanceLabel.frame = CGRectMake(68, self.view.frame.size.height - 170, 183, 21);
     [self.view addSubview:acceptanceLabel];
     
     NSMutableAttributedString *termsOfServiceString = [[NSMutableAttributedString alloc] initWithString:@"Terms of Service"];
@@ -170,8 +170,8 @@
     [termsOfServiceString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [termsOfServiceString length])];
     [termsOfService setAttributedTitle: termsOfServiceString forState:UIControlStateNormal];
     [termsOfServiceString addAttribute:NSForegroundColorAttributeName value:UIColorFromRGB(0xe7eee2) range:NSMakeRange(0,[termsOfServiceString length])];
-    termsOfService.titleLabel.font = [UIFont fontWithName:APP_FONT size:13];
-    termsOfService.frame = CGRectMake(60, self.view.frame.size.height - 130, 111, 19);
+    termsOfService.titleLabel.font = [UIFont fontWithName:APP_FONT size:11];
+    termsOfService.frame = CGRectMake(70, self.view.frame.size.height - 150, 111, 19);
     [self.view addSubview:termsOfService];
     
     NSMutableAttributedString *privacyPolicyString = [[NSMutableAttributedString alloc] initWithString:@"Privacy Policy"];
@@ -180,8 +180,8 @@
     [privacyPolicyString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [privacyPolicyString length])];
     [privacyPolicy setAttributedTitle: privacyPolicyString forState:UIControlStateNormal];
     [privacyPolicyString addAttribute:NSForegroundColorAttributeName value:UIColorFromRGB(0xe7eee2) range:NSMakeRange(0,[privacyPolicyString length])];
-    privacyPolicy.titleLabel.font = [UIFont fontWithName:APP_FONT size:13];
-    privacyPolicy.frame = CGRectMake(143, self.view.frame.size.height - 130, 102, 19);
+    privacyPolicy.titleLabel.font = [UIFont fontWithName:APP_FONT size:11];
+    privacyPolicy.frame = CGRectMake(133, self.view.frame.size.height - 150, 102, 19);
     privacyPolicy.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [self.view addSubview:privacyPolicy];
     
