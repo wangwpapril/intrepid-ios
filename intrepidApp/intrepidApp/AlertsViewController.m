@@ -35,6 +35,7 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     
     tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.bounds.size.height - 64) style:UITableViewStylePlain];
+    tableList.tableFooterView = [[UIView alloc] init];
     [self.view addSubview:tableList];
     tableList.delegate = self;
     tableList.dataSource = self;
