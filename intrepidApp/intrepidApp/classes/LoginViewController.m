@@ -149,10 +149,6 @@
     if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
         self.navigationController.navigationBar.translucent = NO;
     }
-    
-	// Do any additional setup after loading the view.
-    email.text = @"cherry@swishlabs.co";
-    password.text = @"pass@swish123";
 }
 
 - (void) moveAllSubviewsDown{
@@ -168,6 +164,11 @@
 }
 
 - (IBAction)login:(id)sender {
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityIndicator.center = self.view.center;
+    [self.view addSubview:self.activityIndicator];
+    [self.activityIndicator startAnimating];
+    
     NSDictionary *body = @{@"user": @{@"email": self.email.text,
                                       @"password": self.password.text}
                            };
@@ -184,8 +185,10 @@
             NSLog(@"%@", responseBody);
             if (responseBody[@"user"]) {
                 [RequestBuilder fetchUser:responseBody];
+                [self.activityIndicator stopAnimating];
                 [self performSegueWithIdentifier:@"toTrips" sender:self];
             } else {
+                [self.activityIndicator stopAnimating];
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
                                                                     message:responseBody[@"error"][@"message"][0]
                                                                    delegate:nil
@@ -194,6 +197,7 @@
                 [alertView show];
             }
         } else {
+            [self.activityIndicator stopAnimating];            
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
                                                                 message:error.localizedDescription
                                                                delegate:nil

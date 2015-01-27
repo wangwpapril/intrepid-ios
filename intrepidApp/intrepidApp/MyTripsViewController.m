@@ -188,10 +188,6 @@
 
  - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
-//    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-//    self.activityIndicator.center = self.view.center;
-//    [self.view addSubview:self.activityIndicator];
-//    [self.activityIndicator startAnimating];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender {

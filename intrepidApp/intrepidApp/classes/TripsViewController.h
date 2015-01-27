@@ -19,5 +19,6 @@
 @property (nonatomic, strong) UIButton *xButton;
 @property (nonatomic, strong) NSMutableArray *cities;
 @property (nonatomic, strong) DestinationEntity *selectedTrip;
+@property (nonatomic,retain) UIActivityIndicatorView *activityIndicator;
 
 @end

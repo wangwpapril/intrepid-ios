@@ -250,9 +250,17 @@
             [self sendAlertWithError:@"Password must be at least 7 characters."];
             return;
         } else {
+            self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+            self.activityIndicator.center = self.view.center;
+            [self.view addSubview:self.activityIndicator];
+            [self.activityIndicator startAnimating];
             [self resetPassword];
         }
     } else {
+        self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        self.activityIndicator.center = self.view.center;
+        [self.view addSubview:self.activityIndicator];
+        [self.activityIndicator startAnimating];
         [self updateProfile];
     }
 }
@@ -346,6 +354,7 @@
 }
 
 - (void)sendAlertWithError:(NSString *)errorString {
+    [self.activityIndicator stopAnimating];
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
                                                         message:errorString
                                                        delegate:nil

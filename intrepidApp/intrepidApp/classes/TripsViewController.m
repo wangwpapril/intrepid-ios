@@ -69,6 +69,11 @@
                                                  name:@"TRIP_UPDATE"
                                                object:nil];
     
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityIndicator.color = [UIColor grayColor];
+    self.activityIndicator.center = self.view.center;
+    [self.view addSubview:self.activityIndicator];
+    [self.activityIndicator startAnimating];
     [RequestBuilder fetchDestinations];
 }
 
@@ -85,10 +90,12 @@
 - (void)populateContentArray {
     TripManager *manager = [TripManager getInstance];
     tripsArray = [manager getDestinations];
+    [self.activityIndicator stopAnimating];
     [tableList reloadData];
 }
 
 - (void)populateTrip {
+    [self.activityIndicator stopAnimating];
     NSArray *savedCities = [[TripManager getInstance] getSavedCities];
     for (CityEntity *city in savedCities) {
         if ([city.destinationId isEqualToNumber:selectedTrip.destinationId]) {
@@ -174,6 +181,11 @@
         selectedTrip = [tripsArray objectAtIndex:indexPath.row];
     }
     
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityIndicator.color = [UIColor grayColor];
+    self.activityIndicator.center = self.view.center;
+    [self.view addSubview:self.activityIndicator];
+    [self.activityIndicator startAnimating];
     [RequestBuilder fetchTrip:[NSString stringWithFormat:@"%@", selectedTrip.destinationId]];
 }
 

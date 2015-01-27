@@ -31,6 +31,7 @@
 @property BOOL newMedia;
 @property (strong, nonatomic) NSArray *countryArray;
 @property (strong, nonatomic) NSString *selectedCountry;
+@property (nonatomic,retain) UIActivityIndicatorView *activityIndicator;
 
 - (IBAction)signup:(id)sender;
 

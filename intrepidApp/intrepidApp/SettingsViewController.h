@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *oldPassword;
 @property (weak, nonatomic) IBOutlet UITextField *changePassword;
 @property (nonatomic, strong) MenuController *mController;
+@property (nonatomic,retain) UIActivityIndicatorView *activityIndicator;
 
 @property BOOL newMedia;
 - (IBAction)update:(id)sender;

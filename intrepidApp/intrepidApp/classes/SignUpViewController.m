@@ -229,6 +229,11 @@
         return;
     }
     
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityIndicator.center = self.view.center;
+    [self.view addSubview:self.activityIndicator];
+    [self.activityIndicator startAnimating];
+    
     NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@companies/checkGroupNum", BASE_URL]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
     request.HTTPMethod = @"POST";
@@ -352,6 +357,7 @@
 }
 
 - (void)sendAlertWithError:(NSString *)errorString {
+    [self.activityIndicator stopAnimating];
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
                                                         message:errorString
                                                        delegate:nil
