@@ -130,7 +130,7 @@
     [scrollView addSubview:mexicoEmbassyDescription];
     
     UILabel *healthOverviewDescription = [[UILabel alloc] init];
-    healthOverviewDescription.frame = CGRectMake(345, self.view.frame.size.height - 190, 275.0, 275.0);
+    healthOverviewDescription.frame = CGRectMake(345, self.view.frame.size.height - 175, 250.0, 275.0);
     healthOverviewDescription.font = [UIFont fontWithName:APP_FONT size:13];
     healthOverviewDescription.backgroundColor = [UIColor clearColor];
     healthOverviewDescription.textColor = [UIColor whiteColor];

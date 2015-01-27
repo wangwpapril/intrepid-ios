@@ -80,7 +80,7 @@
     signUpButton.frame = CGRectMake(68, self.view.frame.size.height - 230, 183, 36);
     [self.view addSubview:signUpButton];
 
-    firstName.font = [UIFont fontWithName:APP_FONT size:14];
+    firstName.font = [UIFont fontWithName:APP_FONT size:13];
     firstName.textColor = [UIColor whiteColor];
     firstName.placeholder = @"FIRST NAME";
     [firstName setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -90,7 +90,7 @@
     underlineFirstName.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlineFirstName];
     
-    lastName.font = [UIFont fontWithName:APP_FONT size:14];
+    lastName.font = [UIFont fontWithName:APP_FONT size:13];
     lastName.textColor = [UIColor whiteColor];
     lastName.placeholder = @"LAST NAME";
     [lastName setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -100,7 +100,7 @@
     underlineLastName.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlineLastName];
     
-    country.font = [UIFont fontWithName:APP_FONT size:14];
+    country.font = [UIFont fontWithName:APP_FONT size:13];
     country.textColor = [UIColor whiteColor];
     country.placeholder = @"COUNTRY";
     [country setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -118,7 +118,7 @@
     underlineCountry.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlineCountry];
     
-    policyNumber.font = [UIFont fontWithName:APP_FONT size:14];
+    policyNumber.font = [UIFont fontWithName:APP_FONT size:13];
     policyNumber.textColor = [UIColor whiteColor];
     policyNumber.placeholder = @"POLICY NUMBER";
     [policyNumber setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -128,7 +128,7 @@
     underlinePolicyNumber.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlinePolicyNumber];
     
-    username.font = [UIFont fontWithName:APP_FONT size:14];
+    username.font = [UIFont fontWithName:APP_FONT size:13];
     username.textColor = [UIColor whiteColor];
     username.placeholder = @"USERNAME";
     [username setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -138,7 +138,7 @@
     underlineUsername.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlineUsername];
     
-    email.font = [UIFont fontWithName:APP_FONT size:14];
+    email.font = [UIFont fontWithName:APP_FONT size:13];
     email.textColor = [UIColor whiteColor];
     email.placeholder = @"EMAIL";
     [email setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -148,7 +148,7 @@
     underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlineEmail];
     
-    password.font = [UIFont fontWithName:APP_FONT size:14];
+    password.font = [UIFont fontWithName:APP_FONT size:13];
     password.textColor = [UIColor whiteColor];
     password.placeholder = @"PASSWORD";
     [password setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
