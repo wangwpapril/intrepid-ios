@@ -212,13 +212,6 @@ static NSString *baseURL = @"https://staging.intrepid247.com/v1/";
 }
 
 - (IBAction)signup:(id)sender {
-    firstName.text = @"Test";
-    lastName.text = @"User";
-    email.text = @"test@gmail.com";
-    username.text = @"test";
-    password.text = @"testuser";
-    policyNumber.text = @"42424242";
-    
     NSDictionary *body = @{@"company": @{@"group_num": policyNumber.text}};
     
     if (firstName.text.length < 1 || lastName.text.length < 1 || email.text.length < 1 || country.text.length < 1 || username.text.length < 1 || password.text.length < 1 || policyNumber.text.length < 1) {
@@ -251,20 +244,10 @@ static NSString *baseURL = @"https://staging.intrepid247.com/v1/";
             if (responseBody[@"company"]) {
                 [self createUserWithCompanyId:responseBody[@"company"][@"group_number"]];
             } else {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-                                                                    message:responseBody[@"error"][@"message"][0]
-                                                                   delegate:nil
-                                                          cancelButtonTitle:@"OK"
-                                                          otherButtonTitles:nil];
-                [alertView show];
+                [self sendAlertWithError:responseBody[@"error"][@"message"][0]];
             }
         } else {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-                                                                message:error.localizedDescription
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil];
-            [alertView show];
+            [self sendAlertWithError:error.localizedDescription];
         }
     }];
 }
@@ -293,23 +276,50 @@ static NSString *baseURL = @"https://staging.intrepid247.com/v1/";
             NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             NSLog(@"%@", responseBody);
             if (responseBody[@"user"]) {
-//                [RequestBuilder fetchUser:responseBody];
-//                [self performSegueWithIdentifier:@"toTrips" sender:self];
+                [self sendEmailWithActivationCode:responseBody[@"user"][@"activation_code"]];
             } else {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-                                                                    message:responseBody[@"error"][@"message"][0]
-                                                                   delegate:nil
-                                                          cancelButtonTitle:@"OK"
-                                                          otherButtonTitles:nil];
-                [alertView show];
+                [self sendAlertWithError:responseBody[@"error"][@"message"][0]];
             }
         } else {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-                                                                message:error.localizedDescription
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil];
-            [alertView show];
+            [self sendAlertWithError:error.localizedDescription];
+        }
+    }];
+}
+
+- (void)sendEmailWithActivationCode:(NSString *)activationCode {
+    NSDictionary *body = @{@"key": @"2Hw47otRRKIaEQ3sQwoXAg",
+                           @"message": @{
+                               @"text": [NSString stringWithFormat:@"Hi %@,\n\nThank you for signing up with ACE Travel Smart.\nPlease click on the confirmation code below to activate your account.\nhttps://app-staging.intrepid247.com/?#/users/activate/%@", firstName.text, activationCode],
+                               @"subject": @"Thank you for signing up",
+                               @"from_email": @"do-not-reply@acetravelsmart.com",
+                               @"from_name": @"ACE Travel Smart",
+                               @"to": @[@{@"email": email.text,
+                                          @"name": firstName.text}],
+                               },
+                           };
+    
+    NSURL *requestURL = [NSURL URLWithString:@"https://mandrillapp.com/api/1.0/messages/send.json"];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
+    request.HTTPMethod = @"POST";
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    request.HTTPBody = [NSJSONSerialization dataWithJSONObject:body options:0 error:nil];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (!error) {
+            id responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSLog(@"%@", responseBody);
+            if ([responseBody isKindOfClass:[NSArray class]]) {
+                if ([responseBody[0][@"status"] isEqual:@"sent"]) {
+                    [self sendAlertWithError:@"Thank you for signing up. Please check your email to activate your account."];
+                    [self.navigationController popViewControllerAnimated:YES];
+                } else {
+                    [self sendAlertWithError:@"Please try again later."];
+                }
+            } else if ([responseBody isKindOfClass:[NSDictionary class]]) {
+                [self sendAlertWithError:@"Please try again later."];
+            }
+        } else {
+            [self sendAlertWithError:error.localizedDescription];
         }
     }];
 }
