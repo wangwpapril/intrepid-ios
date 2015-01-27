@@ -37,6 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[UITextField appearance] setTintColor:[UIColor whiteColor]];
     [self.navigationController setNavigationBarHidden:YES];
     self.navigationItem.hidesBackButton = YES;
     

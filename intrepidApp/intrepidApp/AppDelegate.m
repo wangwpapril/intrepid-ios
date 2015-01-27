@@ -17,6 +17,7 @@
 
 - (void)customizeAppearance
 {
+    [[UITextField appearance] setTintColor:[UIColor colorWithRed:0.2 green:0.25 blue:0.28 alpha:1]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHue:0.57 saturation:0.29 brightness:0.28 alpha:1]];
     if([[[UIDevice currentDevice] systemVersion] floatValue] > 8.0) {
         // for iOS 7 and earlier, this has been implemented in LoginViewController.m

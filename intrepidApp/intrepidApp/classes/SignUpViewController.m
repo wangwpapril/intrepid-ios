@@ -50,7 +50,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    [[UITextField appearance] setTintColor:[UIColor whiteColor]];
     //set up background
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"login-background"] drawInRect:self.view.bounds];
