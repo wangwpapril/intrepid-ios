@@ -35,6 +35,10 @@
     UIGraphicsEndImageContext();
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
+    UISwipeGestureRecognizer *swipeUpGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeUpFrom:)];
+    swipeUpGestureRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
+    [scrollView addGestureRecognizer:swipeUpGestureRecognizer];
 
     //implement scrollview
     scrollView.delegate = self;
@@ -53,7 +57,7 @@
     [self loadCities];
 }
 
--(void)loadCities {
+- (void)loadCities {
     TripManager *manager = [TripManager getInstance];
     
     NSArray *intermediateArray = [manager getSavedCities];
@@ -137,7 +141,6 @@
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * entries, 366.0);
     
     pageControl.numberOfPages = entries;;
-//    [self.activityIndicator stopAnimating];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -186,7 +189,7 @@
 //    [[MenuController getInstance] showMenu];
 }
 
- - (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
@@ -205,6 +208,36 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     pageControlBeingUsed = NO;
+}
+
+- (void)handleSwipeUpFrom:(UIGestureRecognizer*)recognizer {
+    CGPoint touchPoint = [recognizer locationInView:scrollView];
+    NSInteger cityPoint = (int)ceilf(touchPoint.x/320.0) - 1;
+    
+    if (cityPoint < cities.count) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                            message:@"Are you sure you want to delete this trip?"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Cancel"
+                                                  otherButtonTitles:@"Delete", nil];
+        alertView.tag = cityPoint;
+        [alertView show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        CityEntity *city = cities[alertView.tag];
+        [[TripManager getInstance] deleteHealthItemsWithCity:city];
+        [[TripManager getInstance] deleteEmbassyItemsWithCity:city];
+        [[TripManager getInstance] deleteCurrencyItemsWithCity:city];
+        [[TripManager getInstance] deleteAlertItemsWithCity:city];
+        [[TripManager getInstance].managedObjectContext deleteObject:city]; // delete object
+        for (id object in scrollView.subviews) {
+            [object removeFromSuperview];
+        }
+        [self loadCities];
+    }
 }
 
 @end
