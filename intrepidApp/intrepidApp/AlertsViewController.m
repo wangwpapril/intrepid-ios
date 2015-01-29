@@ -42,7 +42,16 @@
     
     CityEntity *currentCity = [MenuController getInstance].city;
     alertsArray = [[TripManager getInstance] getAlertItemsWithCity:currentCity];
-    [tableList reloadData];
+    if (alertsArray.count < 1) {
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 200, 320, 50)];
+        titleLabel.font = [UIFont fontWithName:APP_FONT_BOLD size:18];
+        titleLabel.textColor = APP_TEXT_COLOR;
+        titleLabel.textAlignment = NSTextAlignmentCenter;
+        titleLabel.text = @"No alerts available.";
+        [self.view addSubview:titleLabel];
+    } else {
+        [tableList reloadData];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
