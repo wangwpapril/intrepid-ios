@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EmbassyEntity.h"
 
 @interface EmbassyCell : UITableViewCell
-
 
 @property (nonatomic, strong) UIImageView *flagLabel;
 @property (nonatomic, strong) UILabel *countryLabel;
 
-- (void)setupWithImageName:(NSString *)image withCountry:(NSString *)country;
+- (void)setupWithEmbassy:(EmbassyEntity *)embassy;
+
 @end

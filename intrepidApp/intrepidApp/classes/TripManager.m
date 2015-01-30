@@ -161,6 +161,23 @@ static TripManager *instance =nil;
     return destination;
 }
 
+- (DestinationEntity *)getDestinationItemWithCountryName:(NSString *)countryName {
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:@"DestinationEntity" inManagedObjectContext:managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"name == %@", countryName]];
+    [request setEntity:entityDescription];
+    [request setFetchLimit:1];
+    
+    NSError *error;
+    NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
+    DestinationEntity *destination;
+    if (intermediateArray.count > 0) {
+        destination = intermediateArray[0];
+    }
+    return destination;
+}
+
 - (void)deleteAllObjects:(NSString *)entityDescription  {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:entityDescription inManagedObjectContext:self.managedObjectContext];

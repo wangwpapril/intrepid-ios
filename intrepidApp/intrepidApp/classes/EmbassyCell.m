@@ -7,6 +7,8 @@
 //
 
 #import "EmbassyCell.h"
+#import "UIImageView+WebCache.h"
+#import "TripManager.h"
 
 @implementation EmbassyCell
 
@@ -26,6 +28,8 @@
 - (void)initializeViews {
     // flag
     flagLabel = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 30, 30)];
+    flagLabel.layer.cornerRadius = 5;
+    flagLabel.layer.masksToBounds = YES;
     [self addSubview:flagLabel];
     
     // country
@@ -33,18 +37,27 @@
     countryLabel.font = [UIFont fontWithName:APP_FONT size:16];
     countryLabel.textColor = APP_TEXT_COLOR;
     [self addSubview:countryLabel];
+}
+
+- (void)setupWithEmbassy:(EmbassyEntity *)embassy {
+    DestinationEntity *destination = [[TripManager getInstance] getDestinationItemWithCountryName:embassy.country];
     
-}
-
-- (void)setupWithImageName:(NSString *)image withCountry:(NSString *)country{
-    flagLabel.image = [UIImage imageNamed:image];
-    countryLabel.text = country;
-}
-
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
+    if (destination) {
+        double scaleFactor = [UIScreen mainScreen].scale;
+        if (scaleFactor > 2.9 && ![destination.flagImage3x isEqualToString:@""]) {
+            [flagLabel sd_setImageWithURL:[NSURL URLWithString:destination.flagImage3x] placeholderImage:[UIImage imageNamed:@"unused"]];
+        } else if (![destination.flagImage2x isEqualToString:@""]) {
+            [flagLabel sd_setImageWithURL:[NSURL URLWithString:destination.flagImage2x] placeholderImage:[UIImage imageNamed:@"unused"]];
+        } else if (![destination.flagImage1x isEqualToString:@""]) {
+            [flagLabel sd_setImageWithURL:[NSURL URLWithString:destination.flagImage1x] placeholderImage:[UIImage imageNamed:@"unused"]];
+        } else {
+            flagLabel.image = [UIImage imageNamed:@"unused"];
+        }
+    } else {
+        flagLabel.image = [UIImage imageNamed:@"unused"];
+    }
+    
+    countryLabel.text = embassy.country;
 }
 
 @end

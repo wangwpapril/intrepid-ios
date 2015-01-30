@@ -105,15 +105,7 @@
     }
     
     EmbassyEntity *embassy = [embassyArray objectAtIndex:indexPath.row];
-    [cell setupWithImageName:embassy.flag withCountry:embassy.country]; // dsnt exist yet
-    
-    UIView *bgColorView = [[UIView alloc] init];
-    [bgColorView setBackgroundColor:UIColorFromRGB(0xdaf1f4)];
-    [cell setSelectedBackgroundView:bgColorView];
-    
-    if (cell.selected) {
-        cell.detailTextLabel.font = [UIFont fontWithName:APP_FONT_BOLD size:16];
-    }
+    [cell setupWithEmbassy:embassy];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
