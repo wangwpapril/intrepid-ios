@@ -9,6 +9,8 @@
 #import "SlidingTextView.h"
 #import "QuartzCore/QuartzCore.h"
 #import "UIImageView+WebCache.h"
+#import "TripManager.h"
+#import "DestinationEntity.h"
 
 @implementation SlidingTextView
 
@@ -67,7 +69,6 @@
  */
     
     [self addSubview:scroll];
-    
 }
 
 - (void)addTableViewWithRows:(NSInteger)rows withTableView:(UITableView *)tableView {
@@ -119,6 +120,100 @@
     }
     
     scroll.contentSize = CGSizeMake(320, y + 80);
+}
+
+- (void)addCurrencyWithArray:(NSMutableArray *)currencyArray {
+    NSLog(@"%@", currencyArray);
+    self.currency = currencyArray[0];
+    TripManager *manager = [TripManager getInstance];
+    
+    self.userField = [[UITextField alloc] initWithFrame:CGRectMake(10, 273, 200, 30)];
+    self.userField.borderStyle = UITextBorderStyleRoundedRect;
+    self.userField.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
+    self.userField.textColor = APP_TEXT_COLOR;
+    self.userField.textAlignment = NSTextAlignmentRight;
+    self.userField.tintColor = [UIColor grayColor];
+    self.userField.keyboardType = UIKeyboardTypeDecimalPad;
+    self.userField.delegate = self.parentViewController;
+    self.userField.text = @"1.00";
+    [self.userField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [scroll addSubview:self.userField];
+    
+    UIImageView *userImageView = [[UIImageView alloc] initWithFrame:CGRectMake(220, 273, 30, 30)];
+    userImageView.layer.cornerRadius = 5;
+    userImageView.layer.masksToBounds = YES;
+    [scroll addSubview:userImageView];
+    
+    DestinationEntity *destination = [manager getDestinationItemWithCurrencyCode:manager.currentUser[@"user"][@"currency_code"]];
+    if (destination) {
+        double scaleFactor = [UIScreen mainScreen].scale;
+        if (scaleFactor > 2.9 && ![destination.currencyImage3x isEqualToString:@""]) {
+            [userImageView sd_setImageWithURL:[NSURL URLWithString:destination.currencyImage3x] placeholderImage:[UIImage imageNamed:@"unused"]];
+        } else if (![destination.currencyImage2x isEqualToString:@""]) {
+            [userImageView sd_setImageWithURL:[NSURL URLWithString:destination.currencyImage2x] placeholderImage:[UIImage imageNamed:@"unused"]];
+        } else if (![destination.currencyImage1x isEqualToString:@""]) {
+            [userImageView sd_setImageWithURL:[NSURL URLWithString:destination.currencyImage1x] placeholderImage:[UIImage imageNamed:@"unused"]];
+        } else {
+            userImageView.image = [UIImage imageNamed:@"unused"];
+        }
+    } else {
+        userImageView.image = [UIImage imageNamed:@"unused"];
+    }
+    
+    UILabel *userLabel = [[UILabel alloc] initWithFrame:CGRectMake(260, 273, 50, 30)];
+    userLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
+    userLabel.textColor = APP_TEXT_COLOR;
+    userLabel.text = manager.currentUser[@"user"][@"currency_code"];
+    [scroll addSubview:userLabel];
+
+    
+    
+    self.tripField = [[UITextField alloc] initWithFrame:CGRectMake(10, 320, 200, 30)];
+    self.tripField.borderStyle = UITextBorderStyleRoundedRect;
+    self.tripField.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
+    self.tripField.textColor = APP_TEXT_COLOR;
+    self.tripField.textAlignment = NSTextAlignmentRight;
+    self.tripField.tintColor = [UIColor grayColor];
+    self.tripField.keyboardType = UIKeyboardTypeDecimalPad;
+    self.tripField.delegate = self.parentViewController;
+    self.tripField.text = self.currency.value;
+    [self.tripField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [scroll addSubview:self.tripField];
+    
+    UIImageView *tripImageView = [[UIImageView alloc] initWithFrame:CGRectMake(220, 320, 30, 30)];
+    tripImageView.layer.cornerRadius = 5;
+    tripImageView.layer.masksToBounds = YES;
+    [scroll addSubview:tripImageView];
+    
+    DestinationEntity *destination2 = [manager getDestinationItemWithCurrencyCode:self.currency.country];
+    if (destination2) {
+        double scaleFactor = [UIScreen mainScreen].scale;
+        if (scaleFactor > 2.9 && ![destination2.currencyImage3x isEqualToString:@""]) {
+            [tripImageView sd_setImageWithURL:[NSURL URLWithString:destination2.currencyImage3x] placeholderImage:[UIImage imageNamed:@"unused"]];
+        } else if (![destination2.currencyImage2x isEqualToString:@""]) {
+            [tripImageView sd_setImageWithURL:[NSURL URLWithString:destination2.currencyImage2x] placeholderImage:[UIImage imageNamed:@"unused"]];
+        } else if (![destination2.currencyImage1x isEqualToString:@""]) {
+            [tripImageView sd_setImageWithURL:[NSURL URLWithString:destination2.currencyImage1x] placeholderImage:[UIImage imageNamed:@"unused"]];
+        } else {
+            tripImageView.image = [UIImage imageNamed:@"unused"];
+        }
+    } else {
+        tripImageView.image = [UIImage imageNamed:@"unused"];
+    }
+    
+    UILabel *tripLabel = [[UILabel alloc] initWithFrame:CGRectMake(260, 320, 50, 30)];
+    tripLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
+    tripLabel.textColor = APP_TEXT_COLOR;
+    tripLabel.text = self.currency.country;
+    [scroll addSubview:tripLabel];
+}
+
+- (void)textFieldDidChange:(id)sender {
+    if (sender == self.userField) {
+        self.tripField.text = [NSString stringWithFormat:@"%.2f", self.userField.text.floatValue * self.currency.value.floatValue];
+    } else if (sender == self.tripField) {
+        self.userField.text = [NSString stringWithFormat:@"%.2f", self.tripField.text.floatValue * (1/self.currency.value.floatValue)];
+    }
 }
 
 @end

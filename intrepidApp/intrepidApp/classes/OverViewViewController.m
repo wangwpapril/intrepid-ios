@@ -12,6 +12,7 @@
 #import "RequestBuilder.h"
 #import "CurrencyEntity.h"
 #import "TripManager.h"
+#import "MenuController.h"
 
 @implementation OverViewViewController
 
@@ -76,7 +77,7 @@
     [culture addTextAreaWithText:cultureArray];
     
     SlidingTextView *currency = [[SlidingTextView alloc] initWithFrame:frame];
-    [currency setupWithImageName1x:@"" withImageName2x:@"" withImageName3x:@"" withTitle:@"Currency (approx.)" withIconName:@"currency-icon"];
+    [currency setupWithImageName1x:@"" withImageName2x:@"" withImageName3x:@"" withTitle:@"Currency" withIconName:@"currency-icon"];
     
     // currency table
     tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 273,  320, height - 308)];
@@ -84,7 +85,13 @@
     tableList.delegate = self;
     tableList.scrollEnabled = YES;
     tableList.allowsSelection = NO;
-    [currency addTableViewWithRows:currencyArray.count withTableView:tableList];
+//    [currency addTableViewWithRows:currencyArray.count withTableView:tableList];
+    currency.parentViewController = self;
+    [currency addCurrencyWithArray:currencyArray];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                          action:@selector(handleTap:)];
+    [currency addGestureRecognizer:tap];
     
     NSMutableArray *views = [NSMutableArray arrayWithObjects:history, culture, currency, nil];
     [self addViews:views withVerticalOffset:0];
@@ -94,15 +101,13 @@
     [self addTabs:names];
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        
         self.edgesForExtendedLayout = UIRectEdgeNone;
-        
     } else {
         [self moveAllSubviewsDown];
     }
 }
 
-- (void) moveAllSubviewsDown{
+- (void)moveAllSubviewsDown {
     float barHeight = 45.0;
     for (UIView *view in self.view.subviews) {
         
@@ -114,9 +119,7 @@
     }
 }
 
-
-
--(void)viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     NSIndexPath *indexPath=[NSIndexPath indexPathForRow:1 inSection:0];
     [tableList selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
@@ -151,15 +154,100 @@
     DestinationEntity *destination = [[TripManager getInstance] getDestinationItemWithCurrencyCode:currency.country];
     [cell setupWithCurrency:currency withDestination:destination];
     
-//    UIView *bgColorView = [[UIView alloc] init];
-//    [bgColorView setBackgroundColor:UIColorFromRGB(0xdaf1f4)];
-//    [cell setSelectedBackgroundView:bgColorView];
-//    
-//    if (cell.selected) {
-//        cell.detailTextLabel.font = [UIFont fontWithName:APP_FONT_BOLD size:16];
-//    }
-    
     return cell;
+}
+
+#pragma mark - keyboard stuff
+
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    [theTextField resignFirstResponder];
+    return YES;
+}
+
+- (void)keyboardWillShow {
+    // Animate the current view out of the way
+    if (self.view.frame.origin.y >= 0)
+    {
+        [self setViewMovedUp:YES];
+    }
+}
+
+- (void)keyboardWillHide {
+    if (self.view.frame.origin.y < 0)
+    {
+        [self setViewMovedUp:NO];
+    }
+}
+
+- (void)handleTap:(UITapGestureRecognizer *)recognizer {
+    [self.view endEditing:YES];
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)sender
+{
+    if ([sender isEqual:self])
+    {
+        //move the main view, so that the keyboard does not hide it.
+        if  (self.view.frame.origin.y >= 0)
+        {
+            [self setViewMovedUp:YES];
+        }
+    }
+}
+
+//method to move the view up/down whenever the keyboard is shown/dismissed
+- (void)setViewMovedUp:(BOOL)movedUp
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3]; // if you want to slide up the view
+    
+    CGRect rect = self.view.frame;
+    if (movedUp)
+    {
+        // 1. move the view's origin up so that the text field that will be hidden come above the keyboard
+        // 2. increase the size of the view so that the area behind the keyboard is covered up.
+        rect.origin.y -= kOFFSET_FOR_KEYBOARD;
+        //rect.size.height -= kOFFSET_FOR_KEYBOARD;
+    }
+    else
+    {
+        // revert back to the normal state.
+        rect.origin.y += kOFFSET_FOR_KEYBOARD;
+        //rect.size.height -= kOFFSET_FOR_KEYBOARD;
+    }
+    self.view.frame = rect;
+    
+    [UIView commitAnimations];
+}
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    // register for keyboard notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+    MenuController *mController = [MenuController getInstance];
+    [mController displayMenuWithParent:self];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    // unregister for keyboard notifications while not visible.
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillShowNotification
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillHideNotification
+                                                  object:nil];
 }
 
 @end

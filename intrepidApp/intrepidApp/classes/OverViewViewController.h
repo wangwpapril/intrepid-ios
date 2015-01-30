@@ -8,7 +8,7 @@
 
 #import "ScrollerTabViewController.h"
 
-@interface OverViewViewController : ScrollerTabViewController <UITableViewDelegate, UITableViewDataSource>
+@interface OverViewViewController : ScrollerTabViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
 @property (nonatomic, strong) UITableView *tableList;
 @property (nonatomic, strong) NSMutableArray *currencyArray;
