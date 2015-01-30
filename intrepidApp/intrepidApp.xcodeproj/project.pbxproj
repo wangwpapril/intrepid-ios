@@ -56,7 +56,6 @@
 		68B071EC17A4D7290061E418 /* EmbassyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B071EB17A4D7290061E418 /* EmbassyCell.m */; };
 		68B997E517A2058A00AD62ED /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B997E417A2058A00AD62ED /* WebViewController.m */; };
 		68DB321717C513F70061D0F1 /* EmbassyEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DB321617C513F70061D0F1 /* EmbassyEntity.m */; };
-		68DBAE60179F6CC300D1DE0B /* CurrencyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DBAE5F179F6CC300D1DE0B /* CurrencyCell.m */; };
 		68E4240417926E1E00431908 /* IntreSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E4240317926E1E00431908 /* IntreSearchBar.m */; };
 		7E34777C1791E79300FB86DC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34777B1791E79300FB86DC /* LoginViewController.m */; };
 		7E34777F1791E7A700FB86DC /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34777E1791E7A700FB86DC /* SignUpViewController.m */; };
@@ -183,8 +182,6 @@
 		68B997E417A2058A00AD62ED /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = classes/WebViewController.m; sourceTree = "<group>"; };
 		68DB321517C513F70061D0F1 /* EmbassyEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmbassyEntity.h; path = classes/EmbassyEntity.h; sourceTree = "<group>"; };
 		68DB321617C513F70061D0F1 /* EmbassyEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmbassyEntity.m; path = classes/EmbassyEntity.m; sourceTree = "<group>"; };
-		68DBAE5E179F6CC300D1DE0B /* CurrencyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrencyCell.h; path = classes/CurrencyCell.h; sourceTree = "<group>"; };
-		68DBAE5F179F6CC300D1DE0B /* CurrencyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = CurrencyCell.m; path = classes/CurrencyCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		68E4240217926E1E00431908 /* IntreSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntreSearchBar.h; path = classes/IntreSearchBar.h; sourceTree = "<group>"; };
 		68E4240317926E1E00431908 /* IntreSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntreSearchBar.m; path = classes/IntreSearchBar.m; sourceTree = "<group>"; };
 		7E34777A1791E79300FB86DC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = classes/LoginViewController.h; sourceTree = "<group>"; };
@@ -339,8 +336,6 @@
 			children = (
 				684BB603179F5143004C44C9 /* OverViewViewController.h */,
 				684BB604179F5143004C44C9 /* OverViewViewController.m */,
-				68DBAE5E179F6CC300D1DE0B /* CurrencyCell.h */,
-				68DBAE5F179F6CC300D1DE0B /* CurrencyCell.m */,
 			);
 			name = Overview;
 			sourceTree = "<group>";
@@ -626,7 +621,6 @@
 				684BB609179F539C004C44C9 /* SlidingTextView.m in Sources */,
 				2CB19AE81A754668007CEC79 /* SDWebImagePrefetcher.m in Sources */,
 				2CB19AED1A754668007CEC79 /* UIImageView+HighlightedWebCache.m in Sources */,
-				68DBAE60179F6CC300D1DE0B /* CurrencyCell.m in Sources */,
 				2CB19AB41A730B42007CEC79 /* AlertsViewController.m in Sources */,
 				2CB19AEE1A754668007CEC79 /* UIImageView+WebCache.m in Sources */,
 				68B997E517A2058A00AD62ED /* WebViewController.m in Sources */,

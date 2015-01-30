@@ -8,7 +8,6 @@
 
 #import "OverViewViewController.h"
 #import "SlidingTextView.h"
-#import "CurrencyCell.h"
 #import "RequestBuilder.h"
 #import "CurrencyEntity.h"
 #import "TripManager.h"
