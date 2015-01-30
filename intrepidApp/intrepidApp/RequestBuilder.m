@@ -176,12 +176,8 @@ static NSDictionary * cityDict;
             for (NSString *country in currencyObject[@"rates"]) {
                 if ([country isEqualToString:currencyCode]) {
                     float value = [currencyObject[@"rates"][country] floatValue];
-                    NSString *slicedValue = [NSString stringWithFormat:@"%.2f", value];
+                    NSString *slicedValue = [NSString stringWithFormat:@"%f", value];
                     [[TripManager getInstance] createCurrencyItemWithCity:city Country:country withValue:slicedValue];
-                    
-                    float inverseValue = (1/value);
-                    NSString *inverseSlicedValue = [NSString stringWithFormat:@"%.2f", inverseValue];
-                    [[TripManager getInstance] createCurrencyItemWithCity:city Country:userDict[@"user"][@"currency_code"] withValue:inverseSlicedValue];
                 }
             }
         } else {

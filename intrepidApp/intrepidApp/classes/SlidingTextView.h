@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "OverViewViewController.h"
+#import "CityEntity.h"
 #import "CurrencyEntity.h"
 
 @interface SlidingTextView : UIScrollView {
@@ -23,6 +24,6 @@
 - (void)setupWithImageName1x:(NSString *)image1x withImageName2x:(NSString *)image2x withImageName3x:(NSString *)image3x withTitle:(NSString *)title withIconName:(NSString *)icon;
 - (void)addTableViewWithRows:(NSInteger)rows withTableView:(UITableView *)tableView;
 - (void)addTextAreaWithText:(NSArray *)text;
-- (void)addCurrencyWithArray:(NSMutableArray *)currencyArray;
+- (void)addCurrencyWithCity:(CityEntity *)city;
 
 @end

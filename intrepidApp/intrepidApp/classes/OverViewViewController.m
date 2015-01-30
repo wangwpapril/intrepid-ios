@@ -16,15 +16,12 @@
 
 @implementation OverViewViewController
 
-@synthesize tableList;
-@synthesize currencyArray;
 @synthesize firstLoad;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.view.tag = 0;
-    [self populateCurrencyItems];
     self.navigationItem.title = @"Overview";
          
     NSInteger height = self.view.bounds.size.height;
@@ -78,17 +75,8 @@
     
     SlidingTextView *currency = [[SlidingTextView alloc] initWithFrame:frame];
     [currency setupWithImageName1x:@"" withImageName2x:@"" withImageName3x:@"" withTitle:@"Currency" withIconName:@"currency-icon"];
-    
-    // currency table
-    tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 273,  320, height - 308)];
-    tableList.dataSource = self;
-    tableList.delegate = self;
-    tableList.scrollEnabled = YES;
-    tableList.allowsSelection = NO;
-//    [currency addTableViewWithRows:currencyArray.count withTableView:tableList];
     currency.parentViewController = self;
-    [currency addCurrencyWithArray:currencyArray];
-    
+    [currency addCurrencyWithCity:city];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                           action:@selector(handleTap:)];
     [currency addGestureRecognizer:tap];
@@ -121,40 +109,10 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    NSIndexPath *indexPath=[NSIndexPath indexPathForRow:1 inSection:0];
-    [tableList selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
-        if (firstLoad) {
-            [[MenuController getInstance] showMenu];
-            firstLoad = false;
-        }
-}
-
-- (void)populateCurrencyItems {
-    CityEntity *city = [self getCity];
-    currencyArray = [[TripManager getInstance] getCurrencyItemsWithCity:city];
-}
-
-# pragma mark - TableView Methods
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return currencyArray.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell"];
-    CurrencyCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if(cell == nil) {
-        cell = [[CurrencyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    if (firstLoad) {
+        [[MenuController getInstance] showMenu];
+        firstLoad = false;
     }
-
-    CurrencyEntity *currency = [currencyArray objectAtIndex:indexPath.row];
-    DestinationEntity *destination = [[TripManager getInstance] getDestinationItemWithCurrencyCode:currency.country];
-    [cell setupWithCurrency:currency withDestination:destination];
-    
-    return cell;
 }
 
 #pragma mark - keyboard stuff

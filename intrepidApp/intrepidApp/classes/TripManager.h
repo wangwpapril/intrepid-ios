@@ -104,8 +104,8 @@
 
 - (NSMutableArray *)getHealthItemsWithCity:(CityEntity *)city;
 - (NSMutableArray *)getEmbassyItemsWithCity:(CityEntity *)city;
-- (NSMutableArray *)getCurrencyItemsWithCity:(CityEntity *)city;
 - (NSMutableArray *)getAlertItemsWithCity:(CityEntity *)city;
+- (CurrencyEntity *)getCurrencyItemWithCity:(CityEntity *)city;
 - (DestinationEntity *)getDestinationItemWithCurrencyCode:(NSString *)currencyCode;
 - (void)deleteAllObjects:(NSString *)entityDescription;
 - (void)deleteHealthItemsWithCity:(CityEntity *)city;

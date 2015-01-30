@@ -122,12 +122,11 @@
     scroll.contentSize = CGSizeMake(320, y + 80);
 }
 
-- (void)addCurrencyWithArray:(NSMutableArray *)currencyArray {
-    NSLog(@"%@", currencyArray);
-    if (currencyArray.count > 0) {
-        self.currency = currencyArray[0];
-        TripManager *manager = [TripManager getInstance];
-        
+- (void)addCurrencyWithCity:(CityEntity *)city {
+    TripManager *manager = [TripManager getInstance];
+    self.currency = [manager getCurrencyItemWithCity:city];
+    
+    if (self.currency) {
         self.userField = [[UITextField alloc] initWithFrame:CGRectMake(10, 273, 200, 30)];
         self.userField.borderStyle = UITextBorderStyleRoundedRect;
         self.userField.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
@@ -177,7 +176,7 @@
         self.tripField.tintColor = [UIColor grayColor];
         self.tripField.keyboardType = UIKeyboardTypeDecimalPad;
         self.tripField.delegate = self.parentViewController;
-        self.tripField.text = self.currency.value;
+        self.tripField.text = [NSString stringWithFormat:@"%.2f", self.currency.value.floatValue];
         [self.tripField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
         [scroll addSubview:self.tripField];
         

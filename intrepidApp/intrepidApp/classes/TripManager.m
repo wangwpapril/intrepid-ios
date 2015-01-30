@@ -108,24 +108,6 @@ static TripManager *instance =nil;
     return embassies;
 }
 
-- (NSMutableArray *)getCurrencyItemsWithCity:(CityEntity *)city {
-    NSEntityDescription *entityDescription = [NSEntityDescription
-                                              entityForName:@"CurrencyEntity" inManagedObjectContext:managedObjectContext];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setPredicate:[NSPredicate predicateWithFormat:@"city == %@", city]];
-    [request setEntity:entityDescription];
-    
-    NSError *error;
-    NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
-    NSMutableArray *currencies = [NSMutableArray new];
-
-    for (CurrencyEntity *currencyItem in intermediateArray) {
-        [currencies addObject:currencyItem];
-    }
-    
-    return currencies;
-}
-
 - (NSMutableArray *)getAlertItemsWithCity:(CityEntity *)city {
     NSEntityDescription *entityDescription = [NSEntityDescription
                                               entityForName:@"AlertEntity" inManagedObjectContext:managedObjectContext];
@@ -142,6 +124,24 @@ static TripManager *instance =nil;
     }
     
     return alerts;
+}
+
+- (CurrencyEntity *)getCurrencyItemWithCity:(CityEntity *)city {
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:@"CurrencyEntity" inManagedObjectContext:managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"city == %@", city]];
+    [request setEntity:entityDescription];
+    [request setFetchLimit:1];
+    
+    NSError *error;
+    NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
+    CurrencyEntity *currency;
+    if (intermediateArray.count > 0) {
+        currency = intermediateArray[0];
+    }
+    
+    return currency;
 }
 
 - (DestinationEntity *)getDestinationItemWithCurrencyCode:(NSString *)currencyCode {
