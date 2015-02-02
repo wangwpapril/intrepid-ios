@@ -51,8 +51,9 @@
     [scrollView addSubview:ambulanceImage];
     
     
-    UILabel *provideLocationLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, ambulanceImage.frame.origin.y + ambulanceImage.frame.size.height + 15, 250, 20)];
+    UILabel *provideLocationLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, ambulanceImage.frame.origin.y + ambulanceImage.frame.size.height + 15, 280, 20)];
     provideLocationLabel.text = @"My Current Location";
+    provideLocationLabel.textAlignment = NSTextAlignmentCenter;
     provideLocationLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
     provideLocationLabel.backgroundColor = [UIColor clearColor];
     provideLocationLabel.textColor = [UIColor colorWithRed:0.2 green:0.25 blue:0.28 alpha:1];
@@ -71,7 +72,7 @@
     callAssistance.titleLabel.font = [UIFont fontWithName:APP_FONT size:21];
     callAssistance.tintColor = [UIColor clearColor];
     [callAssistance setTitleColor: [UIColor colorWithRed:1 green:1 blue:1 alpha:1] forState:UIControlStateNormal];
-    [callAssistance setTitle:@"Contact ACE Assistance" forState:UIControlStateNormal];
+    [callAssistance setTitle:@"Contact Emergency Assistance" forState:UIControlStateNormal];
 
     [callAssistance addTarget:self
                         action:@selector(callAssistance)
@@ -84,18 +85,16 @@
 - (void)callAssistance
 {
     NSArray *providers = [TripManager getInstance].currentUser[@"user"][@"company"][@"assistance_providers"];
-    if (providers.count > 1) {
+    if (providers.count > 0) {
         UIActionSheet *assitanceSheet = [[UIActionSheet alloc] init];
         assitanceSheet.title = @"Call";
         assitanceSheet.delegate = self;
         for (id assistance in providers) {
-            [assitanceSheet addButtonWithTitle:assistance[@"phone"]];
+            NSString *formattedNum = [assistance[@"phone"] stringByReplacingOccurrencesOfString:@" " withString:@""];
+            [assitanceSheet addButtonWithTitle:[NSString stringWithFormat:@"%@ (%@)", assistance[@"name"], formattedNum]];
         }
         assitanceSheet.cancelButtonIndex = [assitanceSheet addButtonWithTitle:@"Cancel"];
         [assitanceSheet showInView:self.view];
-    } else if (providers.count == 1) {
-        NSString *formattedNum = [providers[0][@"phone"] stringByReplacingOccurrencesOfString:@" " withString:@""];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@", formattedNum]]];
     } else {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry"
                                                             message:@"There are no ACE Assistance providers available to help you."
@@ -107,8 +106,11 @@
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    NSString *formattedNum = [[actionSheet buttonTitleAtIndex:buttonIndex] stringByReplacingOccurrencesOfString:@" " withString:@""];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", formattedNum]]];
+    if (buttonIndex != actionSheet.cancelButtonIndex) {
+        NSArray *providers = [TripManager getInstance].currentUser[@"user"][@"company"][@"assistance_providers"];
+        NSString *formattedNum = [providers[buttonIndex][@"phone"] stringByReplacingOccurrencesOfString:@" " withString:@""];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", formattedNum]]];
+    }
 }
 
 @end
