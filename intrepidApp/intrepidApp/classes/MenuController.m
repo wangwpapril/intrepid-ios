@@ -185,16 +185,11 @@ static MenuController *instance =nil;
             break;
             
         case 4:
-            [self getLocation];
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
-            [((WebViewController *)viewController) setupWithTitle:@"Weather" withURL:[NSString stringWithFormat:@"https://m.intrepid247.com/weather.html%@", self.location]];
-            viewController.view.tag = 4;
             break;
 
         case 5:
             viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
-            [((WebViewController *)viewController) setupWithTitle:@"ACE Worldview" withURL:@"https://www.aceworldview.com/WVEnt/WorldView/ADLogin"];
-            viewController.view.tag = 5;
             break;
             
         case 6:
@@ -213,6 +208,14 @@ static MenuController *instance =nil;
             break;
     }
     if (parentController.view.tag != button.tag) {
+        if (button.tag == 4) {
+            [self getLocation];
+            [((WebViewController *)viewController) setupWithTitle:@"Weather" withURL:[NSString stringWithFormat:@"https://m.intrepid247.com/weather.html%@", self.location]];
+            viewController.view.tag = 4;
+        } else if (button.tag == 5) {
+            [((WebViewController *)viewController) setupWithTitle:@"ACE Worldview" withURL:@"https://www.aceworldview.com/WVEnt/WorldView/ADLogin"];
+            viewController.view.tag = 5;
+        }
         [parentController.navigationController pushViewController:viewController animated:YES];
     }
     else {

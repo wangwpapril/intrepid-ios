@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "MenuController.h"
 
-@interface WebViewController : UIViewController
+@interface WebViewController : UIViewController <UIActionSheetDelegate>
 
 @property (nonatomic, strong) MenuController *mController;
 @property (nonatomic , strong) UIWebView *trialView;
-- (void)setupWithTitle: (NSString *)title withURL:(NSString *)url;
+
+- (void)setupWithTitle:(NSString *)title withURL:(NSString *)url;
+
 @end

@@ -9,6 +9,7 @@
 #import "WebViewController.h"
 #import "MenuController.h"
 #import "Reachability.h"
+#import "TripManager.h"
 
 @implementation WebViewController
 @synthesize mController;
@@ -43,17 +44,38 @@
     }
 }
 
-- (void)setupWithTitle: (NSString *)title withURL:(NSString *)url {
+- (void)setupWithTitle:(NSString *)title withURL:(NSString *)url {
     [self.view addSubview:trialView];
-    self.navigationItem.title = title;
-    [trialView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]]; // make custom (NSString string w/ format, must see URLS's first tho)
     
+    if ([title isEqualToString:@"ACE Worldview"] && [TripManager getInstance].currentUser[@"user"][@"company"][@"content"][@"virtual_wallet_pdf"]) {
+        self.navigationItem.title = @"ACE Insurance";
+        UIActionSheet *aceOptions = [[UIActionSheet alloc] initWithTitle:nil
+                                                                delegate:self
+                                                       cancelButtonTitle:@"Cancel"
+                                                  destructiveButtonTitle:nil
+                                                       otherButtonTitles:title, @"Virtual Wallet PDF", nil];
+        [aceOptions showInView:self.view];
+    } else {
+        self.navigationItem.title = title;
+        [trialView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
+    }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 0:
+            self.navigationItem.title = [actionSheet buttonTitleAtIndex:buttonIndex];
+            [trialView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.aceworldview.com/WVEnt/WorldView/ADLogin"]]];
+            break;
+            
+        case 1:
+            self.navigationItem.title = [actionSheet buttonTitleAtIndex:buttonIndex];
+            [trialView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[TripManager getInstance].currentUser[@"user"][@"company"][@"content"][@"virtual_wallet_pdf"]]]];
+            break;
+            
+        default:
+            break;
+    }
 }
 
 @end
