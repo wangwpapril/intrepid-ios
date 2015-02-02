@@ -76,7 +76,8 @@
                      withFlag:(NSString *)flag
                   withImage1x:(NSString *)image1x
                   withImage2x:(NSString *)image2x
-                  withImage3x:(NSString *)image3x;
+                  withImage3x:(NSString *)image3x
+                  withWebsite:(NSString *)website;
 
 - (HealthEntity *)createHealthItemWithCity:(CityEntity *)city
                               withCategory:(NSString *)category

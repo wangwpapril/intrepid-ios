@@ -26,5 +26,6 @@
 @property (nonatomic, retain) NSString * notes;
 @property (nonatomic, retain) NSString * phone;
 @property (nonatomic, retain) NSString * services;
+@property (nonatomic, retain) NSString * website;
 
 @end

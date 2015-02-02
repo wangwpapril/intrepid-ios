@@ -100,7 +100,7 @@
         y = embassyTextContainer.frame.origin.y + size.height + 20;
     }
     
-    if (![embassyItem.phone isEqualToString:@""] || ![embassyItem.fax isEqualToString:@""] || ![embassyItem.email isEqualToString:@""]) {
+    if (![embassyItem.phone isEqualToString:@""] || ![embassyItem.fax isEqualToString:@""] || ![embassyItem.email isEqualToString:@""] || ![embassyItem.website isEqualToString:@""]) {
         UIImageView  *embassyImageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"contact_icon"]];
         embassyImageView2.frame = CGRectMake(14, y + 2, 25, 25);
         
@@ -110,7 +110,7 @@
         embassyLabel2.text = @"Contact Info";
         embassyLabel2.textColor = APP_TEXT_COLOR;
         
-        NSString *content2 = [NSString stringWithFormat:@"Telephone: %@\n\nFax: %@\n\nEmail: %@", embassyItem.phone, embassyItem.fax, embassyItem.email];
+        NSString *content2 = [NSString stringWithFormat:@"Telephone: %@\n\nFax: %@\n\nEmail: %@\n\nWebsite: %@", embassyItem.phone, embassyItem.fax, embassyItem.email, embassyItem.website];
         CGSize size2 = [content2 boundingRectWithSize:CGSizeMake(290, 15000)
                                               options:NSStringDrawingUsesLineFragmentOrigin
                                            attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:15]}

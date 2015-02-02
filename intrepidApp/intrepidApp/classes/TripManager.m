@@ -274,6 +274,7 @@ static TripManager *instance =nil;
             withImage1x:(NSString *)image1x
             withImage2x:(NSString *)image2x
             withImage3x:(NSString *)image3x
+            withWebsite:(NSString *)website
 {
     EmbassyEntity *embassy = [NSEntityDescription insertNewObjectForEntityForName:@"EmbassyEntity" inManagedObjectContext:managedObjectContext];
 
@@ -290,6 +291,7 @@ static TripManager *instance =nil;
     embassy.image1x = image1x;
     embassy.image2x = image2x;
     embassy.image3x = image3x;
+    embassy.website = website;
     
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {
