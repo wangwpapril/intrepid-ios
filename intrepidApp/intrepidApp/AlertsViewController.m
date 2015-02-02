@@ -47,7 +47,7 @@
         titleLabel.font = [UIFont fontWithName:APP_FONT_BOLD size:18];
         titleLabel.textColor = APP_TEXT_COLOR;
         titleLabel.textAlignment = NSTextAlignmentCenter;
-        titleLabel.text = @"No alerts available.";
+        titleLabel.text = @"No recent alerts.";
         [self.view addSubview:titleLabel];
     } else {
         [tableList reloadData];
