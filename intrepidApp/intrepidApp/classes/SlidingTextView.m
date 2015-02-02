@@ -49,12 +49,12 @@
     [scroll addSubview:imageView];
 
 /*
-    // title background
+     title background
     UIView *borderLine = [[UIView alloc] initWithFrame:CGRectMake(0, 268, 320, 40)];
     borderLine.layer.borderColor = [UIColor colorWithRed:231.0/255 green:238.0/255 blue:226.0/255 alpha:1].CGColor;
     borderLine.layer.borderWidth = 1;
     
-    // actual title
+     actual title
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(53, 0, 159, 40)];
     titleLabel.text = title;
     titleLabel.font = [UIFont fontWithName:@"ProximaNova-SemiBold" size:17];
@@ -62,7 +62,7 @@
     [borderLine addSubview:titleLabel];
     [scroll addSubview:borderLine];
     
-    // icon
+     icon
     UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:icon]];
     iconView.frame = CGRectMake(14, 275, 25, 25);
     [scroll addSubview:iconView];
@@ -127,9 +127,9 @@
     self.currency = [manager getCurrencyItemWithCity:city];
     
     if (self.currency) {
-        self.userField = [[UITextField alloc] initWithFrame:CGRectMake(10, 273, 200, 30)];
+        self.userField = [[UITextField alloc] initWithFrame:CGRectMake(90, 293, 200, 50)];
         self.userField.borderStyle = UITextBorderStyleRoundedRect;
-        self.userField.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
+        self.userField.font = [UIFont fontWithName:@"ProximaNova-Semi-Bold" size:15];
         self.userField.textColor = APP_TEXT_COLOR;
         self.userField.textAlignment = NSTextAlignmentRight;
         self.userField.tintColor = [UIColor grayColor];
@@ -139,7 +139,7 @@
         [self.userField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
         [scroll addSubview:self.userField];
         
-        UIImageView *userImageView = [[UIImageView alloc] initWithFrame:CGRectMake(220, 273, 30, 30)];
+        UIImageView *userImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 303, 30, 30)];
         userImageView.layer.cornerRadius = 5;
         userImageView.layer.masksToBounds = YES;
         [scroll addSubview:userImageView];
@@ -160,17 +160,17 @@
             userImageView.image = [UIImage imageNamed:@"unused"];
         }
         
-        UILabel *userLabel = [[UILabel alloc] initWithFrame:CGRectMake(260, 273, 50, 30)];
-        userLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
+        UILabel *userLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 293, 50, 50)];
+        userLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
         userLabel.textColor = APP_TEXT_COLOR;
         userLabel.text = manager.currentUser[@"user"][@"currency_code"];
         [scroll addSubview:userLabel];
 
         
         
-        self.tripField = [[UITextField alloc] initWithFrame:CGRectMake(10, 320, 200, 30)];
+        self.tripField = [[UITextField alloc] initWithFrame:CGRectMake(90, 365, 200, 50)];
         self.tripField.borderStyle = UITextBorderStyleRoundedRect;
-        self.tripField.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
+        self.tripField.font = [UIFont fontWithName:@"ProximaNova-Semi-Bold" size:15];
         self.tripField.textColor = APP_TEXT_COLOR;
         self.tripField.textAlignment = NSTextAlignmentRight;
         self.tripField.tintColor = [UIColor grayColor];
@@ -180,7 +180,7 @@
         [self.tripField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
         [scroll addSubview:self.tripField];
         
-        UIImageView *tripImageView = [[UIImageView alloc] initWithFrame:CGRectMake(220, 320, 30, 30)];
+        UIImageView *tripImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 375, 30, 30)];
         tripImageView.layer.cornerRadius = 5;
         tripImageView.layer.masksToBounds = YES;
         [scroll addSubview:tripImageView];
@@ -201,8 +201,8 @@
             tripImageView.image = [UIImage imageNamed:@"unused"];
         }
         
-        UILabel *tripLabel = [[UILabel alloc] initWithFrame:CGRectMake(260, 320, 50, 30)];
-        tripLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
+        UILabel *tripLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 375, 50, 30)];
+        tripLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
         tripLabel.textColor = APP_TEXT_COLOR;
         tripLabel.text = self.currency.country;
         [scroll addSubview:tripLabel];
