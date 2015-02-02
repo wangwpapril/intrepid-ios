@@ -61,24 +61,27 @@
     y = mapView.frame.origin.y + mapView.frame.size.height;
     
     // Instructional Text
-    if ([TripManager getInstance].currentUser[@"user"][@"company"][@"content"][@"instructional_text"]) {
-        NSString *instructionalText = [TripManager getInstance].currentUser[@"user"][@"company"][@"content"][@"instructional_text"];
-        UILabel *textLabel = [[UILabel alloc] init];
-        textLabel.font = [UIFont fontWithName:APP_FONT size:15];
-        textLabel.textColor = APP_TEXT_COLOR;
-        textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        textLabel.numberOfLines = 0;
+    TripManager *manager = [TripManager getInstance];
+    if (manager.currentUser[@"user"][@"company"][@"content"] != [NSNull null] && ![manager.currentUser[@"user"][@"company"][@"content"] isEqual:@""]) {
+        if (manager.currentUser[@"user"][@"company"][@"content"][@"instructional_text"] != [NSNull null] && ![manager.currentUser[@"user"][@"company"][@"content"][@"instructional_text"] isEqual:@""]) {
+            NSString *instructionalText = [TripManager getInstance].currentUser[@"user"][@"company"][@"content"][@"instructional_text"];
+            UILabel *textLabel = [[UILabel alloc] init];
+            textLabel.font = [UIFont fontWithName:APP_FONT size:15];
+            textLabel.textColor = APP_TEXT_COLOR;
+            textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            textLabel.numberOfLines = 0;
 
-        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-        paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
-        CGSize size = [instructionalText boundingRectWithSize:CGSizeMake(300, CGFLOAT_MAX)
-                                               options:NSStringDrawingUsesLineFragmentOrigin
-                                            attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:APP_FONT size:15]}
-                                               context:nil].size;
-        textLabel.frame = CGRectMake(10, y + 15, 300, size.height);
-        textLabel.text = instructionalText;
-        [scrollView addSubview:textLabel];
-        y = textLabel.frame.origin.y + textLabel.frame.size.height + 15;
+            NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+            paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+            CGSize size = [instructionalText boundingRectWithSize:CGSizeMake(300, CGFLOAT_MAX)
+                                                   options:NSStringDrawingUsesLineFragmentOrigin
+                                                attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:APP_FONT size:15]}
+                                                   context:nil].size;
+            textLabel.frame = CGRectMake(10, y + 15, 300, size.height);
+            textLabel.text = instructionalText;
+            [scrollView addSubview:textLabel];
+            y = textLabel.frame.origin.y + textLabel.frame.size.height + 15;
+        }
     }
     
     // Call Assistance Button

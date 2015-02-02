@@ -47,14 +47,20 @@
 - (void)setupWithTitle:(NSString *)title withURL:(NSString *)url {
     [self.view addSubview:trialView];
     
-    if ([title isEqualToString:@"ACE Worldview"] && [TripManager getInstance].currentUser[@"user"][@"company"][@"content"][@"virtual_wallet_pdf"]) {
-        self.navigationItem.title = @"ACE Insurance";
-        UIActionSheet *aceOptions = [[UIActionSheet alloc] initWithTitle:nil
-                                                                delegate:self
-                                                       cancelButtonTitle:@"Cancel"
-                                                  destructiveButtonTitle:nil
-                                                       otherButtonTitles:title, @"Virtual Wallet PDF", nil];
-        [aceOptions showInView:self.view];
+    TripManager *manager = [TripManager getInstance];
+    if ([title isEqualToString:@"ACE Worldview"] && manager.currentUser[@"user"][@"company"][@"content"] != [NSNull null] && ![manager.currentUser[@"user"][@"company"][@"content"] isEqual:@""]) {
+        if (manager.currentUser[@"user"][@"company"][@"content"][@"virtual_wallet_pdf"] != [NSNull null] && ![manager.currentUser[@"user"][@"company"][@"content"][@"virtual_wallet_pdf"] isEqual:@""]) {
+            self.navigationItem.title = @"ACE Insurance";
+            UIActionSheet *aceOptions = [[UIActionSheet alloc] initWithTitle:nil
+                                                                    delegate:self
+                                                           cancelButtonTitle:@"Cancel"
+                                                      destructiveButtonTitle:nil
+                                                           otherButtonTitles:title, @"Virtual Wallet PDF", nil];
+            [aceOptions showInView:self.view];
+        } else {
+            self.navigationItem.title = title;
+            [trialView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
+        }
     } else {
         self.navigationItem.title = title;
         [trialView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
