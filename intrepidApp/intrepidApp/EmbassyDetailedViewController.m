@@ -67,12 +67,12 @@
     
     if (![embassyItem.address isEqualToString:@""]) {
         UIImageView  *embassyImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"embassy-icon"]];
-        embassyImageView.frame = CGRectMake(14, y + 5, 25, 25);
+        embassyImageView.frame = CGRectMake(14, y + 1, 25, 25);
         
-        UILabel *embassyLabel = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 7, 250, 25)];
+        UILabel *embassyLabel = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 5, 250, 25)];
         embassyLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         embassyLabel.backgroundColor = [UIColor clearColor];
-        embassyLabel.textColor = UIColorFromRGB(0x423a38);
+        embassyLabel.textColor = APP_TEXT_COLOR;
         embassyLabel.text = @"Address";
         
         NSString *content = embassyItem.address;
@@ -101,14 +101,14 @@
     }
     
     if (![embassyItem.phone isEqualToString:@""] || ![embassyItem.fax isEqualToString:@""] || ![embassyItem.email isEqualToString:@""]) {
-        UIImageView  *embassyImageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"embassy-icon"]];
-        embassyImageView2.frame = CGRectMake(14, y + 5, 25, 25);
+        UIImageView  *embassyImageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"contact_icon"]];
+        embassyImageView2.frame = CGRectMake(14, y + 2, 25, 25);
         
-        UILabel *embassyLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 7, 250, 25)];
+        UILabel *embassyLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 5, 250, 25)];
         embassyLabel2.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         embassyLabel2.backgroundColor = [UIColor clearColor];
         embassyLabel2.text = @"Contact Info";
-        embassyLabel2.textColor = UIColorFromRGB(0x423a38);
+        embassyLabel2.textColor = APP_TEXT_COLOR;
         
         NSString *content2 = [NSString stringWithFormat:@"Telephone: %@\n\nFax: %@\n\nEmail: %@", embassyItem.phone, embassyItem.fax, embassyItem.email];
         CGSize size2 = [content2 boundingRectWithSize:CGSizeMake(290, 15000)
@@ -136,14 +136,14 @@
     }
     
     if (![embassyItem.hours isEqualToString:@""]) {
-        UIImageView  *embassyImageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"embassy-icon"]];
-        embassyImageView3.frame = CGRectMake(14, y + 5, 25, 25);
+        UIImageView  *embassyImageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hours_icon"]];
+        embassyImageView3.frame = CGRectMake(14, y + 3, 25, 25);
         
-        UILabel *embassyLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 7, 250, 25)];
+        UILabel *embassyLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 5, 250, 25)];
         embassyLabel3.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         embassyLabel3.backgroundColor = [UIColor clearColor];
         embassyLabel3.text = @"Hours of Operation";
-        embassyLabel3.textColor = UIColorFromRGB(0x423a38);
+        embassyLabel3.textColor = APP_TEXT_COLOR;
         
         NSString *content3 = embassyItem.hours;
         CGSize size3 = [content3 boundingRectWithSize:CGSizeMake(290, 15000)
@@ -174,11 +174,11 @@
         UIImageView  *embassyImageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"embassy-icon"]];
         embassyImageView4.frame = CGRectMake(14, y + 5, 25, 25);
         
-        UILabel *embassyLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 7, 250, 25)];
+        UILabel *embassyLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 1, 250, 25)];
         embassyLabel4.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         embassyLabel4.backgroundColor = [UIColor clearColor];
         embassyLabel4.text = @"Services Offered";
-        embassyLabel4.textColor = UIColorFromRGB(0x423a38);
+        embassyLabel4.textColor = APP_TEXT_COLOR;
         
         NSString *content4 = embassyItem.services;
         CGSize size4 = [content4 boundingRectWithSize:CGSizeMake(290, 15000)
@@ -207,13 +207,13 @@
     
     if (![embassyItem.notes isEqualToString:@""]) {
         UIImageView  *embassyImageView5 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"embassy-icon"]];
-        embassyImageView5.frame = CGRectMake(14, y + 5, 25, 25);
+        embassyImageView5.frame = CGRectMake(14, y + 0, 25, 25);
         
-        UILabel *embassyLabel5 = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 7, 250, 25)];
+        UILabel *embassyLabel5 = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 5, 250, 25)];
         embassyLabel5.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         embassyLabel5.backgroundColor = [UIColor clearColor];
         embassyLabel5.text = @"Notes";
-        embassyLabel5.textColor = UIColorFromRGB(0x423a38);
+        embassyLabel5.textColor = APP_TEXT_COLOR;
         
         NSString *content5 = embassyItem.notes;
         CGSize size5 = [content5 boundingRectWithSize:CGSizeMake(290, 15000)

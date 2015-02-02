@@ -26,7 +26,7 @@
 #define METERS_PER_MILE 1609.344
 
 // colors
-#define APP_TEXT_COLOR [UIColor colorWithRed: 0.2 green:0.25 blue:0.28 alpha:1]
+#define APP_TEXT_COLOR [UIColor colorWithHue:0.57 saturation:0.33 brightness:0.29 alpha:1]
 
 #define APP_BG_COLOR [UIColor colorWithRed:0.2 green:0.25 blue:0.28 alpha:1]
 #define APP_SEARCH_COLOR [UIColor colorWithRed:0.88 green:0.88 blue:0.88 alpha:1]

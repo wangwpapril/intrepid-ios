@@ -27,14 +27,14 @@
 
 - (void)initializeViews {
     // flag
-    flagLabel = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 30, 30)];
+    flagLabel = [[UIImageView alloc] initWithFrame:CGRectMake(15, 5, 30, 30)];
     flagLabel.layer.cornerRadius = 5;
     flagLabel.layer.masksToBounds = YES;
     [self addSubview:flagLabel];
     
     // country
-    countryLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 2, 150, 40)];
-    countryLabel.font = [UIFont fontWithName:APP_FONT size:16];
+    countryLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 0, 150, 40)];
+    countryLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:17];
     countryLabel.textColor = APP_TEXT_COLOR;
     [self addSubview:countryLabel];
 }

@@ -87,9 +87,8 @@
     
     for (id section in text) {
         UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:section[2]]];
-        imageView.frame = CGRectMake(14, y + 5, 25, 25);
-        
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 7, 250, 25)];
+        imageView.frame = CGRectMake(14, y + 4, 25, 25);
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(50, y + 5, 250, 25)];
         label.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         label.backgroundColor = [UIColor clearColor];
         label.textColor = APP_TEXT_COLOR;
@@ -101,7 +100,7 @@
                                          attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:15]}
                                             context:nil].size;
         UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 290, size.height + 5)];
-        textLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
+        textLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:16];
         textLabel.backgroundColor = [UIColor clearColor];
         textLabel.textColor = APP_TEXT_COLOR;
         textLabel.text = content;
@@ -128,23 +127,23 @@
     self.currency = [manager getCurrencyItemWithCity:city];
     
     if (self.currency) {
-        self.userField = [[UITextField alloc] initWithFrame:CGRectMake(125, 293, 175, 50)];
+        self.userField = [[UITextField alloc] initWithFrame:CGRectMake(160, 293, 125, 50)];
         self.userField.borderStyle = UITextBorderStyleRoundedRect;
-        self.userField.font = [UIFont fontWithName:@"ProximaNova-Semi-Bold" size:24];
+        self.userField.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:22];
         self.userField.textColor = APP_TEXT_COLOR;
-        self.userField.textAlignment = NSTextAlignmentRight;
-        self.userField.tintColor = [UIColor grayColor];
+        self.userField.textAlignment = NSTextAlignmentCenter;
+        self.userField.tintColor = APP_TEXT_COLOR;
         self.userField.keyboardType = UIKeyboardTypeDecimalPad;
         self.userField.delegate = self.parentViewController;
         self.userField.text = @"1.00";
         [self.userField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
         [scroll addSubview:self.userField];
         
-        UIImageView *userImageView = [[UIImageView alloc] initWithFrame:CGRectMake(25, 303, 30, 30)];
+        UIImageView *userImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 293, 50, 50)];
         userImageView.layer.cornerRadius = 5;
         userImageView.layer.masksToBounds = YES;
-        userImageView.layer.borderWidth = 1.0f;
-        userImageView.layer.borderColor = APP_BORDER_COLOR;
+//        userImageView.layer.borderWidth = 1.0f;
+//        userImageView.layer.borderColor = APP_BORDER_COLOR;
         [scroll addSubview:userImageView];
         
         DestinationEntity *destination = [manager getDestinationItemWithCurrencyCode:manager.currentUser[@"user"][@"currency_code"]];
@@ -163,29 +162,31 @@
             userImageView.image = [UIImage imageNamed:@"unused"];
         }
         
-        UILabel *userLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 293, 50, 50)];
-        userLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+        UILabel *userLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 293, 50, 50)];
+        userLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
         userLabel.textColor = APP_TEXT_COLOR;
         userLabel.text = manager.currentUser[@"user"][@"currency_code"];
         [scroll addSubview:userLabel];
 
         
         
-        self.tripField = [[UITextField alloc] initWithFrame:CGRectMake(125, 365, 175, 50)];
+        self.tripField = [[UITextField alloc] initWithFrame:CGRectMake(160, 365, 125, 50)];
         self.tripField.borderStyle = UITextBorderStyleRoundedRect;
-        self.tripField.font = [UIFont fontWithName:@"ProximaNova-Semi-Bold" size:24];
+        self.tripField.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:22];
         self.tripField.textColor = APP_TEXT_COLOR;
-        self.tripField.textAlignment = NSTextAlignmentRight;
-        self.tripField.tintColor = [UIColor grayColor];
+        self.tripField.textAlignment = NSTextAlignmentCenter;
+        self.tripField.tintColor = APP_TEXT_COLOR;
         self.tripField.keyboardType = UIKeyboardTypeDecimalPad;
         self.tripField.delegate = self.parentViewController;
         self.tripField.text = [NSString stringWithFormat:@"%.2f", self.currency.value.floatValue];
         [self.tripField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
         [scroll addSubview:self.tripField];
         
-        UIImageView *tripImageView = [[UIImageView alloc] initWithFrame:CGRectMake(25, 375, 30, 30)];
+        UIImageView *tripImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 365, 50, 50)];
         tripImageView.layer.cornerRadius = 5;
         tripImageView.layer.masksToBounds = YES;
+//        tripImageView.layer.borderWidth = 1.0f;
+//        tripImageView.layer.borderColor = APP_BORDER_COLOR;
         [scroll addSubview:tripImageView];
         
         DestinationEntity *destination2 = [manager getDestinationItemWithCurrencyCode:self.currency.country];
@@ -204,8 +205,8 @@
             tripImageView.image = [UIImage imageNamed:@"unused"];
         }
         
-        UILabel *tripLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 375, 50, 30)];
-        tripLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
+        UILabel *tripLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 375, 50, 30)];
+        tripLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
         tripLabel.textColor = APP_TEXT_COLOR;
         tripLabel.text = self.currency.country;
         [scroll addSubview:tripLabel];
