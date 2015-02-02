@@ -43,43 +43,60 @@
 }
 
 -(void)addContent {
-    //Ambulance Image
-    UIImage *ambulance;
-    ambulance = [UIImage imageNamed:@"ambulance"];
-    UIImageView *ambulanceImage = [[UIImageView alloc] initWithImage:ambulance];
-    ambulanceImage.frame = CGRectMake(0, 0, 320, ambulanceImage.frame.size.height*1);
-    [scrollView addSubview:ambulanceImage];
+    int y = 0;
     
+//    // Ambulance Image
+//    UIImage *ambulance;
+//    ambulance = [UIImage imageNamed:@"ambulance"];
+//    UIImageView *ambulanceImage = [[UIImageView alloc] initWithImage:ambulance];
+//    ambulanceImage.frame = CGRectMake(0, y, 320, ambulanceImage.frame.size.height*1);
+//    [scrollView addSubview:ambulanceImage];
+//    y = ambulanceImage.frame.origin.y + ambulanceImage.frame.size.height;
     
-    UILabel *provideLocationLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, ambulanceImage.frame.origin.y + ambulanceImage.frame.size.height + 15, 280, 20)];
-    provideLocationLabel.text = @"My Current Location";
-    provideLocationLabel.textAlignment = NSTextAlignmentCenter;
-    provideLocationLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
-    provideLocationLabel.backgroundColor = [UIColor clearColor];
-    provideLocationLabel.textColor = [UIColor colorWithRed:0.2 green:0.25 blue:0.28 alpha:1];
-    [scrollView addSubview:provideLocationLabel];
-    
-    MKMapView *mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, ambulanceImage.frame.origin.y+20 + ambulanceImage.frame.size.height + 30, 320, 200)];
+    // User Location Map
+    MKMapView *mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, y, 320, 200)];
     mapView.showsUserLocation = YES;
     mapView.userTrackingMode = MKUserTrackingModeFollow;
     [scrollView addSubview:mapView];
+    y = mapView.frame.origin.y + mapView.frame.size.height;
     
-    //Call Assistance Button
-        UIButton *callAssistance = [[UIButton alloc] init];
+    // Instructional Text
+    if ([TripManager getInstance].currentUser[@"user"][@"company"][@"content"][@"instructional_text"]) {
+        NSString *instructionalText = [TripManager getInstance].currentUser[@"user"][@"company"][@"content"][@"instructional_text"];
+        UILabel *textLabel = [[UILabel alloc] init];
+        textLabel.font = [UIFont fontWithName:APP_FONT size:15];
+        textLabel.textColor = APP_TEXT_COLOR;
+        textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        textLabel.numberOfLines = 0;
+
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+        paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+        CGSize size = [instructionalText boundingRectWithSize:CGSizeMake(300, CGFLOAT_MAX)
+                                               options:NSStringDrawingUsesLineFragmentOrigin
+                                            attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:APP_FONT size:15]}
+                                               context:nil].size;
+        textLabel.frame = CGRectMake(10, y + 15, 300, size.height);
+        textLabel.text = instructionalText;
+        [scrollView addSubview:textLabel];
+        y = textLabel.frame.origin.y + textLabel.frame.size.height + 15;
+    }
+    
+    // Call Assistance Button
+    UIButton *callAssistance = [[UIButton alloc] init];
     // [callAssistance setImage:callAssistanceImage forState:UIControlStateNormal];
     callAssistance.backgroundColor = [UIColor colorWithRed:0.53 green:0.73 blue:0.14 alpha:1];
-    callAssistance.frame = CGRectMake(0, mapView.frame.origin.y + mapView.frame.size.height - 2, 320, 128*0.5);
+    callAssistance.frame = CGRectMake(0, y, 320, 128*0.5);
     callAssistance.titleLabel.font = [UIFont fontWithName:APP_FONT size:21];
     callAssistance.tintColor = [UIColor clearColor];
     [callAssistance setTitleColor: [UIColor colorWithRed:1 green:1 blue:1 alpha:1] forState:UIControlStateNormal];
     [callAssistance setTitle:@"Contact Emergency Assistance" forState:UIControlStateNormal];
-
     [callAssistance addTarget:self
-                        action:@selector(callAssistance)
-              forControlEvents:UIControlEventTouchUpInside];
+                       action:@selector(callAssistance)
+             forControlEvents:UIControlEventTouchUpInside];
     [scrollView addSubview:callAssistance];
+    y = callAssistance.frame.origin.y + callAssistance.frame.size.height;
     
-    scrollView.contentSize = CGSizeMake(320, callAssistance.frame.origin.y + callAssistance.frame.size.height + 50);    
+    scrollView.contentSize = CGSizeMake(320, y + 75);
 }
 
 - (void)callAssistance
