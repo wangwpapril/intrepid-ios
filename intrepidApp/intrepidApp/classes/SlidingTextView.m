@@ -206,6 +206,8 @@
         tripLabel.textColor = APP_TEXT_COLOR;
         tripLabel.text = self.currency.country;
         [scroll addSubview:tripLabel];
+        
+        scroll.contentSize = CGSizeMake(320, 500);
     }
 }
 
