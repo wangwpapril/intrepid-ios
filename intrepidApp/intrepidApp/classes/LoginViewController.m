@@ -54,7 +54,7 @@
 
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
-    UIImage *buttonImage = [[UIImage imageNamed:@"rounded-rectangle-"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
+    UIImage *buttonImage = [[UIImage imageNamed:@"ace_button"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
     [loginButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     loginButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:14];
@@ -125,8 +125,8 @@
     // using text on button
     [signupButton setAttributedTitle:signupString forState:UIControlStateNormal];
     [signupString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.53 green:0.73 blue:0.14 alpha:1] range:NSMakeRange(0,[signupString length])];
-    signupButton.frame = CGRectMake(77, loginButton.frame.origin.y + 55, 166, 15);
-    signupButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:13];
+    signupButton.frame = CGRectMake(77, loginButton.frame.origin.y + 60, 166, 15);
+    signupButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:15];
     signupButton.backgroundColor = [UIColor clearColor];
     
     signupButton.titleLabel.textAlignment = NSTextAlignmentCenter;
