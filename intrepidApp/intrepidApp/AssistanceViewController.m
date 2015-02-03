@@ -75,7 +75,7 @@
             paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
             CGSize size = [instructionalText boundingRectWithSize:CGSizeMake(300, CGFLOAT_MAX)
                                                    options:NSStringDrawingUsesLineFragmentOrigin
-                                                attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:15]}
+                                                attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:16]}
                                                    context:nil].size;
             textLabel.frame = CGRectMake(15, y + 15, 300, size.height);
             textLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:16];

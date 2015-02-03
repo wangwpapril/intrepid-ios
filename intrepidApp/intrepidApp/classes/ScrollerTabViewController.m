@@ -160,7 +160,7 @@
         [self viewSwitched];
         [self.scroll scrollRectToVisible:CGRectMake(currentTab * 320, 0, 320, self.view.frame.size.height) animated:YES];
         
-        
+        [self.view endEditing:YES];
         [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^ {
             [self addLineToTab];
 
