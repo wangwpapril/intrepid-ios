@@ -109,7 +109,7 @@
                                          attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:15]}
                                             context:nil].size;
         UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 290, size.height + 5)];
-        textLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:16];
+        textLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
         textLabel.backgroundColor = [UIColor clearColor];
         textLabel.textColor = APP_TEXT_COLOR;
         textLabel.text = content;
