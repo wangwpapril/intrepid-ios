@@ -79,7 +79,7 @@
     UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 10, 250, 25)];
     descriptionLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
     descriptionLabel.backgroundColor = [UIColor clearColor];
-    descriptionLabel.textColor = UIColorFromRGB(0x423a38);
+    descriptionLabel.textColor = APP_TEXT_COLOR;
     
     if ([healthItem.category isEqualToString:@"conditions"]) {
         descriptionLabel.text = @"Description";
@@ -126,7 +126,7 @@
         sideEffectsLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         sideEffectsLabel.backgroundColor = [UIColor clearColor];
         sideEffectsLabel.text = @"Side Effects";
-        sideEffectsLabel.textColor = UIColorFromRGB(0x423a38);
+        sideEffectsLabel.textColor = APP_TEXT_COLOR;
 
         NSString *secondTitle = @"Description";
         if ([healthItem.category isEqualToString:@"conditions"]) {
@@ -172,7 +172,7 @@
     UILabel *transmissionTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, y, 120, 25)];
     transmissionTitleLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
     transmissionTitleLabel.backgroundColor = [UIColor clearColor];
-    transmissionTitleLabel.textColor = UIColorFromRGB(0x423a38);
+    transmissionTitleLabel.textColor = APP_TEXT_COLOR;
     transmissionTitleLabel.text = @"Transmission";
     [scrollView addSubview:transmissionTitleLabel];
     
@@ -208,7 +208,7 @@
     UILabel *immunizationTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, transmissionTextContainer.frame.origin.y + transmissionSize.height + 22, 250, 25)];
     immunizationTitleLabel .font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
     immunizationTitleLabel.backgroundColor = [UIColor clearColor];
-    immunizationTitleLabel.textColor = UIColorFromRGB(0x423a38);
+    immunizationTitleLabel.textColor = APP_TEXT_COLOR;
     immunizationTitleLabel.text = @"Immunization";
     [scrollView addSubview:immunizationTitleLabel];
 
@@ -255,7 +255,7 @@
         UILabel *importantTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, immunizationTextContainer.frame.origin.y + immunizationSize.height + 22, 250, 25)];
         importantTitleLabel .font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         importantTitleLabel.backgroundColor = [UIColor clearColor];
-        importantTitleLabel.textColor = UIColorFromRGB(0x423a38);
+        importantTitleLabel.textColor = APP_TEXT_COLOR;
         importantTitleLabel.text = @"Notes";
         [scrollView addSubview:importantTitleLabel];
         
