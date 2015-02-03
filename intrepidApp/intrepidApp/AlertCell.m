@@ -47,7 +47,7 @@
     [self addSubview:dateLabel];
     
     textLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 300, 25)];
-    textLabel.font = [UIFont fontWithName:APP_FONT size:15];
+    textLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     textLabel.textColor = APP_TEXT_COLOR;
     textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     textLabel.numberOfLines = 0;
