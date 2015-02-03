@@ -109,30 +109,52 @@
         embassyLabel2.backgroundColor = [UIColor clearColor];
         embassyLabel2.text = @"Contact Info";
         embassyLabel2.textColor = APP_TEXT_COLOR;
+        y += 35;
         
-        NSString *content2 = [NSString stringWithFormat:@"Telephone: %@\n\nFax: %@\n\nEmail: %@\n\nWebsite: %@", embassyItem.phone, embassyItem.fax, embassyItem.email, embassyItem.website];
-        CGSize size2 = [content2 boundingRectWithSize:CGSizeMake(290, 15000)
-                                              options:NSStringDrawingUsesLineFragmentOrigin
-                                           attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:15]}
-                                              context:nil].size;
-        UILabel *embassyText2 = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 290, size2.height + 5)];
-        embassyText2.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
-        embassyText2.backgroundColor = [UIColor clearColor];
-        embassyText2.textColor = APP_TEXT_COLOR;
-        embassyText2.text = content2;
-        embassyText2.lineBreakMode = NSLineBreakByWordWrapping;
-        embassyText2.numberOfLines = 0;
+        UIView *contactContainer = [[UIView alloc] initWithFrame:CGRectMake(0, y, 320, 1)];
+        contactContainer.layer.borderWidth = 1.0f;
+        contactContainer.layer.borderColor = APP_BORDER_COLOR;
+        contactContainer.backgroundColor = [UIColor clearColor];
         
-        UIView *embassyTextContainer2 = [[UIView alloc] initWithFrame:CGRectMake(0, y + 35, 320, size2.height + 15)];
-        embassyTextContainer2.layer.borderWidth = 1.0f;
-        embassyTextContainer2.layer.borderColor = APP_BORDER_COLOR;
-        embassyTextContainer2.backgroundColor = [UIColor clearColor];
+        NSMutableArray *contactArray = [NSMutableArray new];
+        if (![embassyItem.phone isEqualToString:@""]) {
+            [contactArray addObject:[NSString stringWithFormat:@"Phone: %@", embassyItem.phone]];
+        }
+        if (![embassyItem.fax isEqualToString:@""]) {
+            [contactArray addObject:[NSString stringWithFormat:@"Fax: %@", embassyItem.fax]];
+        }
+        if (![embassyItem.email isEqualToString:@""]) {
+            [contactArray addObject:[NSString stringWithFormat:@"Email: %@", embassyItem.email]];
+        }
+        if (![embassyItem.website isEqualToString:@""]) {
+            [contactArray addObject:[NSString stringWithFormat:@"Website: %@", embassyItem.website]];
+        }
+        
+        for (id item in contactArray) {
+            UITextView *contactView = [[UITextView alloc] initWithFrame:CGRectMake(15, y, 290, 25)];
+            contactView.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
+            contactView.backgroundColor = [UIColor clearColor];
+            contactView.textColor = APP_TEXT_COLOR;
+            contactView.editable = NO;
+            contactView.selectable = YES;
+            contactView.dataDetectorTypes = UIDataDetectorTypeAll;
+            contactView.text = item;
+            [contactView sizeToFit];
+            [contactView layoutIfNeeded];
+            [scrollView addSubview:contactView];
+            y += contactView.frame.size.height;
+        }
+        
+        UIView *contactContainer2 = [[UIView alloc] initWithFrame:CGRectMake(0, y + 15, 320, 1)];
+        contactContainer2.layer.borderWidth = 1.0f;
+        contactContainer2.layer.borderColor = APP_BORDER_COLOR;
+        contactContainer2.backgroundColor = [UIColor clearColor];
         
         [scrollView addSubview:embassyImageView2];
         [scrollView addSubview:embassyLabel2];
-        [embassyTextContainer2 addSubview:embassyText2];
-        [scrollView addSubview:embassyTextContainer2];
-        y = embassyTextContainer2.frame.origin.y + size2.height + 20;
+        [scrollView addSubview:contactContainer];
+        [scrollView addSubview:contactContainer2];
+        y += 20;
     }
     
     if (![embassyItem.hours isEqualToString:@""]) {
