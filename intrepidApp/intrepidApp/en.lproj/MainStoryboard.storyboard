@@ -923,6 +923,22 @@
             </objects>
             <point key="canvasLocation" x="1959" y="146"/>
         </scene>
+        <!--ACE Insurance-->
+        <scene sceneID="xFT-4K-voR">
+            <objects>
+                <viewController storyboardIdentifier="aceView" id="FqA-Ae-Hho" customClass="AceViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kkR-Qz-Fxh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="ACE Insurance" id="nE0-he-juW"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hE6-aY-310" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2365" y="154"/>
+        </scene>
     </scenes>
     <resources>
         <image name="logo2" width="303" height="101"/>
