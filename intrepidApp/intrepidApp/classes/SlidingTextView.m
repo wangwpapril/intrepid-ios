@@ -81,7 +81,7 @@
         self.contentSize = CGSizeMake(320, 330 + height); // was 308
     } else {
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 293, 320, 50)];
-        titleLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
+        titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:17];
         titleLabel.textColor = APP_TEXT_COLOR;
         titleLabel.textAlignment = NSTextAlignmentCenter;
         titleLabel.text = @"Embassy information does not apply.";
