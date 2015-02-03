@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C52E6911A812E1800A6238D /* AceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C52E6901A812E1800A6238D /* AceViewController.m */; };
 		2CB19AB41A730B42007CEC79 /* AlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB19AB31A730B42007CEC79 /* AlertsViewController.m */; };
 		2CB19AB71A73169E007CEC79 /* AlertEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB19AB61A73169E007CEC79 /* AlertEntity.m */; };
 		2CB19ABD1A731FC4007CEC79 /* AlertCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB19ABC1A731FC4007CEC79 /* AlertCell.m */; };
@@ -91,6 +92,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C52E68F1A812E1800A6238D /* AceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AceViewController.h; sourceTree = "<group>"; };
+		2C52E6901A812E1800A6238D /* AceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AceViewController.m; sourceTree = "<group>"; };
 		2CB19AB21A730B42007CEC79 /* AlertsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertsViewController.h; sourceTree = "<group>"; };
 		2CB19AB31A730B42007CEC79 /* AlertsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertsViewController.m; sourceTree = "<group>"; };
 		2CB19AB51A73169E007CEC79 /* AlertEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertEntity.h; sourceTree = "<group>"; };
@@ -334,6 +337,8 @@
 		684BB602179F5117004C44C9 /* Overview */ = {
 			isa = PBXGroup;
 			children = (
+				2C52E68F1A812E1800A6238D /* AceViewController.h */,
+				2C52E6901A812E1800A6238D /* AceViewController.m */,
 				684BB603179F5143004C44C9 /* OverViewViewController.h */,
 				684BB604179F5143004C44C9 /* OverViewViewController.m */,
 			);
@@ -632,6 +637,7 @@
 				685B6F6217A617C20003B5D9 /* TripItem.m in Sources */,
 				2CB19AEB1A754668007CEC79 /* UIImage+MultiFormat.m in Sources */,
 				2CB19AEA1A754668007CEC79 /* UIImage+GIF.m in Sources */,
+				2C52E6911A812E1800A6238D /* AceViewController.m in Sources */,
 				7EA293B817A77161000A56E9 /* LearnMoreViewController.m in Sources */,
 				337237691A50F392003FF7C2 /* TripsViewController.m in Sources */,
 				DC8508801A3EB57500C3173B /* CityEntity.m in Sources */,
