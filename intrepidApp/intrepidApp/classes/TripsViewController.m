@@ -33,7 +33,7 @@
     self.navigationItem.title = @"Trips";
     self.navigationItem.backBarButtonItem.title = @" ";
     
-    tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 44, 320, self.view.bounds.size.height - 108) style:UITableViewStylePlain];
+    tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 44, 320, self.view.bounds.size.height - 88) style:UITableViewStylePlain];
     [self.view addSubview:tableList];
     tableList.delegate = self;
     tableList.dataSource = self;
@@ -124,9 +124,8 @@
     [searchBar addTarget:self action:@selector(textFieldDidChange) forControlEvents:UIControlEventEditingChanged];
     [self.view addSubview:searchBar];
     searchBar.delegate = self;
-    
     UIImageView *spyGlass = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"spyGlass.png"]];
-    spyGlass.frame = CGRectMake(5, 16, 13, 13);
+    spyGlass.frame = CGRectMake(20, 14, 18, 18);
     [self.view addSubview:spyGlass];
     
     xButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -155,7 +154,9 @@
 {
     NSString *CellIdentifier = [NSString stringWithFormat:@"Cell"];
     TripCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
+    cell.textLabel.textColor = APP_TEXT_COLOR;
+    cell.textLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:17];
+
     if(cell == nil) {
         cell = [[TripCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
@@ -166,6 +167,8 @@
         item = [filteredArray objectAtIndex:indexPath.row];
     } else {
         item = [tripsArray objectAtIndex:indexPath.row];
+        cell.textLabel.textColor = APP_TEXT_COLOR;
+        cell.textLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:17];
     }
     [cell setupWithTripItem:item];
     

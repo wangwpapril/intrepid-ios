@@ -56,7 +56,7 @@
     
     UIImage *buttonImage = [[UIImage imageNamed:@"rounded-rectangle-"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
     [loginButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [loginButton setTitleColor:UIColorFromRGB(0xe7eee2) forState:UIControlStateNormal];
+    [loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     loginButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:14];
     [self.view addSubview:loginButton];
     

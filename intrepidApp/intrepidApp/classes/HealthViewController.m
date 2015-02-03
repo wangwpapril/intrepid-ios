@@ -113,7 +113,7 @@
     searchBar.delegate = self;
     
     UIImageView *spyGlass = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"spyGlass"]];
-    spyGlass.frame = CGRectMake(5, 51, 13, 13);
+    spyGlass.frame = CGRectMake(20, 49, 18, 18);
     [self.view addSubview:spyGlass];
     
     xButton = [UIButton buttonWithType:UIButtonTypeCustom];

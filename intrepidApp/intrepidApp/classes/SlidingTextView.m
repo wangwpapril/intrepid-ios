@@ -81,7 +81,7 @@
         self.contentSize = CGSizeMake(320, 330 + height); // was 308
     } else {
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 293, 320, 50)];
-        titleLabel.font = [UIFont fontWithName:APP_FONT_BOLD size:18];
+        titleLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         titleLabel.textColor = APP_TEXT_COLOR;
         titleLabel.textAlignment = NSTextAlignmentCenter;
         titleLabel.text = @"Embassy information does not apply.";
@@ -140,7 +140,7 @@
             UITextView *titleView = [[UITextView alloc] initWithFrame:CGRectMake(0, 293, 320, 100)];
             titleView.editable = NO;
             titleView.scrollEnabled = NO;
-            titleView.font = [UIFont fontWithName:APP_FONT_BOLD size:18];
+            titleView.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
             titleView.textColor = APP_TEXT_COLOR;
             titleView.textAlignment = NSTextAlignmentCenter;
             titleView.text = @"Currency information does not apply as the user is from this location.";
@@ -181,7 +181,7 @@
                 userImageView.image = [UIImage imageNamed:@"unused"];
             }
             
-            UILabel *userLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 293, 50, 50)];
+            UILabel *userLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 293, 50, 50)];
             userLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
             userLabel.textColor = APP_TEXT_COLOR;
             userLabel.text = manager.currentUser[@"user"][@"currency_code"];
@@ -224,7 +224,7 @@
                 tripImageView.image = [UIImage imageNamed:@"unused"];
             }
             
-            UILabel *tripLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 375, 50, 30)];
+            UILabel *tripLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 375, 50, 30)];
             tripLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
             tripLabel.textColor = APP_TEXT_COLOR;
             tripLabel.text = self.currency.country;
