@@ -25,7 +25,7 @@
 
 - (void)initializeViews {
     UILabel *categoryHeader = [[UILabel alloc] initWithFrame:CGRectMake(15, 15, 75, 25)];
-    categoryHeader.font = [UIFont fontWithName:@"ProximaNova-light" size:15];
+    categoryHeader.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     categoryHeader.textColor = APP_TEXT_COLOR;
     categoryHeader.text = @"Category: ";
     [self addSubview:categoryHeader];
@@ -36,7 +36,7 @@
     [self addSubview:categoryLabel];
     
     UILabel *dateHeader = [[UILabel alloc] initWithFrame:CGRectMake(15, 40, 50, 25)];
-    dateHeader.font = [UIFont fontWithName:@"ProximaNova-light" size:15];
+    dateHeader.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     dateHeader.textColor = APP_TEXT_COLOR;
     dateHeader.text = @"Valid: ";
     [self addSubview:dateHeader];
