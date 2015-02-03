@@ -150,7 +150,7 @@
         self.navigationController.navigationBar.translucent = NO;
     }
 //    email.text = @"cshah3@alumni.uwo.ca";
-    password.text = @"iloveapple";
+//    password.text = @"iloveapple";
 }
 
 - (void) moveAllSubviewsDown{
