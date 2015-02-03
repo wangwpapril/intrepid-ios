@@ -1,32 +1,29 @@
 //
-//  WebViewController.m
+//  AceWebViewController.m
 //  intrepidApp
 //
-//  Created by Philip Ojha on 7/25/2013.
-//  Copyright (c) 2013 JonCarrHarris Consulting. All rights reserved.
+//  Created by Chaitanya Shah on 2015-02-03.
+//  Copyright (c) 2015 JonCarrHarris Consulting. All rights reserved.
 //
 
-#import "WebViewController.h"
-#import "MenuController.h"
+#import "AceWebViewController.h"
 #import "Reachability.h"
 
-@implementation WebViewController
-@synthesize mController;
+@interface AceWebViewController ()
+
+@end
+
+@implementation AceWebViewController
 @synthesize trialView;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.hidesBackButton = YES;
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     trialView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height - 44)];  // status & nav
-    mController = [MenuController getInstance];
     trialView.scalesPageToFit = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [mController displayMenuWithParent:self];
-    
     Reachability *reachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus internetStatus = [reachability currentReachabilityStatus];
     

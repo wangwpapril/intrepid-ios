@@ -213,10 +213,6 @@ static MenuController *instance =nil;
             [((WebViewController *)viewController) setupWithTitle:@"Weather" withURL:[NSString stringWithFormat:@"https://m.intrepid247.com/weather.html%@", self.location]];
             viewController.view.tag = 4;
         }
-//        else if (button.tag == 5) {
-//            [((WebViewController *)viewController) setupWithTitle:@"ACE Worldview" withURL:@"https://www.aceworldview.com/WVEnt/WorldView/ADLogin"];
-//            viewController.view.tag = 5;
-//        }
         [parentController.navigationController pushViewController:viewController animated:YES];
     }
     else {

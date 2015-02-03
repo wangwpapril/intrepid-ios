@@ -149,7 +149,7 @@
     if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
         self.navigationController.navigationBar.translucent = NO;
     }
-    email.text = @"cshah3@alumni.uwo.ca";
+//    email.text = @"cshah3@alumni.uwo.ca";
     password.text = @"iloveapple";
 }
 
