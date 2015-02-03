@@ -34,7 +34,7 @@
     
     // country
     countryLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 0, 150, 40)];
-    countryLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:17];
+    countryLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:17];
     countryLabel.textColor = APP_TEXT_COLOR;
     [self addSubview:countryLabel];
 }
