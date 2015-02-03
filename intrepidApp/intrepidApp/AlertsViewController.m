@@ -34,7 +34,7 @@
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     
-    tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 360, self.view.bounds.size.height - 64) style:UITableViewStylePlain];
+    tableList = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.bounds.size.height - 64) style:UITableViewStylePlain];
     tableList.tableFooterView = [[UIView alloc] init];
     [self.view addSubview:tableList];
     tableList.delegate = self;
@@ -43,7 +43,7 @@
     CityEntity *currentCity = [MenuController getInstance].city;
     alertsArray = [[TripManager getInstance] getAlertItemsWithCity:currentCity];
     if (alertsArray.count < 1) {
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 360, 320, 50)];
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 320, 320, 50)];
         titleLabel.font = [UIFont fontWithName:@"ProximaNova-regular" size:18];
         titleLabel.textColor = APP_TEXT_COLOR;
         titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -91,9 +91,9 @@
     AlertEntity *alert = alertsArray[indexPath.row];    
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
-    height = [alert.text boundingRectWithSize:CGSizeMake(400, CGFLOAT_MAX)
+    height = [alert.text boundingRectWithSize:CGSizeMake(320, CGFLOAT_MAX)
                                            options:NSStringDrawingUsesLineFragmentOrigin
-                                        attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:15]}
+                                        attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Regular" size:15]}
                                            context:nil].size.height;
     if (height < 25) {
         height = 25;

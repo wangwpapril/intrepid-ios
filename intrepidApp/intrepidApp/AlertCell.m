@@ -63,11 +63,11 @@
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
-    CGSize size = [alert.text boundingRectWithSize:CGSizeMake(360, CGFLOAT_MAX)
+    CGSize size = [alert.text boundingRectWithSize:CGSizeMake(320, CGFLOAT_MAX)
                                         options:NSStringDrawingUsesLineFragmentOrigin
-                                     attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-light" size:17]}
+                                     attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Regular" size:17]}
                                         context:nil].size;
-    textLabel.frame = CGRectMake(15, 65, 360, size.height);
+    textLabel.frame = CGRectMake(15, 65, 320, size.height);
     textLabel.text = alert.text;
 }
 
