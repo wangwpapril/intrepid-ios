@@ -91,7 +91,7 @@
     AlertEntity *alert = alertsArray[indexPath.row];    
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
-    height = [alert.text boundingRectWithSize:CGSizeMake(320, CGFLOAT_MAX)
+    height = [alert.text boundingRectWithSize:CGSizeMake(290, CGFLOAT_MAX)
                                            options:NSStringDrawingUsesLineFragmentOrigin
                                         attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Regular" size:15]}
                                            context:nil].size.height;
