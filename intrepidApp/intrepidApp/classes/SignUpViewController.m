@@ -147,10 +147,10 @@
     underlinePolicyNumber.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlinePolicyNumber];
     
-    UIImage *buttonImage = [[UIImage imageNamed:@"rounded-rectangle-"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
+    UIImage *buttonImage = [[UIImage imageNamed:@"ace_button"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
     [signUpButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [signUpButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    signUpButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:14];
+    signUpButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:15];
     signUpButton.frame = CGRectMake(68, underlinePolicyNumber.frame.origin.y + 25, 183, 36);
     [self.view addSubview:signUpButton];
     
