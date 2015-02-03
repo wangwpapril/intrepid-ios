@@ -12,5 +12,10 @@
 @interface AceViewController : UIViewController
 
 @property (nonatomic, strong) MenuController *mController;
+@property (weak, nonatomic) IBOutlet UIButton *aceButton;
+@property (weak, nonatomic) IBOutlet UIButton *pdfButton;
+
+- (IBAction)aceAction:(id)sender;
+- (IBAction)pdfAction:(id)sender;
 
 @end

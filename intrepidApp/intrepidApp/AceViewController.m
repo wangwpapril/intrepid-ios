@@ -29,4 +29,10 @@
     [mController displayMenuWithParent:self];
 }
 
+- (IBAction)aceAction:(id)sender {
+}
+
+- (IBAction)pdfAction:(id)sender {
+}
+
 @end

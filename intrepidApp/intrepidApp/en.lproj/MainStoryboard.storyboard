@@ -930,10 +930,40 @@
                     <view key="view" contentMode="scaleToFill" id="kkR-Qz-Fxh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ace-tagline" id="3WW-8v-pmv">
+                                <rect key="frame" x="60" y="100" width="200" height="66"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HZC-MM-1RG">
+                                <rect key="frame" x="16" y="216" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ACE Worldview">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="aceAction:" destination="FqA-Ae-Hho" eventType="touchUpInside" id="jeR-mi-6cq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oIV-6s-J4T">
+                                <rect key="frame" x="16" y="254" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Virtual Wallet PDF">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pdfAction:" destination="FqA-Ae-Hho" eventType="touchUpInside" id="qtq-yB-ID8"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="ACE Insurance" id="nE0-he-juW"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="aceButton" destination="HZC-MM-1RG" id="CVd-gf-sga"/>
+                        <outlet property="pdfButton" destination="oIV-6s-J4T" id="Yko-Ja-LFH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hE6-aY-310" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -941,6 +971,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Ace-tagline" width="200" height="66"/>
         <image name="logo2" width="303" height="101"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
