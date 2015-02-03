@@ -43,8 +43,8 @@
     CityEntity *currentCity = [MenuController getInstance].city;
     alertsArray = [[TripManager getInstance] getAlertItemsWithCity:currentCity];
     if (alertsArray.count < 1) {
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 320, 320, 50)];
-        titleLabel.font = [UIFont fontWithName:@"ProximaNova-regular" size:18];
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 200, 320, 50)];
+        titleLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         titleLabel.textColor = APP_TEXT_COLOR;
         titleLabel.textAlignment = NSTextAlignmentCenter;
         titleLabel.text = @"No recent alerts.";

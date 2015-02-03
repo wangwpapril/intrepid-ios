@@ -35,13 +35,13 @@
     categoryLabel.textColor = APP_TEXT_COLOR;
     [self addSubview:categoryLabel];
     
-    UILabel *dateHeader = [[UILabel alloc] initWithFrame:CGRectMake(15, 40, 50, 25)];
+    UILabel *dateHeader = [[UILabel alloc] initWithFrame:CGRectMake(15, 40, 75, 25)];
     dateHeader.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
     dateHeader.textColor = APP_TEXT_COLOR;
     dateHeader.text = @"Valid: ";
     [self addSubview:dateHeader];
     
-    dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 40, 250, 25)];
+    dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 40, 225, 25)];
     dateLabel.font = [UIFont fontWithName:APP_FONT size:15];
     dateLabel.textColor = APP_TEXT_COLOR;
     [self addSubview:dateLabel];
