@@ -26,8 +26,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *underlineEmail;
 @property (weak, nonatomic) IBOutlet UILabel *underlinePassword;
 @property (weak, nonatomic) IBOutlet UILabel *acceptanceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *acceptanceLabel2;
 @property (weak, nonatomic) IBOutlet UIButton *termsOfService;
-@property (weak, nonatomic) IBOutlet UIButton *privacyPolicy;
 @property BOOL newMedia;
 @property (strong, nonatomic) NSArray *countryArray;
 @property (strong, nonatomic) NSString *selectedCountry;

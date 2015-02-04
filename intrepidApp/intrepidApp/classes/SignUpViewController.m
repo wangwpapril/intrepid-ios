@@ -34,8 +34,8 @@
 @synthesize underlineEmail;
 @synthesize underlinePassword;
 @synthesize termsOfService;
-@synthesize privacyPolicy;
 @synthesize acceptanceLabel;
+@synthesize acceptanceLabel2;
 @synthesize newMedia;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -157,38 +157,30 @@
     acceptanceLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:11];
     acceptanceLabel.textColor = [UIColor whiteColor];
     acceptanceLabel.textAlignment = NSTextAlignmentCenter;
-    acceptanceLabel.frame = CGRectMake(68, signUpButton.frame.origin.y + 50, 183, 21);
+    acceptanceLabel.frame = CGRectMake(68, signUpButton.frame.origin.y + 50, 183, 14);
     [self.view addSubview:acceptanceLabel];
     
-    NSMutableAttributedString *termsOfServiceString = [[NSMutableAttributedString alloc] initWithString:@"Terms of Service, "];
+    acceptanceLabel2.font = [UIFont fontWithName:@"ProximaNova-Light" size:11];
+    acceptanceLabel2.textColor = [UIColor whiteColor];
+    acceptanceLabel2.textAlignment = NSTextAlignmentCenter;
+    acceptanceLabel2.frame = CGRectMake(68, acceptanceLabel.frame.origin.y + 15, 183, 14);
+    [self.view addSubview:acceptanceLabel2];
+    
+    NSMutableAttributedString *termsOfServiceString = [[NSMutableAttributedString alloc] initWithString:@"Terms of Use"];
     
     // making text property to underline text-
     [termsOfServiceString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [termsOfServiceString length])];
     [termsOfService setAttributedTitle: termsOfServiceString forState:UIControlStateNormal];
     [termsOfServiceString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0,[termsOfServiceString length])];
-    termsOfService.titleLabel.font = [UIFont fontWithName:APP_FONT size:11];
-    termsOfService.frame = CGRectMake(70, acceptanceLabel.frame.origin.y + 20, 111, 19);
+    termsOfService.titleLabel.font = [UIFont fontWithName:APP_FONT size:15];
+    termsOfService.frame = CGRectMake(110, acceptanceLabel2.frame.origin.y + 15, 100, 25);
     [self.view addSubview:termsOfService];
-    
-    NSMutableAttributedString *privacyPolicyString = [[NSMutableAttributedString alloc] initWithString:@"Privacy Policy"];
-    
-    // making text property to underline text-
-    [privacyPolicyString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [privacyPolicyString length])];
-    [privacyPolicy setAttributedTitle: privacyPolicyString forState:UIControlStateNormal];
-    [privacyPolicyString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0,[privacyPolicyString length])];
-    privacyPolicy.titleLabel.font = [UIFont fontWithName:APP_FONT size:11];
-    privacyPolicy.frame = CGRectMake(133, acceptanceLabel.frame.origin.y + 20, 102, 19);
-    privacyPolicy.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-    [self.view addSubview:privacyPolicy];
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     } else {
         [self moveAllSubviewsDown];
     }
-    
-    
-	// Do any additional setup after loading the view.
 }
 
 - (void)moveAllSubviewsDown {

@@ -61,7 +61,7 @@
     [self.view addSubview:loginButton];
     
     
-    NSMutableAttributedString *legalString = [[NSMutableAttributedString alloc] initWithString:@"Legal"];
+    NSMutableAttributedString *legalString = [[NSMutableAttributedString alloc] initWithString:@"Terms of Use"];
     
     // making text property to underline text-
     [legalString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [legalString length])];
@@ -69,7 +69,7 @@
     // using text on button
     [legal setAttributedTitle:legalString forState:UIControlStateNormal];
     [legalString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [legalString length])];
-    legal.frame = CGRectMake(9, self.view.frame.size.height - 50, 81, 44);
+    legal.frame = CGRectMake(20, self.view.frame.size.height - 50, 100, 44);
     legal.titleLabel.font = [UIFont fontWithName:APP_FONT size:15];
     [self.view addSubview:legal];
     
@@ -82,7 +82,7 @@
     [learnMore setAttributedTitle: learnMoreString forState:UIControlStateNormal];
     [learnMoreString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0,[learnMoreString length])];
     learnMore.titleLabel.font = [UIFont fontWithName:APP_FONT size:15];
-    learnMore.frame = CGRectMake(215, self.view.frame.size.height - 50, 81, 44);
+    learnMore.frame = CGRectMake(200, self.view.frame.size.height - 50, 100, 44);
     [self.view addSubview:learnMore];
     
 //    intrepidTitle.font = [UIFont fontWithName:APP_FONT_BOLD size:24];
