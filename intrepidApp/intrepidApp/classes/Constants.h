@@ -49,6 +49,6 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define BASE_URL @"https://api.intrepid247.com/v1/"
 #define CURRENCY_URL @"https://openexchangerates.org/api/latest.json?app_id=14073d8e6b8c4687951ed926cbbd3589"
 #define EMAIL_URL @"https://mandrillapp.com/api/1.0/messages/send.json"
-#define ACTIVATE_URL @"https://app.acetravelsmart.com/?#/users/activate/"
+#define ACTIVATE_URL @"https://app.acetravelsmart.com/users/activate/"
 
 #endif
