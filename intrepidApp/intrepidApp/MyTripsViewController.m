@@ -65,6 +65,11 @@
     cities = [intermediateArray sortedArrayUsingDescriptors:@[sort]];
 
     NSMutableArray *cityArray = [NSMutableArray new];
+    TripItem *newTrip = [[TripItem alloc] init];
+    newTrip.image = @"ANew-trip";
+    newTrip.city = @"A New Trip";
+    [cityArray addObject:newTrip];
+    
     for (CityEntity *city in cities) {
         TripItem *trip = [[TripItem alloc] init];
         trip.image = city.introImage1x;
@@ -74,17 +79,11 @@
         [cityArray addObject:trip];
     }
     
-    TripItem *newTrip = [[TripItem alloc] init];
-    newTrip.image = @"ANew-trip";
-    newTrip.city = @"A New Trip";
-    [cityArray addObject:newTrip];
-    
     double scaleFactor = [UIScreen mainScreen].scale;
     
     NSInteger height = scrollView.frame.size.height - 170.0;
     NSInteger width = height * 0.7322;
     int i = 0;
-    NSInteger max = cityArray.count - 1;
     for (TripItem *city in cityArray) {
         CGRect frame;
         frame.origin.x = 320 * i + (320 - width)/2;
@@ -96,7 +95,7 @@
         imageView.clipsToBounds = YES;
 
         // make imageViews clickable with invisible buttons
-        if (i == max) {
+        if (i == 0) {
             imageView.image = [UIImage imageNamed:city.image];
             [scrollView addSubview:imageView];
             
@@ -118,7 +117,7 @@
             [scrollView addSubview:imageView];
             
             UIButton *toSecurity = [UIButton buttonWithType:UIButtonTypeCustom];
-            toSecurity.tag = i;
+            toSecurity.tag = i - 1;
             toSecurity.frame = imageView.frame;
             [toSecurity addTarget:self action:@selector(toSecurity:) forControlEvents:UIControlEventTouchUpInside];
             [scrollView addSubview:toSecurity];
@@ -212,9 +211,9 @@
 
 - (void)handleSwipeUpFrom:(UIGestureRecognizer*)recognizer {
     CGPoint touchPoint = [recognizer locationInView:scrollView];
-    NSInteger cityPoint = (int)ceilf(touchPoint.x/320.0) - 1;
-    
-    if (cityPoint < cities.count) {
+    NSInteger cityPoint = (int)ceilf(touchPoint.x/320.0) - 2;
+
+    if (cityPoint >= 0) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
                                                             message:@"Are you sure you want to delete this trip?"
                                                            delegate:self
