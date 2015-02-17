@@ -211,6 +211,7 @@
     [UIView animateWithDuration:0.1 animations:^{
         xButton.alpha = 0;
     }];
+    [searchBar resignFirstResponder];
     [[tableArray objectAtIndex:self.currentTab] reloadData];
 }
 
