@@ -599,8 +599,8 @@ static TripManager *instance =nil;
                                                       withSafetyImage3x:safetyImage3x];
     
     [RequestBuilder fetchEmbassy:cityDict withCity:city];
+    [RequestBuilder fetchAlert:cityDict withCity:city];    
     [RequestBuilder fetchCurrency:cityDict withCity:city];
-    [RequestBuilder fetchAlert:cityDict withCity:city];
     
     for (NSDictionary *medDict in cityDict[@"medications"]) {
         name = medDict[@"name"];
