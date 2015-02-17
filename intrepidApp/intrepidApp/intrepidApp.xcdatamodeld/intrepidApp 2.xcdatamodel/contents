@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AlertEntity" representedClassName="AlertEntity" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CityEntity" inverseName="alert" inverseEntity="CityEntity" syncable="YES"/>
+    </entity>
+    <entity name="CityEntity" representedClassName="CityEntity" syncable="YES">
+        <attribute name="climate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="communicationInfrastructure" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="countryCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="culturalNorms" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cultureImage1x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cultureImage2x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cultureImage3x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currencyCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="destinationId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="destinationName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="destinationType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="development" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="electricity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ethnicMakeup" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="generalImage1x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="generalImage2x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="generalImage3x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="introImage1x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="introImage2x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="introImage3x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="otherConcerns" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="religion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="safety" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="safetyImage1x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="safetyImage2x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="safetyImage3x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="typeOfGovernment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="visaRequirements" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="alert" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AlertEntity" inverseName="city" inverseEntity="AlertEntity" syncable="YES"/>
+        <relationship name="currency" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CurrencyEntity" inverseName="city" inverseEntity="CurrencyEntity" syncable="YES"/>
+        <relationship name="destination" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DestinationEntity" inverseName="city" inverseEntity="DestinationEntity" syncable="YES"/>
+        <relationship name="embassy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EmbassyEntity" inverseName="city" inverseEntity="EmbassyEntity" syncable="YES"/>
+        <relationship name="health" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HealthEntity" inverseName="city" inverseEntity="HealthEntity" syncable="YES"/>
+    </entity>
+    <entity name="CurrencyEntity" representedClassName="CurrencyEntity" syncable="YES">
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CityEntity" inverseName="currency" inverseEntity="CityEntity" syncable="YES"/>
+    </entity>
+    <entity name="DestinationEntity" representedClassName="DestinationEntity" syncable="YES">
+        <attribute name="currencyCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currencyImage1x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currencyImage2x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currencyImage3x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="destinationId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="flagImage1x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flagImage2x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flagImage3x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CityEntity" inverseName="destination" inverseEntity="CityEntity" syncable="YES"/>
+    </entity>
+    <entity name="EmbassyEntity" representedClassName="EmbassyEntity" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fax" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hours" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image1x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image2x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image3x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="services" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="city" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CityEntity" inverseName="embassy" inverseEntity="CityEntity" syncable="YES"/>
+    </entity>
+    <entity name="HealthEntity" representedClassName="HealthEntity" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="common" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image1x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image2x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image3x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="immunization" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="important" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="symptoms" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CityEntity" inverseName="health" inverseEntity="CityEntity" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AlertEntity" positionX="-468" positionY="99" width="128" height="133"/>
+        <element name="CityEntity" positionX="-477" positionY="3" width="128" height="570"/>
+        <element name="CurrencyEntity" positionX="-317" positionY="-63" width="128" height="88"/>
+        <element name="DestinationEntity" positionX="-459" positionY="108" width="128" height="208"/>
+        <element name="EmbassyEntity" positionX="-677" positionY="-0" width="128" height="255"/>
+        <element name="HealthEntity" positionX="-272" positionY="81" width="128" height="225"/>
+    </elements>
+</model>

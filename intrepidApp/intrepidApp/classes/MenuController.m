@@ -234,9 +234,11 @@ static MenuController *instance =nil;
 
 - (void)getLocation {
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    self.location = @"";
+
     if (app.lastLocation) {
-        self.location = [NSString stringWithFormat:@"?latitude=%f&longitude=%f", app.lastLocation.coordinate.latitude, app.lastLocation.coordinate.longitude];
+        self.location = [NSString stringWithFormat:@"?latitude=%f&longitude=%f&country=%@&country_code=%@", app.lastLocation.coordinate.latitude, app.lastLocation.coordinate.longitude, city.destinationName, city.countryCode];
+    } else {
+        self.location = [NSString stringWithFormat:@"?country=%@&country_code=%@", city.destinationName, city.countryCode];
     }
 }
 

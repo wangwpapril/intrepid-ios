@@ -15,12 +15,14 @@
 
 @property (nonatomic, retain) NSString * climate;
 @property (nonatomic, retain) NSString * communicationInfrastructure;
+@property (nonatomic, retain) NSString * countryCode;
 @property (nonatomic, retain) NSString * culturalNorms;
 @property (nonatomic, retain) NSString * cultureImage1x;
 @property (nonatomic, retain) NSString * cultureImage2x;
 @property (nonatomic, retain) NSString * cultureImage3x;
 @property (nonatomic, retain) NSString * cultureText;
 @property (nonatomic, retain) CurrencyEntity * currency;
+@property (nonatomic, retain) NSString * currencyCode;
 @property (nonatomic, retain) NSNumber * destinationId;
 @property (nonatomic, retain) NSString * destinationName;
 @property (nonatomic, retain) NSString * destinationType;

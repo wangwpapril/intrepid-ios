@@ -15,12 +15,14 @@
 
 @dynamic climate;
 @dynamic communicationInfrastructure;
+@dynamic countryCode;
 @dynamic culturalNorms;
 @dynamic cultureImage1x;
 @dynamic cultureImage2x;
 @dynamic cultureImage3x;
 @dynamic cultureText;
 @dynamic currency;
+@dynamic currencyCode;
 @dynamic destinationId;
 @dynamic destinationName;
 @dynamic destinationType;

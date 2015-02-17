@@ -25,33 +25,35 @@
 - (void)addUserDict:(NSDictionary *)userDict;
 
 - (CityEntity *)createTripWithLanguage:(NSString *)language
-                         withReligion:(NSString *)religion
-                     withethnicMakeup:(NSString *)ethnicMakeup
-                    withCulturalNorms:(NSString *)culturalNorms
-                   withCultureImage1x:(NSString *)cultureImage1x
-                   withCultureImage2x:(NSString *)cultureImage2x
-                   withCultureImage3x:(NSString *)cultureImage3x
-                  withDestinationName:(NSString *)destinationName
-                    withDestinationId:(NSInteger )destinationId
-                  withDestinationType:(NSString *)destinationType
-                         withLocation:(NSString *)location
-                          withClimate:(NSString *)climate
-                 withTypeOfGovernment:(NSString *)typeOfGovernment
-                 withVisaRequirements:(NSString *)visaRequirements
-        withCommunicationInfrastructure:(NSString *)communicationInfrastructure
-                      withElectricity:(NSString *)electricity
-                      withDevelopment:(NSString *)development
-                   withGeneralImage1x:(NSString *)generalImage1x
-                   withGeneralImage2x:(NSString *)generalImage2x
-                   withGeneralImage3x:(NSString *)generalImage3x
-                     withIntroImage1x:(NSString *)introImage1x
-                     withIntroImage2x:(NSString *)introImage2x
-                     withIntroImage3x:(NSString *)introImage3x
-                           withSafety:(NSString *)safety
-                    withOtherConcerns:(NSString *)otherConcerns
-                    withSafetyImage1x:(NSString *)safetyImage1x
-                    withSafetyImage2x:(NSString *)safetyImage2x
-                    withSafetyImage3x:(NSString *)safetyImage3x;
+                          withReligion:(NSString *)religion
+                      withethnicMakeup:(NSString *)ethnicMakeup
+                     withCulturalNorms:(NSString *)culturalNorms
+                    withCultureImage1x:(NSString *)cultureImage1x
+                    withCultureImage2x:(NSString *)cultureImage2x
+                    withCultureImage3x:(NSString *)cultureImage3x
+                   withDestinationName:(NSString *)destinationName
+                     withDestinationId:(NSInteger )destinationId
+                   withDestinationType:(NSString *)destinationType
+                          withLocation:(NSString *)location
+                           withClimate:(NSString *)climate
+                  withTypeOfGovernment:(NSString *)typeOfGovernment
+                  withVisaRequirements:(NSString *)visaRequirements
+       withCommunicationInfrastructure:(NSString *)communicationInfrastructure
+                       withElectricity:(NSString *)electricity
+                       withDevelopment:(NSString *)development
+                    withGeneralImage1x:(NSString *)generalImage1x
+                    withGeneralImage2x:(NSString *)generalImage2x
+                    withGeneralImage3x:(NSString *)generalImage3x
+                      withIntroImage1x:(NSString *)introImage1x
+                      withIntroImage2x:(NSString *)introImage2x
+                      withIntroImage3x:(NSString *)introImage3x
+                            withSafety:(NSString *)safety
+                     withOtherConcerns:(NSString *)otherConcerns
+                     withSafetyImage1x:(NSString *)safetyImage1x
+                     withSafetyImage2x:(NSString *)safetyImage2x
+                     withSafetyImage3x:(NSString *)safetyImage3x
+                       withCountryCode:(NSString *)countryCode
+                       withCurrencyCode:(NSString *)currencyCode;
 
 - (DestinationEntity *)createDestinationWithName:(NSString *)name
                                withDestinationId:(NSInteger )destinationId

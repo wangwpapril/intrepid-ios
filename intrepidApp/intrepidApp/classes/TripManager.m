@@ -301,33 +301,35 @@ static TripManager *instance =nil;
 }
 
 - (CityEntity *)createTripWithLanguage:(NSString *)language
-                         withReligion:(NSString *)religion
-                     withethnicMakeup:(NSString *)ethnicMakeup
-                    withCulturalNorms:(NSString *)culturalNorms
-                   withCultureImage1x:(NSString *)cultureImage1x
-                   withCultureImage2x:(NSString *)cultureImage2x
-                   withCultureImage3x:(NSString *)cultureImage3x
-                  withDestinationName:(NSString *)destinationName
-                    withDestinationId:(NSInteger )destinationId
-                  withDestinationType:(NSString *)destinationType
-                         withLocation:(NSString *)location
-                          withClimate:(NSString *)climate
-                 withTypeOfGovernment:(NSString *)typeOfGovernment
-                 withVisaRequirements:(NSString *)visaRequirements
-      withCommunicationInfrastructure:(NSString *)communicationInfrastructure
-                      withElectricity:(NSString *)electricity
-                      withDevelopment:(NSString *)development
-                   withGeneralImage1x:(NSString *)generalImage1x
-                   withGeneralImage2x:(NSString *)generalImage2x
-                   withGeneralImage3x:(NSString *)generalImage3x
-                     withIntroImage1x:(NSString *)introImage1x
-                     withIntroImage2x:(NSString *)introImage2x
-                     withIntroImage3x:(NSString *)introImage3x
-                           withSafety:(NSString *)safety
-                    withOtherConcerns:(NSString *)otherConcerns
-                    withSafetyImage1x:(NSString *)safetyImage1x
-                    withSafetyImage2x:(NSString *)safetyImage2x
-                    withSafetyImage3x:(NSString *)safetyImage3x
+                          withReligion:(NSString *)religion
+                      withethnicMakeup:(NSString *)ethnicMakeup
+                     withCulturalNorms:(NSString *)culturalNorms
+                    withCultureImage1x:(NSString *)cultureImage1x
+                    withCultureImage2x:(NSString *)cultureImage2x
+                    withCultureImage3x:(NSString *)cultureImage3x
+                   withDestinationName:(NSString *)destinationName
+                     withDestinationId:(NSInteger )destinationId
+                   withDestinationType:(NSString *)destinationType
+                          withLocation:(NSString *)location
+                           withClimate:(NSString *)climate
+                  withTypeOfGovernment:(NSString *)typeOfGovernment
+                  withVisaRequirements:(NSString *)visaRequirements
+       withCommunicationInfrastructure:(NSString *)communicationInfrastructure
+                       withElectricity:(NSString *)electricity
+                       withDevelopment:(NSString *)development
+                    withGeneralImage1x:(NSString *)generalImage1x
+                    withGeneralImage2x:(NSString *)generalImage2x
+                    withGeneralImage3x:(NSString *)generalImage3x
+                      withIntroImage1x:(NSString *)introImage1x
+                      withIntroImage2x:(NSString *)introImage2x
+                      withIntroImage3x:(NSString *)introImage3x
+                            withSafety:(NSString *)safety
+                     withOtherConcerns:(NSString *)otherConcerns
+                     withSafetyImage1x:(NSString *)safetyImage1x
+                     withSafetyImage2x:(NSString *)safetyImage2x
+                     withSafetyImage3x:(NSString *)safetyImage3x
+                       withCountryCode:(NSString *)countryCode
+                      withCurrencyCode:(NSString *)currencyCode
 {
     CityEntity *city = [NSEntityDescription insertNewObjectForEntityForName:@"CityEntity" inManagedObjectContext:managedObjectContext];
 
@@ -359,14 +361,14 @@ static TripManager *instance =nil;
     city.safetyImage1x = safetyImage1x;
     city.safetyImage2x = safetyImage2x;
     city.safetyImage3x = safetyImage3x;
+    city.countryCode = countryCode;
+    city.currencyCode = currencyCode;
     
-//    city.embassyItems;
-//    dispatch_async(dispatch_get_main_queue(), ^{
-        NSError *error = nil;
-        if (![managedObjectContext save:&error]) {
-            NSLog(@"save failed");
-        }
-//    });
+    NSError *error = nil;
+    if (![managedObjectContext save:&error]) {
+        NSLog(@"save failed");
+    }
+    
     return city;
 }
 
@@ -483,7 +485,7 @@ static TripManager *instance =nil;
     NSString *language, *religion, *ethnicMakeup, *culturalNorms;
     NSString *safety, *otherConcerns;
     NSString *cultureImage1x, *cultureImage2x, *cultureImage3x, *introImage1x, *introImage2x, *introImage3x, *generalImage1x, *generalImage2x, *generalImage3x, *safetyImage1x, *safetyImage2x, *safetyImage3x;
-    NSString *destinationName, *destinationType;
+    NSString *destinationName, *destinationType, *countryCode, *currencyCode;
     NSInteger destinationId;
     
     NSString *name, *category, *desc, *details, *symptoms, *immunizations, *important, *image1x, *image2x, *image3x;
@@ -492,6 +494,8 @@ static TripManager *instance =nil;
     destinationName = cityDict[@"name"];
     destinationId = [cityDict[@"id"] integerValue];
     destinationType = cityDict[@"type"];
+    countryCode = cityDict[@"country"][@"country_code"];
+    currencyCode = cityDict[@"country"][@"currency_code"];
     
     NSDictionary *contentDict = cityDict[@"content"];
     
@@ -596,7 +600,9 @@ static TripManager *instance =nil;
                                                       withOtherConcerns:otherConcerns
                                                       withSafetyImage1x:safetyImage1x
                                                       withSafetyImage2x:safetyImage2x
-                                                      withSafetyImage3x:safetyImage3x];
+                                                      withSafetyImage3x:safetyImage3x
+                                                         withCountryCode:countryCode
+                                                        withCurrencyCode:currencyCode];
     
     [RequestBuilder fetchEmbassy:cityDict withCity:city];
     [RequestBuilder fetchAlert:cityDict withCity:city];    
