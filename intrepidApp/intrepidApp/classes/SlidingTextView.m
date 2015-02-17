@@ -143,7 +143,7 @@
             titleView.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
             titleView.textColor = APP_TEXT_COLOR;
             titleView.textAlignment = NSTextAlignmentCenter;
-            titleView.text = @"Currency information does not apply as the user is from this location.";
+            titleView.text = [NSString stringWithFormat:@"Currency information does not apply as your country and %@ use %@.", city.destinationName, self.currency.country];
             [scroll addSubview:titleView];
         } else {
             self.userField = [[UITextField alloc] initWithFrame:CGRectMake(160, 293, 125, 50)];
