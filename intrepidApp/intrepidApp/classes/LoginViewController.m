@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import "RequestBuilder.h"
 #import "Constants.h"
+#import "MyTripsViewController.h"
 
 @interface LoginViewController ()
 
@@ -151,6 +152,12 @@
     }
 //    email.text = @"cshah3@alumni.uwo.ca";
 //    password.text = @"iloveapple";
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"]) {
+        [RequestBuilder fetchUser:[[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"]];
+        MyTripsViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"myTrips"];
+        [self.navigationController pushViewController:viewController animated:NO];
+    }
 }
 
 - (void) moveAllSubviewsDown{
@@ -186,6 +193,10 @@
             NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             NSLog(@"%@", responseBody);
             if (responseBody[@"user"]) {
+                NSMutableDictionary *userDict = [self cleanDictionary:[[NSMutableDictionary alloc] initWithDictionary:responseBody]];
+                [[NSUserDefaults standardUserDefaults] setObject:[[NSDictionary alloc] initWithDictionary:userDict] forKey:@"userDict"];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+                
                 [RequestBuilder fetchUser:responseBody];
                 [self.activityIndicator stopAnimating];
                 [self performSegueWithIdentifier:@"toTrips" sender:self];
@@ -208,6 +219,19 @@
             [alertView show];
         }
     }];
+}
+
+#pragma mark - Helper methods
+
+- (NSMutableDictionary *)cleanDictionary:(NSMutableDictionary *)dictionary {
+    [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        if (obj == [NSNull null]) {
+            [dictionary setObject:@"" forKey:key];
+        } else if ([obj isKindOfClass:[NSDictionary class]]) {
+            [dictionary setObject:[self cleanDictionary:[[NSMutableDictionary alloc] initWithDictionary:obj]] forKey:key];
+        }
+    }];
+    return dictionary;
 }
 
 # pragma mark - keyboard stuff

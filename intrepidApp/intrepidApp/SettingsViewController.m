@@ -353,6 +353,8 @@
     [[TripManager getInstance] deleteAllObjects:@"EmbassyEntity"];
     [[TripManager getInstance] deleteAllObjects:@"HealthEntity"];
     [[TripManager getInstance] deleteAllObjects:@"AlertEntity"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"userDict"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [self performSegueWithIdentifier:@"toLogin" sender:self];
 }
 
