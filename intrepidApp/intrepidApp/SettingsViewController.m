@@ -194,9 +194,6 @@
     underlinePasswordConfirmation.frame = CGRectMake(125, 315, 175, 1);
     [self.view addSubview:underlinePasswordConfirmation];
     
-  
-    
-    //Initalize the Update Profile button
     
     UIImage *buttonImage = [[UIImage imageNamed:@"ace_button"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
     updateButton.frame = CGRectMake(68, underlinePasswordConfirmation.frame.origin.y + 50, 183, 36);
@@ -205,25 +202,11 @@
     [updateButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     updateButton.titleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:15];
     [self.view addSubview:updateButton];
-    
-//    [updateButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//    updateButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:14];
-//    updateButton.frame = CGRectMake(68, underlinePasswordConfirmation.frame.origin.y + 25, 183, 36);
-//    UIGraphicsBeginImageContext(updateButton.frame.size);
-//    [[UIImage imageNamed:@"rounded-rectangle-"] drawInRect:signOutButton.bounds];
-//        UIImage *updateImage = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//    [updateButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//    [updateButton setTitle:@"UPDATE PROFILE" forState:UIControlStateNormal];
-//    updateButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:14];
-//    [updateButton setBackgroundImage:updateImage forState:UIControlStateNormal];
-//    [self.view addSubview:updateButton];
+
     
     NSMutableAttributedString *signOutString = [[NSMutableAttributedString alloc] initWithString:@"Sign Out"];
-    
     // making text property to underline text-
     [signOutString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [signOutString length])];
-    
     [signOutButton setAttributedTitle:signOutString forState:UIControlStateNormal];
     [signOutString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.53 green:0.73 blue:0.14 alpha:1] range:NSMakeRange(0,[signOutString length])];
     signOutButton.frame = CGRectMake(77, updateButton.frame.origin.y + 70, 166, 15);
@@ -232,29 +215,21 @@
     [signOutButton setTitle:@"SIGN OUT" forState:UIControlStateNormal];
     signOutButton.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:signOutButton];
-
-    
-    
-    //Initalize the Sign Out button
-//    [signOutButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//    signOutButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:14];
-//    signOutButton.frame = CGRectMake(68, updateButton.frame.origin.y + 50, 183, 36);
-//    UIGraphicsBeginImageContext(signOutButton.frame.size);
-//    [[UIImage imageNamed:@"signout-button2"] drawInRect:signOutButton.bounds];
-//    UIImage *signoutImage = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//    [signOutButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//    [signOutButton setTitle:@"SIGN OUT" forState:UIControlStateNormal];
-//    signOutButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:14];
-//    [signOutButton setBackgroundImage:signoutImage forState:UIControlStateNormal];
-//    [self.view addSubview:signOutButton];
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        
         self.edgesForExtendedLayout = UIRectEdgeNone;
-        
     } else {
         [self moveAllSubviewsDown];
+    }
+    
+    if ([[UIDevice currentDevice].model rangeOfString:@"iPad"].location != NSNotFound) {
+        CGRect ipadFrame = updateButton.frame;
+        ipadFrame.origin.y = updateButton.frame.origin.y - 30;
+        updateButton.frame = ipadFrame;
+        
+        CGRect ipadFrame2 = signOutButton.frame;
+        ipadFrame2.origin.y = signOutButton.frame.origin.y - 50;
+        signOutButton.frame = ipadFrame2;
     }
 }
 
