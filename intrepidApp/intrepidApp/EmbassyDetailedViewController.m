@@ -67,9 +67,9 @@
     
     if (![embassyItem.address isEqualToString:@""]) {
         UIImageView  *embassyImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"embassy-icon"]];
-        embassyImageView.frame = CGRectMake(14, y + 1, 25, 25);
+        embassyImageView.frame = CGRectMake(14, y + 4, 25, 25);
         
-        UILabel *embassyLabel = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 5, 250, 25)];
+        UILabel *embassyLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, y + 5, 250, 25)];
         embassyLabel.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         embassyLabel.backgroundColor = [UIColor clearColor];
         embassyLabel.textColor = APP_TEXT_COLOR;
@@ -102,9 +102,9 @@
     
     if (![embassyItem.phone isEqualToString:@""] || ![embassyItem.fax isEqualToString:@""] || ![embassyItem.email isEqualToString:@""] || ![embassyItem.website isEqualToString:@""]) {
         UIImageView  *embassyImageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"contact_icon"]];
-        embassyImageView2.frame = CGRectMake(14, y + 2, 25, 25);
+        embassyImageView2.frame = CGRectMake(14, y + 4, 25, 25);
         
-        UILabel *embassyLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 5, 250, 25)];
+        UILabel *embassyLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(50, y + 5, 250, 25)];
         embassyLabel2.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         embassyLabel2.backgroundColor = [UIColor clearColor];
         embassyLabel2.text = @"Contact Info";
@@ -136,6 +136,7 @@
             contactView.backgroundColor = [UIColor clearColor];
             contactView.textColor = APP_TEXT_COLOR;
             contactView.editable = NO;
+            contactView.scrollEnabled = NO;
             contactView.selectable = YES;
             contactView.dataDetectorTypes = UIDataDetectorTypeAll;
             contactView.text = item;
@@ -159,9 +160,9 @@
     
     if (![embassyItem.hours isEqualToString:@""]) {
         UIImageView  *embassyImageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hours_icon"]];
-        embassyImageView3.frame = CGRectMake(14, y + 3, 25, 25);
+        embassyImageView3.frame = CGRectMake(14, y + 4, 25, 25);
         
-        UILabel *embassyLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 5, 250, 25)];
+        UILabel *embassyLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(50, y + 5, 250, 25)];
         embassyLabel3.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         embassyLabel3.backgroundColor = [UIColor clearColor];
         embassyLabel3.text = @"Hours of Operation";
@@ -194,9 +195,9 @@
 
     if (![embassyItem.services isEqualToString:@""]) {
         UIImageView  *embassyImageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"embassy-icon"]];
-        embassyImageView4.frame = CGRectMake(14, y + 5, 25, 25);
+        embassyImageView4.frame = CGRectMake(14, y + 4, 25, 25);
         
-        UILabel *embassyLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 1, 250, 25)];
+        UILabel *embassyLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(50, y + 5, 250, 25)];
         embassyLabel4.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         embassyLabel4.backgroundColor = [UIColor clearColor];
         embassyLabel4.text = @"Services Offered";
@@ -229,37 +230,37 @@
     
     if (![embassyItem.notes isEqualToString:@""]) {
         UIImageView  *embassyImageView5 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"embassy-icon"]];
-        embassyImageView5.frame = CGRectMake(14, y + 0, 25, 25);
+        embassyImageView5.frame = CGRectMake(14, y + 4, 25, 25);
         
-        UILabel *embassyLabel5 = [[UILabel alloc] initWithFrame:CGRectMake(53, y + 5, 250, 25)];
+        UILabel *embassyLabel5 = [[UILabel alloc] initWithFrame:CGRectMake(50, y + 5, 250, 25)];
         embassyLabel5.font = [UIFont fontWithName:@"ProximaNova-Semibold" size:18];
         embassyLabel5.backgroundColor = [UIColor clearColor];
         embassyLabel5.text = @"Notes";
         embassyLabel5.textColor = APP_TEXT_COLOR;
         
         NSString *content5 = embassyItem.notes;
-        CGSize size5 = [content5 boundingRectWithSize:CGSizeMake(290, 15000)
-                                              options:NSStringDrawingUsesLineFragmentOrigin
-                                           attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:15]}
-                                              context:nil].size;
-        UILabel *embassyText5 = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 290, size5.height + 5)];
-        embassyText5.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
-        embassyText5.backgroundColor = [UIColor clearColor];
-        embassyText5.textColor = APP_TEXT_COLOR;
-        embassyText5.text = content5;
-        embassyText5.lineBreakMode = NSLineBreakByWordWrapping;
-        embassyText5.numberOfLines = 0;
-        
-        UIView *embassyTextContainer5 = [[UIView alloc] initWithFrame:CGRectMake(0, y + 35, 320, size5.height + 15)];
+        UITextView *notesView = [[UITextView alloc] initWithFrame:CGRectMake(15, 5, 290, 25)];
+        notesView.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
+        notesView.backgroundColor = [UIColor clearColor];
+        notesView.textColor = APP_TEXT_COLOR;
+        notesView.editable = NO;
+        notesView.scrollEnabled = NO;
+        notesView.selectable = YES;
+        notesView.dataDetectorTypes = UIDataDetectorTypeAll;
+        notesView.text = content5;
+        [notesView sizeToFit];
+        [notesView layoutIfNeeded];
+    
+        UIView *embassyTextContainer5 = [[UIView alloc] initWithFrame:CGRectMake(0, y + 35, 320, notesView.frame.size.height + 15)];
         embassyTextContainer5.layer.borderWidth = 1.0f;
         embassyTextContainer5.layer.borderColor = APP_BORDER_COLOR;
         embassyTextContainer5.backgroundColor = [UIColor clearColor];
         
         [scrollView addSubview:embassyImageView5];
         [scrollView addSubview:embassyLabel5];
-        [embassyTextContainer5 addSubview:embassyText5];
+        [embassyTextContainer5 addSubview:notesView];
         [scrollView addSubview:embassyTextContainer5];
-        y = embassyTextContainer5.frame.origin.y + size5.height + 20;
+        y = embassyTextContainer5.frame.origin.y + notesView.frame.size.height + 20;
     }
     
     scrollView.contentSize = CGSizeMake(320, y + 80);
