@@ -152,7 +152,7 @@
     if (mController.city) {
         while (i < limit) {
             if (mController.city == [cities objectAtIndex:i]) {
-                index = i;
+                index = i + 1;
             }
             i++;
         }
