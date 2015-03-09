@@ -392,7 +392,9 @@
     // Animate the current view out of the way
     if (self.view.frame.origin.y >= 0)
     {
-        [self setViewMovedUp:YES];
+        if (username.isEditing || password.isEditing || policyNumber.isEditing) {
+            [self setViewMovedUp:YES];
+        }
     }
 }
 
