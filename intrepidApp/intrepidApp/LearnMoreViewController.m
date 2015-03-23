@@ -15,7 +15,6 @@
 @implementation LearnMoreViewController
 
 @synthesize pageControl;
-@synthesize scrollView;
 @synthesize exitButton;
 
 - (void)viewDidLoad
@@ -46,32 +45,32 @@
     [self.view addSubview:learnMoreLabel];
     
     //implement scrollview
-    scrollView.delegate = self;
-    scrollView.scrollEnabled = YES;
-    scrollView.pagingEnabled = YES;
+    self.scrollView.delegate = self;
+    self.scrollView.scrollEnabled = YES;
+    self.scrollView.pagingEnabled = YES;
     
     //create array for images
     NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"overview", @"health", @"cool", @"assistance-new", nil];
     
     for (int i=0; i < [imageArray count]; i++) {
         CGRect frame;
-        NSInteger height = scrollView.frame.size.height - 150.0;
+        NSInteger height = self.scrollView.frame.size.height - 150.0;
         NSInteger width = height * 0.5634;
         frame.origin.x = 320 * i + (320 - width)/2;
-        frame.origin.y = scrollView.frame.origin.y + 75;
+        frame.origin.y = self.scrollView.frame.origin.y + 75;
         //0.7322;
         frame.size = CGSizeMake(width, height);
                 
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
         imageView.image = [UIImage imageNamed:[imageArray objectAtIndex:i]];
-        [scrollView addSubview:imageView];
+        [self.scrollView addSubview:imageView];
         
     }
-    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * [imageArray count], 366.0);
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * [imageArray count], 366.0);
     
     [self populateDescriptions];
     
-    [self.view addSubview:scrollView];
+    [self.view addSubview:self.scrollView];
     exitButton.frame = CGRectMake(280, 32, 40, 40);
     [self.view addSubview:exitButton];
     UIImage *exitImage = [UIImage imageNamed:@"close"];
@@ -123,7 +122,7 @@
     mexicoEmbassyDescription.text = @"Security information about the country including safety and embassy details.";
     mexicoEmbassyDescription.numberOfLines = 0;
     mexicoEmbassyDescription.lineBreakMode = NSLineBreakByWordWrapping;
-    [scrollView addSubview:mexicoEmbassyDescription];
+    [self.scrollView addSubview:mexicoEmbassyDescription];
     
     UILabel *healthOverviewDescription = [[UILabel alloc] init];
     healthOverviewDescription.frame = CGRectMake(345, self.view.frame.size.height - 175, 250.0, 275.0);
@@ -134,7 +133,7 @@
     healthOverviewDescription.text = @"Information about health concerns including prevalent conditions and medications.";
     healthOverviewDescription.numberOfLines = 0;
     healthOverviewDescription.lineBreakMode = NSLineBreakByWordWrapping;
-    [scrollView addSubview:healthOverviewDescription];
+    [self.scrollView addSubview:healthOverviewDescription];
     
     UILabel *mexicoCultureDescription = [[UILabel alloc] init];
     mexicoCultureDescription.frame = CGRectMake(37, self.view.frame.size.height - 175, 250.0, 250.0);
@@ -145,7 +144,7 @@
     mexicoCultureDescription.text = @"Information about the history, culture, and currency for the country.";
     mexicoCultureDescription.numberOfLines = 0;
     mexicoCultureDescription.lineBreakMode = NSLineBreakByWordWrapping;
-    [scrollView addSubview:mexicoCultureDescription];
+    [self.scrollView addSubview:mexicoCultureDescription];
     
     UILabel *assistanceScreenDescription = [[UILabel alloc] init];
     assistanceScreenDescription.frame = CGRectMake(995, self.view.frame.size.height - 175, 250.0, 250.0);
@@ -156,15 +155,20 @@
     assistanceScreenDescription.text = @"Get emergency assistance whenever you need it.";
     assistanceScreenDescription.numberOfLines = 0;
     assistanceScreenDescription.lineBreakMode = NSLineBreakByWordWrapping;
-    [scrollView addSubview:assistanceScreenDescription];
+    [self.scrollView addSubview:assistanceScreenDescription];
 
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)sender {
-    CGFloat pageWidth = self.scrollView.frame.size.width;
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat pageWidth = scrollView.frame.size.width;
     int page = floor((scrollView.contentOffset.x - pageWidth / 2)/pageWidth) +1;
     pageControl.currentPage = page;
+}
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [[SEGAnalytics sharedAnalytics] track:@"Swipe"
+                               properties:@{@"category" : @"Learn More",
+                                            @"value" : [NSNumber numberWithInt:(int)roundf(scrollView.bounds.origin.x/scrollView.frame.size.width) + 1]}];
 }
 
 - (IBAction)exit:(id)sender {
