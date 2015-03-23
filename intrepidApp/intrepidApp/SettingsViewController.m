@@ -276,6 +276,9 @@
             NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             NSLog(@"%@", responseBody);
             if (responseBody[@"success"]) {
+                [[SEGAnalytics sharedAnalytics] track:@"Change Password"
+                                           properties:@{@"category" : @"Settings"}];
+                
                 [self updateProfile];
             } else {
                 [self sendAlertWithError:responseBody[@"error"][@"message"][0]];
@@ -304,6 +307,9 @@
             NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             NSLog(@"%@", responseBody);
             if (responseBody[@"user"]) {
+                [[SEGAnalytics sharedAnalytics] track:@"Update Profile"
+                                           properties:@{@"category" : @"Settings"}];
+                
                 [RequestBuilder fetchUser:responseBody];
                 [self sendAlertWithError:@"Your profile has been updated."];
             } else {
@@ -316,7 +322,10 @@
 }
 
 - (IBAction)signout:(id)sender {
+    [[SEGAnalytics sharedAnalytics] track:@"Signout"
+                               properties:@{@"category" : @"Settings"}];
     [[SEGAnalytics sharedAnalytics] reset];
+    
     [[TripManager getInstance] deleteAllObjects:@"CityEntity"];
     [[TripManager getInstance] deleteAllObjects:@"CurrencyEntity"];
     [[TripManager getInstance] deleteAllObjects:@"EmbassyEntity"];
@@ -362,6 +371,29 @@
 }
 
 #pragma mark - keyboard stuff
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if (textField == firstName) {
+        [[SEGAnalytics sharedAnalytics] track:@"First Name Field"
+                                   properties:@{@"category" : @"Settings"}];
+    } else if (textField == lastName) {
+        [[SEGAnalytics sharedAnalytics] track:@"Last Name Field"
+                                   properties:@{@"category" : @"Settings"}];
+    } else if (textField == email) {
+        [[SEGAnalytics sharedAnalytics] track:@"Email Field"
+                                   properties:@{@"category" : @"Settings"}];
+    } else if (textField == username) {
+        [[SEGAnalytics sharedAnalytics] track:@"Username Field"
+                                   properties:@{@"category" : @"Settings"}];
+    } else if (textField == oldPassword) {
+        [[SEGAnalytics sharedAnalytics] track:@"Old Password Field"
+                                   properties:@{@"category" : @"Settings"}];
+    } else if (textField == changePassword) {
+        [[SEGAnalytics sharedAnalytics] track:@"New Password Field"
+                                   properties:@{@"category" : @"Settings"}];
+    }
+    return YES;
+}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
     [theTextField resignFirstResponder];
