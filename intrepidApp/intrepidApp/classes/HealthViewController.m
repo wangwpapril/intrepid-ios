@@ -187,22 +187,40 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
-        NSLog(@"text is not default, instead it's :%@", searchBar.text);
         selectedItem = (HealthEntity *)[filteredHealthItemArray objectAtIndex:indexPath.row];
     }
     else {
-        NSLog(@"text is default : %@", searchBar.text);
         selectedItem = (HealthEntity *)[[contentArray objectAtIndex:self.currentTab] objectAtIndex:indexPath.row];
     }
     HealthViewDetailController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"healthDetails"];
     viewController.healthItem = selectedItem;
+    
+    if (self.currentTab == 0) {
+        [[SEGAnalytics sharedAnalytics] track:@"Visit Health Detail"
+                                   properties:@{@"category" : @"Conditions",
+                                                @"label" : selectedItem.name}];
+    } else if (self.currentTab == 1) {
+        [[SEGAnalytics sharedAnalytics] track:@"Visit Health Detail"
+                                   properties:@{@"category" : @"Medications",
+                                                @"label" : selectedItem.name}];
+    }
+    
     [self.navigationController pushViewController:viewController animated:YES];
 //    [searchBar resignFirstResponder];
 }
 
-
 #pragma mark Content Filtering
--(void)filterContent{
+
+- (void)filterContent {
+    if (self.currentTab == 0) {
+        [[SEGAnalytics sharedAnalytics] track:@"Keyword"
+                                   properties:@{@"category" : @"Conditions",
+                                                @"label" : searchBar.text}];
+    } else if (self.currentTab == 1) {
+        [[SEGAnalytics sharedAnalytics] track:@"Keyword"
+                                   properties:@{@"category" : @"Medications",
+                                                @"label" : searchBar.text}];
+    }
     
     [self.filteredHealthItemArray removeAllObjects];
     
@@ -214,8 +232,28 @@
 
 #pragma mark - TextField Delegate Methods
 
--(void)deleteText {
-    NSLog(@"deleting text");
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if (textField == searchBar) {
+        if (self.currentTab == 0) {
+            [[SEGAnalytics sharedAnalytics] track:@"Search Field"
+                                       properties:@{@"category" : @"Conditions"}];
+        } else if (self.currentTab == 1) {
+            [[SEGAnalytics sharedAnalytics] track:@"Search Field"
+                                       properties:@{@"category" : @"Medications"}];
+        }
+    }
+    return YES;
+}
+
+- (void)deleteText {
+    if (self.currentTab == 0) {
+        [[SEGAnalytics sharedAnalytics] track:@"Cancel Search"
+                                   properties:@{@"category" : @"Conditions"}];
+    } else if (self.currentTab == 1) {
+        [[SEGAnalytics sharedAnalytics] track:@"Cancel Search"
+                                   properties:@{@"category" : @"Medications"}];
+    }
+    
     searchBar.text = @"";
     [UIView animateWithDuration:0.1 animations:^{
         xButton.alpha = 0;
@@ -224,29 +262,15 @@
     [[tableArray objectAtIndex:self.currentTab] reloadData];
 }
 
--(void)removeText {
-    NSLog(@"removing text");
-    searchBar.text = @"Tap to Search";
-    [[tableArray objectAtIndex:self.currentTab] reloadData];
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [searchBar resignFirstResponder];
-    
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     textField.text = @"";
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    NSLog(@"text field ended editing");
-}
-
 - (void)textFieldDidChange {
-    NSLog(@"text changed");
-    
     if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
         [UIView animateWithDuration:0.1 animations:^{
             xButton.alpha = 1;

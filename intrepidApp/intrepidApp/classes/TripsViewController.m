@@ -187,6 +187,10 @@
         selectedTrip = [tripsArray objectAtIndex:indexPath.row];
     }
     
+    [[SEGAnalytics sharedAnalytics] track:@"New Trip"
+                               properties:@{@"category" : @"Add Trip",
+                                            @"label" : selectedTrip.name}];
+    
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     self.activityIndicator.color = [UIColor grayColor];
     self.activityIndicator.center = self.view.center;

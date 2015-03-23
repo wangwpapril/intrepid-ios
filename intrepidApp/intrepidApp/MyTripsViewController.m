@@ -184,6 +184,11 @@
     OverViewViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"overView"];
     viewController.firstLoad = true;
     [[MenuController getInstance] selectButtonWithTag:0];
+    
+    [[SEGAnalytics sharedAnalytics] track:@"View Trip"
+                               properties:@{@"category" : @"My Trips",
+                                            @"label" : city.destinationName}];
+    
     [self.navigationController pushViewController:viewController animated:YES];
 //    [[MenuController getInstance] showMenu];
 }
@@ -229,10 +234,12 @@
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
-        [[SEGAnalytics sharedAnalytics] track:@"Delete Trip"
-                                   properties:@{@"category" : @"My Trips"}];
-        
         CityEntity *city = cities[alertView.tag];
+        
+        [[SEGAnalytics sharedAnalytics] track:@"Delete Trip"
+                                   properties:@{@"category" : @"My Trips",
+                                                @"label" : city.destinationName}];
+    
         [[TripManager getInstance] deleteHealthItemsWithCity:city];
         [[TripManager getInstance] deleteEmbassyItemsWithCity:city];
         [[TripManager getInstance] deleteCurrencyItemsWithCity:city];
