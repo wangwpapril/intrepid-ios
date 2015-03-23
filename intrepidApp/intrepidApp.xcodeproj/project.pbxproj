@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		2C52E6911A812E1800A6238D /* AceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C52E6901A812E1800A6238D /* AceViewController.m */; };
 		2C52E6941A814F7800A6238D /* AceWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C52E6931A814F7800A6238D /* AceWebViewController.m */; };
+		2C7467611AC088A700BFB3A6 /* Analytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7467601AC088A700BFB3A6 /* Analytics.framework */; };
+		2C7467631AC088E400BFB3A6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7467621AC088E400BFB3A6 /* Security.framework */; };
+		2C7467651AC088F800BFB3A6 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7467641AC088F800BFB3A6 /* CoreTelephony.framework */; };
+		2C7467671AC0890100BFB3A6 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7467661AC0890100BFB3A6 /* CoreBluetooth.framework */; };
+		2C7467691AC0892100BFB3A6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7467681AC0892100BFB3A6 /* libsqlite3.dylib */; };
+		2C74676B1AC0893500BFB3A6 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C74676A1AC0893500BFB3A6 /* libstdc++.dylib */; };
 		2CB19AB41A730B42007CEC79 /* AlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB19AB31A730B42007CEC79 /* AlertsViewController.m */; };
 		2CB19AB71A73169E007CEC79 /* AlertEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB19AB61A73169E007CEC79 /* AlertEntity.m */; };
 		2CB19ABD1A731FC4007CEC79 /* AlertCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB19ABC1A731FC4007CEC79 /* AlertCell.m */; };
@@ -95,6 +101,12 @@
 		2C52E6901A812E1800A6238D /* AceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AceViewController.m; sourceTree = "<group>"; };
 		2C52E6921A814F7800A6238D /* AceWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AceWebViewController.h; sourceTree = "<group>"; };
 		2C52E6931A814F7800A6238D /* AceWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AceWebViewController.m; sourceTree = "<group>"; };
+		2C7467601AC088A700BFB3A6 /* Analytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Analytics.framework; sourceTree = "<group>"; };
+		2C7467621AC088E400BFB3A6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		2C7467641AC088F800BFB3A6 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		2C7467661AC0890100BFB3A6 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		2C7467681AC0892100BFB3A6 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		2C74676A1AC0893500BFB3A6 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		2CB19AB21A730B42007CEC79 /* AlertsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertsViewController.h; sourceTree = "<group>"; };
 		2CB19AB31A730B42007CEC79 /* AlertsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertsViewController.m; sourceTree = "<group>"; };
 		2CB19AB51A73169E007CEC79 /* AlertEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertEntity.h; sourceTree = "<group>"; };
@@ -240,10 +252,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C74676B1AC0893500BFB3A6 /* libstdc++.dylib in Frameworks */,
+				2C7467691AC0892100BFB3A6 /* libsqlite3.dylib in Frameworks */,
+				2C7467671AC0890100BFB3A6 /* CoreBluetooth.framework in Frameworks */,
+				2C7467651AC088F800BFB3A6 /* CoreTelephony.framework in Frameworks */,
+				2C7467631AC088E400BFB3A6 /* Security.framework in Frameworks */,
 				DCFB6F361A5F206600375B7D /* ImageIO.framework in Frameworks */,
 				DCFB6F411A5F264200375B7D /* MapKit.framework in Frameworks */,
 				68174E2417C95254009823CE /* SystemConfiguration.framework in Frameworks */,
 				688F9E631786262800CF850C /* QuartzCore.framework in Frameworks */,
+				2C7467611AC088A700BFB3A6 /* Analytics.framework in Frameworks */,
 				DCFB6F3C1A5F208200375B7D /* OpenGLES.framework in Frameworks */,
 				E04C4DBC17A3103E002A23F4 /* libz.dylib in Frameworks */,
 				DCFB6F3A1A5F207600375B7D /* libicucore.dylib in Frameworks */,
@@ -384,6 +402,12 @@
 		6851221117861138008DB6B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C74676A1AC0893500BFB3A6 /* libstdc++.dylib */,
+				2C7467681AC0892100BFB3A6 /* libsqlite3.dylib */,
+				2C7467661AC0890100BFB3A6 /* CoreBluetooth.framework */,
+				2C7467641AC088F800BFB3A6 /* CoreTelephony.framework */,
+				2C7467621AC088E400BFB3A6 /* Security.framework */,
+				2C7467601AC088A700BFB3A6 /* Analytics.framework */,
 				2CB19ABE1A754668007CEC79 /* SDWebImage */,
 				DCFB6F401A5F264200375B7D /* MapKit.framework */,
 				DCFB6F3B1A5F208200375B7D /* OpenGLES.framework */,

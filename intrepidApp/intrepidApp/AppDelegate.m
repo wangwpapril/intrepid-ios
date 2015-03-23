@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "TripManager.h"
+#import <Analytics/Analytics.h>
 
 @implementation AppDelegate
 
@@ -75,6 +76,7 @@
     }
     [self.locationManager startUpdatingLocation];
     
+    [SEGAnalytics setupWithConfiguration:[SEGAnalyticsConfiguration configurationWithWriteKey:@"2Ih13xn7HMFzPQVKiIhIpS7n88mqCxQN"]];
     
     return YES;
 }
