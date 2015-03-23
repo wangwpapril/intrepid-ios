@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "TripManager.h"
-#import <Analytics/Analytics.h>
 
 @implementation AppDelegate
 

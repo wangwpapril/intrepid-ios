@@ -154,7 +154,15 @@
 //    password.text = @"iloveapple";
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"]) {
-        [RequestBuilder fetchUser:[[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"]];
+        NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
+
+        [[SEGAnalytics sharedAnalytics] identify:[userDict[@"user"][@"id"] stringValue]
+                                          traits:@{@"email": userDict[@"user"][@"email"],
+                                                   @"first_name": userDict[@"user"][@"first_name"],
+                                                   @"last_name": userDict[@"user"][@"last_name"],
+                                                   @"country_code": userDict[@"user"][@"country_code"]}];
+        
+        [RequestBuilder fetchUser:userDict];
         MyTripsViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"myTrips"];
         [self.navigationController pushViewController:viewController animated:NO];
     }
@@ -193,6 +201,12 @@
             NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             NSLog(@"%@", responseBody);
             if (responseBody[@"user"]) {
+                [[SEGAnalytics sharedAnalytics] identify:[responseBody[@"user"][@"id"] stringValue]
+                                                  traits:@{@"email": responseBody[@"user"][@"email"],
+                                                           @"first_name": responseBody[@"user"][@"first_name"],
+                                                           @"last_name": responseBody[@"user"][@"last_name"],
+                                                           @"country_code": responseBody[@"user"][@"country_code"]}];
+                
                 NSMutableDictionary *userDict = [self cleanDictionary:[[NSMutableDictionary alloc] initWithDictionary:responseBody]];
                 [[NSUserDefaults standardUserDefaults] setObject:[[NSDictionary alloc] initWithDictionary:userDict] forKey:@"userDict"];
                 [[NSUserDefaults standardUserDefaults] synchronize];
