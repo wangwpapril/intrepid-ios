@@ -21,12 +21,6 @@
 @synthesize tableList;
 @synthesize alertsArray;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -55,6 +49,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[SEGAnalytics sharedAnalytics] screen:@"Alerts"];
+    
     mController = [MenuController getInstance];
     [mController displayMenuWithParent:self];
 }

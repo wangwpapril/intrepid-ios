@@ -212,6 +212,7 @@ static MenuController *instance =nil;
             [self getLocation];
             [((WebViewController *)viewController) setupWithTitle:@"Weather" withURL:[NSString stringWithFormat:@"https://m.intrepid247.com/weather.html%@", self.location]];
             viewController.view.tag = 4;
+            [[SEGAnalytics sharedAnalytics] screen:@"Weather"];
         }
         [parentController.navigationController pushViewController:viewController animated:YES];
     }

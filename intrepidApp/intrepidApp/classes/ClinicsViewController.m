@@ -37,6 +37,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[SEGAnalytics sharedAnalytics] screen:@"Clinics"];
+    
     CLLocationCoordinate2D zoomLocation;
     zoomLocation.latitude = 39.281516;
     zoomLocation.longitude= -76.580806;
@@ -93,20 +96,5 @@
 {
     return 100;
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

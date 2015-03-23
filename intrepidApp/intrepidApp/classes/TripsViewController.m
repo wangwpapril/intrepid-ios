@@ -58,6 +58,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[SEGAnalytics sharedAnalytics] screen:@"Add Trip"];
+    
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     
     [[NSNotificationCenter defaultCenter] addObserver:self

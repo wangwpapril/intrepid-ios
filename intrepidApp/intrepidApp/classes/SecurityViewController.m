@@ -71,7 +71,7 @@
     }
 }
 
-- (void) moveAllSubviewsDown{
+- (void)moveAllSubviewsDown {
     float barHeight = 45.0;
     for (UIView *view in self.view.subviews) {
         
@@ -82,10 +82,28 @@
         }
     }
 }
+
 - (void)populateEmbassyItems {
     CityEntity *city = [self getCity];
     
     embassyArray = [[TripManager getInstance] getEmbassyItemsWithCity:city];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (self.currentTab == 0) {
+        [[SEGAnalytics sharedAnalytics] screen:@"Safety"];
+    } else if (self.currentTab == 1) {
+        [[SEGAnalytics sharedAnalytics] screen:@"Embassy"];
+    }
+}
+
+- (void)viewSwitched {
+    if (self.currentTab == 0) {
+        [[SEGAnalytics sharedAnalytics] screen:@"Safety"];
+    } else if (self.currentTab == 1) {
+        [[SEGAnalytics sharedAnalytics] screen:@"Embassy"];
+    }
 }
 
 # pragma mark - tableView methods

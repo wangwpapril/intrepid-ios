@@ -58,7 +58,12 @@
     }
 }
 
-- (void)moveAllSubviewsDown{
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[SEGAnalytics sharedAnalytics] screen:@"Health Detail"];
+}
+
+- (void)moveAllSubviewsDown {
     float barHeight = 45.0;
     for (UIView *view in self.view.subviews) {
         

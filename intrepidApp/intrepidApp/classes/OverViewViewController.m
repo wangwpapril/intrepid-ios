@@ -114,6 +114,16 @@
     }
 }
 
+- (void)viewSwitched {
+    if (self.currentTab == 0) {
+        [[SEGAnalytics sharedAnalytics] screen:@"General"];
+    } else if (self.currentTab == 1) {
+        [[SEGAnalytics sharedAnalytics] screen:@"Culture"];
+    } else if (self.currentTab == 2) {
+        [[SEGAnalytics sharedAnalytics] screen:@"Currency"];
+    }
+}
+
 #pragma mark - keyboard stuff
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
@@ -178,8 +188,16 @@
 }
 
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (self.currentTab == 0) {
+        [[SEGAnalytics sharedAnalytics] screen:@"General"];
+    } else if (self.currentTab == 1) {
+        [[SEGAnalytics sharedAnalytics] screen:@"Culture"];
+    } else if (self.currentTab == 2) {
+        [[SEGAnalytics sharedAnalytics] screen:@"Currency"];
+    }
+    
     // register for keyboard notifications
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow)
@@ -205,6 +223,8 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIKeyboardWillHideNotification
                                                   object:nil];
+    
+    [super viewWillDisappear:animated];
 }
 
 @end

@@ -36,6 +36,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[SEGAnalytics sharedAnalytics] screen:@"ACE Insurance"];
+    
     mController = [MenuController getInstance];
     [mController displayMenuWithParent:self];
 }
@@ -46,9 +49,11 @@
     if ([segue.identifier isEqualToString:@"toWorldview"]) {
         AceWebViewController *awvc = segue.destinationViewController;
         [awvc setupWithTitle:@"ACE Worldview" withURL:@"https://www.aceworldview.com/WVEnt/WorldView/ADLogin"];
+        [[SEGAnalytics sharedAnalytics] screen:@"ACE Worldview"];
     } else if ([segue.identifier isEqualToString:@"toWallet"]) {
         AceWebViewController *awvc = segue.destinationViewController;
         [awvc setupWithTitle:@"Virtual Wallet PDF" withURL:[TripManager getInstance].currentUser[@"user"][@"company"][@"content"][@"virtual_wallet_pdf"]];
+        [[SEGAnalytics sharedAnalytics] screen:@"ACE Virtual Wallet PDF"];
     }
 }
 

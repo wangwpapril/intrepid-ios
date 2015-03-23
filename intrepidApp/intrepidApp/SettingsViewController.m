@@ -27,14 +27,7 @@
 @synthesize updateButton;
 @synthesize signOutButton;
 @synthesize mController;
-
 @synthesize newMedia;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -323,6 +316,7 @@
 }
 
 - (IBAction)signout:(id)sender {
+    [[SEGAnalytics sharedAnalytics] reset];
     [[TripManager getInstance] deleteAllObjects:@"CityEntity"];
     [[TripManager getInstance] deleteAllObjects:@"CurrencyEntity"];
     [[TripManager getInstance] deleteAllObjects:@"EmbassyEntity"];
@@ -442,6 +436,9 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    [[SEGAnalytics sharedAnalytics] screen:@"Settings"];
+    
     // register for keyboard notifications
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow)
@@ -466,6 +463,8 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIKeyboardWillHideNotification
                                                   object:nil];
+    
+    [super viewWillDisappear:animated];
 }
 
 

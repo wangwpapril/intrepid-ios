@@ -78,7 +78,7 @@
     }
 }
 
-- (void) moveAllSubviewsDown{
+- (void)moveAllSubviewsDown {
     float barHeight = 45.0;
     for (UIView *view in self.view.subviews) {
         
@@ -96,10 +96,13 @@
     [[tableArray objectAtIndex:1] reloadData];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (self.currentTab == 0) {
+        [[SEGAnalytics sharedAnalytics] screen:@"Conditions"];
+    } else if (self.currentTab == 1) {
+        [[SEGAnalytics sharedAnalytics] screen:@"Medications"];
+    }
 }
 
 # pragma mark - UI Setup
@@ -138,6 +141,12 @@
 # pragma mark - TableView Methods
 
 - (void)viewSwitched {
+    if (self.currentTab == 0) {
+        [[SEGAnalytics sharedAnalytics] screen:@"Conditions"];
+    } else if (self.currentTab == 1) {
+        [[SEGAnalytics sharedAnalytics] screen:@"Medications"];
+    }
+    
     [[tableArray objectAtIndex:self.currentTab] reloadData];
 }
 

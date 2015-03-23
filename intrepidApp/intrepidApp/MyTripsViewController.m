@@ -189,6 +189,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[SEGAnalytics sharedAnalytics] screen:@"My Trips"];
+    
     [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
