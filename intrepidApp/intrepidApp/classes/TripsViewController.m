@@ -195,13 +195,17 @@
     [RequestBuilder fetchTrip:[NSString stringWithFormat:@"%@", selectedTrip.destinationId]];
 }
 
-#pragma mark Content Filtering
--(void)filterContent{
+#pragma mark - Content Filtering
+
+- (void)filterContent {
+    [[SEGAnalytics sharedAnalytics] track:@"Keyword"
+                               properties:@{@"category" : @"Add Trip",
+                                            @"label" : searchBar.text}];
     
     [self.filteredArray removeAllObjects];
     
     // Filter the array using NSPredicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.name contains[c] %@",searchBar.text];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.name contains[c] %@", searchBar.text];
     filteredArray = [NSMutableArray arrayWithArray:[tripsArray filteredArrayUsingPredicate:predicate]];
     NSLog(@"filtered array size: %lu", (unsigned long)filteredArray.count);
     [tableList reloadData];
@@ -209,7 +213,18 @@
 
 #pragma mark - TextField Delegate Methods
 
--(void)deleteText {
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if (textField == searchBar) {
+        [[SEGAnalytics sharedAnalytics] track:@"Search Field"
+                                   properties:@{@"category" : @"Add Trip"}];
+    }
+    return YES;
+}
+
+- (void)deleteText {
+    [[SEGAnalytics sharedAnalytics] track:@"Cancel Search"
+                               properties:@{@"category" : @"Add Trip"}];
+    
     searchBar.text = @"";
     [UIView animateWithDuration:0.1 animations:^{
         xButton.alpha = 0;
@@ -218,22 +233,13 @@
     [tableList reloadData];
 }
 
--(void)removeText {
-    searchBar.text = @"Tap to Search";
-    [tableList reloadData];
-}
-
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [searchBar resignFirstResponder];
-    
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     textField.text = @"";
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField {
 }
 
 - (void)textFieldDidChange {

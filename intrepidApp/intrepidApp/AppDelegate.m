@@ -189,6 +189,20 @@
 
 #pragma mark - Location methods
 
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    if (status == 1) {
+        [[SEGAnalytics sharedAnalytics] track:@"Restrict Location Services"
+                                   properties:@{@"category" : @"Permissions"}];
+    } else if (status == 2) {
+        [[SEGAnalytics sharedAnalytics] track:@"Deny Location Services"
+                                   properties:@{@"category" : @"Permissions"}];
+    } else if (status == 3) {
+        [[SEGAnalytics sharedAnalytics] track:@"Allow Location Services"
+                                   properties:@{@"category" : @"Permissions"}];
+    }
+}
+
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     self.lastLocation = [locations lastObject];
     NSLog(@"latitude: %f, longitude: %f", self.lastLocation.coordinate.latitude, self.lastLocation.coordinate.longitude);

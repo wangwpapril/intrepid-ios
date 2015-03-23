@@ -229,6 +229,9 @@
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
+        [[SEGAnalytics sharedAnalytics] track:@"Delete Trip"
+                                   properties:@{@"category" : @"My Trips"}];
+        
         CityEntity *city = cities[alertView.tag];
         [[TripManager getInstance] deleteHealthItemsWithCity:city];
         [[TripManager getInstance] deleteEmbassyItemsWithCity:city];
