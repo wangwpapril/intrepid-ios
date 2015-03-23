@@ -200,6 +200,8 @@
                                                            @"first_name": responseBody[@"user"][@"first_name"],
                                                            @"last_name": responseBody[@"user"][@"last_name"],
                                                            @"country_code": responseBody[@"user"][@"country_code"]}];
+                [[SEGAnalytics sharedAnalytics] track:@"Email Login"
+                                           properties:@{@"category" : @"Login"}];
                 
                 NSMutableDictionary *userDict = [self cleanDictionary:[[NSMutableDictionary alloc] initWithDictionary:responseBody]];
                 [[NSUserDefaults standardUserDefaults] setObject:[[NSDictionary alloc] initWithDictionary:userDict] forKey:@"userDict"];
@@ -243,6 +245,17 @@
 }
 
 # pragma mark - keyboard stuff
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if (textField == email) {
+        [[SEGAnalytics sharedAnalytics] track:@"Email Field"
+                                   properties:@{@"category" : @"Login"}];
+    } else if (textField == password) {
+        [[SEGAnalytics sharedAnalytics] track:@"Password Field"
+                                   properties:@{@"category" : @"Login"}];
+    }
+    return YES;
+}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
     [theTextField resignFirstResponder];

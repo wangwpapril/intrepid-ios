@@ -290,6 +290,8 @@
             NSLog(@"%@", responseBody);
             if ([responseBody isKindOfClass:[NSArray class]]) {
                 if ([responseBody[0][@"status"] isEqual:@"sent"]) {
+                    [[SEGAnalytics sharedAnalytics] track:@"Email Signup"
+                                               properties:@{@"category" : @"Signup"}];
                     [self sendAlertWithError:@"Thank you for signing up. Please check your email to activate your account."];
                     [self.navigationController popViewControllerAnimated:YES];
                 } else {
@@ -365,6 +367,35 @@
 }
 
 # pragma mark - keyboard stuff
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if (textField == firstName) {
+        [[SEGAnalytics sharedAnalytics] track:@"First Name Field"
+                                   properties:@{@"category" : @"Signup"}];
+    } else if (textField == lastName) {
+        [[SEGAnalytics sharedAnalytics] track:@"Last Name Field"
+                                   properties:@{@"category" : @"Signup"}];
+    } else if (textField == country) {
+        [[SEGAnalytics sharedAnalytics] track:@"Country Field"
+                                   properties:@{@"category" : @"Signup"}];
+    } else if (textField == email) {
+        [[SEGAnalytics sharedAnalytics] track:@"Email Field"
+                                   properties:@{@"category" : @"Signup"}];
+    } else if (textField == country) {
+        [[SEGAnalytics sharedAnalytics] track:@"Country Field"
+                                   properties:@{@"category" : @"Signup"}];
+    } else if (textField == username) {
+        [[SEGAnalytics sharedAnalytics] track:@"Username Field"
+                                   properties:@{@"category" : @"Signup"}];
+    } else if (textField == password) {
+        [[SEGAnalytics sharedAnalytics] track:@"Password Field"
+                                   properties:@{@"category" : @"Signup"}];
+    } else if (textField == policyNumber) {
+        [[SEGAnalytics sharedAnalytics] track:@"Policy Number Field"
+                                   properties:@{@"category" : @"Signup"}];
+    }
+    return YES;
+}
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     if (textField.tag == 1) {
