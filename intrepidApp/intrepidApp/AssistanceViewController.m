@@ -87,12 +87,12 @@
     // Call Assistance Button
     UIButton *callAssistance = [[UIButton alloc] init];
     // [callAssistance setImage:callAssistanceImage forState:UIControlStateNormal];
-    callAssistance.backgroundColor = [UIColor colorWithRed:0.53 green:0.73 blue:0.14 alpha:1];
+    callAssistance.backgroundColor = [UIColor colorWithRed:0.92 green:0.31 blue:0.25 alpha:1];
     callAssistance.frame = CGRectMake(0, y, 320, 128*0.5);
     callAssistance.titleLabel.font = [UIFont fontWithName:APP_FONT size:21];
     callAssistance.tintColor = [UIColor clearColor];
     [callAssistance setTitleColor: [UIColor colorWithRed:1 green:1 blue:1 alpha:1] forState:UIControlStateNormal];
-    [callAssistance setTitle:@"Contact Emergency Assistance" forState:UIControlStateNormal];
+    [callAssistance setTitle:@"Call Intrepid Assistance" forState:UIControlStateNormal];
     [callAssistance addTarget:self
                        action:@selector(callAssistance)
              forControlEvents:UIControlEventTouchUpInside];
