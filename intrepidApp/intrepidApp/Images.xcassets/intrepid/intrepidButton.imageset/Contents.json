@@ -3,16 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "Maximized-edit.png"
+      "filename" : "intrepidButton.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "Maximized-edit@2x.png"
+      "filename" : "intrepidButton@2x.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "intrepidButton@3x.png"
     }
   ],
   "info" : {
