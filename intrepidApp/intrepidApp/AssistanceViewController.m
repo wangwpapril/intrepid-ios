@@ -123,6 +123,7 @@
 //                                                  otherButtonTitles:nil];
 //        [alertView show];
 //    }
+    NSLog(@"working");
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://14166463107"]]];
 
 }
