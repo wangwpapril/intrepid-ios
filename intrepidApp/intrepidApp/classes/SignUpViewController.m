@@ -53,8 +53,6 @@
     self.password.delegate = self;
     self.policyNumber.delegate = self;
 
-    firstName.font = [UIFont fontWithName:APP_FONT size:13];
-    firstName.textColor = [UIColor whiteColor];
     firstName.placeholder = @"FIRST NAME";
     [firstName setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [firstName setReturnKeyType:UIReturnKeyDone];
@@ -63,8 +61,6 @@
     underlineFirstName.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlineFirstName];
     
-    lastName.font = [UIFont fontWithName:APP_FONT size:13];
-    lastName.textColor = [UIColor whiteColor];
     lastName.placeholder = @"LAST NAME";
     [lastName setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [lastName setReturnKeyType:UIReturnKeyDone];
@@ -73,8 +69,6 @@
     underlineLastName.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlineLastName];
     
-    email.font = [UIFont fontWithName:APP_FONT size:13];
-    email.textColor = [UIColor whiteColor];
     email.placeholder = @"EMAIL";
     [email setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [email setReturnKeyType:UIReturnKeyDone];
@@ -83,8 +77,6 @@
     underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlineEmail];
     
-    country.font = [UIFont fontWithName:APP_FONT size:13];
-    country.textColor = [UIColor whiteColor];
     country.placeholder = @"COUNTRY";
     [country setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [country setReturnKeyType:UIReturnKeyDone];
@@ -101,9 +93,7 @@
     underlineCountry.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlineCountry];
     
-    username.font = [UIFont fontWithName:APP_FONT size:13];
-    username.textColor = [UIColor whiteColor];
-    username.placeholder = @"USERNAME";
+        username.placeholder = @"USERNAME";
     [username setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [username setReturnKeyType:UIReturnKeyDone];
     [self.view addSubview:username];
@@ -111,8 +101,7 @@
     underlineUsername.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlineUsername];
     
-    password.font = [UIFont fontWithName:APP_FONT size:13];
-    password.textColor = [UIColor whiteColor];
+    
     password.placeholder = @"PASSWORD";
     [password setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [password setReturnKeyType:UIReturnKeyDone];
@@ -121,8 +110,6 @@
     underlinePassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlinePassword];
     
-    policyNumber.font = [UIFont fontWithName:APP_FONT size:13];
-    policyNumber.textColor = [UIColor whiteColor];
     policyNumber.placeholder = @"POLICY NUMBER";
     [policyNumber setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [policyNumber setReturnKeyType:UIReturnKeyDone];
