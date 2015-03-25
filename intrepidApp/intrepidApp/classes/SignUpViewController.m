@@ -2,8 +2,8 @@
 //  SignUpViewController.m
 //  intrepidApp
 //
-//  Created by Madelaine Page on 2013-07-13.
-//  Copyright (c) 2013 JonCarrHarris Consulting. All rights reserved.
+//  Created by Jon Carr-Harris on 2013-07-13.
+//  Copyright (c) 2013 Swish Labs Inc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -43,13 +43,6 @@
     [super viewDidLoad];
     [[UITextField appearance] setTintColor:[UIColor whiteColor]];
     //set up background
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:@"login-background"] drawInRect:self.view.bounds];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
-    
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     
     self.firstName.delegate = self;
@@ -138,53 +131,11 @@
     underlinePolicyNumber.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     [self.view addSubview:underlinePolicyNumber];
     
-    UIImage *buttonImage = [[UIImage imageNamed:@"ace_button"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
-    [signUpButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [signUpButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    signUpButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:15];
-    signUpButton.frame = CGRectMake(68, underlinePolicyNumber.frame.origin.y + 25, 183, 36);
-    [self.view addSubview:signUpButton];
     
-    acceptanceLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:11];
-    acceptanceLabel.textColor = [UIColor whiteColor];
-    acceptanceLabel.textAlignment = NSTextAlignmentCenter;
-    acceptanceLabel.frame = CGRectMake(68, signUpButton.frame.origin.y + 50, 183, 14);
-    [self.view addSubview:acceptanceLabel];
     
-    acceptanceLabel2.font = [UIFont fontWithName:@"ProximaNova-Light" size:11];
-    acceptanceLabel2.textColor = [UIColor whiteColor];
-    acceptanceLabel2.textAlignment = NSTextAlignmentCenter;
-    acceptanceLabel2.frame = CGRectMake(68, acceptanceLabel.frame.origin.y + 15, 183, 14);
-    [self.view addSubview:acceptanceLabel2];
-    
-    NSMutableAttributedString *termsOfServiceString = [[NSMutableAttributedString alloc] initWithString:@"Terms of Use"];
-    
-    // making text property to underline text-
-    [termsOfServiceString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [termsOfServiceString length])];
-    [termsOfService setAttributedTitle: termsOfServiceString forState:UIControlStateNormal];
-    [termsOfServiceString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0,[termsOfServiceString length])];
-    termsOfService.titleLabel.font = [UIFont fontWithName:APP_FONT size:15];
-    termsOfService.frame = CGRectMake(110, acceptanceLabel2.frame.origin.y + 15, 100, 25);
-    [self.view addSubview:termsOfService];
-    
-    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-    } else {
-        [self moveAllSubviewsDown];
-    }
+   
 }
 
-- (void)moveAllSubviewsDown {
-    float barHeight = 45.0;
-    for (UIView *view in self.view.subviews) {
-        
-        if ([view isKindOfClass:[UIScrollView class]]) {
-            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height - barHeight);
-        } else {
-            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height);
-        }
-    }
-}
 
 - (IBAction)signup:(id)sender {
     NSDictionary *body = @{@"company": @{@"group_num": policyNumber.text}};

@@ -85,7 +85,6 @@
 //    [intrepidTitle setTextAlignment:NSTextAlignmentCenter];
 //    [self.view addSubview:intrepidTitle];
     
-    tagline.font = [UIFont fontWithName:APP_FONT size:17];
     tagline.textColor = [UIColor whiteColor];
     [tagline setTextAlignment:NSTextAlignmentCenter];
     tagline.text = @"Your Personal Travel Navigator";
