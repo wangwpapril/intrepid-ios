@@ -188,7 +188,7 @@
     [self.view addSubview:underlinePasswordConfirmation];
     
     
-    UIImage *buttonImage = [[UIImage imageNamed:@"ace_button"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
+    UIImage *buttonImage = [[UIImage imageNamed:@"intrepidButton"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
     updateButton.frame = CGRectMake(68, underlinePasswordConfirmation.frame.origin.y + 50, 183, 36);
     [updateButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [updateButton setTitle:@"UPDATE" forState:UIControlStateNormal];
@@ -201,7 +201,7 @@
     // making text property to underline text-
     [signOutString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [signOutString length])];
     [signOutButton setAttributedTitle:signOutString forState:UIControlStateNormal];
-    [signOutString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.53 green:0.73 blue:0.14 alpha:1] range:NSMakeRange(0,[signOutString length])];
+    [signOutString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.74 green:0.73 blue:0.69 alpha:1]range:NSMakeRange(0,[signOutString length])];
     signOutButton.frame = CGRectMake(77, updateButton.frame.origin.y + 70, 166, 15);
     signOutButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:15];
     signOutButton.backgroundColor = [UIColor clearColor];

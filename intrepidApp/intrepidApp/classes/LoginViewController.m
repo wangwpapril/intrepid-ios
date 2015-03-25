@@ -85,10 +85,9 @@
 //    [intrepidTitle setTextAlignment:NSTextAlignmentCenter];
 //    [self.view addSubview:intrepidTitle];
     
-    tagline.font = [UIFont fontWithName:APP_FONT size:20];
     tagline.textColor = [UIColor whiteColor];
     [tagline setTextAlignment:NSTextAlignmentCenter];
-    tagline.text = @"TRAVEL SMART";
+    tagline.text = @"Your Personal Travel Navigator";
     [self.view addSubview:tagline];
     
     email.font = [UIFont fontWithName:APP_FONT size:14];
@@ -119,7 +118,7 @@
     
     // using text on button
     [signupButton setAttributedTitle:signupString forState:UIControlStateNormal];
-    [signupString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.53 green:0.73 blue:0.14 alpha:1] range:NSMakeRange(0,[signupString length])];
+    [signupString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.74 green:0.73 blue:0.69 alpha:1] range:NSMakeRange(0,[signupString length])];
     signupButton.frame = CGRectMake(77, loginButton.frame.origin.y + 60, 166, 15);
     signupButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:15];
     signupButton.backgroundColor = [UIColor clearColor];
