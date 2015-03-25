@@ -37,7 +37,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[SEGAnalytics sharedAnalytics] screen:@"ACE Insurance"];
+    [[SEGAnalytics sharedAnalytics] screen:@"Intrepid Insurance"];
     
     mController = [MenuController getInstance];
     [mController displayMenuWithParent:self];
@@ -48,8 +48,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"toWorldview"]) {
         AceWebViewController *awvc = segue.destinationViewController;
-        [awvc setupWithTitle:@"ACE Worldview" withURL:@"https://www.aceworldview.com/WVEnt/WorldView/ADLogin"];
-        [[SEGAnalytics sharedAnalytics] screen:@"ACE Worldview"];
+        [awvc setupWithTitle:@"Imagine Insurance" withURL:@"https://www.ingleinternational.com/en/travel-insurance/canadian-travellers"];
+        [[SEGAnalytics sharedAnalytics] screen:@"Intrepid Insurance"];
     } else if ([segue.identifier isEqualToString:@"toWallet"]) {
         AceWebViewController *awvc = segue.destinationViewController;
         [awvc setupWithTitle:@"Virtual Wallet PDF" withURL:[TripManager getInstance].currentUser[@"user"][@"company"][@"content"][@"virtual_wallet_pdf"]];
