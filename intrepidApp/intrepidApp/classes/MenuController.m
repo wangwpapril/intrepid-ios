@@ -36,7 +36,7 @@ static MenuController *instance =nil;
             // instantiate some global variables
             instance = [[MenuController alloc] init];
             instance.menu = [[UIImageView alloc] init];
-            instance.menu.image = [UIImage imageNamed:@"Menu2"];
+            instance.menu.image = [UIImage imageNamed:@"MenuUpdated"];
             instance.menu.layer.zPosition = MAXFLOAT;
             [instance addContentButtons];
             // add arrow
