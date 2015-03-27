@@ -38,35 +38,8 @@
     //set up background
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     
-    self.firstName.delegate = self;
-    self.lastName.delegate = self;
-    self.email.delegate = self;
     self.country.delegate = self;
-    self.username.delegate = self;
-    self.password.delegate = self;
-    self.policyNumber.delegate = self;
-
-    firstName.placeholder = @"FIRST NAME";
-    [firstName setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [firstName setReturnKeyType:UIReturnKeyDone];
-    [self.view addSubview:firstName];
-    
-    lastName.placeholder = @"LAST NAME";
-    [lastName setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [lastName setReturnKeyType:UIReturnKeyDone];
-    [self.view addSubview:lastName];
-    
-    
-    email.placeholder = @"EMAIL";
-    [email setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [email setReturnKeyType:UIReturnKeyDone];
-    [self.view addSubview:email];
-    
-    country.placeholder = @"COUNTRY";
-    [country setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [country setReturnKeyType:UIReturnKeyDone];
-    
-    UIPickerView *picker = [[UIPickerView alloc] init];
+        UIPickerView *picker = [[UIPickerView alloc] init];
     picker.delegate = self;
     picker.showsSelectionIndicator = YES;
     country.inputView = picker;
@@ -74,21 +47,6 @@
     country.tintColor = [UIColor clearColor];
     [self fetchCountries];
     [self.view addSubview:country];
-    
-    username.placeholder = @"USERNAME";
-    [username setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [username setReturnKeyType:UIReturnKeyDone];
-    [self.view addSubview:username];
-    
-       password.placeholder = @"PASSWORD";
-    [password setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [password setReturnKeyType:UIReturnKeyDone];
-    [self.view addSubview:password];
-    
-    policyNumber.placeholder = @"POLICY NUMBER";
-    [policyNumber setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [policyNumber setReturnKeyType:UIReturnKeyDone];
-    [self.view addSubview:policyNumber];
     
    
 }
