@@ -52,8 +52,8 @@
         [[SEGAnalytics sharedAnalytics] screen:@"ACE Worldview"];
     } else if ([segue.identifier isEqualToString:@"toWallet"]) {
         AceWebViewController *awvc = segue.destinationViewController;
-        [awvc setupWithTitle:@"Virtual Wallet PDF" withURL:[TripManager getInstance].currentUser[@"user"][@"company"][@"content"][@"virtual_wallet_pdf"]];
-        [[SEGAnalytics sharedAnalytics] screen:@"ACE Virtual Wallet PDF"];
+        [awvc setupWithTitle:@"ACE Information" withURL:[TripManager getInstance].currentUser[@"user"][@"company"][@"content"][@"virtual_wallet_pdf"]];
+        [[SEGAnalytics sharedAnalytics] screen:@"ACE Information"];
     }
 }
 
