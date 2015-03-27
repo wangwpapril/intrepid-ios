@@ -622,7 +622,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="mrJ-PO-tXy">
-                                <rect key="frame" x="0.0" y="404" width="320" height="37"/>
+                                <rect key="frame" x="0.0" y="500" width="320" height="37"/>
                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </pageControl>
@@ -756,9 +756,6 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login-background" translatesAutoresizingMaskIntoConstraints="NO" id="WaA-MV-6Ch">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                     </imageView>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="y1H-Q6-jxM">
-                                        <rect key="frame" x="136" y="369" width="38" height="37"/>
-                                    </pageControl>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXe-vl-mfu">
                                         <rect key="frame" x="287" y="8" width="25" height="25"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -773,6 +770,9 @@
                                             <action selector="exit:" destination="Eh3-hY-axR" eventType="touchUpInside" id="aNc-71-doC"/>
                                         </connections>
                                     </button>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="y1H-Q6-jxM">
+                                        <rect key="frame" x="133" y="489" width="38" height="37"/>
+                                    </pageControl>
                                 </subviews>
                                 <gestureRecognizers/>
                                 <connections>
