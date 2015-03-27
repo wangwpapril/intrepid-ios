@@ -2,8 +2,8 @@
 //  LearnMoreViewController.m
 //  intrepidApp
 //
-//  Created by Madelaine Page on 2013-07-29.
-//  Copyright (c) 2013 JonCarrHarris Consulting. All rights reserved.
+//  Created by Jon Carr-Harris on 2013-07-29.
+//  Copyright (c) 2013 Swish Labs Inc. All rights reserved.
 //
 
 #import "LearnMoreViewController.h"
@@ -15,39 +15,17 @@
 @implementation LearnMoreViewController
 
 @synthesize pageControl;
-@synthesize exitButton;
+@synthesize closeButton;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-//    [self.navigationController setNavigationBarHidden:YES];
-
-    //set background image
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:@"login-background"] drawInRect:self.view.bounds];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+   
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
-    
-//    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login-background"]];
-//    [self.view addSubview:backgroundView];
-    
-    //create title label
-    UILabel *learnMoreLabel = [[UILabel alloc] init];
-    learnMoreLabel.frame = CGRectMake(85, self.view.frame.origin.y - 35, 150, 150);
-    learnMoreLabel.text = @"Learn More";
-    learnMoreLabel.font = [UIFont fontWithName:APP_FONT size:24];
-    learnMoreLabel.textColor = [UIColor whiteColor];
-    learnMoreLabel.backgroundColor = [UIColor clearColor];
-    [learnMoreLabel setTextAlignment:NSTextAlignmentCenter];
-    [self.view addSubview:learnMoreLabel];
     
     //implement scrollview
     self.scrollView.delegate = self;
-    self.scrollView.scrollEnabled = YES;
-    self.scrollView.pagingEnabled = YES;
     
     //create array for images
     NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"overview", @"health", @"cool", @"assistance-new", nil];
@@ -71,28 +49,15 @@
     [self populateDescriptions];
     
     [self.view addSubview:self.scrollView];
-    exitButton.frame = CGRectMake(280, 32, 40, 40);
-    [self.view addSubview:exitButton];
-    UIImage *exitImage = [UIImage imageNamed:@"close"];
+    closeButton.frame = CGRectMake(280, 32, 40, 40);
+    [self.view addSubview:closeButton];
+   
     //create an image and put it overtop of the button?
     UIImageView *exitImageContainer = [[UIImageView alloc] initWithFrame: CGRectMake(290, 32, 15, 15)];
-    [exitImageContainer setImage:exitImage];
     [self.view addSubview:exitImageContainer];
     
-    pageControl.frame = CGRectMake(135, self.view.frame.size.height - 40, 50, 50);
-    pageControl.numberOfPages = 4;
-    pageControl.currentPage = 0;
-    pageControl.pageIndicatorTintColor = [UIColor darkGrayColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
-    [self.view addSubview:pageControl];
+
     
-    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-        
-    } else {
-        [self moveAllSubviewsDown];
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -100,17 +65,6 @@
     [[SEGAnalytics sharedAnalytics] screen:@"Learn More"];
 }
 
-- (void)moveAllSubviewsDown {
-    float barHeight = 45.0;
-    for (UIView *view in self.view.subviews) {
-        
-        if ([view isKindOfClass:[UIScrollView class]]) {
-            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height - barHeight);
-        } else {
-            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height);
-        }
-    }
-}
 
 - (void)populateDescriptions {
     UILabel *mexicoEmbassyDescription = [[UILabel alloc] init];
@@ -167,8 +121,8 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     [[SEGAnalytics sharedAnalytics] track:@"Swipe"
-                               properties:@{@"category" : @"Learn More",
-                                            @"value" : [NSNumber numberWithInt:(int)roundf(scrollView.bounds.origin.x/scrollView.frame.size.width) + 1]}];
+       properties:@{@"category" : @"Learn More",
+                    @"value" : [NSNumber numberWithInt:(int)roundf(scrollView.bounds.origin.x/scrollView.frame.size.width) + 1]}];
 }
 
 - (IBAction)exit:(id)sender {

@@ -26,6 +26,7 @@
             <string>ProximaNova-Regular</string>
             <string>ProximaNova-Regular</string>
             <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
         </mutableArray>
         <mutableArray key="proximanova-semibold.ttf">
             <string>ProximaNova-Semibold</string>
@@ -750,12 +751,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siU-dB-BTy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login-background" translatesAutoresizingMaskIntoConstraints="NO" id="WaA-MV-6Ch">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Learn More" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnF-sb-I2C">
+                                <rect key="frame" x="92" y="25" width="135" height="21"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="maI-rK-hOh" userLabel="close">
+                                <rect key="frame" x="270" y="15" width="40" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" image="close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siU-dB-BTy">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login-background" translatesAutoresizingMaskIntoConstraints="NO" id="WaA-MV-6Ch">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXe-vl-mfu">
                                         <rect key="frame" x="287" y="8" width="25" height="25"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -770,8 +784,10 @@
                                             <action selector="exit:" destination="Eh3-hY-axR" eventType="touchUpInside" id="aNc-71-doC"/>
                                         </connections>
                                     </button>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="y1H-Q6-jxM">
+                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="y1H-Q6-jxM">
                                         <rect key="frame" x="133" y="489" width="38" height="37"/>
+                                        <color key="pageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </pageControl>
                                 </subviews>
                                 <gestureRecognizers/>
@@ -784,6 +800,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="xLH-mN-78m"/>
                     <connections>
+                        <outlet property="closeButton" destination="maI-rK-hOh" id="By4-6s-C5x"/>
                         <outlet property="exitButton" destination="nXe-vl-mfu" id="ipX-6g-DLa"/>
                         <outlet property="pageControl" destination="y1H-Q6-jxM" id="mxq-wu-xrl"/>
                         <outlet property="scrollView" destination="siU-dB-BTy" id="0CV-tJ-0QK"/>
@@ -1151,6 +1168,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="close" width="12" height="11"/>
         <image name="imagineLogoColor" width="250" height="99"/>
         <image name="intrepidButton" width="184" height="33"/>
         <image name="login-background" width="320" height="549"/>
