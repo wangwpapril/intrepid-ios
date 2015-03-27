@@ -49,8 +49,7 @@
     [self populateDescriptions];
     
     [self.view addSubview:self.scrollView];
-    closeButton.frame = CGRectMake(280, 32, 40, 40);
-    [self.view addSubview:closeButton];
+    
    
     //create an image and put it overtop of the button?
     UIImageView *exitImageContainer = [[UIImageView alloc] initWithFrame: CGRectMake(290, 32, 15, 15)];
