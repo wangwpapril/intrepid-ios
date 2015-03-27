@@ -15,7 +15,7 @@
 @implementation LearnMoreViewController
 
 @synthesize pageControl;
-@synthesize closeButton;
+@synthesize exitButton;
 
 - (void)viewDidLoad
 {
@@ -35,7 +35,7 @@
         NSInteger height = self.scrollView.frame.size.height - 150.0;
         NSInteger width = height * 0.5634;
         frame.origin.x = 320 * i + (320 - width)/2;
-        frame.origin.y = self.scrollView.frame.origin.y + 75;
+        frame.origin.y = self.scrollView.frame.origin.y - 20;
         //0.7322;
         frame.size = CGSizeMake(width, height);
                 
@@ -49,14 +49,18 @@
     [self populateDescriptions];
     
     [self.view addSubview:self.scrollView];
+    [self.view addSubview:exitButton];
+    //create an image and put it overtop of the button?
+  
+    
+  
+    pageControl.numberOfPages = 4;
+    pageControl.currentPage = 0;
+    pageControl.pageIndicatorTintColor = [UIColor darkGrayColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+    [self.view addSubview:pageControl];
     
    
-    //create an image and put it overtop of the button?
-    UIImageView *exitImageContainer = [[UIImageView alloc] initWithFrame: CGRectMake(290, 32, 15, 15)];
-    [self.view addSubview:exitImageContainer];
-    
-
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -64,10 +68,9 @@
     [[SEGAnalytics sharedAnalytics] screen:@"Learn More"];
 }
 
-
 - (void)populateDescriptions {
     UILabel *mexicoEmbassyDescription = [[UILabel alloc] init];
-    mexicoEmbassyDescription.frame = CGRectMake(677, self.view.frame.size.height - 175, 250.0, 250.0);
+    mexicoEmbassyDescription.frame = CGRectMake(677, self.view.frame.size.height - 280, 250.0, 250.0);
     mexicoEmbassyDescription.font = [UIFont fontWithName:APP_FONT size:13];
     mexicoEmbassyDescription.backgroundColor = [UIColor clearColor];
     mexicoEmbassyDescription.textColor = [UIColor whiteColor];
@@ -78,7 +81,7 @@
     [self.scrollView addSubview:mexicoEmbassyDescription];
     
     UILabel *healthOverviewDescription = [[UILabel alloc] init];
-    healthOverviewDescription.frame = CGRectMake(345, self.view.frame.size.height - 175, 250.0, 275.0);
+    healthOverviewDescription.frame = CGRectMake(345, self.view.frame.size.height - 280, 250.0, 250.0);
     healthOverviewDescription.font = [UIFont fontWithName:APP_FONT size:13];
     healthOverviewDescription.backgroundColor = [UIColor clearColor];
     healthOverviewDescription.textColor = [UIColor whiteColor];
@@ -89,7 +92,7 @@
     [self.scrollView addSubview:healthOverviewDescription];
     
     UILabel *mexicoCultureDescription = [[UILabel alloc] init];
-    mexicoCultureDescription.frame = CGRectMake(37, self.view.frame.size.height - 175, 250.0, 250.0);
+    mexicoCultureDescription.frame = CGRectMake(37, self.view.frame.size.height - 280, 250.0, 250.0);
     mexicoCultureDescription.font = [UIFont fontWithName:APP_FONT size:13];
     mexicoCultureDescription.backgroundColor = [UIColor clearColor];
     mexicoCultureDescription.textColor = [UIColor whiteColor];
@@ -100,7 +103,7 @@
     [self.scrollView addSubview:mexicoCultureDescription];
     
     UILabel *assistanceScreenDescription = [[UILabel alloc] init];
-    assistanceScreenDescription.frame = CGRectMake(995, self.view.frame.size.height - 175, 250.0, 250.0);
+    assistanceScreenDescription.frame = CGRectMake(995, self.view.frame.size.height - 280, 250.0, 250.0);
     assistanceScreenDescription.font = [UIFont fontWithName:APP_FONT size:13];
     assistanceScreenDescription.backgroundColor = [UIColor clearColor];
     assistanceScreenDescription.textColor = [UIColor whiteColor];
@@ -120,8 +123,8 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     [[SEGAnalytics sharedAnalytics] track:@"Swipe"
-       properties:@{@"category" : @"Learn More",
-                    @"value" : [NSNumber numberWithInt:(int)roundf(scrollView.bounds.origin.x/scrollView.frame.size.width) + 1]}];
+                               properties:@{@"category" : @"Learn More",
+                                            @"value" : [NSNumber numberWithInt:(int)roundf(scrollView.bounds.origin.x/scrollView.frame.size.width) + 1]}];
 }
 
 - (IBAction)exit:(id)sender {
