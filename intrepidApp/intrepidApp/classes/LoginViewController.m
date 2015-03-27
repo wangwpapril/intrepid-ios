@@ -41,19 +41,7 @@
     self.email.delegate = self;
     self.password.delegate = self;
     
-    //set background image
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:@"login-background"] drawInRect:self.view.bounds];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-
-    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
-    UIImage *buttonImage = [[UIImage imageNamed:@"intrepidButton"] stretchableImageWithLeftCapWidth:5 topCapHeight:10];
-    [loginButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    loginButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:14];
-    [self.view addSubview:loginButton];
     
     
     NSMutableAttributedString *legalString = [[NSMutableAttributedString alloc] initWithString:@"Terms of Use"];
@@ -61,38 +49,12 @@
     // making text property to underline text-
     [legalString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [legalString length])];
     
-    // using text on button
-    [legal setAttributedTitle:legalString forState:UIControlStateNormal];
-    [legalString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [legalString length])];
-    legal.frame = CGRectMake(20, self.view.frame.size.height - 50, 100, 44);
-    legal.titleLabel.font = [UIFont fontWithName:APP_FONT size:15];
-    [self.view addSubview:legal];
-    
     NSMutableAttributedString *learnMoreString = [[NSMutableAttributedString alloc] initWithString:@"Learn More"];
     
     // making text property to underline text-
     [learnMoreString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [learnMoreString length])];
     
-    // using text on button
-    [learnMore setAttributedTitle: learnMoreString forState:UIControlStateNormal];
-    [learnMoreString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0,[learnMoreString length])];
-    learnMore.titleLabel.font = [UIFont fontWithName:APP_FONT size:15];
-    learnMore.frame = CGRectMake(200, self.view.frame.size.height - 50, 100, 44);
-    [self.view addSubview:learnMore];
     
-//    intrepidTitle.font = [UIFont fontWithName:APP_FONT_BOLD size:24];
-//    intrepidTitle.textColor = [UIColor whiteColor];
-//    [intrepidTitle setTextAlignment:NSTextAlignmentCenter];
-//    [self.view addSubview:intrepidTitle];
-    
-    tagline.textColor = [UIColor whiteColor];
-    [tagline setTextAlignment:NSTextAlignmentCenter];
-    tagline.text = @"Your Personal Travel Navigator";
-    [self.view addSubview:tagline];
-    
-    email.font = [UIFont fontWithName:APP_FONT size:14];
-    email.textColor = [UIColor whiteColor];
-    email.placeholder = @"EMAIL";
     [email setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [email setReturnKeyType:UIReturnKeyDone];
     [self.view addSubview:email];
