@@ -26,13 +26,6 @@
 @synthesize username;
 @synthesize email;
 @synthesize password;
-@synthesize underlineFirstName;
-@synthesize underlineLastName;
-@synthesize underlineCountry;
-@synthesize underlinePolicyNumber;
-@synthesize underlineUsername;
-@synthesize underlineEmail;
-@synthesize underlinePassword;
 @synthesize termsOfService;
 @synthesize acceptanceLabel;
 @synthesize acceptanceLabel2;
@@ -82,10 +75,7 @@
     [self fetchCountries];
     [self.view addSubview:country];
     
-    underlineCountry.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
-    [self.view addSubview:underlineCountry];
-    
-        username.placeholder = @"USERNAME";
+    username.placeholder = @"USERNAME";
     [username setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [username setReturnKeyType:UIReturnKeyDone];
     [self.view addSubview:username];
