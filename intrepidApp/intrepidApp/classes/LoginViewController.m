@@ -44,67 +44,17 @@
     
     
     
-    NSMutableAttributedString *legalString = [[NSMutableAttributedString alloc] initWithString:@"Terms of Use"];
-    
-    // making text property to underline text-
-    [legalString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [legalString length])];
-    
-    NSMutableAttributedString *learnMoreString = [[NSMutableAttributedString alloc] initWithString:@"Learn More"];
-    
-    // making text property to underline text-
-    [learnMoreString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [learnMoreString length])];
-    
     
     [email setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [email setReturnKeyType:UIReturnKeyDone];
     [self.view addSubview:email];
     
-    underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
-    [self.view addSubview:underlineEmail];
     
-    underlinePassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
-    [self.view addSubview:underlinePassword];
-    
-    password.font = [UIFont fontWithName:APP_FONT size:14];
-    password.textColor = [UIColor whiteColor];
     [password setReturnKeyType:UIReturnKeyDone];
-    password.placeholder =@"PASSWORD";
     [password setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     password.secureTextEntry = YES;
     [self.view addSubview:password];
     
-    NSMutableAttributedString *signupString = [[NSMutableAttributedString alloc] initWithString:@"Sign Up"];
-    
-    // making text property to underline text-
-    [signupString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [signupString length])];
-    
-    // using text on button
-    [signupButton setAttributedTitle:signupString forState:UIControlStateNormal];
-    [signupString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.74 green:0.73 blue:0.69 alpha:1] range:NSMakeRange(0,[signupString length])];
-    signupButton.frame = CGRectMake(77, loginButton.frame.origin.y + 60, 166, 15);
-    signupButton.titleLabel.font = [UIFont fontWithName:APP_FONT size:15];
-    signupButton.backgroundColor = [UIColor clearColor];
-    
-    signupButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:signupButton];
-    
-//    legal.frame = CGRectMake(240, 5, 100, 50);
-//    legal.titleLabel.font = [UIFont fontWithName:APP_FONT size:13];
-//    legal.backgroundColor = [UIColor clearColor];
-//    legal.titleLabel.textAlignment = NSTextAlignmentCenter;
-//    [legal setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//    [self.view addSubview:legal];
-    
-    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-    } else {
-        [self moveAllSubviewsDown];
-    }
-    
-    // Navigation bar translucency for iOS 7 and earlier
-    if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
-        self.navigationController.navigationBar.translucent = NO;
-    }
 //    email.text = @"cshah3@alumni.uwo.ca";
 //    password.text = @"iloveapple";
     
@@ -120,18 +70,6 @@
         [RequestBuilder fetchUser:userDict];
         MyTripsViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"myTrips"];
         [self.navigationController pushViewController:viewController animated:NO];
-    }
-}
-
-- (void) moveAllSubviewsDown{
-    float barHeight = 45.0;
-    for (UIView *view in self.view.subviews) {
-        
-        if ([view isKindOfClass:[UIScrollView class]]) {
-            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height - barHeight);
-        } else {
-            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height);
-        }
     }
 }
 
