@@ -62,10 +62,7 @@
         NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
 
         [[SEGAnalytics sharedAnalytics] identify:[userDict[@"user"][@"id"] stringValue]
-                                          traits:@{@"email": userDict[@"user"][@"email"],
-                                                   @"first_name": userDict[@"user"][@"first_name"],
-                                                   @"last_name": userDict[@"user"][@"last_name"],
-                                                   @"country_code": userDict[@"user"][@"country_code"]}];
+              traits:@{@"email": userDict[@"user"][@"email"], @"first_name": userDict[@"user"][@"first_name"], @"last_name": userDict[@"user"][@"last_name"], @"country_code": userDict[@"user"][@"country_code"]}];
         
         [RequestBuilder fetchUser:userDict];
         MyTripsViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"myTrips"];
@@ -79,9 +76,7 @@
     [self.view addSubview:self.activityIndicator];
     [self.activityIndicator startAnimating];
     
-    NSDictionary *body = @{@"user": @{@"email": self.email.text,
-                                      @"password": self.password.text}
-                           };
+    NSDictionary *body = @{@"user": @{@"email": self.email.text, @"password": self.password.text}};
     
     NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/login", BASE_URL]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
@@ -95,12 +90,8 @@
             NSLog(@"%@", responseBody);
             if (responseBody[@"user"]) {
                 [[SEGAnalytics sharedAnalytics] identify:[responseBody[@"user"][@"id"] stringValue]
-                                                  traits:@{@"email": responseBody[@"user"][@"email"],
-                                                           @"first_name": responseBody[@"user"][@"first_name"],
-                                                           @"last_name": responseBody[@"user"][@"last_name"],
-                                                           @"country_code": responseBody[@"user"][@"country_code"]}];
-                [[SEGAnalytics sharedAnalytics] track:@"Email Login"
-                                           properties:@{@"category" : @"Login"}];
+                      traits:@{@"email": responseBody[@"user"][@"email"], @"first_name": responseBody[@"user"][@"first_name"], @"last_name": responseBody[@"user"][@"last_name"], @"country_code": responseBody[@"user"][@"country_code"]}];
+                [[SEGAnalytics sharedAnalytics] track:@"Email Login" properties:@{@"category" : @"Login"}];
                 
                 NSMutableDictionary *userDict = [self cleanDictionary:[[NSMutableDictionary alloc] initWithDictionary:responseBody]];
                 [[NSUserDefaults standardUserDefaults] setObject:[[NSDictionary alloc] initWithDictionary:userDict] forKey:@"userDict"];
@@ -111,20 +102,12 @@
                 [self performSegueWithIdentifier:@"toTrips" sender:self];
             } else {
                 [self.activityIndicator stopAnimating];
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-                                                                    message:responseBody[@"error"][@"message"][0]
-                                                                   delegate:nil
-                                                          cancelButtonTitle:@"OK"
-                                                          otherButtonTitles:nil];
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:responseBody[@"error"][@"message"][0] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alertView show];
             }
         } else {
             [self.activityIndicator stopAnimating];            
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-                                                                message:error.localizedDescription
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK"otherButtonTitles:nil];
             [alertView show];
         }
     }];
@@ -147,11 +130,9 @@
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     if (textField == email) {
-        [[SEGAnalytics sharedAnalytics] track:@"Email Field"
-                                   properties:@{@"category" : @"Login"}];
+        [[SEGAnalytics sharedAnalytics] track:@"Email Field" properties:@{@"category" : @"Login"}];
     } else if (textField == password) {
-        [[SEGAnalytics sharedAnalytics] track:@"Password Field"
-                                   properties:@{@"category" : @"Login"}];
+        [[SEGAnalytics sharedAnalytics] track:@"Password Field" properties:@{@"category" : @"Login"}];
     }
     return YES;
 }
@@ -225,28 +206,18 @@
     [[SEGAnalytics sharedAnalytics] screen:@"Login"];
     
     // register for keyboard notifications
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillShow)
-                                                 name:UIKeyboardWillShowNotification
-                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow) name:UIKeyboardWillShowNotification object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide)
-                                                 name:UIKeyboardWillHideNotification
-                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide) name:UIKeyboardWillHideNotification object:nil];
     
     [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     // unregister for keyboard notifications while not visible.
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIKeyboardWillShowNotification
-                                                  object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIKeyboardWillHideNotification
-                                                  object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
     
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
