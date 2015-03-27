@@ -58,24 +58,16 @@
     [firstName setReturnKeyType:UIReturnKeyDone];
     [self.view addSubview:firstName];
     
-    underlineFirstName.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
-    [self.view addSubview:underlineFirstName];
-    
     lastName.placeholder = @"LAST NAME";
     [lastName setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [lastName setReturnKeyType:UIReturnKeyDone];
     [self.view addSubview:lastName];
     
-    underlineLastName.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
-    [self.view addSubview:underlineLastName];
     
     email.placeholder = @"EMAIL";
     [email setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [email setReturnKeyType:UIReturnKeyDone];
     [self.view addSubview:email];
-    
-    underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
-    [self.view addSubview:underlineEmail];
     
     country.placeholder = @"COUNTRY";
     [country setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -98,27 +90,15 @@
     [username setReturnKeyType:UIReturnKeyDone];
     [self.view addSubview:username];
     
-    underlineUsername.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
-    [self.view addSubview:underlineUsername];
-    
-    
-    password.placeholder = @"PASSWORD";
+       password.placeholder = @"PASSWORD";
     [password setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [password setReturnKeyType:UIReturnKeyDone];
     [self.view addSubview:password];
-    
-    underlinePassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
-    [self.view addSubview:underlinePassword];
     
     policyNumber.placeholder = @"POLICY NUMBER";
     [policyNumber setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [policyNumber setReturnKeyType:UIReturnKeyDone];
     [self.view addSubview:policyNumber];
-    
-    underlinePolicyNumber.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
-    [self.view addSubview:underlinePolicyNumber];
-    
-    
     
    
 }
@@ -172,16 +152,16 @@
 
 - (void)createUserWithCompanyId:(NSNumber *)companyId {
     NSDictionary *body = @{@"user": @{@"email": email.text,
-                                      @"first_name": firstName.text,
-                                      @"last_name": lastName.text,
-                                      @"username": username.text,
-                                      @"password": password.text,
-                                      @"roles": @[@"end_user"],
-                                      @"locale_code": @"en_CA",
-                                      @"country_code": self.selectedCountry,
-                                      @"company_id": companyId
-                                      }
-                           };
+      @"first_name": firstName.text,
+      @"last_name": lastName.text,
+      @"username": username.text,
+      @"password": password.text,
+      @"roles": @[@"end_user"],
+      @"locale_code": @"en_CA",
+      @"country_code": self.selectedCountry,
+      @"company_id": companyId
+      }
+};
     
     NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users", BASE_URL]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
@@ -206,15 +186,15 @@
 
 - (void)sendEmailWithActivationCode:(NSString *)activationCode {
     NSDictionary *body = @{@"key": @"2Hw47otRRKIaEQ3sQwoXAg",
-                           @"message": @{
-                               @"text": [NSString stringWithFormat:@"Hi %@,\n\nThank you for signing up with ACE Travel Smart.\nPlease click on the confirmation link below to activate your account.\n%@%@", firstName.text, ACTIVATE_URL, activationCode],
-                               @"subject": @"Thank you for signing up",
-                               @"from_email": @"do-not-reply@acetravelsmart.com",
-                               @"from_name": @"ACE Travel Smart",
-                               @"to": @[@{@"email": email.text,
-                                          @"name": [NSString stringWithFormat:@"%@ %@", firstName.text, lastName.text]}],
-                               },
-                           };
+       @"message": @{
+           @"text": [NSString stringWithFormat:@"Hi %@,\n\nThank you for signing up with ACE Travel Smart.\nPlease click on the confirmation link below to activate your account.\n%@%@", firstName.text, ACTIVATE_URL, activationCode],
+           @"subject": @"Thank you for signing up",
+           @"from_email": @"do-not-reply@acetravelsmart.com",
+           @"from_name": @"ACE Travel Smart",
+           @"to": @[@{@"email": email.text,
+                      @"name": [NSString stringWithFormat:@"%@ %@", firstName.text, lastName.text]}],
+           },
+       };
     
     NSURL *requestURL = [NSURL URLWithString:EMAIL_URL];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
