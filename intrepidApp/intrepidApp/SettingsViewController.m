@@ -48,71 +48,30 @@
     
     //Initalize the TextFields and keyboard
     
-    firstName.font = [UIFont fontWithName:APP_FONT size:14];
-    firstName.frame = CGRectMake(125, 40, 165, 24);
-    firstName.textColor = [UIColor whiteColor];
     firstName.text = [TripManager getInstance].currentUser[@"user"][@"first_name"];
-    [firstName setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [firstName setReturnKeyType:UIReturnKeyDone];
     firstName.delegate = self;
     [self.view addSubview:firstName];
     
     
-    lastName.font = [UIFont fontWithName:APP_FONT size:14];
-    lastName.frame = CGRectMake(125, 90, 175, 24);
-    lastName.textColor = [UIColor whiteColor];
     lastName.text = [TripManager getInstance].currentUser[@"user"][@"last_name"];
-    [lastName setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [lastName setReturnKeyType:UIReturnKeyDone];
     lastName.delegate = self;
     [self.view addSubview:lastName];
     
     
-    email.font = [UIFont fontWithName:APP_FONT size:14];
-    email.frame = CGRectMake(125, 140, 175, 24);
-    email.textColor = [UIColor whiteColor];
     email.text = [TripManager getInstance].currentUser[@"user"][@"email"];
-    [email setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [email setReturnKeyType:UIReturnKeyDone];
     email.delegate = self;
     [self.view addSubview:email];
     
-    username.font = [UIFont fontWithName:APP_FONT size:14];
-    username.frame = CGRectMake(125, 190, 175, 24);
-    username.textColor = [UIColor whiteColor];
     username.text = [TripManager getInstance].currentUser[@"user"][@"username"];
-    [username setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [username setReturnKeyType:UIReturnKeyDone];
-    username.delegate = self;
+        username.delegate = self;
     [self.view addSubview:username];
-    
-    oldPassword.font = [UIFont fontWithName:APP_FONT size:14];
-    oldPassword.frame = CGRectMake(125, 240, 175, 24);
-    oldPassword.textColor = [UIColor whiteColor];
-    oldPassword.placeholder = @"(Optional)";
-    [oldPassword setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [oldPassword setReturnKeyType:UIReturnKeyDone];
+  
     oldPassword.delegate = self;
     [self.view addSubview:oldPassword];
     
-    changePassword.font = [UIFont fontWithName:APP_FONT size:14];
-    changePassword.frame = CGRectMake(125, 290, 175, 24);
-    changePassword.textColor = [UIColor whiteColor];
-    changePassword.placeholder = @"(Optional)";
-    [changePassword setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [changePassword setReturnKeyType:UIReturnKeyDone];
     changePassword.delegate = self;
     [self.view addSubview:changePassword];
     
-       if ([[UIDevice currentDevice].model rangeOfString:@"iPad"].location != NSNotFound) {
-        CGRect ipadFrame = updateButton.frame;
-        ipadFrame.origin.y = updateButton.frame.origin.y - 30;
-        updateButton.frame = ipadFrame;
-        
-        CGRect ipadFrame2 = signOutButton.frame;
-        ipadFrame2.origin.y = signOutButton.frame.origin.y - 50;
-        signOutButton.frame = ipadFrame2;
-    }
 }
 
 - (IBAction)update:(id)sender {
@@ -254,7 +213,7 @@
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
                                                         message:errorString
                                                        delegate:nil
-                                              cancelButtonTitle:@"OK"
+cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
     [alertView show];
 }
