@@ -186,7 +186,7 @@
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="light"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEI-D0-7dv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEI-D0-7dv">
                                 <rect key="frame" x="229" y="524" width="75" height="44"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="15"/>
                                 <state key="normal" title="Learn More">
@@ -203,13 +203,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8tT-pp-zgM" firstAttribute="top" secondItem="5sI-vr-9hj" secondAttribute="bottom" constant="27" id="0T9-0a-tGE"/>
-                            <constraint firstItem="nEI-D0-7dv" firstAttribute="leading" secondItem="VqX-BL-dWs" secondAttribute="trailing" constant="90" id="0pz-0u-0Kz"/>
                             <constraint firstItem="8tT-pp-zgM" firstAttribute="leading" secondItem="quq-sM-dyc" secondAttribute="leading" id="1Dy-lp-b0t"/>
                             <constraint firstItem="VqX-BL-dWs" firstAttribute="firstBaseline" secondItem="nEI-D0-7dv" secondAttribute="baseline" id="4h1-Yv-Hbn"/>
                             <constraint firstAttribute="centerX" secondItem="f44-5w-2uo" secondAttribute="centerX" id="5xd-yh-1iW"/>
                             <constraint firstItem="5sI-vr-9hj" firstAttribute="leading" secondItem="Iam-wu-94V" secondAttribute="leadingMargin" constant="61" id="6oW-YV-JBc"/>
                             <constraint firstItem="8tT-pp-zgM" firstAttribute="trailing" secondItem="J25-eA-sZr" secondAttribute="trailing" id="7Vk-mc-RU0"/>
                             <constraint firstItem="8tT-pp-zgM" firstAttribute="trailing" secondItem="2ba-9J-4KN" secondAttribute="trailing" id="8aM-r1-8jv"/>
+                            <constraint firstItem="f2W-tc-mSz" firstAttribute="trailing" secondItem="nEI-D0-7dv" secondAttribute="trailing" constant="16" id="9te-2s-NO9"/>
                             <constraint firstItem="f2W-tc-mSz" firstAttribute="top" secondItem="iZB-Uj-BBI" secondAttribute="bottom" id="AFC-WB-uq8"/>
                             <constraint firstAttribute="centerX" secondItem="f2W-tc-mSz" secondAttribute="centerX" id="BKV-e8-MAK"/>
                             <constraint firstItem="f2W-tc-mSz" firstAttribute="centerX" secondItem="3Ms-XL-sg9" secondAttribute="centerX" id="BRo-i0-Fkk"/>
