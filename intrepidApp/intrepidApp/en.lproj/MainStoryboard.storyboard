@@ -8,7 +8,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="ProximaNova-Regular.otf">
+        <mutableArray key="proximanova-regular.ttf">
             <string>ProximaNova-Regular</string>
             <string>ProximaNova-Regular</string>
             <string>ProximaNova-Regular</string>
@@ -31,7 +31,7 @@
             <string>ProximaNova-Regular</string>
             <string>ProximaNova-Regular</string>
         </mutableArray>
-        <mutableArray key="ProximaNova-Semibold.otf">
+        <mutableArray key="proximanova-semibold.ttf">
             <string>ProximaNova-Semibold</string>
             <string>ProximaNova-Semibold</string>
             <string>ProximaNova-Semibold</string>
