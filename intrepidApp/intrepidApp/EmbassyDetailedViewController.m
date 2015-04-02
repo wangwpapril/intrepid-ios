@@ -140,6 +140,7 @@
             contactView.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
             contactView.backgroundColor = [UIColor clearColor];
             contactView.textColor = APP_TEXT_COLOR;
+            contactView.tintColor = [UIColor blueColor];
             contactView.editable = NO;
             contactView.scrollEnabled = NO;
             contactView.selectable = YES;
@@ -248,6 +249,7 @@
         notesView.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
         notesView.backgroundColor = [UIColor clearColor];
         notesView.textColor = APP_TEXT_COLOR;
+        notesView.tintColor = [UIColor blueColor];
         notesView.editable = NO;
         notesView.scrollEnabled = NO;
         notesView.selectable = YES;
