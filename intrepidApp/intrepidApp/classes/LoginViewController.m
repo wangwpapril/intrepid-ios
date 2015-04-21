@@ -35,25 +35,7 @@
     [[UITextField appearance] setTintColor:[UIColor whiteColor]];
     [self.navigationController setNavigationBarHidden:YES];
     self.navigationItem.hidesBackButton = YES;
-    
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
-    
-    self.email.delegate = self;
-    self.password.delegate = self;
-    
-    
-    
-    
-    
-    [email setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [email setReturnKeyType:UIReturnKeyDone];
-    [self.view addSubview:email];
-    
-    
-    [password setReturnKeyType:UIReturnKeyDone];
-    [password setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-    password.secureTextEntry = YES;
-    [self.view addSubview:password];
     
 //    email.text = @"cshah3@alumni.uwo.ca";
 //    password.text = @"iloveapple";
@@ -137,8 +119,15 @@
     return YES;
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
-    [theTextField resignFirstResponder];
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(textField == self.email) {
+        [textField resignFirstResponder];
+        [self.password becomeFirstResponder];
+    }
+    if (textField == self.password) {
+        [textField resignFirstResponder];
+        [self login:self];
+    }
     return YES;
 }
 

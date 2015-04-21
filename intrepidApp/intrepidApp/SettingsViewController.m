@@ -243,8 +243,31 @@ cancelButtonTitle:@"OK"
     return YES;
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
-    [theTextField resignFirstResponder];
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(textField == self.firstName) {
+        [textField resignFirstResponder];
+        [self.lastName becomeFirstResponder];
+    }
+    if(textField == self.lastName) {
+        [textField resignFirstResponder];
+        [self.email becomeFirstResponder];
+    }
+    if(textField == self.email) {
+        [textField resignFirstResponder];
+        [self.username becomeFirstResponder];
+    }
+    if(textField == self.username) {
+        [textField resignFirstResponder];
+        [self.oldPassword becomeFirstResponder];
+    }
+    if (textField == self.oldPassword) {
+        [textField resignFirstResponder];
+        [self.changePassword becomeFirstResponder];
+    }
+    if (textField == self.changePassword) {
+        [textField resignFirstResponder];
+        [self update:self];
+    }
     return YES;
 }
 
