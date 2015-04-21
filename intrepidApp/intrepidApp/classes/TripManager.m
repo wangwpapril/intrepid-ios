@@ -13,7 +13,6 @@
 @implementation TripManager
 
 @synthesize managedObjectContext;
-@synthesize currentUser;
 
 static TripManager *instance =nil;
 +(TripManager *)getInstance
@@ -58,10 +57,6 @@ static TripManager *instance =nil;
     NSError *error;
     NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
     return intermediateArray;
-}
-
-- (void)addUserDict:(NSDictionary *)userDict {
-    currentUser = userDict;
 }
 
 - (NSMutableArray *)getHealthItemsWithCity:(CityEntity *)city {

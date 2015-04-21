@@ -11,6 +11,7 @@
 #import "RequestBuilder.h"
 #import "Constants.h"
 #import "MyTripsViewController.h"
+#import "TripManager.h"
 
 @interface LoginViewController ()
 
@@ -46,7 +47,6 @@
         [[SEGAnalytics sharedAnalytics] identify:[userDict[@"user"][@"id"] stringValue]
               traits:@{@"email": userDict[@"user"][@"email"], @"first_name": userDict[@"user"][@"first_name"], @"last_name": userDict[@"user"][@"last_name"], @"country_code": userDict[@"user"][@"country_code"]}];
         
-        [RequestBuilder fetchUser:userDict];
         MyTripsViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"myTrips"];
         [self.navigationController pushViewController:viewController animated:NO];
     }
@@ -79,7 +79,6 @@
                 [[NSUserDefaults standardUserDefaults] setObject:[[NSDictionary alloc] initWithDictionary:userDict] forKey:@"userDict"];
                 [[NSUserDefaults standardUserDefaults] synchronize];
                 
-                [RequestBuilder fetchUser:responseBody];
                 [self.activityIndicator stopAnimating];
                 [self performSegueWithIdentifier:@"toTrips" sender:self];
             } else {

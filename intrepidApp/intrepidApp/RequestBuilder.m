@@ -13,15 +13,9 @@
 #import "Constants.h"
 
 @implementation RequestBuilder
-static NSDictionary * userDict;
-static NSDictionary * cityDict;
-
-+ (void)fetchUser:(NSDictionary *)user {
-    userDict = user;
-    [[TripManager getInstance] addUserDict:user];
-}
 
 + (void)fetchDestinations {
+    NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
     NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@destinations?short_list=true&token=%@", BASE_URL, userDict[@"user"][@"token"]]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
     request.HTTPMethod = @"GET";
@@ -84,6 +78,7 @@ static NSDictionary * cityDict;
 }
 
 + (void)fetchTrip:(NSString *)trip {
+    NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
     NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@destinations/%@?token=%@", BASE_URL, trip, userDict[@"user"][@"token"]]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
     request.HTTPMethod = @"GET";
@@ -96,7 +91,7 @@ static NSDictionary * cityDict;
 
             // update existing entries
             CityEntity *city;
-            cityDict = responseObject[@"destination"];
+            NSDictionary *cityDict = responseObject[@"destination"];
             
             for (city in savedCities) {
                 if ([city.destinationId isEqualToNumber:cityDict[@"id"]]) {
@@ -117,6 +112,7 @@ static NSDictionary * cityDict;
 }
 
 + (void)fetchEmbassy:(NSDictionary *)cityDict withCity:(CityEntity *)city {
+    NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
     NSURL *embassyRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@diplomatic-offices/%@?origin_country=%@&token=%@", BASE_URL, cityDict[@"country"][@"country_code"], userDict[@"user"][@"country_code"], userDict[@"user"][@"token"]]];
     NSMutableURLRequest *embassyRequest = [[NSMutableURLRequest alloc] initWithURL:embassyRequestURL];
     embassyRequest.HTTPMethod = @"GET";
@@ -167,6 +163,7 @@ static NSDictionary * cityDict;
 }
 
 + (void)fetchAlert:(NSDictionary *)cityDict withCity:(CityEntity *)city {
+    NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
     NSURL *alertRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@alerts/%@?token=%@", BASE_URL, cityDict[@"country"][@"country_code"], userDict[@"user"][@"token"]]];
     NSMutableURLRequest *alertRequest = [[NSMutableURLRequest alloc] initWithURL:alertRequestURL];
     alertRequest.HTTPMethod = @"GET";
@@ -200,6 +197,7 @@ static NSDictionary * cityDict;
 }
 
 + (void)fetchCurrency:(NSDictionary *)cityDict withCity:(CityEntity *)city {
+    NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
     NSString *currencyCode = cityDict[@"country"][@"currency_code"];
     NSURL *currencyRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@&base=%@&symbols=%@", CURRENCY_URL, userDict[@"user"][@"currency_code"], currencyCode]];
     NSMutableURLRequest *currencyRequest = [[NSMutableURLRequest alloc] initWithURL:currencyRequestURL];

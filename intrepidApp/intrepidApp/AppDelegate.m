@@ -217,7 +217,7 @@
                                                     @"latitude": [NSString stringWithFormat:@"%f", placemark.location.coordinate.latitude],
                                                     @"longitude": [NSString stringWithFormat:@"%f", placemark.location.coordinate.longitude]}
                                    };
-            if ([TripManager getInstance].currentUser) {
+            if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"]) {
                 [self sendLocation:body];
             }
         }
@@ -225,7 +225,8 @@
 }
 
 - (void)sendLocation:(NSDictionary *)body {
-    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/%@/coordinates?token=%@", BASE_URL, [TripManager getInstance].currentUser[@"user"][@"id"], [TripManager getInstance].currentUser[@"user"][@"token"]]];
+    NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/%@/coordinates?token=%@", BASE_URL, userDict[@"user"][@"id"], userDict[@"user"][@"token"]]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
     request.HTTPMethod = @"POST";
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];

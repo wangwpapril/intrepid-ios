@@ -24,9 +24,9 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     mController = [MenuController getInstance];
     
-    TripManager *manager = [TripManager getInstance];
-    if (manager.currentUser[@"user"][@"company"][@"content"] != [NSNull null] && ![manager.currentUser[@"user"][@"company"][@"content"] isEqual:@""]) {
-        if (manager.currentUser[@"user"][@"company"][@"content"][@"virtual_wallet_pdf"] != [NSNull null] && ![manager.currentUser[@"user"][@"company"][@"content"][@"virtual_wallet_pdf"] isEqual:@""]) {
+    NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
+    if (![userDict[@"user"][@"company"][@"content"] isEqual:@""]) {
+        if (![userDict[@"user"][@"company"][@"content"][@"virtual_wallet_pdf"] isEqual:@""]) {
         } else {
             self.pdfButton.hidden = YES;
         }
@@ -52,7 +52,8 @@
         [[SEGAnalytics sharedAnalytics] screen:@"Intrepid Insurance"];
     } else if ([segue.identifier isEqualToString:@"toWallet"]) {
         AceWebViewController *awvc = segue.destinationViewController;
-        [awvc setupWithTitle:@"Virtual Wallet PDF" withURL:[TripManager getInstance].currentUser[@"user"][@"company"][@"content"][@"virtual_wallet_pdf"]];
+        NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
+        [awvc setupWithTitle:@"Virtual Wallet PDF" withURL:userDict[@"user"][@"company"][@"content"][@"virtual_wallet_pdf"]];
         [[SEGAnalytics sharedAnalytics] screen:@"ACE Virtual Wallet PDF"];
     }
 }

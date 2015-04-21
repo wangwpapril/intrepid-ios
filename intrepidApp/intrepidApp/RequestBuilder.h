@@ -11,7 +11,6 @@
 
 @interface RequestBuilder : NSObject
 
-+ (void)fetchUser:(NSDictionary *)user;
 + (void)fetchDestinations;
 + (void)fetchTrip:(NSString *)trip;
 + (void)fetchEmbassy:(NSDictionary *)cityDict withCity:(CityEntity *)city;

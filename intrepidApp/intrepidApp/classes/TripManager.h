@@ -17,12 +17,10 @@
 
 // Core Data
 @property ( strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (strong, nonatomic) NSDictionary *currentUser;
 
 + (TripManager *)getInstance;
 - (NSArray *)getSavedCities;
 - (NSArray *)getDestinations;
-- (void)addUserDict:(NSDictionary *)userDict;
 
 - (CityEntity *)createTripWithLanguage:(NSString *)language
                           withReligion:(NSString *)religion

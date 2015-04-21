@@ -47,31 +47,11 @@
     
     
     //Initalize the TextFields and keyboard
-    
-    firstName.text = [TripManager getInstance].currentUser[@"user"][@"first_name"];
-    firstName.delegate = self;
-    [self.view addSubview:firstName];
-    
-    
-    lastName.text = [TripManager getInstance].currentUser[@"user"][@"last_name"];
-    lastName.delegate = self;
-    [self.view addSubview:lastName];
-    
-    
-    email.text = [TripManager getInstance].currentUser[@"user"][@"email"];
-    email.delegate = self;
-    [self.view addSubview:email];
-    
-    username.text = [TripManager getInstance].currentUser[@"user"][@"username"];
-        username.delegate = self;
-    [self.view addSubview:username];
-  
-    oldPassword.delegate = self;
-    [self.view addSubview:oldPassword];
-    
-    changePassword.delegate = self;
-    [self.view addSubview:changePassword];
-    
+    NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
+    firstName.text = userDict[@"user"][@"first_name"];
+    lastName.text = userDict[@"user"][@"last_name"];
+    email.text = userDict[@"user"][@"email"];
+    username.text = userDict[@"user"][@"username"];
 }
 
 - (IBAction)update:(id)sender {
@@ -109,11 +89,12 @@
 }
 
 - (void)resetPassword {
+    NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
     NSDictionary *body = @{@"user": @{@"old_password": oldPassword.text,
                                       @"new_password": changePassword.text}
                            };
     
-    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/%@/resetPassword?token=%@", BASE_URL, [TripManager getInstance].currentUser[@"user"][@"id"], [TripManager getInstance].currentUser[@"user"][@"token"]]];
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/%@/resetPassword?token=%@", BASE_URL, userDict[@"user"][@"id"], userDict[@"user"][@"token"]]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
     request.HTTPMethod = @"POST";
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -138,13 +119,14 @@
 }
 
 - (void)updateProfile {
+    NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
     NSDictionary *body = @{@"user": @{@"email": email.text,
                                       @"first_name": firstName.text,
                                       @"last_name": lastName.text,
                                       @"username": username.text}
                            };
     
-    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/%@?token=%@", BASE_URL, [TripManager getInstance].currentUser[@"user"][@"id"], [TripManager getInstance].currentUser[@"user"][@"token"]]];
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/%@?token=%@", BASE_URL, userDict[@"user"][@"id"], userDict[@"user"][@"token"]]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
     request.HTTPMethod = @"PUT";
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -158,7 +140,10 @@
                 [[SEGAnalytics sharedAnalytics] track:@"Update Profile"
                                            properties:@{@"category" : @"Settings"}];
                 
-                [RequestBuilder fetchUser:responseBody];
+                NSMutableDictionary *userDict = [self cleanDictionary:[[NSMutableDictionary alloc] initWithDictionary:responseBody]];
+                [[NSUserDefaults standardUserDefaults] setObject:[[NSDictionary alloc] initWithDictionary:userDict] forKey:@"userDict"];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+                
                 [self sendAlertWithError:@"Your profile has been updated."];
             } else {
                 [self sendAlertWithError:responseBody[@"error"][@"message"][0]];
@@ -213,9 +198,20 @@
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
                                                         message:errorString
                                                        delegate:nil
-cancelButtonTitle:@"OK"
+                                              cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
     [alertView show];
+}
+
+- (NSMutableDictionary *)cleanDictionary:(NSMutableDictionary *)dictionary {
+    [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        if (obj == [NSNull null]) {
+            [dictionary setObject:@"" forKey:key];
+        } else if ([obj isKindOfClass:[NSDictionary class]]) {
+            [dictionary setObject:[self cleanDictionary:[[NSMutableDictionary alloc] initWithDictionary:obj]] forKey:key];
+        }
+    }];
+    return dictionary;
 }
 
 #pragma mark - keyboard stuff
