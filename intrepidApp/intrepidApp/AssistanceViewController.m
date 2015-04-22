@@ -58,10 +58,10 @@
     y = mapView.frame.origin.y + mapView.frame.size.height;
     
     // Instructional Text
-    TripManager *manager = [TripManager getInstance];
-    if (manager.currentUser[@"user"][@"company"][@"content"] != [NSNull null] && ![manager.currentUser[@"user"][@"company"][@"content"] isEqual:@""]) {
-        if (manager.currentUser[@"user"][@"company"][@"content"][@"instructional_text"] != [NSNull null] && ![manager.currentUser[@"user"][@"company"][@"content"][@"instructional_text"] isEqual:@""]) {
-            NSString *instructionalText = [TripManager getInstance].currentUser[@"user"][@"company"][@"content"][@"instructional_text"];
+    NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
+    if (![userDict[@"user"][@"company"][@"content"] isEqual:@""]) {
+        if (![userDict[@"user"][@"company"][@"content"][@"instructional_text"] isEqual:@""]) {
+            NSString *instructionalText = userDict[@"user"][@"company"][@"content"][@"instructional_text"];
             UILabel *textLabel = [[UILabel alloc] init];
             textLabel.font = [UIFont fontWithName:APP_FONT size:15];
             textLabel.textColor = APP_TEXT_COLOR;
@@ -104,7 +104,8 @@
 
 - (void)callAssistance
 {
-//    NSArray *providers = [TripManager getInstance].currentUser[@"user"][@"company"][@"assistance_providers"];
+//    NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
+//    NSArray *providers = userDict[@"user"][@"company"][@"assistance_providers"];
 //    if (providers.count > 0) {
 //        UIActionSheet *assitanceSheet = [[UIActionSheet alloc] init];
 //        assitanceSheet.title = @"Call";
@@ -130,7 +131,8 @@
 
 //- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 //    if (buttonIndex != actionSheet.cancelButtonIndex) {
-//        NSArray *providers = [TripManager getInstance].currentUser[@"user"][@"company"][@"assistance_providers"];
+//        NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
+//        NSArray *providers = userDict[@"user"][@"company"][@"assistance_providers"];
 //        NSString *formattedNum = [providers[buttonIndex][@"phone"] stringByReplacingOccurrencesOfString:@" " withString:@""];
 //        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", formattedNum]]];
 //    }

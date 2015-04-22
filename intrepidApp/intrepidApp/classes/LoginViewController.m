@@ -11,6 +11,7 @@
 #import "RequestBuilder.h"
 #import "Constants.h"
 #import "MyTripsViewController.h"
+#import "TripManager.h"
 
 @interface LoginViewController ()
 
@@ -35,25 +36,7 @@
     [[UITextField appearance] setTintColor:[UIColor whiteColor]];
     [self.navigationController setNavigationBarHidden:YES];
     self.navigationItem.hidesBackButton = YES;
-    
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
-    
-    self.email.delegate = self;
-    self.password.delegate = self;
-    
-    
-    
-    
-    
-    [email setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [email setReturnKeyType:UIReturnKeyDone];
-    [self.view addSubview:email];
-    
-    
-    [password setReturnKeyType:UIReturnKeyDone];
-    [password setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-    password.secureTextEntry = YES;
-    [self.view addSubview:password];
     
 //    email.text = @"cshah3@alumni.uwo.ca";
 //    password.text = @"iloveapple";
@@ -64,7 +47,6 @@
         [[SEGAnalytics sharedAnalytics] identify:[userDict[@"user"][@"id"] stringValue]
               traits:@{@"email": userDict[@"user"][@"email"], @"first_name": userDict[@"user"][@"first_name"], @"last_name": userDict[@"user"][@"last_name"], @"country_code": userDict[@"user"][@"country_code"]}];
         
-        [RequestBuilder fetchUser:userDict];
         MyTripsViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"myTrips"];
         [self.navigationController pushViewController:viewController animated:NO];
     }
@@ -97,7 +79,6 @@
                 [[NSUserDefaults standardUserDefaults] setObject:[[NSDictionary alloc] initWithDictionary:userDict] forKey:@"userDict"];
                 [[NSUserDefaults standardUserDefaults] synchronize];
                 
-                [RequestBuilder fetchUser:responseBody];
                 [self.activityIndicator stopAnimating];
                 [self performSegueWithIdentifier:@"toTrips" sender:self];
             } else {
@@ -137,8 +118,15 @@
     return YES;
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
-    [theTextField resignFirstResponder];
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(textField == self.email) {
+        [textField resignFirstResponder];
+        [self.password becomeFirstResponder];
+    }
+    if (textField == self.password) {
+        [textField resignFirstResponder];
+        [self login:self];
+    }
     return YES;
 }
 
@@ -211,6 +199,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide) name:UIKeyboardWillHideNotification object:nil];
     
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

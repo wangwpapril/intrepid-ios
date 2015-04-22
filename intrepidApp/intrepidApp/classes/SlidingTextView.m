@@ -132,11 +132,12 @@
 }
 
 - (void)addCurrencyWithCity:(CityEntity *)city {
+    NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
     TripManager *manager = [TripManager getInstance];
     self.currency = [manager getCurrencyItemWithCity:city];
     
     if (self.currency) {
-        if ([self.currency.country isEqualToString:manager.currentUser[@"user"][@"currency_code"]]) {
+        if ([self.currency.country isEqualToString:userDict[@"user"][@"currency_code"]]) {
             UITextView *titleView = [[UITextView alloc] initWithFrame:CGRectMake(0, 293, 320, 100)];
             titleView.editable = NO;
             titleView.scrollEnabled = NO;
@@ -165,7 +166,7 @@
     //        userImageView.layer.borderColor = APP_BORDER_COLOR;
             [scroll addSubview:userImageView];
             
-            DestinationEntity *destination = [manager getDestinationItemWithCurrencyCode:manager.currentUser[@"user"][@"currency_code"]];
+            DestinationEntity *destination = [manager getDestinationItemWithCurrencyCode:userDict[@"user"][@"currency_code"]];
             if (destination) {
                 double scaleFactor = [UIScreen mainScreen].scale;
                 if (scaleFactor > 2.9 && ![destination.currencyImage3x isEqualToString:@""]) {
@@ -184,7 +185,7 @@
             UILabel *userLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 293, 50, 50)];
             userLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
             userLabel.textColor = APP_TEXT_COLOR;
-            userLabel.text = manager.currentUser[@"user"][@"currency_code"];
+            userLabel.text = userDict[@"user"][@"currency_code"];
             [scroll addSubview:userLabel];
 
             

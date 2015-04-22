@@ -39,7 +39,7 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     
     self.country.delegate = self;
-        UIPickerView *picker = [[UIPickerView alloc] init];
+    UIPickerView *picker = [[UIPickerView alloc] init];
     picker.delegate = self;
     picker.showsSelectionIndicator = YES;
     country.inputView = picker;
@@ -47,8 +47,6 @@
     country.tintColor = [UIColor clearColor];
     [self fetchCountries];
     [self.view addSubview:country];
-    
-   
 }
 
 
@@ -108,8 +106,7 @@
       @"locale_code": @"en_CA",
       @"country_code": self.selectedCountry,
       @"company_id": companyId
-      }
-};
+    }};
     
     NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users", BASE_URL]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
@@ -271,8 +268,35 @@
     }
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
-    [theTextField resignFirstResponder];
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(textField == self.firstName) {
+        [textField resignFirstResponder];
+        [self.lastName becomeFirstResponder];
+    }
+    if(textField == self.lastName) {
+        [textField resignFirstResponder];
+        [self.email becomeFirstResponder];
+    }
+    if(textField == self.email) {
+        [textField resignFirstResponder];
+        [self.country becomeFirstResponder];
+    }
+    if(textField == self.country) {
+        [textField resignFirstResponder];
+        [self.username becomeFirstResponder];
+    }
+    if(textField == self.username) {
+        [textField resignFirstResponder];
+        [self.password becomeFirstResponder];
+    }
+    if (textField == self.password) {
+        [textField resignFirstResponder];
+        [self.policyNumber becomeFirstResponder];
+    }
+    if (textField == self.policyNumber) {
+        [textField resignFirstResponder];
+        [self signup:self];
+    }
     return YES;
 }
 

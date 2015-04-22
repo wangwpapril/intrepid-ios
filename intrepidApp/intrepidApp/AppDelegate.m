@@ -206,6 +206,44 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     self.lastLocation = [locations lastObject];
     NSLog(@"latitude: %f, longitude: %f", self.lastLocation.coordinate.latitude, self.lastLocation.coordinate.longitude);
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation:self.lastLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        if (error) {
+            NSLog(@"Error %@", error.description);
+        } else {
+            CLPlacemark *placemark = [placemarks lastObject];
+            NSDictionary *body = @{@"coordinate": @{@"country": placemark.country,
+                                                    @"city": placemark.locality,
+                                                    @"latitude": [NSString stringWithFormat:@"%f", placemark.location.coordinate.latitude],
+                                                    @"longitude": [NSString stringWithFormat:@"%f", placemark.location.coordinate.longitude]}
+                                   };
+            if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"]) {
+                [self sendLocation:body];
+            }
+        }
+    }];
+}
+
+- (void)sendLocation:(NSDictionary *)body {
+    NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/%@/coordinates?token=%@", BASE_URL, userDict[@"user"][@"id"], userDict[@"user"][@"token"]]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
+    request.HTTPMethod = @"POST";
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    request.HTTPBody = [NSJSONSerialization dataWithJSONObject:body options:0 error:nil];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (!error) {
+            NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSLog(@"%@", responseBody);
+            if (responseBody[@"coordinate"]) {
+                [[SEGAnalytics sharedAnalytics] track:@"Update Location"
+                                           properties:@{@"category" : @"AppDelegate"}];
+            }
+        } else {
+            NSLog(@"Error %@", error.description);
+        }
+    }];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
