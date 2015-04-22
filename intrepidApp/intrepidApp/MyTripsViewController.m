@@ -13,6 +13,7 @@
 #import "TripItem.h"
 #import "OverViewViewController.h"
 #import "UIImageView+WebCache.h"
+#import "RequestBuilder.h"
 
 @implementation MyTripsViewController
 
@@ -180,17 +181,38 @@
 - (void)toSecurity:sender {
     NSInteger index = ((UIButton *)sender).tag;
     CityEntity *city = [cities objectAtIndex:index];
-    [MenuController getInstance].city = city;
-    OverViewViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"overView"];
-    viewController.firstLoad = true;
-    [[MenuController getInstance] selectButtonWithTag:0];
+    self.destinationId = city.destinationId;
     
-    [[SEGAnalytics sharedAnalytics] track:@"View Trip"
-                               properties:@{@"category" : @"My Trips",
-                                            @"label" : city.destinationName}];
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityIndicator.color = [UIColor grayColor];
+    self.activityIndicator.center = self.view.center;
+    [self.view addSubview:self.activityIndicator];
+    [self.activityIndicator startAnimating];
     
-    [self.navigationController pushViewController:viewController animated:YES];
-//    [[MenuController getInstance] showMenu];
+    [RequestBuilder fetchTrip:[NSString stringWithFormat:@"%@", city.destinationId]];
+}
+
+- (void)populateTrip {
+    [self.activityIndicator stopAnimating];
+    NSArray *savedCities = [[TripManager getInstance] getSavedCities];
+    for (CityEntity *city in savedCities) {
+        if ([city.destinationId isEqualToNumber:self.destinationId]) {
+            [MenuController getInstance].city = city;
+            OverViewViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"overView"];
+            viewController.firstLoad = true;
+            [[MenuController getInstance] selectButtonWithTag:0];
+            
+            [[SEGAnalytics sharedAnalytics] track:@"View Trip"
+                                       properties:@{@"category" : @"My Trips",
+                                                    @"label" : city.destinationName}];
+            [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+            [self.navigationController pushViewController:viewController animated:YES];
+            return;
+        }
+    }
+    
+    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -198,6 +220,18 @@
     [[SEGAnalytics sharedAnalytics] screen:@"My Trips"];
     
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(populateTrip)
+                                                 name:@"TRIP_UPDATE"
+                                               object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:@"TRIP_UPDATE"
+                                                  object:nil];
+    
+    [super viewWillDisappear:animated];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender {

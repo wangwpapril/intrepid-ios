@@ -45,7 +45,7 @@
     }
 }
 
-- (void) moveAllSubviewsDown{
+- (void)moveAllSubviewsDown {
     float barHeight = 45.0;
     for (UIView *view in self.view.subviews) {
         
@@ -80,7 +80,7 @@
     [RequestBuilder fetchDestinations];
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
+- (void)viewWillDisappear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:@"DESTINATION_UPDATE"
                                                   object:nil];
@@ -88,6 +88,8 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:@"TRIP_UPDATE"
                                                   object:nil];
+    
+    [super viewWillDisappear:animated];
 }
 
 - (void)populateContentArray {
