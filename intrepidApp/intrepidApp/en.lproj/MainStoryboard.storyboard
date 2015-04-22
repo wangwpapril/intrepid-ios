@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<<<<<<< HEAD
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3">
-=======
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3">
->>>>>>> a2dffd3f758a93d8645f8e6b48751e5b615c0e4d
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="proximanova-regular.ttf">
+            <string>ProximaNova-Regular</string>
             <string>ProximaNova-Regular</string>
             <string>ProximaNova-Regular</string>
             <string>ProximaNova-Regular</string>
@@ -1091,8 +1088,21 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Version:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFx-iC-tZf">
+                                <rect key="frame" x="221" y="527" width="80" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="06z-xK-7gP"/>
+                                    <constraint firstAttribute="width" constant="80" id="Xby-Py-mk2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3Ib-R7-erY" firstAttribute="top" secondItem="eFx-iC-tZf" secondAttribute="bottom" constant="20" id="SZW-8S-Fj3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0Bp-1n-Nur"/>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -1107,6 +1117,7 @@
                         <outlet property="signOutButton" destination="Mm6-s5-WIK" id="1Tk-ie-AaJ"/>
                         <outlet property="updateButton" destination="K3e-Xd-ySu" id="0Wy-mU-orM"/>
                         <outlet property="username" destination="I7B-er-IGB" id="0vB-IV-ikZ"/>
+                        <outlet property="versionLabel" destination="eFx-iC-tZf" id="Bc7-Kv-5P9"/>
                         <segue destination="lgv-mR-8mz" kind="show" identifier="toLogin" id="7CT-6H-1PF"/>
                     </connections>
                 </viewController>

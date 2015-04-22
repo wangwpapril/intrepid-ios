@@ -37,6 +37,7 @@
     mController = [MenuController getInstance];
     self.view.tag = 8;
     self.navigationItem.title = @"Settings";
+    self.versionLabel.text = [NSString stringWithFormat:@"Version: %@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
     
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"login-background"] drawInRect:self.view.bounds];
