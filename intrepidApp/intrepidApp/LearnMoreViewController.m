@@ -21,12 +21,6 @@
 {
     [super viewDidLoad];
     
-   
-    
-    
-    //implement scrollview
-    self.scrollView.delegate = self;
-    
     //create array for images
     NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"overview", @"health", @"cool", @"assistance-new", nil];
     
@@ -47,20 +41,6 @@
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * [imageArray count], 366.0);
     
     [self populateDescriptions];
-    
-    [self.view addSubview:self.scrollView];
-    [self.view addSubview:exitButton];
-    //create an image and put it overtop of the button?
-  
-    
-  
-    pageControl.numberOfPages = 4;
-    pageControl.currentPage = 0;
-    pageControl.pageIndicatorTintColor = [UIColor darkGrayColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
-    [self.view addSubview:pageControl];
-    
-   
 }
 
 - (void)viewWillAppear:(BOOL)animated {

@@ -38,7 +38,6 @@
     //set up background
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     
-    self.country.delegate = self;
     UIPickerView *picker = [[UIPickerView alloc] init];
     picker.delegate = self;
     picker.showsSelectionIndicator = YES;

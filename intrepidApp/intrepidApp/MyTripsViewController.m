@@ -40,21 +40,9 @@
     UISwipeGestureRecognizer *swipeUpGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeUpFrom:)];
     swipeUpGestureRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
     [scrollView addGestureRecognizer:swipeUpGestureRecognizer];
-
-    //implement scrollview
-    scrollView.delegate = self;
-    scrollView.scrollEnabled = YES;
-    scrollView.pagingEnabled = YES;
-    [self.view addSubview:scrollView];
     
-    pageControl.frame = CGRectMake(0, self.view.frame.size.height - 60, 320, 50);
-    pageControl.currentPage = 0;
-    // replace with loading indicator
-    pageControl.numberOfPages = 1;
-    pageControl.pageIndicatorTintColor = [UIColor darkGrayColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     [pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
-    [self.view addSubview:pageControl];
+
     [self loadCities];
 }
 
