@@ -325,6 +325,15 @@ static TripManager *instance =nil;
                      withSafetyImage3x:(NSString *)safetyImage3x
                        withCountryCode:(NSString *)countryCode
                       withCurrencyCode:(NSString *)currencyCode
+                             withMoney:(NSString *)money
+                    withTransportation:(NSString *)transportation
+                          withHolidays:(NSString *)holidays
+                 withHealthCareQuality:(NSString *)healthCareQuality
+     withVaccinationsAndPreTripMedical:(NSString *)vaccinationsAndPreTripMedical
+                  withHealthConditions:(NSString *)healthConditions
+                    withMedicalImage1x:(NSString *)medicalImage1x
+                    withMedicalImage2x:(NSString *)medicalImage2x
+                    withMedicalImage3x:(NSString *)medicalImage3x
 {
     CityEntity *city = [NSEntityDescription insertNewObjectForEntityForName:@"CityEntity" inManagedObjectContext:managedObjectContext];
 
@@ -358,6 +367,15 @@ static TripManager *instance =nil;
     city.safetyImage3x = safetyImage3x;
     city.countryCode = countryCode;
     city.currencyCode = currencyCode;
+    city.money = money;
+    city.transportation = transportation;
+    city.holidays = holidays;
+    city.healthCareQuality = healthCareQuality;
+    city.vaccinationsAndPreTripMedical = vaccinationsAndPreTripMedical;
+    city.healthConditions = healthConditions;
+    city.medicalImage1x = medicalImage1x;
+    city.medicalImage2x = medicalImage2x;
+    city.medicalImage3x = medicalImage3x;
     
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {
@@ -476,10 +494,11 @@ static TripManager *instance =nil;
 }
 
 - (void)saveCity:(NSDictionary *)cityDict {
-    NSString *location, *climate, *typeOfGovernment, *visaRequirements, *communicationInfrastructure, *electricity, *development;
+    NSString *location, *climate, *typeOfGovernment, *visaRequirements, *communicationInfrastructure, *electricity, *development, *money, *transportation, *holidays;
     NSString *language, *religion, *ethnicMakeup, *culturalNorms;
     NSString *safety, *otherConcerns;
-    NSString *cultureImage1x, *cultureImage2x, *cultureImage3x, *introImage1x, *introImage2x, *introImage3x, *generalImage1x, *generalImage2x, *generalImage3x, *safetyImage1x, *safetyImage2x, *safetyImage3x;
+    NSString *healthCareQuality, *vaccinationsAndPreTripMedical, *healthConditions;
+    NSString *cultureImage1x, *cultureImage2x, *cultureImage3x, *introImage1x, *introImage2x, *introImage3x, *generalImage1x, *generalImage2x, *generalImage3x, *safetyImage1x, *safetyImage2x, *safetyImage3x, *medicalImage1x, *medicalImage2x, *medicalImage3x;
     NSString *destinationName, *destinationType, *countryCode, *currencyCode;
     NSInteger destinationId;
     
@@ -502,6 +521,9 @@ static TripManager *instance =nil;
     communicationInfrastructure = contentDict[@"communication_infrastructure"];
     electricity = contentDict[@"electricity"];
     development = contentDict[@"development"];
+    money = contentDict[@"currency"];
+    transportation = contentDict[@"transportation"];
+    holidays = contentDict[@"holidays"];
     
     //Culture Description Subtext
     language = contentDict[@"language"];
@@ -509,9 +531,14 @@ static TripManager *instance =nil;
     ethnicMakeup = contentDict[@"ethnic_makeup"];
     culturalNorms = contentDict[@"cultural_norms"];
     
-    //Security Description Subtext
+    //Safety Description Subtext
     safety = contentDict[@"safety"];
     otherConcerns = contentDict[@"other_concerns"];
+    
+    //Medical Description Subtext
+    healthCareQuality = contentDict[@"health_care_quality"];
+    vaccinationsAndPreTripMedical = contentDict[@"vaccinations_and_pre_trip_medical"];
+    healthConditions = contentDict[@"health_conditions"];
     
     if (cityDict[@"images"] != [NSNull null] && ![cityDict[@"images"] isEqual:@""]) {
         if (cityDict[@"images"][@"culture"] != [NSNull null] && ![cityDict[@"images"][@"culture"] isEqual:@""]) {
@@ -553,6 +580,16 @@ static TripManager *instance =nil;
             safetyImage2x = @"";
             safetyImage3x = @"";
         }
+        
+        if (cityDict[@"images"][@"medical"] != [NSNull null] && ![cityDict[@"images"][@"medical"] isEqual:@""]) {
+            medicalImage1x = [cityDict[@"images"][@"medical"][@"versions"][@"1x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            medicalImage2x = [cityDict[@"images"][@"medical"][@"versions"][@"2x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            medicalImage3x = [cityDict[@"images"][@"medical"][@"versions"][@"3x"][@"source_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        } else {
+            medicalImage1x = @"";
+            medicalImage2x = @"";
+            medicalImage3x = @"";
+        }
     } else {
         cultureImage1x = @"";
         cultureImage2x = @"";
@@ -566,6 +603,9 @@ static TripManager *instance =nil;
         safetyImage1x = @"";
         safetyImage2x = @"";
         safetyImage3x = @"";
+        medicalImage1x = @"";
+        medicalImage2x = @"";
+        medicalImage3x = @"";
     }
     
     CityEntity *city = [[TripManager getInstance] createTripWithLanguage:language
@@ -597,7 +637,16 @@ static TripManager *instance =nil;
                                                       withSafetyImage2x:safetyImage2x
                                                       withSafetyImage3x:safetyImage3x
                                                          withCountryCode:countryCode
-                                                        withCurrencyCode:currencyCode];
+                                                        withCurrencyCode:currencyCode
+                                                               withMoney:money
+                                                      withTransportation:transportation
+                                                            withHolidays:holidays
+                                                   withHealthCareQuality:healthCareQuality
+                                       withVaccinationsAndPreTripMedical:vaccinationsAndPreTripMedical
+                                                    withHealthConditions:healthConditions
+                                                      withMedicalImage1x:medicalImage1x
+                                                      withMedicalImage2x:medicalImage2x
+                                                      withMedicalImage3x:medicalImage3x];
     
     [RequestBuilder fetchEmbassy:cityDict withCity:city];
     [RequestBuilder fetchAlert:cityDict withCity:city];    

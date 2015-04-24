@@ -35,11 +35,18 @@
 @property (nonatomic, retain) NSString * generalImage3x;
 @property (nonatomic, retain) NSString * generalText;
 @property (nonatomic, retain) HealthEntity * health;
+@property (nonatomic, retain) NSString * healthCareQuality;
+@property (nonatomic, retain) NSString * healthConditions;
+@property (nonatomic, retain) NSString * holidays;
 @property (nonatomic, retain) NSString * introImage1x;
 @property (nonatomic, retain) NSString * introImage2x;
 @property (nonatomic, retain) NSString * introImage3x;
 @property (nonatomic, retain) NSString * language;
 @property (nonatomic, retain) NSString * location;
+@property (nonatomic, retain) NSString * medicalImage1x;
+@property (nonatomic, retain) NSString * medicalImage2x;
+@property (nonatomic, retain) NSString * medicalImage3x;
+@property (nonatomic, retain) NSString * money;
 @property (nonatomic, retain) NSString * otherConcerns;
 @property (nonatomic, retain) NSString * religion;
 @property (nonatomic, retain) NSString * safety;
@@ -47,7 +54,9 @@
 @property (nonatomic, retain) NSString * safetyImage2x;
 @property (nonatomic, retain) NSString * safetyImage3x;
 @property (nonatomic, retain) NSString * safetyText;
+@property (nonatomic, retain) NSString * transportation;
 @property (nonatomic, retain) NSString * typeOfGovernment;
+@property (nonatomic, retain) NSString * vaccinationsAndPreTripMedical;
 @property (nonatomic, retain) NSString * visaRequirements;
 
 @end

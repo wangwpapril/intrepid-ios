@@ -151,6 +151,7 @@
 		2CDDEAAC1A683D1B004654D8 /* DestinationEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationEntity.h; sourceTree = "<group>"; };
 		2CDDEAAD1A683D1B004654D8 /* DestinationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationEntity.m; sourceTree = "<group>"; };
 		2CE95BA81A3110E100062423 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2CED64DA1AEA9D5700D98D7B /* intrepidApp 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "intrepidApp 3.xcdatamodel"; sourceTree = "<group>"; };
 		337237671A50F392003FF7C2 /* TripsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripsViewController.h; path = classes/TripsViewController.h; sourceTree = "<group>"; };
 		337237681A50F392003FF7C2 /* TripsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripsViewController.m; path = classes/TripsViewController.m; sourceTree = "<group>"; };
 		339118561A31626300450CB8 /* RequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestBuilder.h; sourceTree = "<group>"; };
@@ -836,10 +837,11 @@
 		6851222F17861138008DB6B6 /* intrepidApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				2CED64DA1AEA9D5700D98D7B /* intrepidApp 3.xcdatamodel */,
 				2CDD74971A93C5570042CCD2 /* intrepidApp 2.xcdatamodel */,
 				6851223017861138008DB6B6 /* intrepidApp.xcdatamodel */,
 			);
-			currentVersion = 2CDD74971A93C5570042CCD2 /* intrepidApp 2.xcdatamodel */;
+			currentVersion = 2CED64DA1AEA9D5700D98D7B /* intrepidApp 3.xcdatamodel */;
 			path = intrepidApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

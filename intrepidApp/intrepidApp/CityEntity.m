@@ -35,11 +35,18 @@
 @dynamic generalImage3x;
 @dynamic generalText;
 @dynamic health;
+@dynamic healthCareQuality;
+@dynamic healthConditions;
+@dynamic holidays;
 @dynamic introImage1x;
 @dynamic introImage2x;
 @dynamic introImage3x;
 @dynamic language;
 @dynamic location;
+@dynamic medicalImage1x;
+@dynamic medicalImage2x;
+@dynamic medicalImage3x;
+@dynamic money;
 @dynamic otherConcerns;
 @dynamic religion;
 @dynamic safety;
@@ -47,7 +54,9 @@
 @dynamic safetyImage2x;
 @dynamic safetyImage3x;
 @dynamic safetyText;
+@dynamic transportation;
 @dynamic typeOfGovernment;
+@dynamic vaccinationsAndPreTripMedical;
 @dynamic visaRequirements;
 
 @end

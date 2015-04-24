@@ -51,7 +51,16 @@
                      withSafetyImage2x:(NSString *)safetyImage2x
                      withSafetyImage3x:(NSString *)safetyImage3x
                        withCountryCode:(NSString *)countryCode
-                       withCurrencyCode:(NSString *)currencyCode;
+                      withCurrencyCode:(NSString *)currencyCode
+                             withMoney:(NSString *)money
+                    withTransportation:(NSString *)transportation
+                          withHolidays:(NSString *)holidays
+                 withHealthCareQuality:(NSString *)healthCareQuality
+     withVaccinationsAndPreTripMedical:(NSString *)vaccinationsAndPreTripMedical
+                  withHealthConditions:(NSString *)healthConditions
+                    withMedicalImage1x:(NSString *)medicalImage1x
+                    withMedicalImage2x:(NSString *)medicalImage2x
+                    withMedicalImage3x:(NSString *)medicalImage3x;
 
 - (DestinationEntity *)createDestinationWithName:(NSString *)name
                                withDestinationId:(NSInteger )destinationId
