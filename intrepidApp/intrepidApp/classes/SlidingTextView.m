@@ -25,7 +25,7 @@
 }
 
 
-- (void)setupWithImageName1x:(NSString *)image1x withImageName2x:(NSString *)image2x withImageName3x:(NSString *)image3x withTitle:(NSString *)title withIconName:(NSString *)icon {
+- (void)setupWithImageName1x:(NSString *)image1x withImageName2x:(NSString *)image2x withImageName3x:(NSString *)image3x withTitle:(NSString *)title {
     
 //    CGRect rect=CGRectMake(0, 0, 320, 480);
     scroll = [[UIScrollView alloc] initWithFrame:self.frame];

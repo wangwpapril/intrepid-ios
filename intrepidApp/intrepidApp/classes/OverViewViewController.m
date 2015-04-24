@@ -29,7 +29,7 @@
     CityEntity *city = [self getCity];
     
     SlidingTextView *history = [[SlidingTextView alloc] initWithFrame:frame];
-    [history setupWithImageName1x:city.generalImage1x withImageName2x:city.generalImage2x withImageName3x:city.generalImage3x withTitle:@"General" withIconName:@"history-icon"];
+    [history setupWithImageName1x:city.generalImage1x withImageName2x:city.generalImage2x withImageName3x:city.generalImage3x withTitle:@"General"];
     NSMutableArray *historyArray = [NSMutableArray new];
     if (city.location) {
         [historyArray addObject:@[@"Location", city.location, @"history-icon"]];
@@ -52,11 +52,20 @@
     if (city.development) {
         [historyArray addObject:@[@"Development", city.development, @"development-icon"]];
     }
+    if (city.money) {
+        [historyArray addObject:@[@"Money", city.money, @"history-icon"]];
+    }
+    if (city.transportation) {
+        [historyArray addObject:@[@"Transportation", city.transportation, @"history-icon"]];
+    }
+    if (city.holidays) {
+        [historyArray addObject:@[@"Holidays", city.holidays, @"history-icon"]];
+    }
     [history addTextAreaWithText:historyArray];
     
     
     SlidingTextView *culture = [[SlidingTextView alloc] initWithFrame:frame];
-    [culture setupWithImageName1x:city.cultureImage1x withImageName2x:city.cultureImage2x withImageName3x:city.cultureImage3x withTitle:@"Culture" withIconName:@"diversity-icon"];
+    [culture setupWithImageName1x:city.cultureImage1x withImageName2x:city.cultureImage2x withImageName3x:city.cultureImage3x withTitle:@"Culture"];
     NSMutableArray *cultureArray = [NSMutableArray new];
     if (city.location) {
         [cultureArray addObject:@[@"Language", city.language, @"culture-icon"]];
@@ -73,7 +82,7 @@
     [culture addTextAreaWithText:cultureArray];
     
     SlidingTextView *currency = [[SlidingTextView alloc] initWithFrame:frame];
-    [currency setupWithImageName1x:@"" withImageName2x:@"" withImageName3x:@"" withTitle:@"Currency" withIconName:@"currency-icon"];
+    [currency setupWithImageName1x:@"" withImageName2x:@"" withImageName3x:@"" withTitle:@"Currency"];
     currency.parentViewController = self;
     [currency addCurrencyWithCity:city];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self

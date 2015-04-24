@@ -21,7 +21,7 @@
 @property (strong, nonatomic) UITextField *tripField;
 @property (strong, nonatomic) CurrencyEntity *currency;
 
-- (void)setupWithImageName1x:(NSString *)image1x withImageName2x:(NSString *)image2x withImageName3x:(NSString *)image3x withTitle:(NSString *)title withIconName:(NSString *)icon;
+- (void)setupWithImageName1x:(NSString *)image1x withImageName2x:(NSString *)image2x withImageName3x:(NSString *)image3x withTitle:(NSString *)title;
 - (void)addTableViewWithRows:(NSInteger)rows withTableView:(UITableView *)tableView;
 - (void)addTextAreaWithText:(NSArray *)text;
 - (void)addCurrencyWithCity:(CityEntity *)city;

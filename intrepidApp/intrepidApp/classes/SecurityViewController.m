@@ -27,9 +27,9 @@
     NSInteger height = self.view.bounds.size.height;
     CGRect frame = CGRectMake(0, 0, 320, height);
     CityEntity *city = [self getCity];
-    SlidingTextView *political = [[SlidingTextView alloc] initWithFrame:frame];
     
-    [political setupWithImageName1x:city.safetyImage1x withImageName2x:city.safetyImage2x withImageName3x:city.safetyImage3x withTitle:@"Safety" withIconName:@"Political-icon"];
+    SlidingTextView *political = [[SlidingTextView alloc] initWithFrame:frame];
+    [political setupWithImageName1x:city.safetyImage1x withImageName2x:city.safetyImage2x withImageName3x:city.safetyImage3x withTitle:@"Safety"];
     NSMutableArray *politicalArray = [NSMutableArray new];
     if (city.safety) {
         [politicalArray addObject:@[@"Safety", city.safety, @"safety-icon"]];
@@ -39,14 +39,27 @@
     }
     [political addTextAreaWithText:politicalArray];
     
-    SlidingTextView *embassy = [[SlidingTextView alloc] initWithFrame:frame];
+    SlidingTextView *medical = [[SlidingTextView alloc] initWithFrame:frame];
+    [medical setupWithImageName1x:city.medicalImage1x withImageName2x:city.medicalImage2x withImageName3x:city.medicalImage3x withTitle:@"Medical"];
+    NSMutableArray *medicalArray = [NSMutableArray new];
+    if (city.healthCareQuality) {
+        [medicalArray addObject:@[@"Health Care Quality", city.healthCareQuality, @"safety-icon"]];
+    }
+    if (city.vaccinationsAndPreTripMedical) {
+        [medicalArray addObject:@[@"Vaccinations and Pre Trip Medical", city.vaccinationsAndPreTripMedical, @"safety-icon"]];
+    }
+    if (city.healthConditions) {
+        [medicalArray addObject:@[@"Health Conditions", city.healthConditions, @"safety-icon"]];
+    }
+    [medical addTextAreaWithText:medicalArray];
     
+    SlidingTextView *embassy = [[SlidingTextView alloc] initWithFrame:frame];
     [self populateEmbassyItems];    
     if (embassyArray.count > 0) {
         EmbassyEntity *embassyEntity = embassyArray[0];
-        [embassy setupWithImageName1x:embassyEntity.image1x withImageName2x:embassyEntity.image2x withImageName3x:embassyEntity.image3x withTitle:@"Embassy" withIconName:@"embassy-icon"];
+        [embassy setupWithImageName1x:embassyEntity.image1x withImageName2x:embassyEntity.image2x withImageName3x:embassyEntity.image3x withTitle:@"Embassy"];
     } else {
-        [embassy setupWithImageName1x:@"" withImageName2x:@"" withImageName3x:@"" withTitle:@"Embassy" withIconName:@"embassy-icon"];
+        [embassy setupWithImageName1x:@"" withImageName2x:@"" withImageName3x:@"" withTitle:@"Embassy"];
     }
 
     // embassies
@@ -56,16 +69,14 @@
     tableList.scrollEnabled = YES;
     [embassy addTableViewWithRows:embassyArray.count withTableView:tableList];
     
-    NSMutableArray *views = [NSMutableArray arrayWithObjects:political, embassy, nil];
+    NSMutableArray *views = [NSMutableArray arrayWithObjects:political, medical, embassy, nil];
     [self addViews:views withVerticalOffset:0];
 
-    NSArray *names = [NSArray arrayWithObjects:@"SAFETY", @"EMBASSY", nil];
+    NSArray *names = [NSArray arrayWithObjects:@"SAFETY", @"MEDICAL", @"EMBASSY", nil];
     [self addTabs:names];
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        
         self.edgesForExtendedLayout = UIRectEdgeNone;
-        
     } else {
         [self moveAllSubviewsDown];
     }
