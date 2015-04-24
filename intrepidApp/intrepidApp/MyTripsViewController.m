@@ -173,7 +173,6 @@
     
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    self.activityIndicator.color = [UIColor grayColor];
     self.activityIndicator.center = self.view.center;
     [self.view addSubview:self.activityIndicator];
     [self.activityIndicator startAnimating];
