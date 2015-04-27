@@ -22,7 +22,7 @@
     [super viewDidLoad];
     
     //create array for images
-    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"overview", @"health", @"cool", @"assistance-new", nil];
+    NSArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"overview", @"health", @"cool", @"assistance-branded", nil];
     
     for (int i=0; i < [imageArray count]; i++) {
         CGRect frame;
