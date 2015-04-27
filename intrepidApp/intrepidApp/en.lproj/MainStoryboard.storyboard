@@ -140,7 +140,7 @@
                                     <constraint firstAttribute="height" constant="36" id="BLE-zc-CWt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="15"/>
-                                <state key="normal" title="LOG IN" backgroundImage="intrepidButton">
+                                <state key="normal" title="LOG IN" backgroundImage="ace_button">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -179,6 +179,7 @@
                                 <rect key="frame" x="134" y="391" width="54" height="40"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="15"/>
                                 <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="0.52941176469999995" green="0.72941176470000002" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -306,7 +307,7 @@
                                 <rect key="frame" x="69" y="329" width="183" height="36"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="SIGN UP" backgroundImage="intrepidButton">
+                                <state key="normal" title="SIGN UP" backgroundImage="ace_button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1060,7 +1061,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3e-Xd-ySu" userLabel="Update">
                                 <rect key="frame" x="60" y="307" width="200" height="36"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="15"/>
-                                <state key="normal" title="UPDATE" backgroundImage="intrepidButton">
+                                <state key="normal" title="UPDATE" backgroundImage="ace_button">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -1083,6 +1084,7 @@
                                 <rect key="frame" x="60" y="366" width="200" height="30"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
                                 <state key="normal" title="Sign out">
+                                    <color key="titleColor" red="0.52941176470588236" green="0.72941176470588232" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
