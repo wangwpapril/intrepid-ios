@@ -106,7 +106,7 @@
     }
     
     if (![embassyItem.phone isEqualToString:@""] || ![embassyItem.fax isEqualToString:@""] || ![embassyItem.email isEqualToString:@""] || ![embassyItem.website isEqualToString:@""]) {
-        UIImageView  *embassyImageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"contact_icon"]];
+        UIImageView  *embassyImageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"contact-icon"]];
         embassyImageView2.frame = CGRectMake(14, y + 4, 25, 25);
         
         UILabel *embassyLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(50, y + 5, 250, 25)];
@@ -165,7 +165,7 @@
     }
     
     if (![embassyItem.hours isEqualToString:@""]) {
-        UIImageView  *embassyImageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hours_icon"]];
+        UIImageView  *embassyImageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hours-icon"]];
         embassyImageView3.frame = CGRectMake(14, y + 4, 25, 25);
         
         UILabel *embassyLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(50, y + 5, 250, 25)];

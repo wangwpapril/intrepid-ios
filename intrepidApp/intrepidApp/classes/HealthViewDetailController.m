@@ -77,7 +77,7 @@
 
 - (void)addContent {
     int y = 0;
-    UIImageView  *descriptionImageLabel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"stethoscope-pic"]];
+    UIImageView  *descriptionImageLabel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"stethoscope-icon"]];
     descriptionImageLabel.frame = CGRectMake(17, 10, 25, 25);
     [scrollView addSubview:descriptionImageLabel];
     
@@ -123,7 +123,7 @@
     if ([healthItem.category isEqualToString:@"medications"]) {
         UIImageView  *sideEffectsImageLabel = [[UIImageView alloc] init];
 
-        [sideEffectsImageLabel setImage:[UIImage imageNamed:@"medication-pic"]];
+        [sideEffectsImageLabel setImage:[UIImage imageNamed:@"medication-icon"]];
         sideEffectsImageLabel.frame = CGRectMake(17, descriptionTextContainer.frame.origin.y + size.height + 22, 25, 25);
         [scrollView addSubview:sideEffectsImageLabel];
 
@@ -182,7 +182,7 @@
     [scrollView addSubview:transmissionTitleLabel];
     
     UIImageView  *transmissionImageLabel = [[UIImageView alloc] init];
-    [transmissionImageLabel setImage:[UIImage imageNamed:@"heart-rate-pic"]];
+    [transmissionImageLabel setImage:[UIImage imageNamed:@"heart-rate-icon"]];
     transmissionImageLabel.frame = CGRectMake(17, y, 20, 25);
     [scrollView addSubview:transmissionImageLabel];
     
@@ -218,7 +218,7 @@
     [scrollView addSubview:immunizationTitleLabel];
 
     UIImageView  *immunizationImageLabel = [[UIImageView alloc] init];
-    [immunizationImageLabel setImage:[UIImage imageNamed:@"conditions-pic"]];
+    [immunizationImageLabel setImage:[UIImage imageNamed:@"conditions-icon"]];
     immunizationImageLabel.frame = CGRectMake(17, transmissionTextContainer.frame.origin.y + transmissionSize.height + 22, 20, 25);
     [scrollView addSubview:immunizationImageLabel];
 
@@ -265,7 +265,7 @@
         [scrollView addSubview:importantTitleLabel];
         
         UIImageView  *importantImageLabel = [[UIImageView alloc] init];
-        [importantImageLabel setImage:[UIImage imageNamed:@"conditions-pic"]];
+        [importantImageLabel setImage:[UIImage imageNamed:@"conditions-icon"]];
         importantImageLabel.frame = CGRectMake(17, immunizationTextContainer.frame.origin.y + immunizationSize.height + 22, 20, 25);
         [scrollView addSubview:importantImageLabel];
         
