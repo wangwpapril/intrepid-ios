@@ -53,13 +53,13 @@
         [historyArray addObject:@[@"Development", city.development, @"development-icon"]];
     }
     if (city.money) {
-        [historyArray addObject:@[@"Money", city.money, @"history-icon"]];
+        [historyArray addObject:@[@"Money", city.money, @"currencyIcon"]];
     }
     if (city.transportation) {
-        [historyArray addObject:@[@"Transportation", city.transportation, @"history-icon"]];
+        [historyArray addObject:@[@"Transportation", city.transportation, @"transportIcon"]];
     }
     if (city.holidays) {
-        [historyArray addObject:@[@"Holidays", city.holidays, @"history-icon"]];
+        [historyArray addObject:@[@"Holidays", city.holidays, @"holidaysIcon"]];
     }
     [history addTextAreaWithText:historyArray];
     

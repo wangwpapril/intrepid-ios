@@ -43,13 +43,13 @@
     [medical setupWithImageName1x:city.medicalImage1x withImageName2x:city.medicalImage2x withImageName3x:city.medicalImage3x withTitle:@"Medical"];
     NSMutableArray *medicalArray = [NSMutableArray new];
     if (city.healthCareQuality) {
-        [medicalArray addObject:@[@"Health Care Quality", city.healthCareQuality, @"safety-icon"]];
+        [medicalArray addObject:@[@"Health Care Quality", city.healthCareQuality, @"healthcareIcon"]];
     }
     if (city.vaccinationsAndPreTripMedical) {
-        [medicalArray addObject:@[@"Vaccinations and Pre Trip Medical", city.vaccinationsAndPreTripMedical, @"safety-icon"]];
+        [medicalArray addObject:@[@"Vaccinations and Pre Trip Medical", city.vaccinationsAndPreTripMedical, @"vaccinesIcon"]];
     }
     if (city.healthConditions) {
-        [medicalArray addObject:@[@"Health Conditions", city.healthConditions, @"safety-icon"]];
+        [medicalArray addObject:@[@"Health Conditions", city.healthConditions, @"conditions-pic"]];
     }
     [medical addTextAreaWithText:medicalArray];
     
