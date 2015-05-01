@@ -38,14 +38,13 @@
     //set up background
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     
-    UIPickerView *picker = [[UIPickerView alloc] init];
-    picker.delegate = self;
-    picker.showsSelectionIndicator = YES;
-    country.inputView = picker;
+    self.countryPicker = [[UIPickerView alloc] init];
+    self.countryPicker.delegate = self;
+    self.countryPicker.showsSelectionIndicator = YES;
+    country.inputView = self.countryPicker;
     country.tag = 1;
     country.tintColor = [UIColor clearColor];
     [self fetchCountries];
-    [self.view addSubview:country];
 }
 
 
@@ -176,15 +175,15 @@
     request.HTTPMethod = @"GET";
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
-    NSURLResponse *response = nil;
-    NSError *error = nil;
-    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    if (!error) {
-        NSDictionary *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        self.countryArray = responseObject[@"countries"];
-    } else {
-        NSLog(@"error: %@", error.localizedDescription);
-    }
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (!error) {
+            NSDictionary *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            self.countryArray = responseObject[@"countries"];
+            [self.countryPicker reloadAllComponents];
+        } else {
+            NSLog(@"error: %@", error.localizedDescription);
+        }
+    }];
 }
 
 - (BOOL)NSStringIsValidEmail:(NSString *)checkString
