@@ -28,6 +28,8 @@
 	<string>1.0.1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Your location helps us provide better emergency assistance and accurate weather information.</string>
 	<key>NSLocationUsageDescription</key>
 	<string>Your location helps us provide better emergency assistance and accurate weather information.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
