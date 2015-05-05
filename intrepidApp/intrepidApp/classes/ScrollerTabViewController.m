@@ -97,6 +97,24 @@
     scroll.contentSize = CGSizeMake(320 * i, self.view.frame.size.height);
 }
 
+// custom for Health View Controller
+- (void)addViews:(NSMutableArray *)arrayOfViews withVerticalOffset:(NSInteger)offset withTableOffset:(NSInteger)tableOffset {
+    NSInteger i = 0;
+    NSInteger limit = arrayOfViews.count;
+    NSInteger specialOffset = self.view.frame.size.height - 44;
+    while (i < limit) {
+        UIView *view =[arrayOfViews objectAtIndex:i];
+        if (i == 2) {
+            view.frame = CGRectMake(i*320, offset, 320, specialOffset);
+        } else {
+            view.frame = CGRectMake(i*320, tableOffset, 320, specialOffset);
+        }
+        [scroll addSubview:[arrayOfViews objectAtIndex:i]];
+        i++;
+    }
+    scroll.contentSize = CGSizeMake(320 * i, self.view.frame.size.height);
+}
+
 #pragma  mark - handle view swiping
 
 - (void)tabSelected:(id)sender {

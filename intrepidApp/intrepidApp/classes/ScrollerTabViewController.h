@@ -21,7 +21,8 @@
 
 @property (nonatomic, retain) IBOutlet UIPageControl *pageControl;
 
--(CityEntity *)getCity;
+- (CityEntity *)getCity;
 - (void)addTabs:(NSArray *)nameArray;
-- (void) addViews:(NSMutableArray *)arrayOfViews withVerticalOffset:(NSInteger)offset;
+- (void)addViews:(NSMutableArray *)arrayOfViews withVerticalOffset:(NSInteger)offset;
+- (void)addViews:(NSMutableArray *)arrayOfViews withVerticalOffset:(NSInteger)offset withTableOffset:(NSInteger)tableOffset;
 @end

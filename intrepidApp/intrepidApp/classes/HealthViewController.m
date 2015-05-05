@@ -36,10 +36,9 @@
     int i = 0;
     while (i < 2) {
         UITableView *table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        table.tag = i;
         table.dataSource = self;
         table.delegate = self;
-        table.contentInset = UIEdgeInsetsMake(79, 0, 31, 0);
+        table.contentInset = UIEdgeInsetsMake(0, 0, 110, 0);
         [tableArray addObject:table];
         i++;
     }
@@ -64,7 +63,7 @@
     
     [tableArray addObject:medical];
     
-    [self addViews:tableArray withVerticalOffset:0];
+    [self addViews:tableArray withVerticalOffset:0 withTableOffset:79];
     [self addIntreSearchBar];
     
     NSArray *names = [NSArray arrayWithObjects:@"CONDITIONS", @"MEDICATIONS", @"MEDICAL", nil];
@@ -76,26 +75,27 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self viewSwitched];
+    NSLog(@"%@", searchBar.text);
 }
 
 - (void)viewSwitched {
-    [searchBar resignFirstResponder];
     if (self.currentTab == 0) {
         searchBar.hidden = NO;
         spyGlass.hidden = NO;
         xButton.hidden = NO;
         [[SEGAnalytics sharedAnalytics] screen:@"Conditions"];
-        [[tableArray objectAtIndex:self.currentTab] reloadData];
+        [self deleteText];
     } else if (self.currentTab == 1) {
         searchBar.hidden = NO;
         spyGlass.hidden = NO;
         xButton.hidden = NO;
         [[SEGAnalytics sharedAnalytics] screen:@"Medications"];
-        [[tableArray objectAtIndex:self.currentTab] reloadData];
+        [self deleteText];
     } else if (self.currentTab == 2) {
         searchBar.hidden = YES;
         spyGlass.hidden = YES;
         xButton.hidden = YES;
+        [searchBar resignFirstResponder];
     }
 }
 
@@ -186,7 +186,7 @@
     }
     
     [self.navigationController pushViewController:viewController animated:YES];
-//    [searchBar resignFirstResponder];
+    [self deleteText];
 }
 
 #pragma mark Content Filtering
