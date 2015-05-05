@@ -102,7 +102,7 @@
 # pragma mark - UI Setup
 
 - (void)addIntreSearchBar {
-    searchBar = [[IntreSearchBar alloc] initWithFrame:CGRectMake(0, 35, 330, 44)];
+    searchBar = [[IntreSearchBar alloc] initWithFrame:CGRectMake(0, 35, 320, 44)];
     [searchBar addTarget:self action:@selector(textFieldDidChange) forControlEvents:UIControlEventEditingChanged];
     [self.view addSubview:searchBar];
     searchBar.delegate = self;

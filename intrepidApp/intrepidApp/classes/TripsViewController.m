@@ -106,7 +106,7 @@
 }
 
 -(void)addIntreSearchBar {
-    searchBar  = [[IntreSearchBar alloc] initWithFrame:CGRectMake(0, 0, 330, 44)];
+    searchBar  = [[IntreSearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     //    [searchBar setText:@""];
     [searchBar addTarget:self action:@selector(textFieldDidChange) forControlEvents:UIControlEventEditingChanged];
     [self.view addSubview:searchBar];
