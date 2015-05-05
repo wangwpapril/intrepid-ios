@@ -60,7 +60,8 @@
                   withHealthConditions:(NSString *)healthConditions
                     withMedicalImage1x:(NSString *)medicalImage1x
                     withMedicalImage2x:(NSString *)medicalImage2x
-                    withMedicalImage3x:(NSString *)medicalImage3x;
+                    withMedicalImage3x:(NSString *)medicalImage3x
+                    withEmergencyNumbers:(NSString *)emergencyNumbers;
 
 - (DestinationEntity *)createDestinationWithName:(NSString *)name
                                withDestinationId:(NSInteger )destinationId

@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSMutableArray *tableArray;
 @property (strong,nonatomic) NSMutableArray *filteredHealthItemArray;
 @property (nonatomic, strong) IntreSearchBar * searchBar;
+@property (nonatomic, strong) UIImageView *spyGlass;
 @property (nonatomic, strong) UIButton *xButton;
 @property (nonatomic, strong) HealthEntity *selectedItem;
 

@@ -29,6 +29,7 @@
 @dynamic development;
 @dynamic electricity;
 @dynamic embassy;
+@dynamic emergencyNumbers;
 @dynamic ethnicMakeup;
 @dynamic generalImage1x;
 @dynamic generalImage2x;

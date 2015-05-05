@@ -50,29 +50,11 @@
     self.navigationItem.title = healthItem.name;
     [self addContent];
     [self.view addSubview:scrollView];
-    
-    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-    } else {
-        [self moveAllSubviewsDown];
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[SEGAnalytics sharedAnalytics] screen:@"Health Detail"];
-}
-
-- (void)moveAllSubviewsDown {
-    float barHeight = 45.0;
-    for (UIView *view in self.view.subviews) {
-        
-        if ([view isKindOfClass:[UIScrollView class]]) {
-            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height - barHeight);
-        } else {
-            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height);
-        }
-    }
 }
 
 - (void)addContent {
@@ -300,12 +282,6 @@
 
 - (void)AddTextBlockWithOffset:(NSInteger)offset withImageName:(NSString *)imageName withText:(NSString *)text {
     
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

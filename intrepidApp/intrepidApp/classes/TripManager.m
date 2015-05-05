@@ -80,6 +80,8 @@ static TripManager *instance =nil;
     }
     
     NSMutableArray * healthArray = [NSMutableArray new];
+    // hack for HealthViewController tables
+    [healthArray addObject:[NSMutableArray new]];
     [healthArray addObject:diseases];
     [healthArray addObject:medication];
     return healthArray;
@@ -334,6 +336,7 @@ static TripManager *instance =nil;
                     withMedicalImage1x:(NSString *)medicalImage1x
                     withMedicalImage2x:(NSString *)medicalImage2x
                     withMedicalImage3x:(NSString *)medicalImage3x
+                  withEmergencyNumbers:(NSString *)emergencyNumbers
 {
     CityEntity *city = [NSEntityDescription insertNewObjectForEntityForName:@"CityEntity" inManagedObjectContext:managedObjectContext];
 
@@ -376,6 +379,7 @@ static TripManager *instance =nil;
     city.medicalImage1x = medicalImage1x;
     city.medicalImage2x = medicalImage2x;
     city.medicalImage3x = medicalImage3x;
+    city.emergencyNumbers = emergencyNumbers;
     
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {
@@ -496,7 +500,7 @@ static TripManager *instance =nil;
 - (void)saveCity:(NSDictionary *)cityDict {
     NSString *location, *climate, *typeOfGovernment, *visaRequirements, *communicationInfrastructure, *electricity, *development, *money, *transportation, *holidays;
     NSString *language, *religion, *ethnicMakeup, *culturalNorms;
-    NSString *safety, *otherConcerns;
+    NSString *safety, *otherConcerns, *emergencyNumbers;
     NSString *healthCareQuality, *vaccinationsAndPreTripMedical, *healthConditions;
     NSString *cultureImage1x, *cultureImage2x, *cultureImage3x, *introImage1x, *introImage2x, *introImage3x, *generalImage1x, *generalImage2x, *generalImage3x, *safetyImage1x, *safetyImage2x, *safetyImage3x, *medicalImage1x, *medicalImage2x, *medicalImage3x;
     NSString *destinationName, *destinationType, *countryCode, *currencyCode;
@@ -534,6 +538,7 @@ static TripManager *instance =nil;
     //Safety Description Subtext
     safety = contentDict[@"safety"];
     otherConcerns = contentDict[@"other_concerns"];
+    emergencyNumbers = contentDict[@"emergency_numbers"];
     
     //Medical Description Subtext
     healthCareQuality = contentDict[@"health_care_quality"];
@@ -646,7 +651,8 @@ static TripManager *instance =nil;
                                                     withHealthConditions:healthConditions
                                                       withMedicalImage1x:medicalImage1x
                                                       withMedicalImage2x:medicalImage2x
-                                                      withMedicalImage3x:medicalImage3x];
+                                                      withMedicalImage3x:medicalImage3x
+                                                    withEmergencyNumbers:emergencyNumbers];
     
     [RequestBuilder fetchEmbassy:cityDict withCity:city];
     [RequestBuilder fetchAlert:cityDict withCity:city];    
