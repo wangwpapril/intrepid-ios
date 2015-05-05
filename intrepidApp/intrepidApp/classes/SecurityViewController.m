@@ -31,6 +31,9 @@
     SlidingTextView *political = [[SlidingTextView alloc] initWithFrame:frame];
     [political setupWithImageName1x:city.safetyImage1x withImageName2x:city.safetyImage2x withImageName3x:city.safetyImage3x withTitle:@"Safety"];
     NSMutableArray *politicalArray = [NSMutableArray new];
+    if (city.emergencyNumbers) {
+        [politicalArray addObject:@[@"Emergency Numbers", city.emergencyNumbers, @"emergency-icon"]];
+    }
     if (city.safety) {
         [politicalArray addObject:@[@"Safety", city.safety, @"safety-icon"]];
     }

@@ -39,6 +39,9 @@
     SlidingTextView *medical = [[SlidingTextView alloc] initWithFrame:frame];
     [medical setupWithImageName1x:city.medicalImage1x withImageName2x:city.medicalImage2x withImageName3x:city.medicalImage3x withTitle:@"Medical"];
     NSMutableArray *medicalArray = [NSMutableArray new];
+    if (city.emergencyNumbers) {
+        [medicalArray addObject:@[@"Emergency Numbers", city.emergencyNumbers, @"emergency-icon"]];
+    }
     if (city.healthCareQuality) {
         [medicalArray addObject:@[@"Health Care Quality", city.healthCareQuality, @"healthcare-icon"]];
     }
