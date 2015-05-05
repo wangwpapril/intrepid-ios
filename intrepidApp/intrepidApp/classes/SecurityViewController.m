@@ -39,20 +39,6 @@
     }
     [political addTextAreaWithText:politicalArray];
     
-    SlidingTextView *medical = [[SlidingTextView alloc] initWithFrame:frame];
-    [medical setupWithImageName1x:city.medicalImage1x withImageName2x:city.medicalImage2x withImageName3x:city.medicalImage3x withTitle:@"Medical"];
-    NSMutableArray *medicalArray = [NSMutableArray new];
-    if (city.healthCareQuality) {
-        [medicalArray addObject:@[@"Health Care Quality", city.healthCareQuality, @"healthcare-icon"]];
-    }
-    if (city.vaccinationsAndPreTripMedical) {
-        [medicalArray addObject:@[@"Vaccines and Pre-trip Medical", city.vaccinationsAndPreTripMedical, @"vaccines-icon"]];
-    }
-    if (city.healthConditions) {
-        [medicalArray addObject:@[@"Health Conditions", city.healthConditions, @"conditions-icon"]];
-    }
-    [medical addTextAreaWithText:medicalArray];
-    
     SlidingTextView *embassy = [[SlidingTextView alloc] initWithFrame:frame];
     [self populateEmbassyItems];    
     if (embassyArray.count > 0) {
@@ -69,10 +55,10 @@
     tableList.scrollEnabled = YES;
     [embassy addTableViewWithRows:embassyArray.count withTableView:tableList];
     
-    NSMutableArray *views = [NSMutableArray arrayWithObjects:political, medical, embassy, nil];
+    NSMutableArray *views = [NSMutableArray arrayWithObjects:political, embassy, nil];
     [self addViews:views withVerticalOffset:0];
 
-    NSArray *names = [NSArray arrayWithObjects:@"SAFETY", @"MEDICAL", @"EMBASSY", nil];
+    NSArray *names = [NSArray arrayWithObjects:@"SAFETY", @"EMBASSY", nil];
     [self addTabs:names];
 }
 

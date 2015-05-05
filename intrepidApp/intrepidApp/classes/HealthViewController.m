@@ -13,6 +13,7 @@
 #import "HealthViewDetailController.h"
 #import "RequestBuilder.h"
 #import "TripManager.h"
+#import "SlidingTextView.h"
 
 @implementation HealthViewController
 
@@ -21,6 +22,7 @@
 @synthesize selectedItem;
 @synthesize filteredHealthItemArray;
 @synthesize searchBar;
+@synthesize spyGlass;
 @synthesize xButton;
 
 - (void)viewDidLoad
@@ -28,86 +30,94 @@
     [super viewDidLoad];
             
     self.view.tag = 1;
-//    UIImage *backgroundImage = [UIImage imageNamed:@"mexicoBackBigger"];
-//    CGRect imageFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-//    CGRect whiteFrame = CGRectMake(0, 79, self.view.frame.size.width, self.view.frame.size.height - 79);
-//    UIImageView *myImageView = [[UIImageView alloc] initWithFrame:imageFrame];
-//    [myImageView setImage:backgroundImage];
-//    [self.view insertSubview:myImageView atIndex:0];
-//    
-//    // white layer to make the tableview 90% opaque
-//    UIView *whiteLayer = [[UIView alloc] initWithFrame:whiteFrame];
-//    whiteLayer.backgroundColor = [UIColor whiteColor];
-//    whiteLayer.alpha = 0.9;
-//    [self.view insertSubview:whiteLayer atIndex:1];
-    
     [self populateContentArray];
     
-     tableArray = [NSMutableArray new];
-
+    tableArray = [NSMutableArray new];
     int i = 0;
     while (i < 2) {
         UITableView *table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        table.rowHeight = 45;
         table.tag = i;
         table.dataSource = self;
         table.delegate = self;
-        table.backgroundColor = [UIColor clearColor];
-        table.opaque = NO;
-        table.backgroundView = nil;
-        table.contentInset = UIEdgeInsetsMake(0, 0, 110, 0);
-        [table setSeparatorColor:[UIColor colorWithRed:189.0/255 green:185.0/255 blue:177.0/255 alpha:1]];
+        table.contentInset = UIEdgeInsetsMake(79, 0, 31, 0);
         [tableArray addObject:table];
         i++;
     }
     
-    [self addViews:tableArray withVerticalOffset:79];
+    NSInteger height = self.view.bounds.size.height;
+    CGRect frame = CGRectMake(0, 0, 320, height);
+    CityEntity *city = [self getCity];
+    
+    SlidingTextView *medical = [[SlidingTextView alloc] initWithFrame:frame];
+    [medical setupWithImageName1x:city.medicalImage1x withImageName2x:city.medicalImage2x withImageName3x:city.medicalImage3x withTitle:@"Medical"];
+    NSMutableArray *medicalArray = [NSMutableArray new];
+    if (city.healthCareQuality) {
+        [medicalArray addObject:@[@"Health Care Quality", city.healthCareQuality, @"healthcare-icon"]];
+    }
+    if (city.vaccinationsAndPreTripMedical) {
+        [medicalArray addObject:@[@"Vaccines and Pre-trip Medical", city.vaccinationsAndPreTripMedical, @"vaccines-icon"]];
+    }
+    if (city.healthConditions) {
+        [medicalArray addObject:@[@"Health Conditions", city.healthConditions, @"conditions-icon"]];
+    }
+    [medical addTextAreaWithText:medicalArray];
+    
+    [tableArray addObject:medical];
+    
+    [self addViews:tableArray withVerticalOffset:0];
     [self addIntreSearchBar];
     
-    NSArray *names = [NSArray arrayWithObjects:@"CONDITIONS", @"MEDICATIONS", nil];
+    NSArray *names = [NSArray arrayWithObjects:@"CONDITIONS", @"MEDICATIONS", @"MEDICAL", nil];
     [self addTabs:names];
     
     self.navigationItem.title = @"Health";
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [searchBar resignFirstResponder];
-    [[tableArray objectAtIndex:0] reloadData];
-    [[tableArray objectAtIndex:1] reloadData];
-}
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self viewSwitched];
+}
+
+- (void)viewSwitched {
+    [searchBar resignFirstResponder];
     if (self.currentTab == 0) {
+        searchBar.hidden = NO;
+        spyGlass.hidden = NO;
+        xButton.hidden = NO;
         [[SEGAnalytics sharedAnalytics] screen:@"Conditions"];
+        [[tableArray objectAtIndex:self.currentTab] reloadData];
     } else if (self.currentTab == 1) {
+        searchBar.hidden = NO;
+        spyGlass.hidden = NO;
+        xButton.hidden = NO;
         [[SEGAnalytics sharedAnalytics] screen:@"Medications"];
+        [[tableArray objectAtIndex:self.currentTab] reloadData];
+    } else if (self.currentTab == 2) {
+        searchBar.hidden = YES;
+        spyGlass.hidden = YES;
+        xButton.hidden = YES;
     }
 }
 
 # pragma mark - UI Setup
 
--(void)addIntreSearchBar {
-    searchBar  = [[IntreSearchBar alloc] initWithFrame:CGRectMake(0, 35, 330, 44)];
-    
+- (void)addIntreSearchBar {
+    searchBar = [[IntreSearchBar alloc] initWithFrame:CGRectMake(0, 35, 330, 44)];
     [searchBar addTarget:self action:@selector(textFieldDidChange) forControlEvents:UIControlEventEditingChanged];
-    
     [self.view addSubview:searchBar];
     searchBar.delegate = self;
     
-    UIImageView *spyGlass = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"spyGlass"]];
+    spyGlass = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"spyGlass"]];
     spyGlass.frame = CGRectMake(20, 49, 18, 18);
     [self.view addSubview:spyGlass];
     
     xButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [xButton setImage:[UIImage imageNamed:@"cancel-search"] forState:UIControlStateNormal];
     xButton.frame = CGRectMake(270, 35, 44, 44);
-    xButton.userInteractionEnabled = YES;
     [xButton addTarget:self action:@selector(deleteText) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:xButton];
     xButton.alpha = 0;
 }
-
 
 #pragma mark - Content Handling
 
@@ -119,16 +129,6 @@
 }
 
 # pragma mark - TableView Methods
-
-- (void)viewSwitched {
-    if (self.currentTab == 0) {
-        [[SEGAnalytics sharedAnalytics] screen:@"Conditions"];
-    } else if (self.currentTab == 1) {
-        [[SEGAnalytics sharedAnalytics] screen:@"Medications"];
-    }
-    
-    [[tableArray objectAtIndex:self.currentTab] reloadData];
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -204,10 +204,12 @@
     
     [self.filteredHealthItemArray removeAllObjects];
     
-    // Filter the array using NSPredicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.name contains[c] %@",searchBar.text];
-    filteredHealthItemArray = [NSMutableArray arrayWithArray:[[contentArray objectAtIndex:self.currentTab] filteredArrayUsingPredicate:predicate]];
-    [[tableArray objectAtIndex:self.currentTab] reloadData];
+    if (self.currentTab == 0 || self.currentTab == 1) {
+        // Filter the array using NSPredicate
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.name contains[c] %@",searchBar.text];
+        filteredHealthItemArray = [NSMutableArray arrayWithArray:[[contentArray objectAtIndex:self.currentTab] filteredArrayUsingPredicate:predicate]];
+        [[tableArray objectAtIndex:self.currentTab] reloadData];
+    }
 }
 
 #pragma mark - TextField Delegate Methods
@@ -239,7 +241,10 @@
         xButton.alpha = 0;
     }];
     [searchBar resignFirstResponder];
-    [[tableArray objectAtIndex:self.currentTab] reloadData];
+    
+    if (self.currentTab == 0 || self.currentTab == 1) {
+        [[tableArray objectAtIndex:self.currentTab] reloadData];
+    }
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
