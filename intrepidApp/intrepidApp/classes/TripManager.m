@@ -80,6 +80,8 @@ static TripManager *instance =nil;
     }
     
     NSMutableArray * healthArray = [NSMutableArray new];
+    // hack for HealthViewController tables
+    [healthArray addObject:[NSMutableArray new]];
     [healthArray addObject:diseases];
     [healthArray addObject:medication];
     return healthArray;

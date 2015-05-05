@@ -31,18 +31,7 @@
             
     self.view.tag = 1;
     [self populateContentArray];
-    
     tableArray = [NSMutableArray new];
-    int i = 0;
-    while (i < 2) {
-        UITableView *table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        table.dataSource = self;
-        table.delegate = self;
-        table.contentInset = UIEdgeInsetsMake(0, 0, 110, 0);
-        [tableArray addObject:table];
-        i++;
-    }
-    
     NSInteger height = self.view.bounds.size.height;
     CGRect frame = CGRectMake(0, 0, 320, height);
     CityEntity *city = [self getCity];
@@ -60,13 +49,22 @@
         [medicalArray addObject:@[@"Health Conditions", city.healthConditions, @"conditions-icon"]];
     }
     [medical addTextAreaWithText:medicalArray];
-    
     [tableArray addObject:medical];
+    
+    int i = 0;
+    while (i < 2) {
+        UITableView *table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        table.dataSource = self;
+        table.delegate = self;
+        table.contentInset = UIEdgeInsetsMake(0, 0, 110, 0);
+        [tableArray addObject:table];
+        i++;
+    }
     
     [self addViews:tableArray withVerticalOffset:0 withTableOffset:79];
     [self addIntreSearchBar];
     
-    NSArray *names = [NSArray arrayWithObjects:@"CONDITIONS", @"MEDICATIONS", @"MEDICAL", nil];
+    NSArray *names = [NSArray arrayWithObjects:@"PRE-TRIP", @"CONDITIONS", @"MEDICATIONS", nil];
     [self addTabs:names];
     
     self.navigationItem.title = @"Health";
@@ -80,19 +78,20 @@
 - (void)viewSwitched {
     [self deleteText];
     if (self.currentTab == 0) {
-        searchBar.hidden = NO;
-        spyGlass.hidden = NO;
-        xButton.hidden = NO;
-        [[SEGAnalytics sharedAnalytics] screen:@"Conditions"];
+        searchBar.hidden = YES;
+        spyGlass.hidden = YES;
+        xButton.hidden = YES;
+        [[SEGAnalytics sharedAnalytics] screen:@"Medical"];
     } else if (self.currentTab == 1) {
         searchBar.hidden = NO;
         spyGlass.hidden = NO;
         xButton.hidden = NO;
-        [[SEGAnalytics sharedAnalytics] screen:@"Medications"];
+        [[SEGAnalytics sharedAnalytics] screen:@"Conditions"];
     } else if (self.currentTab == 2) {
-        searchBar.hidden = YES;
-        spyGlass.hidden = YES;
-        xButton.hidden = YES;
+        searchBar.hidden = NO;
+        spyGlass.hidden = NO;
+        xButton.hidden = NO;
+        [[SEGAnalytics sharedAnalytics] screen:@"Medications"];
     }
 }
 
@@ -171,11 +170,11 @@
     HealthViewDetailController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"healthDetails"];
     viewController.healthItem = selectedItem;
     
-    if (self.currentTab == 0) {
+    if (self.currentTab == 1) {
         [[SEGAnalytics sharedAnalytics] track:@"Visit Health Detail"
                                    properties:@{@"category" : @"Conditions",
                                                 @"label" : selectedItem.name}];
-    } else if (self.currentTab == 1) {
+    } else if (self.currentTab == 2) {
         [[SEGAnalytics sharedAnalytics] track:@"Visit Health Detail"
                                    properties:@{@"category" : @"Medications",
                                                 @"label" : selectedItem.name}];
@@ -188,11 +187,11 @@
 #pragma mark Content Filtering
 
 - (void)filterContent {
-    if (self.currentTab == 0) {
+    if (self.currentTab == 1) {
         [[SEGAnalytics sharedAnalytics] track:@"Keyword"
                                    properties:@{@"category" : @"Conditions",
                                                 @"label" : searchBar.text}];
-    } else if (self.currentTab == 1) {
+    } else if (self.currentTab == 2) {
         [[SEGAnalytics sharedAnalytics] track:@"Keyword"
                                    properties:@{@"category" : @"Medications",
                                                 @"label" : searchBar.text}];
@@ -200,7 +199,7 @@
     
     [self.filteredHealthItemArray removeAllObjects];
     
-    if (self.currentTab == 0 || self.currentTab == 1) {
+    if (self.currentTab == 1 || self.currentTab == 2) {
         // Filter the array using NSPredicate
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.name contains[c] %@",searchBar.text];
         filteredHealthItemArray = [NSMutableArray arrayWithArray:[[contentArray objectAtIndex:self.currentTab] filteredArrayUsingPredicate:predicate]];
@@ -212,10 +211,10 @@
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     if (textField == searchBar) {
-        if (self.currentTab == 0) {
+        if (self.currentTab == 1) {
             [[SEGAnalytics sharedAnalytics] track:@"Search Field"
                                        properties:@{@"category" : @"Conditions"}];
-        } else if (self.currentTab == 1) {
+        } else if (self.currentTab == 2) {
             [[SEGAnalytics sharedAnalytics] track:@"Search Field"
                                        properties:@{@"category" : @"Medications"}];
         }
@@ -224,10 +223,10 @@
 }
 
 - (void)deleteText {
-    if (self.currentTab == 0) {
+    if (self.currentTab == 1) {
         [[SEGAnalytics sharedAnalytics] track:@"Cancel Search"
                                    properties:@{@"category" : @"Conditions"}];
-    } else if (self.currentTab == 1) {
+    } else if (self.currentTab == 2) {
         [[SEGAnalytics sharedAnalytics] track:@"Cancel Search"
                                    properties:@{@"category" : @"Medications"}];
     }
@@ -238,7 +237,7 @@
     }];
     [searchBar resignFirstResponder];
     
-    if (self.currentTab == 0 || self.currentTab == 1) {
+    if (self.currentTab == 1 || self.currentTab == 2) {
         [[tableArray objectAtIndex:self.currentTab] reloadData];
     }
 }

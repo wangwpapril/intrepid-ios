@@ -104,7 +104,7 @@
     NSInteger specialOffset = self.view.frame.size.height - 44;
     while (i < limit) {
         UIView *view =[arrayOfViews objectAtIndex:i];
-        if (i == 2) {
+        if (i == 0) {
             view.frame = CGRectMake(i*320, offset, 320, specialOffset);
         } else {
             view.frame = CGRectMake(i*320, tableOffset, 320, specialOffset);
