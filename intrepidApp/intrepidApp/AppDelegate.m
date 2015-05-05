@@ -70,8 +70,8 @@
         self.locationManager.distanceFilter = 100.0f;
         self.locationManager.pausesLocationUpdatesAutomatically = NO;
     }
-    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-        [self.locationManager requestWhenInUseAuthorization];
+    if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+        [self.locationManager requestAlwaysAuthorization];
     }
     [self.locationManager startUpdatingLocation];
     
@@ -90,11 +90,15 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [self.locationManager stopUpdatingLocation];
+    [self.locationManager startMonitoringSignificantLocationChanges];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [self.locationManager stopMonitoringSignificantLocationChanges];
+    [self.locationManager startUpdatingLocation];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -206,6 +210,17 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     self.lastLocation = [locations lastObject];
     NSLog(@"latitude: %f, longitude: %f", self.lastLocation.coordinate.latitude, self.lastLocation.coordinate.longitude);
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"]) {
+        if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
+            [self sendBackgroundLocation];
+        } else {
+            [self sendLocation];
+        }
+    }
+}
+
+- (void)sendLocation {
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder reverseGeocodeLocation:self.lastLocation completionHandler:^(NSArray *placemarks, NSError *error) {
         if (error) {
@@ -217,32 +232,73 @@
                                                     @"latitude": [NSString stringWithFormat:@"%f", placemark.location.coordinate.latitude],
                                                     @"longitude": [NSString stringWithFormat:@"%f", placemark.location.coordinate.longitude]}
                                    };
-            if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"]) {
-                [self sendLocation:body];
-            }
+            
+            NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
+            NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/%@/coordinates?token=%@", BASE_URL, userDict[@"user"][@"id"], userDict[@"user"][@"token"]]];
+            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
+            request.HTTPMethod = @"POST";
+            [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+            request.HTTPBody = [NSJSONSerialization dataWithJSONObject:body options:0 error:nil];
+            
+            [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                if (error) {
+                    NSLog(@"Error %@", error.description);
+                } else {
+                    NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                    NSLog(@"%@", responseBody);
+                    if (responseBody[@"coordinate"]) {
+                        [[SEGAnalytics sharedAnalytics] track:@"Update Location"
+                                                   properties:@{@"category" : @"AppDelegate"}];
+                    }
+                }
+            }];
         }
     }];
 }
 
-- (void)sendLocation:(NSDictionary *)body {
-    NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
-    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/%@/coordinates?token=%@", BASE_URL, userDict[@"user"][@"id"], userDict[@"user"][@"token"]]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
-    request.HTTPMethod = @"POST";
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    request.HTTPBody = [NSJSONSerialization dataWithJSONObject:body options:0 error:nil];
+- (void)sendBackgroundLocation {
+    UIApplication *application = [UIApplication sharedApplication];
+    __block UIBackgroundTaskIdentifier bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
+        [application endBackgroundTask:bgTask];
+        bgTask = UIBackgroundTaskInvalid;
+    }];
     
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        if (!error) {
-            NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            NSLog(@"%@", responseBody);
-            if (responseBody[@"coordinate"]) {
-                [[SEGAnalytics sharedAnalytics] track:@"Update Location"
-                                           properties:@{@"category" : @"AppDelegate"}];
-            }
-        } else {
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation:self.lastLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        if (error) {
             NSLog(@"Error %@", error.description);
+        } else {
+            CLPlacemark *placemark = [placemarks lastObject];
+            NSDictionary *body = @{@"coordinate": @{@"country": placemark.country,
+                                                    @"city": placemark.locality,
+                                                    @"latitude": [NSString stringWithFormat:@"%f", placemark.location.coordinate.latitude],
+                                                    @"longitude": [NSString stringWithFormat:@"%f", placemark.location.coordinate.longitude]}
+                                   };
+            
+            NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
+            NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/%@/coordinates?token=%@", BASE_URL, userDict[@"user"][@"id"], userDict[@"user"][@"token"]]];
+            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
+            request.HTTPMethod = @"POST";
+            [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+            request.HTTPBody = [NSJSONSerialization dataWithJSONObject:body options:0 error:nil];
+            
+            NSURLResponse *response = nil;
+            NSError *error = nil;
+            NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+            if (error) {
+                NSLog(@"Error %@", error.description);
+            } else {
+                NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                NSLog(@"%@", responseBody);
+                if (responseBody[@"coordinate"]) {
+                    [[SEGAnalytics sharedAnalytics] track:@"Update Location"
+                                               properties:@{@"category" : @"AppDelegate"}];
+                }
+            }
         }
+        
+        [application endBackgroundTask:bgTask];
+        bgTask = UIBackgroundTaskInvalid;
     }];
 }
 

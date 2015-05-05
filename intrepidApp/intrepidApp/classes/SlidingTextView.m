@@ -104,12 +104,18 @@
         label.text = section[0];
         
         NSString *content = section[1];
+        UIFont *textFont;
+        if ([section[0] isEqualToString:@"Emergency Numbers"]) {
+            textFont = [UIFont fontWithName:@"ProximaNova-Semibold" size:15];
+        } else {
+            textFont = [UIFont fontWithName:@"ProximaNova-Light" size:15];
+        }
         CGSize size = [content boundingRectWithSize:CGSizeMake(290, 15000)
                                             options:NSStringDrawingUsesLineFragmentOrigin
-                                         attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:15]}
+                                         attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:textFont}
                                             context:nil].size;
         UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 290, size.height + 5)];
-        textLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:15];
+        textLabel.font = textFont;
         textLabel.backgroundColor = [UIColor clearColor];
         textLabel.textColor = APP_TEXT_COLOR;
         textLabel.text = content;

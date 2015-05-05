@@ -29,6 +29,7 @@
 @property (nonatomic, retain) NSString * development;
 @property (nonatomic, retain) NSString * electricity;
 @property (nonatomic, retain) EmbassyEntity * embassy;
+@property (nonatomic, retain) NSString * emergencyNumbers;
 @property (nonatomic, retain) NSString * ethnicMakeup;
 @property (nonatomic, retain) NSString * generalImage1x;
 @property (nonatomic, retain) NSString * generalImage2x;

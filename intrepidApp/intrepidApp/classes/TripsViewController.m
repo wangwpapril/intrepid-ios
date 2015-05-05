@@ -37,24 +37,6 @@
     [self.view addSubview:tableList];
     tableList.delegate = self;
     tableList.dataSource = self;
-    
-    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-    } else {
-        [self moveAllSubviewsDown];
-    }
-}
-
-- (void)moveAllSubviewsDown {
-    float barHeight = 45.0;
-    for (UIView *view in self.view.subviews) {
-        
-        if ([view isKindOfClass:[UIScrollView class]]) {
-            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height - barHeight);
-        } else {
-            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height);
-        }
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -124,7 +106,7 @@
 }
 
 -(void)addIntreSearchBar {
-    searchBar  = [[IntreSearchBar alloc] initWithFrame:CGRectMake(0, 0, 330, 44)];
+    searchBar  = [[IntreSearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     //    [searchBar setText:@""];
     [searchBar addTarget:self action:@selector(textFieldDidChange) forControlEvents:UIControlEventEditingChanged];
     [self.view addSubview:searchBar];
@@ -148,7 +130,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSInteger fCount = filteredArray.count;
-    if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
+    if (![searchBar.text isEqualToString:@""]) {
         return fCount;
     } else {
         return [tripsArray count];
@@ -168,7 +150,7 @@
     }
     
     DestinationEntity *item = nil;
-    if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
+    if (![searchBar.text isEqualToString:@""]) {
         item = [filteredArray objectAtIndex:indexPath.row];
     } else {
         item = [tripsArray objectAtIndex:indexPath.row];
@@ -182,7 +164,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-    if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
+    if (![searchBar.text isEqualToString:@""]) {
         selectedTrip = [filteredArray objectAtIndex:indexPath.row];
     }
     else {
@@ -250,7 +232,7 @@
 
 - (void)textFieldDidChange {
     
-    if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
+    if (![searchBar.text isEqualToString:@""]) {
         [UIView animateWithDuration:0.1 animations:^{
             xButton.alpha = 1;
         }];
