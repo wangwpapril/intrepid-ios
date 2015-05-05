@@ -75,27 +75,24 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self viewSwitched];
-    NSLog(@"%@", searchBar.text);
 }
 
 - (void)viewSwitched {
+    [self deleteText];
     if (self.currentTab == 0) {
         searchBar.hidden = NO;
         spyGlass.hidden = NO;
         xButton.hidden = NO;
         [[SEGAnalytics sharedAnalytics] screen:@"Conditions"];
-        [self deleteText];
     } else if (self.currentTab == 1) {
         searchBar.hidden = NO;
         spyGlass.hidden = NO;
         xButton.hidden = NO;
         [[SEGAnalytics sharedAnalytics] screen:@"Medications"];
-        [self deleteText];
     } else if (self.currentTab == 2) {
         searchBar.hidden = YES;
         spyGlass.hidden = YES;
         xButton.hidden = YES;
-        [searchBar resignFirstResponder];
     }
 }
 
@@ -132,10 +129,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger fCount = filteredHealthItemArray.count;
-    if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
+    if (![searchBar.text isEqualToString:@""]) {
+        NSInteger fCount = filteredHealthItemArray.count;
         NSLog(@"fcount: %li, searhbartext: %@", (long)fCount, searchBar.text);
-        
         return fCount;
     } else {
         NSLog(@"total count: %lu", (unsigned long)[[contentArray objectAtIndex:self.currentTab] count]);
@@ -143,7 +139,7 @@
     }
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *CellIdentifier = [NSString stringWithFormat:@"Cell"];
     HealthCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -154,7 +150,7 @@
     }
     
     HealthEntity *healthItem = nil;
-    if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
+    if (![searchBar.text isEqualToString:@""]) {
         healthItem = [filteredHealthItemArray objectAtIndex:indexPath.row];
     } else {
         healthItem = [[contentArray objectAtIndex:self.currentTab] objectAtIndex:indexPath.row];
@@ -166,7 +162,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
+    if (![searchBar.text isEqualToString:@""]) {
         selectedItem = (HealthEntity *)[filteredHealthItemArray objectAtIndex:indexPath.row];
     }
     else {
@@ -256,7 +252,7 @@
 }
 
 - (void)textFieldDidChange {
-    if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
+    if (![searchBar.text isEqualToString:@""]) {
         [UIView animateWithDuration:0.1 animations:^{
             xButton.alpha = 1;
         }];

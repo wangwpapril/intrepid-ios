@@ -130,7 +130,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSInteger fCount = filteredArray.count;
-    if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
+    if (![searchBar.text isEqualToString:@""]) {
         return fCount;
     } else {
         return [tripsArray count];
@@ -150,7 +150,7 @@
     }
     
     DestinationEntity *item = nil;
-    if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
+    if (![searchBar.text isEqualToString:@""]) {
         item = [filteredArray objectAtIndex:indexPath.row];
     } else {
         item = [tripsArray objectAtIndex:indexPath.row];
@@ -164,7 +164,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-    if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
+    if (![searchBar.text isEqualToString:@""]) {
         selectedTrip = [filteredArray objectAtIndex:indexPath.row];
     }
     else {
@@ -232,7 +232,7 @@
 
 - (void)textFieldDidChange {
     
-    if (![searchBar.text isEqualToString:@""] && ![searchBar.text isEqualToString:@"Tap to Search"]) {
+    if (![searchBar.text isEqualToString:@""]) {
         [UIView animateWithDuration:0.1 animations:^{
             xButton.alpha = 1;
         }];

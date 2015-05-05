@@ -21,7 +21,7 @@
 
 - (void) setupUI {
     [self setBackgroundColor:APP_SEARCH_COLOR];
-    [self setText:@"Tap to Search"];
+    [self setPlaceholder:@"Tap to Search"];
     [self setTextColor:[UIColor colorWithRed:0.19 green:0.25 blue:0.29 alpha:1]];
     [self setTintColor:[UIColor colorWithRed:0.19 green:0.25 blue:0.29 alpha:1]];
     [self setFont: [UIFont fontWithName:@"ProximaNova-Regular" size:17]];
