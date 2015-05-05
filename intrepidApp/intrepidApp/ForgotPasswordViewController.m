@@ -78,33 +78,6 @@
     underlineEmail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"underline"]];
     underlineEmail.frame = CGRectMake(68, 271, 183, 1);
     [self.view addSubview:underlineEmail];
-    
-    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-        
-    } else {
-        [self moveAllSubviewsDown];
-    }
-
-}
-- (void) moveAllSubviewsDown{
-    float barHeight = 45.0;
-    for (UIView *view in self.view.subviews) {
-        
-        if ([view isKindOfClass:[UIScrollView class]]) {
-            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height - barHeight);
-        } else {
-            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + barHeight, view.frame.size.width, view.frame.size.height);
-        }
-    }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-    //set up background
 }
 
 # pragma mark - keyboard stuff
