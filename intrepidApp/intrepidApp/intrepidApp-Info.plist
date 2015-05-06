@@ -10,16 +10,6 @@
 	<string>en</string>
 	<key>CFBundleVersion</key>
 	<string>1.0.1</string>
-	<key>UIStatusBarStyle</key>
-	<string>UIStatusBarStyleLightContent</string>
-	<key>UIStatusBarHidden</key>
-	<true/>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>UIMainStoryboardFile</key>
-	<string>MainStoryboard</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
 	<key>UIStatusBarTintParameters</key>
 	<dict>
 		<key></key>
@@ -32,16 +22,26 @@
 			<false/>
 		</dict>
 	</dict>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>UIMainStoryboardFile</key>
+	<string>MainStoryboard</string>
+	<key>UIStatusBarHidden</key>
+	<true/>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
 	<key>NSLocationUsageDescription</key>
-	<string>By clicking &apos;Allow&apos; you consent to your employer having access to your location when ACE Travel Smart is in use. This allows for better emergency assistance and more accurate location-based services.</string>
+	<string>By clicking “Allow” and if your employer has enabled the location function, you consent to your employer having access to your location when you sign up for ACE Travel Smart. You can hide your location by choosing “Don’t Allow” or turning off location services within general settings.</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>CFBundleIdentifier</key>
@@ -72,7 +72,9 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>By clicking “Allow” and if your employer has enabled the location function, you consent to your employer having access to your location when you sign up for ACE Travel Smart. You can hide your location by choosing “Don’t Allow” or turning off location services within general settings.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>By clicking &apos;Allow&apos; you consent to your employer having access to your location when ACE Travel Smart is in use. This allows for better emergency assistance and more accurate location-based services.</string>
+	<string>By clicking “Allow” and if your employer has enabled the location function, you consent to your employer having access to your location when you sign up for ACE Travel Smart. You can hide your location by choosing “Don’t Allow” or turning off location services within general settings.</string>
 </dict>
 </plist>
