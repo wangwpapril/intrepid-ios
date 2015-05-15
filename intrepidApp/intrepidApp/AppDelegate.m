@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "TripManager.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
 
@@ -76,6 +78,7 @@
     [self.locationManager startUpdatingLocation];
     
     [SEGAnalytics setupWithConfiguration:[SEGAnalyticsConfiguration configurationWithWriteKey:@"2Ih13xn7HMFzPQVKiIhIpS7n88mqCxQN"]];
+    [Fabric with:@[CrashlyticsKit]];
     
     return YES;
 }

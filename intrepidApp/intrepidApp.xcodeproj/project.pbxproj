@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C4C597D1B06759200EA6B53 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4C597B1B06759200EA6B53 /* Fabric.framework */; };
+		2C4C597E1B06759200EA6B53 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4C597C1B06759200EA6B53 /* Crashlytics.framework */; };
 		2C52E6911A812E1800A6238D /* AceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C52E6901A812E1800A6238D /* AceViewController.m */; };
 		2C52E6941A814F7800A6238D /* AceWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C52E6931A814F7800A6238D /* AceWebViewController.m */; };
 		2C7467611AC088A700BFB3A6 /* Analytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7467601AC088A700BFB3A6 /* Analytics.framework */; };
@@ -97,6 +99,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C4C597B1B06759200EA6B53 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		2C4C597C1B06759200EA6B53 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		2C52E68F1A812E1800A6238D /* AceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AceViewController.h; sourceTree = "<group>"; };
 		2C52E6901A812E1800A6238D /* AceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AceViewController.m; sourceTree = "<group>"; };
 		2C52E6921A814F7800A6238D /* AceWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AceWebViewController.h; sourceTree = "<group>"; };
@@ -254,6 +258,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C4C597D1B06759200EA6B53 /* Fabric.framework in Frameworks */,
 				2C74676B1AC0893500BFB3A6 /* libstdc++.dylib in Frameworks */,
 				2C7467691AC0892100BFB3A6 /* libsqlite3.dylib in Frameworks */,
 				2C7467671AC0890100BFB3A6 /* CoreBluetooth.framework in Frameworks */,
@@ -263,6 +268,7 @@
 				DCFB6F411A5F264200375B7D /* MapKit.framework in Frameworks */,
 				68174E2417C95254009823CE /* SystemConfiguration.framework in Frameworks */,
 				688F9E631786262800CF850C /* QuartzCore.framework in Frameworks */,
+				2C4C597E1B06759200EA6B53 /* Crashlytics.framework in Frameworks */,
 				2C7467611AC088A700BFB3A6 /* Analytics.framework in Frameworks */,
 				DCFB6F3C1A5F208200375B7D /* OpenGLES.framework in Frameworks */,
 				E04C4DBC17A3103E002A23F4 /* libz.dylib in Frameworks */,
@@ -404,6 +410,8 @@
 		6851221117861138008DB6B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C4C597B1B06759200EA6B53 /* Fabric.framework */,
+				2C4C597C1B06759200EA6B53 /* Crashlytics.framework */,
 				2C74676A1AC0893500BFB3A6 /* libstdc++.dylib */,
 				2C7467681AC0892100BFB3A6 /* libsqlite3.dylib */,
 				2C7467661AC0890100BFB3A6 /* CoreBluetooth.framework */,
@@ -557,6 +565,7 @@
 				6851220B17861138008DB6B6 /* Sources */,
 				6851220C17861138008DB6B6 /* Frameworks */,
 				6851220D17861138008DB6B6 /* Resources */,
+				2C4C597A1B0674D800EA6B53 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -615,6 +624,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C4C597A1B0674D800EA6B53 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 475cd4197b23a31c0c61520cf1fe3425dabe3930 2ca430fcf8d8cda9f8fb67728c613523ed19fc3c0360234bf2bf95f7a773c767";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6851220B17861138008DB6B6 /* Sources */ = {

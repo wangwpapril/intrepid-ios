@@ -12,6 +12,7 @@
 #import "Constants.h"
 #import "MyTripsViewController.h"
 #import "TripManager.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface LoginViewController ()
 
@@ -46,6 +47,9 @@
 
         [[SEGAnalytics sharedAnalytics] identify:[userDict[@"user"][@"id"] stringValue]
               traits:@{@"email": userDict[@"user"][@"email"], @"first_name": userDict[@"user"][@"first_name"], @"last_name": userDict[@"user"][@"last_name"], @"country_code": userDict[@"user"][@"country_code"]}];
+        [CrashlyticsKit setUserIdentifier:[userDict[@"user"][@"id"] stringValue]];
+        [CrashlyticsKit setUserName:[NSString stringWithFormat:@"%@ %@", userDict[@"user"][@"first_name"], userDict[@"user"][@"last_name"]]];
+        [CrashlyticsKit setUserEmail:userDict[@"user"][@"email"]];
         
         MyTripsViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"myTrips"];
         [self.navigationController pushViewController:viewController animated:NO];
