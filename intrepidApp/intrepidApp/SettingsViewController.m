@@ -11,6 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "TripManager.h"
 #import "RequestBuilder.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface SettingsViewController ()
 
@@ -159,6 +160,9 @@
     [[SEGAnalytics sharedAnalytics] track:@"Signout"
                                properties:@{@"category" : @"Settings"}];
     [[SEGAnalytics sharedAnalytics] reset];
+    [CrashlyticsKit setUserIdentifier:@""];
+    [CrashlyticsKit setUserName:@""];
+    [CrashlyticsKit setUserEmail:@""];
     
     [[TripManager getInstance] deleteAllObjects:@"CityEntity"];
     [[TripManager getInstance] deleteAllObjects:@"CurrencyEntity"];
