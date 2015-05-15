@@ -10,6 +10,20 @@
 	<string>en</string>
 	<key>CFBundleVersion</key>
 	<string>1.0.1</string>
+    <key>Fabric</key>
+    <dict>
+        <key>APIKey</key>
+        <string>475cd4197b23a31c0c61520cf1fe3425dabe3930</string>
+        <key>Kits</key>
+        <array>
+            <dict>
+                <key>KitInfo</key>
+                <dict/>
+                <key>KitName</key>
+                <string>Crashlytics</string>
+            </dict>
+        </array>
+    </dict>
 	<key>UIStatusBarTintParameters</key>
 	<dict>
 		<key></key>
