@@ -225,33 +225,42 @@
     [geocoder reverseGeocodeLocation:self.lastLocation completionHandler:^(NSArray *placemarks, NSError *error) {
         if (error) {
             NSLog(@"Error %@", error.description);
-        } else {
+        } else if (placemarks.count > 0) {
             CLPlacemark *placemark = [placemarks lastObject];
-            NSDictionary *body = @{@"coordinate": @{@"country": placemark.country,
-                                                    @"city": placemark.locality,
-                                                    @"latitude": [NSString stringWithFormat:@"%f", placemark.location.coordinate.latitude],
-                                                    @"longitude": [NSString stringWithFormat:@"%f", placemark.location.coordinate.longitude]}
-                                   };
-            
-            NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
-            NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/%@/coordinates?token=%@", BASE_URL, userDict[@"user"][@"id"], userDict[@"user"][@"token"]]];
-            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
-            request.HTTPMethod = @"POST";
-            [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-            request.HTTPBody = [NSJSONSerialization dataWithJSONObject:body options:0 error:nil];
-            
-            [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-                if (error) {
-                    NSLog(@"Error %@", error.description);
+            if (placemark.location.coordinate.latitude && placemark.location.coordinate.longitude) {
+                NSDictionary *body;
+                if (placemark.country && placemark.locality) {
+                    body = @{@"coordinate": @{@"country": placemark.country,
+                                              @"city": placemark.locality,
+                                              @"latitude": [NSString stringWithFormat:@"%f", placemark.location.coordinate.latitude],
+                                              @"longitude": [NSString stringWithFormat:@"%f", placemark.location.coordinate.longitude]}
+                             };
                 } else {
-                    NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                    NSLog(@"%@", responseBody);
-                    if (responseBody[@"coordinate"]) {
-                        [[SEGAnalytics sharedAnalytics] track:@"Update Location"
-                                                   properties:@{@"category" : @"AppDelegate"}];
-                    }
+                    body = @{@"coordinate": @{@"latitude": [NSString stringWithFormat:@"%f", placemark.location.coordinate.latitude],
+                                              @"longitude": [NSString stringWithFormat:@"%f", placemark.location.coordinate.longitude]}
+                             };
                 }
-            }];
+                
+                NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
+                NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/%@/coordinates?token=%@", BASE_URL, userDict[@"user"][@"id"], userDict[@"user"][@"token"]]];
+                NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
+                request.HTTPMethod = @"POST";
+                [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+                request.HTTPBody = [NSJSONSerialization dataWithJSONObject:body options:0 error:nil];
+                
+                [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                    if (error) {
+                        NSLog(@"Error %@", error.description);
+                    } else {
+                        NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                        NSLog(@"%@", responseBody);
+                        if (responseBody[@"coordinate"]) {
+                            [[SEGAnalytics sharedAnalytics] track:@"Update Location"
+                                                       properties:@{@"category" : @"AppDelegate"}];
+                        }
+                    }
+                }];
+            }
         }
     }];
 }
@@ -267,32 +276,41 @@
     [geocoder reverseGeocodeLocation:self.lastLocation completionHandler:^(NSArray *placemarks, NSError *error) {
         if (error) {
             NSLog(@"Error %@", error.description);
-        } else {
+        } else if (placemarks.count > 0) {
             CLPlacemark *placemark = [placemarks lastObject];
-            NSDictionary *body = @{@"coordinate": @{@"country": placemark.country,
-                                                    @"city": placemark.locality,
-                                                    @"latitude": [NSString stringWithFormat:@"%f", placemark.location.coordinate.latitude],
-                                                    @"longitude": [NSString stringWithFormat:@"%f", placemark.location.coordinate.longitude]}
-                                   };
+            if (placemark.location.coordinate.latitude && placemark.location.coordinate.longitude) {
+                NSDictionary *body;
+                if (placemark.country && placemark.locality) {
+                    body = @{@"coordinate": @{@"country": placemark.country,
+                                              @"city": placemark.locality,
+                                              @"latitude": [NSString stringWithFormat:@"%f", placemark.location.coordinate.latitude],
+                                              @"longitude": [NSString stringWithFormat:@"%f", placemark.location.coordinate.longitude]}
+                             };
+                } else {
+                    body = @{@"coordinate": @{@"latitude": [NSString stringWithFormat:@"%f", placemark.location.coordinate.latitude],
+                                              @"longitude": [NSString stringWithFormat:@"%f", placemark.location.coordinate.longitude]}
+                             };
+                }
             
-            NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
-            NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/%@/coordinates?token=%@", BASE_URL, userDict[@"user"][@"id"], userDict[@"user"][@"token"]]];
-            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
-            request.HTTPMethod = @"POST";
-            [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-            request.HTTPBody = [NSJSONSerialization dataWithJSONObject:body options:0 error:nil];
-            
-            NSURLResponse *response = nil;
-            NSError *error = nil;
-            NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-            if (error) {
-                NSLog(@"Error %@", error.description);
-            } else {
-                NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                NSLog(@"%@", responseBody);
-                if (responseBody[@"coordinate"]) {
-                    [[SEGAnalytics sharedAnalytics] track:@"Update Location"
-                                               properties:@{@"category" : @"AppDelegate"}];
+                NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
+                NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/%@/coordinates?token=%@", BASE_URL, userDict[@"user"][@"id"], userDict[@"user"][@"token"]]];
+                NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
+                request.HTTPMethod = @"POST";
+                [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+                request.HTTPBody = [NSJSONSerialization dataWithJSONObject:body options:0 error:nil];
+                
+                NSURLResponse *response = nil;
+                NSError *error = nil;
+                NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+                if (error) {
+                    NSLog(@"Error %@", error.description);
+                } else {
+                    NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                    NSLog(@"%@", responseBody);
+                    if (responseBody[@"coordinate"]) {
+                        [[SEGAnalytics sharedAnalytics] track:@"Update Location"
+                                                   properties:@{@"category" : @"AppDelegate"}];
+                    }
                 }
             }
         }
