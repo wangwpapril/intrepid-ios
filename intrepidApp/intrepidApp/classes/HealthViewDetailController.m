@@ -8,6 +8,7 @@
 #import "HealthViewDetailController.h"
 #import "HealthViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "MenuButton.h"
 
 @implementation HealthViewDetailController
 
@@ -55,6 +56,12 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[SEGAnalytics sharedAnalytics] screen:@"Health Detail"];
+    [MenuButton getInstance].hidden = true;
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [MenuButton getInstance].hidden = false;
 }
 
 - (void)addContent {

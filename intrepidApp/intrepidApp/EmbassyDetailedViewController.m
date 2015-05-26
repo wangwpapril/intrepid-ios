@@ -10,6 +10,7 @@
 
 #import "EmbassyDetailedViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "MenuButton.h"
 
 @implementation EmbassyDetailedViewController
 
@@ -56,6 +57,12 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[SEGAnalytics sharedAnalytics] screen:@"Embassy Detail"];
+    [MenuButton getInstance].hidden = true;
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [MenuButton getInstance].hidden = false;
 }
 
 - (void)addContent {

@@ -8,6 +8,7 @@
 
 #import "AceWebViewController.h"
 #import "Reachability.h"
+#import "MenuButton.h"
 
 @interface AceWebViewController ()
 
@@ -38,6 +39,12 @@
         
         [errorView show];
     }
+    [MenuButton getInstance].hidden = true;
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [MenuButton getInstance].hidden = false;
 }
 
 - (void)setupWithTitle:(NSString *)title withURL:(NSString *)url {
