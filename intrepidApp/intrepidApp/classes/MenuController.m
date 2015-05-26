@@ -59,14 +59,15 @@ static MenuController *instance =nil;
         [menu removeFromSuperview];
     }
     UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleDrag:)];
-    [instance.menu addGestureRecognizer:recognizer];
+//    [instance.menu addGestureRecognizer:recognizer];
     parentController = controller;
     viewHeight = controller.view.frame.size.height; // account for nav bar
     
     botPosition = CGRectMake(0, viewHeight, 320, 246); // was 206
     menu.frame = botPosition;
     hiding = true;
-    [MenuButton getInstance].frame = CGRectMake(250, viewHeight - 20, 50, 20);    
+    [[MenuButton getInstance] setImage:[UIImage imageNamed:@"expand"] forState:UIControlStateNormal];
+    [MenuButton getInstance].frame = CGRectMake(260, viewHeight - 20, 50, 50);
     menu.userInteractionEnabled = YES;
 
     [controller.view addSubview:menu];
@@ -98,7 +99,8 @@ static MenuController *instance =nil;
 -(void)showMenu {
     NSInteger yPos = viewHeight - 246;
     [UIView animateWithDuration:0.2 animations:^ {
-        [MenuButton getInstance].frame = CGRectMake(250, parentController.view.frame.size.height - 240, 50, 20);
+        [[MenuButton getInstance] setImage:[UIImage imageNamed:@"minimize"] forState:UIControlStateNormal];
+        [MenuButton getInstance].frame = CGRectMake(260, yPos - 20, 50, 50);
         menu.frame = CGRectMake(0, yPos, 320, 246);
     }];
     hiding = false;
@@ -109,7 +111,8 @@ static MenuController *instance =nil;
 
 -(void)hideMenu {
     [UIView animateWithDuration:0.2 animations:^{
-        [MenuButton getInstance].frame = CGRectMake(250, parentController.view.frame.size.height - 20, 50, 20);
+        [[MenuButton getInstance] setImage:[UIImage imageNamed:@"expand"] forState:UIControlStateNormal];
+        [MenuButton getInstance].frame = CGRectMake(260, viewHeight - 20, 50, 50);
         menu.frame = botPosition;
     }];
     hiding = true;
@@ -128,17 +131,15 @@ static MenuController *instance =nil;
     buttonArray = [NSMutableArray new];
 
     // content buttons
-    [self makeContentButtonWithOrigin:CGPointMake(0, 25) withTag:0];
-    [self makeContentButtonWithOrigin:CGPointMake(107, 25) withTag:1];
-    [self makeContentButtonWithOrigin:CGPointMake(213, 25) withTag:2];
-    [self makeContentButtonWithOrigin:CGPointMake(0, 89) withTag:3];
-    [self makeContentButtonWithOrigin:CGPointMake(107, 89) withTag:4];
-    [self makeContentButtonWithOrigin:CGPointMake(213, 89) withTag:5];
-    [self makeContentButtonWithOrigin:CGPointMake(0, 153) withTag:6];
-    [self makeContentButtonWithOrigin:CGPointMake(107, 153) withTag:7];
-    [self makeContentButtonWithOrigin:CGPointMake(213, 153) withTag:8];
-    
-//    [self selectButtonWithTag:2];
+    [self makeContentButtonWithOrigin:CGPointMake(0, 0) withTag:0];
+    [self makeContentButtonWithOrigin:CGPointMake(107, 0) withTag:1];
+    [self makeContentButtonWithOrigin:CGPointMake(213, 0) withTag:2];
+    [self makeContentButtonWithOrigin:CGPointMake(0, 72) withTag:3];
+    [self makeContentButtonWithOrigin:CGPointMake(107, 72) withTag:4];
+    [self makeContentButtonWithOrigin:CGPointMake(213, 72) withTag:5];
+    [self makeContentButtonWithOrigin:CGPointMake(0, 144) withTag:6];
+    [self makeContentButtonWithOrigin:CGPointMake(107, 144) withTag:7];
+    [self makeContentButtonWithOrigin:CGPointMake(213, 144) withTag:8];
 }
 
 -(void)toggleMenu {
@@ -230,9 +231,8 @@ static MenuController *instance =nil;
 
 - (void)makeContentButtonWithOrigin:(CGPoint)origin withTag:(NSInteger)tag{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    NSInteger size = 107;
     button.tag = tag;
-    button.frame = CGRectMake(origin.x, origin.y, size, 65);
+    button.frame = CGRectMake(origin.x, origin.y, 107, 72);
     button.backgroundColor = [UIColor clearColor];
     [menu addSubview:button];
     [button addTarget:self action:@selector(goToController:) forControlEvents:UIControlEventTouchUpInside];

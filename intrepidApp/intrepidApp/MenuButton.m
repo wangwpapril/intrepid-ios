@@ -21,8 +21,7 @@ static MenuButton *instance =nil;
         {
             // instantiate some global variables
             instance = [[MenuButton alloc] init];
-            instance.backgroundColor = APP_BG_COLOR;
-            [instance setTitle:@"Menu" forState:UIControlStateNormal];
+            [instance setImage:[UIImage imageNamed:@"expand"] forState:UIControlStateNormal];
         }
     }
     return instance;
@@ -30,7 +29,7 @@ static MenuButton *instance =nil;
 
 - (void)displayMenuWithParent:(UIViewController *)controller {
     self.parentController = controller;
-    instance.frame = CGRectMake(250, self.parentController.view.frame.size.height - 70, 50, 20);
+    instance.frame = CGRectMake(260, self.parentController.view.frame.size.height - 20, 50, 50);
     [instance addTarget:self action:@selector(tapMenu) forControlEvents:UIControlEventTouchUpInside];
     [self.parentController.navigationController.view addSubview:[MenuButton getInstance]];
 }
