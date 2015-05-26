@@ -11,6 +11,7 @@
 #import "WebViewController.h"
 #import "AppDelegate.h"
 #import <CoreLocation/CoreLocation.h>
+#import "MenuButton.h"
 
 @implementation MenuController
 
@@ -43,7 +44,7 @@ static MenuController *instance =nil;
             instance.arrow = [[UIImageView alloc] initWithFrame:CGRectMake(156, 4, 9, 4)]; // 9 4
             instance.upRight = [UIImage imageNamed:@"menuArrow"];
             instance.flipped = [UIImage imageWithCGImage:instance.upRight.CGImage scale:1.0 orientation:UIImageOrientationDown];
-            [instance.menu addSubview:instance.arrow];
+//            [instance.menu addSubview:instance.arrow];
             
             instance.outsideMenu = [UIButton buttonWithType:UIButtonTypeCustom];
             instance.outsideMenu.backgroundColor = [UIColor clearColor];
@@ -62,9 +63,10 @@ static MenuController *instance =nil;
     parentController = controller;
     viewHeight = controller.view.frame.size.height; // account for nav bar
     
-    botPosition = CGRectMake(0, viewHeight - 25, 320, 246); // was 206
+    botPosition = CGRectMake(0, viewHeight, 320, 246); // was 206
     menu.frame = botPosition;
     hiding = true;
+    [MenuButton getInstance].frame = CGRectMake(250, viewHeight - 20, 50, 20);    
     menu.userInteractionEnabled = YES;
 
     [controller.view addSubview:menu];
@@ -96,6 +98,7 @@ static MenuController *instance =nil;
 -(void)showMenu {
     NSInteger yPos = viewHeight - 246;
     [UIView animateWithDuration:0.2 animations:^ {
+        [MenuButton getInstance].frame = CGRectMake(250, parentController.view.frame.size.height - 240, 50, 20);
         menu.frame = CGRectMake(0, yPos, 320, 246);
     }];
     hiding = false;
@@ -106,8 +109,9 @@ static MenuController *instance =nil;
 
 -(void)hideMenu {
     [UIView animateWithDuration:0.2 animations:^{
-                        menu.frame = botPosition;
-                    }];
+        [MenuButton getInstance].frame = CGRectMake(250, parentController.view.frame.size.height - 20, 50, 20);
+        menu.frame = botPosition;
+    }];
     hiding = true;
     arrow.image = upRight;
     [outsideMenu removeFromSuperview];
@@ -213,6 +217,8 @@ static MenuController *instance =nil;
             [((WebViewController *)viewController) setupWithTitle:@"Weather" withURL:[NSString stringWithFormat:@"https://m.intrepid247.com/weather.html%@", self.location]];
             viewController.view.tag = 4;
             [[SEGAnalytics sharedAnalytics] screen:@"Weather"];
+        } else if (button.tag == 7) {
+           [[MenuButton getInstance] removeFromSuperview];
         }
         [parentController.navigationController pushViewController:viewController animated:YES];
     }

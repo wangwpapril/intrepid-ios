@@ -17,6 +17,7 @@
 		2C7467671AC0890100BFB3A6 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7467661AC0890100BFB3A6 /* CoreBluetooth.framework */; };
 		2C7467691AC0892100BFB3A6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7467681AC0892100BFB3A6 /* libsqlite3.dylib */; };
 		2C74676B1AC0893500BFB3A6 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C74676A1AC0893500BFB3A6 /* libstdc++.dylib */; };
+		2C8C788F1B14D15D008116A8 /* MenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C788E1B14D15D008116A8 /* MenuButton.m */; };
 		2CB19AB41A730B42007CEC79 /* AlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB19AB31A730B42007CEC79 /* AlertsViewController.m */; };
 		2CB19AB71A73169E007CEC79 /* AlertEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB19AB61A73169E007CEC79 /* AlertEntity.m */; };
 		2CB19ABD1A731FC4007CEC79 /* AlertCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB19ABC1A731FC4007CEC79 /* AlertCell.m */; };
@@ -111,6 +112,8 @@
 		2C7467661AC0890100BFB3A6 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		2C7467681AC0892100BFB3A6 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		2C74676A1AC0893500BFB3A6 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		2C8C788D1B14D15D008116A8 /* MenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuButton.h; sourceTree = "<group>"; };
+		2C8C788E1B14D15D008116A8 /* MenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuButton.m; sourceTree = "<group>"; };
 		2CB19AB21A730B42007CEC79 /* AlertsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertsViewController.h; sourceTree = "<group>"; };
 		2CB19AB31A730B42007CEC79 /* AlertsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertsViewController.m; sourceTree = "<group>"; };
 		2CB19AB51A73169E007CEC79 /* AlertEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertEntity.h; sourceTree = "<group>"; };
@@ -376,6 +379,8 @@
 			children = (
 				6835EC141789439600A57F86 /* MenuController.h */,
 				6835EC151789439600A57F86 /* MenuController.m */,
+				2C8C788D1B14D15D008116A8 /* MenuButton.h */,
+				2C8C788E1B14D15D008116A8 /* MenuButton.m */,
 				68E4240217926E1E00431908 /* IntreSearchBar.h */,
 				68E4240317926E1E00431908 /* IntreSearchBar.m */,
 				684BB607179F539C004C44C9 /* SlidingTextView.h */,
@@ -654,6 +659,7 @@
 				2CB19ABD1A731FC4007CEC79 /* AlertCell.m in Sources */,
 				6835EC161789439600A57F86 /* MenuController.m in Sources */,
 				7ECD0427178BD7C500D6C34B /* HealthViewDetailController.m in Sources */,
+				2C8C788F1B14D15D008116A8 /* MenuButton.m in Sources */,
 				2CDDEAAE1A683D1B004654D8 /* DestinationEntity.m in Sources */,
 				2CB19AE91A754668007CEC79 /* UIButton+WebCache.m in Sources */,
 				DCFB6F3F1A5F218E00375B7D /* ClinicsViewController.m in Sources */,

@@ -12,6 +12,7 @@
 #import "CurrencyEntity.h"
 #import "TripManager.h"
 #import "MenuController.h"
+#import "MenuButton.h"
 
 @implementation OverViewViewController
 
@@ -100,6 +101,8 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     if (firstLoad) {
+        MenuButton *menuButton = [MenuButton getInstance];
+        [menuButton displayMenuWithParent:self];
         [[MenuController getInstance] showMenu];
         firstLoad = false;
     }

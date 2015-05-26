@@ -27,5 +27,6 @@
 +(MenuController *)getInstance;
 -(void)displayMenuWithParent:(UIViewController *)controller;
 -(void)showMenu;
+-(void)toggleMenu;
 - (void)selectButtonWithTag:(NSInteger)tag;
 @end
