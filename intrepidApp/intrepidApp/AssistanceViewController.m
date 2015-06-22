@@ -92,7 +92,7 @@
     callAssistance.titleLabel.font = [UIFont fontWithName:APP_FONT size:21];
     callAssistance.tintColor = [UIColor clearColor];
     [callAssistance setTitleColor: [UIColor colorWithRed:1 green:1 blue:1 alpha:1] forState:UIControlStateNormal];
-    [callAssistance setTitle:@"Call Intrepid Assistance" forState:UIControlStateNormal];
+    [callAssistance setTitle:@"Call RBC Assistance" forState:UIControlStateNormal];
     [callAssistance addTarget:self
                        action:@selector(callAssistance)
              forControlEvents:UIControlEventTouchUpInside];
