@@ -41,7 +41,7 @@
 }
 
 - (void)callAssistance {
-    if ([self.viewControllers.lastObject isKindOfClass:[TripsViewController class]]) {
+    if ([self.viewControllers.lastObject isKindOfClass:[TripsViewController class]]) {®
         AssistanceViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"assistance"];
         viewController.tripsAssistance = true;
         [self pushViewController:viewController animated:YES];
