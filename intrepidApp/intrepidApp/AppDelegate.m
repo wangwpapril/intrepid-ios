@@ -19,13 +19,13 @@
 
 - (void)customizeAppearance
 {
-    [[UITextField appearance] setTintColor:[UIColor colorWithRed:0.2 green:0.25 blue:0.28 alpha:1]];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHue:0.57 saturation:0.29 brightness:0.28 alpha:1]];
+    [[UITextField appearance] setTintColor:[UIColor colorWithHue:0.58 saturation:1 brightness:0.49 alpha:1]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHue:0.58 saturation:1 brightness:0.49 alpha:1]];
     if([[[UIDevice currentDevice] systemVersion] floatValue] > 8.0) {
         // for iOS 7 and earlier, this has been implemented in LoginViewController.m
         [[UINavigationBar appearance] setTranslucent:NO];
     }
-    [[UINavigationBar appearance] setTintColor: [UIColor colorWithHue:0.57 saturation:0.29 brightness:0.28 alpha:1]];
+    [[UINavigationBar appearance] setTintColor: [UIColor colorWithHue:0.58 saturation:1 brightness:0.49 alpha:1]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{
                                                            NSForegroundColorAttributeName: [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0],
                                                            NSFontAttributeName: [UIFont fontWithName:APP_FONT_BOLD size:18],
