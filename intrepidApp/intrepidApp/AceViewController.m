@@ -45,8 +45,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"toWorldview"]) {
         AceWebViewController *awvc = segue.destinationViewController;
-        [awvc setupWithTitle:@"Imagine Insurance" withURL:@"https://www.ingleinternational.com/en/travel-insurance/canadian-travellers"];
-        [[SEGAnalytics sharedAnalytics] screen:@"Intrepid Insurance"];
+        [awvc setupWithTitle:@"RBC Insurance" withURL:@"http://www.rbcinsurance.com/travelinsurance/"];
+        [[SEGAnalytics sharedAnalytics] screen:@"RBC Insurance"];
     } else if ([segue.identifier isEqualToString:@"toWallet"]) {
         AceWebViewController *awvc = segue.destinationViewController;
         NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
