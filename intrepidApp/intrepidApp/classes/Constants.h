@@ -26,15 +26,15 @@
 #define METERS_PER_MILE 1609.344
 
 // colors
-#define APP_TEXT_COLOR [UIColor colorWithHue:0.58 saturation:1 brightness:0.49 alpha:1]
+#define APP_TEXT_COLOR [UIColor colorWithHue:0.57 saturation:0.33 brightness:0.29 alpha:1]
 
-#define APP_BG_COLOR [UIColor colorWithHue:0.58 saturation:1 brightness:0.49 alpha:1]
+#define APP_BG_COLOR [UIColor colorWithRed:0.2 green:0.25 blue:0.28 alpha:1]
 #define APP_SEARCH_COLOR [UIColor colorWithRed:0.88 green:0.88 blue:0.88 alpha:1]
 #define APP_BORDER_COLOR [[UIColor colorWithRed:0.91 green:0.9 blue:0.9 alpha:1] CGColor]
 #define APP_TOGGLE_SELECTED [UIColor colorWithRed:1 green:1 blue:1 alpha:1]
 #define APP_TOGGLE_UNSELECTED [UIColor colorWithRed:0.88 green:0.88 blue:0.88 alpha:1]
 
-#define NAVIGATION_BG_COLOR [UIColor colorWithHue:0.58 saturation:1 brightness:0.49 alpha:1]
+#define NAVIGATION_BG_COLOR [UIColor colorWithRed:0.2 green:0.25 blue:0.28 alpha:1]
 
 #define UIColorFromRGB(rgbValue) [UIColor \
 colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
