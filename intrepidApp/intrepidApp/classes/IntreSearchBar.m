@@ -22,8 +22,8 @@
 - (void) setupUI {
     [self setBackgroundColor:APP_SEARCH_COLOR];
     [self setPlaceholder:@"Tap to Search"];
-    [self setTextColor:[UIColor colorWithRed:0.19 green:0.25 blue:0.29 alpha:1]];
-    [self setTintColor:[UIColor colorWithRed:0.19 green:0.25 blue:0.29 alpha:1]];
+    [self setTextColor:[UIColor colorWithHue:0.57 saturation:0.28 brightness:0.28 alpha:1]];
+    [self setTintColor:[UIColor colorWithHue:0.57 saturation:0.28 brightness:0.28 alpha:1]];
     [self setFont: [UIFont fontWithName:@"ProximaNova-Regular" size:17]];
     self.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     [self setReturnKeyType:UIReturnKeyDone];
