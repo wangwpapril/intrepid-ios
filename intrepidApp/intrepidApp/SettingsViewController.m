@@ -12,6 +12,7 @@
 #import "TripManager.h"
 #import "RequestBuilder.h"
 #import <Crashlytics/Crashlytics.h>
+#import "MenuButton.h"
 
 @interface SettingsViewController ()
 
@@ -171,6 +172,7 @@
     [[TripManager getInstance] deleteAllObjects:@"AlertEntity"];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"userDict"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    [[MenuButton getInstance] removeFromSuperview];
     [self performSegueWithIdentifier:@"toLogin" sender:self];
 }
 
