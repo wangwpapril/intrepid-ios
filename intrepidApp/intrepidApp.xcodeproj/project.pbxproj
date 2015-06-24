@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C4B00441B3B43DD00268736 /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B00431B3B43DD00268736 /* CustomNavigationController.m */; };
 		2C4C597D1B06759200EA6B53 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4C597B1B06759200EA6B53 /* Fabric.framework */; };
 		2C4C597E1B06759200EA6B53 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4C597C1B06759200EA6B53 /* Crashlytics.framework */; };
 		2C52E6911A812E1800A6238D /* AceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C52E6901A812E1800A6238D /* AceViewController.m */; };
@@ -100,6 +101,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C4B00421B3B43DD00268736 /* CustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationController.h; sourceTree = "<group>"; };
+		2C4B00431B3B43DD00268736 /* CustomNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationController.m; sourceTree = "<group>"; };
 		2C4C597B1B06759200EA6B53 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		2C4C597C1B06759200EA6B53 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		2C52E68F1A812E1800A6238D /* AceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AceViewController.h; sourceTree = "<group>"; };
@@ -377,6 +380,8 @@
 		684BB606179F534A004C44C9 /* Support Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2C4B00421B3B43DD00268736 /* CustomNavigationController.h */,
+				2C4B00431B3B43DD00268736 /* CustomNavigationController.m */,
 				6835EC141789439600A57F86 /* MenuController.h */,
 				6835EC151789439600A57F86 /* MenuController.m */,
 				2C8C788D1B14D15D008116A8 /* MenuButton.h */,
@@ -696,6 +701,7 @@
 				337237691A50F392003FF7C2 /* TripsViewController.m in Sources */,
 				DC8508801A3EB57500C3173B /* CityEntity.m in Sources */,
 				E08615F117A8224D00DE240B /* ForgotPasswordViewController.m in Sources */,
+				2C4B00441B3B43DD00268736 /* CustomNavigationController.m in Sources */,
 				7E9A130C17A876FF0082003C /* SettingsViewController.m in Sources */,
 				E058778417A8768500E42A78 /* EmbassyDetailedViewController.m in Sources */,
 				2CB19AE61A754668007CEC79 /* SDWebImageDownloaderOperation.m in Sources */,
