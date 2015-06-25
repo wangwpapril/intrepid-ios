@@ -14,6 +14,4 @@
     UIScrollView *scrollView;
 }
 
-@property (nonatomic, strong) MenuController *mController;
-
 @end

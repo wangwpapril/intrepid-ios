@@ -15,7 +15,6 @@
 @property (nonatomic) NSInteger currentTab;
 @property (nonatomic) NSInteger previousTab;
 @property (nonatomic, strong) UILabel *line;
-@property (nonatomic, strong) MenuController *mController;
 //@property (nonatomic) NSInteger verticalOffset;
 @property (nonatomic, strong) UIScrollView *scroll;
 

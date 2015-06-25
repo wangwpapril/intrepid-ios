@@ -28,7 +28,6 @@
 @synthesize changePassword;
 @synthesize updateButton;
 @synthesize signOutButton;
-@synthesize mController;
 @synthesize newMedia;
 
 - (void)viewDidLoad
@@ -36,7 +35,6 @@
     [[UITextField appearance] setTintColor:[UIColor whiteColor]];
     [super viewDidLoad];
     self.navigationItem.hidesBackButton = YES;
-    mController = [MenuController getInstance];
     self.view.tag = 8;
     self.navigationItem.title = @"Settings";
     self.versionLabel.text = [NSString stringWithFormat:@"Version: %@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
@@ -355,8 +353,7 @@
                                              selector:@selector(keyboardWillHide)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
-    [mController displayMenuWithParent:self];
-    
+    [[MenuController getInstance] displayMenuWithParent:self];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

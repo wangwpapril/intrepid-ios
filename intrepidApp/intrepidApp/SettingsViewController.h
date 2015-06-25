@@ -20,7 +20,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *oldPassword;
 @property (weak, nonatomic) IBOutlet UITextField *changePassword;
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
-@property (nonatomic, strong) MenuController *mController;
 @property (nonatomic,retain) UIActivityIndicatorView *activityIndicator;
 
 @property BOOL newMedia;

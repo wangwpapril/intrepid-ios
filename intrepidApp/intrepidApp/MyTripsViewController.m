@@ -137,10 +137,9 @@
     i = 0;
     limit = cities.count;
     
-    MenuController *mController = [MenuController getInstance];
-    if (mController.city) {
+    if ([MenuController getInstance].city) {
         while (i < limit) {
-            if (mController.city == [cities objectAtIndex:i]) {
+            if ([MenuController getInstance].city == [cities objectAtIndex:i]) {
                 index = i + 1;
             }
             i++;

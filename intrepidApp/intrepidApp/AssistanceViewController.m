@@ -12,8 +12,6 @@
 
 @implementation AssistanceViewController
 
-@synthesize mController;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -35,8 +33,7 @@
     [super viewWillAppear:animated];
     [[SEGAnalytics sharedAnalytics] screen:@"Assistance"];
     
-    mController = [MenuController getInstance];
-    [mController displayMenuWithParent:self];
+    [[MenuController getInstance] displayMenuWithParent:self];
 }
 
 -(void)addContent {

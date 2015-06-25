@@ -15,14 +15,12 @@
 @end
 
 @implementation AceViewController
-@synthesize mController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.tag = 5;
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
-    mController = [MenuController getInstance];
     
     NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
     if (![userDict[@"user"][@"company"][@"content"] isEqual:@""]) {
@@ -38,9 +36,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[SEGAnalytics sharedAnalytics] screen:@"Intrepid Insurance"];
-    
-    mController = [MenuController getInstance];
-    [mController displayMenuWithParent:self];
+
+    [[MenuController getInstance] displayMenuWithParent:self];
 }
 
 #pragma mark - Navigation
