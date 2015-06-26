@@ -14,4 +14,6 @@
     UIScrollView *scrollView;
 }
 
+@property (nonatomic) BOOL tripsAssistance;
+
 @end
