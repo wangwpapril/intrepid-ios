@@ -13,7 +13,6 @@
 @synthesize tabArray;
 @synthesize currentTab;
 @synthesize previousTab;
-@synthesize mController;
 @synthesize line;
 //@synthesize verticalOffset;
 @synthesize scroll;
@@ -24,7 +23,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    mController = [MenuController getInstance];
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
@@ -45,11 +43,11 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [mController displayMenuWithParent:self];
+    [[MenuController getInstance] displayMenuWithParent:self];
 }
 
 - (CityEntity *)getCity {
-    return mController.city;
+    return [MenuController getInstance].city;
 }
 
 - (void)addTabs:(NSArray *)nameArray {

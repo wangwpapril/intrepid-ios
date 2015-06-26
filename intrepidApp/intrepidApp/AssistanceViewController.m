@@ -12,14 +12,14 @@
 
 @implementation AssistanceViewController
 
-@synthesize mController;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.view.tag = 6;
-    self.navigationItem.hidesBackButton = YES;    
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
+    if (!self.tripsAssistance) {
+        self.navigationItem.hidesBackButton = YES;
+        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
+    }
     
     CGRect rect=CGRectMake(0, 0, 320, self.view.frame.size.height);
     scrollView = [[UIScrollView alloc] initWithFrame:rect];
@@ -35,8 +35,7 @@
     [super viewWillAppear:animated];
     [[SEGAnalytics sharedAnalytics] screen:@"Assistance"];
     
-    mController = [MenuController getInstance];
-    [mController displayMenuWithParent:self];
+    [[MenuController getInstance] displayMenuWithParent:self];
 }
 
 -(void)addContent {

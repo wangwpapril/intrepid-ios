@@ -17,7 +17,6 @@
 
 @implementation AlertsViewController
 
-@synthesize mController;
 @synthesize tableList;
 @synthesize alertsArray;
 
@@ -52,12 +51,7 @@
     [super viewWillAppear:animated];
     [[SEGAnalytics sharedAnalytics] screen:@"Alerts"];
     
-    mController = [MenuController getInstance];
-    [mController displayMenuWithParent:self];
-}
-
-- (CityEntity *)getCity {
-    return mController.city;
+    [[MenuController getInstance] displayMenuWithParent:self];
 }
 
 # pragma mark - TableView Methods

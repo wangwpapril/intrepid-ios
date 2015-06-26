@@ -13,6 +13,5 @@
 
 @property (nonatomic, strong) UITableView *tableList;
 @property (nonatomic, strong) NSMutableArray *alertsArray;
-@property (nonatomic, strong) MenuController *mController;
 
 @end

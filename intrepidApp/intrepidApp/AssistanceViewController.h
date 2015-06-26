@@ -14,6 +14,6 @@
     UIScrollView *scrollView;
 }
 
-@property (nonatomic, strong) MenuController *mController;
+@property (nonatomic) BOOL tripsAssistance;
 
 @end

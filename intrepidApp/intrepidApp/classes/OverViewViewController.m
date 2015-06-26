@@ -93,7 +93,6 @@
     NSMutableArray *views = [NSMutableArray arrayWithObjects:history, culture, currency, nil];
     [self addViews:views withVerticalOffset:0];
     
-//    [self.view bringSubviewToFront:self.mController.menu];
     NSArray *names = [NSArray arrayWithObjects:@"GENERAL", @"CULTURE", @"CURRENCY", nil];
     [self addTabs:names];
 }
@@ -202,9 +201,8 @@
                                              selector:@selector(keyboardWillHide)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
-    MenuController *mController = [MenuController getInstance];
-    [mController displayMenuWithParent:self];
     
+    [[MenuController getInstance] displayMenuWithParent:self];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

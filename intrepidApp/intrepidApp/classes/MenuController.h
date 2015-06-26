@@ -29,4 +29,6 @@
 -(void)showMenu;
 -(void)toggleMenu;
 - (void)selectButtonWithTag:(NSInteger)tag;
+-(void)goToController:(id)sender;
+
 @end
