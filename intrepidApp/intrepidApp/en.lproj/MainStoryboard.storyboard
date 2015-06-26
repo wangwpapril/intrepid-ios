@@ -1525,8 +1525,6 @@
         <image name="thunder" width="22" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="v1z-mz-lP0"/>
-        <segue reference="lfH-ob-WWq"/>
         <segue reference="7CT-6H-1PF"/>
         <segue reference="LRU-oV-ELh"/>
     </inferredMetricsTieBreakers>
