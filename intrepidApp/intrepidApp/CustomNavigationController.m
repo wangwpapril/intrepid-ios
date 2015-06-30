@@ -10,6 +10,7 @@
 #import "MenuController.h"
 #import "TripsViewController.h"
 #import "AssistanceViewController.h"
+#import "SignUpViewController.h"
 
 @interface CustomNavigationController ()
 
@@ -20,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     for (UIViewController* viewController in self.viewControllers) {
-        if (![viewController isKindOfClass:[AssistanceViewController class]]) {
+        if (![viewController isKindOfClass:[AssistanceViewController class]] && ![viewController isKindOfClass:[SignUpViewController class]]) {
             // Push is not called this controller is created as part of the storyboard
             [self addButton:viewController.navigationItem];
         }
@@ -28,7 +29,7 @@
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
-    if (![viewController isKindOfClass:[AssistanceViewController class]]) {
+    if (![viewController isKindOfClass:[AssistanceViewController class]] && ![viewController isKindOfClass:[SignUpViewController class]]) {
         [self addButton:viewController.navigationItem];
     }
     [super pushViewController:viewController animated:animated];

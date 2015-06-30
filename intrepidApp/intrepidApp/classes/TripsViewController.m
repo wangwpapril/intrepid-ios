@@ -71,6 +71,7 @@
                                                     name:@"TRIP_UPDATE"
                                                   object:nil];
     
+    [self.activityIndicator stopAnimating];
     [super viewWillDisappear:animated];
 }
 
