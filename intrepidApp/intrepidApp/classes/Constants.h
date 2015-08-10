@@ -49,6 +49,23 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define BASE_URL @"https://api.intrepid247.com/v1/"
 #define CURRENCY_URL @"https://openexchangerates.org/api/latest.json?app_id=14073d8e6b8c4687951ed926cbbd3589"
 #define EMAIL_URL @"https://mandrillapp.com/api/1.0/messages/send.json"
-#define ACTIVATE_URL @"https://app.acetravelsmart.com/users/activate/"
+
+// Demo user fields (only uncomment 1/3)
+#define APP_NAME @"intrepid_navigator"
+#define FROM_EMAIL @"do-not-reply@intrepid247.com"
+#define FROM_NAME @"Intrepid 24/7"
+#define ACTIVATE_URL @"https://app.intrepid247.com/users/activate/"
+
+// ACE user fields (only uncomment 1/3)
+//#define APP_NAME @"ACE_travel_smart"
+//#define FROM_EMAIL @"do-not-reply@acetravelsmart.com"
+//#define FROM_NAME @"ACE Travel Smart"
+//#define ACTIVATE_URL @"https://app.acetravelsmart.com/users/activate/"
+
+// RBC user fields (only uncomment 1/3)
+//#define APP_NAME @"RBC_navigator"
+//#define FROM_EMAIL @"do-not-reply@intrepid247.com
+//#define FROM_NAME @"RBC Insurance"
+//#define ACTIVATE_URL @"https://app.intrepid247.com/users/activate/"
 
 #endif

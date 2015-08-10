@@ -103,7 +103,8 @@
       @"roles": @[@"end_user"],
       @"locale_code": @"en_CA",
       @"country_code": self.selectedCountry,
-      @"company_id": companyId
+      @"company_id": companyId,
+      @"app_name": APP_NAME
     }};
     
     NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@users", BASE_URL]];
@@ -132,8 +133,8 @@
        @"message": @{
            @"text": [NSString stringWithFormat:@"Hi %@,\n\nThank you for signing up with ACE Travel Smart.\nPlease click on the confirmation link below to activate your account.\n%@%@", firstName.text, ACTIVATE_URL, activationCode],
            @"subject": @"Thank you for signing up",
-           @"from_email": @"do-not-reply@acetravelsmart.com",
-           @"from_name": @"ACE Travel Smart",
+           @"from_email": FROM_EMAIL,
+           @"from_name": FROM_NAME,
            @"to": @[@{@"email": email.text,
                       @"name": [NSString stringWithFormat:@"%@ %@", firstName.text, lastName.text]}],
            },
