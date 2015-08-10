@@ -64,8 +64,8 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 // RBC user fields (only uncomment 1/3)
 #define APP_NAME @"RBC_navigator"
-#define FROM_EMAIL @"do-not-reply@intrepid247.com
-#define FROM_NAME @"RBC Insurance"
+#define FROM_EMAIL @"do-not-reply@intrepid247.com"
+#define FROM_NAME @"RBC Navigator"
 #define ACTIVATE_URL @"https://app.intrepid247.com/users/activate/"
 
 #endif

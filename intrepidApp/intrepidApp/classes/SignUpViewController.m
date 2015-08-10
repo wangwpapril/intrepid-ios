@@ -131,7 +131,7 @@
 - (void)sendEmailWithActivationCode:(NSString *)activationCode {
     NSDictionary *body = @{@"key": @"2Hw47otRRKIaEQ3sQwoXAg",
        @"message": @{
-           @"text": [NSString stringWithFormat:@"Hi %@,\n\nThank you for signing up with ACE Travel Smart.\nPlease click on the confirmation link below to activate your account.\n%@%@", firstName.text, ACTIVATE_URL, activationCode],
+           @"text": [NSString stringWithFormat:@"Hi %@,\n\nThank you for signing up with %@.\nPlease click on the confirmation link below to activate your account.\n%@%@", firstName.text, FROM_NAME, ACTIVATE_URL, activationCode],
            @"subject": @"Thank you for signing up",
            @"from_email": FROM_EMAIL,
            @"from_name": FROM_NAME,
