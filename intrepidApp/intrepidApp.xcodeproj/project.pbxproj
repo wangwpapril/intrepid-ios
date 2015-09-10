@@ -39,6 +39,7 @@
 		2CC179681A30CA55008EA775 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC179671A30CA55008EA775 /* Images.xcassets */; };
 		2CDDEAAE1A683D1B004654D8 /* DestinationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDEAAD1A683D1B004654D8 /* DestinationEntity.m */; };
 		2CE95BA91A3110E100062423 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE95BA81A3110E100062423 /* CoreLocation.framework */; };
+		322F147A1BA1D1D7000A73B1 /* PPNEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 322F14791BA1D1D7000A73B1 /* PPNEntity.m */; };
 		337237691A50F392003FF7C2 /* TripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 337237681A50F392003FF7C2 /* TripsViewController.m */; };
 		339118581A31626300450CB8 /* RequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 339118571A31626300450CB8 /* RequestBuilder.m */; };
 		6811614717A9D1A20029134B /* TripManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6811614617A9D1A20029134B /* TripManager.m */; };
@@ -157,6 +158,8 @@
 		2CDDEAAD1A683D1B004654D8 /* DestinationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationEntity.m; sourceTree = "<group>"; };
 		2CE95BA81A3110E100062423 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2CED64DA1AEA9D5700D98D7B /* intrepidApp 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "intrepidApp 3.xcdatamodel"; sourceTree = "<group>"; };
+		322F14781BA1D1D7000A73B1 /* PPNEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNEntity.h; sourceTree = "<group>"; };
+		322F14791BA1D1D7000A73B1 /* PPNEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNEntity.m; sourceTree = "<group>"; };
 		337237671A50F392003FF7C2 /* TripsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripsViewController.h; path = classes/TripsViewController.h; sourceTree = "<group>"; };
 		337237681A50F392003FF7C2 /* TripsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripsViewController.m; path = classes/TripsViewController.m; sourceTree = "<group>"; };
 		339118561A31626300450CB8 /* RequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestBuilder.h; sourceTree = "<group>"; };
@@ -340,6 +343,8 @@
 		6811614117A9D0890029134B /* Content Managing */ = {
 			isa = PBXGroup;
 			children = (
+				322F14781BA1D1D7000A73B1 /* PPNEntity.h */,
+				322F14791BA1D1D7000A73B1 /* PPNEntity.m */,
 				2CB19AB51A73169E007CEC79 /* AlertEntity.h */,
 				2CB19AB61A73169E007CEC79 /* AlertEntity.m */,
 				DC26B28C1A4FE60200E9A549 /* CurrencyEntity.h */,
@@ -695,6 +700,7 @@
 				2CB19AE61A754668007CEC79 /* SDWebImageDownloaderOperation.m in Sources */,
 				6811614717A9D1A20029134B /* TripManager.m in Sources */,
 				2CB19AE51A754668007CEC79 /* SDWebImageDownloader.m in Sources */,
+				322F147A1BA1D1D7000A73B1 /* PPNEntity.m in Sources */,
 				DC73F0931A622C180051898F /* ClinicsTableViewCell.m in Sources */,
 				339118581A31626300450CB8 /* RequestBuilder.m in Sources */,
 				B6DB0C4717AE2C5C001694B0 /* AssistanceViewController.m in Sources */,

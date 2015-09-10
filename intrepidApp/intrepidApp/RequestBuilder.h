@@ -12,6 +12,7 @@
 @interface RequestBuilder : NSObject
 
 + (void)fetchDestinations;
++ (void)fetchPPN;
 + (void)fetchTrip:(NSString *)trip;
 + (void)fetchEmbassy:(NSDictionary *)cityDict withCity:(CityEntity *)city;
 + (void)fetchCurrency:(NSDictionary *)cityDict withCity:(CityEntity *)city;

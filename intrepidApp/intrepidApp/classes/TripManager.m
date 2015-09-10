@@ -105,6 +105,24 @@ static TripManager *instance =nil;
     return embassies;
 }
 
+- (NSMutableArray *)getPPNList {
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:@"PPNEntity" inManagedObjectContext:managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+
+    NSError *error;
+    NSArray *intermediateArray = [managedObjectContext executeFetchRequest:request error:&error];
+    NSMutableArray *ppn = [NSMutableArray new];
+
+    for (PPNEntity *ppnItem in intermediateArray) {
+        [ppn addObject:ppnItem];
+    }
+    
+    return ppn;
+    
+}
+
 - (NSMutableArray *)getAlertItemsWithCity:(CityEntity *)city {
     NSEntityDescription *entityDescription = [NSEntityDescription
                                               entityForName:@"AlertEntity" inManagedObjectContext:managedObjectContext];
@@ -419,6 +437,34 @@ static TripManager *instance =nil;
     }
     
     return destination;
+}
+
+- (PPNEntity *)createPPNWithId:(NSString *)id withName:(NSString *)name withType:(NSString *)type withContent:(NSString *)content withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withPostal:(NSString *)postal withAddress:(NSString *)address withContact:(NSString *)contact withStaffName:(NSString *)staffname
+{
+    if (longitude == [NSNull null])
+        longitude = @"";
+    
+    if(latitude == [NSNull null])
+        latitude = @"";
+    
+    PPNEntity *ppn = [NSEntityDescription insertNewObjectForEntityForName:@"PPNEntity" inManagedObjectContext:managedObjectContext];
+    ppn.id = id;
+    ppn.name = name;
+    ppn.type = type;
+    ppn.content = content;
+    ppn.longitude = longitude;
+    ppn.latitude = latitude;
+    ppn.postal = postal;
+    ppn.address = address;
+    ppn.contact = contact;
+    ppn.staffName = staffname;
+    
+    NSError *error = nil;
+    if (![managedObjectContext save:&error]) {
+        NSLog(@"save failed");
+    }
+    
+    return ppn;
 }
 
 - (HealthEntity *)createHealthItemWithCity:(CityEntity *)city

@@ -12,6 +12,7 @@
 #import "CurrencyEntity.h"
 #import "DestinationEntity.h"
 #import "AlertEntity.h"
+#import "PPNEntity.h"
 
 @interface TripManager : NSObject
 
@@ -74,6 +75,19 @@
                              withCurrencyImage3x:(NSString *)currencyImage3x
                                 withCurrencyCode:(NSString *)currencyCode;
 
+- (PPNEntity *)createPPNWithId:(NSString *)id
+withName:(NSString *)name
+withType:(NSString *)type
+withContent:(NSString *)content
+withLongitude:(NSString *)longitude
+withLatitude:(NSString *)latitude
+withPostal:(NSString *)postal
+withAddress:(NSString *)address
+withContact:(NSString *)contact
+withStaffName:(NSString *)staffname;
+
+
+
 - (EmbassyEntity *)createEmbassyWithCity:(CityEntity *)city
                     withPhone:(NSString *)phone
                       withFax:(NSString *)fax
@@ -116,6 +130,7 @@
 - (NSMutableArray *)getHealthItemsWithCity:(CityEntity *)city;
 - (NSMutableArray *)getEmbassyItemsWithCity:(CityEntity *)city;
 - (NSMutableArray *)getAlertItemsWithCity:(CityEntity *)city;
+- (NSMutableArray *)getPPNList;
 - (CurrencyEntity *)getCurrencyItemWithCity:(CityEntity *)city;
 - (DestinationEntity *)getDestinationItemWithCurrencyCode:(NSString *)currencyCode;
 - (DestinationEntity *)getDestinationItemWithCountryName:(NSString *)countryName;

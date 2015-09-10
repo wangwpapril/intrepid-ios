@@ -51,4 +51,6 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define EMAIL_URL @"https://mandrillapp.com/api/1.0/messages/send.json"
 #define ACTIVATE_URL @"https://app.acetravelsmart.com/users/activate/"
 
+#define PPN_BASE_URL @"http://172.24.10.20/ppn_api/public/api/v1/"
+
 #endif

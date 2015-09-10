@@ -77,6 +77,35 @@
     }];
 }
 
++ (void)fetchPPN {
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@providers?by=city&q=d59cbeb2cc15f699373c4e79901d976b",PPN_BASE_URL]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
+    request.HTTPMethod = @"GET";
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (!error) {
+            NSDictionary *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            [[TripManager getInstance] deleteAllObjects:@"PPNEntity"];
+
+            for (NSDictionary *destinationDict in responseObject[@"providers"]) {
+                [[TripManager getInstance] createPPNWithId:destinationDict[@"id"] withName:destinationDict[@"facility"][@"name"] withType:destinationDict[@"facility"][@"type"][@"name"] withContent:@"" withLongitude:destinationDict[@"facility"][@"location"][@"long"] withLatitude:destinationDict[@"facility"][@"location"][@"lat"]  withPostal:destinationDict[@"facility"][@"postal"] withAddress:destinationDict[@"facility"][@"street1"] withContact:destinationDict[@"facility"][@"contact"][@"phone"] withStaffName:destinationDict[@"staff"][@"name"]];
+            }
+
+            
+        } else {
+            NSLog(@"error: %@", error.localizedDescription);
+            
+        }
+        
+        NSArray *ppnList = [[TripManager getInstance] getPPNList];
+        
+        PPNEntity *ppn = ppnList[0];
+        NSString * name = [ppn name];
+        NSString *address = [ppn address];
+    }];
+}
+
 + (void)fetchTrip:(NSString *)trip {
     NSDictionary *userDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDict"];
     NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@destinations/%@?token=%@", BASE_URL, trip, userDict[@"user"][@"token"]]];
