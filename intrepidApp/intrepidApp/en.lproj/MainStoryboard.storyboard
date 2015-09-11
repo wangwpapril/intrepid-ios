@@ -487,13 +487,17 @@
         <!--Navigation Controller-->
         <scene sceneID="11">
             <objects>
-                <navigationController id="3" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="3" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="R9e-cP-iQo">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </toolbar>
                     <connections>
                         <segue destination="lgv-mR-8mz" kind="relationship" relationship="rootViewController" id="v1z-mz-lP0"/>
                     </connections>
@@ -675,7 +679,7 @@
                         <viewControllerLayoutGuide type="bottom" id="t4G-ws-d4W"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3aR-rE-vjK">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRT-7s-zaX">
@@ -685,7 +689,7 @@
                                 </connections>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="mrJ-PO-tXy">
-                                <rect key="frame" x="0.0" y="521" width="320" height="37"/>
+                                <rect key="frame" x="0.0" y="521" width="320" height="0.0"/>
                                 <color key="pageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </pageControl>
@@ -1148,7 +1152,7 @@
                         <viewControllerLayoutGuide type="top" id="jtk-Kv-B42"/>
                         <viewControllerLayoutGuide type="bottom" id="IoE-ju-l9d"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ngB-jo-TIY">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="ngB-jo-TIY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1372,9 +1376,9 @@
         <image name="rounded-rectangle-" width="184" height="33"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7CT-6H-1PF"/>
-        <segue reference="LRU-oV-ELh"/>
         <segue reference="bKL-ez-3Gv"/>
+        <segue reference="LRU-oV-ELh"/>
+        <segue reference="v1z-mz-lP0"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

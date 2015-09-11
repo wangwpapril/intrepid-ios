@@ -89,10 +89,17 @@
 {
     [super viewDidLoad];
     
+    self.navigationController.navigationBarHidden = false;
     // create a custom navigation bar button and set it to always says "Back"
-	UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
+/*	UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
 	temporaryBarButtonItem.title = @"Back";
-	self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
+	self.navigationItem.backBarButtonItem = temporaryBarButtonItem;*/
+    
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back " style:UIBarButtonItemStylePlain target:nil action:nil];
+
+//    self.view.tag = 0;
+    self.navigationItem.title = @"PPN Map";
+
     
     // create out annotations array (in this example only 3)
     self.mapAnnotations = [[NSMutableArray alloc] initWithCapacity:2];
