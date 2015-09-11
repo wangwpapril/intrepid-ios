@@ -40,6 +40,12 @@
 		2CDDEAAE1A683D1B004654D8 /* DestinationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDEAAD1A683D1B004654D8 /* DestinationEntity.m */; };
 		2CE95BA91A3110E100062423 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE95BA81A3110E100062423 /* CoreLocation.framework */; };
 		322F147A1BA1D1D7000A73B1 /* PPNEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 322F14791BA1D1D7000A73B1 /* PPNEntity.m */; };
+		322F148A1BA320F6000A73B1 /* BridgeAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 322F147D1BA320F5000A73B1 /* BridgeAnnotation.m */; };
+		322F148C1BA320F6000A73B1 /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 322F14811BA320F6000A73B1 /* CustomAnnotation.m */; };
+		322F148D1BA320F6000A73B1 /* CustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 322F14831BA320F6000A73B1 /* CustomAnnotationView.m */; };
+		322F148E1BA320F6000A73B1 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 322F14851BA320F6000A73B1 /* DetailViewController.m */; };
+		322F148F1BA320F6000A73B1 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 322F14871BA320F6000A73B1 /* MapViewController.m */; };
+		322F14901BA320F6000A73B1 /* SFAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 322F14891BA320F6000A73B1 /* SFAnnotation.m */; };
 		337237691A50F392003FF7C2 /* TripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 337237681A50F392003FF7C2 /* TripsViewController.m */; };
 		339118581A31626300450CB8 /* RequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 339118571A31626300450CB8 /* RequestBuilder.m */; };
 		6811614717A9D1A20029134B /* TripManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6811614617A9D1A20029134B /* TripManager.m */; };
@@ -160,6 +166,18 @@
 		2CED64DA1AEA9D5700D98D7B /* intrepidApp 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "intrepidApp 3.xcdatamodel"; sourceTree = "<group>"; };
 		322F14781BA1D1D7000A73B1 /* PPNEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNEntity.h; sourceTree = "<group>"; };
 		322F14791BA1D1D7000A73B1 /* PPNEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNEntity.m; sourceTree = "<group>"; };
+		322F147C1BA320F5000A73B1 /* BridgeAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BridgeAnnotation.h; path = PPN/BridgeAnnotation.h; sourceTree = "<group>"; };
+		322F147D1BA320F5000A73B1 /* BridgeAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BridgeAnnotation.m; path = PPN/BridgeAnnotation.m; sourceTree = "<group>"; };
+		322F14801BA320F5000A73B1 /* CustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomAnnotation.h; path = PPN/CustomAnnotation.h; sourceTree = "<group>"; };
+		322F14811BA320F6000A73B1 /* CustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomAnnotation.m; path = PPN/CustomAnnotation.m; sourceTree = "<group>"; };
+		322F14821BA320F6000A73B1 /* CustomAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomAnnotationView.h; path = PPN/CustomAnnotationView.h; sourceTree = "<group>"; };
+		322F14831BA320F6000A73B1 /* CustomAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomAnnotationView.m; path = PPN/CustomAnnotationView.m; sourceTree = "<group>"; };
+		322F14841BA320F6000A73B1 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = PPN/DetailViewController.h; sourceTree = "<group>"; };
+		322F14851BA320F6000A73B1 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = PPN/DetailViewController.m; sourceTree = "<group>"; };
+		322F14861BA320F6000A73B1 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = PPN/MapViewController.h; sourceTree = "<group>"; };
+		322F14871BA320F6000A73B1 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = PPN/MapViewController.m; sourceTree = "<group>"; };
+		322F14881BA320F6000A73B1 /* SFAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFAnnotation.h; path = PPN/SFAnnotation.h; sourceTree = "<group>"; };
+		322F14891BA320F6000A73B1 /* SFAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFAnnotation.m; path = PPN/SFAnnotation.m; sourceTree = "<group>"; };
 		337237671A50F392003FF7C2 /* TripsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripsViewController.h; path = classes/TripsViewController.h; sourceTree = "<group>"; };
 		337237681A50F392003FF7C2 /* TripsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripsViewController.m; path = classes/TripsViewController.m; sourceTree = "<group>"; };
 		339118561A31626300450CB8 /* RequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestBuilder.h; sourceTree = "<group>"; };
@@ -331,6 +349,25 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		322F147B1BA320D2000A73B1 /* PPN */ = {
+			isa = PBXGroup;
+			children = (
+				322F147C1BA320F5000A73B1 /* BridgeAnnotation.h */,
+				322F147D1BA320F5000A73B1 /* BridgeAnnotation.m */,
+				322F14801BA320F5000A73B1 /* CustomAnnotation.h */,
+				322F14811BA320F6000A73B1 /* CustomAnnotation.m */,
+				322F14821BA320F6000A73B1 /* CustomAnnotationView.h */,
+				322F14831BA320F6000A73B1 /* CustomAnnotationView.m */,
+				322F14841BA320F6000A73B1 /* DetailViewController.h */,
+				322F14851BA320F6000A73B1 /* DetailViewController.m */,
+				322F14861BA320F6000A73B1 /* MapViewController.h */,
+				322F14871BA320F6000A73B1 /* MapViewController.m */,
+				322F14881BA320F6000A73B1 /* SFAnnotation.h */,
+				322F14891BA320F6000A73B1 /* SFAnnotation.m */,
+			);
+			name = PPN;
+			sourceTree = "<group>";
+		};
 		339118551A31623D00450CB8 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -447,6 +484,7 @@
 		6851221A17861138008DB6B6 /* intrepidApp */ = {
 			isa = PBXGroup;
 			children = (
+				322F147B1BA320D2000A73B1 /* PPN */,
 				6851222317861138008DB6B6 /* AppDelegate.h */,
 				6851222417861138008DB6B6 /* AppDelegate.m */,
 				339118551A31623D00450CB8 /* Networking */,
@@ -657,11 +695,13 @@
 				6851223F17861152008DB6B6 /* HealthViewController.m in Sources */,
 				688F9E661786295100CF850C /* HealthCell.m in Sources */,
 				2CB19ABD1A731FC4007CEC79 /* AlertCell.m in Sources */,
+				322F14901BA320F6000A73B1 /* SFAnnotation.m in Sources */,
 				6835EC161789439600A57F86 /* MenuController.m in Sources */,
 				7ECD0427178BD7C500D6C34B /* HealthViewDetailController.m in Sources */,
 				2CDDEAAE1A683D1B004654D8 /* DestinationEntity.m in Sources */,
 				2CB19AE91A754668007CEC79 /* UIButton+WebCache.m in Sources */,
 				DCFB6F3F1A5F218E00375B7D /* ClinicsViewController.m in Sources */,
+				322F148F1BA320F6000A73B1 /* MapViewController.m in Sources */,
 				2CB19AE11A754668007CEC79 /* NSData+ImageContentType.m in Sources */,
 				2CB19AE41A754668007CEC79 /* SDWebImageDecoder.m in Sources */,
 				DC85087D1A3E5FDF00C3173B /* HealthEntity.m in Sources */,
@@ -671,16 +711,19 @@
 				684BB605179F5143004C44C9 /* OverViewViewController.m in Sources */,
 				2C52E6941A814F7800A6238D /* AceWebViewController.m in Sources */,
 				2CB19AE71A754668007CEC79 /* SDWebImageManager.m in Sources */,
+				322F148E1BA320F6000A73B1 /* DetailViewController.m in Sources */,
 				2CB19AB71A73169E007CEC79 /* AlertEntity.m in Sources */,
 				2CB19AE01A754668007CEC79 /* MKAnnotationView+WebCache.m in Sources */,
 				DC26B28E1A4FE60200E9A549 /* CurrencyEntity.m in Sources */,
 				2CB19AE31A754668007CEC79 /* SDWebImageCompat.m in Sources */,
 				2CB19AE21A754668007CEC79 /* SDImageCache.m in Sources */,
 				684BB609179F539C004C44C9 /* SlidingTextView.m in Sources */,
+				322F148D1BA320F6000A73B1 /* CustomAnnotationView.m in Sources */,
 				2CB19AE81A754668007CEC79 /* SDWebImagePrefetcher.m in Sources */,
 				2CB19AED1A754668007CEC79 /* UIImageView+HighlightedWebCache.m in Sources */,
 				2CB19AB41A730B42007CEC79 /* AlertsViewController.m in Sources */,
 				2CB19AEE1A754668007CEC79 /* UIImageView+WebCache.m in Sources */,
+				322F148A1BA320F6000A73B1 /* BridgeAnnotation.m in Sources */,
 				68B997E517A2058A00AD62ED /* WebViewController.m in Sources */,
 				68B071E917A4D3FC0061E418 /* SecurityViewController.m in Sources */,
 				68B071EC17A4D7290061E418 /* EmbassyCell.m in Sources */,
@@ -699,6 +742,7 @@
 				E058778417A8768500E42A78 /* EmbassyDetailedViewController.m in Sources */,
 				2CB19AE61A754668007CEC79 /* SDWebImageDownloaderOperation.m in Sources */,
 				6811614717A9D1A20029134B /* TripManager.m in Sources */,
+				322F148C1BA320F6000A73B1 /* CustomAnnotation.m in Sources */,
 				2CB19AE51A754668007CEC79 /* SDWebImageDownloader.m in Sources */,
 				322F147A1BA1D1D7000A73B1 /* PPNEntity.m in Sources */,
 				DC73F0931A622C180051898F /* ClinicsTableViewCell.m in Sources */,

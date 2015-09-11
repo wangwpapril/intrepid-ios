@@ -163,7 +163,7 @@
 
 - (void)toTrips {
     [RequestBuilder fetchPPN];
-    UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"trips"];
+    UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

@@ -1279,8 +1279,91 @@
             </objects>
             <point key="canvasLocation" x="4430.625" y="869.36619718309851"/>
         </scene>
+        <!--MapViewController-->
+        <scene sceneID="TnJ-tn-eCk">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gNp-bC-uZF" userLabel="MapViewController" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uwy-xS-ufG"/>
+                        <viewControllerLayoutGuide type="bottom" id="FSJ-dX-ffl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0oU-Fb-DBA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4Sk-6E-GyA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gNp-bC-uZF" id="djN-8B-jvF"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4Sk-6E-GyA" firstAttribute="leading" secondItem="0oU-Fb-DBA" secondAttribute="leading" id="8xt-fn-5Yg"/>
+                            <constraint firstItem="4Sk-6E-GyA" firstAttribute="top" secondItem="0oU-Fb-DBA" secondAttribute="top" id="Cdv-Zh-kgB"/>
+                            <constraint firstAttribute="trailing" secondItem="4Sk-6E-GyA" secondAttribute="trailing" id="teE-Za-s2H"/>
+                            <constraint firstAttribute="bottom" secondItem="4Sk-6E-GyA" secondAttribute="bottom" id="wOI-Gh-gca"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="City" id="q4H-rj-3f7" userLabel="CityButton">
+                            <connections>
+                                <action selector="cityAction:" destination="gNp-bC-uZF" id="AFo-wB-CHU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Bridge" id="njC-MY-bAx" userLabel="BridgeButton">
+                            <connections>
+                                <action selector="bridgeAction:" destination="gNp-bC-uZF" id="hwM-Gd-axn"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Garden" id="xP3-5D-0xn">
+                            <connections>
+                                <action selector="teaGardenAction:" destination="gNp-bC-uZF" id="TGF-RH-AZv"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="jbB-LG-omb"/>
+                        <barButtonItem title="All" id="fxO-MT-T23" userLabel="AllButton">
+                            <connections>
+                                <action selector="allAction:" destination="gNp-bC-uZF" id="jSg-Oa-MNo"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="MapCallouts" id="YK5-xc-PCY"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="mapView" destination="4Sk-6E-GyA" id="v3a-wf-RdB"/>
+                        <outlet property="view" destination="0oU-Fb-DBA" id="XNk-Wo-c1C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wIr-jU-vON" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1105" y="647"/>
+        </scene>
+        <!--DetailViewController-->
+        <scene sceneID="547-bH-sbd">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qb7-ZA-wAQ" userLabel="DetailViewController" customClass="DetailViewController" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="kqR-Yl-8cc"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="view" destination="qpc-g6-ZhJ" id="znO-k6-W1m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ibn-TY-nBX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoldenGate.png" id="qpc-g6-ZhJ">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+            </objects>
+            <point key="canvasLocation" x="776" y="91"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="GoldenGate.png" width="320" height="549"/>
         <image name="ace_button" width="184" height="33"/>
         <image name="ace_logo_dark" width="200" height="66"/>
         <image name="close" width="12" height="11"/>
