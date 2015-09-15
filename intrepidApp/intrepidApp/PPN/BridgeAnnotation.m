@@ -53,21 +53,22 @@
 - (CLLocationCoordinate2D)coordinate
 {
     CLLocationCoordinate2D theCoordinate;
-    theCoordinate.latitude = 37.810000;
-    theCoordinate.longitude = -122.477450;
-    return theCoordinate; 
+    theCoordinate.latitude = [[_ppn latitude] doubleValue];
+    theCoordinate.longitude = [[_ppn longitude] doubleValue];
+    return theCoordinate;
 }
 
 // required if you set the MKPinAnnotationView's "canShowCallout" property to YES
 - (NSString *)title
 {
-    return @"Golden Gate Bridge";
+    NSString *title = [_ppn type];
+    return [_ppn type];
 }
 
 // optional
 - (NSString *)subtitle
 {
-    return @"Opened: May 27, 1937";
+    return [_ppn name];
 }
 
 + (MKAnnotationView *)createViewAnnotationForMapView:(MKMapView *)mapView annotation:(id <MKAnnotation>)annotation

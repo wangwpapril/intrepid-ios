@@ -47,8 +47,10 @@
  */
 
 #import <MapKit/MapKit.h>
+#import "PPNEntity.h"
 
 @interface BridgeAnnotation : NSObject <MKAnnotation>
+@property (nonatomic,readwrite) PPNEntity *ppn;
 
 + (MKAnnotationView *)createViewAnnotationForMapView:(MKMapView *)mapView annotation:(id <MKAnnotation>)annotation;
 

@@ -497,6 +497,7 @@
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="R9e-cP-iQo">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </toolbar>
                     <connections>
                         <segue destination="lgv-mR-8mz" kind="relationship" relationship="rootViewController" id="v1z-mz-lP0"/>
@@ -1311,19 +1312,14 @@
                         </constraints>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="City" id="q4H-rj-3f7" userLabel="CityButton">
+                        <barButtonItem title="Hosptial" id="q4H-rj-3f7" userLabel="CityButton">
                             <connections>
                                 <action selector="cityAction:" destination="gNp-bC-uZF" id="AFo-wB-CHU"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem title="Bridge" id="njC-MY-bAx" userLabel="BridgeButton">
+                        <barButtonItem title="SpecialHospital" id="njC-MY-bAx" userLabel="BridgeButton">
                             <connections>
                                 <action selector="bridgeAction:" destination="gNp-bC-uZF" id="hwM-Gd-axn"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem title="Garden" id="xP3-5D-0xn">
-                            <connections>
-                                <action selector="teaGardenAction:" destination="gNp-bC-uZF" id="TGF-RH-AZv"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="jbB-LG-omb"/>
@@ -1334,6 +1330,7 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="MapCallouts" id="YK5-xc-PCY"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>

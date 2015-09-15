@@ -52,11 +52,13 @@
 #import "BridgeAnnotation.h"        // annotation for the Golden Gate bridge
 #import "CustomAnnotation.h"        // annotation for the Tea Garden
 
+#import "TripManager.h"
 @interface MapViewController () <MKMapViewDelegate>
 
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) NSMutableArray *mapAnnotations;
 @property (nonatomic, strong) UIPopoverController *bridgePopoverController;
+@property (nonatomic, strong) NSArray *ppnList;
 
 @end
 
@@ -69,12 +71,60 @@
 {
     // start off by default in San Francisco
     MKCoordinateRegion newRegion;
-    newRegion.center.latitude = 37.786996;
-    newRegion.center.longitude = -122.440100;
-    newRegion.span.latitudeDelta = 0.112872;
-    newRegion.span.longitudeDelta = 0.109863;
+//    newRegion.center.latitude = [[_ppnList[0] latitude] doubleValue];
+  //  newRegion.center.longitude = [[_ppnList[0] longitude] doubleValue];
+/*    newRegion.center.latitude = 29.345500;
+    newRegion.center.longitude = -98.566600;
+    newRegion.span.latitudeDelta = 0.2;
+    newRegion.span.longitudeDelta = 0.2;
 
-    [self.mapView setRegion:newRegion animated:YES];
+    [self.mapView setRegion:newRegion animated:YES];*/
+    
+    MKMapRect zoomRect = MKMapRectNull;
+    for (id <MKAnnotation> annotation in self.mapView.annotations)
+    {
+        MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
+        NSLog(@"Coord_def: %f %f",annotation.coordinate.latitude,annotation.coordinate.longitude);
+        MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0.1, 0.1);
+        zoomRect = MKMapRectUnion(zoomRect, pointRect);
+    }
+    [self.mapView setVisibleMapRect:zoomRect animated:YES];
+    
+//    [self zoomToFitMapAnnotations:self.mapView];
+//      [self.mapView showAnnotations:self.mapAnnotations animated:YES];
+    
+}
+
+-(void)zoomToFitMapAnnotations:(MKMapView*)aMapView
+{
+    if([aMapView.annotations count] == 0)
+        return;
+    
+    CLLocationCoordinate2D topLeftCoord;
+    topLeftCoord.latitude = -90;
+    topLeftCoord.longitude = 180;
+    
+    CLLocationCoordinate2D bottomRightCoord;
+    bottomRightCoord.latitude = 90;
+    bottomRightCoord.longitude = -180;
+    
+    for(BridgeAnnotation *annotation in self.mapView.annotations)
+    {
+        topLeftCoord.longitude = fmin(topLeftCoord.longitude, annotation.coordinate.longitude);
+        topLeftCoord.latitude = fmax(topLeftCoord.latitude, annotation.coordinate.latitude);
+        
+        bottomRightCoord.longitude = fmax(bottomRightCoord.longitude, annotation.coordinate.longitude);
+        bottomRightCoord.latitude = fmin(bottomRightCoord.latitude, annotation.coordinate.latitude);
+    }
+    
+    MKCoordinateRegion region;
+    region.center.latitude = topLeftCoord.latitude - (topLeftCoord.latitude - bottomRightCoord.latitude) * 0.5;
+    region.center.longitude = topLeftCoord.longitude + (bottomRightCoord.longitude - topLeftCoord.longitude) * 0.5;
+    region.span.latitudeDelta = fabs(topLeftCoord.latitude - bottomRightCoord.latitude) * 1.1; // Add a little extra space on the sides
+    region.span.longitudeDelta = fabs(bottomRightCoord.longitude - topLeftCoord.longitude) * 1.1; // Add a little extra space on the sides
+    
+    region = [aMapView regionThatFits:region];
+    [self.mapView setRegion:region animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -89,6 +139,9 @@
 {
     [super viewDidLoad];
     
+ //   self.mapView.showsUserLocation = YES;
+//    mapView.userTrackingMode = MKUserTrackingModeFollow;
+
     self.navigationController.navigationBarHidden = false;
     // create a custom navigation bar button and set it to always says "Back"
 /*	UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
@@ -100,26 +153,48 @@
 //    self.view.tag = 0;
     self.navigationItem.title = @"PPN Map";
 
+    _ppnList = [[TripManager getInstance] getPPNList];
+    
+    int len = [_ppnList count];
+
+    for (int i=0; i<len; i++) {
+        NSLog(@"Coord_did: %@ %@",[[_ppnList objectAtIndex:i] longitude], [[_ppnList objectAtIndex:i] latitude]);
+    }
     
     // create out annotations array (in this example only 3)
-    self.mapAnnotations = [[NSMutableArray alloc] initWithCapacity:2];
+    self.mapAnnotations = [[NSMutableArray alloc] initWithCapacity:len];
     
     // annotation for the City of San Francisco
-    SFAnnotation *sfAnnotation = [[SFAnnotation alloc] init];
-    [self.mapAnnotations addObject:sfAnnotation];
+//    SFAnnotation *sfAnnotation = [[SFAnnotation alloc] init];
+//    [self.mapAnnotations addObject:sfAnnotation];
     
     // annotation for Golden Gate Bridge
-    BridgeAnnotation *bridgeAnnotation = [[BridgeAnnotation alloc] init];
-    [self.mapAnnotations addObject:bridgeAnnotation];
+    for (PPNEntity *ppn in _ppnList) {
+
+        BridgeAnnotation *bridgeAnnotation = [[BridgeAnnotation alloc] init];
+        bridgeAnnotation.ppn = ppn;
+        [self.mapAnnotations addObject:bridgeAnnotation];
+
+    }
+    
+/*    for (int i=0;i<25 ; i++) {
+        BridgeAnnotation *bridgeAnnotation = [[BridgeAnnotation alloc] init];
+        bridgeAnnotation.ppn = [_ppnList objectAtIndex:i];
+        [self.mapAnnotations addObject:bridgeAnnotation];
+    }*/
+ /*   BridgeAnnotation *bridgeAnnotation = [[BridgeAnnotation alloc] init];
+    bridgeAnnotation.ppn = _ppnList[0];
+    [self.mapAnnotations addObject:bridgeAnnotation];*/
     
     // annotation for Japanese Tea Garden
-    CustomAnnotation *item = [[CustomAnnotation alloc] init];
+/*    CustomAnnotation *item = [[CustomAnnotation alloc] init];
     item.place = @"Tea Garden";
     item.imageName = @"teagarden";
     item.coordinate = CLLocationCoordinate2DMake(37.770, -122.4709);
     
-    [self.mapAnnotations addObject:item];
-
+    [self.mapAnnotations addObject:item];*/
+    
+ //   [self.mapView showAnnotations:self.mapAnnotations animated:YES];
     [self allAction:self];  // initially show all annotations
 }
 
@@ -143,9 +218,20 @@
     }
 }
 
+- (void)gotoByType:(NSString*) typeString
+{
+    for (id annotation in self.mapAnnotations) {
+        if([[annotation title] compare:typeString])
+        {
+            
+        }
+    }
+}
+
 - (IBAction)cityAction:(id)sender
 {
-    [self gotoByAnnotationClass:[SFAnnotation class]];
+//    [self gotoByAnnotationClass:[SFAnnotation class]];
+    [self gotoByType:@"Hospital"];
 }
 
 - (IBAction)bridgeAction:(id)sender
@@ -159,6 +245,7 @@
     // user tapped "Tea Gardon" button in the bottom toolbar
     [self gotoByAnnotationClass:[CustomAnnotation class]];
 }
+
 
 - (IBAction)allAction:(id)sender
 {
@@ -250,5 +337,6 @@
     
     return returnedAnnotationView;
 }
+
 
 @end
