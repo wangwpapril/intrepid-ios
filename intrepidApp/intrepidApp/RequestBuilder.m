@@ -98,11 +98,12 @@
             
         }
         
-        NSArray *ppnList = [[TripManager getInstance] getPPNList];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"PPN_UPDATE" object:nil];
+/*        NSArray *ppnList = [[TripManager getInstance] getPPNList];
         
         PPNEntity *ppn = ppnList[0];
         NSString * name = [ppn name];
-        NSString *address = [ppn address];
+        NSString *address = [ppn address];*/
     }];
 }
 

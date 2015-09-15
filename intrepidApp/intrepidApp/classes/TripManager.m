@@ -116,6 +116,20 @@ static TripManager *instance =nil;
     NSMutableArray *ppn = [NSMutableArray new];
 
     for (PPNEntity *ppnItem in intermediateArray) {
+        
+        BOOL repeat = FALSE;
+        for (PPNEntity *ba in ppn) {
+//            NSLog(@"Coord: %f %f", ba.ppn.longitude, ppn.longitude);
+            
+            if(([ba.longitude compare:ppnItem.longitude]==0 && [ba.latitude compare:ppnItem.latitude]==0)) {
+                repeat = TRUE;
+                break;
+            }
+            
+            
+        }
+        if(repeat == FALSE) 
+
         [ppn addObject:ppnItem];
     }
     
@@ -442,10 +456,10 @@ static TripManager *instance =nil;
 - (PPNEntity *)createPPNWithId:(NSString *)id withName:(NSString *)name withType:(NSString *)type withContent:(NSString *)content withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withPostal:(NSString *)postal withAddress:(NSString *)address withContact:(NSString *)contact withStaffName:(NSString *)staffname
 {
     if (longitude == [NSNull null])
-        longitude = @"";
+        return NULL;
     
     if(latitude == [NSNull null])
-        latitude = @"";
+        return NULL;
     
     PPNEntity *ppn = [NSEntityDescription insertNewObjectForEntityForName:@"PPNEntity" inManagedObjectContext:managedObjectContext];
     ppn.id = id;
