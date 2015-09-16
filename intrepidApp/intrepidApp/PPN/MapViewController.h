@@ -47,7 +47,13 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "MapViewAnnotation.h"
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController<MKMapViewDelegate>{
+    IBOutlet MKMapView * mapView;
+    NSMutableArray *arrayLocation;
+    NSArray *ppnList;
+
+}
 
 @end

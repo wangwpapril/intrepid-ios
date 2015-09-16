@@ -46,6 +46,7 @@
 		322F148E1BA320F6000A73B1 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 322F14851BA320F6000A73B1 /* DetailViewController.m */; };
 		322F148F1BA320F6000A73B1 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 322F14871BA320F6000A73B1 /* MapViewController.m */; };
 		322F14901BA320F6000A73B1 /* SFAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 322F14891BA320F6000A73B1 /* SFAnnotation.m */; };
+		322F14931BA8A2B9000A73B1 /* MapViewAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 322F14921BA8A2B9000A73B1 /* MapViewAnnotation.m */; };
 		337237691A50F392003FF7C2 /* TripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 337237681A50F392003FF7C2 /* TripsViewController.m */; };
 		339118581A31626300450CB8 /* RequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 339118571A31626300450CB8 /* RequestBuilder.m */; };
 		6811614717A9D1A20029134B /* TripManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6811614617A9D1A20029134B /* TripManager.m */; };
@@ -178,6 +179,8 @@
 		322F14871BA320F6000A73B1 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = PPN/MapViewController.m; sourceTree = "<group>"; };
 		322F14881BA320F6000A73B1 /* SFAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFAnnotation.h; path = PPN/SFAnnotation.h; sourceTree = "<group>"; };
 		322F14891BA320F6000A73B1 /* SFAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFAnnotation.m; path = PPN/SFAnnotation.m; sourceTree = "<group>"; };
+		322F14911BA8A230000A73B1 /* MapViewAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewAnnotation.h; sourceTree = "<group>"; };
+		322F14921BA8A2B9000A73B1 /* MapViewAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewAnnotation.m; sourceTree = "<group>"; };
 		337237671A50F392003FF7C2 /* TripsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripsViewController.h; path = classes/TripsViewController.h; sourceTree = "<group>"; };
 		337237681A50F392003FF7C2 /* TripsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripsViewController.m; path = classes/TripsViewController.m; sourceTree = "<group>"; };
 		339118561A31626300450CB8 /* RequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestBuilder.h; sourceTree = "<group>"; };
@@ -364,6 +367,8 @@
 				322F14871BA320F6000A73B1 /* MapViewController.m */,
 				322F14881BA320F6000A73B1 /* SFAnnotation.h */,
 				322F14891BA320F6000A73B1 /* SFAnnotation.m */,
+				322F14911BA8A230000A73B1 /* MapViewAnnotation.h */,
+				322F14921BA8A2B9000A73B1 /* MapViewAnnotation.m */,
 			);
 			name = PPN;
 			sourceTree = "<group>";
@@ -733,6 +738,7 @@
 				685B6F6217A617C20003B5D9 /* TripItem.m in Sources */,
 				2CB19AEB1A754668007CEC79 /* UIImage+MultiFormat.m in Sources */,
 				2CB19AEA1A754668007CEC79 /* UIImage+GIF.m in Sources */,
+				322F14931BA8A2B9000A73B1 /* MapViewAnnotation.m in Sources */,
 				2C52E6911A812E1800A6238D /* AceViewController.m in Sources */,
 				7EA293B817A77161000A56E9 /* LearnMoreViewController.m in Sources */,
 				337237691A50F392003FF7C2 /* TripsViewController.m in Sources */,

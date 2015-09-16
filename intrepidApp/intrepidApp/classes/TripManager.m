@@ -128,7 +128,7 @@ static TripManager *instance =nil;
             
             
         }
-        if(repeat == FALSE) 
+ //       if(repeat == FALSE)
 
         [ppn addObject:ppnItem];
     }
