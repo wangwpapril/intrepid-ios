@@ -133,21 +133,12 @@
     [super viewDidLoad];
     
     self.navigationController.navigationBarHidden = false;
-    // create a custom navigation bar button and set it to always says "Back"
-    /*	UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
-     temporaryBarButtonItem.title = @"Back";
-     self.navigationItem.backBarButtonItem = temporaryBarButtonItem;*/
-    
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back " style:UIBarButtonItemStylePlain target:nil action:nil];
-    
-    //    self.view.tag = 0;
     self.navigationItem.title = @"PPN Map";
     
     ppnList = [[TripManager getInstance] getPPNList];
 
-    
     arrayLocation = [[NSMutableArray alloc]init];
-    NSMutableArray *arrAnnotations  = [[NSMutableArray alloc]init];
     
     for (PPNEntity *pe in ppnList) {
     
@@ -159,18 +150,9 @@
         dict = nil;
     }
     
+    [self allAction:self];
     
-    for(int i=0;i<[arrayLocation count];i++)
-    {
-        CLLocationCoordinate2D location;
-        location.latitude = [[[arrayLocation objectAtIndex:i] objectForKey:@"latitude"] doubleValue];
-        location.longitude = [[[arrayLocation objectAtIndex:i] objectForKey:@"longitude"] doubleValue];
-        
-        MapViewAnnotation *newAnnotation = [[MapViewAnnotation alloc] initWithTitle:[[arrayLocation objectAtIndex:i] objectForKey:@"title"] Coordinate:location andIndex:i];
-        [arrAnnotations addObject:newAnnotation];
-    }
-    [mapView addAnnotations:arrAnnotations];
-    mapView.region = [MapViewAnnotation regionForAnnotations:arrAnnotations];  }
+}
 
 
 #pragma mark - Button Actions
