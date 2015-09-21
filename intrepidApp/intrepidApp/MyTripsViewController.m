@@ -29,6 +29,8 @@
     pageControlBeingUsed = NO;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
     
+    self.navigationController.toolbarHidden = TRUE;
+    
     //set background
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"login-background"] drawInRect:self.view.bounds];
@@ -163,7 +165,8 @@
 
 - (void)toTrips {
     [RequestBuilder fetchPPN];
-    UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
+//    UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
+    UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"trips"];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

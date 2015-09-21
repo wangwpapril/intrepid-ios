@@ -185,7 +185,7 @@ static MenuController *instance =nil;
             break;
             
         case 4:
-            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"webView"];
+            viewController = [parentController.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
             break;
 
         case 5:
@@ -208,12 +208,12 @@ static MenuController *instance =nil;
             break;
     }
     if (parentController.view.tag != button.tag) {
-        if (button.tag == 4) {
+/*        if (button.tag == 4) {
             [self getLocation];
             [((WebViewController *)viewController) setupWithTitle:@"Weather" withURL:[NSString stringWithFormat:@"https://m.intrepid247.com/weather.html%@", self.location]];
             viewController.view.tag = 4;
             [[SEGAnalytics sharedAnalytics] screen:@"Weather"];
-        }
+        }*/
         [parentController.navigationController pushViewController:viewController animated:YES];
     }
     else {

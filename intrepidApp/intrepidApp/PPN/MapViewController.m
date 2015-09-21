@@ -135,6 +135,7 @@
     self.navigationController.navigationBarHidden = false;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back " style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.title = @"PPN Map";
+    self.navigationController.toolbarHidden = FALSE;
     
     ppnList = [[TripManager getInstance] getPPNList];
 
@@ -154,6 +155,9 @@
     
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    self.navigationController.toolbarHidden = TRUE;
+}
 
 #pragma mark - Button Actions
 
