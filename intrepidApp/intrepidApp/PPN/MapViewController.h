@@ -50,6 +50,7 @@
 #import "MapViewAnnotation.h"
 
 @interface MapViewController : UIViewController<MKMapViewDelegate>{
+    UIScrollView *scrollView;
     IBOutlet MKMapView * mapView;
     NSMutableArray *arrayLocation;
     NSArray *ppnList;

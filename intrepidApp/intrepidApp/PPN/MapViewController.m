@@ -137,6 +137,22 @@
     self.navigationItem.title = @"PPN Map";
     self.navigationController.toolbarHidden = FALSE;
     
+    
+    CGRect rect=CGRectMake(0, 0, 320, self.view.frame.size.height);
+    scrollView = [[UIScrollView alloc] initWithFrame:rect];
+    scrollView.showsVerticalScrollIndicator = YES;
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.scrollEnabled = YES;
+    
+//    [self addContent];
+    mapView.delegate = self;
+    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height)];
+//    mapView.delegate = self;
+    [scrollView addSubview:mapView];
+
+    [self.view addSubview:scrollView];
+
+    
     ppnList = [[TripManager getInstance] getPPNList];
 
     arrayLocation = [[NSMutableArray alloc]init];
@@ -183,6 +199,9 @@
     NSMutableArray *arrAnnotations  = [[NSMutableArray alloc]init];
     
     [mapView removeAnnotations:mapView.annotations];
+//    [scrollView re:mapView];
+    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 300)];
+    [scrollView addSubview:mapView];
 
     for(int i=0;i<[arrayLocation count];i++)
     {
@@ -246,7 +265,11 @@
         MapViewAnnotation *newAnnotation = [[MapViewAnnotation alloc] initWithTitle:[[arrayLocation objectAtIndex:i] objectForKey:@"title"] Coordinate:location andIndex:i];
         [arrAnnotations addObject:newAnnotation];
     }
-    [mapView addAnnotations:arrAnnotations];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [mapView addAnnotations:arrAnnotations];
+    });
+//    [mapView addAnnotations:arrAnnotations];
     mapView.region = [MapViewAnnotation regionForAnnotations:arrAnnotations];
 }
 
@@ -258,8 +281,12 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     // here we illustrate how to detect which annotation type was clicked on for its callout
+    NSLog(@"clicked Golden Gate Bridge annotation");
 /*    id <MKAnnotation> annotation = [view annotation];
     if ([annotation isKindOfClass:[BridgeAnnotation class]])
+    {
+        
+    }
     {
         NSLog(@"clicked Golden Gate Bridge annotation");
         
@@ -282,6 +309,7 @@
             [self.navigationController pushViewController:detailViewController animated:YES];
         }
     }*/
+        
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <MKAnnotation>)annotation
@@ -311,5 +339,9 @@
     return pin;
 }
 
+-(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+{
+    
+}
 
 @end
