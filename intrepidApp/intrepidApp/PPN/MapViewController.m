@@ -60,65 +60,6 @@
 
 @implementation MapViewController
 
-- (void)gotoDefaultLocation
-{
-    // start off by default in San Francisco
-    MKCoordinateRegion newRegion;
-//    newRegion.center.latitude = [[_ppnList[0] latitude] doubleValue];
-  //  newRegion.center.longitude = [[_ppnList[0] longitude] doubleValue];
-/*    newRegion.center.latitude = 29.345500;
-    newRegion.center.longitude = -98.566600;
-    newRegion.span.latitudeDelta = 0.2;
-    newRegion.span.longitudeDelta = 0.2;
-
-    [self.mapView setRegion:newRegion animated:YES];
-    
-    MKMapRect zoomRect = MKMapRectNull;
-    for (id <MKAnnotation> annotation in self.mapView.annotations)
-    {
-        MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
-        NSLog(@"Coord_def: %f %f",annotation.coordinate.latitude,annotation.coordinate.longitude);
-        MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0.1, 0.1);
-        zoomRect = MKMapRectUnion(zoomRect, pointRect);
-    }
-    [self.mapView setVisibleMapRect:zoomRect animated:YES];*/
-    
-//    [self zoomToFitMapAnnotations:self.mapView];
-//      [self.mapView showAnnotations:self.mapAnnotations animated:YES];
-    
-}
-
--(void)zoomToFitMapAnnotations:(MKMapView*)aMapView
-{
- /*   if([aMapView.annotations count] == 0)
-        return;
-    
-    CLLocationCoordinate2D topLeftCoord;
-    topLeftCoord.latitude = -90;
-    topLeftCoord.longitude = 180;
-    
-    CLLocationCoordinate2D bottomRightCoord;
-    bottomRightCoord.latitude = 90;
-    bottomRightCoord.longitude = -180;
-    
-    for(BridgeAnnotation *annotation in self.mapView.annotations)
-    {
-        topLeftCoord.longitude = fmin(topLeftCoord.longitude, annotation.coordinate.longitude);
-        topLeftCoord.latitude = fmax(topLeftCoord.latitude, annotation.coordinate.latitude);
-        
-        bottomRightCoord.longitude = fmax(bottomRightCoord.longitude, annotation.coordinate.longitude);
-        bottomRightCoord.latitude = fmin(bottomRightCoord.latitude, annotation.coordinate.latitude);
-    }
-    
-    MKCoordinateRegion region;
-    region.center.latitude = topLeftCoord.latitude - (topLeftCoord.latitude - bottomRightCoord.latitude) * 0.5;
-    region.center.longitude = topLeftCoord.longitude + (bottomRightCoord.longitude - topLeftCoord.longitude) * 0.5;
-    region.span.latitudeDelta = fabs(topLeftCoord.latitude - bottomRightCoord.latitude) * 1.1; // Add a little extra space on the sides
-    region.span.longitudeDelta = fabs(bottomRightCoord.longitude - topLeftCoord.longitude) * 1.1; // Add a little extra space on the sides
-    
-    region = [aMapView regionThatFits:region];
-    [self.mapView setRegion:region animated:YES];*/
-}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -145,7 +86,7 @@
     scrollView.scrollEnabled = YES;
     
 //    [self addContent];
-    mapView.delegate = self;
+//    mapView.delegate = self;
     mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height)];
 //    mapView.delegate = self;
     [scrollView addSubview:mapView];
@@ -200,8 +141,8 @@
     
     [mapView removeAnnotations:mapView.annotations];
 //    [scrollView re:mapView];
-    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 300)];
-    [scrollView addSubview:mapView];
+//    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 300)];
+//    [scrollView addSubview:mapView];
 
     for(int i=0;i<[arrayLocation count];i++)
     {
@@ -263,14 +204,17 @@
         location.longitude = [[[arrayLocation objectAtIndex:i] objectForKey:@"longitude"] doubleValue];
         
         MapViewAnnotation *newAnnotation = [[MapViewAnnotation alloc] initWithTitle:[[arrayLocation objectAtIndex:i] objectForKey:@"title"] Coordinate:location andIndex:i];
+        
         [arrAnnotations addObject:newAnnotation];
     }
     
-    dispatch_async(dispatch_get_main_queue(), ^{
+    mapView.delegate = self;
+/*    dispatch_async(dispatch_get_main_queue(), ^{
         [mapView addAnnotations:arrAnnotations];
-    });
-//    [mapView addAnnotations:arrAnnotations];
+    });*/
+    [mapView addAnnotations:arrAnnotations];
     mapView.region = [MapViewAnnotation regionForAnnotations:arrAnnotations];
+    mapView.delegate = self;
 }
 
 
@@ -314,22 +258,47 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
+ /*   if ([annotation isKindOfClass:[MKUserLocation class]]) return nil;
+    
+    static NSString* AnnotationIdentifier = @"AnnotationIdentifier";
+    
+    MKPinAnnotationView* pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:AnnotationIdentifier];
+    
+    pinView.animatesDrop=YES;
+    pinView.canShowCallout=YES;
+    pinView.pinColor=MKPinAnnotationColorPurple;
+    pinView.image = [UIImage imageNamed:@"Electricity"];
+    
+    
+    UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    [rightButton setTitle:annotation.title forState:UIControlStateNormal];
+    
+    [rightButton addTarget:self
+                    action:@selector(showDetails:)
+          forControlEvents:UIControlEventTouchUpInside];
+    
+    pinView.rightCalloutAccessoryView = rightButton;
+    
+    return pinView;*/
+    
     if (annotation == mapView.userLocation)
     {
         return nil;
     }
-    MKPinAnnotationView *pin = (MKPinAnnotationView *) [mapView dequeueReusableAnnotationViewWithIdentifier: @"restMap"];
+    MKAnnotationView *pin = (MKAnnotationView *) [mapView dequeueReusableAnnotationViewWithIdentifier: @"restMap"];
     if (pin == nil)
     {
-        pin = [[MKPinAnnotationView alloc] initWithAnnotation: annotation reuseIdentifier: @"restMap"];
+        pin = [[MKAnnotationView alloc] initWithAnnotation: annotation reuseIdentifier: @"restMap"];
     }
     else
     {
         pin.annotation = annotation;
     }
-    pin.pinColor = MKPinAnnotationColorRed;
-    pin.animatesDrop = NO;
+//    pin.pinColor = MKPinAnnotationColorRed;
+//    pin.animatesDrop = NO;
     pin.canShowCallout=TRUE;
+    pin.image = [UIImage imageNamed:@"culture-icon"];
+  
     UIButton *btn=[UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     MapViewAnnotation *temp = (MapViewAnnotation *)pin.annotation;
     btn.tag=temp.index;
@@ -339,9 +308,19 @@
     return pin;
 }
 
+- (IBAction)showDetails:(id)sender{
+    
+    NSLog(@"Annotation Click");
+    
+}
+
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    
+    if ([view.annotation isKindOfClass:[MapViewAnnotation class]]) {
+        MapViewAnnotation *annotation = (MapViewAnnotation *)view.annotation;
+        NSString * s = annotation.title;
+        view.image = [UIImage imageNamed:@"contact-icon"];
+    }
 }
 
 @end
