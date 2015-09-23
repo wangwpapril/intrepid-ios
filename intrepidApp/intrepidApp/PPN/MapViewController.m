@@ -320,6 +320,33 @@
         MapViewAnnotation *annotation = (MapViewAnnotation *)view.annotation;
         NSString * s = annotation.title;
         view.image = [UIImage imageNamed:@"contact-icon"];
+        
+        self->mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 300)];
+        [scrollView addSubview:self->mapView];
+        
+        int y = self->mapView.frame.origin.y + self->mapView.frame.size.height;
+
+        UILabel *textLabel = [[UILabel alloc] init];
+        textLabel.font = [UIFont fontWithName:APP_FONT size:15];
+        textLabel.textColor = APP_TEXT_COLOR;
+        textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        textLabel.numberOfLines = 0;
+        
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+        paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+        CGSize size = [s boundingRectWithSize:CGSizeMake(300, CGFLOAT_MAX)
+                                                      options:NSStringDrawingUsesLineFragmentOrigin
+                                                   attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:16]}
+                                                      context:nil].size;
+        textLabel.frame = CGRectMake(15, y + 15, 300, size.height);
+        textLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:16];
+        textLabel.backgroundColor = [UIColor clearColor];
+        textLabel.textColor = APP_TEXT_COLOR;
+        textLabel.text = s;
+        [scrollView addSubview:textLabel];
+        y = textLabel.frame.origin.y + textLabel.frame.size.height + 15;
+
+
     }
 }
 
