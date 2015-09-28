@@ -166,6 +166,7 @@
 - (IBAction)cityAction:(id)sender
 {
 //    [self gotoByAnnotationClass:[SFAnnotation class]];
+    currentSelection = @"HOSPITAL";
     [self gotoByType:@"HOSPITAL"];
 }
 
@@ -173,6 +174,7 @@
 {
     // user tapped "Bridge" button in the bottom toolbar
 //    [self gotoByAnnotationClass:[BridgeAnnotation class]];
+    currentSelection = @"SPECIALTY HOSPITAL";
     [self gotoByType:@"SPECIALTY HOSPITAL"];
 }
 
@@ -192,6 +194,8 @@
     
     // add all 3 annotations
 //    [self.mapView addAnnotations:self.mapAnnotations];
+    
+    currentSelection = @"All";
     
     NSMutableArray *arrAnnotations  = [[NSMutableArray alloc]init];
     
@@ -214,7 +218,7 @@
     });*/
     [mapView addAnnotations:arrAnnotations];
     mapView.region = [MapViewAnnotation regionForAnnotations:arrAnnotations];
-    mapView.delegate = self;
+//    mapView.delegate = self;
 }
 
 
@@ -297,7 +301,13 @@
 //    pin.pinColor = MKPinAnnotationColorRed;
 //    pin.animatesDrop = NO;
     pin.canShowCallout=TRUE;
-    pin.image = [UIImage imageNamed:@"culture-icon"];
+    
+    if ((currentSelected.coordinate.latitude == annotation.coordinate.latitude)&&
+    (currentSelected.coordinate.longitude == annotation.coordinate.longitude)){
+        pin.image = [UIImage imageNamed:@"map-marker-active"];
+    } else {
+        pin.image = [UIImage imageNamed:@"map-marker-inactive"];
+    }
   
     UIButton *btn=[UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     MapViewAnnotation *temp = (MapViewAnnotation *)pin.annotation;
@@ -318,11 +328,21 @@
 {
     if ([view.annotation isKindOfClass:[MapViewAnnotation class]]) {
         MapViewAnnotation *annotation = (MapViewAnnotation *)view.annotation;
-        NSString * s = annotation.title;
-        view.image = [UIImage imageNamed:@"contact-icon"];
+        currentSelected = annotation;
         
+        NSString * s = annotation.title;
+//        view.image = [UIImage imageNamed:@"map-marker-inactive"];
+        
+        [self->mapView removeFromSuperview];
         self->mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 300)];
         [scrollView addSubview:self->mapView];
+        
+        if ([currentSelection compare:@"All"] == 0) {
+            [self allAction:self];
+        }else {
+            [self gotoByType:currentSelection];
+        }
+        
         
         int y = self->mapView.frame.origin.y + self->mapView.frame.size.height;
 

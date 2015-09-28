@@ -54,6 +54,8 @@
     IBOutlet MKMapView * mapView;
     NSMutableArray *arrayLocation;
     NSArray *ppnList;
+    NSString *currentSelection;
+    MapViewAnnotation *currentSelected;
 
 }
 
