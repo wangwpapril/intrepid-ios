@@ -158,6 +158,7 @@
         
     }
     
+    mapView.delegate = self;
     [mapView addAnnotations:arrAnnotations];
     mapView.region = [MapViewAnnotation regionForAnnotations:arrAnnotations];
 
