@@ -1288,29 +1288,6 @@
         <scene sceneID="TnJ-tn-eCk">
             <objects>
                 <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gNp-bC-uZF" userLabel="MapViewController" customClass="MapViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Uwy-xS-ufG"/>
-                        <viewControllerLayoutGuide type="bottom" id="FSJ-dX-ffl"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0oU-Fb-DBA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4Sk-6E-GyA">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <connections>
-                                    <outlet property="delegate" destination="gNp-bC-uZF" id="djN-8B-jvF"/>
-                                </connections>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="4Sk-6E-GyA" firstAttribute="leading" secondItem="0oU-Fb-DBA" secondAttribute="leading" id="8xt-fn-5Yg"/>
-                            <constraint firstItem="4Sk-6E-GyA" firstAttribute="top" secondItem="0oU-Fb-DBA" secondAttribute="top" id="Cdv-Zh-kgB"/>
-                            <constraint firstAttribute="trailing" secondItem="4Sk-6E-GyA" secondAttribute="trailing" id="teE-Za-s2H"/>
-                            <constraint firstAttribute="bottom" secondItem="4Sk-6E-GyA" secondAttribute="bottom" id="wOI-Gh-gca"/>
-                        </constraints>
-                    </view>
                     <toolbarItems>
                         <barButtonItem title="Hosptial" id="q4H-rj-3f7" userLabel="CityButton">
                             <connections>
@@ -1333,10 +1310,6 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
-                    <connections>
-                        <outlet property="mapView" destination="4Sk-6E-GyA" id="v3a-wf-RdB"/>
-                        <outlet property="view" destination="0oU-Fb-DBA" id="XNk-Wo-c1C"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wIr-jU-vON" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

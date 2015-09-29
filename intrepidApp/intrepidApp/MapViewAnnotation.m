@@ -10,7 +10,7 @@
 #import "MapViewAnnotation.h"
 
 @implementation MapViewAnnotation
-@synthesize title, coordinate,index;
+@synthesize title, coordinate,index,staff,phone,address;
 
 - (id)initWithTitle:(NSString *)ttl andCoordinate:(CLLocationCoordinate2D)c2d {
     self = [super init];
@@ -23,6 +23,17 @@
     self = [super init];
     title = ttl;
     coordinate = c2d;
+    index = intIndex;
+    return self;
+}
+- (id)initWithTitle:(NSString *)ttl Coordinate:(CLLocationCoordinate2D)c2d Staff:(NSString *)st Contact:(NSString *)ph Address:(NSString *)add andIndex:(int)intIndex
+{
+    self = [super init];
+    title = ttl;
+    coordinate = c2d;
+    staff = st;
+    phone = ph;
+    address = add;
     index = intIndex;
     return self;
 }

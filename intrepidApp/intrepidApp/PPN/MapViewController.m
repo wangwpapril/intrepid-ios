@@ -104,6 +104,9 @@
         [dict setValue:[pe latitude] forKey:@"latitude"];
         [dict setValue:[pe longitude] forKey:@"longitude"];
         [dict setValue:[pe type] forKey:@"title"];
+        [dict setValue:[pe staffName] forKey:@"staff"];
+        [dict setValue:[pe contact] forKey:@"phone"];
+        [dict setValue:[pe address] forKey:@"address"];
         [arrayLocation addObject:dict];
         dict = nil;
     }
@@ -151,7 +154,7 @@
             location.latitude = [[[arrayLocation objectAtIndex:i] objectForKey:@"latitude"] doubleValue];
             location.longitude = [[[arrayLocation objectAtIndex:i] objectForKey:@"longitude"] doubleValue];
             
-            MapViewAnnotation *newAnnotation = [[MapViewAnnotation alloc] initWithTitle:[[arrayLocation objectAtIndex:i] objectForKey:@"title"] Coordinate:location andIndex:i];
+            MapViewAnnotation *newAnnotation = [[MapViewAnnotation alloc] initWithTitle:[[arrayLocation objectAtIndex:i] objectForKey:@"title"] Coordinate:location Staff:[[arrayLocation objectAtIndex:i] objectForKey:@"staff"] Contact:[[arrayLocation objectAtIndex:i] objectForKey:@"phone"] Address:[[arrayLocation objectAtIndex:i] objectForKey:@"address"] andIndex:i];
             [arrAnnotations addObject:newAnnotation];
 
         }
@@ -208,7 +211,7 @@
         location.latitude = [[[arrayLocation objectAtIndex:i] objectForKey:@"latitude"] doubleValue];
         location.longitude = [[[arrayLocation objectAtIndex:i] objectForKey:@"longitude"] doubleValue];
         
-        MapViewAnnotation *newAnnotation = [[MapViewAnnotation alloc] initWithTitle:[[arrayLocation objectAtIndex:i] objectForKey:@"title"] Coordinate:location andIndex:i];
+        MapViewAnnotation *newAnnotation = [[MapViewAnnotation alloc] initWithTitle:[[arrayLocation objectAtIndex:i] objectForKey:@"title"] Coordinate:location Staff:[[arrayLocation objectAtIndex:i] objectForKey:@"staff"] Contact:[[arrayLocation objectAtIndex:i] objectForKey:@"phone"] Address:[[arrayLocation objectAtIndex:i] objectForKey:@"address"] andIndex:i];
         
         [arrAnnotations addObject:newAnnotation];
     }
@@ -331,8 +334,16 @@
         MapViewAnnotation *annotation = (MapViewAnnotation *)view.annotation;
         currentSelected = annotation;
         
-        NSString * s = annotation.title;
+        NSString * title = annotation.title;
+        NSString * staff = annotation.staff;
+        NSString * phone = annotation.phone;
+        NSString * address = annotation.address;
+        
 //        view.image = [UIImage imageNamed:@"map-marker-inactive"];
+        
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+        paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+
         
         [self->mapView removeFromSuperview];
         self->mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 300)];
@@ -346,24 +357,29 @@
         
         
         int y = self->mapView.frame.origin.y + self->mapView.frame.size.height;
-
-        UILabel *textLabel = [[UILabel alloc] init];
-        textLabel.font = [UIFont fontWithName:APP_FONT size:15];
-        textLabel.textColor = APP_TEXT_COLOR;
-        textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        textLabel.numberOfLines = 0;
         
-        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-        paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
-        CGSize size = [s boundingRectWithSize:CGSizeMake(300, CGFLOAT_MAX)
+        CGRect infoFrame = CGRectMake(0, y, self.view.frame.size.width, self.view.frame.size.height);
+        UIView *infoLayer = [[UIView alloc] initWithFrame:infoFrame];
+        infoLayer.backgroundColor = [UIColor orangeColor];
+        [scrollView addSubview:infoLayer];
+        
+        UIImageView *hospitalTitle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospital-icon"]];
+        hospitalTitle.frame = CGRectMake(50, y+20, 15, 15);
+
+        
+        CGSize size = [title boundingRectWithSize:CGSizeMake(300, CGFLOAT_MAX)
                                                       options:NSStringDrawingUsesLineFragmentOrigin
                                                    attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:16]}
                                                       context:nil].size;
-        textLabel.frame = CGRectMake(15, y + 15, 300, size.height);
+        
+        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, y + 20, 300, size.height)];
+
+        textLabel.frame = CGRectMake(70, y + 20, 300, size.height);
         textLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:16];
         textLabel.backgroundColor = [UIColor clearColor];
-        textLabel.textColor = APP_TEXT_COLOR;
-        textLabel.text = s;
+        textLabel.textColor = [UIColor whiteColor];
+        textLabel.text = title;
+        [scrollView addSubview:hospitalTitle];
         [scrollView addSubview:textLabel];
         y = textLabel.frame.origin.y + textLabel.frame.size.height + 15;
 
