@@ -336,7 +336,11 @@
         
         NSString * title = annotation.title;
         NSString * staff = annotation.staff;
-        NSString * phone = annotation.phone;
+        NSMutableAttributedString * phone =  [[NSMutableAttributedString alloc] initWithString:annotation.phone];
+        [phone addAttribute:(NSString*) NSUnderlineStyleAttributeName
+                          value:[NSNumber numberWithInt:NSUnderlineStyleSingle]
+                          range:(NSRange){0,[phone length]}];
+
         NSString * address = annotation.address;
         
 //        view.image = [UIImage imageNamed:@"map-marker-inactive"];
@@ -360,7 +364,7 @@
         
         CGRect infoFrame = CGRectMake(0, y, self.view.frame.size.width, self.view.frame.size.height);
         UIView *infoLayer = [[UIView alloc] initWithFrame:infoFrame];
-        infoLayer.backgroundColor = [UIColor orangeColor];
+        infoLayer.backgroundColor = UIColorFromRGB(0xFF781F);
         [scrollView addSubview:infoLayer];
         
         UIImageView *hospitalTitle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospital-icon"]];
@@ -369,20 +373,86 @@
         
         CGSize size = [title boundingRectWithSize:CGSizeMake(300, CGFLOAT_MAX)
                                                       options:NSStringDrawingUsesLineFragmentOrigin
-                                                   attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:16]}
+                                                   attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Bold" size:16]}
                                                       context:nil].size;
         
         UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, y + 20, 300, size.height)];
 
-        textLabel.frame = CGRectMake(70, y + 20, 300, size.height);
-        textLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:16];
+        textLabel.font = [UIFont fontWithName:@"ProximaNova-Bold" size:16];
         textLabel.backgroundColor = [UIColor clearColor];
         textLabel.textColor = [UIColor whiteColor];
         textLabel.text = title;
         [scrollView addSubview:hospitalTitle];
         [scrollView addSubview:textLabel];
-        y = textLabel.frame.origin.y + textLabel.frame.size.height + 15;
-
+        y = textLabel.frame.origin.y + size.height + 10;
+        
+        UIImageView *staffImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"staff-contact-icon"]];
+        staffImage.frame = CGRectMake(50, y+13, 10, 10);
+        
+        
+        size = [staff boundingRectWithSize:CGSizeMake(300, CGFLOAT_MAX)
+                                          options:NSStringDrawingUsesLineFragmentOrigin
+                                       attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:14]}
+                                          context:nil].size;
+        
+        textLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, y + 10, 300, size.height)];
+        
+        textLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:14];
+        textLabel.backgroundColor = [UIColor clearColor];
+        textLabel.textColor = [UIColor whiteColor];
+        textLabel.text = staff;
+        [scrollView addSubview:staffImage];
+        [scrollView addSubview:textLabel];
+        y = textLabel.frame.origin.y + size.height;
+        
+        UIImageView *phoneImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"phone-contact-icon"]];
+        phoneImage.frame = CGRectMake(50, y+5, 10, 10);
+        
+        
+/*        size = [phone boundingRectWithSize:CGSizeMake(300, CGFLOAT_MAX)
+                                   options:NSStringDrawingUsesLineFragmentOrigin
+                                attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:14]}
+                                   context:nil].size; */
+        
+        UITextView *contact = [[UITextView alloc] initWithFrame:CGRectMake(70, y +3, 300, 14)];
+        
+        contact.font = [UIFont fontWithName:@"ProximaNova-Light" size:16];
+        contact.backgroundColor = [UIColor clearColor];
+        contact.textColor = [UIColor whiteColor];
+//        contact.text = phone;
+        contact.selectable = YES;
+        contact.editable = NO;
+        contact.scrollEnabled = NO;
+        contact.dataDetectorTypes = UIDataDetectorTypePhoneNumber;
+        contact.tintColor = [UIColor whiteColor];
+        contact.attributedText = phone;
+        contact.textContainer.lineFragmentPadding = 0;
+        contact.textContainerInset = UIEdgeInsetsZero;
+        [contact sizeToFit];
+        [contact layoutIfNeeded];
+        [scrollView addSubview:phoneImage];
+        [scrollView addSubview:contact];
+        y = contact.frame.origin.y + size.height;
+        
+        UIImageView *addressImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ppn-location-icon"]];
+        addressImage.frame = CGRectMake(50, y+7, 10, 10);
+        
+        
+        size = [address boundingRectWithSize:CGSizeMake(300, CGFLOAT_MAX)
+                                   options:NSStringDrawingUsesLineFragmentOrigin
+                                attributes:@{NSParagraphStyleAttributeName:paragraphStyle.copy, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Light" size:14]}
+                                   context:nil].size;
+        
+        textLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, y + 5, 300, size.height)];
+        
+        textLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:14];
+        textLabel.backgroundColor = [UIColor clearColor];
+        textLabel.textColor = [UIColor whiteColor];
+        textLabel.text = address;
+        [scrollView addSubview:addressImage];
+        [scrollView addSubview:textLabel];
+        y = textLabel.frame.origin.y + size.height;
+        
 
     }
 }
