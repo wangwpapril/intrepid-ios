@@ -350,7 +350,7 @@
 
         
         [self->mapView removeFromSuperview];
-        self->mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 300)];
+        self->mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 350)];
         [scrollView addSubview:self->mapView];
         
         if ([currentSelection compare:@"All"] == 0) {
