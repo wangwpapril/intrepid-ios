@@ -78,6 +78,7 @@
     self.navigationItem.title = @"PPN Map";
     self.navigationController.toolbarHidden = FALSE;
     
+    currentSelected = nil;
     
     CGRect rect=CGRectMake(0, 0, 320, self.view.frame.size.height);
     scrollView = [[UIScrollView alloc] initWithFrame:rect];
@@ -164,6 +165,18 @@
     mapView.delegate = self;
     [mapView addAnnotations:arrAnnotations];
     mapView.region = [MapViewAnnotation regionForAnnotations:arrAnnotations];
+    
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:nil];
+    doubleTap.numberOfTapsRequired = 2;
+    doubleTap.numberOfTouchesRequired = 1;
+    [self->mapView addGestureRecognizer:doubleTap];
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+    singleTap.numberOfTapsRequired = 1;
+    singleTap.numberOfTouchesRequired = 1;
+    [singleTap requireGestureRecognizerToFail: doubleTap];
+    [self->mapView addGestureRecognizer:singleTap];
+
 
 }
 
@@ -222,7 +235,17 @@
     });*/
     [mapView addAnnotations:arrAnnotations];
     mapView.region = [MapViewAnnotation regionForAnnotations:arrAnnotations];
-//    mapView.delegate = self;
+    
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:nil];
+    doubleTap.numberOfTapsRequired = 2;
+    doubleTap.numberOfTouchesRequired = 1;
+    [self->mapView addGestureRecognizer:doubleTap];
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+    singleTap.numberOfTapsRequired = 1;
+    singleTap.numberOfTouchesRequired = 1;
+    [singleTap requireGestureRecognizerToFail: doubleTap];
+    [self->mapView addGestureRecognizer:singleTap];
 }
 
 
@@ -322,9 +345,24 @@
     return pin;
 }
 
-- (IBAction)showDetails:(id)sender{
+- (void)handleGesture:(UIGestureRecognizer *)gestureRecognizer{
     
     NSLog(@"Annotation Click");
+    if (gestureRecognizer.state != UIGestureRecognizerStateEnded)
+        return;
+    //Do your work ...
+    currentSelected = nil;
+    
+    [self->mapView removeFromSuperview];
+    self->mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height)];
+    [scrollView addSubview:self->mapView];
+    
+    if ([currentSelection compare:@"All"] == 0) {
+        [self allAction:self];
+    }else {
+        [self gotoByType:currentSelection];
+    }
+    
     
 }
 
